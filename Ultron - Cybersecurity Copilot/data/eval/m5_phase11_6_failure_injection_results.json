@@ -1,0 +1,210 @@
+{
+  "audit_verification": {
+    "error_messages": [],
+    "tampered_records": [],
+    "tampering_types": [],
+    "total_records": 1,
+    "valid": true
+  },
+  "failed_injections": 0,
+  "injections": [
+    {
+      "actual_behavior": "Raised CanonicalEvidenceIntegrityError: Canonical evidence Channel A is missing, None, or lacks required endpoint/asset identifiers.",
+      "details": {},
+      "deterministic_failure_code": "CANONICAL_EVIDENCE_INTEGRITY_ERROR",
+      "expected_behavior": "Raise CanonicalEvidenceIntegrityError and halt execution",
+      "injected_fault": "Canonical evidence Channel A missing required endpoint/asset identifiers",
+      "passed": true,
+      "subsystem": "EvidencePreservationGate",
+      "test_id": "INJ-01"
+    },
+    {
+      "actual_behavior": "Verified mismatch against canonical digest: 10536760d5ee6dc8dfdd089536b04c15da07b621c875bdb1a35097fca2fef314",
+      "details": {},
+      "deterministic_failure_code": "PROVENANCE_HASH_MISMATCH",
+      "expected_behavior": "Reject empty provenance hash as mismatch against canonical digest",
+      "injected_fault": "Cascade handoff packet with empty or missing provenance hash",
+      "passed": true,
+      "subsystem": "CascadeHandoffPacket / Provenance",
+      "test_id": "INJ-02"
+    },
+    {
+      "actual_behavior": "Result is_valid=False, primary_code=GroundingFailureCode.G2",
+      "details": {},
+      "deterministic_failure_code": "G2_FACT_ID_NOT_IN_ALLOWED_SET",
+      "expected_behavior": "Reject candidate with GroundingFailureCode.G2 (FACT_ID_NOT_IN_ALLOWED_SET)",
+      "injected_fault": "Model candidate cites ungrounded hallucinated fact ID 'FACT-HALLUCINATED-999'",
+      "passed": true,
+      "subsystem": "Phase11GroundingValidator",
+      "test_id": "INJ-03"
+    },
+    {
+      "actual_behavior": "Result is_valid=False, primary_code=GroundingFailureCode.G5",
+      "details": {},
+      "deterministic_failure_code": "G4_TARGET_ID_NOT_IN_ALLOWED_SET",
+      "expected_behavior": "Reject candidate with GroundingFailureCode.G4 or G5",
+      "injected_fault": "Model candidate cites target identifier 'EP-NONEXISTENT-99' not in Channel A envelope",
+      "passed": true,
+      "subsystem": "Phase11GroundingValidator",
+      "test_id": "INJ-04"
+    },
+    {
+      "actual_behavior": "fail_safe_required=True, triggers=['TRIAGE_CATEGORY_INVALID']",
+      "details": {},
+      "deterministic_failure_code": "TRIAGE_CATEGORY_INVALID",
+      "expected_behavior": "Set fail_safe_required=True and append TRIAGE_CATEGORY_INVALID trigger",
+      "injected_fault": "Triage output proposes unregistered category 'UNKNOWN-CATEGORY-XYZ'",
+      "passed": true,
+      "subsystem": "EvidencePreservationGate",
+      "test_id": "INJ-05"
+    },
+    {
+      "actual_behavior": "is_compat=False, reason=Experiment action 'replay_step_with_lower_role' is not compatible with category 'API-BOLA-001'",
+      "details": {},
+      "deterministic_failure_code": "ACTION_CATEGORY_MISMATCH",
+      "expected_behavior": "Fail closed with action/category incompatibility reason",
+      "injected_fault": "Category 'API-BOLA-001' paired with incompatible action 'replay_step_with_lower_role'",
+      "passed": true,
+      "subsystem": "ExperimentPolarityValidator",
+      "test_id": "INJ-06"
+    },
+    {
+      "actual_behavior": "is_compat=False, reason=Experiment action 'NONEXISTENT_ACTION' is not compatible with category 'API-BOLA-001'",
+      "details": {},
+      "deterministic_failure_code": "UNRECOGNIZED_ACTION",
+      "expected_behavior": "Reject unrecognized action string",
+      "injected_fault": "Experiment action 'NONEXISTENT_ACTION' not in registry",
+      "passed": true,
+      "subsystem": "ExperimentPolarityValidator",
+      "test_id": "INJ-07"
+    },
+    {
+      "actual_behavior": "is_compat=False, reason=Outcome 'INVALID_PREDICATE_OUTCOME' is not a valid breach outcome for category 'API-BOLA-001' and action 'SUBSTITUTE_RESOURCE_IDENTIFIER'",
+      "details": {},
+      "deterministic_failure_code": "INVALID_BREACH_OUTCOME",
+      "expected_behavior": "Reject invalid breach outcome predicate",
+      "injected_fault": "Supporting outcome 'INVALID_PREDICATE_OUTCOME' outside valid breach predicates",
+      "passed": true,
+      "subsystem": "ExperimentPolarityValidator",
+      "test_id": "INJ-08"
+    },
+    {
+      "actual_behavior": "is_compat=False, reason=supporting_outcome and disproving_outcome cannot be identical ('HTTP_200_OK')",
+      "details": {},
+      "deterministic_failure_code": "ZERO_DISCRIMINATIVE_POWER",
+      "expected_behavior": "Reject identical supporting and disproving outcomes",
+      "injected_fault": "Supporting and disproving outcomes identical ('HTTP_200_OK'); zero discriminative power",
+      "passed": true,
+      "subsystem": "ExperimentPolarityValidator",
+      "test_id": "INJ-09"
+    },
+    {
+      "actual_behavior": "Original hash: 10536760d5ee..., Mutated hash: 08c396b489b5...",
+      "details": {},
+      "deterministic_failure_code": "PROVENANCE_TAMPER_DETECTED",
+      "expected_behavior": "Detect cryptographic mismatch between mutated and baseline handoff digests",
+      "injected_fault": "Channel A structural pack mutated after handoff hash generation",
+      "passed": true,
+      "subsystem": "compute_provenance_hash",
+      "test_id": "INJ-10"
+    },
+    {
+      "actual_behavior": "Detected 3 markers; severities: ['QUARANTINE', 'QUARANTINE', 'QUARANTINE']",
+      "details": {},
+      "deterministic_failure_code": "POISONING_MARKER_DETECTED",
+      "expected_behavior": "Flag chunk with QUARANTINE severity and isolate from prompt",
+      "injected_fault": "VAPT advisory chunk contains prompt injection / system override directives",
+      "passed": true,
+      "subsystem": "KnowledgePoisoningDefense",
+      "test_id": "INJ-11"
+    },
+    {
+      "actual_behavior": "Raised VaultAccessDeniedError: Unauthorized vault reversal: valid VaultAccessContext is required.",
+      "details": {},
+      "deterministic_failure_code": "VAULT_ACCESS_DENIED",
+      "expected_behavior": "Raise VaultAccessDeniedError and log denial event",
+      "injected_fault": "Secret reversal attempted without authenticated VaultAccessContext",
+      "passed": true,
+      "subsystem": "RedactionVault",
+      "test_id": "INJ-12"
+    },
+    {
+      "actual_behavior": "Decision: DENY, Reason: Host matches explicit out_of_scope rule: *.forbidden.com",
+      "details": {},
+      "deterministic_failure_code": "SCOPE_DECISION_DENY",
+      "expected_behavior": "ScopeGate returns ScopeDecision.DENY",
+      "injected_fault": "Outbound request targets explicit out_of_scope destination 'attacker.forbidden.com'",
+      "passed": true,
+      "subsystem": "ScopeGate",
+      "test_id": "INJ-13"
+    },
+    {
+      "actual_behavior": "is_approved=False, failure_reason=APPROVAL_EXPIRED",
+      "details": {},
+      "deterministic_failure_code": "APPROVAL_EXPIRED",
+      "expected_behavior": "Reject approval verification with APPROVAL_EXPIRED",
+      "injected_fault": "State-changing proposal submitted with expired human approval (expires_at < now)",
+      "passed": true,
+      "subsystem": "ApprovalGate",
+      "test_id": "INJ-14"
+    },
+    {
+      "actual_behavior": "is_approved=False, failure_reason=APPROVAL_DESCRIPTOR_DIGEST_MISMATCH",
+      "details": {},
+      "deterministic_failure_code": "APPROVAL_DESCRIPTOR_DIGEST_MISMATCH",
+      "expected_behavior": "Reject approval verification with APPROVAL_DESCRIPTOR_DIGEST_MISMATCH",
+      "injected_fault": "Execution descriptor mutated after human approval (SHA256 digest mismatch)",
+      "passed": true,
+      "subsystem": "ApprovalGate",
+      "test_id": "INJ-15"
+    },
+    {
+      "actual_behavior": "Execution status=BLOCKED_EXECUTION_MODE",
+      "details": {},
+      "deterministic_failure_code": "BLOCKED_EXECUTION_MODE",
+      "expected_behavior": "Fail closed with ExecutionStatus.BLOCKED_EXECUTION_MODE",
+      "injected_fault": "Live network execution attempted while live_execution_enabled=False and no mock transport",
+      "passed": true,
+      "subsystem": "DeterministicExecutionEngine",
+      "test_id": "INJ-16"
+    },
+    {
+      "actual_behavior": "Decision: DENY, Reason: Resolved address 127.0.0.1 is a loopback address",
+      "details": {},
+      "deterministic_failure_code": "SSRF_LOOPBACK_BLOCKED",
+      "expected_behavior": "Deny request due to loopback/private range policy",
+      "injected_fault": "DNS resolves target domain to prohibited loopback address 127.0.0.1 (SSRF)",
+      "passed": true,
+      "subsystem": "ScopeGate",
+      "test_id": "INJ-17"
+    },
+    {
+      "actual_behavior": "Result is_valid=False, primary_code=GroundingFailureCode.G7",
+      "details": {},
+      "deterministic_failure_code": "G7_FREE_FORM_TARGET_REJECTED",
+      "expected_behavior": "Reject target prose with GroundingFailureCode.G7 (FREE_FORM_TARGET_REJECTED)",
+      "injected_fault": "Model output contains natural language prose in affected_target slot",
+      "passed": true,
+      "subsystem": "Phase11GroundingValidator",
+      "test_id": "INJ-18"
+    },
+    {
+      "actual_behavior": "Result is_valid=False, primary_code=GroundingFailureCode.G8",
+      "details": {},
+      "deterministic_failure_code": "G8_EPISTEMIC_NAMESPACE_CONFUSION",
+      "expected_behavior": "Reject CHK citation in empirical facts slot with epistemic tier confusion failure code",
+      "injected_fault": "Model attempts to cite methodology reference 'CHK-METHODOLOGY-01' in empirical_facts slot",
+      "passed": true,
+      "subsystem": "Phase11GroundingValidator",
+      "test_id": "INJ-19"
+    }
+  ],
+  "milestone": "M5",
+  "pass_rate": 1.0,
+  "passed_injections": 19,
+  "phase": "11.6",
+  "timestamp_end": "2026-10-05T02:35:29.908534+00:00",
+  "timestamp_start": "2026-10-05T02:35:29.006637+00:00",
+  "title": "Security Boundary Failure Injection Suite",
+  "total_injections": 19
+}

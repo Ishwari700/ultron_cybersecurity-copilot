@@ -1,0 +1,38 @@
+{
+  "interaction_id": "INT-01",
+  "method": "GET",
+  "observed_owner": "SYSTEM",
+  "observed_resource": "PUBLIC_CATALOG",
+  "observed_state_transition": {
+    "state_after": "ACTIVE",
+    "state_before": "ACTIVE"
+  },
+  "observed_tenant": "PUBLIC",
+  "parameters": [],
+  "request_headers": {},
+  "requester_identity": "anonymous",
+  "requester_role": "unauthenticated",
+  "requester_tenant": "public",
+  "response_body": {
+    "issuer": "https://idp.target.com",
+    "keys": [
+      {
+        "kid": "key1",
+        "kty": "RSA"
+      }
+    ]
+  },
+  "response_headers": {
+    "Content-Type": "application/json"
+  },
+  "response_status": 200,
+  "route": "/oauth/jwks",
+  "scenario_id": "SCEN-IDENTITY_PROVIDER-NEG-02",
+  "sequence_metadata": {
+    "probe_index": 1
+  },
+  "source_fact_ids": [
+    "FACT-OBSERVED-INTERACTION-01"
+  ],
+  "trace_timestamp": "2026-09-18T17:45:00.000Z"
+}

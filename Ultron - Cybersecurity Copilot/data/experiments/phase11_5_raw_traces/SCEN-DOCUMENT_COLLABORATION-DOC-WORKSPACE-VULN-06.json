@@ -1,0 +1,47 @@
+{
+  "interaction_id": "INT-01",
+  "method": "GET",
+  "observed_owner": "user_b",
+  "observed_resource": "DOC-200",
+  "observed_state_transition": {
+    "state_after": "ACTIVE",
+    "state_before": "ACTIVE"
+  },
+  "observed_tenant": "org_b",
+  "parameters": [
+    {
+      "location": "path",
+      "name": "id",
+      "param_id": "PARAM-DOC-ID",
+      "value": ""
+    }
+  ],
+  "request_headers": {
+    "Authorization": "Bearer [REDACTED]"
+  },
+  "requester_identity": "user_a",
+  "requester_role": "customer",
+  "requester_tenant": "org_a",
+  "response_body": {
+    "document": {
+      "classified": false,
+      "id": "DOC-200",
+      "owner": "user_b",
+      "tenant": "org_b",
+      "title": "Team Notes"
+    }
+  },
+  "response_headers": {
+    "Content-Type": "application/json"
+  },
+  "response_status": 200,
+  "route": "/api/v1/docs/DOC-200/export",
+  "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-WORKSPACE-VULN-06",
+  "sequence_metadata": {
+    "probe_index": 1
+  },
+  "source_fact_ids": [
+    "FACT-OBSERVED-INTERACTION-01"
+  ],
+  "trace_timestamp": "2026-09-18T17:45:00.000Z"
+}

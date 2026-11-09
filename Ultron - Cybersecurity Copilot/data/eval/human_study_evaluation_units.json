@@ -1,0 +1,845 @@
+{
+  "evaluation_units": [
+    {
+      "model_hypothesis": {
+        "decision": "HYPOTHESIS",
+        "primary_category": "API-CROSS-TENANT-001",
+        "proposed_verification_experiment": "Execute cross-tenant parameter mutation to verify object isolation boundaries.",
+        "reasoning_summary": "Identified potential vulnerability in saas_billing Subscription Summary API (Target V-04)."
+      },
+      "observed_evidence": [
+        {
+          "fact_index": 1,
+          "statement": "FACT-SAAS_BILLING-SUB-SUMMARY-DOC"
+        }
+      ],
+      "presentation_hash": "0a141cc910b48a8250200e0bda705a2d48bb2699decbe32e5cbd37c2424effd6",
+      "target_endpoint": {
+        "asset_id": "ASSET-UNIT-01",
+        "endpoint_path": "/api/v1/resource",
+        "method": "GET"
+      },
+      "unit_id": "UNIT-01"
+    },
+    {
+      "model_hypothesis": {
+        "decision": "HYPOTHESIS",
+        "primary_category": "API-CROSS-TENANT-001",
+        "proposed_verification_experiment": "Execute cross-tenant parameter mutation to verify object isolation boundaries.",
+        "reasoning_summary": "Identified potential vulnerability in saas_billing Subscription Summary API (Target V-04)."
+      },
+      "observed_evidence": [
+        {
+          "fact_index": 1,
+          "statement": "FACT-SAAS_BILLING-SUB-SUMMARY-DOC"
+        }
+      ],
+      "presentation_hash": "8ef050de7b993ded42cbfad87ab1037eed49c19ccbf0263f91bd95e0379e8aba",
+      "target_endpoint": {
+        "asset_id": "ASSET-UNIT-02",
+        "endpoint_path": "/api/v1/resource",
+        "method": "GET"
+      },
+      "unit_id": "UNIT-02"
+    },
+    {
+      "model_hypothesis": {
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "primary_category": "API-CROSS-TENANT-001",
+        "proposed_verification_experiment": "Execute cross-tenant parameter mutation to verify object isolation boundaries.",
+        "reasoning_summary": "No evidence of vulnerability found for saas_billing Subscription Summary API (Target P-04)."
+      },
+      "observed_evidence": [
+        {
+          "fact_index": 1,
+          "statement": "Target response verified via observable interaction."
+        }
+      ],
+      "presentation_hash": "4a4e7eb53d3a42171e5911ee5c5270da9a9c0cffa8c586498920f206984332c4",
+      "target_endpoint": {
+        "asset_id": "ASSET-UNIT-03",
+        "endpoint_path": "/api/v1/resource",
+        "method": "GET"
+      },
+      "unit_id": "UNIT-03"
+    },
+    {
+      "model_hypothesis": {
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "primary_category": "API-CROSS-TENANT-001",
+        "proposed_verification_experiment": "Execute cross-tenant parameter mutation to verify object isolation boundaries.",
+        "reasoning_summary": "No evidence of vulnerability found for saas_billing Subscription Summary API (Target P-04)."
+      },
+      "observed_evidence": [
+        {
+          "fact_index": 1,
+          "statement": "Target response verified via observable interaction."
+        }
+      ],
+      "presentation_hash": "c062251d8ce6acbd6252457b20059a053fa8377ddc244afef9791521994b30f1",
+      "target_endpoint": {
+        "asset_id": "ASSET-UNIT-04",
+        "endpoint_path": "/api/v1/resource",
+        "method": "GET"
+      },
+      "unit_id": "UNIT-04"
+    },
+    {
+      "model_hypothesis": {
+        "decision": "HYPOTHESIS",
+        "primary_category": "API-MULTI-STEP-AUTH-001",
+        "proposed_verification_experiment": "Execute cross-tenant parameter mutation to verify object isolation boundaries.",
+        "reasoning_summary": "Identified potential vulnerability in saas_billing Invoice Workflow API (Target V-05)."
+      },
+      "observed_evidence": [
+        {
+          "fact_index": 1,
+          "statement": "FACT-SAAS_BILLING-INV-WORKFLOW-DOC"
+        }
+      ],
+      "presentation_hash": "7f82ea2a25ea80d9d6a345c52c3af1f7f6affd2827b5446a6effa8deca1d2652",
+      "target_endpoint": {
+        "asset_id": "ASSET-UNIT-05",
+        "endpoint_path": "/api/v1/resource",
+        "method": "GET"
+      },
+      "unit_id": "UNIT-05"
+    },
+    {
+      "model_hypothesis": {
+        "decision": "HYPOTHESIS",
+        "primary_category": "API-MULTI-STEP-AUTH-001",
+        "proposed_verification_experiment": "Execute cross-tenant parameter mutation to verify object isolation boundaries.",
+        "reasoning_summary": "Identified potential vulnerability in saas_billing Invoice Workflow API (Target V-05)."
+      },
+      "observed_evidence": [
+        {
+          "fact_index": 1,
+          "statement": "FACT-SAAS_BILLING-INV-WORKFLOW-DOC"
+        }
+      ],
+      "presentation_hash": "229e3ca1a9e74bb73c85bb8b255d597679a97bffd44e9c0955a4221e0a1bc493",
+      "target_endpoint": {
+        "asset_id": "ASSET-UNIT-06",
+        "endpoint_path": "/api/v1/resource",
+        "method": "GET"
+      },
+      "unit_id": "UNIT-06"
+    },
+    {
+      "model_hypothesis": {
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "primary_category": "API-MULTI-STEP-AUTH-001",
+        "proposed_verification_experiment": "Execute cross-tenant parameter mutation to verify object isolation boundaries.",
+        "reasoning_summary": "No evidence of vulnerability found for saas_billing Invoice Workflow API (Target P-05)."
+      },
+      "observed_evidence": [
+        {
+          "fact_index": 1,
+          "statement": "Target response verified via observable interaction."
+        }
+      ],
+      "presentation_hash": "8136b8becf6d331caeb42fe6880a731c0aa12cb335e48feb583371bc0d337cad",
+      "target_endpoint": {
+        "asset_id": "ASSET-UNIT-07",
+        "endpoint_path": "/api/v1/resource",
+        "method": "GET"
+      },
+      "unit_id": "UNIT-07"
+    },
+    {
+      "model_hypothesis": {
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "primary_category": "API-MULTI-STEP-AUTH-001",
+        "proposed_verification_experiment": "Execute cross-tenant parameter mutation to verify object isolation boundaries.",
+        "reasoning_summary": "No evidence of vulnerability found for saas_billing Invoice Workflow API (Target P-05)."
+      },
+      "observed_evidence": [
+        {
+          "fact_index": 1,
+          "statement": "Target response verified via observable interaction."
+        }
+      ],
+      "presentation_hash": "3558891862497aad7302d7033aaa12e796323614f52e08ee15c3a62bc5fb0387",
+      "target_endpoint": {
+        "asset_id": "ASSET-UNIT-08",
+        "endpoint_path": "/api/v1/resource",
+        "method": "GET"
+      },
+      "unit_id": "UNIT-08"
+    },
+    {
+      "model_hypothesis": {
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "primary_category": "API-AUTH-NONE",
+        "proposed_verification_experiment": "Execute cross-tenant parameter mutation to verify object isolation boundaries.",
+        "reasoning_summary": "No evidence of vulnerability found for saas_billing Catalog Discovery."
+      },
+      "observed_evidence": [
+        {
+          "fact_index": 1,
+          "statement": "Target response verified via observable interaction."
+        }
+      ],
+      "presentation_hash": "ba72e74aa1fdc331555193ca2a8075742b64bb70364f04c128fe96b4eca6d8b0",
+      "target_endpoint": {
+        "asset_id": "ASSET-UNIT-09",
+        "endpoint_path": "/api/v1/resource",
+        "method": "GET"
+      },
+      "unit_id": "UNIT-09"
+    },
+    {
+      "model_hypothesis": {
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "primary_category": "API-AUTH-NONE",
+        "proposed_verification_experiment": "Execute cross-tenant parameter mutation to verify object isolation boundaries.",
+        "reasoning_summary": "No evidence of vulnerability found for saas_billing Catalog Discovery."
+      },
+      "observed_evidence": [
+        {
+          "fact_index": 1,
+          "statement": "Target response verified via observable interaction."
+        }
+      ],
+      "presentation_hash": "7e763c5ce4013983910e77934a7b3a37beebe1db972bd1c7cfb916085332f33a",
+      "target_endpoint": {
+        "asset_id": "ASSET-UNIT-10",
+        "endpoint_path": "/api/v1/resource",
+        "method": "GET"
+      },
+      "unit_id": "UNIT-10"
+    },
+    {
+      "model_hypothesis": {
+        "decision": "HYPOTHESIS",
+        "primary_category": "API-STATE-001",
+        "proposed_verification_experiment": "Execute cross-tenant parameter mutation to verify object isolation boundaries.",
+        "reasoning_summary": "Identified potential vulnerability in ecommerce_orders Order Shipping API (Target V-02)."
+      },
+      "observed_evidence": [
+        {
+          "fact_index": 1,
+          "statement": "FACT-ECOMMERCE_ORDERS-ORD-SHIP-DOC"
+        }
+      ],
+      "presentation_hash": "bed62734c0d61e89dbab9568769936094b9fe97be63a195a9b8fcf285009d493",
+      "target_endpoint": {
+        "asset_id": "ASSET-UNIT-11",
+        "endpoint_path": "/api/v1/resource",
+        "method": "GET"
+      },
+      "unit_id": "UNIT-11"
+    },
+    {
+      "model_hypothesis": {
+        "decision": "HYPOTHESIS",
+        "primary_category": "API-STATE-001",
+        "proposed_verification_experiment": "Execute cross-tenant parameter mutation to verify object isolation boundaries.",
+        "reasoning_summary": "Identified potential vulnerability in ecommerce_orders Order Shipping API (Target V-02)."
+      },
+      "observed_evidence": [
+        {
+          "fact_index": 1,
+          "statement": "FACT-ECOMMERCE_ORDERS-ORD-SHIP-DOC"
+        }
+      ],
+      "presentation_hash": "f32aec30f18a62880d7f3790aceb130721419e66e717fa3d163052b755a94b49",
+      "target_endpoint": {
+        "asset_id": "ASSET-UNIT-12",
+        "endpoint_path": "/api/v1/resource",
+        "method": "GET"
+      },
+      "unit_id": "UNIT-12"
+    },
+    {
+      "model_hypothesis": {
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "primary_category": "API-STATE-001",
+        "proposed_verification_experiment": "Execute cross-tenant parameter mutation to verify object isolation boundaries.",
+        "reasoning_summary": "No evidence of vulnerability found for ecommerce_orders Order Shipping API (Target P-02)."
+      },
+      "observed_evidence": [
+        {
+          "fact_index": 1,
+          "statement": "Target response verified via observable interaction."
+        }
+      ],
+      "presentation_hash": "8d056b1127d88bd2781883fadb4d9c055ee37869a38eb00e8d6c21602db6dd6e",
+      "target_endpoint": {
+        "asset_id": "ASSET-UNIT-13",
+        "endpoint_path": "/api/v1/resource",
+        "method": "GET"
+      },
+      "unit_id": "UNIT-13"
+    },
+    {
+      "model_hypothesis": {
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "primary_category": "API-STATE-001",
+        "proposed_verification_experiment": "Execute cross-tenant parameter mutation to verify object isolation boundaries.",
+        "reasoning_summary": "No evidence of vulnerability found for ecommerce_orders Order Shipping API (Target P-02)."
+      },
+      "observed_evidence": [
+        {
+          "fact_index": 1,
+          "statement": "Target response verified via observable interaction."
+        }
+      ],
+      "presentation_hash": "0b807e58853f4c37648664677733a0ab70b2a781e82c7e046a6c1c8b51165faf",
+      "target_endpoint": {
+        "asset_id": "ASSET-UNIT-14",
+        "endpoint_path": "/api/v1/resource",
+        "method": "GET"
+      },
+      "unit_id": "UNIT-14"
+    },
+    {
+      "model_hypothesis": {
+        "decision": "HYPOTHESIS",
+        "primary_category": "API-LIFECYCLE-001",
+        "proposed_verification_experiment": "Execute cross-tenant parameter mutation to verify object isolation boundaries.",
+        "reasoning_summary": "Identified potential vulnerability in ecommerce_orders Cancelled Order Refund API (Target V-04)."
+      },
+      "observed_evidence": [
+        {
+          "fact_index": 1,
+          "statement": "FACT-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-DOC"
+        }
+      ],
+      "presentation_hash": "81651b6d21687e6d88d9968e25553ee6407068b3fa9a730a08ac3c60a7849a8b",
+      "target_endpoint": {
+        "asset_id": "ASSET-UNIT-15",
+        "endpoint_path": "/api/v1/resource",
+        "method": "GET"
+      },
+      "unit_id": "UNIT-15"
+    },
+    {
+      "model_hypothesis": {
+        "decision": "HYPOTHESIS",
+        "primary_category": "API-LIFECYCLE-001",
+        "proposed_verification_experiment": "Execute cross-tenant parameter mutation to verify object isolation boundaries.",
+        "reasoning_summary": "Identified potential vulnerability in ecommerce_orders Cancelled Order Refund API (Target V-04)."
+      },
+      "observed_evidence": [
+        {
+          "fact_index": 1,
+          "statement": "FACT-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-DOC"
+        }
+      ],
+      "presentation_hash": "43bdeb98dbf404e80770933e3b3241166977167cafb942a558cfe6b9bfc4e963",
+      "target_endpoint": {
+        "asset_id": "ASSET-UNIT-16",
+        "endpoint_path": "/api/v1/resource",
+        "method": "GET"
+      },
+      "unit_id": "UNIT-16"
+    },
+    {
+      "model_hypothesis": {
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "primary_category": "API-LIFECYCLE-001",
+        "proposed_verification_experiment": "Execute cross-tenant parameter mutation to verify object isolation boundaries.",
+        "reasoning_summary": "No evidence of vulnerability found for ecommerce_orders Cancelled Order Refund API (Target P-04)."
+      },
+      "observed_evidence": [
+        {
+          "fact_index": 1,
+          "statement": "Target response verified via observable interaction."
+        }
+      ],
+      "presentation_hash": "d1f597d36b4e721436fa2fa8084d7b5745b7c0521cab43f8cc034eaed7cff383",
+      "target_endpoint": {
+        "asset_id": "ASSET-UNIT-17",
+        "endpoint_path": "/api/v1/resource",
+        "method": "GET"
+      },
+      "unit_id": "UNIT-17"
+    },
+    {
+      "model_hypothesis": {
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "primary_category": "API-LIFECYCLE-001",
+        "proposed_verification_experiment": "Execute cross-tenant parameter mutation to verify object isolation boundaries.",
+        "reasoning_summary": "No evidence of vulnerability found for ecommerce_orders Cancelled Order Refund API (Target P-04)."
+      },
+      "observed_evidence": [
+        {
+          "fact_index": 1,
+          "statement": "Target response verified via observable interaction."
+        }
+      ],
+      "presentation_hash": "a2424ddfb7ca4ccc3bd6552f5500e81f7a914641b21d3f4fa75945a005e0aa48",
+      "target_endpoint": {
+        "asset_id": "ASSET-UNIT-18",
+        "endpoint_path": "/api/v1/resource",
+        "method": "GET"
+      },
+      "unit_id": "UNIT-18"
+    },
+    {
+      "model_hypothesis": {
+        "decision": "HYPOTHESIS",
+        "primary_category": "API-ROLE-BOUNDARY-001",
+        "proposed_verification_experiment": "Execute cross-tenant parameter mutation to verify object isolation boundaries.",
+        "reasoning_summary": "Identified potential vulnerability in identity_provider Cross-Tenant Role API (Target V-03)."
+      },
+      "observed_evidence": [
+        {
+          "fact_index": 1,
+          "statement": "FACT-IDENTITY_PROVIDER-USER-TENANT-ROLE-DOC"
+        }
+      ],
+      "presentation_hash": "d9a6f97515bdeeec27ae65e65511bb927fc58df875a7c8599ac0dbdf72bbf211",
+      "target_endpoint": {
+        "asset_id": "ASSET-UNIT-19",
+        "endpoint_path": "/api/v1/resource",
+        "method": "GET"
+      },
+      "unit_id": "UNIT-19"
+    },
+    {
+      "model_hypothesis": {
+        "decision": "HYPOTHESIS",
+        "primary_category": "API-ROLE-BOUNDARY-001",
+        "proposed_verification_experiment": "Execute cross-tenant parameter mutation to verify object isolation boundaries.",
+        "reasoning_summary": "Identified potential vulnerability in identity_provider Cross-Tenant Role API (Target V-03)."
+      },
+      "observed_evidence": [
+        {
+          "fact_index": 1,
+          "statement": "FACT-IDENTITY_PROVIDER-USER-TENANT-ROLE-DOC"
+        }
+      ],
+      "presentation_hash": "088bcd51ecbbcf50794f9e35cc0fe64eb3ee4f7b35cf80869fe4ddf76c96a2da",
+      "target_endpoint": {
+        "asset_id": "ASSET-UNIT-20",
+        "endpoint_path": "/api/v1/resource",
+        "method": "GET"
+      },
+      "unit_id": "UNIT-20"
+    },
+    {
+      "model_hypothesis": {
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "primary_category": "API-ROLE-BOUNDARY-001",
+        "proposed_verification_experiment": "Execute cross-tenant parameter mutation to verify object isolation boundaries.",
+        "reasoning_summary": "No evidence of vulnerability found for identity_provider Cross-Tenant Role API (Target P-03)."
+      },
+      "observed_evidence": [
+        {
+          "fact_index": 1,
+          "statement": "Target response verified via observable interaction."
+        }
+      ],
+      "presentation_hash": "3b3fa8031504267434f98a64c68f2dced419913f8e0ab7c55aef06d0e2bb4978",
+      "target_endpoint": {
+        "asset_id": "ASSET-UNIT-21",
+        "endpoint_path": "/api/v1/resource",
+        "method": "GET"
+      },
+      "unit_id": "UNIT-21"
+    },
+    {
+      "model_hypothesis": {
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "primary_category": "API-ROLE-BOUNDARY-001",
+        "proposed_verification_experiment": "Execute cross-tenant parameter mutation to verify object isolation boundaries.",
+        "reasoning_summary": "No evidence of vulnerability found for identity_provider Cross-Tenant Role API (Target P-03)."
+      },
+      "observed_evidence": [
+        {
+          "fact_index": 1,
+          "statement": "Target response verified via observable interaction."
+        }
+      ],
+      "presentation_hash": "fc010ab013622a3f973391fb1e33d95421e7034cee7e8d4ff6c3a2726146d85e",
+      "target_endpoint": {
+        "asset_id": "ASSET-UNIT-22",
+        "endpoint_path": "/api/v1/resource",
+        "method": "GET"
+      },
+      "unit_id": "UNIT-22"
+    },
+    {
+      "model_hypothesis": {
+        "decision": "HYPOTHESIS",
+        "primary_category": "API-MUTATION-001",
+        "proposed_verification_experiment": "Execute cross-tenant parameter mutation to verify object isolation boundaries.",
+        "reasoning_summary": "Identified potential vulnerability in identity_provider Admin Role API (Target V-05)."
+      },
+      "observed_evidence": [
+        {
+          "fact_index": 1,
+          "statement": "FACT-IDENTITY_PROVIDER-USER-ADMIN-ROLE-DOC"
+        }
+      ],
+      "presentation_hash": "09320e676e8aefb7a049ed833fc0a1c7a2fdab583f706fcd858935a7f5581803",
+      "target_endpoint": {
+        "asset_id": "ASSET-UNIT-23",
+        "endpoint_path": "/api/v1/resource",
+        "method": "GET"
+      },
+      "unit_id": "UNIT-23"
+    },
+    {
+      "model_hypothesis": {
+        "decision": "HYPOTHESIS",
+        "primary_category": "API-MUTATION-001",
+        "proposed_verification_experiment": "Execute cross-tenant parameter mutation to verify object isolation boundaries.",
+        "reasoning_summary": "Identified potential vulnerability in identity_provider Admin Role API (Target V-05)."
+      },
+      "observed_evidence": [
+        {
+          "fact_index": 1,
+          "statement": "FACT-IDENTITY_PROVIDER-USER-ADMIN-ROLE-DOC"
+        }
+      ],
+      "presentation_hash": "09c76e10a59e87fa22e31de65a022eb1fb339d726d67aa034b061db40716647d",
+      "target_endpoint": {
+        "asset_id": "ASSET-UNIT-24",
+        "endpoint_path": "/api/v1/resource",
+        "method": "GET"
+      },
+      "unit_id": "UNIT-24"
+    },
+    {
+      "model_hypothesis": {
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "primary_category": "API-MUTATION-001",
+        "proposed_verification_experiment": "Execute cross-tenant parameter mutation to verify object isolation boundaries.",
+        "reasoning_summary": "No evidence of vulnerability found for identity_provider Admin Role API (Target P-05)."
+      },
+      "observed_evidence": [
+        {
+          "fact_index": 1,
+          "statement": "Target response verified via observable interaction."
+        }
+      ],
+      "presentation_hash": "e0c8330d5f08e64d5d548f2abaded69d0d1f6d62a2d75cef8965a88113bb4fe5",
+      "target_endpoint": {
+        "asset_id": "ASSET-UNIT-25",
+        "endpoint_path": "/api/v1/resource",
+        "method": "GET"
+      },
+      "unit_id": "UNIT-25"
+    },
+    {
+      "model_hypothesis": {
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "primary_category": "API-MUTATION-001",
+        "proposed_verification_experiment": "Execute cross-tenant parameter mutation to verify object isolation boundaries.",
+        "reasoning_summary": "No evidence of vulnerability found for identity_provider Admin Role API (Target P-05)."
+      },
+      "observed_evidence": [
+        {
+          "fact_index": 1,
+          "statement": "Target response verified via observable interaction."
+        }
+      ],
+      "presentation_hash": "0df7d817ed95b29b8adc67e58b7e5c89b8c67f0aaf3ff410d8954d2ba5fab2ca",
+      "target_endpoint": {
+        "asset_id": "ASSET-UNIT-26",
+        "endpoint_path": "/api/v1/resource",
+        "method": "GET"
+      },
+      "unit_id": "UNIT-26"
+    },
+    {
+      "model_hypothesis": {
+        "decision": "HYPOTHESIS",
+        "primary_category": "API-BOLA-001",
+        "proposed_verification_experiment": "Execute cross-tenant parameter mutation to verify object isolation boundaries.",
+        "reasoning_summary": "Identified potential vulnerability in document_collaboration Document Export API (Target V-01)."
+      },
+      "observed_evidence": [
+        {
+          "fact_index": 1,
+          "statement": "FACT-DOCUMENT_COLLABORATION-DOC-EXPORT-DOC"
+        }
+      ],
+      "presentation_hash": "a52d8e2e150de8990f2e5029b807adf6836a29a14dc9b3c079356d3e649c611b",
+      "target_endpoint": {
+        "asset_id": "ASSET-UNIT-27",
+        "endpoint_path": "/api/v1/resource",
+        "method": "GET"
+      },
+      "unit_id": "UNIT-27"
+    },
+    {
+      "model_hypothesis": {
+        "decision": "HYPOTHESIS",
+        "primary_category": "API-BOLA-001",
+        "proposed_verification_experiment": "Execute cross-tenant parameter mutation to verify object isolation boundaries.",
+        "reasoning_summary": "Identified potential vulnerability in document_collaboration Document Export API (Target V-01)."
+      },
+      "observed_evidence": [
+        {
+          "fact_index": 1,
+          "statement": "FACT-DOCUMENT_COLLABORATION-DOC-EXPORT-DOC"
+        }
+      ],
+      "presentation_hash": "976b9018a4f8e35963ce018a6f927c037e7cfda440120fc3a1143b6a45f50b11",
+      "target_endpoint": {
+        "asset_id": "ASSET-UNIT-28",
+        "endpoint_path": "/api/v1/resource",
+        "method": "GET"
+      },
+      "unit_id": "UNIT-28"
+    },
+    {
+      "model_hypothesis": {
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "primary_category": "API-BOLA-001",
+        "proposed_verification_experiment": "Execute cross-tenant parameter mutation to verify object isolation boundaries.",
+        "reasoning_summary": "No evidence of vulnerability found for document_collaboration Document Export API (Target P-01)."
+      },
+      "observed_evidence": [
+        {
+          "fact_index": 1,
+          "statement": "Target response verified via observable interaction."
+        }
+      ],
+      "presentation_hash": "2113e8f1dcc0f1e1cc1699876ca9fe7522f2d37608f98f0d341e64ef28c4bda6",
+      "target_endpoint": {
+        "asset_id": "ASSET-UNIT-29",
+        "endpoint_path": "/api/v1/resource",
+        "method": "GET"
+      },
+      "unit_id": "UNIT-29"
+    },
+    {
+      "model_hypothesis": {
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "primary_category": "API-BOLA-001",
+        "proposed_verification_experiment": "Execute cross-tenant parameter mutation to verify object isolation boundaries.",
+        "reasoning_summary": "No evidence of vulnerability found for document_collaboration Document Export API (Target P-01)."
+      },
+      "observed_evidence": [
+        {
+          "fact_index": 1,
+          "statement": "Target response verified via observable interaction."
+        }
+      ],
+      "presentation_hash": "5ba77f98b08a2d02d4bb029d3e5897ca31aa021b84fefb31862c07d2035ddff7",
+      "target_endpoint": {
+        "asset_id": "ASSET-UNIT-30",
+        "endpoint_path": "/api/v1/resource",
+        "method": "GET"
+      },
+      "unit_id": "UNIT-30"
+    },
+    {
+      "model_hypothesis": {
+        "decision": "HYPOTHESIS",
+        "primary_category": "API-CROSS-TENANT-001",
+        "proposed_verification_experiment": "Execute cross-tenant parameter mutation to verify object isolation boundaries.",
+        "reasoning_summary": "Identified potential vulnerability in document_collaboration Org Document Export API (Target V-02)."
+      },
+      "observed_evidence": [
+        {
+          "fact_index": 1,
+          "statement": "FACT-DOCUMENT_COLLABORATION-DOC-ORG-EXPORT-DOC"
+        }
+      ],
+      "presentation_hash": "fe77399f6675a7bc7056c251662bfb23bf1dd8c376f49c9997eb2da694ed842f",
+      "target_endpoint": {
+        "asset_id": "ASSET-UNIT-31",
+        "endpoint_path": "/api/v1/resource",
+        "method": "GET"
+      },
+      "unit_id": "UNIT-31"
+    },
+    {
+      "model_hypothesis": {
+        "decision": "HYPOTHESIS",
+        "primary_category": "API-CROSS-TENANT-001",
+        "proposed_verification_experiment": "Execute cross-tenant parameter mutation to verify object isolation boundaries.",
+        "reasoning_summary": "Identified potential vulnerability in document_collaboration Org Document Export API (Target V-02)."
+      },
+      "observed_evidence": [
+        {
+          "fact_index": 1,
+          "statement": "FACT-DOCUMENT_COLLABORATION-DOC-ORG-EXPORT-DOC"
+        }
+      ],
+      "presentation_hash": "69a655b8c283962a9c039b483d08fc380278741884642f685b2d5783526b955f",
+      "target_endpoint": {
+        "asset_id": "ASSET-UNIT-32",
+        "endpoint_path": "/api/v1/resource",
+        "method": "GET"
+      },
+      "unit_id": "UNIT-32"
+    },
+    {
+      "model_hypothesis": {
+        "decision": "HYPOTHESIS",
+        "primary_category": "API-STATE-001",
+        "proposed_verification_experiment": "Execute cross-tenant parameter mutation to verify object isolation boundaries.",
+        "reasoning_summary": "Identified potential vulnerability in document_collaboration Document Publish API (Target V-03)."
+      },
+      "observed_evidence": [
+        {
+          "fact_index": 1,
+          "statement": "FACT-DOCUMENT_COLLABORATION-DOC-PUBLISH-DOC"
+        }
+      ],
+      "presentation_hash": "0bc8a750c22ddc26fc3d768b3ceab693fbc99cf9577f2da6f97fd4949c425d12",
+      "target_endpoint": {
+        "asset_id": "ASSET-UNIT-33",
+        "endpoint_path": "/api/v1/resource",
+        "method": "GET"
+      },
+      "unit_id": "UNIT-33"
+    },
+    {
+      "model_hypothesis": {
+        "decision": "HYPOTHESIS",
+        "primary_category": "API-STATE-001",
+        "proposed_verification_experiment": "Execute cross-tenant parameter mutation to verify object isolation boundaries.",
+        "reasoning_summary": "Identified potential vulnerability in document_collaboration Document Publish API (Target V-03)."
+      },
+      "observed_evidence": [
+        {
+          "fact_index": 1,
+          "statement": "FACT-DOCUMENT_COLLABORATION-DOC-PUBLISH-DOC"
+        }
+      ],
+      "presentation_hash": "2c87c1a17406125d3255901963d98f6998507372f15f0795641fea4810c68043",
+      "target_endpoint": {
+        "asset_id": "ASSET-UNIT-34",
+        "endpoint_path": "/api/v1/resource",
+        "method": "GET"
+      },
+      "unit_id": "UNIT-34"
+    },
+    {
+      "model_hypothesis": {
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "primary_category": "API-AUTH-NONE",
+        "proposed_verification_experiment": "Execute cross-tenant parameter mutation to verify object isolation boundaries.",
+        "reasoning_summary": "No evidence of vulnerability found for document_collaboration Public Pricing Status."
+      },
+      "observed_evidence": [
+        {
+          "fact_index": 1,
+          "statement": "Target response verified via observable interaction."
+        }
+      ],
+      "presentation_hash": "ae124a002a5b4477eb50a8c4ebfed3ac8c25682bd564f946fb1dd58e3f3daeea",
+      "target_endpoint": {
+        "asset_id": "ASSET-UNIT-35",
+        "endpoint_path": "/api/v1/resource",
+        "method": "GET"
+      },
+      "unit_id": "UNIT-35"
+    },
+    {
+      "model_hypothesis": {
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "primary_category": "API-AUTH-NONE",
+        "proposed_verification_experiment": "Execute cross-tenant parameter mutation to verify object isolation boundaries.",
+        "reasoning_summary": "No evidence of vulnerability found for document_collaboration Public Pricing Status."
+      },
+      "observed_evidence": [
+        {
+          "fact_index": 1,
+          "statement": "Target response verified via observable interaction."
+        }
+      ],
+      "presentation_hash": "b61f4b9a10f4d11766a09b7f5614061f41f0c824ea7c0f3c1327454322ed5cbb",
+      "target_endpoint": {
+        "asset_id": "ASSET-UNIT-36",
+        "endpoint_path": "/api/v1/resource",
+        "method": "GET"
+      },
+      "unit_id": "UNIT-36"
+    },
+    {
+      "model_hypothesis": {
+        "decision": "HYPOTHESIS",
+        "primary_category": "API-BFLA-001",
+        "proposed_verification_experiment": "Execute cross-tenant parameter mutation to verify object isolation boundaries.",
+        "reasoning_summary": "Identified potential vulnerability in iot_fleet_mgmt Device Firmware API (Target V-05)."
+      },
+      "observed_evidence": [
+        {
+          "fact_index": 1,
+          "statement": "FACT-IOT_FLEET_MGMT-DEVICE-FW-DOC"
+        }
+      ],
+      "presentation_hash": "fd57cbf659a0608891dc5e239b2f3c7084a5ffaba02f8faa95f73fddadb8e4b4",
+      "target_endpoint": {
+        "asset_id": "ASSET-UNIT-37",
+        "endpoint_path": "/api/v1/resource",
+        "method": "GET"
+      },
+      "unit_id": "UNIT-37"
+    },
+    {
+      "model_hypothesis": {
+        "decision": "HYPOTHESIS",
+        "primary_category": "API-BFLA-001",
+        "proposed_verification_experiment": "Execute cross-tenant parameter mutation to verify object isolation boundaries.",
+        "reasoning_summary": "Identified potential vulnerability in iot_fleet_mgmt Device Firmware API (Target V-05)."
+      },
+      "observed_evidence": [
+        {
+          "fact_index": 1,
+          "statement": "FACT-IOT_FLEET_MGMT-DEVICE-FW-DOC"
+        }
+      ],
+      "presentation_hash": "3fdc596f4c891bbeff0a2389f4318a8d1abf0a681560df2562bf2b12fc279893",
+      "target_endpoint": {
+        "asset_id": "ASSET-UNIT-38",
+        "endpoint_path": "/api/v1/resource",
+        "method": "GET"
+      },
+      "unit_id": "UNIT-38"
+    },
+    {
+      "model_hypothesis": {
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "primary_category": "API-BFLA-001",
+        "proposed_verification_experiment": "Execute cross-tenant parameter mutation to verify object isolation boundaries.",
+        "reasoning_summary": "No evidence of vulnerability found for iot_fleet_mgmt Device Firmware API (Target P-05)."
+      },
+      "observed_evidence": [
+        {
+          "fact_index": 1,
+          "statement": "Target response verified via observable interaction."
+        }
+      ],
+      "presentation_hash": "2d55973a9e1606919b4004ffc465e19e814eb03da955a37c3333826e8d8a7a51",
+      "target_endpoint": {
+        "asset_id": "ASSET-UNIT-39",
+        "endpoint_path": "/api/v1/resource",
+        "method": "GET"
+      },
+      "unit_id": "UNIT-39"
+    },
+    {
+      "model_hypothesis": {
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "primary_category": "API-BFLA-001",
+        "proposed_verification_experiment": "Execute cross-tenant parameter mutation to verify object isolation boundaries.",
+        "reasoning_summary": "No evidence of vulnerability found for iot_fleet_mgmt Device Firmware API (Target P-05)."
+      },
+      "observed_evidence": [
+        {
+          "fact_index": 1,
+          "statement": "Target response verified via observable interaction."
+        }
+      ],
+      "presentation_hash": "dc679510dc665d5c6d0993b2d3fc64a5b608f09aa1cbffaf6f825a7e11dc4efa",
+      "target_endpoint": {
+        "asset_id": "ASSET-UNIT-40",
+        "endpoint_path": "/api/v1/resource",
+        "method": "GET"
+      },
+      "unit_id": "UNIT-40"
+    }
+  ],
+  "total_units": 40
+}

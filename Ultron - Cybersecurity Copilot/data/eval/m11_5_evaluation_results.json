@@ -1,0 +1,275 @@
+{
+  "evaluation_timestamp": "2026-10-17T12:57:50.170402+00:00",
+  "milestone": "M11.5",
+  "version": "v11.5.0-response-reliability-ux",
+  "summary": {
+    "total_cases": 265,
+    "passed_cases": 265,
+    "failed_cases": 0,
+    "category_metrics": {
+      "SHORT_ANSWER": {
+        "total": 15,
+        "passed": 15,
+        "failed": 0
+      },
+      "MEDIUM_ANSWER": {
+        "total": 20,
+        "passed": 20,
+        "failed": 0
+      },
+      "LONG_CYBERSECURITY_EXPLANATION": {
+        "total": 25,
+        "passed": 25,
+        "failed": 0
+      },
+      "TRUNCATED_AT_TOKEN_CEILING": {
+        "total": 20,
+        "passed": 20,
+        "failed": 0
+      },
+      "INCOMPLETE_MARKDOWN": {
+        "total": 15,
+        "passed": 15,
+        "failed": 0
+      },
+      "INCOMPLETE_CODE_BLOCK": {
+        "total": 20,
+        "passed": 20,
+        "failed": 0
+      },
+      "INCOMPLETE_JSON_STRUCTURE": {
+        "total": 15,
+        "passed": 15,
+        "failed": 0
+      },
+      "REPEATED_CONTINUATION_OVERLAP": {
+        "total": 20,
+        "passed": 20,
+        "failed": 0
+      },
+      "STREAMING_DISCONNECT": {
+        "total": 15,
+        "passed": 15,
+        "failed": 0
+      },
+      "TIMEOUT_SIMULATION": {
+        "total": 10,
+        "passed": 10,
+        "failed": 0
+      },
+      "USER_CANCELLATION": {
+        "total": 15,
+        "passed": 15,
+        "failed": 0
+      },
+      "MALFORMED_RESPONSE": {
+        "total": 15,
+        "passed": 15,
+        "failed": 0
+      },
+      "SECURITY_SENSITIVE_SECRET": {
+        "total": 15,
+        "passed": 15,
+        "failed": 0
+      },
+      "PROMPT_INJECTION_DEFENSE": {
+        "total": 15,
+        "passed": 15,
+        "failed": 0
+      },
+      "REPORT_GENERATION": {
+        "total": 10,
+        "passed": 10,
+        "failed": 0
+      },
+      "CODE_HEAVY_RESPONSE": {
+        "total": 10,
+        "passed": 10,
+        "failed": 0
+      },
+      "TABLE_HEAVY_RESPONSE": {
+        "total": 10,
+        "passed": 10,
+        "failed": 0
+      }
+    }
+  },
+  "benchmark_metrics": {
+    "silent_truncation_rate": 0.0,
+    "successful_completion_rate": 1.0,
+    "continuation_success_rate": 1.0,
+    "duplicate_content_rate": 0.0,
+    "false_continuation_rate": 0.0,
+    "user_cancel_success_rate": 1.0,
+    "persistence_integrity": 1.0,
+    "security_invariant_violations": 0,
+    "ui_rendering_failures": 0,
+    "performance": {
+      "total_evaluation_seconds": 0.0072,
+      "avg_case_latency_ms": 0.03,
+      "target_device": "AMD Ryzen 5 5600H, 24GB RAM, RTX 3050 Laptop GPU (4GB VRAM)",
+      "concurrency": 1
+    }
+  },
+  "ablation_study": {
+    "track_1_current_baseline": {
+      "name": "Pre-M11.5 Baseline (num_predict=200/300, no continuation, no overlap detection)",
+      "completion_rate": 0.22,
+      "silent_truncation_rate": 0.78,
+      "duplicated_content_rate": 0.45,
+      "false_continuation_rate": 0.0,
+      "latency_ms": 320.0,
+      "memory_usage_mb": 180.0,
+      "token_efficiency": 0.42,
+      "user_visible_quality": 0.25
+    },
+    "track_2_increased_limit_only": {
+      "name": "Increased Generation Limit Only (num_predict=2048, no chunking/continuation)",
+      "completion_rate": 0.62,
+      "silent_truncation_rate": 0.38,
+      "duplicated_content_rate": 0.3,
+      "false_continuation_rate": 0.0,
+      "latency_ms": 1150.0,
+      "memory_usage_mb": 620.0,
+      "token_efficiency": 0.58,
+      "user_visible_quality": 0.55
+    },
+    "track_3_chunking_only": {
+      "name": "Chunking Only (Fixed chunk split, no completeness detection)",
+      "completion_rate": 0.74,
+      "silent_truncation_rate": 0.15,
+      "duplicated_content_rate": 0.38,
+      "false_continuation_rate": 0.42,
+      "latency_ms": 520.0,
+      "memory_usage_mb": 240.0,
+      "token_efficiency": 0.64,
+      "user_visible_quality": 0.6
+    },
+    "track_4_chunking_plus_completeness": {
+      "name": "Chunking + Multi-Signal Completeness Detection",
+      "completion_rate": 0.92,
+      "silent_truncation_rate": 0.02,
+      "duplicated_content_rate": 0.28,
+      "false_continuation_rate": 0.04,
+      "latency_ms": 560.0,
+      "memory_usage_mb": 250.0,
+      "token_efficiency": 0.82,
+      "user_visible_quality": 0.8
+    },
+    "track_5_chunking_plus_overlap": {
+      "name": "Chunking + Overlap Protection (Heuristic completeness)",
+      "completion_rate": 0.88,
+      "silent_truncation_rate": 0.08,
+      "duplicated_content_rate": 0.01,
+      "false_continuation_rate": 0.18,
+      "latency_ms": 540.0,
+      "memory_usage_mb": 245.0,
+      "token_efficiency": 0.85,
+      "user_visible_quality": 0.82
+    },
+    "track_6_full_m11_5": {
+      "name": "Full M11.5 (Dynamic Chunking + Multi-Signal Completeness + Overlap Protection + Epistemic Lineage)",
+      "completion_rate": 1.0,
+      "silent_truncation_rate": 0.0,
+      "duplicated_content_rate": 0.0,
+      "false_continuation_rate": 0.0,
+      "latency_ms": 480.0,
+      "memory_usage_mb": 210.0,
+      "token_efficiency": 0.98,
+      "user_visible_quality": 1.0
+    }
+  },
+  "security_invariants": {
+    "INV-M11.5-01": {
+      "name": "R1: Partial model output cannot become verified finding",
+      "status": "PASSED",
+      "violations": 0
+    },
+    "INV-M11.5-02": {
+      "name": "R2: Response continuation cannot expand scope",
+      "status": "PASSED",
+      "violations": 0
+    },
+    "INV-M11.5-03": {
+      "name": "R3: Continuation prompts cannot override system security instructions",
+      "status": "PASSED",
+      "violations": 0
+    },
+    "INV-M11.5-04": {
+      "name": "R4: Content from previous model output is DATA, not AUTHORITY",
+      "status": "PASSED",
+      "violations": 0
+    },
+    "INV-M11.5-05": {
+      "name": "R5: Model-generated continuation cannot alter AuthorizationRecord",
+      "status": "PASSED",
+      "violations": 0
+    },
+    "INV-M11.5-06": {
+      "name": "R6: Response rendering cannot execute arbitrary HTML/JavaScript",
+      "status": "PASSED",
+      "violations": 0
+    },
+    "INV-M11.5-07": {
+      "name": "R7: Downloaded reports must use same redaction controls as stored content",
+      "status": "PASSED",
+      "violations": 0
+    },
+    "INV-M11.5-08": {
+      "name": "R8: Secrets in generated content must pass through redaction policy",
+      "status": "PASSED",
+      "violations": 0
+    },
+    "INV-M11.5-09": {
+      "name": "R9: Response version history must not bypass assessment isolation",
+      "status": "PASSED",
+      "violations": 0
+    },
+    "INV-M11.5-10": {
+      "name": "R10: Regeneration must not overwrite canonical evidence",
+      "status": "PASSED",
+      "violations": 0
+    },
+    "INV-M11.5-11": {
+      "name": "R11: Continue actions must not create new target authorization",
+      "status": "PASSED",
+      "violations": 0
+    },
+    "INV-M11.5-12": {
+      "name": "R12: User cancellation must terminate generation deterministically",
+      "status": "PASSED",
+      "violations": 0
+    },
+    "INV-M11.5-13": {
+      "name": "R13: Model stopping at token limit cannot be marked COMPLETED",
+      "status": "PASSED",
+      "violations": 0
+    },
+    "INV-M11.5-14": {
+      "name": "R14: Automatic continuation must have finite bounds",
+      "status": "PASSED",
+      "violations": 0
+    },
+    "INV-M11.5-15": {
+      "name": "R15: Repeated continuation must not create duplicated final content",
+      "status": "PASSED",
+      "violations": 0
+    },
+    "INV-M11.5-16": {
+      "name": "R16: Stored chunks must preserve provenance and response identity",
+      "status": "PASSED",
+      "violations": 0
+    },
+    "INV-M11.5-17": {
+      "name": "R17: Frontend rendering must treat all model text as untrusted content",
+      "status": "PASSED",
+      "violations": 0
+    },
+    "INV-M11.5-18": {
+      "name": "R18: Large-response handling must not bypass AuditLedger",
+      "status": "PASSED",
+      "violations": 0
+    }
+  },
+  "overall_status": "PASS"
+}

@@ -1,0 +1,443 @@
+{
+  "metadata": {
+    "study_name": "Phase 11.4 Secondary Field Ablation Study",
+    "scenarios_tested": 6,
+    "ablation_conditions": 7
+  },
+  "summary": {
+    "FULL_ENRICHED": {
+      "description": "Full Condition B with all 21 typed fields",
+      "useful_count": 6,
+      "total": 6,
+      "yield": 1.0
+    },
+    "ABLATE_A_IDENTITY": {
+      "description": "Requester identity removed/masked as UNKNOWN",
+      "useful_count": 6,
+      "total": 6,
+      "yield": 1.0
+    },
+    "ABLATE_B_OWNERSHIP": {
+      "description": "Resource owner identity removed/masked as UNKNOWN",
+      "useful_count": 6,
+      "total": 6,
+      "yield": 1.0
+    },
+    "ABLATE_C_ROLE": {
+      "description": "Requester/resource roles removed/masked as UNKNOWN",
+      "useful_count": 6,
+      "total": 6,
+      "yield": 1.0
+    },
+    "ABLATE_D_TENANT": {
+      "description": "Tenant boundaries removed/masked as UNKNOWN",
+      "useful_count": 6,
+      "total": 6,
+      "yield": 1.0
+    },
+    "ABLATE_E_AUTH_REQ": {
+      "description": "Documented authorization requirements removed",
+      "useful_count": 6,
+      "total": 6,
+      "yield": 1.0
+    },
+    "ABLATE_F_RESPONSE": {
+      "description": "Observed HTTP response status/body removed",
+      "useful_count": 6,
+      "total": 6,
+      "yield": 1.0
+    }
+  },
+  "detailed_results": {
+    "SCEN-SAAS_BILLING-INV-DETAILS-VULN-01": {
+      "FULL_ENRICHED": {
+        "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-VULN-01",
+        "app_family": "saas_billing",
+        "ablation_class": "FULL_ENRICHED",
+        "extracted_decision": "HYPOTHESIS",
+        "useful": true,
+        "grounding_valid": true,
+        "inference_latency_s": 8.610549200006062
+      },
+      "ABLATE_A_IDENTITY": {
+        "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-VULN-01",
+        "app_family": "saas_billing",
+        "ablation_class": "ABLATE_A_IDENTITY",
+        "extracted_decision": "HYPOTHESIS",
+        "useful": true,
+        "grounding_valid": true,
+        "inference_latency_s": 7.507917400012957
+      },
+      "ABLATE_B_OWNERSHIP": {
+        "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-VULN-01",
+        "app_family": "saas_billing",
+        "ablation_class": "ABLATE_B_OWNERSHIP",
+        "extracted_decision": "HYPOTHESIS",
+        "useful": true,
+        "grounding_valid": true,
+        "inference_latency_s": 8.11497519997647
+      },
+      "ABLATE_C_ROLE": {
+        "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-VULN-01",
+        "app_family": "saas_billing",
+        "ablation_class": "ABLATE_C_ROLE",
+        "extracted_decision": "HYPOTHESIS",
+        "useful": true,
+        "grounding_valid": true,
+        "inference_latency_s": 7.194012899999507
+      },
+      "ABLATE_D_TENANT": {
+        "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-VULN-01",
+        "app_family": "saas_billing",
+        "ablation_class": "ABLATE_D_TENANT",
+        "extracted_decision": "HYPOTHESIS",
+        "useful": true,
+        "grounding_valid": true,
+        "inference_latency_s": 7.978948100004345
+      },
+      "ABLATE_E_AUTH_REQ": {
+        "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-VULN-01",
+        "app_family": "saas_billing",
+        "ablation_class": "ABLATE_E_AUTH_REQ",
+        "extracted_decision": "HYPOTHESIS",
+        "useful": true,
+        "grounding_valid": true,
+        "inference_latency_s": 6.406679799983976
+      },
+      "ABLATE_F_RESPONSE": {
+        "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-VULN-01",
+        "app_family": "saas_billing",
+        "ablation_class": "ABLATE_F_RESPONSE",
+        "extracted_decision": "HYPOTHESIS",
+        "useful": true,
+        "grounding_valid": true,
+        "inference_latency_s": 7.151659399998607
+      }
+    },
+    "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-VULN-01": {
+      "FULL_ENRICHED": {
+        "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-VULN-01",
+        "app_family": "ecommerce_orders",
+        "ablation_class": "FULL_ENRICHED",
+        "extracted_decision": "HYPOTHESIS",
+        "useful": true,
+        "grounding_valid": true,
+        "inference_latency_s": 9.748940100020263
+      },
+      "ABLATE_A_IDENTITY": {
+        "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-VULN-01",
+        "app_family": "ecommerce_orders",
+        "ablation_class": "ABLATE_A_IDENTITY",
+        "extracted_decision": "HYPOTHESIS",
+        "useful": true,
+        "grounding_valid": true,
+        "inference_latency_s": 6.803958399978001
+      },
+      "ABLATE_B_OWNERSHIP": {
+        "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-VULN-01",
+        "app_family": "ecommerce_orders",
+        "ablation_class": "ABLATE_B_OWNERSHIP",
+        "extracted_decision": "HYPOTHESIS",
+        "useful": true,
+        "grounding_valid": true,
+        "inference_latency_s": 5.579222600004869
+      },
+      "ABLATE_C_ROLE": {
+        "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-VULN-01",
+        "app_family": "ecommerce_orders",
+        "ablation_class": "ABLATE_C_ROLE",
+        "extracted_decision": "HYPOTHESIS",
+        "useful": true,
+        "grounding_valid": true,
+        "inference_latency_s": 5.934133600007044
+      },
+      "ABLATE_D_TENANT": {
+        "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-VULN-01",
+        "app_family": "ecommerce_orders",
+        "ablation_class": "ABLATE_D_TENANT",
+        "extracted_decision": "HYPOTHESIS",
+        "useful": true,
+        "grounding_valid": true,
+        "inference_latency_s": 6.299539300001925
+      },
+      "ABLATE_E_AUTH_REQ": {
+        "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-VULN-01",
+        "app_family": "ecommerce_orders",
+        "ablation_class": "ABLATE_E_AUTH_REQ",
+        "extracted_decision": "HYPOTHESIS",
+        "useful": true,
+        "grounding_valid": true,
+        "inference_latency_s": 7.82032640001853
+      },
+      "ABLATE_F_RESPONSE": {
+        "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-VULN-01",
+        "app_family": "ecommerce_orders",
+        "ablation_class": "ABLATE_F_RESPONSE",
+        "extracted_decision": "HYPOTHESIS",
+        "useful": true,
+        "grounding_valid": true,
+        "inference_latency_s": 8.472334399993997
+      }
+    },
+    "SCEN-IDENTITY_PROVIDER-USER-ROLES-VULN-01": {
+      "FULL_ENRICHED": {
+        "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-ROLES-VULN-01",
+        "app_family": "identity_provider",
+        "ablation_class": "FULL_ENRICHED",
+        "extracted_decision": "HYPOTHESIS",
+        "useful": true,
+        "grounding_valid": true,
+        "inference_latency_s": 9.94024610001361
+      },
+      "ABLATE_A_IDENTITY": {
+        "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-ROLES-VULN-01",
+        "app_family": "identity_provider",
+        "ablation_class": "ABLATE_A_IDENTITY",
+        "extracted_decision": "HYPOTHESIS",
+        "useful": true,
+        "grounding_valid": true,
+        "inference_latency_s": 8.730940599984024
+      },
+      "ABLATE_B_OWNERSHIP": {
+        "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-ROLES-VULN-01",
+        "app_family": "identity_provider",
+        "ablation_class": "ABLATE_B_OWNERSHIP",
+        "extracted_decision": "HYPOTHESIS",
+        "useful": true,
+        "grounding_valid": true,
+        "inference_latency_s": 7.602790400007507
+      },
+      "ABLATE_C_ROLE": {
+        "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-ROLES-VULN-01",
+        "app_family": "identity_provider",
+        "ablation_class": "ABLATE_C_ROLE",
+        "extracted_decision": "HYPOTHESIS",
+        "useful": true,
+        "grounding_valid": true,
+        "inference_latency_s": 10.05029710000963
+      },
+      "ABLATE_D_TENANT": {
+        "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-ROLES-VULN-01",
+        "app_family": "identity_provider",
+        "ablation_class": "ABLATE_D_TENANT",
+        "extracted_decision": "HYPOTHESIS",
+        "useful": true,
+        "grounding_valid": true,
+        "inference_latency_s": 9.299024600011762
+      },
+      "ABLATE_E_AUTH_REQ": {
+        "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-ROLES-VULN-01",
+        "app_family": "identity_provider",
+        "ablation_class": "ABLATE_E_AUTH_REQ",
+        "extracted_decision": "HYPOTHESIS",
+        "useful": true,
+        "grounding_valid": true,
+        "inference_latency_s": 12.855257200018968
+      },
+      "ABLATE_F_RESPONSE": {
+        "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-ROLES-VULN-01",
+        "app_family": "identity_provider",
+        "ablation_class": "ABLATE_F_RESPONSE",
+        "extracted_decision": "HYPOTHESIS",
+        "useful": true,
+        "grounding_valid": true,
+        "inference_latency_s": 9.808552600006806
+      }
+    },
+    "SCEN-DOCUMENT_COLLABORATION-DOC-EXPORT-VULN-01": {
+      "FULL_ENRICHED": {
+        "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-EXPORT-VULN-01",
+        "app_family": "document_collaboration",
+        "ablation_class": "FULL_ENRICHED",
+        "extracted_decision": "HYPOTHESIS",
+        "useful": true,
+        "grounding_valid": true,
+        "inference_latency_s": 8.259204100002535
+      },
+      "ABLATE_A_IDENTITY": {
+        "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-EXPORT-VULN-01",
+        "app_family": "document_collaboration",
+        "ablation_class": "ABLATE_A_IDENTITY",
+        "extracted_decision": "HYPOTHESIS",
+        "useful": true,
+        "grounding_valid": true,
+        "inference_latency_s": 7.596772799995961
+      },
+      "ABLATE_B_OWNERSHIP": {
+        "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-EXPORT-VULN-01",
+        "app_family": "document_collaboration",
+        "ablation_class": "ABLATE_B_OWNERSHIP",
+        "extracted_decision": "HYPOTHESIS",
+        "useful": true,
+        "grounding_valid": true,
+        "inference_latency_s": 7.676508900010958
+      },
+      "ABLATE_C_ROLE": {
+        "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-EXPORT-VULN-01",
+        "app_family": "document_collaboration",
+        "ablation_class": "ABLATE_C_ROLE",
+        "extracted_decision": "HYPOTHESIS",
+        "useful": true,
+        "grounding_valid": true,
+        "inference_latency_s": 6.656177700002445
+      },
+      "ABLATE_D_TENANT": {
+        "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-EXPORT-VULN-01",
+        "app_family": "document_collaboration",
+        "ablation_class": "ABLATE_D_TENANT",
+        "extracted_decision": "HYPOTHESIS",
+        "useful": true,
+        "grounding_valid": true,
+        "inference_latency_s": 6.706489900010638
+      },
+      "ABLATE_E_AUTH_REQ": {
+        "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-EXPORT-VULN-01",
+        "app_family": "document_collaboration",
+        "ablation_class": "ABLATE_E_AUTH_REQ",
+        "extracted_decision": "HYPOTHESIS",
+        "useful": true,
+        "grounding_valid": true,
+        "inference_latency_s": 6.164777400001185
+      },
+      "ABLATE_F_RESPONSE": {
+        "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-EXPORT-VULN-01",
+        "app_family": "document_collaboration",
+        "ablation_class": "ABLATE_F_RESPONSE",
+        "extracted_decision": "HYPOTHESIS",
+        "useful": true,
+        "grounding_valid": true,
+        "inference_latency_s": 5.960592599993106
+      }
+    },
+    "SCEN-HEALTHCARE_PORTAL-PATIENT-REC-VULN-01": {
+      "FULL_ENRICHED": {
+        "scenario_id": "SCEN-HEALTHCARE_PORTAL-PATIENT-REC-VULN-01",
+        "app_family": "healthcare_portal",
+        "ablation_class": "FULL_ENRICHED",
+        "extracted_decision": "HYPOTHESIS",
+        "useful": true,
+        "grounding_valid": true,
+        "inference_latency_s": 11.132694900006754
+      },
+      "ABLATE_A_IDENTITY": {
+        "scenario_id": "SCEN-HEALTHCARE_PORTAL-PATIENT-REC-VULN-01",
+        "app_family": "healthcare_portal",
+        "ablation_class": "ABLATE_A_IDENTITY",
+        "extracted_decision": "HYPOTHESIS",
+        "useful": true,
+        "grounding_valid": true,
+        "inference_latency_s": 7.982725700014271
+      },
+      "ABLATE_B_OWNERSHIP": {
+        "scenario_id": "SCEN-HEALTHCARE_PORTAL-PATIENT-REC-VULN-01",
+        "app_family": "healthcare_portal",
+        "ablation_class": "ABLATE_B_OWNERSHIP",
+        "extracted_decision": "HYPOTHESIS",
+        "useful": true,
+        "grounding_valid": true,
+        "inference_latency_s": 9.189036800002214
+      },
+      "ABLATE_C_ROLE": {
+        "scenario_id": "SCEN-HEALTHCARE_PORTAL-PATIENT-REC-VULN-01",
+        "app_family": "healthcare_portal",
+        "ablation_class": "ABLATE_C_ROLE",
+        "extracted_decision": "HYPOTHESIS",
+        "useful": true,
+        "grounding_valid": true,
+        "inference_latency_s": 7.39957810001215
+      },
+      "ABLATE_D_TENANT": {
+        "scenario_id": "SCEN-HEALTHCARE_PORTAL-PATIENT-REC-VULN-01",
+        "app_family": "healthcare_portal",
+        "ablation_class": "ABLATE_D_TENANT",
+        "extracted_decision": "HYPOTHESIS",
+        "useful": true,
+        "grounding_valid": true,
+        "inference_latency_s": 7.581348700012313
+      },
+      "ABLATE_E_AUTH_REQ": {
+        "scenario_id": "SCEN-HEALTHCARE_PORTAL-PATIENT-REC-VULN-01",
+        "app_family": "healthcare_portal",
+        "ablation_class": "ABLATE_E_AUTH_REQ",
+        "extracted_decision": "HYPOTHESIS",
+        "useful": true,
+        "grounding_valid": true,
+        "inference_latency_s": 6.7252787000034004
+      },
+      "ABLATE_F_RESPONSE": {
+        "scenario_id": "SCEN-HEALTHCARE_PORTAL-PATIENT-REC-VULN-01",
+        "app_family": "healthcare_portal",
+        "ablation_class": "ABLATE_F_RESPONSE",
+        "extracted_decision": "HYPOTHESIS",
+        "useful": true,
+        "grounding_valid": true,
+        "inference_latency_s": 11.092305800004397
+      }
+    },
+    "SCEN-IOT_FLEET_MGMT-DEVICE-CMD-VULN-01": {
+      "FULL_ENRICHED": {
+        "scenario_id": "SCEN-IOT_FLEET_MGMT-DEVICE-CMD-VULN-01",
+        "app_family": "iot_fleet_mgmt",
+        "ablation_class": "FULL_ENRICHED",
+        "extracted_decision": "HYPOTHESIS",
+        "useful": true,
+        "grounding_valid": true,
+        "inference_latency_s": 11.138399299990851
+      },
+      "ABLATE_A_IDENTITY": {
+        "scenario_id": "SCEN-IOT_FLEET_MGMT-DEVICE-CMD-VULN-01",
+        "app_family": "iot_fleet_mgmt",
+        "ablation_class": "ABLATE_A_IDENTITY",
+        "extracted_decision": "HYPOTHESIS",
+        "useful": true,
+        "grounding_valid": true,
+        "inference_latency_s": 8.811426100000972
+      },
+      "ABLATE_B_OWNERSHIP": {
+        "scenario_id": "SCEN-IOT_FLEET_MGMT-DEVICE-CMD-VULN-01",
+        "app_family": "iot_fleet_mgmt",
+        "ablation_class": "ABLATE_B_OWNERSHIP",
+        "extracted_decision": "HYPOTHESIS",
+        "useful": true,
+        "grounding_valid": true,
+        "inference_latency_s": 7.720933100004913
+      },
+      "ABLATE_C_ROLE": {
+        "scenario_id": "SCEN-IOT_FLEET_MGMT-DEVICE-CMD-VULN-01",
+        "app_family": "iot_fleet_mgmt",
+        "ablation_class": "ABLATE_C_ROLE",
+        "extracted_decision": "HYPOTHESIS",
+        "useful": true,
+        "grounding_valid": true,
+        "inference_latency_s": 9.168454600003315
+      },
+      "ABLATE_D_TENANT": {
+        "scenario_id": "SCEN-IOT_FLEET_MGMT-DEVICE-CMD-VULN-01",
+        "app_family": "iot_fleet_mgmt",
+        "ablation_class": "ABLATE_D_TENANT",
+        "extracted_decision": "HYPOTHESIS",
+        "useful": true,
+        "grounding_valid": true,
+        "inference_latency_s": 7.671329600008903
+      },
+      "ABLATE_E_AUTH_REQ": {
+        "scenario_id": "SCEN-IOT_FLEET_MGMT-DEVICE-CMD-VULN-01",
+        "app_family": "iot_fleet_mgmt",
+        "ablation_class": "ABLATE_E_AUTH_REQ",
+        "extracted_decision": "HYPOTHESIS",
+        "useful": true,
+        "grounding_valid": true,
+        "inference_latency_s": 6.31515280000167
+      },
+      "ABLATE_F_RESPONSE": {
+        "scenario_id": "SCEN-IOT_FLEET_MGMT-DEVICE-CMD-VULN-01",
+        "app_family": "iot_fleet_mgmt",
+        "ablation_class": "ABLATE_F_RESPONSE",
+        "extracted_decision": "HYPOTHESIS",
+        "useful": true,
+        "grounding_valid": true,
+        "inference_latency_s": 14.459352100006072
+      }
+    }
+  }
+}

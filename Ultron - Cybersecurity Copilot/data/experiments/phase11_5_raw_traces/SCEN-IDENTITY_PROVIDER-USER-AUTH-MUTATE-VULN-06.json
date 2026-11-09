@@ -1,0 +1,48 @@
+{
+  "interaction_id": "INT-01",
+  "method": "POST",
+  "observed_owner": "user_b",
+  "observed_resource": "user_b",
+  "observed_state_transition": {
+    "state_after": "ACTIVE",
+    "state_before": "ACTIVE"
+  },
+  "observed_tenant": "org_b",
+  "parameters": [
+    {
+      "location": "path",
+      "name": "id",
+      "param_id": "PARAM-IDP-USER-ID",
+      "value": ""
+    },
+    {
+      "location": "body",
+      "name": "roles",
+      "param_id": "PARAM-IDP-ROLES",
+      "value": ""
+    }
+  ],
+  "request_headers": {
+    "Authorization": "Bearer [REDACTED]"
+  },
+  "requester_identity": "user_a",
+  "requester_role": "customer",
+  "requester_tenant": "org_a",
+  "response_body": {
+    "assigned_role": "admin",
+    "status": "Role updated"
+  },
+  "response_headers": {
+    "Content-Type": "application/json"
+  },
+  "response_status": 200,
+  "route": "/api/v1/users/user_b/roles",
+  "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-AUTH-MUTATE-VULN-06",
+  "sequence_metadata": {
+    "probe_index": 1
+  },
+  "source_fact_ids": [
+    "FACT-OBSERVED-INTERACTION-01"
+  ],
+  "trace_timestamp": "2026-09-18T17:45:00.000Z"
+}

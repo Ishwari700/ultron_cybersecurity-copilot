@@ -1,0 +1,68 @@
+# Local AI-Assisted Bug Bounty Research Platform - Default Configuration (v6 Final)
+
+environment: development
+project_root: .
+
+hardware:
+  cpu_cores: 6
+  max_ram_gb: 24.0
+  max_vram_gb: 4.0
+  device: cuda
+  ollama_vram_budget_mb: 3500
+
+pipeline:
+  # Strictly synchronous execution to prevent CPU/GPU/VRAM contention
+  strict_phasing: true
+  phase_1_recon_cpu_percent: 100
+  phase_2_indexing_cpu_percent: 100
+  phase_3_inference_gpu_percent: 100
+  allow_concurrent_phases: false
+
+ollama:
+  base_url: "http://127.0.0.1:11434"
+  model_3b: "qwen2.5-coder:3b"
+  model_7b: "qwen2.5-coder:7b"
+  embedding_model: "nomic-embed-text"
+  embedding_num_gpu: 0 # Force embeddings to CPU to protect GPU VRAM
+  default_temperature: 0.0 # Deterministic baseline
+  num_ctx_3b: 2048
+  num_ctx_7b: 4096
+  request_timeout_seconds: 120
+  max_retries: 2
+
+database:
+  db_path: "data/evidence.db"
+  timeout_seconds: 30.0
+  enable_foreign_keys: true
+  enable_wal_mode: true
+
+vectorstore:
+  persist_dir: "vectorstore"
+  collection_name: "evidence_chunks"
+  distance_metric: "cosine"
+
+retrieval:
+  hybrid_enabled: true
+  top_k: 5
+  exact_parameter_gate: true # FTS5 hard gate for exact identifiers
+  rrf_k: 60
+  vector_weight: 0.5
+  bm25_weight: 0.5
+
+logging:
+  log_level: "INFO"
+  log_format: "json"
+  log_file: "data/platform.log"
+  audit_log_file: "data/audit.log"
+
+scope:
+  policy_file: "scope.yaml"
+  enforce_ip_pinning: true
+  fail_closed: true
+  allow_private_ranges: false
+
+safety:
+  require_acknowledgment_for_state_changing: true
+  require_isolated_data_for_destructive: true
+  # Note: Vault persistence on disk is intentionally disabled/ephemeral per docs/VAULT_PERSISTENCE_DESIGN.md
+  secret_vault_path: null

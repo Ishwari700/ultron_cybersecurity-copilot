@@ -1,0 +1,36 @@
+{
+  "timestamp": "2026-09-20T12:20:48.754436+00:00",
+  "milestone": "M4.0",
+  "component": "Ollama JSON Schema Constrained Decoding Capability",
+  "runtime_endpoint": "http://127.0.0.1:11434",
+  "pinned_ollama_version": "0.34.1",
+  "observed_ollama_version": "0.34.1",
+  "pinned_model": "qwen2.5-coder:7b",
+  "pinned_quantization": "Q4_K_M",
+  "pinned_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+  "capability_check_status": "PASS",
+  "checks": {
+    "adversarial_grammar_enforcement": {
+      "test_id": "M4.0-C1",
+      "description": "Verify grammar-constrained sampling forces strict schema compliance on open-ended poem prompt",
+      "status": "PASS",
+      "valid_json": true,
+      "schema_conformant": true,
+      "eval_count": 66,
+      "prompt_eval_count": 44,
+      "raw_snippet": "{ \"test_id\": \"M4_SCHEMA_TEST_ALPHA\", \"is_constrained\": true, \"code\": 200, \"tags\": [\"TAG_INVARIANT\", \"TAG_INVARIANT\", \"TAG_INVARIANT\"] }"
+    },
+    "canonical_s0_schema_decoding": {
+      "test_id": "M4.0-C2",
+      "description": "Verify native constrained decoding against canonical S0 HypothesisModelOutput schema",
+      "status": "PASS",
+      "valid_json": true,
+      "pydantic_validation_clean": true,
+      "emitted_decision": "HypothesisDecision.NO_RELEVANT_FUNCTIONALITY",
+      "eval_count": 140,
+      "prompt_eval_count": 124,
+      "wall_latency_ms": 15711.318999998184,
+      "raw_snippet": "{ \"decision\": \"NO_RELEVANT_FUNCTIONALITY\", \"category\": \"security\", \"asset_id\": \"api/v1/users/{id}/invoices\", \"experiment_proposal\": \"The provided evidence does not directly address any security invari"
+    }
+  }
+}

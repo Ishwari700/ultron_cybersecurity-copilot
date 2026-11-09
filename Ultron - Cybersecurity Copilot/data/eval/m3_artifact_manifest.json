@@ -1,0 +1,46 @@
+{
+  "architectural_attestations": {
+    "causal_parity_enforced": true,
+    "causal_parity_rule": "TargetEvidencePayload(Track B) == TargetEvidencePayload(Track D) byte-identical",
+    "epistemic_namespace_discipline": "supporting_evidence_ids strictly FACT IDs only; cited_methodology_chunk_ids strictly CHK IDs only",
+    "offline_local_boundary": "100% offline, local, deterministic, bounded, single-node execution",
+    "selected_production_backend": "Candidate 1 (Local ONNX Vector + SQLite FTS5)",
+    "target_evidence_retriever_path": "src/retrieval/hybrid.py",
+    "target_evidence_retriever_untouched": true,
+    "zero_confirmation_authority": "Model inference cannot emit CONFIRMED",
+    "zero_execution_authority": "VAPT layer has 0 authority over credentials, cookies, CSRF tokens, nonces, signing keys, scope, or execution approvals"
+  },
+  "corpus_assets": {
+    "manifest_sha256": "34fda64b7989b7610306e7ff9c2238779fc22e2d58e687397d6ed59081a8d35d",
+    "merkle_root": "bd4abf9c97ad437b1c2d566c53ba4c5b0921108a2309c17a1d7ec948c93a57dd",
+    "signature_detached_ed25519": "41eb3cc805fc22ad8b4ad45594ca4cb1e9996bf8db4a85cd2d1c3f2beea8c6d729e4705bb7e34d7e952ff3ed87e9756b766ca68d3f28a7dada1dda43c1879f0d",
+    "sources_sha256": "270afa631544d9c37e3b0f952d1ec3ed3274cd456bb2e90bba701562437c9755",
+    "vapt_knowledge_db_sha256": "1fe01f12faf9cb843cc2ce2f75c445905826d6c835e89a1d5254854c413ec7a6"
+  },
+  "evaluation_datasets": {
+    "m1_5_frozen_benchmark_sha256": "b2b85a672124acf21066a257d8c7f5093000368b224ee013c02574c96a0ae707",
+    "retrieval_final_eval_manifest_sha256": "48ecbcf3473728adfaa82b9bb4d662a9ab1689be19413393ca69a3f38cc87628",
+    "retrieval_final_eval_sha256": "1bf7ad3749c2f957d8bb5eef8a65a5f1cc5f92cbbf4fb6801bd0b460b8104c65",
+    "retrieval_gold_sha256": "35bb5aed6a6f2b8d5b56bab1ae968bb03f5b0595843a7f5f1da67f76ceceed7d"
+  },
+  "evaluation_results": {
+    "forensic_attribution_results_sha256": "d2665718147007796b3936ba010af6fe704950d6a846652c06ff9b727b840bf5",
+    "m3_benchmark_results_sha256": "239f432d36a180b8d0dd433f4f03bd622a8c7074dc7c86a7b2c65e80c13db7e5",
+    "retrieval_final_eval_results_sha256": "b1b65f706500bd413682d0861fdba700c21ad71f180fdfae32033ecdab66b091"
+  },
+  "git_commit": "7545c38239539c0ca29bcf5b987cb8c1d5f5027a",
+  "human_study_assets": {
+    "evaluation_units_sha256": "c779e66a1a173eb2d5b8b77c0d41c72453cf392603b8fab47b562f1785e3d43d",
+    "rater_packets_sha256": "c4b63842ee0f4102eab8ba464913e0fc501feb3d16ec8c2a23285021d0912a60",
+    "raw_ratings_sha256": "f2303f57bc47d378c0b86c147b3464177f3a77d4685f827923628623eecc9d7f",
+    "scenario_manifest_sha256": "dd78bf7249b5cf74a978de304e0447b04b689eac25bfcffbc515fb339a4237aa",
+    "summary_sha256": "49278cb938b4c4d5c847aaae249df60443615db00961035b31410ac41a05779a",
+    "timing_events_sha256": "b3c80f997e186975e2d896d408e2a2f95624d8f5b436a5b365808285bad5101e"
+  },
+  "manifest_digest_sha256": "c97f8348604d6ccf3983662ed31fda6502410eba4b9c1e3cc261bd2fc14fb70f",
+  "milestone": "M3",
+  "plan_version": "2.3.8",
+  "planning_freeze_commit": "819b83399e24080bf2942c3941cc96728885df49",
+  "seal_schema_version": "1.0.0",
+  "sealed_at": "2026-09-20T05:30:41.878507+00:00"
+}

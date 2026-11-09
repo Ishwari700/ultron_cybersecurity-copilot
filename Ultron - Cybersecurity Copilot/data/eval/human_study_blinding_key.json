@@ -1,0 +1,207 @@
+{
+  "blinding_key": {
+    "UNIT-01": {
+      "condition": "TRACK_B",
+      "presentation_hash": "0a141cc910b48a8250200e0bda705a2d48bb2699decbe32e5cbd37c2424effd6",
+      "scenario_id": "SCEN-SAAS_BILLING-SUB-SUMMARY-VULN-04"
+    },
+    "UNIT-02": {
+      "condition": "TRACK_D",
+      "presentation_hash": "8ef050de7b993ded42cbfad87ab1037eed49c19ccbf0263f91bd95e0379e8aba",
+      "scenario_id": "SCEN-SAAS_BILLING-SUB-SUMMARY-VULN-04"
+    },
+    "UNIT-03": {
+      "condition": "TRACK_B",
+      "presentation_hash": "4a4e7eb53d3a42171e5911ee5c5270da9a9c0cffa8c586498920f206984332c4",
+      "scenario_id": "SCEN-SAAS_BILLING-SUB-SUMMARY-PATCH-04"
+    },
+    "UNIT-04": {
+      "condition": "TRACK_D",
+      "presentation_hash": "c062251d8ce6acbd6252457b20059a053fa8377ddc244afef9791521994b30f1",
+      "scenario_id": "SCEN-SAAS_BILLING-SUB-SUMMARY-PATCH-04"
+    },
+    "UNIT-05": {
+      "condition": "TRACK_B",
+      "presentation_hash": "7f82ea2a25ea80d9d6a345c52c3af1f7f6affd2827b5446a6effa8deca1d2652",
+      "scenario_id": "SCEN-SAAS_BILLING-INV-WORKFLOW-VULN-05"
+    },
+    "UNIT-06": {
+      "condition": "TRACK_D",
+      "presentation_hash": "229e3ca1a9e74bb73c85bb8b255d597679a97bffd44e9c0955a4221e0a1bc493",
+      "scenario_id": "SCEN-SAAS_BILLING-INV-WORKFLOW-VULN-05"
+    },
+    "UNIT-07": {
+      "condition": "TRACK_B",
+      "presentation_hash": "8136b8becf6d331caeb42fe6880a731c0aa12cb335e48feb583371bc0d337cad",
+      "scenario_id": "SCEN-SAAS_BILLING-INV-WORKFLOW-PATCH-05"
+    },
+    "UNIT-08": {
+      "condition": "TRACK_D",
+      "presentation_hash": "3558891862497aad7302d7033aaa12e796323614f52e08ee15c3a62bc5fb0387",
+      "scenario_id": "SCEN-SAAS_BILLING-INV-WORKFLOW-PATCH-05"
+    },
+    "UNIT-09": {
+      "condition": "TRACK_B",
+      "presentation_hash": "ba72e74aa1fdc331555193ca2a8075742b64bb70364f04c128fe96b4eca6d8b0",
+      "scenario_id": "SCEN-SAAS_BILLING-NEG-01"
+    },
+    "UNIT-10": {
+      "condition": "TRACK_D",
+      "presentation_hash": "7e763c5ce4013983910e77934a7b3a37beebe1db972bd1c7cfb916085332f33a",
+      "scenario_id": "SCEN-SAAS_BILLING-NEG-01"
+    },
+    "UNIT-11": {
+      "condition": "TRACK_B",
+      "presentation_hash": "bed62734c0d61e89dbab9568769936094b9fe97be63a195a9b8fcf285009d493",
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-SHIP-VULN-02"
+    },
+    "UNIT-12": {
+      "condition": "TRACK_D",
+      "presentation_hash": "f32aec30f18a62880d7f3790aceb130721419e66e717fa3d163052b755a94b49",
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-SHIP-VULN-02"
+    },
+    "UNIT-13": {
+      "condition": "TRACK_B",
+      "presentation_hash": "8d056b1127d88bd2781883fadb4d9c055ee37869a38eb00e8d6c21602db6dd6e",
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-SHIP-PATCH-02"
+    },
+    "UNIT-14": {
+      "condition": "TRACK_D",
+      "presentation_hash": "0b807e58853f4c37648664677733a0ab70b2a781e82c7e046a6c1c8b51165faf",
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-SHIP-PATCH-02"
+    },
+    "UNIT-15": {
+      "condition": "TRACK_B",
+      "presentation_hash": "81651b6d21687e6d88d9968e25553ee6407068b3fa9a730a08ac3c60a7849a8b",
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-VULN-04"
+    },
+    "UNIT-16": {
+      "condition": "TRACK_D",
+      "presentation_hash": "43bdeb98dbf404e80770933e3b3241166977167cafb942a558cfe6b9bfc4e963",
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-VULN-04"
+    },
+    "UNIT-17": {
+      "condition": "TRACK_B",
+      "presentation_hash": "d1f597d36b4e721436fa2fa8084d7b5745b7c0521cab43f8cc034eaed7cff383",
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-PATCH-04"
+    },
+    "UNIT-18": {
+      "condition": "TRACK_D",
+      "presentation_hash": "a2424ddfb7ca4ccc3bd6552f5500e81f7a914641b21d3f4fa75945a005e0aa48",
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-PATCH-04"
+    },
+    "UNIT-19": {
+      "condition": "TRACK_B",
+      "presentation_hash": "d9a6f97515bdeeec27ae65e65511bb927fc58df875a7c8599ac0dbdf72bbf211",
+      "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-TENANT-ROLE-VULN-03"
+    },
+    "UNIT-20": {
+      "condition": "TRACK_D",
+      "presentation_hash": "088bcd51ecbbcf50794f9e35cc0fe64eb3ee4f7b35cf80869fe4ddf76c96a2da",
+      "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-TENANT-ROLE-VULN-03"
+    },
+    "UNIT-21": {
+      "condition": "TRACK_B",
+      "presentation_hash": "3b3fa8031504267434f98a64c68f2dced419913f8e0ab7c55aef06d0e2bb4978",
+      "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-TENANT-ROLE-PATCH-03"
+    },
+    "UNIT-22": {
+      "condition": "TRACK_D",
+      "presentation_hash": "fc010ab013622a3f973391fb1e33d95421e7034cee7e8d4ff6c3a2726146d85e",
+      "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-TENANT-ROLE-PATCH-03"
+    },
+    "UNIT-23": {
+      "condition": "TRACK_B",
+      "presentation_hash": "09320e676e8aefb7a049ed833fc0a1c7a2fdab583f706fcd858935a7f5581803",
+      "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-ADMIN-ROLE-VULN-05"
+    },
+    "UNIT-24": {
+      "condition": "TRACK_D",
+      "presentation_hash": "09c76e10a59e87fa22e31de65a022eb1fb339d726d67aa034b061db40716647d",
+      "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-ADMIN-ROLE-VULN-05"
+    },
+    "UNIT-25": {
+      "condition": "TRACK_B",
+      "presentation_hash": "e0c8330d5f08e64d5d548f2abaded69d0d1f6d62a2d75cef8965a88113bb4fe5",
+      "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-ADMIN-ROLE-PATCH-05"
+    },
+    "UNIT-26": {
+      "condition": "TRACK_D",
+      "presentation_hash": "0df7d817ed95b29b8adc67e58b7e5c89b8c67f0aaf3ff410d8954d2ba5fab2ca",
+      "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-ADMIN-ROLE-PATCH-05"
+    },
+    "UNIT-27": {
+      "condition": "TRACK_B",
+      "presentation_hash": "a52d8e2e150de8990f2e5029b807adf6836a29a14dc9b3c079356d3e649c611b",
+      "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-EXPORT-VULN-01"
+    },
+    "UNIT-28": {
+      "condition": "TRACK_D",
+      "presentation_hash": "976b9018a4f8e35963ce018a6f927c037e7cfda440120fc3a1143b6a45f50b11",
+      "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-EXPORT-VULN-01"
+    },
+    "UNIT-29": {
+      "condition": "TRACK_B",
+      "presentation_hash": "2113e8f1dcc0f1e1cc1699876ca9fe7522f2d37608f98f0d341e64ef28c4bda6",
+      "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-EXPORT-PATCH-01"
+    },
+    "UNIT-30": {
+      "condition": "TRACK_D",
+      "presentation_hash": "5ba77f98b08a2d02d4bb029d3e5897ca31aa021b84fefb31862c07d2035ddff7",
+      "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-EXPORT-PATCH-01"
+    },
+    "UNIT-31": {
+      "condition": "TRACK_B",
+      "presentation_hash": "fe77399f6675a7bc7056c251662bfb23bf1dd8c376f49c9997eb2da694ed842f",
+      "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-ORG-EXPORT-VULN-02"
+    },
+    "UNIT-32": {
+      "condition": "TRACK_D",
+      "presentation_hash": "69a655b8c283962a9c039b483d08fc380278741884642f685b2d5783526b955f",
+      "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-ORG-EXPORT-VULN-02"
+    },
+    "UNIT-33": {
+      "condition": "TRACK_B",
+      "presentation_hash": "0bc8a750c22ddc26fc3d768b3ceab693fbc99cf9577f2da6f97fd4949c425d12",
+      "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-PUBLISH-VULN-03"
+    },
+    "UNIT-34": {
+      "condition": "TRACK_D",
+      "presentation_hash": "2c87c1a17406125d3255901963d98f6998507372f15f0795641fea4810c68043",
+      "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-PUBLISH-VULN-03"
+    },
+    "UNIT-35": {
+      "condition": "TRACK_B",
+      "presentation_hash": "ae124a002a5b4477eb50a8c4ebfed3ac8c25682bd564f946fb1dd58e3f3daeea",
+      "scenario_id": "SCEN-DOCUMENT_COLLABORATION-NEG-02"
+    },
+    "UNIT-36": {
+      "condition": "TRACK_D",
+      "presentation_hash": "b61f4b9a10f4d11766a09b7f5614061f41f0c824ea7c0f3c1327454322ed5cbb",
+      "scenario_id": "SCEN-DOCUMENT_COLLABORATION-NEG-02"
+    },
+    "UNIT-37": {
+      "condition": "TRACK_B",
+      "presentation_hash": "fd57cbf659a0608891dc5e239b2f3c7084a5ffaba02f8faa95f73fddadb8e4b4",
+      "scenario_id": "SCEN-IOT_FLEET_MGMT-DEVICE-FW-VULN-05"
+    },
+    "UNIT-38": {
+      "condition": "TRACK_D",
+      "presentation_hash": "3fdc596f4c891bbeff0a2389f4318a8d1abf0a681560df2562bf2b12fc279893",
+      "scenario_id": "SCEN-IOT_FLEET_MGMT-DEVICE-FW-VULN-05"
+    },
+    "UNIT-39": {
+      "condition": "TRACK_B",
+      "presentation_hash": "2d55973a9e1606919b4004ffc465e19e814eb03da955a37c3333826e8d8a7a51",
+      "scenario_id": "SCEN-IOT_FLEET_MGMT-DEVICE-FW-PATCH-05"
+    },
+    "UNIT-40": {
+      "condition": "TRACK_D",
+      "presentation_hash": "dc679510dc665d5c6d0993b2d3fc64a5b608f09aa1cbffaf6f825a7e11dc4efa",
+      "scenario_id": "SCEN-IOT_FLEET_MGMT-DEVICE-FW-PATCH-05"
+    }
+  },
+  "created_at": "2026-09-20T05:26:07.457347+00:00",
+  "manifest_version": "1.0.0",
+  "total_units": 40
+}

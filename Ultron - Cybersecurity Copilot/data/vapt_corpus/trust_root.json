@@ -1,0 +1,8 @@
+{
+  "key_id": "KEY-M3-OFFLINE-ROOT-01",
+  "public_key_bytes": "b06e02dac91f2873c2d30c4e3b7dd55d58b5a80187a09cc7184db64df6573657",
+  "public_key_fingerprint": "b05aec82bfddb97bc202c7c62a86cf3de6aa9e35d2ae0e72ed80e2d5d594690a",
+  "algorithm": "Ed25519",
+  "created_at": "2026-09-20T00:00:00Z",
+  "description": "Pinned Offline Signing Root for Milestone M3 VAPT Knowledge Corpus"
+}

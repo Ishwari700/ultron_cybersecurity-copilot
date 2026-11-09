@@ -1,0 +1,995 @@
+{
+  "artifact_metadata": {
+    "title": "M4.1 Failure Taxonomy & Trace Profiling Catalog",
+    "milestone": "M4.1",
+    "analysis_version": "1.0.0",
+    "generation_timestamp": "2026-09-20T12:33:03.641158+00:00",
+    "source_benchmark_file": "data/eval/m3_live_llm_benchmark_20260920.json",
+    "source_benchmark_sha256": "c516fdc112418e00955ffc7231482ea52dd4b1c96da71a83a5e92ebfcbe31dac",
+    "source_data_policy": "STRICTLY_READ_ONLY (zero source modifications made)"
+  },
+  "dataset_scope": {
+    "total_scenarios": 84,
+    "vulnerable_scenarios_count": 36,
+    "negative_control_scenarios_count": 48,
+    "tracks": [
+      "TRACK_A",
+      "TRACK_B",
+      "TRACK_C",
+      "TRACK_D"
+    ],
+    "total_scheduled_evaluations": 336
+  },
+  "primary_failure_taxonomy_distribution": {
+    "classification_precedence": "RUNTIME_TRANSPORT > MAX_TOKEN_TRUNCATION > PARSER > SCHEMA_VALIDITY > SEMANTIC_GROUNDING > VALID",
+    "counts": {
+      "VALID": 287,
+      "RUNTIME_TRANSPORT_FAILURE": 0,
+      "MAX_TOKEN_TRUNCATION": 26,
+      "PARSER_FAILURE": 0,
+      "SCHEMA_VALIDITY_FAILURE": 0,
+      "SEMANTIC_GROUNDING_FAILURE": 23
+    },
+    "proportions": {
+      "VALID": 0.854167,
+      "RUNTIME_TRANSPORT_FAILURE": 0.0,
+      "MAX_TOKEN_TRUNCATION": 0.077381,
+      "PARSER_FAILURE": 0.0,
+      "SCHEMA_VALIDITY_FAILURE": 0.0,
+      "SEMANTIC_GROUNDING_FAILURE": 0.068452
+    }
+  },
+  "track_level_breakdowns": {
+    "TRACK_A": {
+      "total": 84,
+      "valid": 79,
+      "truncation": 5,
+      "namespace": 0,
+      "abstention": 79
+    },
+    "TRACK_B": {
+      "total": 84,
+      "valid": 82,
+      "truncation": 2,
+      "namespace": 0,
+      "abstention": 82
+    },
+    "TRACK_C": {
+      "total": 84,
+      "valid": 63,
+      "truncation": 10,
+      "namespace": 11,
+      "abstention": 63
+    },
+    "TRACK_D": {
+      "total": 84,
+      "valid": 63,
+      "truncation": 9,
+      "namespace": 12,
+      "abstention": 63
+    }
+  },
+  "structured_output_truncation_traces": {
+    "total_truncation_records": 26,
+    "by_track": {
+      "TRACK_A": 5,
+      "TRACK_B": 2,
+      "TRACK_C": 10,
+      "TRACK_D": 9
+    },
+    "root_cause_analysis": "Unconstrained generation with verbosity in reasoning_summary reached num_predict=300 ceiling. The trailing JSON delimiters (closing quotes, braces, brackets) were cut off mid-emission, causing downstream JSON parse failures in 26 evaluations across 21 unique scenarios.",
+    "records": [
+      {
+        "scenario_id": "SCEN-SAAS_BILLING-INV-WORKFLOW-PATCH-05",
+        "track": "TRACK_D",
+        "category_id": "API-MULTI-STEP-AUTH-001",
+        "ground_truth_vulnerable": false,
+        "latency_ms": 30590.01,
+        "raw_character_length": 1434,
+        "num_predict_reached": true,
+        "parser_error": "Unterminated string starting at: line 11 column 5 (char 1425)",
+        "raw_snippet_tail": "insights into whether the role requirements are being enforced correctly.\",\n  \"supporting_evidence_ids\": [\n    \"CHK-DOC-",
+        "downstream_cascade": "JSONDecodeError (closing delimiters truncated)",
+        "primary_failure_classification": "MAX_TOKEN_TRUNCATION"
+      },
+      {
+        "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-VULN-01",
+        "track": "TRACK_C",
+        "category_id": "API-STATE-001",
+        "ground_truth_vulnerable": true,
+        "latency_ms": 30172.86,
+        "raw_character_length": 1464,
+        "num_predict_reached": true,
+        "parser_error": "Unterminated string starting at: line 11 column 5 (char 1441)",
+        "raw_snippet_tail": "ed to the platform invariants or role hierarchy boundaries.\",\n  \"supporting_evidence_ids\": [\n    \"CHK-DOC-PLATFORM-INV-0",
+        "downstream_cascade": "JSONDecodeError (closing delimiters truncated)",
+        "primary_failure_classification": "MAX_TOKEN_TRUNCATION"
+      },
+      {
+        "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-VULN-01",
+        "track": "TRACK_D",
+        "category_id": "API-STATE-001",
+        "ground_truth_vulnerable": true,
+        "latency_ms": 30138.68,
+        "raw_character_length": 1409,
+        "num_predict_reached": true,
+        "parser_error": "Expecting property name enclosed in double quotes: line 11 column 2 (char 1409)",
+        "raw_snippet_tail": "an be used to determine whether the platform invariant is being enforced correctly.\",\n  \"supporting_evidence_ids\": [],\n ",
+        "downstream_cascade": "JSONDecodeError (closing delimiters truncated)",
+        "primary_failure_classification": "MAX_TOKEN_TRUNCATION"
+      },
+      {
+        "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-SHIP-VULN-02",
+        "track": "TRACK_C",
+        "category_id": "API-STATE-001",
+        "ground_truth_vulnerable": true,
+        "latency_ms": 29012.21,
+        "raw_character_length": 1403,
+        "num_predict_reached": true,
+        "parser_error": "Unterminated string starting at: line 11 column 5 (char 1382)",
+        "raw_snippet_tail": "t with the platform invariants and role hierarchy boundaries.\",\n  \"supporting_evidence_ids\": [\n    \"CHK-DOC-PLATFORM-INV",
+        "downstream_cascade": "JSONDecodeError (closing delimiters truncated)",
+        "primary_failure_classification": "MAX_TOKEN_TRUNCATION"
+      },
+      {
+        "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-SHIP-PATCH-02",
+        "track": "TRACK_A",
+        "category_id": "API-STATE-001",
+        "ground_truth_vulnerable": false,
+        "latency_ms": 29785.42,
+        "raw_character_length": 1432,
+        "num_predict_reached": true,
+        "parser_error": "Unterminated string starting at: line 13 column 3 (char 1424)",
+        "raw_snippet_tail": "nformation leakage and to ensure that the system remains robust in the face of unexpected inputs or errors.\",\n  \"support",
+        "downstream_cascade": "JSONDecodeError (closing delimiters truncated)",
+        "primary_failure_classification": "MAX_TOKEN_TRUNCATION"
+      },
+      {
+        "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-SHIP-PATCH-02",
+        "track": "TRACK_C",
+        "category_id": "API-STATE-001",
+        "ground_truth_vulnerable": false,
+        "latency_ms": 29953.78,
+        "raw_character_length": 1432,
+        "num_predict_reached": true,
+        "parser_error": "Unterminated string starting at: line 13 column 3 (char 1424)",
+        "raw_snippet_tail": "nformation leakage and to ensure that the system remains robust in the face of unexpected inputs or errors.\",\n  \"support",
+        "downstream_cascade": "JSONDecodeError (closing delimiters truncated)",
+        "primary_failure_classification": "MAX_TOKEN_TRUNCATION"
+      },
+      {
+        "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-VULN-04",
+        "track": "TRACK_C",
+        "category_id": "API-LIFECYCLE-001",
+        "ground_truth_vulnerable": true,
+        "latency_ms": 29531.35,
+        "raw_character_length": 1393,
+        "num_predict_reached": true,
+        "parser_error": "Unterminated string starting at: line 11 column 5 (char 1388)",
+        "raw_snippet_tail": "e requirements would provide more concrete evidence to support the reasoning.\",\n  \"supporting_evidence_ids\": [\n    \"FACT",
+        "downstream_cascade": "JSONDecodeError (closing delimiters truncated)",
+        "primary_failure_classification": "MAX_TOKEN_TRUNCATION"
+      },
+      {
+        "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-DISPATCH-VULN-05",
+        "track": "TRACK_D",
+        "category_id": "API-LIFECYCLE-001",
+        "ground_truth_vulnerable": true,
+        "latency_ms": 29551.6,
+        "raw_character_length": 1521,
+        "num_predict_reached": true,
+        "parser_error": "Unterminated string starting at: line 8 column 3 (char 1513)",
+        "raw_snippet_tail": " cases and unexpected inputs could help identify any potential weaknesses in the system's security posture.\",\n  \"support",
+        "downstream_cascade": "JSONDecodeError (closing delimiters truncated)",
+        "primary_failure_classification": "MAX_TOKEN_TRUNCATION"
+      },
+      {
+        "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-RETURN-VULN-06",
+        "track": "TRACK_C",
+        "category_id": "API-STATE-001",
+        "ground_truth_vulnerable": true,
+        "latency_ms": 29005.95,
+        "raw_character_length": 1432,
+        "num_predict_reached": true,
+        "parser_error": "Unterminated string starting at: line 7 column 26 (char 1374)",
+        "raw_snippet_tail": "tements.\",\n  \"missing_evidence\": [],\n  \"experiment_proposal\": \"To further investigate potential security vulnerabilities",
+        "downstream_cascade": "JSONDecodeError (closing delimiters truncated)",
+        "primary_failure_classification": "MAX_TOKEN_TRUNCATION"
+      },
+      {
+        "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-MFA-PATCH-02",
+        "track": "TRACK_C",
+        "category_id": "API-BFLA-001",
+        "ground_truth_vulnerable": false,
+        "latency_ms": 33204.23,
+        "raw_character_length": 1543,
+        "num_predict_reached": true,
+        "parser_error": "Unterminated string starting at: line 8 column 3 (char 1530)",
+        "raw_snippet_tail": "o confirm that it adheres to the defined security invariants and role-based access control principles.\",\n  \"supporting_e",
+        "downstream_cascade": "JSONDecodeError (closing delimiters truncated)",
+        "primary_failure_classification": "MAX_TOKEN_TRUNCATION"
+      },
+      {
+        "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-AUTH-MUTATE-VULN-06",
+        "track": "TRACK_D",
+        "category_id": "API-MUTATION-001",
+        "ground_truth_vulnerable": true,
+        "latency_ms": 30285.94,
+        "raw_character_length": 1511,
+        "num_predict_reached": true,
+        "parser_error": "Unterminated string starting at: line 9 column 26 (char 945)",
+        "raw_snippet_tail": "d verifying that the system returns a 403 Forbidden or 404 Not Found response as expected when a user attempts to access",
+        "downstream_cascade": "JSONDecodeError (closing delimiters truncated)",
+        "primary_failure_classification": "MAX_TOKEN_TRUNCATION"
+      },
+      {
+        "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-PUBLISH-VULN-03",
+        "track": "TRACK_C",
+        "category_id": "API-STATE-001",
+        "ground_truth_vulnerable": true,
+        "latency_ms": 28684.79,
+        "raw_character_length": 1385,
+        "num_predict_reached": true,
+        "parser_error": "Unterminated string starting at: line 11 column 5 (char 1377)",
+        "raw_snippet_tail": "not allowed to trigger administrative state transitions for this endpoint.\",\n  \"supporting_evidence_ids\": [\n    \"CHK-DOC",
+        "downstream_cascade": "JSONDecodeError (closing delimiters truncated)",
+        "primary_failure_classification": "MAX_TOKEN_TRUNCATION"
+      },
+      {
+        "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-RELEASE-VULN-04",
+        "track": "TRACK_D",
+        "category_id": "API-STATE-001",
+        "ground_truth_vulnerable": true,
+        "latency_ms": 29228.14,
+        "raw_character_length": 1429,
+        "num_predict_reached": true,
+        "parser_error": "Unterminated string starting at: line 9 column 26 (char 985)",
+        "raw_snippet_tail": "te transitions. Additionally, testing with different user roles and verifying that only authorized roles can perform the",
+        "downstream_cascade": "JSONDecodeError (closing delimiters truncated)",
+        "primary_failure_classification": "MAX_TOKEN_TRUNCATION"
+      },
+      {
+        "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-CLASSIFY-VULN-05",
+        "track": "TRACK_D",
+        "category_id": "API-MULTI-STEP-AUTH-001",
+        "ground_truth_vulnerable": true,
+        "latency_ms": 29207.38,
+        "raw_character_length": 1567,
+        "num_predict_reached": true,
+        "parser_error": "Unterminated string starting at: line 7 column 26 (char 1152)",
+        "raw_snippet_tail": "forces role requirements on every request, and ensuring that standard user tokens are not used to trigger administrative",
+        "downstream_cascade": "JSONDecodeError (closing delimiters truncated)",
+        "primary_failure_classification": "MAX_TOKEN_TRUNCATION"
+      },
+      {
+        "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-CLASSIFY-PATCH-05",
+        "track": "TRACK_C",
+        "category_id": "API-MULTI-STEP-AUTH-001",
+        "ground_truth_vulnerable": false,
+        "latency_ms": 29454.82,
+        "raw_character_length": 1502,
+        "num_predict_reached": true,
+        "parser_error": "Unterminated string starting at: line 9 column 3 (char 1501)",
+        "raw_snippet_tail": "any potential weaknesses or vulnerabilities that could be exploited by attackers.\",\n  \"supporting_evidence_ids\": [],\n  \"",
+        "downstream_cascade": "JSONDecodeError (closing delimiters truncated)",
+        "primary_failure_classification": "MAX_TOKEN_TRUNCATION"
+      },
+      {
+        "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-WORKSPACE-VULN-06",
+        "track": "TRACK_D",
+        "category_id": "API-MULTI-STEP-AUTH-001",
+        "ground_truth_vulnerable": true,
+        "latency_ms": 29842.28,
+        "raw_character_length": 1532,
+        "num_predict_reached": true,
+        "parser_error": "Unterminated string starting at: line 9 column 3 (char 1518)",
+        "raw_snippet_tail": "t there are no vulnerabilities that could be exploited by attackers.\",\n  \"supporting_evidence_ids\": [],\n  \"evidence_suff",
+        "downstream_cascade": "JSONDecodeError (closing delimiters truncated)",
+        "primary_failure_classification": "MAX_TOKEN_TRUNCATION"
+      },
+      {
+        "scenario_id": "SCEN-DOCUMENT_COLLABORATION-NEG-01",
+        "track": "TRACK_A",
+        "category_id": "API-AUTH-NONE",
+        "ground_truth_vulnerable": false,
+        "latency_ms": 31458.35,
+        "raw_character_length": 1493,
+        "num_predict_reached": true,
+        "parser_error": "Unterminated string starting at: line 11 column 5 (char 1459)",
+        "raw_snippet_tail": "th the relevant stakeholders for further action.\",\n  \"supporting_evidence_ids\": [\n    \"FACT-DOCUMENT_COLLABORATION-NEG-1",
+        "downstream_cascade": "JSONDecodeError (closing delimiters truncated)",
+        "primary_failure_classification": "MAX_TOKEN_TRUNCATION"
+      },
+      {
+        "scenario_id": "SCEN-DOCUMENT_COLLABORATION-NEG-01",
+        "track": "TRACK_B",
+        "category_id": "API-AUTH-NONE",
+        "ground_truth_vulnerable": false,
+        "latency_ms": 31926.87,
+        "raw_character_length": 1532,
+        "num_predict_reached": true,
+        "parser_error": "Unterminated string starting at: line 9 column 5 (char 1498)",
+        "raw_snippet_tail": "th best practices for securing public endpoints.\",\n  \"supporting_evidence_ids\": [\n    \"FACT-DOCUMENT_COLLABORATION-NEG-1",
+        "downstream_cascade": "JSONDecodeError (closing delimiters truncated)",
+        "primary_failure_classification": "MAX_TOKEN_TRUNCATION"
+      },
+      {
+        "scenario_id": "SCEN-HEALTHCARE_PORTAL-RECORD-ARCHIVE-VULN-03",
+        "track": "TRACK_A",
+        "category_id": "API-LIFECYCLE-001",
+        "ground_truth_vulnerable": true,
+        "latency_ms": 30243.52,
+        "raw_character_length": 1511,
+        "num_predict_reached": true,
+        "parser_error": "Expecting value: line 9 column 27 (char 1511)",
+        "raw_snippet_tail": " the security requirements for accessing archived records.\",\n  \"supporting_evidence_ids\": [],\n  \"evidence_sufficiency\": ",
+        "downstream_cascade": "JSONDecodeError (closing delimiters truncated)",
+        "primary_failure_classification": "MAX_TOKEN_TRUNCATION"
+      },
+      {
+        "scenario_id": "SCEN-HEALTHCARE_PORTAL-RECORD-ARCHIVE-PATCH-03",
+        "track": "TRACK_A",
+        "category_id": "API-LIFECYCLE-001",
+        "ground_truth_vulnerable": false,
+        "latency_ms": 31006.55,
+        "raw_character_length": 1550,
+        "num_predict_reached": true,
+        "parser_error": "Unterminated string starting at: line 8 column 3 (char 1530)",
+        "raw_snippet_tail": "s to ensure that they are implemented correctly and that there are no weaknesses in the design.\",\n  \"supporting_evidence",
+        "downstream_cascade": "JSONDecodeError (closing delimiters truncated)",
+        "primary_failure_classification": "MAX_TOKEN_TRUNCATION"
+      },
+      {
+        "scenario_id": "SCEN-HEALTHCARE_PORTAL-RECORD-ARCHIVE-PATCH-03",
+        "track": "TRACK_C",
+        "category_id": "API-LIFECYCLE-001",
+        "ground_truth_vulnerable": false,
+        "latency_ms": 30408.05,
+        "raw_character_length": 1511,
+        "num_predict_reached": true,
+        "parser_error": "Expecting value: line 9 column 27 (char 1511)",
+        "raw_snippet_tail": " the security requirements for accessing archived records.\",\n  \"supporting_evidence_ids\": [],\n  \"evidence_sufficiency\": ",
+        "downstream_cascade": "JSONDecodeError (closing delimiters truncated)",
+        "primary_failure_classification": "MAX_TOKEN_TRUNCATION"
+      },
+      {
+        "scenario_id": "SCEN-HEALTHCARE_PORTAL-NEG-01",
+        "track": "TRACK_A",
+        "category_id": "API-AUTH-NONE",
+        "ground_truth_vulnerable": false,
+        "latency_ms": 33179.78,
+        "raw_character_length": 1465,
+        "num_predict_reached": true,
+        "parser_error": "Expecting ',' delimiter: line 12 column 1 (char 1465)",
+        "raw_snippet_tail": " with the relevant stakeholders for further action.\",\n  \"supporting_evidence_ids\": [\n    \"FACT-HEALTHCARE_PORTAL-NEG-1\"\n",
+        "downstream_cascade": "JSONDecodeError (closing delimiters truncated)",
+        "primary_failure_classification": "MAX_TOKEN_TRUNCATION"
+      },
+      {
+        "scenario_id": "SCEN-HEALTHCARE_PORTAL-NEG-01",
+        "track": "TRACK_B",
+        "category_id": "API-AUTH-NONE",
+        "ground_truth_vulnerable": false,
+        "latency_ms": 29183.59,
+        "raw_character_length": 1517,
+        "num_predict_reached": true,
+        "parser_error": "Unterminated string starting at: line 9 column 5 (char 1493)",
+        "raw_snippet_tail": "dpoint is being managed in accordance with best practices.\",\n  \"supporting_evidence_ids\": [\n    \"FACT-HEALTHCARE_PORTAL-",
+        "downstream_cascade": "JSONDecodeError (closing delimiters truncated)",
+        "primary_failure_classification": "MAX_TOKEN_TRUNCATION"
+      },
+      {
+        "scenario_id": "SCEN-IOT_FLEET_MGMT-FLEET-CMD-VULN-03",
+        "track": "TRACK_C",
+        "category_id": "API-CROSS-TENANT-001",
+        "ground_truth_vulnerable": true,
+        "latency_ms": 30179.59,
+        "raw_character_length": 1472,
+        "num_predict_reached": true,
+        "parser_error": "Unterminated string starting at: line 8 column 3 (char 1470)",
+        "raw_snippet_tail": "ng and auditing mechanisms to identify any suspicious access patterns or unauthorized modifications to resources.\",\n  \"s",
+        "downstream_cascade": "JSONDecodeError (closing delimiters truncated)",
+        "primary_failure_classification": "MAX_TOKEN_TRUNCATION"
+      },
+      {
+        "scenario_id": "SCEN-IOT_FLEET_MGMT-DEVICE-FW-VULN-05",
+        "track": "TRACK_D",
+        "category_id": "API-BFLA-001",
+        "ground_truth_vulnerable": true,
+        "latency_ms": 29642.16,
+        "raw_character_length": 1517,
+        "num_predict_reached": true,
+        "parser_error": "Unterminated string starting at: line 11 column 3 (char 1516)",
+        "raw_snippet_tail": " can trigger administrative state transitions, then a security vulnerability may exist that needs to be addressed.\",\n  \"",
+        "downstream_cascade": "JSONDecodeError (closing delimiters truncated)",
+        "primary_failure_classification": "MAX_TOKEN_TRUNCATION"
+      },
+      {
+        "scenario_id": "SCEN-IOT_FLEET_MGMT-DEVICE-FW-PATCH-05",
+        "track": "TRACK_D",
+        "category_id": "API-BFLA-001",
+        "ground_truth_vulnerable": false,
+        "latency_ms": 29922.87,
+        "raw_character_length": 1381,
+        "num_predict_reached": true,
+        "parser_error": "Unterminated string starting at: line 9 column 26 (char 1190)",
+        "raw_snippet_tail": "ndpoint, it is recommended to perform the following experiments: 1. Attempt to trigger the firmware update command using",
+        "downstream_cascade": "JSONDecodeError (closing delimiters truncated)",
+        "primary_failure_classification": "MAX_TOKEN_TRUNCATION"
+      }
+    ]
+  },
+  "epistemic_namespace_violation_traces": {
+    "total_namespace_records": 23,
+    "by_track": {
+      "TRACK_A": 0,
+      "TRACK_B": 0,
+      "TRACK_C": 11,
+      "TRACK_D": 12
+    },
+    "track_d_raw_namespace_emission_rate": 0.1429,
+    "combined_vapt_raw_namespace_emission_rate": 0.1369,
+    "validator_bypass_rate": 0.0,
+    "root_cause_analysis": "In Tracks C and D (where methodology chunks were provided in P4), the unguided model cited generic methodology chunk IDs (CHK-DOC-PLATFORM-INV-...) directly inside supporting_evidence_ids, conflating external testing knowledge with observed target traffic facts. KnowledgeGroundingValidator successfully detected and failed-closed on 100% of these attempts (23/23), ensuring a Validator Bypass Rate of 0.0%.",
+    "records": [
+      {
+        "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-VULN-01",
+        "track": "TRACK_C",
+        "category_id": "API-BOLA-001",
+        "ground_truth_vulnerable": true,
+        "emitted_supporting_evidence_ids": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "emitted_cited_methodology_chunk_ids": [],
+        "violating_citations": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "expected_namespace": "FACT-[...]",
+        "observed_namespace": "CHK-[...]",
+        "validator_rejected": true,
+        "validator_assigned_status": "INVALID",
+        "validator_bypass_occurred": false,
+        "decision": "NO_RELEVANT_FUNCTIONALITY",
+        "latency_ms": 22033.71,
+        "primary_failure_classification": "SEMANTIC_GROUNDING_FAILURE"
+      },
+      {
+        "scenario_id": "SCEN-SAAS_BILLING-INV-SUMMARY-PATCH-03",
+        "track": "TRACK_D",
+        "category_id": "API-CROSS-TENANT-001",
+        "ground_truth_vulnerable": false,
+        "emitted_supporting_evidence_ids": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "emitted_cited_methodology_chunk_ids": [],
+        "violating_citations": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "expected_namespace": "FACT-[...]",
+        "observed_namespace": "CHK-[...]",
+        "validator_rejected": true,
+        "validator_assigned_status": "INVALID",
+        "validator_bypass_occurred": false,
+        "decision": "NO_RELEVANT_FUNCTIONALITY",
+        "latency_ms": 18369.95,
+        "primary_failure_classification": "SEMANTIC_GROUNDING_FAILURE"
+      },
+      {
+        "scenario_id": "SCEN-SAAS_BILLING-SUB-SUMMARY-VULN-04",
+        "track": "TRACK_D",
+        "category_id": "API-CROSS-TENANT-001",
+        "ground_truth_vulnerable": true,
+        "emitted_supporting_evidence_ids": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "emitted_cited_methodology_chunk_ids": [],
+        "violating_citations": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "expected_namespace": "FACT-[...]",
+        "observed_namespace": "CHK-[...]",
+        "validator_rejected": true,
+        "validator_assigned_status": "INVALID",
+        "validator_bypass_occurred": false,
+        "decision": "NO_RELEVANT_FUNCTIONALITY",
+        "latency_ms": 18166.29,
+        "primary_failure_classification": "SEMANTIC_GROUNDING_FAILURE"
+      },
+      {
+        "scenario_id": "SCEN-SAAS_BILLING-SUB-SUMMARY-PATCH-04",
+        "track": "TRACK_C",
+        "category_id": "API-CROSS-TENANT-001",
+        "ground_truth_vulnerable": false,
+        "emitted_supporting_evidence_ids": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "emitted_cited_methodology_chunk_ids": [],
+        "violating_citations": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "expected_namespace": "FACT-[...]",
+        "observed_namespace": "CHK-[...]",
+        "validator_rejected": true,
+        "validator_assigned_status": "INVALID",
+        "validator_bypass_occurred": false,
+        "decision": "NO_RELEVANT_FUNCTIONALITY",
+        "latency_ms": 17470.88,
+        "primary_failure_classification": "SEMANTIC_GROUNDING_FAILURE"
+      },
+      {
+        "scenario_id": "SCEN-SAAS_BILLING-SUB-SUMMARY-PATCH-04",
+        "track": "TRACK_D",
+        "category_id": "API-CROSS-TENANT-001",
+        "ground_truth_vulnerable": false,
+        "emitted_supporting_evidence_ids": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "emitted_cited_methodology_chunk_ids": [],
+        "violating_citations": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "expected_namespace": "FACT-[...]",
+        "observed_namespace": "CHK-[...]",
+        "validator_rejected": true,
+        "validator_assigned_status": "INVALID",
+        "validator_bypass_occurred": false,
+        "decision": "NO_RELEVANT_FUNCTIONALITY",
+        "latency_ms": 17908.62,
+        "primary_failure_classification": "SEMANTIC_GROUNDING_FAILURE"
+      },
+      {
+        "scenario_id": "SCEN-SAAS_BILLING-SUB-PLAN-VULN-06",
+        "track": "TRACK_D",
+        "category_id": "API-MUTATION-001",
+        "ground_truth_vulnerable": true,
+        "emitted_supporting_evidence_ids": [
+          "CHK-DOC-PLATFORM-INV-01-003-01"
+        ],
+        "emitted_cited_methodology_chunk_ids": [],
+        "violating_citations": [
+          "CHK-DOC-PLATFORM-INV-01-003-01"
+        ],
+        "expected_namespace": "FACT-[...]",
+        "observed_namespace": "CHK-[...]",
+        "validator_rejected": true,
+        "validator_assigned_status": "INVALID",
+        "validator_bypass_occurred": false,
+        "decision": "NO_RELEVANT_FUNCTIONALITY",
+        "latency_ms": 22786.38,
+        "primary_failure_classification": "SEMANTIC_GROUNDING_FAILURE"
+      },
+      {
+        "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-ROLES-VULN-01",
+        "track": "TRACK_C",
+        "category_id": "API-BFLA-001",
+        "ground_truth_vulnerable": true,
+        "emitted_supporting_evidence_ids": [
+          "CHK-DOC-PLATFORM-INV-01-003-01"
+        ],
+        "emitted_cited_methodology_chunk_ids": [],
+        "violating_citations": [
+          "CHK-DOC-PLATFORM-INV-01-003-01"
+        ],
+        "expected_namespace": "FACT-[...]",
+        "observed_namespace": "CHK-[...]",
+        "validator_rejected": true,
+        "validator_assigned_status": "INVALID",
+        "validator_bypass_occurred": false,
+        "decision": "NO_RELEVANT_FUNCTIONALITY",
+        "latency_ms": 19146.8,
+        "primary_failure_classification": "SEMANTIC_GROUNDING_FAILURE"
+      },
+      {
+        "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-ROLES-VULN-01",
+        "track": "TRACK_D",
+        "category_id": "API-BFLA-001",
+        "ground_truth_vulnerable": true,
+        "emitted_supporting_evidence_ids": [
+          "CHK-DOC-PLATFORM-INV-01-003-01"
+        ],
+        "emitted_cited_methodology_chunk_ids": [],
+        "violating_citations": [
+          "CHK-DOC-PLATFORM-INV-01-003-01"
+        ],
+        "expected_namespace": "FACT-[...]",
+        "observed_namespace": "CHK-[...]",
+        "validator_rejected": true,
+        "validator_assigned_status": "INVALID",
+        "validator_bypass_occurred": false,
+        "decision": "NO_RELEVANT_FUNCTIONALITY",
+        "latency_ms": 18813.74,
+        "primary_failure_classification": "SEMANTIC_GROUNDING_FAILURE"
+      },
+      {
+        "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-ROLES-PATCH-01",
+        "track": "TRACK_D",
+        "category_id": "API-BFLA-001",
+        "ground_truth_vulnerable": false,
+        "emitted_supporting_evidence_ids": [
+          "CHK-DOC-PLATFORM-INV-01-003-01"
+        ],
+        "emitted_cited_methodology_chunk_ids": [],
+        "violating_citations": [
+          "CHK-DOC-PLATFORM-INV-01-003-01"
+        ],
+        "expected_namespace": "FACT-[...]",
+        "observed_namespace": "CHK-[...]",
+        "validator_rejected": true,
+        "validator_assigned_status": "INVALID",
+        "validator_bypass_occurred": false,
+        "decision": "NO_RELEVANT_FUNCTIONALITY",
+        "latency_ms": 18381.86,
+        "primary_failure_classification": "SEMANTIC_GROUNDING_FAILURE"
+      },
+      {
+        "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-TENANT-ROLE-VULN-03",
+        "track": "TRACK_C",
+        "category_id": "API-ROLE-BOUNDARY-001",
+        "ground_truth_vulnerable": true,
+        "emitted_supporting_evidence_ids": [
+          "CHK-DOC-PLATFORM-INV-01-003-01"
+        ],
+        "emitted_cited_methodology_chunk_ids": [],
+        "violating_citations": [
+          "CHK-DOC-PLATFORM-INV-01-003-01"
+        ],
+        "expected_namespace": "FACT-[...]",
+        "observed_namespace": "CHK-[...]",
+        "validator_rejected": true,
+        "validator_assigned_status": "INVALID",
+        "validator_bypass_occurred": false,
+        "decision": "NO_RELEVANT_FUNCTIONALITY",
+        "latency_ms": 19149.41,
+        "primary_failure_classification": "SEMANTIC_GROUNDING_FAILURE"
+      },
+      {
+        "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-TENANT-ROLE-VULN-03",
+        "track": "TRACK_D",
+        "category_id": "API-ROLE-BOUNDARY-001",
+        "ground_truth_vulnerable": true,
+        "emitted_supporting_evidence_ids": [
+          "CHK-DOC-PLATFORM-INV-01-003-01"
+        ],
+        "emitted_cited_methodology_chunk_ids": [],
+        "violating_citations": [
+          "CHK-DOC-PLATFORM-INV-01-003-01"
+        ],
+        "expected_namespace": "FACT-[...]",
+        "observed_namespace": "CHK-[...]",
+        "validator_rejected": true,
+        "validator_assigned_status": "INVALID",
+        "validator_bypass_occurred": false,
+        "decision": "NO_RELEVANT_FUNCTIONALITY",
+        "latency_ms": 20529.65,
+        "primary_failure_classification": "SEMANTIC_GROUNDING_FAILURE"
+      },
+      {
+        "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-TENANT-ROLE-PATCH-03",
+        "track": "TRACK_D",
+        "category_id": "API-ROLE-BOUNDARY-001",
+        "ground_truth_vulnerable": false,
+        "emitted_supporting_evidence_ids": [
+          "CHK-DOC-PLATFORM-INV-01-003-01"
+        ],
+        "emitted_cited_methodology_chunk_ids": [],
+        "violating_citations": [
+          "CHK-DOC-PLATFORM-INV-01-003-01"
+        ],
+        "expected_namespace": "FACT-[...]",
+        "observed_namespace": "CHK-[...]",
+        "validator_rejected": true,
+        "validator_assigned_status": "INVALID",
+        "validator_bypass_occurred": false,
+        "decision": "NO_RELEVANT_FUNCTIONALITY",
+        "latency_ms": 22566.0,
+        "primary_failure_classification": "SEMANTIC_GROUNDING_FAILURE"
+      },
+      {
+        "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-TENANT-MFA-VULN-04",
+        "track": "TRACK_D",
+        "category_id": "API-ROLE-BOUNDARY-001",
+        "ground_truth_vulnerable": true,
+        "emitted_supporting_evidence_ids": [
+          "CHK-DOC-PLATFORM-INV-01-003-01"
+        ],
+        "emitted_cited_methodology_chunk_ids": [],
+        "violating_citations": [
+          "CHK-DOC-PLATFORM-INV-01-003-01"
+        ],
+        "expected_namespace": "FACT-[...]",
+        "observed_namespace": "CHK-[...]",
+        "validator_rejected": true,
+        "validator_assigned_status": "INVALID",
+        "validator_bypass_occurred": false,
+        "decision": "NO_RELEVANT_FUNCTIONALITY",
+        "latency_ms": 19037.33,
+        "primary_failure_classification": "SEMANTIC_GROUNDING_FAILURE"
+      },
+      {
+        "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-ADMIN-ROLE-VULN-05",
+        "track": "TRACK_D",
+        "category_id": "API-MUTATION-001",
+        "ground_truth_vulnerable": true,
+        "emitted_supporting_evidence_ids": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "emitted_cited_methodology_chunk_ids": [],
+        "violating_citations": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "expected_namespace": "FACT-[...]",
+        "observed_namespace": "CHK-[...]",
+        "validator_rejected": true,
+        "validator_assigned_status": "INVALID",
+        "validator_bypass_occurred": false,
+        "decision": "NO_RELEVANT_FUNCTIONALITY",
+        "latency_ms": 32225.33,
+        "primary_failure_classification": "SEMANTIC_GROUNDING_FAILURE"
+      },
+      {
+        "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-AUTH-MUTATE-VULN-06",
+        "track": "TRACK_C",
+        "category_id": "API-MUTATION-001",
+        "ground_truth_vulnerable": true,
+        "emitted_supporting_evidence_ids": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "emitted_cited_methodology_chunk_ids": [],
+        "violating_citations": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "expected_namespace": "FACT-[...]",
+        "observed_namespace": "CHK-[...]",
+        "validator_rejected": true,
+        "validator_assigned_status": "INVALID",
+        "validator_bypass_occurred": false,
+        "decision": "NO_RELEVANT_FUNCTIONALITY",
+        "latency_ms": 23079.01,
+        "primary_failure_classification": "SEMANTIC_GROUNDING_FAILURE"
+      },
+      {
+        "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-EXPORT-VULN-01",
+        "track": "TRACK_C",
+        "category_id": "API-BOLA-001",
+        "ground_truth_vulnerable": true,
+        "emitted_supporting_evidence_ids": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "emitted_cited_methodology_chunk_ids": [],
+        "violating_citations": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "expected_namespace": "FACT-[...]",
+        "observed_namespace": "CHK-[...]",
+        "validator_rejected": true,
+        "validator_assigned_status": "INVALID",
+        "validator_bypass_occurred": false,
+        "decision": "NO_RELEVANT_FUNCTIONALITY",
+        "latency_ms": 27248.91,
+        "primary_failure_classification": "SEMANTIC_GROUNDING_FAILURE"
+      },
+      {
+        "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-RELEASE-VULN-04",
+        "track": "TRACK_C",
+        "category_id": "API-STATE-001",
+        "ground_truth_vulnerable": true,
+        "emitted_supporting_evidence_ids": [
+          "CHK-DOC-PLATFORM-INV-01-003-01"
+        ],
+        "emitted_cited_methodology_chunk_ids": [],
+        "violating_citations": [
+          "CHK-DOC-PLATFORM-INV-01-003-01"
+        ],
+        "expected_namespace": "FACT-[...]",
+        "observed_namespace": "CHK-[...]",
+        "validator_rejected": true,
+        "validator_assigned_status": "INVALID",
+        "validator_bypass_occurred": false,
+        "decision": "NO_RELEVANT_FUNCTIONALITY",
+        "latency_ms": 28362.13,
+        "primary_failure_classification": "SEMANTIC_GROUNDING_FAILURE"
+      },
+      {
+        "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-CLASSIFY-VULN-05",
+        "track": "TRACK_C",
+        "category_id": "API-MULTI-STEP-AUTH-001",
+        "ground_truth_vulnerable": true,
+        "emitted_supporting_evidence_ids": [
+          "CHK-DOC-PLATFORM-INV-01-003-01"
+        ],
+        "emitted_cited_methodology_chunk_ids": [],
+        "violating_citations": [
+          "CHK-DOC-PLATFORM-INV-01-003-01"
+        ],
+        "expected_namespace": "FACT-[...]",
+        "observed_namespace": "CHK-[...]",
+        "validator_rejected": true,
+        "validator_assigned_status": "INVALID",
+        "validator_bypass_occurred": false,
+        "decision": "NO_RELEVANT_FUNCTIONALITY",
+        "latency_ms": 27308.52,
+        "primary_failure_classification": "SEMANTIC_GROUNDING_FAILURE"
+      },
+      {
+        "scenario_id": "SCEN-IOT_FLEET_MGMT-DEVICE-CMD-VULN-01",
+        "track": "TRACK_C",
+        "category_id": "API-DEVICE-BOLA-001",
+        "ground_truth_vulnerable": true,
+        "emitted_supporting_evidence_ids": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "emitted_cited_methodology_chunk_ids": [],
+        "violating_citations": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "expected_namespace": "FACT-[...]",
+        "observed_namespace": "CHK-[...]",
+        "validator_rejected": true,
+        "validator_assigned_status": "INVALID",
+        "validator_bypass_occurred": false,
+        "decision": "NO_RELEVANT_FUNCTIONALITY",
+        "latency_ms": 23395.38,
+        "primary_failure_classification": "SEMANTIC_GROUNDING_FAILURE"
+      },
+      {
+        "scenario_id": "SCEN-IOT_FLEET_MGMT-DEVICE-CMD-VULN-01",
+        "track": "TRACK_D",
+        "category_id": "API-DEVICE-BOLA-001",
+        "ground_truth_vulnerable": true,
+        "emitted_supporting_evidence_ids": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "emitted_cited_methodology_chunk_ids": [],
+        "violating_citations": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "expected_namespace": "FACT-[...]",
+        "observed_namespace": "CHK-[...]",
+        "validator_rejected": true,
+        "validator_assigned_status": "INVALID",
+        "validator_bypass_occurred": false,
+        "decision": "NO_RELEVANT_FUNCTIONALITY",
+        "latency_ms": 29658.34,
+        "primary_failure_classification": "SEMANTIC_GROUNDING_FAILURE"
+      },
+      {
+        "scenario_id": "SCEN-IOT_FLEET_MGMT-FLEET-TEL-VULN-04",
+        "track": "TRACK_C",
+        "category_id": "API-CROSS-TENANT-001",
+        "ground_truth_vulnerable": true,
+        "emitted_supporting_evidence_ids": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "emitted_cited_methodology_chunk_ids": [],
+        "violating_citations": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "expected_namespace": "FACT-[...]",
+        "observed_namespace": "CHK-[...]",
+        "validator_rejected": true,
+        "validator_assigned_status": "INVALID",
+        "validator_bypass_occurred": false,
+        "decision": "NO_RELEVANT_FUNCTIONALITY",
+        "latency_ms": 22300.66,
+        "primary_failure_classification": "SEMANTIC_GROUNDING_FAILURE"
+      },
+      {
+        "scenario_id": "SCEN-IOT_FLEET_MGMT-DEVICE-FW-PATCH-05",
+        "track": "TRACK_C",
+        "category_id": "API-BFLA-001",
+        "ground_truth_vulnerable": false,
+        "emitted_supporting_evidence_ids": [
+          "CHK-DOC-PLATFORM-INV-01-003-01"
+        ],
+        "emitted_cited_methodology_chunk_ids": [],
+        "violating_citations": [
+          "CHK-DOC-PLATFORM-INV-01-003-01"
+        ],
+        "expected_namespace": "FACT-[...]",
+        "observed_namespace": "CHK-[...]",
+        "validator_rejected": true,
+        "validator_assigned_status": "INVALID",
+        "validator_bypass_occurred": false,
+        "decision": "NO_RELEVANT_FUNCTIONALITY",
+        "latency_ms": 19172.65,
+        "primary_failure_classification": "SEMANTIC_GROUNDING_FAILURE"
+      },
+      {
+        "scenario_id": "SCEN-IOT_FLEET_MGMT-FLEET-CONFIG-VULN-06",
+        "track": "TRACK_D",
+        "category_id": "API-MUTATION-001",
+        "ground_truth_vulnerable": true,
+        "emitted_supporting_evidence_ids": [
+          "CHK-DOC-PLATFORM-INV-01-003-01"
+        ],
+        "emitted_cited_methodology_chunk_ids": [],
+        "violating_citations": [
+          "CHK-DOC-PLATFORM-INV-01-003-01"
+        ],
+        "expected_namespace": "FACT-[...]",
+        "observed_namespace": "CHK-[...]",
+        "validator_rejected": true,
+        "validator_assigned_status": "INVALID",
+        "validator_bypass_occurred": false,
+        "decision": "NO_RELEVANT_FUNCTIONALITY",
+        "latency_ms": 29267.77,
+        "primary_failure_classification": "SEMANTIC_GROUNDING_FAILURE"
+      }
+    ]
+  },
+  "reconciliation_and_provenance_note": {
+    "prior_characterization": "The frozen M4 planning document referenced 11/336 truncation-associated structured-output failures as the prior M3 characterization.",
+    "m4_1_classification_methodology": "M4.1 applied the now-explicit mutually exclusive failure taxonomy and precedence rules (RUNTIME_TRANSPORT > MAX_TOKEN_TRUNCATION > PARSER > SCHEMA_VALIDITY > SEMANTIC_GROUNDING > VALID) to the authoritative M3 live benchmark.",
+    "deterministic_reclassification_result": "Under this deterministic classification, exactly 26/336 scheduled evaluation attempts are classified as MAX_TOKEN_TRUNCATION (each having reached the num_predict=300 ceiling with trailing delimiters cut off, causing downstream JSON parse failures).",
+    "supercedence_status": "The 26/336 result supersedes the earlier 11/336 figure for all subsequent M4.1 forensic analysis and M4 engineering motivation.",
+    "provenance_clarification": "This is a reclassification and provenance clarification resulting from a stricter, mutually exclusive taxonomy; it is NOT a mutation or rerun of the frozen M3 benchmark data.",
+    "characterization_note": "The original 11/336 figure represented an earlier, narrower characterization that differs from the exhaustive, mutually exclusive M4.1 primary failure taxonomy."
+  },
+  "conservative_abstention_analysis": {
+    "parseable_output_count": 310,
+    "decision_distribution_on_parseable": {
+      "NO_RELEVANT_FUNCTIONALITY": 310,
+      "INSUFFICIENT_EVIDENCE": 0,
+      "HYPOTHESIS": 0
+    },
+    "vulnerable_scenarios_performance": {
+      "total_vulnerable_attempts": 144,
+      "true_positive_hypotheses": 0,
+      "false_negatives": 144,
+      "useful_hypothesis_rate": 0.0,
+      "tpr": 0.0
+    },
+    "negative_control_performance": {
+      "total_control_attempts": 192,
+      "false_positives": 0,
+      "true_negatives_total": 180,
+      "truncations_on_controls": 12,
+      "tnr_track_a": 0.9167,
+      "tnr_track_b": 0.9583,
+      "tnr_track_c": 0.9167,
+      "tnr_track_d": 0.9583
+    },
+    "behavioral_characterization": "The uncalibrated base 7B model exhibited an extreme conservative abstention prior in zero-shot mode. When presented with passive OpenAPI and target structural facts, it defaulted entirely to NO_RELEVANT_FUNCTIONALITY, unable to recognize that missing authorization/authentication controls constitute security invariant breaches. This motivated Intervention I3 (counterfactual prompting) and Intervention I5 (calibrated decision policy)."
+  },
+  "handoff_3b_to_7b_traces": {
+    "channel_b_triage_metadata_in_p3": {
+      "implementation_path_evidence": "Implementation-path evidence: inspection of the M3 context-building path shows that Channel B advisory content can contain natural-language triage rationale and subjective category assertions. This motivates I6, while anchoring bias remains an architectural hypothesis rather than a measured quantity.",
+      "structure": "=== CHANNEL B: ADVISORY 3B TRIAGE METADATA ===",
+      "observed_fields": [
+        "Suspected Category (e.g. BOLA, BFLA, Mass Assignment)",
+        "Triage Decision (e.g. HYPOTHESIS, INSUFFICIENT_EVIDENCE)",
+        "Suggested Experiment (e.g. IDOR_PROBE)",
+        "Triage Rationale (free-text natural language explanation)",
+        "Category Invalid Flag (boolean)"
+      ],
+      "characterization": "Inspection of the M3 context-building path shows that Channel B advisory content can pass natural-language 3B triage rationale and subjective suspected category guesses into Partition P3. This motivates Intervention I6 (HandoffSerializer) to restrict P3 to verified Class-1 predicate booleans, while anchoring bias remains an architectural hypothesis rather than an empirically measured quantity.",
+      "measurement_boundary_note": "Anchoring bias is noted as an architectural hypothesis, NOT claimed as an empirically measured metric."
+    }
+  },
+  "cross_track_descriptive_summary": {
+    "TRACK_A": {
+      "context_configuration": "Channel A Structural Pack only (no P3 triage, no P4 methodology)",
+      "valid_count": 79,
+      "truncation_count": 5,
+      "namespace_violation_count": 0
+    },
+    "TRACK_B": {
+      "context_configuration": "Channel A + P3 Triage + Target Evidence (no P4 methodology)",
+      "valid_count": 82,
+      "truncation_count": 2,
+      "namespace_violation_count": 0
+    },
+    "TRACK_C": {
+      "context_configuration": "Channel A + P3 Triage + Target Evidence + P4 Methodology (Dual-Store)",
+      "valid_count": 63,
+      "truncation_count": 10,
+      "namespace_violation_count": 11
+    },
+    "TRACK_D": {
+      "context_configuration": "Channel A + P3 Triage + Target Evidence + P4 Methodology (Full Dual-RAG with causal parity to B)",
+      "valid_count": 63,
+      "truncation_count": 9,
+      "namespace_violation_count": 12
+    }
+  }
+}

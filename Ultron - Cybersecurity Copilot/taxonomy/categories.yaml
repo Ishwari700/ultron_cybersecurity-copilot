@@ -1,0 +1,64 @@
+# Authoritative Vulnerability Taxonomy (v6 Final)
+
+- id: API-BOLA-001
+  category: authorization
+  name: Broken Object Level Authorization (BOLA/IDOR)
+  applicability:
+    all:
+      - object_identifier_present
+  required_evidence:
+    - object_identifier
+    - distinct_identity_pair
+  validation_evidence:
+    - actor_request
+    - target_object
+    - authorization_comparison
+  retrieval_queries:
+    - "object level authorization"
+    - "tenant isolation identifier"
+    - "user ownership check"
+  allowed_outputs: [HYPOTHESIS, INSUFFICIENT_EVIDENCE, NO_RELEVANT_FUNCTIONALITY]
+
+- id: API-BFLA-002
+  category: authorization
+  name: Broken Function Level Authorization (BFLA)
+  applicability:
+    all:
+      - role_restricted_endpoint
+  required_evidence:
+    - distinct_role_pair
+    - privileged_function
+  retrieval_queries:
+    - "admin role restriction"
+    - "function level authorization"
+    - "rbac permissions"
+  allowed_outputs: [HYPOTHESIS, INSUFFICIENT_EVIDENCE, NO_RELEVANT_FUNCTIONALITY]
+
+- id: STATE-MACHINE-001
+  category: business_logic
+  name: State Machine Bypass / Step Skipping
+  applicability:
+    all:
+      - workflow_transition_present
+  required_evidence:
+    - workflow_transition
+    - prerequisite_state
+  retrieval_queries:
+    - "state machine transition"
+    - "step skipping payment checkout"
+    - "workflow order verification"
+  allowed_outputs: [HYPOTHESIS, INSUFFICIENT_EVIDENCE, NO_RELEVANT_FUNCTIONALITY]
+
+- id: INFO-EXPOSURE-001
+  category: information_exposure
+  name: Excessive Data Exposure / PII Leakage
+  applicability:
+    all:
+      - read_endpoint
+  required_evidence:
+    - response_schema
+    - sensitive_fields
+  retrieval_queries:
+    - "sensitive data exposure"
+    - "pii response fields"
+  allowed_outputs: [HYPOTHESIS, INSUFFICIENT_EVIDENCE, NO_RELEVANT_FUNCTIONALITY]

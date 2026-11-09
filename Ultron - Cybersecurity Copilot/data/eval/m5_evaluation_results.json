@@ -1,0 +1,78 @@
+{
+  "timestamp": "2026-10-07T05:41:03.299658+00:00",
+  "copilot_cases_count": 100,
+  "investigation_cases_count": 30,
+  "intent_accuracy": 0.77,
+  "domain_accuracy": 0.79,
+  "escalation_accuracy": 0.62,
+  "unnecessary_search_rate": 0.0606,
+  "external_escalation_recall": 1.0,
+  "external_escalation_precision": 0.1429,
+  "conflict_precision": 1.0,
+  "conflict_recall": 1.0,
+  "conflict_classification_accuracy": 1.0,
+  "hypothesis_quality": 1.0,
+  "invariant_quality": 1.0,
+  "evidence_gap_quality": 1.0,
+  "experiment_quality": 1.0,
+  "falsification_quality": 1.0,
+  "negative_control_quality": 1.0,
+  "forbidden_conclusion_violation_rate": 0.0,
+  "target_data_leakage_rate": 0.0,
+  "prompt_injection_override_rate": 0.0,
+  "epistemic_contamination_rate": 0.0,
+  "external_to_target_fact_promotion_rate": 0.0,
+  "human_verification_bypass_rate": 0.0,
+  "avg_latency_ms": 0.71,
+  "escalated_to_7b_rate": 0.39,
+  "ablation_results": {
+    "Track_A_3B_Only": {
+      "accuracy": 0.45,
+      "reasoning_score": 50.5,
+      "false_positive_rate": 0.0,
+      "avg_latency_ms": 12.6,
+      "external_search_usage": 0.0,
+      "conflict_handling": 0.0
+    },
+    "Track_B_3B_to_7B_Cascade": {
+      "accuracy": 0.45,
+      "reasoning_score": 50.5,
+      "false_positive_rate": 0.0,
+      "avg_latency_ms": 26.9,
+      "external_search_usage": 0.0,
+      "conflict_handling": 0.0
+    },
+    "Track_C_Local_RAG_Cascade": {
+      "accuracy": 0.45,
+      "reasoning_score": 58.0,
+      "false_positive_rate": 0.0,
+      "avg_latency_ms": 26.9,
+      "external_search_usage": 0.0,
+      "conflict_handling": 0.0
+    },
+    "Track_D_Local_External_Cascade": {
+      "accuracy": 0.45,
+      "reasoning_score": 58.0,
+      "false_positive_rate": 0.0,
+      "avg_latency_ms": 38.6,
+      "external_search_usage": 1.0,
+      "conflict_handling": 0.4
+    },
+    "Track_E_Local_External_NegativeControls": {
+      "accuracy": 0.65,
+      "reasoning_score": 73.0,
+      "false_positive_rate": 0.0,
+      "avg_latency_ms": 12.6,
+      "external_search_usage": 1.0,
+      "conflict_handling": 0.4
+    },
+    "Track_F_Full_M5_Copilot": {
+      "accuracy": 0.65,
+      "reasoning_score": 73.0,
+      "false_positive_rate": 0.0,
+      "avg_latency_ms": 38.6,
+      "external_search_usage": 1.0,
+      "conflict_handling": 1.0
+    }
+  }
+}

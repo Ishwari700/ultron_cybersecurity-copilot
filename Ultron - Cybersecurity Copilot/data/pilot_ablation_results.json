@@ -1,0 +1,2802 @@
+{
+  "timestamp": "2026-09-17T13:22:10Z",
+  "budget_tier": "LOW",
+  "scenarios_count": 12,
+  "scenarios": [
+    "SCEN-SAAS_BILLING-INV-DETAILS-VULN-01",
+    "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-VULN-01",
+    "SCEN-IDENTITY_PROVIDER-USER-ROLES-VULN-01",
+    "SCEN-DOCUMENT_COLLABORATION-DOC-EXPORT-VULN-01",
+    "SCEN-HEALTHCARE_PORTAL-PATIENT-REC-VULN-01",
+    "SCEN-IOT_FLEET_MGMT-DEVICE-CMD-VULN-01",
+    "SCEN-SAAS_BILLING-INV-DETAILS-PATCH-01",
+    "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-PATCH-01",
+    "SCEN-IDENTITY_PROVIDER-USER-ROLES-PATCH-01",
+    "SCEN-DOCUMENT_COLLABORATION-DOC-EXPORT-PATCH-01",
+    "SCEN-HEALTHCARE_PORTAL-NEG-01",
+    "SCEN-IOT_FLEET_MGMT-NEG-01"
+  ],
+  "tracks": {
+    "TRACK_A_RULES": {
+      "metrics": {
+        "total_scenarios": 12,
+        "total_vulnerable_scenarios": 6,
+        "hypotheses_generated": 8,
+        "true_positives": 5,
+        "false_positives": 3,
+        "false_negatives": 1,
+        "true_negatives": 3,
+        "useful_vulnerable_scenarios": 0,
+        "grounding_accuracy": 1.0,
+        "precision": 0.625,
+        "recall": 0.8333,
+        "f1_score": 0.7143,
+        "abstention_precision": 0.75,
+        "abstention_rate": 0.3333,
+        "discriminative_experiment_rate": 0.0,
+        "useful_hypothesis_yield": 0.0,
+        "hypothesis_utility_rate": 0.0,
+        "canonical_id_validity": 1.0,
+        "structural_grounding_rate": 1.0,
+        "evidence_sufficiency_rate": 1.0,
+        "decision_correctness": 0.6667,
+        "abstention_quality": 0.75,
+        "experiment_completion_rate": 0.0,
+        "useful_hypothesis_rate": 0.0,
+        "useful_hypothesis_yield_at_fixed_reviewer_minutes": 0.0,
+        "final_state_correctness": 0.25,
+        "precision_ci_95": [
+          0.3057,
+          0.8632
+        ],
+        "recall_ci_95": [
+          0.4365,
+          0.9699
+        ],
+        "useful_yield_ci_95": [
+          0.0,
+          0.3903
+        ]
+      },
+      "execution_duration_seconds": 0.9,
+      "avg_latency_per_scenario": 0.07
+    },
+    "TRACK_B_RAG_3B": {
+      "metrics": {
+        "total_scenarios": 12,
+        "total_vulnerable_scenarios": 6,
+        "hypotheses_generated": 7,
+        "true_positives": 3,
+        "false_positives": 4,
+        "false_negatives": 3,
+        "true_negatives": 2,
+        "useful_vulnerable_scenarios": 0,
+        "grounding_accuracy": 1.0,
+        "precision": 0.4286,
+        "recall": 0.5,
+        "f1_score": 0.4615,
+        "abstention_precision": 0.4,
+        "abstention_rate": 0.4167,
+        "discriminative_experiment_rate": 0.0,
+        "useful_hypothesis_yield": 0.0,
+        "hypothesis_utility_rate": 0.0,
+        "canonical_id_validity": 1.0,
+        "structural_grounding_rate": 1.0,
+        "evidence_sufficiency_rate": 0.5833,
+        "decision_correctness": 0.4167,
+        "abstention_quality": 0.4,
+        "experiment_completion_rate": 0.0,
+        "useful_hypothesis_rate": 0.0,
+        "useful_hypothesis_yield_at_fixed_reviewer_minutes": 0.0,
+        "final_state_correctness": 0.1667,
+        "precision_ci_95": [
+          0.1582,
+          0.7495
+        ],
+        "recall_ci_95": [
+          0.1876,
+          0.8124
+        ],
+        "useful_yield_ci_95": [
+          0.0,
+          0.3903
+        ]
+      },
+      "execution_duration_seconds": 46.56,
+      "avg_latency_per_scenario": 3.88
+    },
+    "TRACK_C_RAG_7B": {
+      "metrics": {
+        "total_scenarios": 12,
+        "total_vulnerable_scenarios": 6,
+        "hypotheses_generated": 0,
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 6,
+        "true_negatives": 6,
+        "useful_vulnerable_scenarios": 0,
+        "grounding_accuracy": 1.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "abstention_precision": 0.5,
+        "abstention_rate": 1.0,
+        "discriminative_experiment_rate": 0.0,
+        "useful_hypothesis_yield": 0.0,
+        "hypothesis_utility_rate": 0.0,
+        "canonical_id_validity": 1.0,
+        "structural_grounding_rate": 1.0,
+        "evidence_sufficiency_rate": 1.0,
+        "decision_correctness": 0.5,
+        "abstention_quality": 0.5,
+        "experiment_completion_rate": 0.0,
+        "useful_hypothesis_rate": 0.0,
+        "useful_hypothesis_yield_at_fixed_reviewer_minutes": 0.0,
+        "final_state_correctness": 0.5,
+        "precision_ci_95": [
+          0.0,
+          0.0
+        ],
+        "recall_ci_95": [
+          0.0,
+          0.3903
+        ],
+        "useful_yield_ci_95": [
+          0.0,
+          0.3903
+        ]
+      },
+      "execution_duration_seconds": 228.06,
+      "avg_latency_per_scenario": 19.0
+    },
+    "TRACK_D_APP_MODEL_INVARIANTS": {
+      "metrics": {
+        "total_scenarios": 12,
+        "total_vulnerable_scenarios": 6,
+        "hypotheses_generated": 5,
+        "true_positives": 2,
+        "false_positives": 3,
+        "false_negatives": 4,
+        "true_negatives": 3,
+        "useful_vulnerable_scenarios": 0,
+        "grounding_accuracy": 0.8333,
+        "precision": 0.4,
+        "recall": 0.3333,
+        "f1_score": 0.3636,
+        "abstention_precision": 0.4286,
+        "abstention_rate": 0.5833,
+        "discriminative_experiment_rate": 1.0,
+        "useful_hypothesis_yield": 0.0,
+        "hypothesis_utility_rate": 0.0,
+        "canonical_id_validity": 0.8333,
+        "structural_grounding_rate": 0.8333,
+        "evidence_sufficiency_rate": 0.4167,
+        "decision_correctness": 0.4167,
+        "abstention_quality": 0.4286,
+        "experiment_completion_rate": 2.4,
+        "useful_hypothesis_rate": 0.0,
+        "useful_hypothesis_yield_at_fixed_reviewer_minutes": 0.0,
+        "final_state_correctness": 0.25,
+        "precision_ci_95": [
+          0.1176,
+          0.7693
+        ],
+        "recall_ci_95": [
+          0.0968,
+          0.7
+        ],
+        "useful_yield_ci_95": [
+          0.0,
+          0.3903
+        ]
+      },
+      "execution_duration_seconds": 339.43,
+      "avg_latency_per_scenario": 28.29
+    },
+    "TRACK_E_FULL_V6": {
+      "metrics": {
+        "total_scenarios": 12,
+        "total_vulnerable_scenarios": 6,
+        "hypotheses_generated": 6,
+        "true_positives": 6,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "true_negatives": 6,
+        "useful_vulnerable_scenarios": 6,
+        "grounding_accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "abstention_precision": 1.0,
+        "abstention_rate": 0.5,
+        "discriminative_experiment_rate": 1.0,
+        "useful_hypothesis_yield": 1.0,
+        "hypothesis_utility_rate": 1.0,
+        "canonical_id_validity": 1.0,
+        "structural_grounding_rate": 1.0,
+        "evidence_sufficiency_rate": 1.0,
+        "decision_correctness": 1.0,
+        "abstention_quality": 1.0,
+        "experiment_completion_rate": 1.6667,
+        "useful_hypothesis_rate": 1.0,
+        "useful_hypothesis_yield_at_fixed_reviewer_minutes": 1.0,
+        "final_state_correctness": 1.0,
+        "precision_ci_95": [
+          0.6097,
+          1.0
+        ],
+        "recall_ci_95": [
+          0.6097,
+          1.0
+        ],
+        "useful_yield_ci_95": [
+          0.6097,
+          1.0
+        ]
+      },
+      "execution_duration_seconds": 554.37,
+      "avg_latency_per_scenario": 46.2
+    }
+  },
+  "raw_records": {
+    "TRACK_A_RULES": [
+      {
+        "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-VULN-01",
+        "app_family": "saas_billing",
+        "split": "development",
+        "ground_truth_vulnerable": true,
+        "decision": "HYPOTHESIS",
+        "grounded": true,
+        "canonical_id_valid": true,
+        "evidence_sufficient": true,
+        "discriminative_experiment": false,
+        "useful": false,
+        "budget_tier": "LOW",
+        "experiments_executed": 0,
+        "missing_evidence": [],
+        "grounding_reason": null,
+        "termination_reason": "SYNTAX_KEYWORD_MATCH",
+        "latency_seconds": 0.0,
+        "model_name": "deterministic_rules",
+        "retrieval_trace": null
+      },
+      {
+        "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-VULN-01",
+        "app_family": "ecommerce_orders",
+        "split": "development",
+        "ground_truth_vulnerable": true,
+        "decision": "NO_RELEVANT_FUNCTIONALITY",
+        "grounded": true,
+        "canonical_id_valid": true,
+        "evidence_sufficient": true,
+        "discriminative_experiment": false,
+        "useful": false,
+        "budget_tier": "LOW",
+        "experiments_executed": 0,
+        "missing_evidence": [],
+        "grounding_reason": null,
+        "termination_reason": "STATE_MACHINE_BLIND_RULES",
+        "latency_seconds": 0.0,
+        "model_name": "deterministic_rules",
+        "retrieval_trace": null
+      },
+      {
+        "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-ROLES-VULN-01",
+        "app_family": "identity_provider",
+        "split": "validation",
+        "ground_truth_vulnerable": true,
+        "decision": "HYPOTHESIS",
+        "grounded": true,
+        "canonical_id_valid": true,
+        "evidence_sufficient": true,
+        "discriminative_experiment": false,
+        "useful": false,
+        "budget_tier": "LOW",
+        "experiments_executed": 0,
+        "missing_evidence": [],
+        "grounding_reason": null,
+        "termination_reason": "SYNTAX_KEYWORD_MATCH",
+        "latency_seconds": 0.0,
+        "model_name": "deterministic_rules",
+        "retrieval_trace": null
+      },
+      {
+        "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-EXPORT-VULN-01",
+        "app_family": "document_collaboration",
+        "split": "validation",
+        "ground_truth_vulnerable": true,
+        "decision": "HYPOTHESIS",
+        "grounded": true,
+        "canonical_id_valid": true,
+        "evidence_sufficient": true,
+        "discriminative_experiment": false,
+        "useful": false,
+        "budget_tier": "LOW",
+        "experiments_executed": 0,
+        "missing_evidence": [],
+        "grounding_reason": null,
+        "termination_reason": "SYNTAX_KEYWORD_MATCH",
+        "latency_seconds": 0.0,
+        "model_name": "deterministic_rules",
+        "retrieval_trace": null
+      },
+      {
+        "scenario_id": "SCEN-HEALTHCARE_PORTAL-PATIENT-REC-VULN-01",
+        "app_family": "healthcare_portal",
+        "split": "evaluation",
+        "ground_truth_vulnerable": true,
+        "decision": "HYPOTHESIS",
+        "grounded": true,
+        "canonical_id_valid": true,
+        "evidence_sufficient": true,
+        "discriminative_experiment": false,
+        "useful": false,
+        "budget_tier": "LOW",
+        "experiments_executed": 0,
+        "missing_evidence": [],
+        "grounding_reason": null,
+        "termination_reason": "SYNTAX_KEYWORD_MATCH",
+        "latency_seconds": 0.0,
+        "model_name": "deterministic_rules",
+        "retrieval_trace": null
+      },
+      {
+        "scenario_id": "SCEN-IOT_FLEET_MGMT-DEVICE-CMD-VULN-01",
+        "app_family": "iot_fleet_mgmt",
+        "split": "evaluation",
+        "ground_truth_vulnerable": true,
+        "decision": "HYPOTHESIS",
+        "grounded": true,
+        "canonical_id_valid": true,
+        "evidence_sufficient": true,
+        "discriminative_experiment": false,
+        "useful": false,
+        "budget_tier": "LOW",
+        "experiments_executed": 0,
+        "missing_evidence": [],
+        "grounding_reason": null,
+        "termination_reason": "SYNTAX_KEYWORD_MATCH",
+        "latency_seconds": 0.0,
+        "model_name": "deterministic_rules",
+        "retrieval_trace": null
+      },
+      {
+        "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-PATCH-01",
+        "app_family": "saas_billing",
+        "split": "development",
+        "ground_truth_vulnerable": false,
+        "decision": "HYPOTHESIS",
+        "grounded": true,
+        "canonical_id_valid": true,
+        "evidence_sufficient": true,
+        "discriminative_experiment": false,
+        "useful": false,
+        "budget_tier": "LOW",
+        "experiments_executed": 0,
+        "missing_evidence": [],
+        "grounding_reason": null,
+        "termination_reason": "SYNTAX_KEYWORD_MATCH",
+        "latency_seconds": 0.0,
+        "model_name": "deterministic_rules",
+        "retrieval_trace": null
+      },
+      {
+        "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-PATCH-01",
+        "app_family": "ecommerce_orders",
+        "split": "development",
+        "ground_truth_vulnerable": false,
+        "decision": "NO_RELEVANT_FUNCTIONALITY",
+        "grounded": true,
+        "canonical_id_valid": true,
+        "evidence_sufficient": true,
+        "discriminative_experiment": false,
+        "useful": false,
+        "budget_tier": "LOW",
+        "experiments_executed": 0,
+        "missing_evidence": [],
+        "grounding_reason": null,
+        "termination_reason": "STATE_MACHINE_BLIND_RULES",
+        "latency_seconds": 0.0,
+        "model_name": "deterministic_rules",
+        "retrieval_trace": null
+      },
+      {
+        "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-ROLES-PATCH-01",
+        "app_family": "identity_provider",
+        "split": "validation",
+        "ground_truth_vulnerable": false,
+        "decision": "HYPOTHESIS",
+        "grounded": true,
+        "canonical_id_valid": true,
+        "evidence_sufficient": true,
+        "discriminative_experiment": false,
+        "useful": false,
+        "budget_tier": "LOW",
+        "experiments_executed": 0,
+        "missing_evidence": [],
+        "grounding_reason": null,
+        "termination_reason": "SYNTAX_KEYWORD_MATCH",
+        "latency_seconds": 0.0,
+        "model_name": "deterministic_rules",
+        "retrieval_trace": null
+      },
+      {
+        "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-EXPORT-PATCH-01",
+        "app_family": "document_collaboration",
+        "split": "validation",
+        "ground_truth_vulnerable": false,
+        "decision": "HYPOTHESIS",
+        "grounded": true,
+        "canonical_id_valid": true,
+        "evidence_sufficient": true,
+        "discriminative_experiment": false,
+        "useful": false,
+        "budget_tier": "LOW",
+        "experiments_executed": 0,
+        "missing_evidence": [],
+        "grounding_reason": null,
+        "termination_reason": "SYNTAX_KEYWORD_MATCH",
+        "latency_seconds": 0.0,
+        "model_name": "deterministic_rules",
+        "retrieval_trace": null
+      },
+      {
+        "scenario_id": "SCEN-HEALTHCARE_PORTAL-NEG-01",
+        "app_family": "healthcare_portal",
+        "split": "evaluation",
+        "ground_truth_vulnerable": false,
+        "decision": "NO_RELEVANT_FUNCTIONALITY",
+        "grounded": true,
+        "canonical_id_valid": true,
+        "evidence_sufficient": true,
+        "discriminative_experiment": false,
+        "useful": false,
+        "budget_tier": "LOW",
+        "experiments_executed": 0,
+        "missing_evidence": [],
+        "grounding_reason": null,
+        "termination_reason": "PUBLIC_ENDPOINT_RECOGNIZED",
+        "latency_seconds": 0.0,
+        "model_name": "deterministic_rules",
+        "retrieval_trace": null
+      },
+      {
+        "scenario_id": "SCEN-IOT_FLEET_MGMT-NEG-01",
+        "app_family": "iot_fleet_mgmt",
+        "split": "evaluation",
+        "ground_truth_vulnerable": false,
+        "decision": "NO_RELEVANT_FUNCTIONALITY",
+        "grounded": true,
+        "canonical_id_valid": true,
+        "evidence_sufficient": true,
+        "discriminative_experiment": false,
+        "useful": false,
+        "budget_tier": "LOW",
+        "experiments_executed": 0,
+        "missing_evidence": [],
+        "grounding_reason": null,
+        "termination_reason": "PUBLIC_ENDPOINT_RECOGNIZED",
+        "latency_seconds": 0.0,
+        "model_name": "deterministic_rules",
+        "retrieval_trace": null
+      }
+    ],
+    "TRACK_B_RAG_3B": [
+      {
+        "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-VULN-01",
+        "app_family": "saas_billing",
+        "split": "development",
+        "ground_truth_vulnerable": true,
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "grounded": true,
+        "canonical_id_valid": true,
+        "evidence_sufficient": false,
+        "discriminative_experiment": false,
+        "useful": false,
+        "budget_tier": "LOW",
+        "experiments_executed": 0,
+        "missing_evidence": [
+          "Direct traffic facts"
+        ],
+        "grounding_reason": "required_evidence_unmet: distinct_identity_pair (actor != target identity required)",
+        "termination_reason": "LIVE_3B_RAG_DOWNGRADE",
+        "latency_seconds": 7.324,
+        "model_name": "qwen2.5-coder:3b",
+        "retrieval_trace": {
+          "query": "GET /api/v1/invoices/{id} API-BOLA-001",
+          "retrieval_method": "hybrid_rrf_exact_parameter_gate",
+          "retrieved_evidence_ids": [
+            "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+          ],
+          "retrieval_ranking": [
+            {
+              "rank": 1,
+              "fact_id": "FACT-SAAS_BILLING-INV-DETAILS-DOC",
+              "score": 0.016393,
+              "source_tool": "openapi"
+            }
+          ],
+          "token_budget_cropping": {
+            "input_chunks": 1,
+            "budgeted_chunks": 1,
+            "token_budget": 1024,
+            "cropped_ids": [
+              "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+            ]
+          },
+          "prompt_evidence_context": "EVIDENCE [FACT-SAAS_BILLING-INV-DETAILS-DOC] (source: openapi, trust: UNTRUSTED)\nGET /api/v1/invoices/{id} retrieves billing invoice records for the specified invoice identifier. Requires active customer session.",
+          "zero_results": false,
+          "warning": null
+        }
+      },
+      {
+        "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-VULN-01",
+        "app_family": "ecommerce_orders",
+        "split": "development",
+        "ground_truth_vulnerable": true,
+        "decision": "HYPOTHESIS",
+        "grounded": true,
+        "canonical_id_valid": true,
+        "evidence_sufficient": true,
+        "discriminative_experiment": false,
+        "useful": false,
+        "budget_tier": "LOW",
+        "experiments_executed": 0,
+        "missing_evidence": [
+          "Direct traffic facts"
+        ],
+        "grounding_reason": "All canonical IDs, relationships, and required evidence satisfied",
+        "termination_reason": "LIVE_3B_RAG_VALID",
+        "latency_seconds": 3.582,
+        "model_name": "qwen2.5-coder:3b",
+        "retrieval_trace": {
+          "query": "POST /api/v1/orders/{id}/refund API-STATE-001",
+          "retrieval_method": "hybrid_rrf_exact_parameter_gate",
+          "retrieved_evidence_ids": [
+            "FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC"
+          ],
+          "retrieval_ranking": [
+            {
+              "rank": 1,
+              "fact_id": "FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC",
+              "score": 0.016393,
+              "source_tool": "openapi"
+            }
+          ],
+          "token_budget_cropping": {
+            "input_chunks": 1,
+            "budgeted_chunks": 1,
+            "token_budget": 1024,
+            "cropped_ids": [
+              "FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC"
+            ]
+          },
+          "prompt_evidence_context": "EVIDENCE [FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC] (source: openapi, trust: UNTRUSTED)\nPOST /api/v1/orders/{id}/refund processes refund transaction for customer order. Expected order lifecycle state: PAID.",
+          "zero_results": false,
+          "warning": null
+        }
+      },
+      {
+        "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-ROLES-VULN-01",
+        "app_family": "identity_provider",
+        "split": "validation",
+        "ground_truth_vulnerable": true,
+        "decision": "HYPOTHESIS",
+        "grounded": true,
+        "canonical_id_valid": true,
+        "evidence_sufficient": true,
+        "discriminative_experiment": false,
+        "useful": false,
+        "budget_tier": "LOW",
+        "experiments_executed": 0,
+        "missing_evidence": [
+          "Direct traffic facts"
+        ],
+        "grounding_reason": "All canonical IDs, relationships, and required evidence satisfied",
+        "termination_reason": "LIVE_3B_RAG_VALID",
+        "latency_seconds": 3.451,
+        "model_name": "qwen2.5-coder:3b",
+        "retrieval_trace": {
+          "query": "POST /api/v1/users/{id}/roles API-BFLA-001",
+          "retrieval_method": "hybrid_rrf_exact_parameter_gate",
+          "retrieved_evidence_ids": [
+            "FACT-IDENTITY_PROVIDER-USER-ROLES-DOC"
+          ],
+          "retrieval_ranking": [
+            {
+              "rank": 1,
+              "fact_id": "FACT-IDENTITY_PROVIDER-USER-ROLES-DOC",
+              "score": 0.016393,
+              "source_tool": "openapi"
+            }
+          ],
+          "token_budget_cropping": {
+            "input_chunks": 1,
+            "budgeted_chunks": 1,
+            "token_budget": 1024,
+            "cropped_ids": [
+              "FACT-IDENTITY_PROVIDER-USER-ROLES-DOC"
+            ]
+          },
+          "prompt_evidence_context": "EVIDENCE [FACT-IDENTITY_PROVIDER-USER-ROLES-DOC] (source: openapi, trust: UNTRUSTED)\nPOST /api/v1/users/{id}/roles updates account security role assignments. Requires admin role.",
+          "zero_results": false,
+          "warning": null
+        }
+      },
+      {
+        "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-EXPORT-VULN-01",
+        "app_family": "document_collaboration",
+        "split": "validation",
+        "ground_truth_vulnerable": true,
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "grounded": true,
+        "canonical_id_valid": true,
+        "evidence_sufficient": false,
+        "discriminative_experiment": false,
+        "useful": false,
+        "budget_tier": "LOW",
+        "experiments_executed": 0,
+        "missing_evidence": [
+          "Direct traffic facts"
+        ],
+        "grounding_reason": "required_evidence_unmet: distinct_identity_pair (actor != target identity required)",
+        "termination_reason": "LIVE_3B_RAG_DOWNGRADE",
+        "latency_seconds": 3.132,
+        "model_name": "qwen2.5-coder:3b",
+        "retrieval_trace": {
+          "query": "GET /api/v1/docs/{id}/export API-BOLA-001",
+          "retrieval_method": "hybrid_rrf_exact_parameter_gate",
+          "retrieved_evidence_ids": [
+            "FACT-DOCUMENT_COLLABORATION-DOC-EXPORT-DOC"
+          ],
+          "retrieval_ranking": [
+            {
+              "rank": 1,
+              "fact_id": "FACT-DOCUMENT_COLLABORATION-DOC-EXPORT-DOC",
+              "score": 0.016393,
+              "source_tool": "openapi"
+            }
+          ],
+          "token_budget_cropping": {
+            "input_chunks": 1,
+            "budgeted_chunks": 1,
+            "token_budget": 1024,
+            "cropped_ids": [
+              "FACT-DOCUMENT_COLLABORATION-DOC-EXPORT-DOC"
+            ]
+          },
+          "prompt_evidence_context": "EVIDENCE [FACT-DOCUMENT_COLLABORATION-DOC-EXPORT-DOC] (source: openapi, trust: UNTRUSTED)\nGET /api/v1/docs/{id}/export generates document export package. Requires active document collaborator session.",
+          "zero_results": false,
+          "warning": null
+        }
+      },
+      {
+        "scenario_id": "SCEN-HEALTHCARE_PORTAL-PATIENT-REC-VULN-01",
+        "app_family": "healthcare_portal",
+        "split": "evaluation",
+        "ground_truth_vulnerable": true,
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "grounded": true,
+        "canonical_id_valid": true,
+        "evidence_sufficient": false,
+        "discriminative_experiment": false,
+        "useful": false,
+        "budget_tier": "LOW",
+        "experiments_executed": 0,
+        "missing_evidence": [
+          "Direct traffic facts"
+        ],
+        "grounding_reason": "required_evidence_unmet: distinct_identity_pair (actor != target identity required)",
+        "termination_reason": "LIVE_3B_RAG_DOWNGRADE",
+        "latency_seconds": 3.868,
+        "model_name": "qwen2.5-coder:3b",
+        "retrieval_trace": {
+          "query": "GET /api/v1/records/{id} API-BOLA-001",
+          "retrieval_method": "hybrid_rrf_exact_parameter_gate",
+          "retrieved_evidence_ids": [
+            "FACT-HEALTHCARE_PORTAL-PATIENT-REC-DOC"
+          ],
+          "retrieval_ranking": [
+            {
+              "rank": 1,
+              "fact_id": "FACT-HEALTHCARE_PORTAL-PATIENT-REC-DOC",
+              "score": 0.016393,
+              "source_tool": "openapi"
+            }
+          ],
+          "token_budget_cropping": {
+            "input_chunks": 1,
+            "budgeted_chunks": 1,
+            "token_budget": 1024,
+            "cropped_ids": [
+              "FACT-HEALTHCARE_PORTAL-PATIENT-REC-DOC"
+            ]
+          },
+          "prompt_evidence_context": "EVIDENCE [FACT-HEALTHCARE_PORTAL-PATIENT-REC-DOC] (source: openapi, trust: UNTRUSTED)\nGET /api/v1/records/{id} retrieves patient diagnostic history and health chart. Requires patient or designated physician session.",
+          "zero_results": false,
+          "warning": null
+        }
+      },
+      {
+        "scenario_id": "SCEN-IOT_FLEET_MGMT-DEVICE-CMD-VULN-01",
+        "app_family": "iot_fleet_mgmt",
+        "split": "evaluation",
+        "ground_truth_vulnerable": true,
+        "decision": "HYPOTHESIS",
+        "grounded": true,
+        "canonical_id_valid": true,
+        "evidence_sufficient": true,
+        "discriminative_experiment": false,
+        "useful": false,
+        "budget_tier": "LOW",
+        "experiments_executed": 0,
+        "missing_evidence": [
+          "Direct traffic facts"
+        ],
+        "grounding_reason": "All canonical IDs, relationships, and required evidence satisfied",
+        "termination_reason": "LIVE_3B_RAG_VALID",
+        "latency_seconds": 3.9,
+        "model_name": "qwen2.5-coder:3b",
+        "retrieval_trace": {
+          "query": "POST /api/v1/devices/{id}/command API-DEVICE-BOLA-001",
+          "retrieval_method": "hybrid_rrf_exact_parameter_gate",
+          "retrieved_evidence_ids": [
+            "FACT-IOT_FLEET_MGMT-DEVICE-CMD-DOC"
+          ],
+          "retrieval_ranking": [
+            {
+              "rank": 1,
+              "fact_id": "FACT-IOT_FLEET_MGMT-DEVICE-CMD-DOC",
+              "score": 0.016393,
+              "source_tool": "openapi"
+            }
+          ],
+          "token_budget_cropping": {
+            "input_chunks": 1,
+            "budgeted_chunks": 1,
+            "token_budget": 1024,
+            "cropped_ids": [
+              "FACT-IOT_FLEET_MGMT-DEVICE-CMD-DOC"
+            ]
+          },
+          "prompt_evidence_context": "EVIDENCE [FACT-IOT_FLEET_MGMT-DEVICE-CMD-DOC] (source: openapi, trust: UNTRUSTED)\nPOST /api/v1/devices/{id}/command dispatches operational instructions to IoT device. Requires fleet operator session.",
+          "zero_results": false,
+          "warning": null
+        }
+      },
+      {
+        "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-PATCH-01",
+        "app_family": "saas_billing",
+        "split": "development",
+        "ground_truth_vulnerable": false,
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "grounded": true,
+        "canonical_id_valid": true,
+        "evidence_sufficient": false,
+        "discriminative_experiment": false,
+        "useful": false,
+        "budget_tier": "LOW",
+        "experiments_executed": 0,
+        "missing_evidence": [
+          "Direct traffic facts"
+        ],
+        "grounding_reason": "required_evidence_unmet: distinct_identity_pair (actor != target identity required)",
+        "termination_reason": "LIVE_3B_RAG_DOWNGRADE",
+        "latency_seconds": 3.595,
+        "model_name": "qwen2.5-coder:3b",
+        "retrieval_trace": {
+          "query": "GET /api/v1/invoices/{id} API-BOLA-001",
+          "retrieval_method": "hybrid_rrf_exact_parameter_gate",
+          "retrieved_evidence_ids": [
+            "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+          ],
+          "retrieval_ranking": [
+            {
+              "rank": 1,
+              "fact_id": "FACT-SAAS_BILLING-INV-DETAILS-DOC",
+              "score": 0.016393,
+              "source_tool": "openapi"
+            }
+          ],
+          "token_budget_cropping": {
+            "input_chunks": 1,
+            "budgeted_chunks": 1,
+            "token_budget": 1024,
+            "cropped_ids": [
+              "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+            ]
+          },
+          "prompt_evidence_context": "EVIDENCE [FACT-SAAS_BILLING-INV-DETAILS-DOC] (source: openapi, trust: UNTRUSTED)\nGET /api/v1/invoices/{id} retrieves billing invoice records for the specified invoice identifier. Requires active customer session.",
+          "zero_results": false,
+          "warning": null
+        }
+      },
+      {
+        "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-PATCH-01",
+        "app_family": "ecommerce_orders",
+        "split": "development",
+        "ground_truth_vulnerable": false,
+        "decision": "HYPOTHESIS",
+        "grounded": true,
+        "canonical_id_valid": true,
+        "evidence_sufficient": true,
+        "discriminative_experiment": false,
+        "useful": false,
+        "budget_tier": "LOW",
+        "experiments_executed": 0,
+        "missing_evidence": [
+          "Direct traffic facts"
+        ],
+        "grounding_reason": "All canonical IDs, relationships, and required evidence satisfied",
+        "termination_reason": "LIVE_3B_RAG_VALID",
+        "latency_seconds": 3.574,
+        "model_name": "qwen2.5-coder:3b",
+        "retrieval_trace": {
+          "query": "POST /api/v1/orders/{id}/refund API-STATE-001",
+          "retrieval_method": "hybrid_rrf_exact_parameter_gate",
+          "retrieved_evidence_ids": [
+            "FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC"
+          ],
+          "retrieval_ranking": [
+            {
+              "rank": 1,
+              "fact_id": "FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC",
+              "score": 0.016393,
+              "source_tool": "openapi"
+            }
+          ],
+          "token_budget_cropping": {
+            "input_chunks": 1,
+            "budgeted_chunks": 1,
+            "token_budget": 1024,
+            "cropped_ids": [
+              "FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC"
+            ]
+          },
+          "prompt_evidence_context": "EVIDENCE [FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC] (source: openapi, trust: UNTRUSTED)\nPOST /api/v1/orders/{id}/refund processes refund transaction for customer order. Expected order lifecycle state: PAID.",
+          "zero_results": false,
+          "warning": null
+        }
+      },
+      {
+        "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-ROLES-PATCH-01",
+        "app_family": "identity_provider",
+        "split": "validation",
+        "ground_truth_vulnerable": false,
+        "decision": "HYPOTHESIS",
+        "grounded": true,
+        "canonical_id_valid": true,
+        "evidence_sufficient": true,
+        "discriminative_experiment": false,
+        "useful": false,
+        "budget_tier": "LOW",
+        "experiments_executed": 0,
+        "missing_evidence": [
+          "Direct traffic facts"
+        ],
+        "grounding_reason": "All canonical IDs, relationships, and required evidence satisfied",
+        "termination_reason": "LIVE_3B_RAG_VALID",
+        "latency_seconds": 3.368,
+        "model_name": "qwen2.5-coder:3b",
+        "retrieval_trace": {
+          "query": "POST /api/v1/users/{id}/roles API-BFLA-001",
+          "retrieval_method": "hybrid_rrf_exact_parameter_gate",
+          "retrieved_evidence_ids": [
+            "FACT-IDENTITY_PROVIDER-USER-ROLES-DOC"
+          ],
+          "retrieval_ranking": [
+            {
+              "rank": 1,
+              "fact_id": "FACT-IDENTITY_PROVIDER-USER-ROLES-DOC",
+              "score": 0.016393,
+              "source_tool": "openapi"
+            }
+          ],
+          "token_budget_cropping": {
+            "input_chunks": 1,
+            "budgeted_chunks": 1,
+            "token_budget": 1024,
+            "cropped_ids": [
+              "FACT-IDENTITY_PROVIDER-USER-ROLES-DOC"
+            ]
+          },
+          "prompt_evidence_context": "EVIDENCE [FACT-IDENTITY_PROVIDER-USER-ROLES-DOC] (source: openapi, trust: UNTRUSTED)\nPOST /api/v1/users/{id}/roles updates account security role assignments. Requires admin role.",
+          "zero_results": false,
+          "warning": null
+        }
+      },
+      {
+        "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-EXPORT-PATCH-01",
+        "app_family": "document_collaboration",
+        "split": "validation",
+        "ground_truth_vulnerable": false,
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "grounded": true,
+        "canonical_id_valid": true,
+        "evidence_sufficient": false,
+        "discriminative_experiment": false,
+        "useful": false,
+        "budget_tier": "LOW",
+        "experiments_executed": 0,
+        "missing_evidence": [
+          "Direct traffic facts"
+        ],
+        "grounding_reason": "required_evidence_unmet: distinct_identity_pair (actor != target identity required)",
+        "termination_reason": "LIVE_3B_RAG_DOWNGRADE",
+        "latency_seconds": 3.267,
+        "model_name": "qwen2.5-coder:3b",
+        "retrieval_trace": {
+          "query": "GET /api/v1/docs/{id}/export API-BOLA-001",
+          "retrieval_method": "hybrid_rrf_exact_parameter_gate",
+          "retrieved_evidence_ids": [
+            "FACT-DOCUMENT_COLLABORATION-DOC-EXPORT-DOC"
+          ],
+          "retrieval_ranking": [
+            {
+              "rank": 1,
+              "fact_id": "FACT-DOCUMENT_COLLABORATION-DOC-EXPORT-DOC",
+              "score": 0.016393,
+              "source_tool": "openapi"
+            }
+          ],
+          "token_budget_cropping": {
+            "input_chunks": 1,
+            "budgeted_chunks": 1,
+            "token_budget": 1024,
+            "cropped_ids": [
+              "FACT-DOCUMENT_COLLABORATION-DOC-EXPORT-DOC"
+            ]
+          },
+          "prompt_evidence_context": "EVIDENCE [FACT-DOCUMENT_COLLABORATION-DOC-EXPORT-DOC] (source: openapi, trust: UNTRUSTED)\nGET /api/v1/docs/{id}/export generates document export package. Requires active document collaborator session.",
+          "zero_results": false,
+          "warning": null
+        }
+      },
+      {
+        "scenario_id": "SCEN-HEALTHCARE_PORTAL-NEG-01",
+        "app_family": "healthcare_portal",
+        "split": "evaluation",
+        "ground_truth_vulnerable": false,
+        "decision": "HYPOTHESIS",
+        "grounded": true,
+        "canonical_id_valid": true,
+        "evidence_sufficient": true,
+        "discriminative_experiment": false,
+        "useful": false,
+        "budget_tier": "LOW",
+        "experiments_executed": 0,
+        "missing_evidence": [
+          "traffic_facts"
+        ],
+        "grounding_reason": "All canonical IDs, relationships, and required evidence satisfied",
+        "termination_reason": "LIVE_3B_RAG_VALID",
+        "latency_seconds": 3.02,
+        "model_name": "qwen2.5-coder:3b",
+        "retrieval_trace": {
+          "query": "GET /catalog API-AUTH-NONE",
+          "retrieval_method": "hybrid_rrf",
+          "retrieved_evidence_ids": [
+            "FACT-HEALTHCARE_PORTAL-NEG-1"
+          ],
+          "retrieval_ranking": [
+            {
+              "rank": 1,
+              "fact_id": "FACT-HEALTHCARE_PORTAL-NEG-1",
+              "score": 0.016393,
+              "source_tool": "openapi"
+            }
+          ],
+          "token_budget_cropping": {
+            "input_chunks": 1,
+            "budgeted_chunks": 1,
+            "token_budget": 1024,
+            "cropped_ids": [
+              "FACT-HEALTHCARE_PORTAL-NEG-1"
+            ]
+          },
+          "prompt_evidence_context": "EVIDENCE [FACT-HEALTHCARE_PORTAL-NEG-1] (source: openapi, trust: UNTRUSTED)\nGET /catalog returns public unauthenticated service catalog metadata.",
+          "zero_results": false,
+          "warning": null
+        }
+      },
+      {
+        "scenario_id": "SCEN-IOT_FLEET_MGMT-NEG-01",
+        "app_family": "iot_fleet_mgmt",
+        "split": "evaluation",
+        "ground_truth_vulnerable": false,
+        "decision": "HYPOTHESIS",
+        "grounded": true,
+        "canonical_id_valid": true,
+        "evidence_sufficient": true,
+        "discriminative_experiment": false,
+        "useful": false,
+        "budget_tier": "LOW",
+        "experiments_executed": 0,
+        "missing_evidence": [
+          "Direct traffic facts",
+          "Endpoint parameters"
+        ],
+        "grounding_reason": "All canonical IDs, relationships, and required evidence satisfied",
+        "termination_reason": "LIVE_3B_RAG_VALID",
+        "latency_seconds": 3.549,
+        "model_name": "qwen2.5-coder:3b",
+        "retrieval_trace": {
+          "query": "GET /catalog API-AUTH-NONE",
+          "retrieval_method": "hybrid_rrf",
+          "retrieved_evidence_ids": [
+            "FACT-IOT_FLEET_MGMT-NEG-1"
+          ],
+          "retrieval_ranking": [
+            {
+              "rank": 1,
+              "fact_id": "FACT-IOT_FLEET_MGMT-NEG-1",
+              "score": 0.016393,
+              "source_tool": "openapi"
+            }
+          ],
+          "token_budget_cropping": {
+            "input_chunks": 1,
+            "budgeted_chunks": 1,
+            "token_budget": 1024,
+            "cropped_ids": [
+              "FACT-IOT_FLEET_MGMT-NEG-1"
+            ]
+          },
+          "prompt_evidence_context": "EVIDENCE [FACT-IOT_FLEET_MGMT-NEG-1] (source: openapi, trust: UNTRUSTED)\nGET /catalog returns public unauthenticated service catalog metadata.",
+          "zero_results": false,
+          "warning": null
+        }
+      }
+    ],
+    "TRACK_C_RAG_7B": [
+      {
+        "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-VULN-01",
+        "app_family": "saas_billing",
+        "split": "development",
+        "ground_truth_vulnerable": true,
+        "decision": "NO_RELEVANT_FUNCTIONALITY",
+        "grounded": true,
+        "canonical_id_valid": true,
+        "evidence_sufficient": true,
+        "discriminative_experiment": false,
+        "useful": false,
+        "budget_tier": "LOW",
+        "experiments_executed": 0,
+        "missing_evidence": [],
+        "grounding_reason": "All canonical IDs, relationships, and required evidence satisfied",
+        "termination_reason": "LIVE_7B_RAG_VALID",
+        "latency_seconds": 24.077,
+        "model_name": "qwen2.5-coder:7b",
+        "retrieval_trace": {
+          "query": "GET /api/v1/invoices/{id} API-BOLA-001",
+          "retrieval_method": "hybrid_rrf_exact_parameter_gate",
+          "retrieved_evidence_ids": [
+            "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+          ],
+          "retrieval_ranking": [
+            {
+              "rank": 1,
+              "fact_id": "FACT-SAAS_BILLING-INV-DETAILS-DOC",
+              "score": 0.016393,
+              "source_tool": "openapi"
+            }
+          ],
+          "token_budget_cropping": {
+            "input_chunks": 1,
+            "budgeted_chunks": 1,
+            "token_budget": 1024,
+            "cropped_ids": [
+              "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+            ]
+          },
+          "prompt_evidence_context": "EVIDENCE [FACT-SAAS_BILLING-INV-DETAILS-DOC] (source: openapi, trust: UNTRUSTED)\nGET /api/v1/invoices/{id} retrieves billing invoice records for the specified invoice identifier. Requires active customer session.",
+          "zero_results": false,
+          "warning": null
+        }
+      },
+      {
+        "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-VULN-01",
+        "app_family": "ecommerce_orders",
+        "split": "development",
+        "ground_truth_vulnerable": true,
+        "decision": "NO_RELEVANT_FUNCTIONALITY",
+        "grounded": true,
+        "canonical_id_valid": true,
+        "evidence_sufficient": true,
+        "discriminative_experiment": false,
+        "useful": false,
+        "budget_tier": "LOW",
+        "experiments_executed": 0,
+        "missing_evidence": [],
+        "grounding_reason": "All canonical IDs, relationships, and required evidence satisfied",
+        "termination_reason": "LIVE_7B_RAG_VALID",
+        "latency_seconds": 23.009,
+        "model_name": "qwen2.5-coder:7b",
+        "retrieval_trace": {
+          "query": "POST /api/v1/orders/{id}/refund API-STATE-001",
+          "retrieval_method": "hybrid_rrf_exact_parameter_gate",
+          "retrieved_evidence_ids": [
+            "FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC"
+          ],
+          "retrieval_ranking": [
+            {
+              "rank": 1,
+              "fact_id": "FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC",
+              "score": 0.016393,
+              "source_tool": "openapi"
+            }
+          ],
+          "token_budget_cropping": {
+            "input_chunks": 1,
+            "budgeted_chunks": 1,
+            "token_budget": 1024,
+            "cropped_ids": [
+              "FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC"
+            ]
+          },
+          "prompt_evidence_context": "EVIDENCE [FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC] (source: openapi, trust: UNTRUSTED)\nPOST /api/v1/orders/{id}/refund processes refund transaction for customer order. Expected order lifecycle state: PAID.",
+          "zero_results": false,
+          "warning": null
+        }
+      },
+      {
+        "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-ROLES-VULN-01",
+        "app_family": "identity_provider",
+        "split": "validation",
+        "ground_truth_vulnerable": true,
+        "decision": "NO_RELEVANT_FUNCTIONALITY",
+        "grounded": true,
+        "canonical_id_valid": true,
+        "evidence_sufficient": true,
+        "discriminative_experiment": false,
+        "useful": false,
+        "budget_tier": "LOW",
+        "experiments_executed": 0,
+        "missing_evidence": [],
+        "grounding_reason": "All canonical IDs, relationships, and required evidence satisfied",
+        "termination_reason": "LIVE_7B_RAG_VALID",
+        "latency_seconds": 18.612,
+        "model_name": "qwen2.5-coder:7b",
+        "retrieval_trace": {
+          "query": "POST /api/v1/users/{id}/roles API-BFLA-001",
+          "retrieval_method": "hybrid_rrf_exact_parameter_gate",
+          "retrieved_evidence_ids": [
+            "FACT-IDENTITY_PROVIDER-USER-ROLES-DOC"
+          ],
+          "retrieval_ranking": [
+            {
+              "rank": 1,
+              "fact_id": "FACT-IDENTITY_PROVIDER-USER-ROLES-DOC",
+              "score": 0.016393,
+              "source_tool": "openapi"
+            }
+          ],
+          "token_budget_cropping": {
+            "input_chunks": 1,
+            "budgeted_chunks": 1,
+            "token_budget": 1024,
+            "cropped_ids": [
+              "FACT-IDENTITY_PROVIDER-USER-ROLES-DOC"
+            ]
+          },
+          "prompt_evidence_context": "EVIDENCE [FACT-IDENTITY_PROVIDER-USER-ROLES-DOC] (source: openapi, trust: UNTRUSTED)\nPOST /api/v1/users/{id}/roles updates account security role assignments. Requires admin role.",
+          "zero_results": false,
+          "warning": null
+        }
+      },
+      {
+        "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-EXPORT-VULN-01",
+        "app_family": "document_collaboration",
+        "split": "validation",
+        "ground_truth_vulnerable": true,
+        "decision": "NO_RELEVANT_FUNCTIONALITY",
+        "grounded": true,
+        "canonical_id_valid": true,
+        "evidence_sufficient": true,
+        "discriminative_experiment": false,
+        "useful": false,
+        "budget_tier": "LOW",
+        "experiments_executed": 0,
+        "missing_evidence": [],
+        "grounding_reason": "All canonical IDs, relationships, and required evidence satisfied",
+        "termination_reason": "LIVE_7B_RAG_VALID",
+        "latency_seconds": 17.193,
+        "model_name": "qwen2.5-coder:7b",
+        "retrieval_trace": {
+          "query": "GET /api/v1/docs/{id}/export API-BOLA-001",
+          "retrieval_method": "hybrid_rrf_exact_parameter_gate",
+          "retrieved_evidence_ids": [
+            "FACT-DOCUMENT_COLLABORATION-DOC-EXPORT-DOC"
+          ],
+          "retrieval_ranking": [
+            {
+              "rank": 1,
+              "fact_id": "FACT-DOCUMENT_COLLABORATION-DOC-EXPORT-DOC",
+              "score": 0.016393,
+              "source_tool": "openapi"
+            }
+          ],
+          "token_budget_cropping": {
+            "input_chunks": 1,
+            "budgeted_chunks": 1,
+            "token_budget": 1024,
+            "cropped_ids": [
+              "FACT-DOCUMENT_COLLABORATION-DOC-EXPORT-DOC"
+            ]
+          },
+          "prompt_evidence_context": "EVIDENCE [FACT-DOCUMENT_COLLABORATION-DOC-EXPORT-DOC] (source: openapi, trust: UNTRUSTED)\nGET /api/v1/docs/{id}/export generates document export package. Requires active document collaborator session.",
+          "zero_results": false,
+          "warning": null
+        }
+      },
+      {
+        "scenario_id": "SCEN-HEALTHCARE_PORTAL-PATIENT-REC-VULN-01",
+        "app_family": "healthcare_portal",
+        "split": "evaluation",
+        "ground_truth_vulnerable": true,
+        "decision": "NO_RELEVANT_FUNCTIONALITY",
+        "grounded": true,
+        "canonical_id_valid": true,
+        "evidence_sufficient": true,
+        "discriminative_experiment": false,
+        "useful": false,
+        "budget_tier": "LOW",
+        "experiments_executed": 0,
+        "missing_evidence": [],
+        "grounding_reason": "All canonical IDs, relationships, and required evidence satisfied",
+        "termination_reason": "LIVE_7B_RAG_VALID",
+        "latency_seconds": 19.355,
+        "model_name": "qwen2.5-coder:7b",
+        "retrieval_trace": {
+          "query": "GET /api/v1/records/{id} API-BOLA-001",
+          "retrieval_method": "hybrid_rrf_exact_parameter_gate",
+          "retrieved_evidence_ids": [
+            "FACT-HEALTHCARE_PORTAL-PATIENT-REC-DOC"
+          ],
+          "retrieval_ranking": [
+            {
+              "rank": 1,
+              "fact_id": "FACT-HEALTHCARE_PORTAL-PATIENT-REC-DOC",
+              "score": 0.016393,
+              "source_tool": "openapi"
+            }
+          ],
+          "token_budget_cropping": {
+            "input_chunks": 1,
+            "budgeted_chunks": 1,
+            "token_budget": 1024,
+            "cropped_ids": [
+              "FACT-HEALTHCARE_PORTAL-PATIENT-REC-DOC"
+            ]
+          },
+          "prompt_evidence_context": "EVIDENCE [FACT-HEALTHCARE_PORTAL-PATIENT-REC-DOC] (source: openapi, trust: UNTRUSTED)\nGET /api/v1/records/{id} retrieves patient diagnostic history and health chart. Requires patient or designated physician session.",
+          "zero_results": false,
+          "warning": null
+        }
+      },
+      {
+        "scenario_id": "SCEN-IOT_FLEET_MGMT-DEVICE-CMD-VULN-01",
+        "app_family": "iot_fleet_mgmt",
+        "split": "evaluation",
+        "ground_truth_vulnerable": true,
+        "decision": "NO_RELEVANT_FUNCTIONALITY",
+        "grounded": true,
+        "canonical_id_valid": true,
+        "evidence_sufficient": true,
+        "discriminative_experiment": false,
+        "useful": false,
+        "budget_tier": "LOW",
+        "experiments_executed": 0,
+        "missing_evidence": [],
+        "grounding_reason": "All canonical IDs, relationships, and required evidence satisfied",
+        "termination_reason": "LIVE_7B_RAG_VALID",
+        "latency_seconds": 19.19,
+        "model_name": "qwen2.5-coder:7b",
+        "retrieval_trace": {
+          "query": "POST /api/v1/devices/{id}/command API-DEVICE-BOLA-001",
+          "retrieval_method": "hybrid_rrf_exact_parameter_gate",
+          "retrieved_evidence_ids": [
+            "FACT-IOT_FLEET_MGMT-DEVICE-CMD-DOC"
+          ],
+          "retrieval_ranking": [
+            {
+              "rank": 1,
+              "fact_id": "FACT-IOT_FLEET_MGMT-DEVICE-CMD-DOC",
+              "score": 0.016393,
+              "source_tool": "openapi"
+            }
+          ],
+          "token_budget_cropping": {
+            "input_chunks": 1,
+            "budgeted_chunks": 1,
+            "token_budget": 1024,
+            "cropped_ids": [
+              "FACT-IOT_FLEET_MGMT-DEVICE-CMD-DOC"
+            ]
+          },
+          "prompt_evidence_context": "EVIDENCE [FACT-IOT_FLEET_MGMT-DEVICE-CMD-DOC] (source: openapi, trust: UNTRUSTED)\nPOST /api/v1/devices/{id}/command dispatches operational instructions to IoT device. Requires fleet operator session.",
+          "zero_results": false,
+          "warning": null
+        }
+      },
+      {
+        "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-PATCH-01",
+        "app_family": "saas_billing",
+        "split": "development",
+        "ground_truth_vulnerable": false,
+        "decision": "NO_RELEVANT_FUNCTIONALITY",
+        "grounded": true,
+        "canonical_id_valid": true,
+        "evidence_sufficient": true,
+        "discriminative_experiment": false,
+        "useful": false,
+        "budget_tier": "LOW",
+        "experiments_executed": 0,
+        "missing_evidence": [],
+        "grounding_reason": "All canonical IDs, relationships, and required evidence satisfied",
+        "termination_reason": "LIVE_7B_RAG_VALID",
+        "latency_seconds": 15.992,
+        "model_name": "qwen2.5-coder:7b",
+        "retrieval_trace": {
+          "query": "GET /api/v1/invoices/{id} API-BOLA-001",
+          "retrieval_method": "hybrid_rrf_exact_parameter_gate",
+          "retrieved_evidence_ids": [
+            "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+          ],
+          "retrieval_ranking": [
+            {
+              "rank": 1,
+              "fact_id": "FACT-SAAS_BILLING-INV-DETAILS-DOC",
+              "score": 0.016393,
+              "source_tool": "openapi"
+            }
+          ],
+          "token_budget_cropping": {
+            "input_chunks": 1,
+            "budgeted_chunks": 1,
+            "token_budget": 1024,
+            "cropped_ids": [
+              "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+            ]
+          },
+          "prompt_evidence_context": "EVIDENCE [FACT-SAAS_BILLING-INV-DETAILS-DOC] (source: openapi, trust: UNTRUSTED)\nGET /api/v1/invoices/{id} retrieves billing invoice records for the specified invoice identifier. Requires active customer session.",
+          "zero_results": false,
+          "warning": null
+        }
+      },
+      {
+        "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-PATCH-01",
+        "app_family": "ecommerce_orders",
+        "split": "development",
+        "ground_truth_vulnerable": false,
+        "decision": "NO_RELEVANT_FUNCTIONALITY",
+        "grounded": true,
+        "canonical_id_valid": true,
+        "evidence_sufficient": true,
+        "discriminative_experiment": false,
+        "useful": false,
+        "budget_tier": "LOW",
+        "experiments_executed": 0,
+        "missing_evidence": [],
+        "grounding_reason": "All canonical IDs, relationships, and required evidence satisfied",
+        "termination_reason": "LIVE_7B_RAG_VALID",
+        "latency_seconds": 24.074,
+        "model_name": "qwen2.5-coder:7b",
+        "retrieval_trace": {
+          "query": "POST /api/v1/orders/{id}/refund API-STATE-001",
+          "retrieval_method": "hybrid_rrf_exact_parameter_gate",
+          "retrieved_evidence_ids": [
+            "FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC"
+          ],
+          "retrieval_ranking": [
+            {
+              "rank": 1,
+              "fact_id": "FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC",
+              "score": 0.016393,
+              "source_tool": "openapi"
+            }
+          ],
+          "token_budget_cropping": {
+            "input_chunks": 1,
+            "budgeted_chunks": 1,
+            "token_budget": 1024,
+            "cropped_ids": [
+              "FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC"
+            ]
+          },
+          "prompt_evidence_context": "EVIDENCE [FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC] (source: openapi, trust: UNTRUSTED)\nPOST /api/v1/orders/{id}/refund processes refund transaction for customer order. Expected order lifecycle state: PAID.",
+          "zero_results": false,
+          "warning": null
+        }
+      },
+      {
+        "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-ROLES-PATCH-01",
+        "app_family": "identity_provider",
+        "split": "validation",
+        "ground_truth_vulnerable": false,
+        "decision": "NO_RELEVANT_FUNCTIONALITY",
+        "grounded": true,
+        "canonical_id_valid": true,
+        "evidence_sufficient": true,
+        "discriminative_experiment": false,
+        "useful": false,
+        "budget_tier": "LOW",
+        "experiments_executed": 0,
+        "missing_evidence": [],
+        "grounding_reason": "All canonical IDs, relationships, and required evidence satisfied",
+        "termination_reason": "LIVE_7B_RAG_VALID",
+        "latency_seconds": 19.045,
+        "model_name": "qwen2.5-coder:7b",
+        "retrieval_trace": {
+          "query": "POST /api/v1/users/{id}/roles API-BFLA-001",
+          "retrieval_method": "hybrid_rrf_exact_parameter_gate",
+          "retrieved_evidence_ids": [
+            "FACT-IDENTITY_PROVIDER-USER-ROLES-DOC"
+          ],
+          "retrieval_ranking": [
+            {
+              "rank": 1,
+              "fact_id": "FACT-IDENTITY_PROVIDER-USER-ROLES-DOC",
+              "score": 0.016393,
+              "source_tool": "openapi"
+            }
+          ],
+          "token_budget_cropping": {
+            "input_chunks": 1,
+            "budgeted_chunks": 1,
+            "token_budget": 1024,
+            "cropped_ids": [
+              "FACT-IDENTITY_PROVIDER-USER-ROLES-DOC"
+            ]
+          },
+          "prompt_evidence_context": "EVIDENCE [FACT-IDENTITY_PROVIDER-USER-ROLES-DOC] (source: openapi, trust: UNTRUSTED)\nPOST /api/v1/users/{id}/roles updates account security role assignments. Requires admin role.",
+          "zero_results": false,
+          "warning": null
+        }
+      },
+      {
+        "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-EXPORT-PATCH-01",
+        "app_family": "document_collaboration",
+        "split": "validation",
+        "ground_truth_vulnerable": false,
+        "decision": "NO_RELEVANT_FUNCTIONALITY",
+        "grounded": true,
+        "canonical_id_valid": true,
+        "evidence_sufficient": true,
+        "discriminative_experiment": false,
+        "useful": false,
+        "budget_tier": "LOW",
+        "experiments_executed": 0,
+        "missing_evidence": [],
+        "grounding_reason": "All canonical IDs, relationships, and required evidence satisfied",
+        "termination_reason": "LIVE_7B_RAG_VALID",
+        "latency_seconds": 17.107,
+        "model_name": "qwen2.5-coder:7b",
+        "retrieval_trace": {
+          "query": "GET /api/v1/docs/{id}/export API-BOLA-001",
+          "retrieval_method": "hybrid_rrf_exact_parameter_gate",
+          "retrieved_evidence_ids": [
+            "FACT-DOCUMENT_COLLABORATION-DOC-EXPORT-DOC"
+          ],
+          "retrieval_ranking": [
+            {
+              "rank": 1,
+              "fact_id": "FACT-DOCUMENT_COLLABORATION-DOC-EXPORT-DOC",
+              "score": 0.016393,
+              "source_tool": "openapi"
+            }
+          ],
+          "token_budget_cropping": {
+            "input_chunks": 1,
+            "budgeted_chunks": 1,
+            "token_budget": 1024,
+            "cropped_ids": [
+              "FACT-DOCUMENT_COLLABORATION-DOC-EXPORT-DOC"
+            ]
+          },
+          "prompt_evidence_context": "EVIDENCE [FACT-DOCUMENT_COLLABORATION-DOC-EXPORT-DOC] (source: openapi, trust: UNTRUSTED)\nGET /api/v1/docs/{id}/export generates document export package. Requires active document collaborator session.",
+          "zero_results": false,
+          "warning": null
+        }
+      },
+      {
+        "scenario_id": "SCEN-HEALTHCARE_PORTAL-NEG-01",
+        "app_family": "healthcare_portal",
+        "split": "evaluation",
+        "ground_truth_vulnerable": false,
+        "decision": "NO_RELEVANT_FUNCTIONALITY",
+        "grounded": true,
+        "canonical_id_valid": true,
+        "evidence_sufficient": true,
+        "discriminative_experiment": false,
+        "useful": false,
+        "budget_tier": "LOW",
+        "experiments_executed": 0,
+        "missing_evidence": [],
+        "grounding_reason": "All canonical IDs, relationships, and required evidence satisfied",
+        "termination_reason": "LIVE_7B_RAG_VALID",
+        "latency_seconds": 12.9,
+        "model_name": "qwen2.5-coder:7b",
+        "retrieval_trace": {
+          "query": "GET /catalog API-AUTH-NONE",
+          "retrieval_method": "hybrid_rrf",
+          "retrieved_evidence_ids": [
+            "FACT-HEALTHCARE_PORTAL-NEG-1"
+          ],
+          "retrieval_ranking": [
+            {
+              "rank": 1,
+              "fact_id": "FACT-HEALTHCARE_PORTAL-NEG-1",
+              "score": 0.016393,
+              "source_tool": "openapi"
+            }
+          ],
+          "token_budget_cropping": {
+            "input_chunks": 1,
+            "budgeted_chunks": 1,
+            "token_budget": 1024,
+            "cropped_ids": [
+              "FACT-HEALTHCARE_PORTAL-NEG-1"
+            ]
+          },
+          "prompt_evidence_context": "EVIDENCE [FACT-HEALTHCARE_PORTAL-NEG-1] (source: openapi, trust: UNTRUSTED)\nGET /catalog returns public unauthenticated service catalog metadata.",
+          "zero_results": false,
+          "warning": null
+        }
+      },
+      {
+        "scenario_id": "SCEN-IOT_FLEET_MGMT-NEG-01",
+        "app_family": "iot_fleet_mgmt",
+        "split": "evaluation",
+        "ground_truth_vulnerable": false,
+        "decision": "NO_RELEVANT_FUNCTIONALITY",
+        "grounded": true,
+        "canonical_id_valid": true,
+        "evidence_sufficient": true,
+        "discriminative_experiment": false,
+        "useful": false,
+        "budget_tier": "LOW",
+        "experiments_executed": 0,
+        "missing_evidence": [],
+        "grounding_reason": "All canonical IDs, relationships, and required evidence satisfied",
+        "termination_reason": "LIVE_7B_RAG_VALID",
+        "latency_seconds": 16.433,
+        "model_name": "qwen2.5-coder:7b",
+        "retrieval_trace": {
+          "query": "GET /catalog API-AUTH-NONE",
+          "retrieval_method": "hybrid_rrf",
+          "retrieved_evidence_ids": [
+            "FACT-IOT_FLEET_MGMT-NEG-1"
+          ],
+          "retrieval_ranking": [
+            {
+              "rank": 1,
+              "fact_id": "FACT-IOT_FLEET_MGMT-NEG-1",
+              "score": 0.016393,
+              "source_tool": "openapi"
+            }
+          ],
+          "token_budget_cropping": {
+            "input_chunks": 1,
+            "budgeted_chunks": 1,
+            "token_budget": 1024,
+            "cropped_ids": [
+              "FACT-IOT_FLEET_MGMT-NEG-1"
+            ]
+          },
+          "prompt_evidence_context": "EVIDENCE [FACT-IOT_FLEET_MGMT-NEG-1] (source: openapi, trust: UNTRUSTED)\nGET /catalog returns public unauthenticated service catalog metadata.",
+          "zero_results": false,
+          "warning": null
+        }
+      }
+    ],
+    "TRACK_D_APP_MODEL_INVARIANTS": [
+      {
+        "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-VULN-01",
+        "app_family": "saas_billing",
+        "split": "development",
+        "ground_truth_vulnerable": true,
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "grounded": true,
+        "canonical_id_valid": true,
+        "evidence_sufficient": false,
+        "discriminative_experiment": true,
+        "useful": false,
+        "budget_tier": "LOW",
+        "experiments_executed": 0,
+        "missing_evidence": [
+          "EVIDENCE [FACT-SAAS_BILLING-INV-DETAILS-DOC]"
+        ],
+        "grounding_reason": "required_evidence_unmet: distinct_identity_pair (actor != target identity required)",
+        "termination_reason": "LIVE_7B_INVARIANTS_DOWNGRADE_OPEN_LOOP",
+        "latency_seconds": 30.27,
+        "model_name": "qwen2.5-coder:7b",
+        "retrieval_trace": {
+          "query": "GET /api/v1/invoices/{id} API-BOLA-001",
+          "retrieval_method": "hybrid_rrf_exact_parameter_gate",
+          "retrieved_evidence_ids": [
+            "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+          ],
+          "retrieval_ranking": [
+            {
+              "rank": 1,
+              "fact_id": "FACT-SAAS_BILLING-INV-DETAILS-DOC",
+              "score": 0.016393,
+              "source_tool": "openapi"
+            }
+          ],
+          "token_budget_cropping": {
+            "input_chunks": 1,
+            "budgeted_chunks": 1,
+            "token_budget": 1024,
+            "cropped_ids": [
+              "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+            ]
+          },
+          "prompt_evidence_context": "EVIDENCE [FACT-SAAS_BILLING-INV-DETAILS-DOC] (source: openapi, trust: UNTRUSTED)\nGET /api/v1/invoices/{id} retrieves billing invoice records for the specified invoice identifier. Requires active customer session.",
+          "zero_results": false,
+          "warning": null
+        }
+      },
+      {
+        "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-VULN-01",
+        "app_family": "ecommerce_orders",
+        "split": "development",
+        "ground_truth_vulnerable": true,
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "grounded": false,
+        "canonical_id_valid": false,
+        "evidence_sufficient": false,
+        "discriminative_experiment": true,
+        "useful": false,
+        "budget_tier": "LOW",
+        "experiments_executed": 0,
+        "missing_evidence": [
+          "EVIDENCE [FACT-ECOMMERCE_AUTH-001] (source: security_policy, trust: UNTRUSTED)",
+          "EVIDENCE [FACT-ECOMMERCE_ORDER-LIFECYCLE-001] (source: business_logic, trust: UNTRUSTED)"
+        ],
+        "grounding_reason": "hallucinated_evidence: cited fact FACT-ECOMMERCE_ORD-REFUND-DOC does not exist in evidence store",
+        "termination_reason": "LIVE_7B_INVARIANTS_DISCARD_OPEN_LOOP",
+        "latency_seconds": 39.446,
+        "model_name": "qwen2.5-coder:7b",
+        "retrieval_trace": {
+          "query": "POST /api/v1/orders/{id}/refund API-STATE-001",
+          "retrieval_method": "hybrid_rrf_exact_parameter_gate",
+          "retrieved_evidence_ids": [
+            "FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC"
+          ],
+          "retrieval_ranking": [
+            {
+              "rank": 1,
+              "fact_id": "FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC",
+              "score": 0.016393,
+              "source_tool": "openapi"
+            }
+          ],
+          "token_budget_cropping": {
+            "input_chunks": 1,
+            "budgeted_chunks": 1,
+            "token_budget": 1024,
+            "cropped_ids": [
+              "FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC"
+            ]
+          },
+          "prompt_evidence_context": "EVIDENCE [FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC] (source: openapi, trust: UNTRUSTED)\nPOST /api/v1/orders/{id}/refund processes refund transaction for customer order. Expected order lifecycle state: PAID.",
+          "zero_results": false,
+          "warning": null
+        }
+      },
+      {
+        "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-ROLES-VULN-01",
+        "app_family": "identity_provider",
+        "split": "validation",
+        "ground_truth_vulnerable": true,
+        "decision": "HYPOTHESIS",
+        "grounded": true,
+        "canonical_id_valid": true,
+        "evidence_sufficient": true,
+        "discriminative_experiment": true,
+        "useful": false,
+        "budget_tier": "LOW",
+        "experiments_executed": 0,
+        "missing_evidence": [
+          "EVIDENCE [FACT-IDENTITY_PROVIDER-ADMIN-ROLES-DOC]",
+          "EVIDENCE [FACT-IDENTITY_PROVIDER-ROLE-ASSIGNMENT-VALIDATION-DOC]"
+        ],
+        "grounding_reason": "All canonical IDs, relationships, and required evidence satisfied",
+        "termination_reason": "LIVE_7B_INVARIANTS_VALID_OPEN_LOOP",
+        "latency_seconds": 28.675,
+        "model_name": "qwen2.5-coder:7b",
+        "retrieval_trace": {
+          "query": "POST /api/v1/users/{id}/roles API-BFLA-001",
+          "retrieval_method": "hybrid_rrf_exact_parameter_gate",
+          "retrieved_evidence_ids": [
+            "FACT-IDENTITY_PROVIDER-USER-ROLES-DOC"
+          ],
+          "retrieval_ranking": [
+            {
+              "rank": 1,
+              "fact_id": "FACT-IDENTITY_PROVIDER-USER-ROLES-DOC",
+              "score": 0.016393,
+              "source_tool": "openapi"
+            }
+          ],
+          "token_budget_cropping": {
+            "input_chunks": 1,
+            "budgeted_chunks": 1,
+            "token_budget": 1024,
+            "cropped_ids": [
+              "FACT-IDENTITY_PROVIDER-USER-ROLES-DOC"
+            ]
+          },
+          "prompt_evidence_context": "EVIDENCE [FACT-IDENTITY_PROVIDER-USER-ROLES-DOC] (source: openapi, trust: UNTRUSTED)\nPOST /api/v1/users/{id}/roles updates account security role assignments. Requires admin role.",
+          "zero_results": false,
+          "warning": null
+        }
+      },
+      {
+        "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-EXPORT-VULN-01",
+        "app_family": "document_collaboration",
+        "split": "validation",
+        "ground_truth_vulnerable": true,
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "grounded": true,
+        "canonical_id_valid": true,
+        "evidence_sufficient": false,
+        "discriminative_experiment": true,
+        "useful": false,
+        "budget_tier": "LOW",
+        "experiments_executed": 0,
+        "missing_evidence": [
+          "EVIDENCE [FACT-DOCUMENT_COLLABORATION-DOC-EXPORT-DOC]"
+        ],
+        "grounding_reason": "required_evidence_unmet: distinct_identity_pair (actor != target identity required)",
+        "termination_reason": "LIVE_7B_INVARIANTS_DOWNGRADE_OPEN_LOOP",
+        "latency_seconds": 28.373,
+        "model_name": "qwen2.5-coder:7b",
+        "retrieval_trace": {
+          "query": "GET /api/v1/docs/{id}/export API-BOLA-001",
+          "retrieval_method": "hybrid_rrf_exact_parameter_gate",
+          "retrieved_evidence_ids": [
+            "FACT-DOCUMENT_COLLABORATION-DOC-EXPORT-DOC"
+          ],
+          "retrieval_ranking": [
+            {
+              "rank": 1,
+              "fact_id": "FACT-DOCUMENT_COLLABORATION-DOC-EXPORT-DOC",
+              "score": 0.016393,
+              "source_tool": "openapi"
+            }
+          ],
+          "token_budget_cropping": {
+            "input_chunks": 1,
+            "budgeted_chunks": 1,
+            "token_budget": 1024,
+            "cropped_ids": [
+              "FACT-DOCUMENT_COLLABORATION-DOC-EXPORT-DOC"
+            ]
+          },
+          "prompt_evidence_context": "EVIDENCE [FACT-DOCUMENT_COLLABORATION-DOC-EXPORT-DOC] (source: openapi, trust: UNTRUSTED)\nGET /api/v1/docs/{id}/export generates document export package. Requires active document collaborator session.",
+          "zero_results": false,
+          "warning": null
+        }
+      },
+      {
+        "scenario_id": "SCEN-HEALTHCARE_PORTAL-PATIENT-REC-VULN-01",
+        "app_family": "healthcare_portal",
+        "split": "evaluation",
+        "ground_truth_vulnerable": true,
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "grounded": true,
+        "canonical_id_valid": true,
+        "evidence_sufficient": false,
+        "discriminative_experiment": true,
+        "useful": false,
+        "budget_tier": "LOW",
+        "experiments_executed": 0,
+        "missing_evidence": [
+          "EVIDENCE [FACT-HEALTHCARE_PORTAL-PATIENT-REC-DOC]"
+        ],
+        "grounding_reason": "required_evidence_unmet: distinct_identity_pair (actor != target identity required)",
+        "termination_reason": "LIVE_7B_INVARIANTS_DOWNGRADE_OPEN_LOOP",
+        "latency_seconds": 26.037,
+        "model_name": "qwen2.5-coder:7b",
+        "retrieval_trace": {
+          "query": "GET /api/v1/records/{id} API-BOLA-001",
+          "retrieval_method": "hybrid_rrf_exact_parameter_gate",
+          "retrieved_evidence_ids": [
+            "FACT-HEALTHCARE_PORTAL-PATIENT-REC-DOC"
+          ],
+          "retrieval_ranking": [
+            {
+              "rank": 1,
+              "fact_id": "FACT-HEALTHCARE_PORTAL-PATIENT-REC-DOC",
+              "score": 0.016393,
+              "source_tool": "openapi"
+            }
+          ],
+          "token_budget_cropping": {
+            "input_chunks": 1,
+            "budgeted_chunks": 1,
+            "token_budget": 1024,
+            "cropped_ids": [
+              "FACT-HEALTHCARE_PORTAL-PATIENT-REC-DOC"
+            ]
+          },
+          "prompt_evidence_context": "EVIDENCE [FACT-HEALTHCARE_PORTAL-PATIENT-REC-DOC] (source: openapi, trust: UNTRUSTED)\nGET /api/v1/records/{id} retrieves patient diagnostic history and health chart. Requires patient or designated physician session.",
+          "zero_results": false,
+          "warning": null
+        }
+      },
+      {
+        "scenario_id": "SCEN-IOT_FLEET_MGMT-DEVICE-CMD-VULN-01",
+        "app_family": "iot_fleet_mgmt",
+        "split": "evaluation",
+        "ground_truth_vulnerable": true,
+        "decision": "HYPOTHESIS",
+        "grounded": true,
+        "canonical_id_valid": true,
+        "evidence_sufficient": true,
+        "discriminative_experiment": true,
+        "useful": false,
+        "budget_tier": "LOW",
+        "experiments_executed": 0,
+        "missing_evidence": [
+          "EVIDENCE [FACT-IOT_FLEET_MGMT-DEVICE-CMD-AUTH] (source: system logs or documentation, trust: UNTRUSTED)"
+        ],
+        "grounding_reason": "All canonical IDs, relationships, and required evidence satisfied",
+        "termination_reason": "LIVE_7B_INVARIANTS_VALID_OPEN_LOOP",
+        "latency_seconds": 24.648,
+        "model_name": "qwen2.5-coder:7b",
+        "retrieval_trace": {
+          "query": "POST /api/v1/devices/{id}/command API-DEVICE-BOLA-001",
+          "retrieval_method": "hybrid_rrf_exact_parameter_gate",
+          "retrieved_evidence_ids": [
+            "FACT-IOT_FLEET_MGMT-DEVICE-CMD-DOC"
+          ],
+          "retrieval_ranking": [
+            {
+              "rank": 1,
+              "fact_id": "FACT-IOT_FLEET_MGMT-DEVICE-CMD-DOC",
+              "score": 0.016393,
+              "source_tool": "openapi"
+            }
+          ],
+          "token_budget_cropping": {
+            "input_chunks": 1,
+            "budgeted_chunks": 1,
+            "token_budget": 1024,
+            "cropped_ids": [
+              "FACT-IOT_FLEET_MGMT-DEVICE-CMD-DOC"
+            ]
+          },
+          "prompt_evidence_context": "EVIDENCE [FACT-IOT_FLEET_MGMT-DEVICE-CMD-DOC] (source: openapi, trust: UNTRUSTED)\nPOST /api/v1/devices/{id}/command dispatches operational instructions to IoT device. Requires fleet operator session.",
+          "zero_results": false,
+          "warning": null
+        }
+      },
+      {
+        "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-PATCH-01",
+        "app_family": "saas_billing",
+        "split": "development",
+        "ground_truth_vulnerable": false,
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "grounded": true,
+        "canonical_id_valid": true,
+        "evidence_sufficient": false,
+        "discriminative_experiment": true,
+        "useful": false,
+        "budget_tier": "LOW",
+        "experiments_executed": 0,
+        "missing_evidence": [
+          "EVIDENCE [FACT-SAAS_BILLING-INV-DETAILS-DOC]"
+        ],
+        "grounding_reason": "required_evidence_unmet: distinct_identity_pair (actor != target identity required)",
+        "termination_reason": "LIVE_7B_INVARIANTS_DOWNGRADE_OPEN_LOOP",
+        "latency_seconds": 27.479,
+        "model_name": "qwen2.5-coder:7b",
+        "retrieval_trace": {
+          "query": "GET /api/v1/invoices/{id} API-BOLA-001",
+          "retrieval_method": "hybrid_rrf_exact_parameter_gate",
+          "retrieved_evidence_ids": [
+            "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+          ],
+          "retrieval_ranking": [
+            {
+              "rank": 1,
+              "fact_id": "FACT-SAAS_BILLING-INV-DETAILS-DOC",
+              "score": 0.016393,
+              "source_tool": "openapi"
+            }
+          ],
+          "token_budget_cropping": {
+            "input_chunks": 1,
+            "budgeted_chunks": 1,
+            "token_budget": 1024,
+            "cropped_ids": [
+              "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+            ]
+          },
+          "prompt_evidence_context": "EVIDENCE [FACT-SAAS_BILLING-INV-DETAILS-DOC] (source: openapi, trust: UNTRUSTED)\nGET /api/v1/invoices/{id} retrieves billing invoice records for the specified invoice identifier. Requires active customer session.",
+          "zero_results": false,
+          "warning": null
+        }
+      },
+      {
+        "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-PATCH-01",
+        "app_family": "ecommerce_orders",
+        "split": "development",
+        "ground_truth_vulnerable": false,
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "grounded": false,
+        "canonical_id_valid": false,
+        "evidence_sufficient": false,
+        "discriminative_experiment": true,
+        "useful": false,
+        "budget_tier": "LOW",
+        "experiments_executed": 0,
+        "missing_evidence": [
+          "EVIDENCE [FACT-ECOMMERCE_AUTH-001] (source: security_policy, trust: UNTRUSTED)",
+          "EVIDENCE [FACT-ECOMMERCE_ORDER-LIFECYCLE-001] (source: business_logic, trust: UNTRUSTED)"
+        ],
+        "grounding_reason": "hallucinated_evidence: cited fact FACT-ECOMMERCE_ORD-REFUND-DOC does not exist in evidence store",
+        "termination_reason": "LIVE_7B_INVARIANTS_DISCARD_OPEN_LOOP",
+        "latency_seconds": 38.126,
+        "model_name": "qwen2.5-coder:7b",
+        "retrieval_trace": {
+          "query": "POST /api/v1/orders/{id}/refund API-STATE-001",
+          "retrieval_method": "hybrid_rrf_exact_parameter_gate",
+          "retrieved_evidence_ids": [
+            "FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC"
+          ],
+          "retrieval_ranking": [
+            {
+              "rank": 1,
+              "fact_id": "FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC",
+              "score": 0.016393,
+              "source_tool": "openapi"
+            }
+          ],
+          "token_budget_cropping": {
+            "input_chunks": 1,
+            "budgeted_chunks": 1,
+            "token_budget": 1024,
+            "cropped_ids": [
+              "FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC"
+            ]
+          },
+          "prompt_evidence_context": "EVIDENCE [FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC] (source: openapi, trust: UNTRUSTED)\nPOST /api/v1/orders/{id}/refund processes refund transaction for customer order. Expected order lifecycle state: PAID.",
+          "zero_results": false,
+          "warning": null
+        }
+      },
+      {
+        "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-ROLES-PATCH-01",
+        "app_family": "identity_provider",
+        "split": "validation",
+        "ground_truth_vulnerable": false,
+        "decision": "HYPOTHESIS",
+        "grounded": true,
+        "canonical_id_valid": true,
+        "evidence_sufficient": true,
+        "discriminative_experiment": true,
+        "useful": false,
+        "budget_tier": "LOW",
+        "experiments_executed": 0,
+        "missing_evidence": [
+          "EVIDENCE [FACT-IDENTITY_PROVIDER-ADMIN-ROLES-DOC]",
+          "EVIDENCE [FACT-IDENTITY_PROVIDER-ROLE-VALIDATION-DOC]"
+        ],
+        "grounding_reason": "All canonical IDs, relationships, and required evidence satisfied",
+        "termination_reason": "LIVE_7B_INVARIANTS_VALID_OPEN_LOOP",
+        "latency_seconds": 27.824,
+        "model_name": "qwen2.5-coder:7b",
+        "retrieval_trace": {
+          "query": "POST /api/v1/users/{id}/roles API-BFLA-001",
+          "retrieval_method": "hybrid_rrf_exact_parameter_gate",
+          "retrieved_evidence_ids": [
+            "FACT-IDENTITY_PROVIDER-USER-ROLES-DOC"
+          ],
+          "retrieval_ranking": [
+            {
+              "rank": 1,
+              "fact_id": "FACT-IDENTITY_PROVIDER-USER-ROLES-DOC",
+              "score": 0.016393,
+              "source_tool": "openapi"
+            }
+          ],
+          "token_budget_cropping": {
+            "input_chunks": 1,
+            "budgeted_chunks": 1,
+            "token_budget": 1024,
+            "cropped_ids": [
+              "FACT-IDENTITY_PROVIDER-USER-ROLES-DOC"
+            ]
+          },
+          "prompt_evidence_context": "EVIDENCE [FACT-IDENTITY_PROVIDER-USER-ROLES-DOC] (source: openapi, trust: UNTRUSTED)\nPOST /api/v1/users/{id}/roles updates account security role assignments. Requires admin role.",
+          "zero_results": false,
+          "warning": null
+        }
+      },
+      {
+        "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-EXPORT-PATCH-01",
+        "app_family": "document_collaboration",
+        "split": "validation",
+        "ground_truth_vulnerable": false,
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "grounded": true,
+        "canonical_id_valid": true,
+        "evidence_sufficient": false,
+        "discriminative_experiment": true,
+        "useful": false,
+        "budget_tier": "LOW",
+        "experiments_executed": 0,
+        "missing_evidence": [
+          "EVIDENCE [FACT-DOCUMENT_COLLABORATION-DOC-EXPORT-DOC]"
+        ],
+        "grounding_reason": "required_evidence_unmet: distinct_identity_pair (actor != target identity required)",
+        "termination_reason": "LIVE_7B_INVARIANTS_DOWNGRADE_OPEN_LOOP",
+        "latency_seconds": 25.938,
+        "model_name": "qwen2.5-coder:7b",
+        "retrieval_trace": {
+          "query": "GET /api/v1/docs/{id}/export API-BOLA-001",
+          "retrieval_method": "hybrid_rrf_exact_parameter_gate",
+          "retrieved_evidence_ids": [
+            "FACT-DOCUMENT_COLLABORATION-DOC-EXPORT-DOC"
+          ],
+          "retrieval_ranking": [
+            {
+              "rank": 1,
+              "fact_id": "FACT-DOCUMENT_COLLABORATION-DOC-EXPORT-DOC",
+              "score": 0.016393,
+              "source_tool": "openapi"
+            }
+          ],
+          "token_budget_cropping": {
+            "input_chunks": 1,
+            "budgeted_chunks": 1,
+            "token_budget": 1024,
+            "cropped_ids": [
+              "FACT-DOCUMENT_COLLABORATION-DOC-EXPORT-DOC"
+            ]
+          },
+          "prompt_evidence_context": "EVIDENCE [FACT-DOCUMENT_COLLABORATION-DOC-EXPORT-DOC] (source: openapi, trust: UNTRUSTED)\nGET /api/v1/docs/{id}/export generates document export package. Requires active document collaborator session.",
+          "zero_results": false,
+          "warning": null
+        }
+      },
+      {
+        "scenario_id": "SCEN-HEALTHCARE_PORTAL-NEG-01",
+        "app_family": "healthcare_portal",
+        "split": "evaluation",
+        "ground_truth_vulnerable": false,
+        "decision": "HYPOTHESIS",
+        "grounded": true,
+        "canonical_id_valid": true,
+        "evidence_sufficient": true,
+        "discriminative_experiment": true,
+        "useful": false,
+        "budget_tier": "LOW",
+        "experiments_executed": 0,
+        "missing_evidence": [
+          "EVIDENCE [FACT-HEALTHCARE_PORTAL-NEG-1]"
+        ],
+        "grounding_reason": "All canonical IDs, relationships, and required evidence satisfied",
+        "termination_reason": "LIVE_7B_INVARIANTS_VALID_OPEN_LOOP",
+        "latency_seconds": 19.239,
+        "model_name": "qwen2.5-coder:7b",
+        "retrieval_trace": {
+          "query": "GET /catalog API-AUTH-NONE",
+          "retrieval_method": "hybrid_rrf",
+          "retrieved_evidence_ids": [
+            "FACT-HEALTHCARE_PORTAL-NEG-1"
+          ],
+          "retrieval_ranking": [
+            {
+              "rank": 1,
+              "fact_id": "FACT-HEALTHCARE_PORTAL-NEG-1",
+              "score": 0.016393,
+              "source_tool": "openapi"
+            }
+          ],
+          "token_budget_cropping": {
+            "input_chunks": 1,
+            "budgeted_chunks": 1,
+            "token_budget": 1024,
+            "cropped_ids": [
+              "FACT-HEALTHCARE_PORTAL-NEG-1"
+            ]
+          },
+          "prompt_evidence_context": "EVIDENCE [FACT-HEALTHCARE_PORTAL-NEG-1] (source: openapi, trust: UNTRUSTED)\nGET /catalog returns public unauthenticated service catalog metadata.",
+          "zero_results": false,
+          "warning": null
+        }
+      },
+      {
+        "scenario_id": "SCEN-IOT_FLEET_MGMT-NEG-01",
+        "app_family": "iot_fleet_mgmt",
+        "split": "evaluation",
+        "ground_truth_vulnerable": false,
+        "decision": "HYPOTHESIS",
+        "grounded": true,
+        "canonical_id_valid": true,
+        "evidence_sufficient": true,
+        "discriminative_experiment": true,
+        "useful": false,
+        "budget_tier": "LOW",
+        "experiments_executed": 0,
+        "missing_evidence": [
+          "EVIDENCE [FACT-IOT_FLEET_MGMT-NEG-2] (source: security audit, trust: UNTRUSTED)"
+        ],
+        "grounding_reason": "All canonical IDs, relationships, and required evidence satisfied",
+        "termination_reason": "LIVE_7B_INVARIANTS_VALID_OPEN_LOOP",
+        "latency_seconds": 22.388,
+        "model_name": "qwen2.5-coder:7b",
+        "retrieval_trace": {
+          "query": "GET /catalog API-AUTH-NONE",
+          "retrieval_method": "hybrid_rrf",
+          "retrieved_evidence_ids": [
+            "FACT-IOT_FLEET_MGMT-NEG-1"
+          ],
+          "retrieval_ranking": [
+            {
+              "rank": 1,
+              "fact_id": "FACT-IOT_FLEET_MGMT-NEG-1",
+              "score": 0.016393,
+              "source_tool": "openapi"
+            }
+          ],
+          "token_budget_cropping": {
+            "input_chunks": 1,
+            "budgeted_chunks": 1,
+            "token_budget": 1024,
+            "cropped_ids": [
+              "FACT-IOT_FLEET_MGMT-NEG-1"
+            ]
+          },
+          "prompt_evidence_context": "EVIDENCE [FACT-IOT_FLEET_MGMT-NEG-1] (source: openapi, trust: UNTRUSTED)\nGET /catalog returns public unauthenticated service catalog metadata.",
+          "zero_results": false,
+          "warning": null
+        }
+      }
+    ],
+    "TRACK_E_FULL_V6": [
+      {
+        "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-VULN-01",
+        "app_family": "saas_billing",
+        "split": "development",
+        "ground_truth_vulnerable": true,
+        "decision": "HYPOTHESIS",
+        "grounded": true,
+        "canonical_id_valid": true,
+        "evidence_sufficient": true,
+        "discriminative_experiment": true,
+        "useful": true,
+        "budget_tier": "LOW",
+        "experiments_executed": 1,
+        "missing_evidence": [],
+        "grounding_reason": "required_evidence_unmet: distinct_identity_pair (actor != target identity required)",
+        "termination_reason": "LIVE_7B_OBSERVED_SUPPORTING_FEEDBACK",
+        "latency_seconds": 48.42,
+        "model_name": "qwen2.5-coder:7b",
+        "retrieval_trace": {
+          "query": "GET /api/v1/invoices/{id} API-BOLA-001",
+          "retrieval_method": "hybrid_rrf_exact_parameter_gate",
+          "retrieved_evidence_ids": [
+            "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+          ],
+          "retrieval_ranking": [
+            {
+              "rank": 1,
+              "fact_id": "FACT-SAAS_BILLING-INV-DETAILS-DOC",
+              "score": 0.016393,
+              "source_tool": "openapi"
+            }
+          ],
+          "token_budget_cropping": {
+            "input_chunks": 1,
+            "budgeted_chunks": 1,
+            "token_budget": 1024,
+            "cropped_ids": [
+              "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+            ]
+          },
+          "prompt_evidence_context": "EVIDENCE [FACT-SAAS_BILLING-INV-DETAILS-DOC] (source: openapi, trust: UNTRUSTED)\nGET /api/v1/invoices/{id} retrieves billing invoice records for the specified invoice identifier. Requires active customer session.",
+          "zero_results": false,
+          "warning": null
+        }
+      },
+      {
+        "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-VULN-01",
+        "app_family": "ecommerce_orders",
+        "split": "development",
+        "ground_truth_vulnerable": true,
+        "decision": "HYPOTHESIS",
+        "grounded": true,
+        "canonical_id_valid": true,
+        "evidence_sufficient": true,
+        "discriminative_experiment": true,
+        "useful": true,
+        "budget_tier": "LOW",
+        "experiments_executed": 1,
+        "missing_evidence": [
+          "EVIDENCE [FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC]"
+        ],
+        "grounding_reason": "All canonical IDs, relationships, and required evidence satisfied",
+        "termination_reason": "LIVE_7B_OBSERVED_SUPPORTING_FEEDBACK",
+        "latency_seconds": 49.857,
+        "model_name": "qwen2.5-coder:7b",
+        "retrieval_trace": {
+          "query": "POST /api/v1/orders/{id}/refund API-STATE-001",
+          "retrieval_method": "hybrid_rrf_exact_parameter_gate",
+          "retrieved_evidence_ids": [
+            "FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC"
+          ],
+          "retrieval_ranking": [
+            {
+              "rank": 1,
+              "fact_id": "FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC",
+              "score": 0.016393,
+              "source_tool": "openapi"
+            }
+          ],
+          "token_budget_cropping": {
+            "input_chunks": 1,
+            "budgeted_chunks": 1,
+            "token_budget": 1024,
+            "cropped_ids": [
+              "FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC"
+            ]
+          },
+          "prompt_evidence_context": "EVIDENCE [FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC] (source: openapi, trust: UNTRUSTED)\nPOST /api/v1/orders/{id}/refund processes refund transaction for customer order. Expected order lifecycle state: PAID.",
+          "zero_results": false,
+          "warning": null
+        }
+      },
+      {
+        "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-ROLES-VULN-01",
+        "app_family": "identity_provider",
+        "split": "validation",
+        "ground_truth_vulnerable": true,
+        "decision": "HYPOTHESIS",
+        "grounded": true,
+        "canonical_id_valid": true,
+        "evidence_sufficient": true,
+        "discriminative_experiment": true,
+        "useful": true,
+        "budget_tier": "LOW",
+        "experiments_executed": 1,
+        "missing_evidence": [],
+        "grounding_reason": "All canonical IDs, relationships, and required evidence satisfied",
+        "termination_reason": "LIVE_7B_OBSERVED_SUPPORTING_FEEDBACK",
+        "latency_seconds": 57.003,
+        "model_name": "qwen2.5-coder:7b",
+        "retrieval_trace": {
+          "query": "POST /api/v1/users/{id}/roles API-BFLA-001",
+          "retrieval_method": "hybrid_rrf_exact_parameter_gate",
+          "retrieved_evidence_ids": [
+            "FACT-IDENTITY_PROVIDER-USER-ROLES-DOC"
+          ],
+          "retrieval_ranking": [
+            {
+              "rank": 1,
+              "fact_id": "FACT-IDENTITY_PROVIDER-USER-ROLES-DOC",
+              "score": 0.016393,
+              "source_tool": "openapi"
+            }
+          ],
+          "token_budget_cropping": {
+            "input_chunks": 1,
+            "budgeted_chunks": 1,
+            "token_budget": 1024,
+            "cropped_ids": [
+              "FACT-IDENTITY_PROVIDER-USER-ROLES-DOC"
+            ]
+          },
+          "prompt_evidence_context": "EVIDENCE [FACT-IDENTITY_PROVIDER-USER-ROLES-DOC] (source: openapi, trust: UNTRUSTED)\nPOST /api/v1/users/{id}/roles updates account security role assignments. Requires admin role.",
+          "zero_results": false,
+          "warning": null
+        }
+      },
+      {
+        "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-EXPORT-VULN-01",
+        "app_family": "document_collaboration",
+        "split": "validation",
+        "ground_truth_vulnerable": true,
+        "decision": "HYPOTHESIS",
+        "grounded": true,
+        "canonical_id_valid": true,
+        "evidence_sufficient": true,
+        "discriminative_experiment": true,
+        "useful": true,
+        "budget_tier": "LOW",
+        "experiments_executed": 1,
+        "missing_evidence": [
+          "INVAR-API-BOLA-001-01"
+        ],
+        "grounding_reason": "required_evidence_unmet: distinct_identity_pair (actor != target identity required)",
+        "termination_reason": "LIVE_7B_OBSERVED_SUPPORTING_FEEDBACK",
+        "latency_seconds": 53.008,
+        "model_name": "qwen2.5-coder:7b",
+        "retrieval_trace": {
+          "query": "GET /api/v1/docs/{id}/export API-BOLA-001",
+          "retrieval_method": "hybrid_rrf_exact_parameter_gate",
+          "retrieved_evidence_ids": [
+            "FACT-DOCUMENT_COLLABORATION-DOC-EXPORT-DOC"
+          ],
+          "retrieval_ranking": [
+            {
+              "rank": 1,
+              "fact_id": "FACT-DOCUMENT_COLLABORATION-DOC-EXPORT-DOC",
+              "score": 0.016393,
+              "source_tool": "openapi"
+            }
+          ],
+          "token_budget_cropping": {
+            "input_chunks": 1,
+            "budgeted_chunks": 1,
+            "token_budget": 1024,
+            "cropped_ids": [
+              "FACT-DOCUMENT_COLLABORATION-DOC-EXPORT-DOC"
+            ]
+          },
+          "prompt_evidence_context": "EVIDENCE [FACT-DOCUMENT_COLLABORATION-DOC-EXPORT-DOC] (source: openapi, trust: UNTRUSTED)\nGET /api/v1/docs/{id}/export generates document export package. Requires active document collaborator session.",
+          "zero_results": false,
+          "warning": null
+        }
+      },
+      {
+        "scenario_id": "SCEN-HEALTHCARE_PORTAL-PATIENT-REC-VULN-01",
+        "app_family": "healthcare_portal",
+        "split": "evaluation",
+        "ground_truth_vulnerable": true,
+        "decision": "HYPOTHESIS",
+        "grounded": true,
+        "canonical_id_valid": true,
+        "evidence_sufficient": true,
+        "discriminative_experiment": true,
+        "useful": true,
+        "budget_tier": "LOW",
+        "experiments_executed": 1,
+        "missing_evidence": [],
+        "grounding_reason": "required_evidence_unmet: distinct_identity_pair (actor != target identity required)",
+        "termination_reason": "LIVE_7B_OBSERVED_SUPPORTING_FEEDBACK",
+        "latency_seconds": 50.512,
+        "model_name": "qwen2.5-coder:7b",
+        "retrieval_trace": {
+          "query": "GET /api/v1/records/{id} API-BOLA-001",
+          "retrieval_method": "hybrid_rrf_exact_parameter_gate",
+          "retrieved_evidence_ids": [
+            "FACT-HEALTHCARE_PORTAL-PATIENT-REC-DOC"
+          ],
+          "retrieval_ranking": [
+            {
+              "rank": 1,
+              "fact_id": "FACT-HEALTHCARE_PORTAL-PATIENT-REC-DOC",
+              "score": 0.016393,
+              "source_tool": "openapi"
+            }
+          ],
+          "token_budget_cropping": {
+            "input_chunks": 1,
+            "budgeted_chunks": 1,
+            "token_budget": 1024,
+            "cropped_ids": [
+              "FACT-HEALTHCARE_PORTAL-PATIENT-REC-DOC"
+            ]
+          },
+          "prompt_evidence_context": "EVIDENCE [FACT-HEALTHCARE_PORTAL-PATIENT-REC-DOC] (source: openapi, trust: UNTRUSTED)\nGET /api/v1/records/{id} retrieves patient diagnostic history and health chart. Requires patient or designated physician session.",
+          "zero_results": false,
+          "warning": null
+        }
+      },
+      {
+        "scenario_id": "SCEN-IOT_FLEET_MGMT-DEVICE-CMD-VULN-01",
+        "app_family": "iot_fleet_mgmt",
+        "split": "evaluation",
+        "ground_truth_vulnerable": true,
+        "decision": "HYPOTHESIS",
+        "grounded": true,
+        "canonical_id_valid": true,
+        "evidence_sufficient": true,
+        "discriminative_experiment": true,
+        "useful": true,
+        "budget_tier": "LOW",
+        "experiments_executed": 1,
+        "missing_evidence": [],
+        "grounding_reason": "All canonical IDs, relationships, and required evidence satisfied",
+        "termination_reason": "LIVE_7B_OBSERVED_SUPPORTING_FEEDBACK",
+        "latency_seconds": 42.777,
+        "model_name": "qwen2.5-coder:7b",
+        "retrieval_trace": {
+          "query": "POST /api/v1/devices/{id}/command API-DEVICE-BOLA-001",
+          "retrieval_method": "hybrid_rrf_exact_parameter_gate",
+          "retrieved_evidence_ids": [
+            "FACT-IOT_FLEET_MGMT-DEVICE-CMD-DOC"
+          ],
+          "retrieval_ranking": [
+            {
+              "rank": 1,
+              "fact_id": "FACT-IOT_FLEET_MGMT-DEVICE-CMD-DOC",
+              "score": 0.016393,
+              "source_tool": "openapi"
+            }
+          ],
+          "token_budget_cropping": {
+            "input_chunks": 1,
+            "budgeted_chunks": 1,
+            "token_budget": 1024,
+            "cropped_ids": [
+              "FACT-IOT_FLEET_MGMT-DEVICE-CMD-DOC"
+            ]
+          },
+          "prompt_evidence_context": "EVIDENCE [FACT-IOT_FLEET_MGMT-DEVICE-CMD-DOC] (source: openapi, trust: UNTRUSTED)\nPOST /api/v1/devices/{id}/command dispatches operational instructions to IoT device. Requires fleet operator session.",
+          "zero_results": false,
+          "warning": null
+        }
+      },
+      {
+        "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-PATCH-01",
+        "app_family": "saas_billing",
+        "split": "development",
+        "ground_truth_vulnerable": false,
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "grounded": true,
+        "canonical_id_valid": true,
+        "evidence_sufficient": true,
+        "discriminative_experiment": true,
+        "useful": false,
+        "budget_tier": "LOW",
+        "experiments_executed": 1,
+        "missing_evidence": [],
+        "grounding_reason": "required_evidence_unmet: object_identifier (parameter in path or query required), distinct_identity_pair (actor != target identity required)",
+        "termination_reason": "LIVE_7B_OBSERVED_CONTRADICTING_FEEDBACK",
+        "latency_seconds": 52.572,
+        "model_name": "qwen2.5-coder:7b",
+        "retrieval_trace": {
+          "query": "GET /api/v1/invoices/{id} API-BOLA-001",
+          "retrieval_method": "hybrid_rrf_exact_parameter_gate",
+          "retrieved_evidence_ids": [
+            "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+          ],
+          "retrieval_ranking": [
+            {
+              "rank": 1,
+              "fact_id": "FACT-SAAS_BILLING-INV-DETAILS-DOC",
+              "score": 0.016393,
+              "source_tool": "openapi"
+            }
+          ],
+          "token_budget_cropping": {
+            "input_chunks": 1,
+            "budgeted_chunks": 1,
+            "token_budget": 1024,
+            "cropped_ids": [
+              "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+            ]
+          },
+          "prompt_evidence_context": "EVIDENCE [FACT-SAAS_BILLING-INV-DETAILS-DOC] (source: openapi, trust: UNTRUSTED)\nGET /api/v1/invoices/{id} retrieves billing invoice records for the specified invoice identifier. Requires active customer session.",
+          "zero_results": false,
+          "warning": null
+        }
+      },
+      {
+        "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-PATCH-01",
+        "app_family": "ecommerce_orders",
+        "split": "development",
+        "ground_truth_vulnerable": false,
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "grounded": true,
+        "canonical_id_valid": true,
+        "evidence_sufficient": true,
+        "discriminative_experiment": true,
+        "useful": false,
+        "budget_tier": "LOW",
+        "experiments_executed": 1,
+        "missing_evidence": [],
+        "grounding_reason": "All canonical IDs, relationships, and required evidence satisfied",
+        "termination_reason": "LIVE_7B_OBSERVED_CONTRADICTING_FEEDBACK",
+        "latency_seconds": 49.731,
+        "model_name": "qwen2.5-coder:7b",
+        "retrieval_trace": {
+          "query": "POST /api/v1/orders/{id}/refund API-STATE-001",
+          "retrieval_method": "hybrid_rrf_exact_parameter_gate",
+          "retrieved_evidence_ids": [
+            "FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC"
+          ],
+          "retrieval_ranking": [
+            {
+              "rank": 1,
+              "fact_id": "FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC",
+              "score": 0.016393,
+              "source_tool": "openapi"
+            }
+          ],
+          "token_budget_cropping": {
+            "input_chunks": 1,
+            "budgeted_chunks": 1,
+            "token_budget": 1024,
+            "cropped_ids": [
+              "FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC"
+            ]
+          },
+          "prompt_evidence_context": "EVIDENCE [FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC] (source: openapi, trust: UNTRUSTED)\nPOST /api/v1/orders/{id}/refund processes refund transaction for customer order. Expected order lifecycle state: PAID.",
+          "zero_results": false,
+          "warning": null
+        }
+      },
+      {
+        "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-ROLES-PATCH-01",
+        "app_family": "identity_provider",
+        "split": "validation",
+        "ground_truth_vulnerable": false,
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "grounded": true,
+        "canonical_id_valid": true,
+        "evidence_sufficient": true,
+        "discriminative_experiment": true,
+        "useful": false,
+        "budget_tier": "LOW",
+        "experiments_executed": 1,
+        "missing_evidence": [],
+        "grounding_reason": "All canonical IDs, relationships, and required evidence satisfied",
+        "termination_reason": "LIVE_7B_OBSERVED_CONTRADICTING_FEEDBACK",
+        "latency_seconds": 54.417,
+        "model_name": "qwen2.5-coder:7b",
+        "retrieval_trace": {
+          "query": "POST /api/v1/users/{id}/roles API-BFLA-001",
+          "retrieval_method": "hybrid_rrf_exact_parameter_gate",
+          "retrieved_evidence_ids": [
+            "FACT-IDENTITY_PROVIDER-USER-ROLES-DOC"
+          ],
+          "retrieval_ranking": [
+            {
+              "rank": 1,
+              "fact_id": "FACT-IDENTITY_PROVIDER-USER-ROLES-DOC",
+              "score": 0.016393,
+              "source_tool": "openapi"
+            }
+          ],
+          "token_budget_cropping": {
+            "input_chunks": 1,
+            "budgeted_chunks": 1,
+            "token_budget": 1024,
+            "cropped_ids": [
+              "FACT-IDENTITY_PROVIDER-USER-ROLES-DOC"
+            ]
+          },
+          "prompt_evidence_context": "EVIDENCE [FACT-IDENTITY_PROVIDER-USER-ROLES-DOC] (source: openapi, trust: UNTRUSTED)\nPOST /api/v1/users/{id}/roles updates account security role assignments. Requires admin role.",
+          "zero_results": false,
+          "warning": null
+        }
+      },
+      {
+        "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-EXPORT-PATCH-01",
+        "app_family": "document_collaboration",
+        "split": "validation",
+        "ground_truth_vulnerable": false,
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "grounded": true,
+        "canonical_id_valid": true,
+        "evidence_sufficient": true,
+        "discriminative_experiment": true,
+        "useful": false,
+        "budget_tier": "LOW",
+        "experiments_executed": 1,
+        "missing_evidence": [
+          "INVAR-API-BOLA-001-01"
+        ],
+        "grounding_reason": "required_evidence_unmet: object_identifier (parameter in path or query required), distinct_identity_pair (actor != target identity required)",
+        "termination_reason": "LIVE_7B_OBSERVED_CONTRADICTING_FEEDBACK",
+        "latency_seconds": 53.613,
+        "model_name": "qwen2.5-coder:7b",
+        "retrieval_trace": {
+          "query": "GET /api/v1/docs/{id}/export API-BOLA-001",
+          "retrieval_method": "hybrid_rrf_exact_parameter_gate",
+          "retrieved_evidence_ids": [
+            "FACT-DOCUMENT_COLLABORATION-DOC-EXPORT-DOC"
+          ],
+          "retrieval_ranking": [
+            {
+              "rank": 1,
+              "fact_id": "FACT-DOCUMENT_COLLABORATION-DOC-EXPORT-DOC",
+              "score": 0.016393,
+              "source_tool": "openapi"
+            }
+          ],
+          "token_budget_cropping": {
+            "input_chunks": 1,
+            "budgeted_chunks": 1,
+            "token_budget": 1024,
+            "cropped_ids": [
+              "FACT-DOCUMENT_COLLABORATION-DOC-EXPORT-DOC"
+            ]
+          },
+          "prompt_evidence_context": "EVIDENCE [FACT-DOCUMENT_COLLABORATION-DOC-EXPORT-DOC] (source: openapi, trust: UNTRUSTED)\nGET /api/v1/docs/{id}/export generates document export package. Requires active document collaborator session.",
+          "zero_results": false,
+          "warning": null
+        }
+      },
+      {
+        "scenario_id": "SCEN-HEALTHCARE_PORTAL-NEG-01",
+        "app_family": "healthcare_portal",
+        "split": "evaluation",
+        "ground_truth_vulnerable": false,
+        "decision": "NO_RELEVANT_FUNCTIONALITY",
+        "grounded": true,
+        "canonical_id_valid": true,
+        "evidence_sufficient": true,
+        "discriminative_experiment": false,
+        "useful": false,
+        "budget_tier": "LOW",
+        "experiments_executed": 0,
+        "missing_evidence": [],
+        "grounding_reason": "All canonical IDs, relationships, and required evidence satisfied",
+        "termination_reason": "LIVE_7B_PUBLIC_ENDPOINT_ABSTAIN",
+        "latency_seconds": 21.835,
+        "model_name": "qwen2.5-coder:7b",
+        "retrieval_trace": {
+          "query": "GET /catalog API-AUTH-NONE",
+          "retrieval_method": "hybrid_rrf",
+          "retrieved_evidence_ids": [
+            "FACT-HEALTHCARE_PORTAL-NEG-1"
+          ],
+          "retrieval_ranking": [
+            {
+              "rank": 1,
+              "fact_id": "FACT-HEALTHCARE_PORTAL-NEG-1",
+              "score": 0.016393,
+              "source_tool": "openapi"
+            }
+          ],
+          "token_budget_cropping": {
+            "input_chunks": 1,
+            "budgeted_chunks": 1,
+            "token_budget": 1024,
+            "cropped_ids": [
+              "FACT-HEALTHCARE_PORTAL-NEG-1"
+            ]
+          },
+          "prompt_evidence_context": "EVIDENCE [FACT-HEALTHCARE_PORTAL-NEG-1] (source: openapi, trust: UNTRUSTED)\nGET /catalog returns public unauthenticated service catalog metadata.",
+          "zero_results": false,
+          "warning": null
+        }
+      },
+      {
+        "scenario_id": "SCEN-IOT_FLEET_MGMT-NEG-01",
+        "app_family": "iot_fleet_mgmt",
+        "split": "evaluation",
+        "ground_truth_vulnerable": false,
+        "decision": "NO_RELEVANT_FUNCTIONALITY",
+        "grounded": true,
+        "canonical_id_valid": true,
+        "evidence_sufficient": true,
+        "discriminative_experiment": false,
+        "useful": false,
+        "budget_tier": "LOW",
+        "experiments_executed": 0,
+        "missing_evidence": [],
+        "grounding_reason": "All canonical IDs, relationships, and required evidence satisfied",
+        "termination_reason": "LIVE_7B_PUBLIC_ENDPOINT_ABSTAIN",
+        "latency_seconds": 19.648,
+        "model_name": "qwen2.5-coder:7b",
+        "retrieval_trace": {
+          "query": "GET /catalog API-AUTH-NONE",
+          "retrieval_method": "hybrid_rrf",
+          "retrieved_evidence_ids": [
+            "FACT-IOT_FLEET_MGMT-NEG-1"
+          ],
+          "retrieval_ranking": [
+            {
+              "rank": 1,
+              "fact_id": "FACT-IOT_FLEET_MGMT-NEG-1",
+              "score": 0.016393,
+              "source_tool": "openapi"
+            }
+          ],
+          "token_budget_cropping": {
+            "input_chunks": 1,
+            "budgeted_chunks": 1,
+            "token_budget": 1024,
+            "cropped_ids": [
+              "FACT-IOT_FLEET_MGMT-NEG-1"
+            ]
+          },
+          "prompt_evidence_context": "EVIDENCE [FACT-IOT_FLEET_MGMT-NEG-1] (source: openapi, trust: UNTRUSTED)\nGET /catalog returns public unauthenticated service catalog metadata.",
+          "zero_results": false,
+          "warning": null
+        }
+      }
+    ]
+  },
+  "representative_examples": [
+    {
+      "track": "TRACK_C_RAG_7B",
+      "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-VULN-01",
+      "decision": "NO_RELEVANT_FUNCTIONALITY",
+      "ground_truth_vulnerable": true,
+      "useful": false,
+      "retrieval_query": "GET /api/v1/invoices/{id} API-BOLA-001",
+      "retrieved_evidence_ids": [
+        "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+      ],
+      "retrieval_method": "hybrid_rrf_exact_parameter_gate",
+      "retrieval_ranking": [
+        {
+          "rank": 1,
+          "fact_id": "FACT-SAAS_BILLING-INV-DETAILS-DOC",
+          "score": 0.016393,
+          "source_tool": "openapi"
+        }
+      ],
+      "prompt_evidence_context": "EVIDENCE [FACT-SAAS_BILLING-INV-DETAILS-DOC] (source: openapi, trust: UNTRUSTED)\nGET /api/v1/invoices/{id} retrieves billing invoice records for the specified invoice identifier. Requires active customer session.",
+      "termination_reason": "LIVE_7B_RAG_VALID"
+    },
+    {
+      "track": "TRACK_C_RAG_7B",
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-VULN-01",
+      "decision": "NO_RELEVANT_FUNCTIONALITY",
+      "ground_truth_vulnerable": true,
+      "useful": false,
+      "retrieval_query": "POST /api/v1/orders/{id}/refund API-STATE-001",
+      "retrieved_evidence_ids": [
+        "FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC"
+      ],
+      "retrieval_method": "hybrid_rrf_exact_parameter_gate",
+      "retrieval_ranking": [
+        {
+          "rank": 1,
+          "fact_id": "FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC",
+          "score": 0.016393,
+          "source_tool": "openapi"
+        }
+      ],
+      "prompt_evidence_context": "EVIDENCE [FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC] (source: openapi, trust: UNTRUSTED)\nPOST /api/v1/orders/{id}/refund processes refund transaction for customer order. Expected order lifecycle state: PAID.",
+      "termination_reason": "LIVE_7B_RAG_VALID"
+    },
+    {
+      "track": "TRACK_E_FULL_V6",
+      "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-VULN-01",
+      "decision": "HYPOTHESIS",
+      "ground_truth_vulnerable": true,
+      "useful": true,
+      "retrieval_query": "GET /api/v1/invoices/{id} API-BOLA-001",
+      "retrieved_evidence_ids": [
+        "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+      ],
+      "retrieval_method": "hybrid_rrf_exact_parameter_gate",
+      "retrieval_ranking": [
+        {
+          "rank": 1,
+          "fact_id": "FACT-SAAS_BILLING-INV-DETAILS-DOC",
+          "score": 0.016393,
+          "source_tool": "openapi"
+        }
+      ],
+      "prompt_evidence_context": "EVIDENCE [FACT-SAAS_BILLING-INV-DETAILS-DOC] (source: openapi, trust: UNTRUSTED)\nGET /api/v1/invoices/{id} retrieves billing invoice records for the specified invoice identifier. Requires active customer session.",
+      "termination_reason": "LIVE_7B_OBSERVED_SUPPORTING_FEEDBACK"
+    },
+    {
+      "track": "TRACK_E_FULL_V6",
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-VULN-01",
+      "decision": "HYPOTHESIS",
+      "ground_truth_vulnerable": true,
+      "useful": true,
+      "retrieval_query": "POST /api/v1/orders/{id}/refund API-STATE-001",
+      "retrieved_evidence_ids": [
+        "FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC"
+      ],
+      "retrieval_method": "hybrid_rrf_exact_parameter_gate",
+      "retrieval_ranking": [
+        {
+          "rank": 1,
+          "fact_id": "FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC",
+          "score": 0.016393,
+          "source_tool": "openapi"
+        }
+      ],
+      "prompt_evidence_context": "EVIDENCE [FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC] (source: openapi, trust: UNTRUSTED)\nPOST /api/v1/orders/{id}/refund processes refund transaction for customer order. Expected order lifecycle state: PAID.",
+      "termination_reason": "LIVE_7B_OBSERVED_SUPPORTING_FEEDBACK"
+    }
+  ]
+}

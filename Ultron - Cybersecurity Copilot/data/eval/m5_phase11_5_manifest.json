@@ -1,0 +1,27 @@
+{
+  "manifest_version": "1.0.0",
+  "phase": "PHASE_11_5_CONFIRMATORY",
+  "timestamp_utc": "2026-09-29 16:37:10Z",
+  "order_seed": "M5_PHASE11_5_ORDER_SEED_42",
+  "total_calls_executed": 168,
+  "total_scenarios_evaluated": 84,
+  "vulnerable_scenarios_evaluated": 36,
+  "control_scenarios_evaluated": 48,
+  "conditions_evaluated": [
+    "P4_TRACK_A",
+    "P5_TRACK_D"
+  ],
+  "results_file": "data/eval/m5_phase11_5_live_results.json",
+  "results_sha256": "5f23e5864986cbbd08459a43357cee7de720cfd068349a03277c3513dd2af210",
+  "property_registry_version": "1.0.0",
+  "runtime_configuration": {
+    "model": "qwen2.5-coder:7b",
+    "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+    "temperature": 0.0,
+    "seed": 42,
+    "num_ctx": 2048,
+    "num_predict": 300,
+    "keep_alive": "60m",
+    "timeout_seconds": 30.0
+  }
+}

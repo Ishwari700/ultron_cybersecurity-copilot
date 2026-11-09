@@ -1,0 +1,18 @@
+{
+  "artifacts": {
+    "m5_phase11_6_failure_injection_results.json": "1e123a4b4527ff37b3f34624d26ff0471e6b93a604013c999a7e1530d88c3394",
+    "m5_phase11_6_production_validation_results.json": "368176a30496e74f7003811ad5b264c815d7ebfe7382b05b6e7ee757e7f9b6c5"
+  },
+  "generated_at": "2026-10-05T02:35:29.908534+00:00",
+  "milestone": "M5",
+  "phase": "11.6",
+  "preregistration_hash": "c1999f821352c607759ba4be40759a06ab122acf9133e1c30e6beb3747d22acf",
+  "schema_version": "2.0.0",
+  "summary": {
+    "all_fixtures_passed": true,
+    "all_injections_passed": true,
+    "overall_status": "PASS",
+    "total_fixtures": 15,
+    "total_injections": 19
+  }
+}

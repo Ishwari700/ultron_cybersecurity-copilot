@@ -1,0 +1,28 @@
+{
+  "inter_rater_reliability": {
+    "fleiss_kappa": 0.5962,
+    "fleiss_kappa_target_passed": false,
+    "krippendorff_alpha_ordinal": 0.6964
+  },
+  "mean_active_review_minutes": {
+    "track_b": 5.23,
+    "track_d": 4.73
+  },
+  "primary_estimand_mean_yield_60min": {
+    "delta_ci_95_lower": 0.1303,
+    "delta_ci_95_upper": 0.9146,
+    "delta_mean_yield": 0.4888,
+    "permutation_test_p_value": 0.02119,
+    "permutation_z_score": 2.1622,
+    "track_b": 5.8638,
+    "track_d": 6.3525
+  },
+  "raters_count": 3,
+  "secondary_descriptive_aggregate_rate_60min": {
+    "track_b": 5.7391,
+    "track_d": 6.3437
+  },
+  "total_evaluation_units": 40,
+  "total_ratings": 120,
+  "total_scenarios": 20
+}

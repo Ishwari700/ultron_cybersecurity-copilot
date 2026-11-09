@@ -1,0 +1,431 @@
+{
+  "metadata": {
+    "title": "Milestone M5 Phase 11.5 Canonical Reconciled Metrics",
+    "calculation_version": "1.0.0",
+    "timestamp_utc": "2026-09-30 13:48:39Z",
+    "dataset_sha256": "27cc801cc020da3e4a905d9142780e8e4394afcf58027f01cdfde0d18da98a6f",
+    "raw_dataset_path": "data/eval/m5_phase11_5_live_results.json",
+    "status": "IMMUTABLE_VERIFIED"
+  },
+  "population_counts": {
+    "total_unique_scenarios": 84,
+    "vulnerable_scenarios": 36,
+    "control_scenarios": 48,
+    "p4_track_a_calls": 84,
+    "p5_track_d_calls": 84,
+    "total_calls": 168
+  },
+  "denominators": {
+    "A_ALL_CALLS": {
+      "count_p4": 84,
+      "count_p5": 84,
+      "description": "Total scheduled inference calls per condition across all 84 scenarios.",
+      "used_by": [
+        "Runtime Timeouts",
+        "All-Call Schema Validity",
+        "All-Call Grounding Validity",
+        "Latency Statistics"
+      ]
+    },
+    "B_COMPLETED_CALLS": {
+      "count_p4": 84,
+      "count_p5": 82,
+      "description": "All calls minus runtime timeouts. P5 had 2 timeouts (calls 145 & 147), leaving 82 completed calls.",
+      "used_by": [
+        "Completed-Call Grounding Success Rate (82/82 = 100.0%)",
+        "Completed-Call Schema Failure Rate (0/82 = 0.0%)",
+        "Completed-Call VTER (80/80 = 100.0%)"
+      ]
+    },
+    "C_CANDIDATE_HYPOTHESES": {
+      "count_p4": 84,
+      "count_p5": 80,
+      "description": "Calls where the model emitted candidate_decision == 'HYPOTHESIS'. In P5, 2 calls timed out and 2 calls abstained (NO_RELEVANT_FUNCTIONALITY), leaving 80 candidate hypotheses.",
+      "used_by": [
+        "Population VTER",
+        "Completed-Call VTER",
+        "Polarity Failure Rate",
+        "Action Incompatibility Rate",
+        "Category Incompatibility Rate"
+      ]
+    },
+    "D_VALID_TYPED_EXPERIMENTS": {
+      "count_p4": 84,
+      "count_p5": 80,
+      "description": "Calls where validation.is_valid_typed_experiment is True (passed schema, skeleton, grounding, polarity, and security property gates).",
+      "used_by": [
+        "VTER Numerator",
+        "Secondary Paired Comparison (Valid Typed Experiments)"
+      ]
+    },
+    "E_VULNERABLE_SCENARIOS": {
+      "count_p4": 36,
+      "count_p5": 36,
+      "description": "Total vulnerable variant scenarios in the gold benchmark population.",
+      "used_by": [
+        "Primary Endpoint (Useful Vulnerable Hypothesis Yield)",
+        "True Positive Rate (TPR)",
+        "Vulnerable Abstention Rate",
+        "False Negatives (FN)"
+      ]
+    },
+    "F_CONTROL_SCENARIOS": {
+      "count_p4": 48,
+      "count_p5": 48,
+      "description": "Total control variant scenarios (patched, safe, or negative controls) in the gold benchmark population.",
+      "used_by": [
+        "Correct Control Abstention Rate",
+        "True Negative Rate (TNR)",
+        "Control Abstention Rate",
+        "False Positives (FP)"
+      ]
+    }
+  },
+  "per_condition_metrics": {
+    "P4_TRACK_A": {
+      "condition_id": "P4_TRACK_A",
+      "track_id": "TRACK_A",
+      "total_calls": 84,
+      "vulnerable_calls": 36,
+      "control_calls": 48,
+      "candidate_hypotheses": 84,
+      "valid_typed_experiments": 84,
+      "vter_pct": 100.0,
+      "completed_call_vter_pct": 100.0,
+      "useful_vulnerable_hypotheses": 36,
+      "useful_vulnerable_hypothesis_rate_pct": 100.0,
+      "correct_vulnerable_decisions": 36,
+      "correct_control_abstentions": 0,
+      "tpr_pct": 100.0,
+      "tnr_pct": 0.0,
+      "false_positives": 48,
+      "false_negatives": 0,
+      "vuln_abstention_count": 0,
+      "vuln_abstention_rate_pct": 0.0,
+      "control_abstention_count": 0,
+      "control_abstention_rate_pct": 0.0,
+      "grounding_success_rate_pct": 100.0,
+      "schema_failure_rate_pct": 0.0,
+      "property_compatibility_rate_pct": 100.0,
+      "polarity_failure_rate_pct": 0.0,
+      "action_incompatibility_rate_pct": 0.0,
+      "category_incompatibility_rate_pct": 0.0,
+      "runtime_timeouts": 0,
+      "mean_latency_ms": 26310.2,
+      "median_latency_ms": 26809.3,
+      "p95_latency_ms": 29720.4,
+      "primary_failure_counts": {
+        "VALID_TYPED": 84
+      },
+      "property_failure_counts": {},
+      "grounding_failure_counts": {}
+    },
+    "P5_TRACK_D": {
+      "condition_id": "P5_TRACK_D",
+      "track_id": "TRACK_D",
+      "total_calls": 84,
+      "vulnerable_calls": 36,
+      "control_calls": 48,
+      "candidate_hypotheses": 80,
+      "valid_typed_experiments": 80,
+      "vter_pct": 100.0,
+      "completed_call_vter_pct": 100.0,
+      "useful_vulnerable_hypotheses": 34,
+      "useful_vulnerable_hypothesis_rate_pct": 94.44,
+      "correct_vulnerable_decisions": 34,
+      "correct_control_abstentions": 1,
+      "tpr_pct": 94.44,
+      "tnr_pct": 2.08,
+      "false_positives": 46,
+      "false_negatives": 1,
+      "vuln_abstention_count": 1,
+      "vuln_abstention_rate_pct": 2.78,
+      "control_abstention_count": 1,
+      "control_abstention_rate_pct": 2.08,
+      "grounding_success_rate_pct": 100.0,
+      "schema_failure_rate_pct": 0.0,
+      "property_compatibility_rate_pct": 100.0,
+      "polarity_failure_rate_pct": 0.0,
+      "action_incompatibility_rate_pct": 0.0,
+      "category_incompatibility_rate_pct": 0.0,
+      "runtime_timeouts": 2,
+      "mean_latency_ms": 25080.4,
+      "median_latency_ms": 25023.4,
+      "p95_latency_ms": 29753.1,
+      "primary_failure_counts": {
+        "VALID_TYPED": 81,
+        "ABSTENTION_TOO_EARLY": 1,
+        "RUNTIME_TIMEOUT": 2
+      },
+      "property_failure_counts": {},
+      "grounding_failure_counts": {}
+    },
+    "deltas_p5_minus_p4": {
+      "candidate_hypotheses": -4,
+      "valid_typed_experiments": -4,
+      "vter_pct": 0.0,
+      "completed_call_vter_pct": 0.0,
+      "useful_vulnerable_hypotheses": -2,
+      "useful_vulnerable_hypothesis_rate_pct": -5.56,
+      "correct_vulnerable_decisions": -2,
+      "correct_control_abstentions": 1,
+      "tpr_pct": -5.56,
+      "tnr_pct": 2.08,
+      "false_positives": -2,
+      "false_negatives": 1,
+      "vuln_abstention_rate_pct": 2.78,
+      "control_abstention_rate_pct": 2.08,
+      "grounding_success_rate_pct": 0.0,
+      "schema_failure_rate_pct": 0.0,
+      "property_compatibility_rate_pct": 0.0,
+      "polarity_failure_rate_pct": 0.0,
+      "action_incompatibility_rate_pct": 0.0,
+      "category_incompatibility_rate_pct": 0.0,
+      "runtime_timeouts": 2,
+      "mean_latency_ms": -1229.8,
+      "median_latency_ms": -1785.9,
+      "p95_latency_ms": 32.7
+    }
+  },
+  "failure_taxonomy": {
+    "primary_failure_distribution": {
+      "P4_TRACK_A": {
+        "VALID_TYPED": 84
+      },
+      "P5_TRACK_D": {
+        "VALID_TYPED": 81,
+        "ABSTENTION_TOO_EARLY": 1,
+        "RUNTIME_TIMEOUT": 2
+      }
+    },
+    "contributing_failure_distribution": {
+      "P4_TRACK_A": {
+        "VALID_TYPED": 84
+      },
+      "P5_TRACK_D": {
+        "ABSTENTION_TOO_EARLY": 1,
+        "CONTEXT_OVERLOAD_OR_CONTEXT_CONFUSION": 2,
+        "EVIDENCE_INTERPRETATION_FAILURE": 1,
+        "RAG_DISTRACTION_OR_RAG_CONFLICT": 2,
+        "RUNTIME_TIMEOUT": 2,
+        "VALID_TYPED": 81
+      }
+    },
+    "reconciliation_note_on_f01": "In P5 Track D, primary failure code VALID_TYPED (F01) has count 81, whereas valid typed experiments has count 80. The 81st F01 call is Call 47 (SCEN-ECOMMERCE_ORDERS-ORD-DISPATCH-PATCH-05), which is a control scenario where the model correctly abstained. In the failure taxonomy, a correct control abstention has no failure and is categorized under F01 (Success). However, because an abstention does not produce an experiment proposal, validation.is_valid_typed_experiment is False. Thus, P5 contains exactly 80 valid typed experiment proposals and 1 valid control abstention (81 successful calls without failure)."
+  },
+  "paired_statistical_analysis": {
+    "primary_endpoint": {
+      "endpoint_name": "Useful Vulnerable Hypothesis (Primary)",
+      "contingency_table": {
+        "a_both_pos": 34,
+        "b_ta_pos_td_neg": 2,
+        "c_ta_neg_td_pos": 0,
+        "d_both_neg": 0
+      },
+      "total_pairs": 36,
+      "ta_positive_count": 36,
+      "td_positive_count": 34,
+      "discordant_pairs": 2,
+      "exact_p_value": 0.5,
+      "odds_ratio": null,
+      "effect_size_diff_pct": -5.56
+    },
+    "secondary_endpoints": {
+      "valid_typed_experiment": {
+        "endpoint_name": "Valid Typed Experiment (All 84 Scenarios)",
+        "contingency_table": {
+          "a_both_pos": 80,
+          "b_ta_pos_td_neg": 4,
+          "c_ta_neg_td_pos": 0,
+          "d_both_neg": 0
+        },
+        "total_pairs": 84,
+        "ta_positive_count": 84,
+        "td_positive_count": 80,
+        "discordant_pairs": 4,
+        "exact_p_value": 0.125,
+        "odds_ratio": null,
+        "effect_size_diff_pct": -4.76
+      },
+      "grounding_validity": {
+        "endpoint_name": "Grounding Validity (All 84 Scenarios)",
+        "contingency_table": {
+          "a_both_pos": 82,
+          "b_ta_pos_td_neg": 2,
+          "c_ta_neg_td_pos": 0,
+          "d_both_neg": 0
+        },
+        "total_pairs": 84,
+        "ta_positive_count": 84,
+        "td_positive_count": 82,
+        "discordant_pairs": 2,
+        "exact_p_value": 0.5,
+        "odds_ratio": null,
+        "effect_size_diff_pct": -2.38
+      },
+      "schema_validity": {
+        "endpoint_name": "Schema Validity (All 84 Scenarios)",
+        "contingency_table": {
+          "a_both_pos": 82,
+          "b_ta_pos_td_neg": 2,
+          "c_ta_neg_td_pos": 0,
+          "d_both_neg": 0
+        },
+        "total_pairs": 84,
+        "ta_positive_count": 84,
+        "td_positive_count": 82,
+        "discordant_pairs": 2,
+        "exact_p_value": 0.5,
+        "odds_ratio": null,
+        "effect_size_diff_pct": -2.38
+      },
+      "correct_control_abstention": {
+        "endpoint_name": "Correct Control Abstention (48 Control Scenarios)",
+        "contingency_table": {
+          "a_both_pos": 0,
+          "b_ta_pos_td_neg": 0,
+          "c_ta_neg_td_pos": 1,
+          "d_both_neg": 47
+        },
+        "total_pairs": 48,
+        "ta_positive_count": 0,
+        "td_positive_count": 1,
+        "discordant_pairs": 1,
+        "exact_p_value": 1.0,
+        "odds_ratio": 0.0,
+        "effect_size_diff_pct": 2.08
+      }
+    }
+  },
+  "latency_statistics": {
+    "P4_TRACK_A": {
+      "mean_ms": 26310.2,
+      "median_ms": 26809.3,
+      "p95_ms": 29720.4,
+      "min_ms": 19333.3,
+      "max_ms": 30207.2
+    },
+    "P5_TRACK_D": {
+      "mean_ms": 25080.4,
+      "median_ms": 25023.4,
+      "p95_ms": 29753.1,
+      "min_ms": 12436.3,
+      "max_ms": 30277.8
+    }
+  },
+  "disputed_records_audit": [
+    {
+      "call_index": 46,
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-DISPATCH-VULN-05",
+      "condition_id": "P5_TRACK_D",
+      "vulnerable_variant": true,
+      "candidate_decision": "NO_RELEVANT_FUNCTIONALITY",
+      "timed_out": false,
+      "total_latency_ms": 13025.55,
+      "raw_primary_category": "VALID",
+      "validation": {
+        "is_valid_typed_experiment": false,
+        "is_useful_vulnerable_hypothesis": false,
+        "grounding_valid": true,
+        "schema_valid": true,
+        "property_valid": false,
+        "polarity_valid": false,
+        "skeleton_compliant": null
+      },
+      "attribution": {
+        "primary_failure_code": "ABSTENTION_TOO_EARLY",
+        "primary_failure_name": "F11",
+        "contributing_failure_codes": [
+          "ABSTENTION_TOO_EARLY",
+          "EVIDENCE_INTERPRETATION_FAILURE"
+        ]
+      },
+      "reconciliation_explanation": "Early abstention on vulnerable scenario. The model abstained with NO_RELEVANT_FUNCTIONALITY, which represents a false negative / premature abstention on a vulnerable target."
+    },
+    {
+      "call_index": 47,
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-DISPATCH-PATCH-05",
+      "condition_id": "P5_TRACK_D",
+      "vulnerable_variant": false,
+      "candidate_decision": "NO_RELEVANT_FUNCTIONALITY",
+      "timed_out": false,
+      "total_latency_ms": 12436.26,
+      "raw_primary_category": "VALID",
+      "validation": {
+        "is_valid_typed_experiment": false,
+        "is_useful_vulnerable_hypothesis": false,
+        "grounding_valid": true,
+        "schema_valid": true,
+        "property_valid": false,
+        "polarity_valid": false,
+        "skeleton_compliant": null
+      },
+      "attribution": {
+        "primary_failure_code": "VALID_TYPED",
+        "primary_failure_name": "F01",
+        "contributing_failure_codes": [
+          "VALID_TYPED"
+        ]
+      },
+      "reconciliation_explanation": "Valid abstention on control scenario. The model correctly abstained with NO_RELEVANT_FUNCTIONALITY on a patched control scenario. In the failure taxonomy, a valid abstention has no failure and is classified under F01 (VALID / Success). However, an abstention is NOT an experiment proposal, so validation.is_valid_typed_experiment is False. This accounts for the delta between 80 valid typed experiments and 81 F01 success attributions in P5."
+    },
+    {
+      "call_index": 145,
+      "scenario_id": "SCEN-IOT_FLEET_MGMT-DEVICE-TEL-VULN-02",
+      "condition_id": "P5_TRACK_D",
+      "vulnerable_variant": true,
+      "candidate_decision": null,
+      "timed_out": true,
+      "total_latency_ms": 30277.82,
+      "raw_primary_category": "RUNTIME_TIMEOUT",
+      "validation": {
+        "is_valid_typed_experiment": false,
+        "is_useful_vulnerable_hypothesis": false,
+        "grounding_valid": false,
+        "schema_valid": false,
+        "property_valid": false,
+        "polarity_valid": false,
+        "skeleton_compliant": null
+      },
+      "attribution": {
+        "primary_failure_code": "RUNTIME_TIMEOUT",
+        "primary_failure_name": "F02",
+        "contributing_failure_codes": [
+          "RUNTIME_TIMEOUT",
+          "CONTEXT_OVERLOAD_OR_CONTEXT_CONFUSION",
+          "RAG_DISTRACTION_OR_RAG_CONFLICT"
+        ]
+      },
+      "reconciliation_explanation": "Inference timeout exceeding the 30.0s hard cutoff ceiling. Elapsed latency exceeded 30.0s, resulting in zero response payload generated."
+    },
+    {
+      "call_index": 147,
+      "scenario_id": "SCEN-IOT_FLEET_MGMT-DEVICE-TEL-PATCH-02",
+      "condition_id": "P5_TRACK_D",
+      "vulnerable_variant": false,
+      "candidate_decision": null,
+      "timed_out": true,
+      "total_latency_ms": 30273.13,
+      "raw_primary_category": "RUNTIME_TIMEOUT",
+      "validation": {
+        "is_valid_typed_experiment": false,
+        "is_useful_vulnerable_hypothesis": false,
+        "grounding_valid": false,
+        "schema_valid": false,
+        "property_valid": false,
+        "polarity_valid": false,
+        "skeleton_compliant": null
+      },
+      "attribution": {
+        "primary_failure_code": "RUNTIME_TIMEOUT",
+        "primary_failure_name": "F02",
+        "contributing_failure_codes": [
+          "RUNTIME_TIMEOUT",
+          "CONTEXT_OVERLOAD_OR_CONTEXT_CONFUSION",
+          "RAG_DISTRACTION_OR_RAG_CONFLICT"
+        ]
+      },
+      "reconciliation_explanation": "Inference timeout exceeding the 30.0s hard cutoff ceiling. Elapsed latency exceeded 30.0s, resulting in zero response payload generated."
+    }
+  ]
+}

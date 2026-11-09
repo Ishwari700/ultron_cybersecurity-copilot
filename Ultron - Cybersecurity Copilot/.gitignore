@@ -1,0 +1,118 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+src/*.egg-info/
+.installed.cfg
+*.egg
+
+# Testing & Linting
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+
+# Frontend / Node
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/.oxlint_cache/
+
+# Local data & databases (except schema fixtures)
+data/*.db
+data/*.sqlite
+data/**/*.db
+data/**/*.sqlite
+data/**/*.jsonl
+data/**/*.log
+data/knowledge/staged/
+data/cache/
+vectorstore/
+scope/.tld_cache/
+scratch/
+
+# Temporary Extraction & Analysis Artifacts
+data/quarantine/
+data/temp_apk/
+data/temp_bin/
+*.apk.extracted/
+*.apk.unpacked/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*.code-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+*~
+
+# Secrets & Credentials
+.env
+.env.*
+*.key
+*.pem
+*.cert
+*.token
+*.secret
+
+# Runtime Logs
+*.log
+
+# Local Model Weights & Binary Index Artifacts
+*.onnx
+*.bin
+*.index
+
+# Python virtual environments
+.venv/
+venv/
+env/
+
+# Python cache
+__pycache__/
+.pytest_cache/
+*.pyc
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Node dependencies
+node_modules/
+
+# IDE and operating system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+

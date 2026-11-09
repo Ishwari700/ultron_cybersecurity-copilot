@@ -1,0 +1,67 @@
+# Project TODO & Phase Tracking
+
+## Completed Phases (All Core Phases Implemented & Verified)
+- [x] **Phase 1: Repository & Configuration**
+  - [x] Project skeleton and virtual environment setup
+  - [x] Architecture, decisions, test status, and experiment log documentation
+  - [x] Configuration models and YAML loader (Pydantic v2)
+  - [x] Phased hardware scheduler primitives
+  - [x] Phase 1 unit test suite
+- [x] **Phase 2: Evidence Database (`evidence.db`)**
+  - [x] Unified SQLite schema with triggers & constraints
+  - [x] Migration runner and connection pool manager
+  - [x] Foreign key enforcement, FTS5 triggers, and database tests
+- [x] **Phase 3: Scope Gate**
+  - [x] Typed `ScopeDecisionObject`
+  - [x] DNS TOCTOU resolution & IP pinning
+  - [x] Redirect validation and loopback/internal CIDR blocklist
+  - [x] `ScopedHttpClient` socket wrapper
+- [x] **Phase 4: Canonical Evidence & Observation Adapters**
+  - [x] Tool-independent Canonical Evidence schemas
+  - [x] Adapters for Burp Suite, Reqable, PCAPdroid, OpenAPI, Generic HTTP
+  - [x] Path retention (`raw_path`, `normalized_path`, `confidence`)
+- [x] **Phase 5: Semantic Compression & Sensitive Data Vault**
+  - [x] Reversible secret vault (`Hash -> Raw`) with stable typed placeholders
+  - [x] Semantic compressor sampling large JSON arrays and extracting schemas
+- [x] **Phase 6: Asset, Identity & Workflow Graph**
+  - [x] Deterministic temporal workflow edge derivation
+  - [x] Parameter dataflow identification across requests
+  - [x] Append-only `asset_state_history` and `derivations` table
+- [x] **Phase 7: Security Invariant Engine**
+  - [x] First-class `SecurityInvariant` objects with epistemic origin tracking
+  - [x] Deterministic invariant derivation from OpenAPI specs and workflows
+  - [x] Enforced `MODEL_PROPOSED` tag for model-proposed assumptions
+- [x] **Phase 8: Hybrid Retrieval & Context Budgeting**
+  - [x] ChromaDB dense + SQLite FTS5 (BM25) RRF retrieval
+  - [x] Hard exact parameter gate blocking semantic false substitutions
+  - [x] Deterministic token budget controller
+- [x] **Phase 9 & 10: 3B & 7B Reasoning Engines**
+  - [x] Qwen 2.5 Coder 3B and 7B runner integration
+  - [x] Taxonomy candidate mapping & applicability pre-filtering
+  - [x] Schema-constrained JSON generation enforcing v6 structured reasoning progression (app_model_delta -> violation_assessment -> decision -> missing_evidence -> experiment_proposal -> safety_check)
+  - [x] Untrusted data isolation prompt architecture
+- [x] **Phase 11: Grounding Validator**
+  - [x] Canonical ID existence checks
+  - [x] Parameter-to-asset structural relationship checks
+  - [x] Taxonomy claim checks with automatic downgrade to `INSUFFICIENT_EVIDENCE`
+- [x] **Phase 12: Hypothesis State Machine**
+  - [x] Hypothesis lifecycle (`NEW` -> `UNDER_REVIEW` -> `CONFIRMED` / `REJECTED` -> `REPORTED`)
+  - [x] Revision tracking upon receiving experimental observations
+  - [x] Database triggers enforcing attached evidence and human verification record
+- [x] **Phase 13: Experiment Proposal Model**
+  - [x] Structured, discriminative experiment proposals (supporting vs contradicting vs unresolved)
+  - [x] Safety level classification (`READ_ONLY_SAFE`, `STATE_CHANGING_REQUIRES_APPROVAL`, `DESTRUCTIVE`)
+- [x] **Phase 14: Human Feedback Dashboard**
+  - [x] FastAPI local-first review UI & API
+  - [x] Safety warning and acknowledgment enforcement for state-changing endpoints
+  - [x] Immutable audit log recording
+- [x] **Phase 15 & 16: Evaluation Harness & Headless Deterministic Simulator**
+  - [x] Deterministic `SyntheticApp` state machine (users, resources, transitions, vuln/patch variants)
+  - [x] `HeadlessSimulator` executing proposals and generating ground-truth `OBSERVED` facts
+- [x] **Phase 17 & 18: Manual Gold Set & Deterministic Scorer**
+  - [x] Benchmark scenarios covering paired vuln/patched, state machine, and negative controls
+  - [x] `DeterministicScorer` computing precision, recall, f1, grounding accuracy, abstention precision
+- [x] **Phase 19: Ablation Framework**
+  - [x] 5-track ablation runner (Track A: Rules, Track B: RAG 3B, Track C: RAG 7B, Track D: App Model + Invariants, Track E: Full v6)
+- [x] **Phase 20: Metrics & Experiment Logging**
+  - [x] Standardized experiment tracking log format and audit recording

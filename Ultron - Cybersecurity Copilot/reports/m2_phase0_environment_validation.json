@@ -1,0 +1,252 @@
+{
+  "timestamp": "2026-09-18 16:47:06",
+  "phase": "Phase 0 \u2014 Model Environment Validation",
+  "steps": {
+    "step0_hardware": {
+      "status": "PASS",
+      "cpu": "AMD Ryzen 5 5600H with Radeon Graphics",
+      "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU, 4096 MiB",
+      "reference_spec_match": true
+    },
+    "step1_models": {
+      "status": "PASS",
+      "ollama_version": "0.34.1",
+      "models": {
+        "qwen2.5-coder:3b": {
+          "tag": "qwen2.5-coder:3b",
+          "digest": "f72c60cabf6237b07f6e632b2c48d533cef25eda2efbd34bed21c5e9c01e6225",
+          "quantization": "Q4_K_M",
+          "parameter_size": "3.1B"
+        },
+        "qwen2.5-coder:7b": {
+          "tag": "qwen2.5-coder:7b",
+          "digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+          "quantization": "Q4_K_M",
+          "parameter_size": "7.6B"
+        }
+      }
+    },
+    "step2_structured_output": {
+      "status": "PASS",
+      "results": {
+        "qwen2.5-coder:3b": {
+          "status": "PASS",
+          "parsed": {
+            "status": "ok",
+            "counter": 42
+          },
+          "duration_seconds": 3.735
+        },
+        "qwen2.5-coder:7b": {
+          "status": "PASS",
+          "parsed": {
+            "status": "ok",
+            "counter": 42
+          },
+          "duration_seconds": 7.357
+        }
+      }
+    },
+    "step3_layer_offload": {
+      "status": "PASS",
+      "offload": {
+        "log_snippets": [
+          "common_params_fit_impl: set ngl_per_device_high[0].n_layer=14",
+          "common_params_fit_impl: set ngl_per_device[0].n_layer=12",
+          "common_params_fit_impl: set ngl_per_device_high[0].n_layer=13",
+          "load_tensors: offloading output layer to GPU",
+          "load_tensors: offloading 11 repeating layers to GPU",
+          "load_tensors: offloaded 12/29 layers to GPU",
+          "load_tensors:        CUDA0 model buffer size =  1905.36 MiB"
+        ],
+        "qwen2.5-coder:3b": {
+          "total_layers": 37,
+          "gpu_layers": 37,
+          "cpu_layers": 0,
+          "percentage_gpu": 100.0,
+          "observed_model_buffer_mb": 1834.83
+        },
+        "qwen2.5-coder:7b": {
+          "total_layers": 29,
+          "gpu_layers": 12,
+          "cpu_layers": 17,
+          "percentage_gpu": 41.4,
+          "observed_model_buffer_mb": 1905.36
+        }
+      }
+    },
+    "step4_memory_drift": {
+      "status": "PASS",
+      "m0_baseline": {
+        "vram_mb": 931.0,
+        "rss_mb": 102.48046875
+      },
+      "cycles": [
+        {
+          "cycle": 1,
+          "unloaded_model": "qwen2.5-coder:7b",
+          "reloaded_model": "qwen2.5-coder:3b",
+          "quiescent_vram_mb": 931.0,
+          "quiescent_rss_mb": 102.48046875,
+          "loaded_vram_mb": 3073.0,
+          "loaded_rss_mb": 102.5390625,
+          "load_duration_s": 1.907
+        },
+        {
+          "cycle": 2,
+          "unloaded_model": "qwen2.5-coder:3b",
+          "reloaded_model": "qwen2.5-coder:7b",
+          "quiescent_vram_mb": 931.0,
+          "quiescent_rss_mb": 102.5390625,
+          "loaded_vram_mb": 3185.0,
+          "loaded_rss_mb": 102.95703125,
+          "load_duration_s": 3.908
+        },
+        {
+          "cycle": 3,
+          "unloaded_model": "qwen2.5-coder:7b",
+          "reloaded_model": "qwen2.5-coder:3b",
+          "quiescent_vram_mb": 931.0,
+          "quiescent_rss_mb": 102.95703125,
+          "loaded_vram_mb": 3073.0,
+          "loaded_rss_mb": 102.55859375,
+          "load_duration_s": 1.892
+        },
+        {
+          "cycle": 4,
+          "unloaded_model": "qwen2.5-coder:3b",
+          "reloaded_model": "qwen2.5-coder:7b",
+          "quiescent_vram_mb": 931.0,
+          "quiescent_rss_mb": 102.55859375,
+          "loaded_vram_mb": 3185.0,
+          "loaded_rss_mb": 103.34375,
+          "load_duration_s": 3.894
+        },
+        {
+          "cycle": 5,
+          "unloaded_model": "qwen2.5-coder:7b",
+          "reloaded_model": "qwen2.5-coder:3b",
+          "quiescent_vram_mb": 931.0,
+          "quiescent_rss_mb": 103.01953125,
+          "loaded_vram_mb": 3073.0,
+          "loaded_rss_mb": 102.63671875,
+          "load_duration_s": 1.895
+        },
+        {
+          "cycle": 6,
+          "unloaded_model": "qwen2.5-coder:3b",
+          "reloaded_model": "qwen2.5-coder:7b",
+          "quiescent_vram_mb": 931.0,
+          "quiescent_rss_mb": 102.63671875,
+          "loaded_vram_mb": 3185.0,
+          "loaded_rss_mb": 103.46875,
+          "load_duration_s": 3.906
+        },
+        {
+          "cycle": 7,
+          "unloaded_model": "qwen2.5-coder:7b",
+          "reloaded_model": "qwen2.5-coder:3b",
+          "quiescent_vram_mb": 931.0,
+          "quiescent_rss_mb": 103.46875,
+          "loaded_vram_mb": 3073.0,
+          "loaded_rss_mb": 103.06640625,
+          "load_duration_s": 1.89
+        },
+        {
+          "cycle": 8,
+          "unloaded_model": "qwen2.5-coder:3b",
+          "reloaded_model": "qwen2.5-coder:7b",
+          "quiescent_vram_mb": 931.0,
+          "quiescent_rss_mb": 103.0703125,
+          "loaded_vram_mb": 3185.0,
+          "loaded_rss_mb": 102.7578125,
+          "load_duration_s": 3.926
+        },
+        {
+          "cycle": 9,
+          "unloaded_model": "qwen2.5-coder:7b",
+          "reloaded_model": "qwen2.5-coder:3b",
+          "quiescent_vram_mb": 931.0,
+          "quiescent_rss_mb": 102.7734375,
+          "loaded_vram_mb": 3073.0,
+          "loaded_rss_mb": 102.39453125,
+          "load_duration_s": 2.211
+        },
+        {
+          "cycle": 10,
+          "unloaded_model": "qwen2.5-coder:3b",
+          "reloaded_model": "qwen2.5-coder:7b",
+          "quiescent_vram_mb": 931.0,
+          "quiescent_rss_mb": 102.45703125,
+          "loaded_vram_mb": 3185.0,
+          "loaded_rss_mb": 103.01953125,
+          "load_duration_s": 3.901
+        }
+      ],
+      "vram_metrics": {
+        "slope_mb_per_cycle": 0.0,
+        "endpoint_drift_mb": 0.0,
+        "max_allowed_drift_mb": 150.0,
+        "passed": true
+      },
+      "rss_metrics": {
+        "slope_mb_per_cycle": 0.0263,
+        "endpoint_drift_mb": 0.02,
+        "max_allowed_drift_mb": 150.0,
+        "passed": true
+      }
+    },
+    "step5_context_saturation": {
+      "status": "PASS",
+      "tiers": {
+        "4096": {
+          "status": "PASS",
+          "num_ctx": 4096,
+          "prompt_eval_count": 3918,
+          "eval_count": 10,
+          "duration_seconds": 7.22,
+          "vram_peak_mb": 3207.0,
+          "cuda_oom": false
+        },
+        "8192": {
+          "status": "PASS",
+          "num_ctx": 8192,
+          "prompt_eval_count": 7810,
+          "eval_count": 10,
+          "duration_seconds": 18.86,
+          "vram_peak_mb": 3319.0,
+          "cuda_oom": false
+        }
+      }
+    },
+    "step6_mode1_lifecycle": {
+      "status": "PASS",
+      "synthetic_3b_items_processed": 3,
+      "3b_unload_vram_reclaimed_mb": 931.0,
+      "7b_survivor_inference_duration_s": 4.45
+    },
+    "step7_timing": {
+      "status": "PASS",
+      "timing": {
+        "qwen2.5-coder:3b": {
+          "T_load_cold_seconds": 2.79,
+          "T_infer_cold_seconds": 0.198,
+          "T_load_warm_seconds": 0.004,
+          "T_infer_warm_seconds": 0.836,
+          "prompt_eval_rate_tokens_per_s": 1414.6,
+          "eval_rate_tokens_per_s": 75.8
+        },
+        "qwen2.5-coder:7b": {
+          "T_load_cold_seconds": 4.796,
+          "T_infer_cold_seconds": 1.477,
+          "T_load_warm_seconds": 0.003,
+          "T_infer_warm_seconds": 0.918,
+          "prompt_eval_rate_tokens_per_s": 104.2,
+          "eval_rate_tokens_per_s": 15.9
+        }
+      }
+    }
+  },
+  "verdict": "MODEL_ENVIRONMENT_VALIDATION: PASS",
+  "blocking_reason": null
+}

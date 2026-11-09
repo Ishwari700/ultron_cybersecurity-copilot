@@ -1,0 +1,130 @@
+{
+  "phase": "Phase 8 \u2014 Live-Model Cascade Execution",
+  "timestamp": "2026-09-18 17:22:13",
+  "architecture_path": "qwen2.5-coder:3b -> EvidencePreservationGate -> DeterministicRouter -> CascadeHandoffPacket -> qwen2.5-coder:7b -> GroundingValidator",
+  "scenarios_tested": 4,
+  "escalated_count": 3,
+  "non_escalated_count": 1,
+  "total_7b_calls": 3,
+  "zero_7b_on_non_escalated_proven": true,
+  "metrics_3b": {
+    "n_attempted": 4,
+    "n_failures": 0,
+    "failure_rate": 0.0,
+    "failure_rate_percent": "0.00%",
+    "categories": {
+      "parser_failure": 0,
+      "model_unresponsiveness": 0,
+      "timeout": 0,
+      "oom": 0,
+      "connection_refusal": 0
+    },
+    "timing": {
+      "total_load_s": 3.215,
+      "total_infer_s": 12.834
+    }
+  },
+  "timing": {
+    "model_load_latency_s": 1.0,
+    "average_ttd_s": 15.943,
+    "sweep_duration_s": 61.78
+  },
+  "vram": {
+    "vram_start_mb": 3022.0,
+    "vram_end_mb": 3051.0,
+    "peak_vram_mb": 3185.0
+  },
+  "grounding_results": {
+    "SC-02-HIGHRISK": {
+      "valid": true,
+      "status": "VALID",
+      "reason": null,
+      "unsupported_fact_ids": [],
+      "unsupported_param_ids": []
+    },
+    "SC-03-CROSSID": {
+      "valid": true,
+      "status": "VALID",
+      "reason": null,
+      "unsupported_fact_ids": [],
+      "unsupported_param_ids": []
+    },
+    "SC-04-COMPLEXITY": {
+      "valid": true,
+      "status": "VALID",
+      "reason": null,
+      "unsupported_fact_ids": [],
+      "unsupported_param_ids": []
+    }
+  },
+  "scenarios": [
+    {
+      "scenario_id": "SC-01-BENIGN",
+      "escalated": false,
+      "fail_safe_triggered": false,
+      "reasons": [],
+      "high_risk_signals": [],
+      "deep_analysis_triggers": [],
+      "model_inference_latency_3b": 6.006,
+      "end_to_end_decision_latency": 6.009,
+      "model_load_latency_7b": 0.0,
+      "executed_by_7b": false,
+      "reasoning_hypothesis_status": null,
+      "provenance_hash": "ad2b66635570b018d7079530a175efef1dcb66cfc1c144b232389beca8cfc1d6"
+    },
+    {
+      "scenario_id": "SC-02-HIGHRISK",
+      "escalated": true,
+      "fail_safe_triggered": false,
+      "reasons": [
+        "PRIVILEGE_LEVEL_DELTA_DETECTED"
+      ],
+      "high_risk_signals": [
+        "PRIVILEGE_LEVEL_DELTA_DETECTED"
+      ],
+      "deep_analysis_triggers": [],
+      "model_inference_latency_3b": 23.238,
+      "end_to_end_decision_latency": 24.238,
+      "model_load_latency_7b": 1.0,
+      "executed_by_7b": true,
+      "reasoning_hypothesis_status": "SUCCESS",
+      "provenance_hash": "bc073ae2e1d906f08b41caab60852df0c745c5898bcae27a628400945b6ee160"
+    },
+    {
+      "scenario_id": "SC-03-CROSSID",
+      "escalated": true,
+      "fail_safe_triggered": false,
+      "reasons": [
+        "CROSS_IDENTITY_OBJECT_ACCESS_SUCCESS"
+      ],
+      "high_risk_signals": [
+        "CROSS_IDENTITY_OBJECT_ACCESS_SUCCESS"
+      ],
+      "deep_analysis_triggers": [],
+      "model_inference_latency_3b": 11.822,
+      "end_to_end_decision_latency": 12.823,
+      "model_load_latency_7b": 1.0,
+      "executed_by_7b": true,
+      "reasoning_hypothesis_status": "SUCCESS",
+      "provenance_hash": "28a1ecb5ba39d1e8d0e13d87b4c0641ff224a4e5b3dcacc32b9f3cdcdf8bcc88"
+    },
+    {
+      "scenario_id": "SC-04-COMPLEXITY",
+      "escalated": true,
+      "fail_safe_triggered": false,
+      "reasons": [
+        "EVIDENCE_PARSE_ASYMMETRY"
+      ],
+      "high_risk_signals": [],
+      "deep_analysis_triggers": [
+        "EVIDENCE_PARSE_ASYMMETRY"
+      ],
+      "model_inference_latency_3b": 19.703,
+      "end_to_end_decision_latency": 20.703,
+      "model_load_latency_7b": 1.0,
+      "executed_by_7b": true,
+      "reasoning_hypothesis_status": "SUCCESS",
+      "provenance_hash": "e4b9dae9afff6e5947e70d591cb5e83fb59442e4646051a56136c6d517cdc4e0"
+    }
+  ]
+}

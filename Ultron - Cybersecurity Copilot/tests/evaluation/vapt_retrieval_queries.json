@@ -1,0 +1,5891 @@
+{
+  "schema_version": "1.0.0",
+  "benchmark_name": "VAPT_RETRIEVAL_GOLD_STANDARD_BENCHMARK",
+  "description": "Implementation-independent gold-standard retrieval evaluation benchmark for general VAPT knowledge.",
+  "corpus_document_count": 6,
+  "corpus_chunk_count": 23,
+  "total_queries": 100,
+  "queries": [
+    {
+      "query_id": "VAPT-Q001",
+      "query": "Insecure Direct Object Reference IDOR testing methodology and procedures",
+      "security_domain": "AUTHORIZATION_OBJECT_LEVEL",
+      "difficulty": "EASY",
+      "query_type": "DIRECT_CONCEPT",
+      "evidence_gap_type": "MISSING_CROSS_IDENTITY_OBJECT_VERIFICATION",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": false,
+      "expected_knowledge_types": [
+        "TESTING_METHODOLOGY"
+      ],
+      "expected_categories": [
+        "IDOR",
+        "Authorization"
+      ],
+      "relevance_requirements": [
+        "Must retrieve IDOR testing methodology and procedural steps"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-002-01"
+        },
+        {
+          "type": "knowledge_type",
+          "value": "TESTING_METHODOLOGY"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-001-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-639-001-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-004-01",
+          "reason": "Focuses on unauthenticated access rather than object authorization"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-WSTG-ATHZ-04-002-01": 3,
+        "CHK-DOC-WSTG-ATHZ-04-001-01": 2,
+        "CHK-DOC-CWE-639-001-01": 2,
+        "CHK-DOC-PLATFORM-INV-01-002-01": 1,
+        "CHK-DOC-PLATFORM-INV-01-004-01": 0
+      },
+      "notes": "Evaluates direct retrieval of OWASP WSTG IDOR procedure using canonical terminology."
+    },
+    {
+      "query_id": "VAPT-Q002",
+      "query": "Broken Object Level Authorization BOLA in REST API resource routes",
+      "security_domain": "AUTHORIZATION_OBJECT_LEVEL",
+      "difficulty": "EASY",
+      "query_type": "DIRECT_CONCEPT",
+      "evidence_gap_type": "MISSING_CROSS_IDENTITY_OBJECT_VERIFICATION",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": false,
+      "expected_knowledge_types": [
+        "EXPERIMENT_PATTERN",
+        "TESTING_METHODOLOGY"
+      ],
+      "expected_categories": [
+        "CWE-639",
+        "IDOR",
+        "Authorization"
+      ],
+      "relevance_requirements": [
+        "Must retrieve user-controlled key patterns in REST API path identifiers"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-639-002-01"
+        },
+        {
+          "type": "knowledge_type",
+          "value": "EXPERIMENT_PATTERN"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-001-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-002-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-001-01",
+          "reason": "Deals with functional role hierarchy rather than object-level authorization"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-CWE-639-002-01": 3,
+        "CHK-DOC-WSTG-ATHZ-04-001-01": 2,
+        "CHK-DOC-PLATFORM-INV-01-002-01": 2,
+        "CHK-DOC-WSTG-ATHZ-02-001-01": 0
+      },
+      "notes": "Evaluates retrieval of REST API path identifier patterns for BOLA / CWE-639."
+    },
+    {
+      "query_id": "VAPT-Q003",
+      "query": "Cross-Identity Horizontal Isolation platform invariant enforcement",
+      "security_domain": "AUTHORIZATION_OBJECT_LEVEL",
+      "difficulty": "EASY",
+      "query_type": "SECURITY_INVARIANT",
+      "evidence_gap_type": "MISSING_TENANT_ISOLATION_CHECK",
+      "is_negative_control": false,
+      "is_security_invariant": true,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": false,
+      "expected_knowledge_types": [
+        "SECURITY_INVARIANT"
+      ],
+      "expected_categories": [
+        "Platform_Invariants",
+        "Tenant_Isolation"
+      ],
+      "relevance_requirements": [
+        "Must retrieve platform invariant 1 for cross-identity horizontal isolation"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-002-01"
+        },
+        {
+          "type": "knowledge_type",
+          "value": "SECURITY_INVARIANT"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-001-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-002-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-003-01",
+          "reason": "Addresses vertical role hierarchy instead of horizontal tenant isolation"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-PLATFORM-INV-01-002-01": 3,
+        "CHK-DOC-PLATFORM-INV-01-001-01": 2,
+        "CHK-DOC-ASVS-V4-01-002-01": 1,
+        "CHK-DOC-PLATFORM-INV-01-003-01": 0
+      },
+      "notes": "Evaluates direct retrieval of the authoritative platform invariant for horizontal tenant isolation."
+    },
+    {
+      "query_id": "VAPT-Q004",
+      "query": "Authorization bypass through user-controlled key CWE-639 specification",
+      "security_domain": "AUTHORIZATION_OBJECT_LEVEL",
+      "difficulty": "EASY",
+      "query_type": "DIRECT_CONCEPT",
+      "evidence_gap_type": "MISSING_CROSS_IDENTITY_OBJECT_VERIFICATION",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": false,
+      "expected_knowledge_types": [
+        "EXPERIMENT_PATTERN"
+      ],
+      "expected_categories": [
+        "CWE-639",
+        "Key_Substitution",
+        "Authorization_Bypass"
+      ],
+      "relevance_requirements": [
+        "Must retrieve CWE-639 weakness definition and key substitution mechanism"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-639-001-01"
+        },
+        {
+          "type": "category",
+          "value": "CWE-639"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-639-002-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-001-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-002-01",
+          "reason": "Addresses BFLA procedure"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-CWE-639-001-01": 3,
+        "CHK-DOC-CWE-639-002-01": 2,
+        "CHK-DOC-WSTG-ATHZ-04-001-01": 1,
+        "CHK-DOC-WSTG-ATHZ-02-002-01": 0
+      },
+      "notes": "Evaluates direct retrieval of CWE-639 weakness definition using explicit CWE taxonomy terms."
+    },
+    {
+      "query_id": "VAPT-Q005",
+      "query": "Any resource associated with Tenant A must never be accessible or mutable by Tenant B",
+      "security_domain": "AUTHORIZATION_OBJECT_LEVEL",
+      "difficulty": "MEDIUM",
+      "query_type": "SECURITY_INVARIANT",
+      "evidence_gap_type": "MISSING_TENANT_ISOLATION_CHECK",
+      "is_negative_control": false,
+      "is_security_invariant": true,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": true,
+      "expected_knowledge_types": [
+        "SECURITY_INVARIANT"
+      ],
+      "expected_categories": [
+        "Platform_Invariants",
+        "Tenant_Isolation"
+      ],
+      "relevance_requirements": [
+        "Must retrieve horizontal isolation invariant stating Tenant A resources are inaccessible to Tenant B"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-002-01"
+        },
+        {
+          "type": "knowledge_type",
+          "value": "SECURITY_INVARIANT"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-002-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-001-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-004-01",
+          "reason": "Focuses on anonymous requests, not authenticated cross-tenant boundaries"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-PLATFORM-INV-01-002-01": 3,
+        "CHK-DOC-ASVS-V4-01-002-01": 2,
+        "CHK-DOC-PLATFORM-INV-01-001-01": 1,
+        "CHK-DOC-PLATFORM-INV-01-004-01": 0
+      },
+      "notes": "Paraphrased invariant query without using IDOR/BOLA buzzwords."
+    },
+    {
+      "query_id": "VAPT-Q006",
+      "query": "What evidence is required to verify horizontal tenant object isolation on an API endpoint?",
+      "security_domain": "AUTHORIZATION_OBJECT_LEVEL",
+      "difficulty": "MEDIUM",
+      "query_type": "EVIDENCE_GAP",
+      "evidence_gap_type": "MISSING_CROSS_IDENTITY_OBJECT_VERIFICATION",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": true,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": false,
+      "expected_knowledge_types": [
+        "TESTING_METHODOLOGY",
+        "SECURITY_INVARIANT"
+      ],
+      "expected_categories": [
+        "Tenant_Isolation",
+        "IDOR",
+        "Authorization"
+      ],
+      "relevance_requirements": [
+        "Must retrieve methodology or invariant defining required evidence for cross-identity verification"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-002-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-002-01"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-639-003-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-002-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-002-01",
+          "reason": "Addresses administrative endpoints"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-PLATFORM-INV-01-002-01": 3,
+        "CHK-DOC-WSTG-ATHZ-04-002-01": 3,
+        "CHK-DOC-CWE-639-003-01": 2,
+        "CHK-DOC-ASVS-V4-01-002-01": 1,
+        "CHK-DOC-WSTG-ATHZ-02-002-01": 0
+      },
+      "notes": "Evidence-gap query evaluating required traffic observations for horizontal tenant isolation."
+    },
+    {
+      "query_id": "VAPT-Q007",
+      "query": "One authenticated customer viewing another customer's private account records",
+      "security_domain": "AUTHORIZATION_OBJECT_LEVEL",
+      "difficulty": "MEDIUM",
+      "query_type": "PARAPHRASED",
+      "evidence_gap_type": "MISSING_CROSS_IDENTITY_OBJECT_VERIFICATION",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": true,
+      "expected_knowledge_types": [
+        "TESTING_METHODOLOGY",
+        "SECURITY_INVARIANT"
+      ],
+      "expected_categories": [
+        "IDOR",
+        "Tenant_Isolation",
+        "Authorization"
+      ],
+      "relevance_requirements": [
+        "Must retrieve IDOR concept or invariant regarding cross-customer record access"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-001-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-002-01"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-639-001-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-002-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-003-01",
+          "reason": "Focuses on vertical admin privilege"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-WSTG-ATHZ-04-001-01": 3,
+        "CHK-DOC-PLATFORM-INV-01-002-01": 3,
+        "CHK-DOC-CWE-639-001-01": 2,
+        "CHK-DOC-WSTG-ATHZ-04-002-01": 1,
+        "CHK-DOC-PLATFORM-INV-01-003-01": 0
+      },
+      "notes": "Paraphrased description of horizontal authorization failure using colloquial phrasing."
+    },
+    {
+      "query_id": "VAPT-Q008",
+      "query": "Two-account testing procedure for horizontal authorization verification",
+      "security_domain": "AUTHORIZATION_OBJECT_LEVEL",
+      "difficulty": "MEDIUM",
+      "query_type": "DIRECT_CONCEPT",
+      "evidence_gap_type": "MISSING_CROSS_IDENTITY_OBJECT_VERIFICATION",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": false,
+      "expected_knowledge_types": [
+        "TESTING_METHODOLOGY"
+      ],
+      "expected_categories": [
+        "IDOR",
+        "Authorization"
+      ],
+      "relevance_requirements": [
+        "Must retrieve multi-identity testing procedure provisioning User A and User B"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-002-01"
+        },
+        {
+          "type": "knowledge_type",
+          "value": "TESTING_METHODOLOGY"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-005-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-639-003-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-002-01",
+          "reason": "Procedure for vertical BFLA testing"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-WSTG-ATHZ-04-002-01": 3,
+        "CHK-DOC-PLATFORM-INV-01-005-01": 2,
+        "CHK-DOC-CWE-639-003-01": 1,
+        "CHK-DOC-WSTG-ATHZ-02-002-01": 0
+      },
+      "notes": "Evaluates retrieval of the canonical two-account (User A vs User B) testing workflow."
+    },
+    {
+      "query_id": "VAPT-Q009",
+      "query": "Substituting user identifier in session cookie or request token to access peer tenant data",
+      "security_domain": "AUTHORIZATION_OBJECT_LEVEL",
+      "difficulty": "MEDIUM",
+      "query_type": "EXPERIMENT",
+      "evidence_gap_type": "MISSING_CROSS_IDENTITY_OBJECT_VERIFICATION",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": true,
+      "is_adversarial_or_paraphrased": true,
+      "expected_knowledge_types": [
+        "TESTING_METHODOLOGY",
+        "EXPERIMENT_PATTERN"
+      ],
+      "expected_categories": [
+        "IDOR",
+        "Key_Substitution",
+        "Authorization_Bypass"
+      ],
+      "relevance_requirements": [
+        "Must retrieve cross-identity substitution experiment methodology"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-002-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-639-003-01"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-639-002-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-003-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-003-01",
+          "reason": "Negative controls for administrative roles"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-WSTG-ATHZ-04-002-01": 3,
+        "CHK-DOC-CWE-639-003-01": 3,
+        "CHK-DOC-CWE-639-002-01": 2,
+        "CHK-DOC-ASVS-V4-01-003-01": 1,
+        "CHK-DOC-WSTG-ATHZ-02-003-01": 0
+      },
+      "notes": "Experiment-oriented query testing cross-identity parameter substitution."
+    },
+    {
+      "query_id": "VAPT-Q010",
+      "query": "Altering invoice identifier in download request while retaining standard user session",
+      "security_domain": "AUTHORIZATION_OBJECT_LEVEL",
+      "difficulty": "MEDIUM",
+      "query_type": "PARAPHRASED",
+      "evidence_gap_type": "MISSING_CROSS_IDENTITY_OBJECT_VERIFICATION",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": true,
+      "expected_knowledge_types": [
+        "EXPERIMENT_PATTERN",
+        "TESTING_METHODOLOGY"
+      ],
+      "expected_categories": [
+        "CWE-639",
+        "IDOR",
+        "Authorization"
+      ],
+      "relevance_requirements": [
+        "Must retrieve parameter tampering patterns in REST routes such as invoices"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-639-002-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-002-01"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-639-001-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-002-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-004-01",
+          "reason": "Focuses on unauthenticated access"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-CWE-639-002-01": 3,
+        "CHK-DOC-WSTG-ATHZ-04-002-01": 3,
+        "CHK-DOC-CWE-639-001-01": 2,
+        "CHK-DOC-PLATFORM-INV-01-002-01": 1,
+        "CHK-DOC-PLATFORM-INV-01-004-01": 0
+      },
+      "notes": "Paraphrased query matching real-world BOLA scenario with invoice parameter tampering."
+    },
+    {
+      "query_id": "VAPT-Q011",
+      "query": "An authenticated actor must be strictly prevented from reading or altering records belonging to another security principal",
+      "security_domain": "AUTHORIZATION_OBJECT_LEVEL",
+      "difficulty": "HARD",
+      "query_type": "SECURITY_INVARIANT",
+      "evidence_gap_type": "MISSING_TENANT_ISOLATION_CHECK",
+      "is_negative_control": false,
+      "is_security_invariant": true,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": true,
+      "expected_knowledge_types": [
+        "SECURITY_INVARIANT"
+      ],
+      "expected_categories": [
+        "Platform_Invariants",
+        "Tenant_Isolation"
+      ],
+      "relevance_requirements": [
+        "Must retrieve horizontal tenant isolation invariant formulated conceptually"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-002-01"
+        },
+        {
+          "type": "knowledge_type",
+          "value": "SECURITY_INVARIANT"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-002-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-285-001-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-004-01",
+          "reason": "Addresses unauthenticated requests"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-PLATFORM-INV-01-002-01": 3,
+        "CHK-DOC-ASVS-V4-01-002-01": 2,
+        "CHK-DOC-CWE-285-001-01": 1,
+        "CHK-DOC-PLATFORM-INV-01-004-01": 0
+      },
+      "notes": "Hard invariant query using formal security principal terminology without keyword hints."
+    },
+    {
+      "query_id": "VAPT-Q012",
+      "query": "What observation proves that an API gateway fails to validate record ownership claims against session identity?",
+      "security_domain": "AUTHORIZATION_OBJECT_LEVEL",
+      "difficulty": "HARD",
+      "query_type": "EVIDENCE_GAP",
+      "evidence_gap_type": "MISSING_CROSS_IDENTITY_OBJECT_VERIFICATION",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": true,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": true,
+      "expected_knowledge_types": [
+        "SECURITY_INVARIANT",
+        "TESTING_METHODOLOGY"
+      ],
+      "expected_categories": [
+        "ASVS",
+        "Tenant_Isolation",
+        "Access_Control"
+      ],
+      "relevance_requirements": [
+        "Must retrieve contextual data access verification requirement V4.2 or horizontal invariant"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-002-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-002-01"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-002-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-639-003-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-004-01",
+          "reason": "BFLA false positive guidance"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-ASVS-V4-01-002-01": 3,
+        "CHK-DOC-PLATFORM-INV-01-002-01": 3,
+        "CHK-DOC-WSTG-ATHZ-04-002-01": 2,
+        "CHK-DOC-CWE-639-003-01": 1,
+        "CHK-DOC-WSTG-ATHZ-02-004-01": 0
+      },
+      "notes": "Hard evidence-gap query focusing on contextual data ownership enforcement against token claims."
+    },
+    {
+      "query_id": "VAPT-Q013",
+      "query": "Client-provided record key substitution exposing sensitive telemetry of another organization",
+      "security_domain": "AUTHORIZATION_OBJECT_LEVEL",
+      "difficulty": "HARD",
+      "query_type": "PARAPHRASED",
+      "evidence_gap_type": "MISSING_CROSS_IDENTITY_OBJECT_VERIFICATION",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": true,
+      "expected_knowledge_types": [
+        "EXPERIMENT_PATTERN",
+        "SECURITY_INVARIANT"
+      ],
+      "expected_categories": [
+        "CWE-639",
+        "Tenant_Isolation",
+        "Authorization_Bypass"
+      ],
+      "relevance_requirements": [
+        "Must retrieve CWE-639 key substitution or platform horizontal isolation"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-639-002-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-002-01"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-639-001-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-001-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-003-01",
+          "reason": "Role hierarchy"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-CWE-639-002-01": 3,
+        "CHK-DOC-PLATFORM-INV-01-002-01": 3,
+        "CHK-DOC-CWE-639-001-01": 2,
+        "CHK-DOC-WSTG-ATHZ-04-001-01": 1,
+        "CHK-DOC-PLATFORM-INV-01-003-01": 0
+      },
+      "notes": "Hard paraphrased query describing BOLA through organization telemetry exposure."
+    },
+    {
+      "query_id": "VAPT-Q014",
+      "query": "Accessing peer customer transaction histories by cycling sequential entity references",
+      "security_domain": "AUTHORIZATION_OBJECT_LEVEL",
+      "difficulty": "HARD",
+      "query_type": "PARAPHRASED",
+      "evidence_gap_type": "MISSING_CROSS_IDENTITY_OBJECT_VERIFICATION",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": true,
+      "expected_knowledge_types": [
+        "EXPERIMENT_PATTERN",
+        "TESTING_METHODOLOGY"
+      ],
+      "expected_categories": [
+        "CWE-639",
+        "Key_Substitution",
+        "IDOR"
+      ],
+      "relevance_requirements": [
+        "Must retrieve CWE-639 sequential enumeration pattern or IDOR scope"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-639-001-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-001-01"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-639-002-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-002-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-001-01",
+          "reason": "BFLA overview"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-CWE-639-001-01": 3,
+        "CHK-DOC-WSTG-ATHZ-04-001-01": 3,
+        "CHK-DOC-CWE-639-002-01": 2,
+        "CHK-DOC-PLATFORM-INV-01-002-01": 1,
+        "CHK-DOC-WSTG-ATHZ-02-001-01": 0
+      },
+      "notes": "Hard paraphrased query targeting sequential key enumeration without naming IDOR."
+    },
+    {
+      "query_id": "VAPT-Q015",
+      "query": "Replacing UUID in request body with sibling tenant resource identifier",
+      "security_domain": "AUTHORIZATION_OBJECT_LEVEL",
+      "difficulty": "HARD",
+      "query_type": "PARAPHRASED",
+      "evidence_gap_type": "MISSING_CROSS_IDENTITY_OBJECT_VERIFICATION",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": true,
+      "expected_knowledge_types": [
+        "EXPERIMENT_PATTERN"
+      ],
+      "expected_categories": [
+        "CWE-639",
+        "Key_Substitution",
+        "Authorization_Bypass"
+      ],
+      "relevance_requirements": [
+        "Must retrieve body payload parameter tampering patterns in CWE-639"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-639-002-01"
+        },
+        {
+          "type": "knowledge_type",
+          "value": "EXPERIMENT_PATTERN"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-002-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-002-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-004-01",
+          "reason": "Unauthenticated gate"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-CWE-639-002-01": 3,
+        "CHK-DOC-PLATFORM-INV-01-002-01": 2,
+        "CHK-DOC-WSTG-ATHZ-04-002-01": 1,
+        "CHK-DOC-PLATFORM-INV-01-004-01": 0
+      },
+      "notes": "Hard query testing JSON body parameter tampering with sibling tenant identifier."
+    },
+    {
+      "query_id": "VAPT-Q016",
+      "query": "Distinguishing horizontal object authorization failure from vertical privilege escalation",
+      "security_domain": "AUTHORIZATION_OBJECT_LEVEL",
+      "difficulty": "MEDIUM",
+      "query_type": "NEGATIVE_CONTROL",
+      "evidence_gap_type": "MISSING_CROSS_IDENTITY_OBJECT_VERIFICATION",
+      "is_negative_control": true,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": false,
+      "expected_knowledge_types": [
+        "SECURITY_INVARIANT",
+        "TESTING_METHODOLOGY"
+      ],
+      "expected_categories": [
+        "Tenant_Isolation",
+        "Role_Hierarchy",
+        "Platform_Invariants"
+      ],
+      "relevance_requirements": [
+        "Must retrieve horizontal isolation invariant and contrast with vertical boundaries"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-002-01"
+        },
+        {
+          "type": "knowledge_type",
+          "value": "SECURITY_INVARIANT"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-003-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-001-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-004-01",
+          "reason": "Unauthenticated gate is not relevant to horizontal vs vertical boundary distinction"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-PLATFORM-INV-01-002-01": 3,
+        "CHK-DOC-PLATFORM-INV-01-003-01": 2,
+        "CHK-DOC-WSTG-ATHZ-04-001-01": 2,
+        "CHK-DOC-PLATFORM-INV-01-004-01": 0
+      },
+      "notes": "Negative control evaluating discrimination between horizontal tenant isolation and vertical role boundaries."
+    },
+    {
+      "query_id": "VAPT-Q017",
+      "query": "Differentiating broken object level authorization from cross-site request forgery lacking intent",
+      "security_domain": "AUTHORIZATION_OBJECT_LEVEL",
+      "difficulty": "HARD",
+      "query_type": "NEGATIVE_CONTROL",
+      "evidence_gap_type": "MISSING_CROSS_IDENTITY_OBJECT_VERIFICATION",
+      "is_negative_control": true,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": true,
+      "expected_knowledge_types": [
+        "TESTING_METHODOLOGY",
+        "SECURITY_INVARIANT"
+      ],
+      "expected_categories": [
+        "IDOR",
+        "Authorization",
+        "Tenant_Isolation"
+      ],
+      "relevance_requirements": [
+        "Must retrieve IDOR scope and horizontal invariant while rejecting CSRF confusion"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-001-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-002-01"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-285-001-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-639-001-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-004-01",
+          "reason": "Unauthenticated access gate does not resolve IDOR vs CSRF"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-WSTG-ATHZ-04-001-01": 3,
+        "CHK-DOC-PLATFORM-INV-01-002-01": 3,
+        "CHK-DOC-CWE-285-001-01": 2,
+        "CHK-DOC-CWE-639-001-01": 1,
+        "CHK-DOC-PLATFORM-INV-01-004-01": 0
+      },
+      "notes": "Negative control testing distinction between IDOR (direct object authorization failure) and CSRF."
+    },
+    {
+      "query_id": "VAPT-Q018",
+      "query": "Identifying direct object references in REST API path segments and query parameters",
+      "security_domain": "AUTHORIZATION_OBJECT_LEVEL",
+      "difficulty": "EASY",
+      "query_type": "DIRECT_CONCEPT",
+      "evidence_gap_type": "MISSING_CROSS_IDENTITY_OBJECT_VERIFICATION",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": false,
+      "expected_knowledge_types": [
+        "TESTING_METHODOLOGY",
+        "EXPERIMENT_PATTERN"
+      ],
+      "expected_categories": [
+        "IDOR",
+        "CWE-639",
+        "Authorization"
+      ],
+      "relevance_requirements": [
+        "Must retrieve test procedure for identifying direct object references in paths and queries"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-002-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-639-002-01"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-001-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-639-001-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-003-01",
+          "reason": "BFLA verification"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-WSTG-ATHZ-04-002-01": 3,
+        "CHK-DOC-CWE-639-002-01": 3,
+        "CHK-DOC-WSTG-ATHZ-04-001-01": 2,
+        "CHK-DOC-CWE-639-001-01": 1,
+        "CHK-DOC-WSTG-ATHZ-02-003-01": 0
+      },
+      "notes": "Evaluates retrieval of direct object reference identification across query strings and path segments."
+    },
+    {
+      "query_id": "VAPT-Q019",
+      "query": "Testing for Broken Function Level Authorization BFLA in administrative APIs",
+      "security_domain": "AUTHORIZATION_FUNCTION_LEVEL",
+      "difficulty": "EASY",
+      "query_type": "DIRECT_CONCEPT",
+      "evidence_gap_type": "MISSING_ROLE_HIERARCHY_ENFORCEMENT",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": false,
+      "expected_knowledge_types": [
+        "TESTING_METHODOLOGY"
+      ],
+      "expected_categories": [
+        "BFLA",
+        "Vertical_Privilege_Escalation",
+        "Role_Hierarchy"
+      ],
+      "relevance_requirements": [
+        "Must retrieve OWASP WSTG BFLA testing overview and methodology"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-001-01"
+        },
+        {
+          "type": "category",
+          "value": "BFLA"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-002-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-003-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-001-01",
+          "reason": "IDOR summary"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-WSTG-ATHZ-02-001-01": 3,
+        "CHK-DOC-WSTG-ATHZ-02-002-01": 2,
+        "CHK-DOC-PLATFORM-INV-01-003-01": 2,
+        "CHK-DOC-WSTG-ATHZ-04-001-01": 0
+      },
+      "notes": "Evaluates direct retrieval of BFLA testing methodology using canonical WSTG terminology."
+    },
+    {
+      "query_id": "VAPT-Q020",
+      "query": "Vertical Role Hierarchy Boundaries invariant enforcement across privileged functions",
+      "security_domain": "AUTHORIZATION_FUNCTION_LEVEL",
+      "difficulty": "EASY",
+      "query_type": "SECURITY_INVARIANT",
+      "evidence_gap_type": "MISSING_ROLE_HIERARCHY_ENFORCEMENT",
+      "is_negative_control": false,
+      "is_security_invariant": true,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": false,
+      "expected_knowledge_types": [
+        "SECURITY_INVARIANT"
+      ],
+      "expected_categories": [
+        "Platform_Invariants",
+        "Tenant_Isolation",
+        "Rulebook"
+      ],
+      "relevance_requirements": [
+        "Must retrieve platform invariant 2 defining vertical role hierarchy boundaries"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-003-01"
+        },
+        {
+          "type": "knowledge_type",
+          "value": "SECURITY_INVARIANT"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-001-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-001-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-002-01",
+          "reason": "Horizontal isolation"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-PLATFORM-INV-01-003-01": 3,
+        "CHK-DOC-PLATFORM-INV-01-001-01": 2,
+        "CHK-DOC-WSTG-ATHZ-02-001-01": 1,
+        "CHK-DOC-PLATFORM-INV-01-002-01": 0
+      },
+      "notes": "Evaluates retrieval of the platform security invariant for vertical role hierarchies."
+    },
+    {
+      "query_id": "VAPT-Q021",
+      "query": "Improper authorization CWE-285 role verification failures and privilege escalation",
+      "security_domain": "AUTHORIZATION_FUNCTION_LEVEL",
+      "difficulty": "EASY",
+      "query_type": "DIRECT_CONCEPT",
+      "evidence_gap_type": "MISSING_ROLE_HIERARCHY_ENFORCEMENT",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": false,
+      "expected_knowledge_types": [
+        "SECURITY_INVARIANT"
+      ],
+      "expected_categories": [
+        "CWE-285",
+        "Authorization",
+        "Access_Control_Failure"
+      ],
+      "relevance_requirements": [
+        "Must retrieve CWE-285 improper authorization weakness overview"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-285-001-01"
+        },
+        {
+          "type": "category",
+          "value": "CWE-285"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-285-002-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-003-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-639-001-01",
+          "reason": "CWE-639 key substitution"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-CWE-285-001-01": 3,
+        "CHK-DOC-CWE-285-002-01": 2,
+        "CHK-DOC-PLATFORM-INV-01-003-01": 1,
+        "CHK-DOC-CWE-639-001-01": 0
+      },
+      "notes": "Evaluates retrieval of CWE-285 improper authorization definition."
+    },
+    {
+      "query_id": "VAPT-Q022",
+      "query": "Step-by-step testing procedure for vertical privilege escalation and administrative access",
+      "security_domain": "AUTHORIZATION_FUNCTION_LEVEL",
+      "difficulty": "EASY",
+      "query_type": "DIRECT_CONCEPT",
+      "evidence_gap_type": "MISSING_ROLE_HIERARCHY_ENFORCEMENT",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": false,
+      "expected_knowledge_types": [
+        "TESTING_METHODOLOGY"
+      ],
+      "expected_categories": [
+        "BFLA",
+        "Vertical_Privilege_Escalation",
+        "Role_Hierarchy"
+      ],
+      "relevance_requirements": [
+        "Must retrieve step-by-step BFLA testing procedure from WSTG"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-002-01"
+        },
+        {
+          "type": "knowledge_type",
+          "value": "TESTING_METHODOLOGY"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-285-003-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-001-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-002-01",
+          "reason": "IDOR procedure"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-WSTG-ATHZ-02-002-01": 3,
+        "CHK-DOC-CWE-285-003-01": 2,
+        "CHK-DOC-WSTG-ATHZ-02-001-01": 1,
+        "CHK-DOC-WSTG-ATHZ-04-002-01": 0
+      },
+      "notes": "Evaluates direct retrieval of the multi-step BFLA assessment methodology."
+    },
+    {
+      "query_id": "VAPT-Q023",
+      "query": "Privileged and administrative functions must strictly enforce role requirements on every request",
+      "security_domain": "AUTHORIZATION_FUNCTION_LEVEL",
+      "difficulty": "MEDIUM",
+      "query_type": "SECURITY_INVARIANT",
+      "evidence_gap_type": "MISSING_ROLE_HIERARCHY_ENFORCEMENT",
+      "is_negative_control": false,
+      "is_security_invariant": true,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": true,
+      "expected_knowledge_types": [
+        "SECURITY_INVARIANT"
+      ],
+      "expected_categories": [
+        "Platform_Invariants",
+        "Tenant_Isolation",
+        "Rulebook"
+      ],
+      "relevance_requirements": [
+        "Must retrieve vertical role hierarchy invariant requiring role check on every request"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-003-01"
+        },
+        {
+          "type": "knowledge_type",
+          "value": "SECURITY_INVARIANT"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-002-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-001-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-004-01",
+          "reason": "Unauthenticated gate"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-PLATFORM-INV-01-003-01": 3,
+        "CHK-DOC-ASVS-V4-01-002-01": 2,
+        "CHK-DOC-WSTG-ATHZ-02-001-01": 1,
+        "CHK-DOC-PLATFORM-INV-01-004-01": 0
+      },
+      "notes": "Paraphrased invariant query testing strict role enforcement on administrative functions."
+    },
+    {
+      "query_id": "VAPT-Q024",
+      "query": "What evidence is needed to prove missing role hierarchy enforcement on a management endpoint?",
+      "security_domain": "AUTHORIZATION_FUNCTION_LEVEL",
+      "difficulty": "MEDIUM",
+      "query_type": "EVIDENCE_GAP",
+      "evidence_gap_type": "MISSING_ROLE_HIERARCHY_ENFORCEMENT",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": true,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": false,
+      "expected_knowledge_types": [
+        "SECURITY_INVARIANT",
+        "TESTING_METHODOLOGY"
+      ],
+      "expected_categories": [
+        "Platform_Invariants",
+        "BFLA",
+        "Role_Hierarchy"
+      ],
+      "relevance_requirements": [
+        "Must retrieve role hierarchy invariant or BFLA testing procedure"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-003-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-002-01"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-285-003-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-003-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-002-01",
+          "reason": "IDOR procedure"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-PLATFORM-INV-01-003-01": 3,
+        "CHK-DOC-WSTG-ATHZ-02-002-01": 3,
+        "CHK-DOC-CWE-285-003-01": 2,
+        "CHK-DOC-WSTG-ATHZ-02-003-01": 1,
+        "CHK-DOC-WSTG-ATHZ-04-002-01": 0
+      },
+      "notes": "Evidence-gap query focusing on traffic proof needed for missing role hierarchy."
+    },
+    {
+      "query_id": "VAPT-Q025",
+      "query": "Standard non-privileged user executing administrative user promotion actions",
+      "security_domain": "AUTHORIZATION_FUNCTION_LEVEL",
+      "difficulty": "MEDIUM",
+      "query_type": "PARAPHRASED",
+      "evidence_gap_type": "MISSING_ROLE_HIERARCHY_ENFORCEMENT",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": true,
+      "expected_knowledge_types": [
+        "SECURITY_INVARIANT",
+        "TESTING_METHODOLOGY"
+      ],
+      "expected_categories": [
+        "Platform_Invariants",
+        "BFLA",
+        "Role_Hierarchy"
+      ],
+      "relevance_requirements": [
+        "Must retrieve vertical role hierarchy invariant or BFLA procedure containing user promotion example"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-003-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-002-01"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-001-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-285-001-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-002-01",
+          "reason": "Horizontal isolation"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-PLATFORM-INV-01-003-01": 3,
+        "CHK-DOC-WSTG-ATHZ-02-002-01": 3,
+        "CHK-DOC-WSTG-ATHZ-02-001-01": 2,
+        "CHK-DOC-CWE-285-001-01": 1,
+        "CHK-DOC-PLATFORM-INV-01-002-01": 0
+      },
+      "notes": "Paraphrased description matching WSTG user promotion example (POST /api/v1/admin/users/promote)."
+    },
+    {
+      "query_id": "VAPT-Q026",
+      "query": "Submitting privileged administrative request using unprivileged standard user bearer token",
+      "security_domain": "AUTHORIZATION_FUNCTION_LEVEL",
+      "difficulty": "MEDIUM",
+      "query_type": "EXPERIMENT",
+      "evidence_gap_type": "MISSING_ROLE_HIERARCHY_ENFORCEMENT",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": true,
+      "is_adversarial_or_paraphrased": true,
+      "expected_knowledge_types": [
+        "TESTING_METHODOLOGY"
+      ],
+      "expected_categories": [
+        "BFLA",
+        "Vertical_Privilege_Escalation",
+        "Role_Hierarchy"
+      ],
+      "relevance_requirements": [
+        "Must retrieve step-by-step procedure for executing admin endpoint with low-privilege credentials"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-002-01"
+        },
+        {
+          "type": "knowledge_type",
+          "value": "TESTING_METHODOLOGY"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-003-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-285-003-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-002-01",
+          "reason": "IDOR multi-identity"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-WSTG-ATHZ-02-002-01": 3,
+        "CHK-DOC-PLATFORM-INV-01-003-01": 2,
+        "CHK-DOC-CWE-285-003-01": 2,
+        "CHK-DOC-WSTG-ATHZ-04-002-01": 0
+      },
+      "notes": "Experiment-focused query testing low-privilege credential execution against privileged routes."
+    },
+    {
+      "query_id": "VAPT-Q027",
+      "query": "Mapping administrative consoles, API schemas, and Swagger definitions to discover privileged routes",
+      "security_domain": "AUTHORIZATION_FUNCTION_LEVEL",
+      "difficulty": "MEDIUM",
+      "query_type": "DIRECT_CONCEPT",
+      "evidence_gap_type": "MISSING_ROLE_HIERARCHY_ENFORCEMENT",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": false,
+      "expected_knowledge_types": [
+        "TESTING_METHODOLOGY"
+      ],
+      "expected_categories": [
+        "BFLA",
+        "Role_Hierarchy"
+      ],
+      "relevance_requirements": [
+        "Must retrieve step 1 of BFLA testing procedure regarding administrative endpoint mapping"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-002-01"
+        },
+        {
+          "type": "category",
+          "value": "BFLA"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-285-003-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-001-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-004-01",
+          "reason": "Network perimeter"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-WSTG-ATHZ-02-002-01": 3,
+        "CHK-DOC-CWE-285-003-01": 2,
+        "CHK-DOC-WSTG-ATHZ-02-001-01": 1,
+        "CHK-DOC-ASVS-V4-01-004-01": 0
+      },
+      "notes": "Evaluates retrieval of privileged route reconnaissance methodology from WSTG."
+    },
+    {
+      "query_id": "VAPT-Q028",
+      "query": "A user possessing basic tenant permissions must never trigger system-level management transitions",
+      "security_domain": "AUTHORIZATION_FUNCTION_LEVEL",
+      "difficulty": "HARD",
+      "query_type": "SECURITY_INVARIANT",
+      "evidence_gap_type": "MISSING_ROLE_HIERARCHY_ENFORCEMENT",
+      "is_negative_control": false,
+      "is_security_invariant": true,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": true,
+      "expected_knowledge_types": [
+        "SECURITY_INVARIANT"
+      ],
+      "expected_categories": [
+        "Platform_Invariants",
+        "Tenant_Isolation",
+        "Rulebook"
+      ],
+      "relevance_requirements": [
+        "Must retrieve vertical role hierarchy invariant prohibiting standard tokens from triggering admin transitions"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-003-01"
+        },
+        {
+          "type": "knowledge_type",
+          "value": "SECURITY_INVARIANT"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-285-001-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-002-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-002-01",
+          "reason": "Horizontal isolation"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-PLATFORM-INV-01-003-01": 3,
+        "CHK-DOC-CWE-285-001-01": 2,
+        "CHK-DOC-ASVS-V4-01-002-01": 1,
+        "CHK-DOC-PLATFORM-INV-01-002-01": 0
+      },
+      "notes": "Hard invariant query describing system management boundary without explicit BFLA wording."
+    },
+    {
+      "query_id": "VAPT-Q029",
+      "query": "What observation distinguishes genuine function level authorization bypass from an unauthenticated access vulnerability?",
+      "security_domain": "AUTHORIZATION_FUNCTION_LEVEL",
+      "difficulty": "HARD",
+      "query_type": "NEGATIVE_CONTROL",
+      "evidence_gap_type": "MISSING_ROLE_HIERARCHY_ENFORCEMENT",
+      "is_negative_control": true,
+      "is_security_invariant": false,
+      "is_evidence_gap": true,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": false,
+      "expected_knowledge_types": [
+        "TESTING_METHODOLOGY"
+      ],
+      "expected_categories": [
+        "BFLA",
+        "Vertical_Privilege_Escalation",
+        "Role_Hierarchy"
+      ],
+      "relevance_requirements": [
+        "Must retrieve negative controls section for BFLA verifying unauthenticated control behavior"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-003-01"
+        },
+        {
+          "type": "knowledge_type",
+          "value": "TESTING_METHODOLOGY"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-004-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-003-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-004-01",
+          "reason": "IDOR false positive"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-WSTG-ATHZ-02-003-01": 3,
+        "CHK-DOC-PLATFORM-INV-01-004-01": 2,
+        "CHK-DOC-PLATFORM-INV-01-003-01": 2,
+        "CHK-DOC-WSTG-ATHZ-04-004-01": 0
+      },
+      "notes": "Negative control evidence-gap query testing distinction between BFLA and unauthenticated access."
+    },
+    {
+      "query_id": "VAPT-Q030",
+      "query": "Non-admin account invoking internal cluster reboot operations",
+      "security_domain": "AUTHORIZATION_FUNCTION_LEVEL",
+      "difficulty": "HARD",
+      "query_type": "PARAPHRASED",
+      "evidence_gap_type": "MISSING_ROLE_HIERARCHY_ENFORCEMENT",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": true,
+      "expected_knowledge_types": [
+        "SECURITY_INVARIANT",
+        "TESTING_METHODOLOGY"
+      ],
+      "expected_categories": [
+        "Platform_Invariants",
+        "BFLA",
+        "Role_Hierarchy"
+      ],
+      "relevance_requirements": [
+        "Must retrieve vertical role hierarchy invariant or BFLA overview"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-003-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-001-01"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-285-001-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-002-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-004-01",
+          "reason": "Unauthenticated gate"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-PLATFORM-INV-01-003-01": 3,
+        "CHK-DOC-WSTG-ATHZ-02-001-01": 3,
+        "CHK-DOC-CWE-285-001-01": 2,
+        "CHK-DOC-WSTG-ATHZ-02-002-01": 1,
+        "CHK-DOC-PLATFORM-INV-01-004-01": 0
+      },
+      "notes": "Hard paraphrased query modeling infrastructure management privilege escalation."
+    },
+    {
+      "query_id": "VAPT-Q031",
+      "query": "Invoking restricted managerial handlers by stripping privilege claims from authenticated token",
+      "security_domain": "AUTHORIZATION_FUNCTION_LEVEL",
+      "difficulty": "HARD",
+      "query_type": "PARAPHRASED",
+      "evidence_gap_type": "MISSING_ROLE_HIERARCHY_ENFORCEMENT",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": true,
+      "expected_knowledge_types": [
+        "SECURITY_INVARIANT",
+        "TESTING_METHODOLOGY"
+      ],
+      "expected_categories": [
+        "CWE-285",
+        "BFLA",
+        "Authorization"
+      ],
+      "relevance_requirements": [
+        "Must retrieve improper authorization weakness overview or BFLA procedure"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-285-001-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-002-01"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-003-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-003-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-002-01",
+          "reason": "Horizontal isolation"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-CWE-285-001-01": 3,
+        "CHK-DOC-WSTG-ATHZ-02-002-01": 3,
+        "CHK-DOC-PLATFORM-INV-01-003-01": 2,
+        "CHK-DOC-ASVS-V4-01-003-01": 1,
+        "CHK-DOC-PLATFORM-INV-01-002-01": 0
+      },
+      "notes": "Hard adversarial query testing claim-stripped token access to management functions."
+    },
+    {
+      "query_id": "VAPT-Q032",
+      "query": "Distinguishing vertical privilege escalation from horizontal cross-tenant data access",
+      "security_domain": "AUTHORIZATION_FUNCTION_LEVEL",
+      "difficulty": "MEDIUM",
+      "query_type": "NEGATIVE_CONTROL",
+      "evidence_gap_type": "MISSING_ROLE_HIERARCHY_ENFORCEMENT",
+      "is_negative_control": true,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": false,
+      "expected_knowledge_types": [
+        "SECURITY_INVARIANT",
+        "TESTING_METHODOLOGY"
+      ],
+      "expected_categories": [
+        "Role_Hierarchy",
+        "BFLA",
+        "Platform_Invariants"
+      ],
+      "relevance_requirements": [
+        "Must retrieve vertical role hierarchy boundaries and contrast with horizontal isolation"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-003-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-001-01"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-002-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-001-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-004-01",
+          "reason": "Unauthenticated gate"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-PLATFORM-INV-01-003-01": 3,
+        "CHK-DOC-WSTG-ATHZ-02-001-01": 3,
+        "CHK-DOC-PLATFORM-INV-01-002-01": 2,
+        "CHK-DOC-WSTG-ATHZ-04-001-01": 1,
+        "CHK-DOC-PLATFORM-INV-01-004-01": 0
+      },
+      "notes": "Negative control testing semantic discrimination between vertical BFLA and horizontal IDOR."
+    },
+    {
+      "query_id": "VAPT-Q033",
+      "query": "Differentiating function-level authorization bypass from client-side UI link suppression",
+      "security_domain": "AUTHORIZATION_FUNCTION_LEVEL",
+      "difficulty": "HARD",
+      "query_type": "NEGATIVE_CONTROL",
+      "evidence_gap_type": "MISSING_ROLE_HIERARCHY_ENFORCEMENT",
+      "is_negative_control": true,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": true,
+      "expected_knowledge_types": [
+        "SECURITY_INVARIANT",
+        "TESTING_METHODOLOGY"
+      ],
+      "expected_categories": [
+        "CWE-285",
+        "Access_Control_Failure",
+        "BFLA"
+      ],
+      "relevance_requirements": [
+        "Must retrieve CWE-285 client-side enforcement only architecture flaw"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-285-002-01"
+        },
+        {
+          "type": "knowledge_type",
+          "value": "SECURITY_INVARIANT"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-001-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-003-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-004-01",
+          "reason": "Perimeter security"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-CWE-285-002-01": 3,
+        "CHK-DOC-WSTG-ATHZ-02-001-01": 2,
+        "CHK-DOC-PLATFORM-INV-01-003-01": 2,
+        "CHK-DOC-ASVS-V4-01-004-01": 0
+      },
+      "notes": "Negative control testing distinction between backend authorization failure and UI hiding."
+    },
+    {
+      "query_id": "VAPT-Q034",
+      "query": "Unauthenticated Access Gate invariant enforcement for non-public endpoints",
+      "security_domain": "AUTHENTICATION_SESSION_CONTROL",
+      "difficulty": "EASY",
+      "query_type": "SECURITY_INVARIANT",
+      "evidence_gap_type": "MISSING_UNAUTHENTICATED_ACCESS_CHECK",
+      "is_negative_control": false,
+      "is_security_invariant": true,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": false,
+      "expected_knowledge_types": [
+        "SECURITY_INVARIANT"
+      ],
+      "expected_categories": [
+        "Platform_Invariants",
+        "Tenant_Isolation",
+        "Rulebook"
+      ],
+      "relevance_requirements": [
+        "Must retrieve platform invariant 3 for unauthenticated access gate"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-004-01"
+        },
+        {
+          "type": "knowledge_type",
+          "value": "SECURITY_INVARIANT"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-001-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-001-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-002-01",
+          "reason": "Horizontal isolation"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-PLATFORM-INV-01-004-01": 3,
+        "CHK-DOC-ASVS-V4-01-001-01": 2,
+        "CHK-DOC-PLATFORM-INV-01-001-01": 1,
+        "CHK-DOC-PLATFORM-INV-01-002-01": 0
+      },
+      "notes": "Evaluates direct retrieval of the platform unauthenticated access gate invariant."
+    },
+    {
+      "query_id": "VAPT-Q035",
+      "query": "Fail-safe defaults and deny by default access control design principles",
+      "security_domain": "AUTHENTICATION_SESSION_CONTROL",
+      "difficulty": "EASY",
+      "query_type": "DIRECT_CONCEPT",
+      "evidence_gap_type": "MISSING_UNAUTHENTICATED_ACCESS_CHECK",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": false,
+      "expected_knowledge_types": [
+        "SECURITY_INVARIANT"
+      ],
+      "expected_categories": [
+        "Access_Control",
+        "Security_Invariants",
+        "ASVS"
+      ],
+      "relevance_requirements": [
+        "Must retrieve general access control design principles from ASVS"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-001-01"
+        },
+        {
+          "type": "category",
+          "value": "ASVS"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-004-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-003-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-001-01",
+          "reason": "IDOR summary"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-ASVS-V4-01-001-01": 3,
+        "CHK-DOC-PLATFORM-INV-01-004-01": 2,
+        "CHK-DOC-ASVS-V4-01-003-01": 2,
+        "CHK-DOC-WSTG-ATHZ-04-001-01": 0
+      },
+      "notes": "Evaluates retrieval of ASVS Chapter 4 general access control design principles."
+    },
+    {
+      "query_id": "VAPT-Q036",
+      "query": "Unauthenticated baseline testing procedure for private endpoints",
+      "security_domain": "AUTHENTICATION_SESSION_CONTROL",
+      "difficulty": "EASY",
+      "query_type": "DIRECT_CONCEPT",
+      "evidence_gap_type": "MISSING_UNAUTHENTICATED_ACCESS_CHECK",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": false,
+      "expected_knowledge_types": [
+        "TESTING_METHODOLOGY",
+        "SECURITY_INVARIANT"
+      ],
+      "expected_categories": [
+        "IDOR",
+        "Platform_Invariants",
+        "Authorization"
+      ],
+      "relevance_requirements": [
+        "Must retrieve unauthenticated baseline testing control from WSTG IDOR or platform invariant"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-003-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-004-01"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-003-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-005-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-639-001-01",
+          "reason": "CWE-639 weakness definition"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-WSTG-ATHZ-04-003-01": 3,
+        "CHK-DOC-PLATFORM-INV-01-004-01": 3,
+        "CHK-DOC-WSTG-ATHZ-02-003-01": 2,
+        "CHK-DOC-PLATFORM-INV-01-005-01": 1,
+        "CHK-DOC-CWE-639-001-01": 0
+      },
+      "notes": "Evaluates retrieval of unauthenticated negative baseline controls."
+    },
+    {
+      "query_id": "VAPT-Q037",
+      "query": "All non-public endpoints must fail closed upon receiving unauthenticated requests",
+      "security_domain": "AUTHENTICATION_SESSION_CONTROL",
+      "difficulty": "MEDIUM",
+      "query_type": "SECURITY_INVARIANT",
+      "evidence_gap_type": "MISSING_UNAUTHENTICATED_ACCESS_CHECK",
+      "is_negative_control": false,
+      "is_security_invariant": true,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": true,
+      "expected_knowledge_types": [
+        "SECURITY_INVARIANT"
+      ],
+      "expected_categories": [
+        "Platform_Invariants",
+        "Tenant_Isolation",
+        "Rulebook"
+      ],
+      "relevance_requirements": [
+        "Must retrieve invariant 3 fail closed requirement for unauthenticated requests"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-004-01"
+        },
+        {
+          "type": "knowledge_type",
+          "value": "SECURITY_INVARIANT"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-001-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-003-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-002-01",
+          "reason": "Horizontal isolation"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-PLATFORM-INV-01-004-01": 3,
+        "CHK-DOC-ASVS-V4-01-001-01": 2,
+        "CHK-DOC-ASVS-V4-01-003-01": 1,
+        "CHK-DOC-PLATFORM-INV-01-002-01": 0
+      },
+      "notes": "Paraphrased invariant query testing fail-closed requirement on uncredentialed traffic."
+    },
+    {
+      "query_id": "VAPT-Q038",
+      "query": "What evidence is required to confirm whether an endpoint requires active authentication before granting access?",
+      "security_domain": "AUTHENTICATION_SESSION_CONTROL",
+      "difficulty": "MEDIUM",
+      "query_type": "EVIDENCE_GAP",
+      "evidence_gap_type": "MISSING_UNAUTHENTICATED_ACCESS_CHECK",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": true,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": false,
+      "expected_knowledge_types": [
+        "SECURITY_INVARIANT"
+      ],
+      "expected_categories": [
+        "Platform_Invariants",
+        "ASVS",
+        "Access_Control"
+      ],
+      "relevance_requirements": [
+        "Must retrieve unauthenticated access gate or ASVS active authentication testing"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-004-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-003-01"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-003-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-001-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-004-01",
+          "reason": "BFLA false positive"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-PLATFORM-INV-01-004-01": 3,
+        "CHK-DOC-ASVS-V4-01-003-01": 3,
+        "CHK-DOC-WSTG-ATHZ-04-003-01": 2,
+        "CHK-DOC-ASVS-V4-01-001-01": 1,
+        "CHK-DOC-WSTG-ATHZ-02-004-01": 0
+      },
+      "notes": "Evidence-gap query focusing on traffic observation required to verify active authentication requirement."
+    },
+    {
+      "query_id": "VAPT-Q039",
+      "query": "Anonymous HTTP requests retrieving protected internal customer records without credentials",
+      "security_domain": "AUTHENTICATION_SESSION_CONTROL",
+      "difficulty": "MEDIUM",
+      "query_type": "PARAPHRASED",
+      "evidence_gap_type": "MISSING_UNAUTHENTICATED_ACCESS_CHECK",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": true,
+      "expected_knowledge_types": [
+        "SECURITY_INVARIANT"
+      ],
+      "expected_categories": [
+        "Platform_Invariants",
+        "Tenant_Isolation",
+        "Rulebook"
+      ],
+      "relevance_requirements": [
+        "Must retrieve invariant 3 prohibiting anonymous access to private records"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-004-01"
+        },
+        {
+          "type": "knowledge_type",
+          "value": "SECURITY_INVARIANT"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-001-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-003-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-003-01",
+          "reason": "Role hierarchy"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-PLATFORM-INV-01-004-01": 3,
+        "CHK-DOC-ASVS-V4-01-001-01": 2,
+        "CHK-DOC-WSTG-ATHZ-04-003-01": 1,
+        "CHK-DOC-PLATFORM-INV-01-003-01": 0
+      },
+      "notes": "Paraphrased query describing anonymous access to protected data."
+    },
+    {
+      "query_id": "VAPT-Q040",
+      "query": "Submitting requests without Authorization headers to verify 401 Unauthorized rejection",
+      "security_domain": "AUTHENTICATION_SESSION_CONTROL",
+      "difficulty": "MEDIUM",
+      "query_type": "EXPERIMENT",
+      "evidence_gap_type": "MISSING_UNAUTHENTICATED_ACCESS_CHECK",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": true,
+      "is_adversarial_or_paraphrased": false,
+      "expected_knowledge_types": [
+        "SECURITY_INVARIANT",
+        "TESTING_METHODOLOGY"
+      ],
+      "expected_categories": [
+        "Platform_Invariants",
+        "IDOR",
+        "Authorization"
+      ],
+      "relevance_requirements": [
+        "Must retrieve unauthenticated access gate or WSTG unauthenticated baseline control"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-004-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-003-01"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-003-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-003-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-285-002-01",
+          "reason": "Architecture flaws"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-PLATFORM-INV-01-004-01": 3,
+        "CHK-DOC-WSTG-ATHZ-04-003-01": 3,
+        "CHK-DOC-WSTG-ATHZ-02-003-01": 2,
+        "CHK-DOC-ASVS-V4-01-003-01": 1,
+        "CHK-DOC-CWE-285-002-01": 0
+      },
+      "notes": "Experiment query testing 401 response enforcement when omitting auth headers."
+    },
+    {
+      "query_id": "VAPT-Q041",
+      "query": "Unauthenticated actors must never be granted default guest privileges to read private records",
+      "security_domain": "AUTHENTICATION_SESSION_CONTROL",
+      "difficulty": "HARD",
+      "query_type": "SECURITY_INVARIANT",
+      "evidence_gap_type": "MISSING_UNAUTHENTICATED_ACCESS_CHECK",
+      "is_negative_control": false,
+      "is_security_invariant": true,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": true,
+      "expected_knowledge_types": [
+        "SECURITY_INVARIANT"
+      ],
+      "expected_categories": [
+        "Platform_Invariants",
+        "Tenant_Isolation",
+        "Rulebook"
+      ],
+      "relevance_requirements": [
+        "Must retrieve invariant 3 prohibiting default guest privileges for anonymous requests"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-004-01"
+        },
+        {
+          "type": "knowledge_type",
+          "value": "SECURITY_INVARIANT"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-001-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-002-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-002-01",
+          "reason": "Horizontal isolation"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-PLATFORM-INV-01-004-01": 3,
+        "CHK-DOC-ASVS-V4-01-001-01": 2,
+        "CHK-DOC-ASVS-V4-01-002-01": 1,
+        "CHK-DOC-PLATFORM-INV-01-002-01": 0
+      },
+      "notes": "Hard invariant query targeting default guest privilege prohibition."
+    },
+    {
+      "query_id": "VAPT-Q042",
+      "query": "What traffic observation distinguishes an unauthenticated information disclosure from an authorization bypass?",
+      "security_domain": "AUTHENTICATION_SESSION_CONTROL",
+      "difficulty": "HARD",
+      "query_type": "NEGATIVE_CONTROL",
+      "evidence_gap_type": "MISSING_UNAUTHENTICATED_ACCESS_CHECK",
+      "is_negative_control": true,
+      "is_security_invariant": false,
+      "is_evidence_gap": true,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": false,
+      "expected_knowledge_types": [
+        "TESTING_METHODOLOGY",
+        "SECURITY_INVARIANT"
+      ],
+      "expected_categories": [
+        "BFLA",
+        "IDOR",
+        "Platform_Invariants"
+      ],
+      "relevance_requirements": [
+        "Must retrieve negative controls defining the boundary between unauthenticated access and authorization bypass"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-003-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-003-01"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-004-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-285-001-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-004-01",
+          "reason": "Network perimeter"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-WSTG-ATHZ-02-003-01": 3,
+        "CHK-DOC-WSTG-ATHZ-04-003-01": 3,
+        "CHK-DOC-PLATFORM-INV-01-004-01": 2,
+        "CHK-DOC-CWE-285-001-01": 1,
+        "CHK-DOC-ASVS-V4-01-004-01": 0
+      },
+      "notes": "Negative control evidence-gap query testing distinction between lack of authn and authorization failure."
+    },
+    {
+      "query_id": "VAPT-Q043",
+      "query": "Uncredentialed external clients querying backend microservice data endpoints",
+      "security_domain": "AUTHENTICATION_SESSION_CONTROL",
+      "difficulty": "HARD",
+      "query_type": "PARAPHRASED",
+      "evidence_gap_type": "MISSING_UNAUTHENTICATED_ACCESS_CHECK",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": true,
+      "expected_knowledge_types": [
+        "SECURITY_INVARIANT"
+      ],
+      "expected_categories": [
+        "Platform_Invariants",
+        "ASVS",
+        "Access_Control"
+      ],
+      "relevance_requirements": [
+        "Must retrieve unauthenticated access gate or ASVS server-side enforcement principles"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-004-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-001-01"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-003-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-001-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-003-01",
+          "reason": "Role hierarchy"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-PLATFORM-INV-01-004-01": 3,
+        "CHK-DOC-ASVS-V4-01-001-01": 3,
+        "CHK-DOC-ASVS-V4-01-003-01": 2,
+        "CHK-DOC-PLATFORM-INV-01-001-01": 1,
+        "CHK-DOC-PLATFORM-INV-01-003-01": 0
+      },
+      "notes": "Hard query describing uncredentialed client communication."
+    },
+    {
+      "query_id": "VAPT-Q044",
+      "query": "Stripping session tokens from requests to evaluate backend access rejection",
+      "security_domain": "AUTHENTICATION_SESSION_CONTROL",
+      "difficulty": "HARD",
+      "query_type": "PARAPHRASED",
+      "evidence_gap_type": "MISSING_UNAUTHENTICATED_ACCESS_CHECK",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": true,
+      "expected_knowledge_types": [
+        "SECURITY_INVARIANT",
+        "TESTING_METHODOLOGY"
+      ],
+      "expected_categories": [
+        "Platform_Invariants",
+        "ASVS",
+        "IDOR"
+      ],
+      "relevance_requirements": [
+        "Must retrieve unauthenticated access gate or ASVS active authentication testing"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-004-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-003-01"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-003-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-003-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-639-001-01",
+          "reason": "CWE-639 weakness definition"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-PLATFORM-INV-01-004-01": 3,
+        "CHK-DOC-ASVS-V4-01-003-01": 3,
+        "CHK-DOC-WSTG-ATHZ-04-003-01": 2,
+        "CHK-DOC-WSTG-ATHZ-02-003-01": 1,
+        "CHK-DOC-CWE-639-001-01": 0
+      },
+      "notes": "Hard adversarial query testing session token stripping."
+    },
+    {
+      "query_id": "VAPT-Q045",
+      "query": "Distinguishing authentication enforcement failure from broken authorization policy",
+      "security_domain": "AUTHENTICATION_SESSION_CONTROL",
+      "difficulty": "MEDIUM",
+      "query_type": "NEGATIVE_CONTROL",
+      "evidence_gap_type": "MISSING_UNAUTHENTICATED_ACCESS_CHECK",
+      "is_negative_control": true,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": false,
+      "expected_knowledge_types": [
+        "SECURITY_INVARIANT"
+      ],
+      "expected_categories": [
+        "CWE-285",
+        "Platform_Invariants",
+        "Authorization"
+      ],
+      "relevance_requirements": [
+        "Must retrieve CWE-285 distinguishing authn from authz and platform invariant 3"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-285-001-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-004-01"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-001-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-003-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-004-01",
+          "reason": "IDOR false positive"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-CWE-285-001-01": 3,
+        "CHK-DOC-PLATFORM-INV-01-004-01": 3,
+        "CHK-DOC-ASVS-V4-01-001-01": 2,
+        "CHK-DOC-WSTG-ATHZ-02-003-01": 1,
+        "CHK-DOC-WSTG-ATHZ-04-004-01": 0
+      },
+      "notes": "Negative control evaluating core conceptual distinction between authentication and authorization."
+    },
+    {
+      "query_id": "VAPT-Q046",
+      "query": "HTTP method and action binding verification requirements in ASVS",
+      "security_domain": "API_SECURITY_HTTP_SEMANTICS",
+      "difficulty": "EASY",
+      "query_type": "DIRECT_CONCEPT",
+      "evidence_gap_type": "MISSING_MUTATION_STATE_BOUNDARY",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": false,
+      "expected_knowledge_types": [
+        "SECURITY_INVARIANT"
+      ],
+      "expected_categories": [
+        "Access_Control",
+        "Security_Invariants",
+        "ASVS"
+      ],
+      "relevance_requirements": [
+        "Must retrieve V4.3 Method and Action Binding requirement from ASVS"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-002-01"
+        },
+        {
+          "type": "category",
+          "value": "ASVS"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-002-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-285-002-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-002-01",
+          "reason": "Horizontal tenant isolation"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-ASVS-V4-01-002-01": 3,
+        "CHK-DOC-WSTG-ATHZ-02-002-01": 2,
+        "CHK-DOC-CWE-285-002-01": 1,
+        "CHK-DOC-PLATFORM-INV-01-002-01": 0
+      },
+      "notes": "Evaluates direct retrieval of ASVS V4.3 Method and Action Binding requirement."
+    },
+    {
+      "query_id": "VAPT-Q047",
+      "query": "Testing alternative HTTP verbs to bypass middleware authorization filters",
+      "security_domain": "API_SECURITY_HTTP_SEMANTICS",
+      "difficulty": "EASY",
+      "query_type": "DIRECT_CONCEPT",
+      "evidence_gap_type": "MISSING_MUTATION_STATE_BOUNDARY",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": false,
+      "expected_knowledge_types": [
+        "TESTING_METHODOLOGY"
+      ],
+      "expected_categories": [
+        "BFLA",
+        "Vertical_Privilege_Escalation",
+        "Role_Hierarchy"
+      ],
+      "relevance_requirements": [
+        "Must retrieve BFLA testing procedure step 3 testing alternative HTTP verbs"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-002-01"
+        },
+        {
+          "type": "knowledge_type",
+          "value": "TESTING_METHODOLOGY"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-002-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-285-002-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-001-01",
+          "reason": "IDOR summary"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-WSTG-ATHZ-02-002-01": 3,
+        "CHK-DOC-ASVS-V4-01-002-01": 2,
+        "CHK-DOC-CWE-285-002-01": 1,
+        "CHK-DOC-WSTG-ATHZ-04-001-01": 0
+      },
+      "notes": "Evaluates retrieval of alternative HTTP verb testing methodology from WSTG."
+    },
+    {
+      "query_id": "VAPT-Q048",
+      "query": "Header overrides like X-Original-URL and X-Rewrite-URL in authorization testing",
+      "security_domain": "API_SECURITY_HTTP_SEMANTICS",
+      "difficulty": "EASY",
+      "query_type": "DIRECT_CONCEPT",
+      "evidence_gap_type": "MISSING_ROLE_HIERARCHY_ENFORCEMENT",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": false,
+      "expected_knowledge_types": [
+        "TESTING_METHODOLOGY"
+      ],
+      "expected_categories": [
+        "BFLA",
+        "Vertical_Privilege_Escalation",
+        "Role_Hierarchy"
+      ],
+      "relevance_requirements": [
+        "Must retrieve BFLA step 4 inspecting header overrides (X-Original-URL, X-Rewrite-URL)"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-002-01"
+        },
+        {
+          "type": "category",
+          "value": "BFLA"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-003-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-285-002-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-004-01",
+          "reason": "Perimeter security"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-WSTG-ATHZ-02-002-01": 3,
+        "CHK-DOC-PLATFORM-INV-01-003-01": 2,
+        "CHK-DOC-CWE-285-002-01": 1,
+        "CHK-DOC-ASVS-V4-01-004-01": 0
+      },
+      "notes": "Evaluates retrieval of header override testing methodology."
+    },
+    {
+      "query_id": "VAPT-Q049",
+      "query": "Access controls must restrict specific HTTP verbs and action parameters preventing method spoofing",
+      "security_domain": "API_SECURITY_HTTP_SEMANTICS",
+      "difficulty": "MEDIUM",
+      "query_type": "SECURITY_INVARIANT",
+      "evidence_gap_type": "MISSING_MUTATION_STATE_BOUNDARY",
+      "is_negative_control": false,
+      "is_security_invariant": true,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": true,
+      "expected_knowledge_types": [
+        "SECURITY_INVARIANT"
+      ],
+      "expected_categories": [
+        "Access_Control",
+        "Security_Invariants",
+        "ASVS"
+      ],
+      "relevance_requirements": [
+        "Must retrieve ASVS V4.3 requirement regarding HTTP verb and action parameter binding"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-002-01"
+        },
+        {
+          "type": "knowledge_type",
+          "value": "SECURITY_INVARIANT"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-002-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-003-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-002-01",
+          "reason": "Horizontal isolation"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-ASVS-V4-01-002-01": 3,
+        "CHK-DOC-WSTG-ATHZ-02-002-01": 2,
+        "CHK-DOC-PLATFORM-INV-01-003-01": 1,
+        "CHK-DOC-PLATFORM-INV-01-002-01": 0
+      },
+      "notes": "Paraphrased invariant query testing method spoofing and action parameter binding."
+    },
+    {
+      "query_id": "VAPT-Q050",
+      "query": "What evidence determines whether an endpoint is vulnerable to HTTP verb tunneling bypasses?",
+      "security_domain": "API_SECURITY_HTTP_SEMANTICS",
+      "difficulty": "MEDIUM",
+      "query_type": "EVIDENCE_GAP",
+      "evidence_gap_type": "MISSING_MUTATION_STATE_BOUNDARY",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": true,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": false,
+      "expected_knowledge_types": [
+        "SECURITY_INVARIANT",
+        "TESTING_METHODOLOGY"
+      ],
+      "expected_categories": [
+        "ASVS",
+        "BFLA",
+        "Access_Control"
+      ],
+      "relevance_requirements": [
+        "Must retrieve ASVS V4.3 method binding or WSTG verb testing procedure"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-002-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-002-01"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-285-002-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-003-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-001-01",
+          "reason": "IDOR summary"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-ASVS-V4-01-002-01": 3,
+        "CHK-DOC-WSTG-ATHZ-02-002-01": 3,
+        "CHK-DOC-CWE-285-002-01": 2,
+        "CHK-DOC-PLATFORM-INV-01-003-01": 1,
+        "CHK-DOC-WSTG-ATHZ-04-001-01": 0
+      },
+      "notes": "Evidence-gap query evaluating proof required to confirm HTTP verb tunneling."
+    },
+    {
+      "query_id": "VAPT-Q051",
+      "query": "Switching request verb from GET to POST or PUT to circumvent gateway security checks",
+      "security_domain": "API_SECURITY_HTTP_SEMANTICS",
+      "difficulty": "MEDIUM",
+      "query_type": "PARAPHRASED",
+      "evidence_gap_type": "MISSING_MUTATION_STATE_BOUNDARY",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": true,
+      "expected_knowledge_types": [
+        "TESTING_METHODOLOGY",
+        "SECURITY_INVARIANT"
+      ],
+      "expected_categories": [
+        "BFLA",
+        "ASVS",
+        "Role_Hierarchy"
+      ],
+      "relevance_requirements": [
+        "Must retrieve WSTG alternative HTTP verb testing or ASVS method binding"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-002-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-002-01"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-285-002-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-003-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-003-01",
+          "reason": "Negative controls"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-WSTG-ATHZ-02-002-01": 3,
+        "CHK-DOC-ASVS-V4-01-002-01": 3,
+        "CHK-DOC-CWE-285-002-01": 2,
+        "CHK-DOC-PLATFORM-INV-01-003-01": 1,
+        "CHK-DOC-WSTG-ATHZ-04-003-01": 0
+      },
+      "notes": "Paraphrased query describing verb switching bypass."
+    },
+    {
+      "query_id": "VAPT-Q052",
+      "query": "Probing unmapped routes and wildcard paths to verify deny-by-default behavior",
+      "security_domain": "API_SECURITY_HTTP_SEMANTICS",
+      "difficulty": "MEDIUM",
+      "query_type": "EXPERIMENT",
+      "evidence_gap_type": "MISSING_UNAUTHENTICATED_ACCESS_CHECK",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": true,
+      "is_adversarial_or_paraphrased": false,
+      "expected_knowledge_types": [
+        "SECURITY_INVARIANT"
+      ],
+      "expected_categories": [
+        "Access_Control",
+        "Security_Invariants",
+        "ASVS"
+      ],
+      "relevance_requirements": [
+        "Must retrieve ASVS deny-by-default testing on unmapped and wildcard routes"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-003-01"
+        },
+        {
+          "type": "knowledge_type",
+          "value": "SECURITY_INVARIANT"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-001-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-004-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-639-002-01",
+          "reason": "Path identifiers in CWE-639"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-ASVS-V4-01-003-01": 3,
+        "CHK-DOC-ASVS-V4-01-001-01": 2,
+        "CHK-DOC-PLATFORM-INV-01-004-01": 1,
+        "CHK-DOC-CWE-639-002-01": 0
+      },
+      "notes": "Experiment query testing deny-by-default on wildcard route paths."
+    },
+    {
+      "query_id": "VAPT-Q053",
+      "query": "Backend authorization enforcement across HTTP methods and routing header overrides",
+      "security_domain": "API_SECURITY_HTTP_SEMANTICS",
+      "difficulty": "EASY",
+      "query_type": "SECURITY_INVARIANT",
+      "evidence_gap_type": "MISSING_ROLE_HIERARCHY_ENFORCEMENT",
+      "is_negative_control": false,
+      "is_security_invariant": true,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": false,
+      "expected_knowledge_types": [
+        "SECURITY_INVARIANT",
+        "TESTING_METHODOLOGY"
+      ],
+      "expected_categories": [
+        "Platform_Invariants",
+        "BFLA",
+        "Tenant_Isolation"
+      ],
+      "relevance_requirements": [
+        "Must retrieve platform invariant 2 middleware requirement and WSTG header overrides"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-003-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-002-01"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-002-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-285-002-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-004-01",
+          "reason": "Unauthenticated gate"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-PLATFORM-INV-01-003-01": 3,
+        "CHK-DOC-WSTG-ATHZ-02-002-01": 3,
+        "CHK-DOC-ASVS-V4-01-002-01": 2,
+        "CHK-DOC-CWE-285-002-01": 1,
+        "CHK-DOC-PLATFORM-INV-01-004-01": 0
+      },
+      "notes": "Evaluates retrieval of backend authorization invariant across HTTP methods and headers using direct terminology."
+    },
+    {
+      "query_id": "VAPT-Q054",
+      "query": "What observation proves that an API gateway applies authorization filters based solely on URI prefix rather than resolved handler?",
+      "security_domain": "API_SECURITY_HTTP_SEMANTICS",
+      "difficulty": "HARD",
+      "query_type": "EVIDENCE_GAP",
+      "evidence_gap_type": "MISSING_ROLE_HIERARCHY_ENFORCEMENT",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": true,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": true,
+      "expected_knowledge_types": [
+        "SECURITY_INVARIANT",
+        "TESTING_METHODOLOGY"
+      ],
+      "expected_categories": [
+        "CWE-285",
+        "BFLA",
+        "Access_Control_Failure"
+      ],
+      "relevance_requirements": [
+        "Must retrieve CWE-285 inconsistent middleware ordering on route prefixes or WSTG header overrides"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-285-002-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-002-01"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-003-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-002-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-001-01",
+          "reason": "IDOR"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-CWE-285-002-01": 3,
+        "CHK-DOC-WSTG-ATHZ-02-002-01": 3,
+        "CHK-DOC-PLATFORM-INV-01-003-01": 2,
+        "CHK-DOC-ASVS-V4-01-002-01": 1,
+        "CHK-DOC-WSTG-ATHZ-04-001-01": 0
+      },
+      "notes": "Hard evidence-gap query testing gateway path prefix matching vs backend handler execution."
+    },
+    {
+      "query_id": "VAPT-Q055",
+      "query": "Manipulating custom reverse proxy headers to trick backend into executing administrative actions",
+      "security_domain": "API_SECURITY_HTTP_SEMANTICS",
+      "difficulty": "HARD",
+      "query_type": "PARAPHRASED",
+      "evidence_gap_type": "MISSING_ROLE_HIERARCHY_ENFORCEMENT",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": true,
+      "expected_knowledge_types": [
+        "TESTING_METHODOLOGY"
+      ],
+      "expected_categories": [
+        "BFLA",
+        "Vertical_Privilege_Escalation",
+        "Role_Hierarchy"
+      ],
+      "relevance_requirements": [
+        "Must retrieve WSTG header overrides (X-Rewrite-URL, X-Original-URL) in BFLA testing"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-002-01"
+        },
+        {
+          "type": "knowledge_type",
+          "value": "TESTING_METHODOLOGY"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-003-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-285-002-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-002-01",
+          "reason": "Horizontal isolation"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-WSTG-ATHZ-02-002-01": 3,
+        "CHK-DOC-PLATFORM-INV-01-003-01": 2,
+        "CHK-DOC-CWE-285-002-01": 1,
+        "CHK-DOC-PLATFORM-INV-01-002-01": 0
+      },
+      "notes": "Hard paraphrased query targeting reverse proxy routing header tampering."
+    },
+    {
+      "query_id": "VAPT-Q056",
+      "query": "Injecting X-HTTP-Method-Override to execute state-changing actions past read-only gateway rules",
+      "security_domain": "API_SECURITY_HTTP_SEMANTICS",
+      "difficulty": "HARD",
+      "query_type": "PARAPHRASED",
+      "evidence_gap_type": "MISSING_MUTATION_STATE_BOUNDARY",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": true,
+      "expected_knowledge_types": [
+        "TESTING_METHODOLOGY",
+        "SECURITY_INVARIANT"
+      ],
+      "expected_categories": [
+        "BFLA",
+        "ASVS",
+        "Access_Control"
+      ],
+      "relevance_requirements": [
+        "Must retrieve header override inspection or method/action binding rules"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-002-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-002-01"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-285-002-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-003-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-004-01",
+          "reason": "False positives"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-WSTG-ATHZ-02-002-01": 3,
+        "CHK-DOC-ASVS-V4-01-002-01": 3,
+        "CHK-DOC-CWE-285-002-01": 2,
+        "CHK-DOC-PLATFORM-INV-01-003-01": 1,
+        "CHK-DOC-WSTG-ATHZ-04-004-01": 0
+      },
+      "notes": "Hard adversarial query testing method override header injection against read-only gateway rules."
+    },
+    {
+      "query_id": "VAPT-Q057",
+      "query": "Distinguishing HTTP verb tunneling authorization bypass from parameter pollution",
+      "security_domain": "API_SECURITY_HTTP_SEMANTICS",
+      "difficulty": "MEDIUM",
+      "query_type": "NEGATIVE_CONTROL",
+      "evidence_gap_type": "MISSING_MUTATION_STATE_BOUNDARY",
+      "is_negative_control": true,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": false,
+      "expected_knowledge_types": [
+        "SECURITY_INVARIANT",
+        "TESTING_METHODOLOGY"
+      ],
+      "expected_categories": [
+        "ASVS",
+        "BFLA",
+        "Access_Control"
+      ],
+      "relevance_requirements": [
+        "Must retrieve ASVS V4.3 method and action binding preventing verb tunneling"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-002-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-002-01"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-285-002-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-003-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-004-01",
+          "reason": "Unauthenticated gate"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-ASVS-V4-01-002-01": 3,
+        "CHK-DOC-WSTG-ATHZ-02-002-01": 2,
+        "CHK-DOC-CWE-285-002-01": 2,
+        "CHK-DOC-PLATFORM-INV-01-003-01": 1,
+        "CHK-DOC-PLATFORM-INV-01-004-01": 0
+      },
+      "notes": "Negative control query testing discrimination between verb tunneling and query parameter pollution."
+    },
+    {
+      "query_id": "VAPT-Q058",
+      "query": "Missing authorization checks on state mutating operations POST PUT DELETE",
+      "security_domain": "STATE_MUTATION_INTEGRITY",
+      "difficulty": "EASY",
+      "query_type": "DIRECT_CONCEPT",
+      "evidence_gap_type": "MISSING_MUTATION_STATE_BOUNDARY",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": false,
+      "expected_knowledge_types": [
+        "SECURITY_INVARIANT"
+      ],
+      "expected_categories": [
+        "CWE-285",
+        "Authorization",
+        "Access_Control_Failure"
+      ],
+      "relevance_requirements": [
+        "Must retrieve CWE-285 flaw on missing checks on state mutations"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-285-002-01"
+        },
+        {
+          "type": "category",
+          "value": "CWE-285"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-285-003-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-003-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-001-01",
+          "reason": "IDOR summary"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-CWE-285-002-01": 3,
+        "CHK-DOC-CWE-285-003-01": 2,
+        "CHK-DOC-WSTG-ATHZ-02-003-01": 1,
+        "CHK-DOC-WSTG-ATHZ-04-001-01": 0
+      },
+      "notes": "Evaluates direct retrieval of CWE-285 missing checks on state mutations."
+    },
+    {
+      "query_id": "VAPT-Q059",
+      "query": "Verifying persistent backend state change after unauthorized action probe",
+      "security_domain": "STATE_MUTATION_INTEGRITY",
+      "difficulty": "EASY",
+      "query_type": "DIRECT_CONCEPT",
+      "evidence_gap_type": "MISSING_MUTATION_STATE_BOUNDARY",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": false,
+      "expected_knowledge_types": [
+        "SECURITY_INVARIANT",
+        "TESTING_METHODOLOGY"
+      ],
+      "expected_categories": [
+        "CWE-285",
+        "BFLA",
+        "Authorization"
+      ],
+      "relevance_requirements": [
+        "Must retrieve state change verification methodology from CWE-285 or WSTG BFLA"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-285-003-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-003-01"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-285-002-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-005-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-004-01",
+          "reason": "Unauthenticated gate"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-CWE-285-003-01": 3,
+        "CHK-DOC-WSTG-ATHZ-02-003-01": 3,
+        "CHK-DOC-CWE-285-002-01": 2,
+        "CHK-DOC-PLATFORM-INV-01-005-01": 1,
+        "CHK-DOC-PLATFORM-INV-01-004-01": 0
+      },
+      "notes": "Evaluates retrieval of state change verification step in authorization testing."
+    },
+    {
+      "query_id": "VAPT-Q060",
+      "query": "Mutating operations must enforce permissions equal to or stricter than read operations",
+      "security_domain": "STATE_MUTATION_INTEGRITY",
+      "difficulty": "MEDIUM",
+      "query_type": "SECURITY_INVARIANT",
+      "evidence_gap_type": "MISSING_MUTATION_STATE_BOUNDARY",
+      "is_negative_control": false,
+      "is_security_invariant": true,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": true,
+      "expected_knowledge_types": [
+        "SECURITY_INVARIANT"
+      ],
+      "expected_categories": [
+        "CWE-285",
+        "Access_Control_Failure",
+        "Authorization"
+      ],
+      "relevance_requirements": [
+        "Must retrieve CWE-285 flaw where read operations check permissions but mutating operations omit validation"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-285-002-01"
+        },
+        {
+          "type": "knowledge_type",
+          "value": "SECURITY_INVARIANT"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-002-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-003-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-004-01",
+          "reason": "Unauthenticated gate"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-CWE-285-002-01": 3,
+        "CHK-DOC-ASVS-V4-01-002-01": 2,
+        "CHK-DOC-PLATFORM-INV-01-003-01": 1,
+        "CHK-DOC-PLATFORM-INV-01-004-01": 0
+      },
+      "notes": "Paraphrased invariant query asserting read vs write permission parity."
+    },
+    {
+      "query_id": "VAPT-Q061",
+      "query": "What observation proves that an unauthorized state-changing request caused persistent database modifications?",
+      "security_domain": "STATE_MUTATION_INTEGRITY",
+      "difficulty": "MEDIUM",
+      "query_type": "EVIDENCE_GAP",
+      "evidence_gap_type": "MISSING_MUTATION_STATE_BOUNDARY",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": true,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": false,
+      "expected_knowledge_types": [
+        "SECURITY_INVARIANT",
+        "TESTING_METHODOLOGY"
+      ],
+      "expected_categories": [
+        "CWE-285",
+        "BFLA",
+        "Authorization"
+      ],
+      "relevance_requirements": [
+        "Must retrieve mutation confirmation or persistent state change verification steps"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-285-003-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-003-01"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-285-002-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-004-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-002-01",
+          "reason": "Horizontal isolation"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-CWE-285-003-01": 3,
+        "CHK-DOC-WSTG-ATHZ-02-003-01": 3,
+        "CHK-DOC-CWE-285-002-01": 2,
+        "CHK-DOC-WSTG-ATHZ-02-004-01": 1,
+        "CHK-DOC-PLATFORM-INV-01-002-01": 0
+      },
+      "notes": "Evidence-gap query focusing on traffic observation of persistent backend mutation."
+    },
+    {
+      "query_id": "VAPT-Q062",
+      "query": "Application validates viewing rights but allows unverified modification of resource data",
+      "security_domain": "STATE_MUTATION_INTEGRITY",
+      "difficulty": "MEDIUM",
+      "query_type": "PARAPHRASED",
+      "evidence_gap_type": "MISSING_MUTATION_STATE_BOUNDARY",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": true,
+      "expected_knowledge_types": [
+        "SECURITY_INVARIANT"
+      ],
+      "expected_categories": [
+        "CWE-285",
+        "Access_Control_Failure",
+        "Authorization"
+      ],
+      "relevance_requirements": [
+        "Must retrieve CWE-285 common architecture flaw: missing checks on state mutations"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-285-002-01"
+        },
+        {
+          "type": "knowledge_type",
+          "value": "SECURITY_INVARIANT"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-285-001-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-002-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-004-01",
+          "reason": "Unauthenticated gate"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-CWE-285-002-01": 3,
+        "CHK-DOC-CWE-285-001-01": 2,
+        "CHK-DOC-ASVS-V4-01-002-01": 1,
+        "CHK-DOC-PLATFORM-INV-01-004-01": 0
+      },
+      "notes": "Paraphrased query matching read-check-only defect."
+    },
+    {
+      "query_id": "VAPT-Q063",
+      "query": "Executing unauthorized mutation followed by secondary read to confirm database persistence",
+      "security_domain": "STATE_MUTATION_INTEGRITY",
+      "difficulty": "MEDIUM",
+      "query_type": "EXPERIMENT",
+      "evidence_gap_type": "MISSING_MUTATION_STATE_BOUNDARY",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": true,
+      "is_adversarial_or_paraphrased": false,
+      "expected_knowledge_types": [
+        "SECURITY_INVARIANT",
+        "TESTING_METHODOLOGY"
+      ],
+      "expected_categories": [
+        "CWE-285",
+        "BFLA",
+        "Authorization"
+      ],
+      "relevance_requirements": [
+        "Must retrieve step 4 of CWE-285 verification or mutation confirmation in WSTG"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-285-003-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-003-01"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-005-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-002-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-004-01",
+          "reason": "Network perimeter"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-CWE-285-003-01": 3,
+        "CHK-DOC-WSTG-ATHZ-02-003-01": 3,
+        "CHK-DOC-PLATFORM-INV-01-005-01": 2,
+        "CHK-DOC-WSTG-ATHZ-04-002-01": 1,
+        "CHK-DOC-ASVS-V4-01-004-01": 0
+      },
+      "notes": "Experiment query testing write-and-read sequence to confirm persistent mutation."
+    },
+    {
+      "query_id": "VAPT-Q064",
+      "query": "State modifications must never succeed if the initiating session lacks explicit mutation authority over the object",
+      "security_domain": "STATE_MUTATION_INTEGRITY",
+      "difficulty": "HARD",
+      "query_type": "SECURITY_INVARIANT",
+      "evidence_gap_type": "MISSING_MUTATION_STATE_BOUNDARY",
+      "is_negative_control": false,
+      "is_security_invariant": true,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": true,
+      "expected_knowledge_types": [
+        "SECURITY_INVARIANT"
+      ],
+      "expected_categories": [
+        "Platform_Invariants",
+        "CWE-285",
+        "Tenant_Isolation"
+      ],
+      "relevance_requirements": [
+        "Must retrieve platform invariant 1 cross-identity isolation or CWE-285 mutation checks"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-002-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-285-002-01"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-002-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-003-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-004-01",
+          "reason": "Unauthenticated gate"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-PLATFORM-INV-01-002-01": 3,
+        "CHK-DOC-CWE-285-002-01": 3,
+        "CHK-DOC-ASVS-V4-01-002-01": 2,
+        "CHK-DOC-PLATFORM-INV-01-003-01": 1,
+        "CHK-DOC-PLATFORM-INV-01-004-01": 0
+      },
+      "notes": "Hard invariant query combining mutation boundary with object-level isolation."
+    },
+    {
+      "query_id": "VAPT-Q065",
+      "query": "What evidence is required to confirm that a returned 200 OK response represents actual record mutation rather than an idempotent stub?",
+      "security_domain": "STATE_MUTATION_INTEGRITY",
+      "difficulty": "HARD",
+      "query_type": "NEGATIVE_CONTROL",
+      "evidence_gap_type": "MISSING_MUTATION_STATE_BOUNDARY",
+      "is_negative_control": true,
+      "is_security_invariant": false,
+      "is_evidence_gap": true,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": false,
+      "expected_knowledge_types": [
+        "TESTING_METHODOLOGY"
+      ],
+      "expected_categories": [
+        "BFLA",
+        "IDOR",
+        "Authorization"
+      ],
+      "relevance_requirements": [
+        "Must retrieve false positive prevention for non-operational endpoints or mutation confirmation"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-004-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-003-01"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-004-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-285-003-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-004-01",
+          "reason": "Unauthenticated gate"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-WSTG-ATHZ-02-004-01": 3,
+        "CHK-DOC-WSTG-ATHZ-02-003-01": 3,
+        "CHK-DOC-WSTG-ATHZ-04-004-01": 2,
+        "CHK-DOC-CWE-285-003-01": 1,
+        "CHK-DOC-PLATFORM-INV-01-004-01": 0
+      },
+      "notes": "Negative control evidence-gap query testing distinction between real state mutation and non-operational stubs."
+    },
+    {
+      "query_id": "VAPT-Q066",
+      "query": "Submitting altered entity payload in update request to overwrite sibling account configuration",
+      "security_domain": "STATE_MUTATION_INTEGRITY",
+      "difficulty": "HARD",
+      "query_type": "PARAPHRASED",
+      "evidence_gap_type": "MISSING_INPUT_TYPE_TAMPER_CONTROL",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": true,
+      "expected_knowledge_types": [
+        "EXPERIMENT_PATTERN",
+        "SECURITY_INVARIANT"
+      ],
+      "expected_categories": [
+        "CWE-639",
+        "Tenant_Isolation",
+        "Key_Substitution"
+      ],
+      "relevance_requirements": [
+        "Must retrieve body payload parameter tampering in CWE-639 or horizontal isolation"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-639-002-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-002-01"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-285-002-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-639-001-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-004-01",
+          "reason": "Unauthenticated gate"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-CWE-639-002-01": 3,
+        "CHK-DOC-PLATFORM-INV-01-002-01": 3,
+        "CHK-DOC-CWE-285-002-01": 2,
+        "CHK-DOC-CWE-639-001-01": 1,
+        "CHK-DOC-PLATFORM-INV-01-004-01": 0
+      },
+      "notes": "Hard paraphrased query targeting body payload parameter tampering in state updates."
+    },
+    {
+      "query_id": "VAPT-Q067",
+      "query": "Distinguishing missing authorization on mutating operations from cross-site request forgery without session intent",
+      "security_domain": "STATE_MUTATION_INTEGRITY",
+      "difficulty": "HARD",
+      "query_type": "NEGATIVE_CONTROL",
+      "evidence_gap_type": "MISSING_MUTATION_STATE_BOUNDARY",
+      "is_negative_control": true,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": true,
+      "expected_knowledge_types": [
+        "SECURITY_INVARIANT",
+        "TESTING_METHODOLOGY"
+      ],
+      "expected_categories": [
+        "CWE-285",
+        "BFLA",
+        "Access_Control_Failure"
+      ],
+      "relevance_requirements": [
+        "Must retrieve CWE-285 missing checks on state mutations and WSTG mutation controls"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-285-002-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-003-01"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-285-001-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-003-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-004-01",
+          "reason": "Unauthenticated gate"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-CWE-285-002-01": 3,
+        "CHK-DOC-WSTG-ATHZ-02-003-01": 3,
+        "CHK-DOC-CWE-285-001-01": 2,
+        "CHK-DOC-PLATFORM-INV-01-003-01": 1,
+        "CHK-DOC-PLATFORM-INV-01-004-01": 0
+      },
+      "notes": "Negative control query testing distinction between backend missing mutation authz and CSRF."
+    },
+    {
+      "query_id": "VAPT-Q068",
+      "query": "Centralized server-side access control enforcement architecture in ASVS",
+      "security_domain": "ACCESS_CONTROL_ARCHITECTURE",
+      "difficulty": "EASY",
+      "query_type": "DIRECT_CONCEPT",
+      "evidence_gap_type": "MISSING_ROLE_HIERARCHY_ENFORCEMENT",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": false,
+      "expected_knowledge_types": [
+        "SECURITY_INVARIANT"
+      ],
+      "expected_categories": [
+        "Access_Control",
+        "Security_Invariants",
+        "ASVS"
+      ],
+      "relevance_requirements": [
+        "Must retrieve ASVS General Access Control Design Principles and V4.1 Centralized Enforcement"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-001-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-002-01"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-285-002-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-001-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-001-01",
+          "reason": "IDOR summary"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-ASVS-V4-01-001-01": 3,
+        "CHK-DOC-ASVS-V4-01-002-01": 3,
+        "CHK-DOC-CWE-285-002-01": 2,
+        "CHK-DOC-PLATFORM-INV-01-001-01": 1,
+        "CHK-DOC-WSTG-ATHZ-04-001-01": 0
+      },
+      "notes": "Evaluates direct retrieval of ASVS centralized enforcement requirements."
+    },
+    {
+      "query_id": "VAPT-Q069",
+      "query": "Client-side enforcement only architecture flaw where UI hides controls",
+      "security_domain": "ACCESS_CONTROL_ARCHITECTURE",
+      "difficulty": "EASY",
+      "query_type": "DIRECT_CONCEPT",
+      "evidence_gap_type": "MISSING_ROLE_HIERARCHY_ENFORCEMENT",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": false,
+      "expected_knowledge_types": [
+        "SECURITY_INVARIANT"
+      ],
+      "expected_categories": [
+        "CWE-285",
+        "Authorization",
+        "Access_Control_Failure"
+      ],
+      "relevance_requirements": [
+        "Must retrieve CWE-285 Client-Side Enforcement Only flaw"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-285-002-01"
+        },
+        {
+          "type": "category",
+          "value": "CWE-285"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-285-001-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-001-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-004-01",
+          "reason": "Unauthenticated gate"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-CWE-285-002-01": 3,
+        "CHK-DOC-CWE-285-001-01": 2,
+        "CHK-DOC-ASVS-V4-01-001-01": 1,
+        "CHK-DOC-PLATFORM-INV-01-004-01": 0
+      },
+      "notes": "Evaluates retrieval of CWE-285 UI hiding vs backend validation architecture defect."
+    },
+    {
+      "query_id": "VAPT-Q070",
+      "query": "Inconsistent middleware ordering in authentication and authorization filters",
+      "security_domain": "ACCESS_CONTROL_ARCHITECTURE",
+      "difficulty": "EASY",
+      "query_type": "DIRECT_CONCEPT",
+      "evidence_gap_type": "MISSING_ROLE_HIERARCHY_ENFORCEMENT",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": false,
+      "expected_knowledge_types": [
+        "SECURITY_INVARIANT"
+      ],
+      "expected_categories": [
+        "CWE-285",
+        "Authorization",
+        "Access_Control_Failure"
+      ],
+      "relevance_requirements": [
+        "Must retrieve CWE-285 Inconsistent Middleware Ordering flaw"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-285-002-01"
+        },
+        {
+          "type": "knowledge_type",
+          "value": "SECURITY_INVARIANT"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-003-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-002-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-003-01",
+          "reason": "Negative controls for IDOR"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-CWE-285-002-01": 3,
+        "CHK-DOC-PLATFORM-INV-01-003-01": 2,
+        "CHK-DOC-ASVS-V4-01-002-01": 1,
+        "CHK-DOC-WSTG-ATHZ-04-003-01": 0
+      },
+      "notes": "Evaluates retrieval of CWE-285 middleware execution order flaw."
+    },
+    {
+      "query_id": "VAPT-Q071",
+      "query": "Access controls must be enforced centrally on the server-side rather than via scattered ad-hoc checks",
+      "security_domain": "ACCESS_CONTROL_ARCHITECTURE",
+      "difficulty": "MEDIUM",
+      "query_type": "SECURITY_INVARIANT",
+      "evidence_gap_type": "MISSING_ROLE_HIERARCHY_ENFORCEMENT",
+      "is_negative_control": false,
+      "is_security_invariant": true,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": true,
+      "expected_knowledge_types": [
+        "SECURITY_INVARIANT"
+      ],
+      "expected_categories": [
+        "Access_Control",
+        "Security_Invariants",
+        "ASVS"
+      ],
+      "relevance_requirements": [
+        "Must retrieve ASVS V4.1 centralized enforcement requirement and design principles"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-001-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-002-01"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-285-002-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-003-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-004-01",
+          "reason": "Unauthenticated gate"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-ASVS-V4-01-001-01": 3,
+        "CHK-DOC-ASVS-V4-01-002-01": 3,
+        "CHK-DOC-CWE-285-002-01": 2,
+        "CHK-DOC-PLATFORM-INV-01-003-01": 1,
+        "CHK-DOC-PLATFORM-INV-01-004-01": 0
+      },
+      "notes": "Paraphrased invariant query asserting centralized server-side access control."
+    },
+    {
+      "query_id": "VAPT-Q072",
+      "query": "What evidence indicates that authorization checks are performed only on the client interface and not the API backend?",
+      "security_domain": "ACCESS_CONTROL_ARCHITECTURE",
+      "difficulty": "MEDIUM",
+      "query_type": "EVIDENCE_GAP",
+      "evidence_gap_type": "MISSING_ROLE_HIERARCHY_ENFORCEMENT",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": true,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": false,
+      "expected_knowledge_types": [
+        "SECURITY_INVARIANT"
+      ],
+      "expected_categories": [
+        "CWE-285",
+        "Access_Control_Failure",
+        "Authorization"
+      ],
+      "relevance_requirements": [
+        "Must retrieve CWE-285 Client-Side Enforcement Only flaw"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-285-002-01"
+        },
+        {
+          "type": "knowledge_type",
+          "value": "SECURITY_INVARIANT"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-002-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-003-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-004-01",
+          "reason": "Perimeter security"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-CWE-285-002-01": 3,
+        "CHK-DOC-WSTG-ATHZ-02-002-01": 2,
+        "CHK-DOC-PLATFORM-INV-01-003-01": 1,
+        "CHK-DOC-ASVS-V4-01-004-01": 0
+      },
+      "notes": "Evidence-gap query evaluating proof of client-side-only authorization."
+    },
+    {
+      "query_id": "VAPT-Q073",
+      "query": "Hidden web buttons concealing administrative endpoints that remain completely unprotected at the HTTP layer",
+      "security_domain": "ACCESS_CONTROL_ARCHITECTURE",
+      "difficulty": "MEDIUM",
+      "query_type": "PARAPHRASED",
+      "evidence_gap_type": "MISSING_ROLE_HIERARCHY_ENFORCEMENT",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": true,
+      "expected_knowledge_types": [
+        "SECURITY_INVARIANT"
+      ],
+      "expected_categories": [
+        "CWE-285",
+        "Access_Control_Failure",
+        "Authorization"
+      ],
+      "relevance_requirements": [
+        "Must retrieve CWE-285 UI hiding architecture defect"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-285-002-01"
+        },
+        {
+          "type": "knowledge_type",
+          "value": "SECURITY_INVARIANT"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-002-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-003-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-001-01",
+          "reason": "IDOR summary"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-CWE-285-002-01": 3,
+        "CHK-DOC-WSTG-ATHZ-02-002-01": 2,
+        "CHK-DOC-PLATFORM-INV-01-003-01": 1,
+        "CHK-DOC-WSTG-ATHZ-04-001-01": 0
+      },
+      "notes": "Paraphrased query describing hidden frontend elements concealing unprotected APIs."
+    },
+    {
+      "query_id": "VAPT-Q074",
+      "query": "Explicit authorization verification versus network perimeter security defenses in ASVS",
+      "security_domain": "ACCESS_CONTROL_ARCHITECTURE",
+      "difficulty": "EASY",
+      "query_type": "SECURITY_INVARIANT",
+      "evidence_gap_type": "MISSING_ROLE_HIERARCHY_ENFORCEMENT",
+      "is_negative_control": false,
+      "is_security_invariant": true,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": false,
+      "expected_knowledge_types": [
+        "SECURITY_INVARIANT"
+      ],
+      "expected_categories": [
+        "Access_Control",
+        "Security_Invariants",
+        "ASVS"
+      ],
+      "relevance_requirements": [
+        "Must retrieve ASVS negative control guidance regarding explicit authz vs network perimeter / IP whitelisting"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-004-01"
+        },
+        {
+          "type": "knowledge_type",
+          "value": "SECURITY_INVARIANT"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-001-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-002-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-002-01",
+          "reason": "Horizontal isolation"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-ASVS-V4-01-004-01": 3,
+        "CHK-DOC-ASVS-V4-01-001-01": 2,
+        "CHK-DOC-ASVS-V4-01-002-01": 1,
+        "CHK-DOC-PLATFORM-INV-01-002-01": 0
+      },
+      "notes": "Evaluates direct retrieval of ASVS negative control guidance contrasting explicit authorization with network perimeters."
+    },
+    {
+      "query_id": "VAPT-Q075",
+      "query": "What architectural inspection reveals whether gateway middleware filter ordering permits authentication bypass on sub-paths?",
+      "security_domain": "ACCESS_CONTROL_ARCHITECTURE",
+      "difficulty": "HARD",
+      "query_type": "EVIDENCE_GAP",
+      "evidence_gap_type": "MISSING_ROLE_HIERARCHY_ENFORCEMENT",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": true,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": true,
+      "expected_knowledge_types": [
+        "SECURITY_INVARIANT"
+      ],
+      "expected_categories": [
+        "CWE-285",
+        "Access_Control_Failure",
+        "Authorization"
+      ],
+      "relevance_requirements": [
+        "Must retrieve CWE-285 inconsistent middleware ordering architecture flaw"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-285-002-01"
+        },
+        {
+          "type": "knowledge_type",
+          "value": "SECURITY_INVARIANT"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-002-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-003-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-001-01",
+          "reason": "IDOR summary"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-CWE-285-002-01": 3,
+        "CHK-DOC-ASVS-V4-01-002-01": 2,
+        "CHK-DOC-PLATFORM-INV-01-003-01": 1,
+        "CHK-DOC-WSTG-ATHZ-04-001-01": 0
+      },
+      "notes": "Hard evidence-gap query evaluating filter order flaws in microservice gateways."
+    },
+    {
+      "query_id": "VAPT-Q076",
+      "query": "Bypassing frontend role restrictions by issuing raw HTTP requests directly to backend services",
+      "security_domain": "ACCESS_CONTROL_ARCHITECTURE",
+      "difficulty": "HARD",
+      "query_type": "PARAPHRASED",
+      "evidence_gap_type": "MISSING_ROLE_HIERARCHY_ENFORCEMENT",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": true,
+      "expected_knowledge_types": [
+        "SECURITY_INVARIANT",
+        "TESTING_METHODOLOGY"
+      ],
+      "expected_categories": [
+        "CWE-285",
+        "BFLA",
+        "Access_Control_Failure"
+      ],
+      "relevance_requirements": [
+        "Must retrieve CWE-285 client-side enforcement only or WSTG BFLA procedure"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-285-002-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-002-01"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-003-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-001-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-004-01",
+          "reason": "Unauthenticated gate"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-CWE-285-002-01": 3,
+        "CHK-DOC-WSTG-ATHZ-02-002-01": 3,
+        "CHK-DOC-PLATFORM-INV-01-003-01": 2,
+        "CHK-DOC-ASVS-V4-01-001-01": 1,
+        "CHK-DOC-PLATFORM-INV-01-004-01": 0
+      },
+      "notes": "Hard paraphrased query targeting frontend restriction bypass via direct HTTP calls."
+    },
+    {
+      "query_id": "VAPT-Q077",
+      "query": "Distinguishing application-layer contextual authorization from network perimeter IP whitelisting",
+      "security_domain": "ACCESS_CONTROL_ARCHITECTURE",
+      "difficulty": "MEDIUM",
+      "query_type": "NEGATIVE_CONTROL",
+      "evidence_gap_type": "MISSING_ROLE_HIERARCHY_ENFORCEMENT",
+      "is_negative_control": true,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": false,
+      "expected_knowledge_types": [
+        "SECURITY_INVARIANT"
+      ],
+      "expected_categories": [
+        "Access_Control",
+        "Security_Invariants",
+        "ASVS"
+      ],
+      "relevance_requirements": [
+        "Must retrieve ASVS negative control guidance regarding perimeter security vs application checks"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-004-01"
+        },
+        {
+          "type": "knowledge_type",
+          "value": "SECURITY_INVARIANT"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-001-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-002-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-002-01",
+          "reason": "Horizontal isolation"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-ASVS-V4-01-004-01": 3,
+        "CHK-DOC-ASVS-V4-01-001-01": 2,
+        "CHK-DOC-ASVS-V4-01-002-01": 1,
+        "CHK-DOC-PLATFORM-INV-01-002-01": 0
+      },
+      "notes": "Negative control query testing discrimination between network perimeter defenses and contextual authorization."
+    },
+    {
+      "query_id": "VAPT-Q078",
+      "query": "Multi-identity verification workflow for horizontal authorization testing",
+      "security_domain": "TESTING_METHODOLOGY_EXPERIMENTATION",
+      "difficulty": "EASY",
+      "query_type": "DIRECT_CONCEPT",
+      "evidence_gap_type": "MISSING_CROSS_IDENTITY_OBJECT_VERIFICATION",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": false,
+      "expected_knowledge_types": [
+        "TESTING_METHODOLOGY"
+      ],
+      "expected_categories": [
+        "IDOR",
+        "Authorization",
+        "Horizontal_Privilege_Escalation"
+      ],
+      "relevance_requirements": [
+        "Must retrieve multi-identity verification workflow from WSTG IDOR procedure"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-002-01"
+        },
+        {
+          "type": "category",
+          "value": "IDOR"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-005-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-639-003-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-004-01",
+          "reason": "Unauthenticated gate"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-WSTG-ATHZ-04-002-01": 3,
+        "CHK-DOC-PLATFORM-INV-01-005-01": 2,
+        "CHK-DOC-CWE-639-003-01": 1,
+        "CHK-DOC-PLATFORM-INV-01-004-01": 0
+      },
+      "notes": "Evaluates direct retrieval of multi-identity verification methodology."
+    },
+    {
+      "query_id": "VAPT-Q079",
+      "query": "Formulating security experiment hypotheses with paired negative controls",
+      "security_domain": "TESTING_METHODOLOGY_EXPERIMENTATION",
+      "difficulty": "EASY",
+      "query_type": "EXPERIMENT",
+      "evidence_gap_type": "MISSING_CROSS_IDENTITY_OBJECT_VERIFICATION",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": true,
+      "is_adversarial_or_paraphrased": false,
+      "expected_knowledge_types": [
+        "SECURITY_INVARIANT",
+        "EXPERIMENT_PATTERN"
+      ],
+      "expected_categories": [
+        "Platform_Invariants",
+        "CWE-639",
+        "Rulebook"
+      ],
+      "relevance_requirements": [
+        "Must retrieve platform automated hypothesis testing or CWE-639 experiment design"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-005-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-639-003-01"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-003-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-003-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-004-01",
+          "reason": "Network perimeter"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-PLATFORM-INV-01-005-01": 3,
+        "CHK-DOC-CWE-639-003-01": 3,
+        "CHK-DOC-WSTG-ATHZ-04-003-01": 2,
+        "CHK-DOC-WSTG-ATHZ-02-003-01": 1,
+        "CHK-DOC-ASVS-V4-01-004-01": 0
+      },
+      "notes": "Experiment methodology query testing hypothesis formulation with paired controls."
+    },
+    {
+      "query_id": "VAPT-Q080",
+      "query": "Computing structural response deltas between authorized and unauthorized requests",
+      "security_domain": "TESTING_METHODOLOGY_EXPERIMENTATION",
+      "difficulty": "EASY",
+      "query_type": "DIRECT_CONCEPT",
+      "evidence_gap_type": "MISSING_CROSS_IDENTITY_OBJECT_VERIFICATION",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": false,
+      "expected_knowledge_types": [
+        "SECURITY_INVARIANT"
+      ],
+      "expected_categories": [
+        "Platform_Invariants",
+        "Tenant_Isolation",
+        "Rulebook"
+      ],
+      "relevance_requirements": [
+        "Must retrieve automated hypothesis testing step 3 computing structural response deltas"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-005-01"
+        },
+        {
+          "type": "knowledge_type",
+          "value": "SECURITY_INVARIANT"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-002-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-285-003-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-004-01",
+          "reason": "Unauthenticated gate"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-PLATFORM-INV-01-005-01": 3,
+        "CHK-DOC-WSTG-ATHZ-04-002-01": 2,
+        "CHK-DOC-CWE-285-003-01": 1,
+        "CHK-DOC-PLATFORM-INV-01-004-01": 0
+      },
+      "notes": "Evaluates retrieval of structural response delta computation methodology."
+    },
+    {
+      "query_id": "VAPT-Q081",
+      "query": "Provisioning two distinct test accounts within the same role level to verify horizontal boundaries",
+      "security_domain": "TESTING_METHODOLOGY_EXPERIMENTATION",
+      "difficulty": "MEDIUM",
+      "query_type": "DIRECT_CONCEPT",
+      "evidence_gap_type": "MISSING_CROSS_IDENTITY_OBJECT_VERIFICATION",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": false,
+      "expected_knowledge_types": [
+        "TESTING_METHODOLOGY"
+      ],
+      "expected_categories": [
+        "IDOR",
+        "Authorization",
+        "Horizontal_Privilege_Escalation"
+      ],
+      "relevance_requirements": [
+        "Must retrieve step 2 of WSTG IDOR testing procedure provisioning User A and User B"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-002-01"
+        },
+        {
+          "type": "knowledge_type",
+          "value": "TESTING_METHODOLOGY"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-005-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-639-003-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-002-01",
+          "reason": "BFLA procedure"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-WSTG-ATHZ-04-002-01": 3,
+        "CHK-DOC-PLATFORM-INV-01-005-01": 2,
+        "CHK-DOC-CWE-639-003-01": 1,
+        "CHK-DOC-WSTG-ATHZ-02-002-01": 0
+      },
+      "notes": "Evaluates retrieval of peer test account provisioning methodology."
+    },
+    {
+      "query_id": "VAPT-Q082",
+      "query": "Minimal manual experiment to verify whether server validates account identifier against session token",
+      "security_domain": "TESTING_METHODOLOGY_EXPERIMENTATION",
+      "difficulty": "MEDIUM",
+      "query_type": "EXPERIMENT",
+      "evidence_gap_type": "MISSING_CROSS_IDENTITY_OBJECT_VERIFICATION",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": true,
+      "is_adversarial_or_paraphrased": false,
+      "expected_knowledge_types": [
+        "EXPERIMENT_PATTERN"
+      ],
+      "expected_categories": [
+        "CWE-639",
+        "Key_Substitution",
+        "Authorization_Bypass"
+      ],
+      "relevance_requirements": [
+        "Must retrieve CWE-639 Experiment Design and Hypothesis Construction"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-639-003-01"
+        },
+        {
+          "type": "knowledge_type",
+          "value": "EXPERIMENT_PATTERN"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-002-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-005-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-002-01",
+          "reason": "BFLA procedure"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-CWE-639-003-01": 3,
+        "CHK-DOC-WSTG-ATHZ-04-002-01": 2,
+        "CHK-DOC-PLATFORM-INV-01-005-01": 2,
+        "CHK-DOC-WSTG-ATHZ-02-002-01": 0
+      },
+      "notes": "Experiment query testing minimal manual verification of account ID vs session token."
+    },
+    {
+      "query_id": "VAPT-Q083",
+      "query": "What observation is required to establish baseline authorized behavior before testing for access bypass?",
+      "security_domain": "TESTING_METHODOLOGY_EXPERIMENTATION",
+      "difficulty": "MEDIUM",
+      "query_type": "EVIDENCE_GAP",
+      "evidence_gap_type": "MISSING_CROSS_IDENTITY_OBJECT_VERIFICATION",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": true,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": false,
+      "expected_knowledge_types": [
+        "SECURITY_INVARIANT",
+        "TESTING_METHODOLOGY"
+      ],
+      "expected_categories": [
+        "Platform_Invariants",
+        "BFLA",
+        "Rulebook"
+      ],
+      "relevance_requirements": [
+        "Must retrieve automated hypothesis testing step 1 or WSTG admin control baseline"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-005-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-003-01"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-002-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-639-003-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-004-01",
+          "reason": "Unauthenticated gate"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-PLATFORM-INV-01-005-01": 3,
+        "CHK-DOC-WSTG-ATHZ-02-003-01": 3,
+        "CHK-DOC-WSTG-ATHZ-04-002-01": 2,
+        "CHK-DOC-CWE-639-003-01": 1,
+        "CHK-DOC-PLATFORM-INV-01-004-01": 0
+      },
+      "notes": "Evidence-gap query evaluating authorized baseline establishment."
+    },
+    {
+      "query_id": "VAPT-Q084",
+      "query": "Cross-identity access substitution test comparing User B request for User A object against User A baseline",
+      "security_domain": "TESTING_METHODOLOGY_EXPERIMENTATION",
+      "difficulty": "MEDIUM",
+      "query_type": "EXPERIMENT",
+      "evidence_gap_type": "MISSING_CROSS_IDENTITY_OBJECT_VERIFICATION",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": true,
+      "is_adversarial_or_paraphrased": false,
+      "expected_knowledge_types": [
+        "TESTING_METHODOLOGY",
+        "SECURITY_INVARIANT"
+      ],
+      "expected_categories": [
+        "IDOR",
+        "Platform_Invariants",
+        "Authorization"
+      ],
+      "relevance_requirements": [
+        "Must retrieve step 3 of WSTG IDOR procedure or automated hypothesis testing"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-002-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-005-01"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-639-003-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-002-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-003-01",
+          "reason": "Role hierarchy"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-WSTG-ATHZ-04-002-01": 3,
+        "CHK-DOC-PLATFORM-INV-01-005-01": 3,
+        "CHK-DOC-CWE-639-003-01": 2,
+        "CHK-DOC-PLATFORM-INV-01-002-01": 1,
+        "CHK-DOC-PLATFORM-INV-01-003-01": 0
+      },
+      "notes": "Experiment query testing cross-identity access substitution against baseline response."
+    },
+    {
+      "query_id": "VAPT-Q085",
+      "query": "What traffic delta distinguishes server-side ownership enforcement from an indifferent response handler?",
+      "security_domain": "TESTING_METHODOLOGY_EXPERIMENTATION",
+      "difficulty": "HARD",
+      "query_type": "NEGATIVE_CONTROL",
+      "evidence_gap_type": "MISSING_CROSS_IDENTITY_OBJECT_VERIFICATION",
+      "is_negative_control": true,
+      "is_security_invariant": false,
+      "is_evidence_gap": true,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": true,
+      "expected_knowledge_types": [
+        "SECURITY_INVARIANT",
+        "TESTING_METHODOLOGY"
+      ],
+      "expected_categories": [
+        "Platform_Invariants",
+        "IDOR",
+        "Rulebook"
+      ],
+      "relevance_requirements": [
+        "Must retrieve structural response delta computation or IDOR negative controls"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-005-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-003-01"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-004-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-639-003-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-004-01",
+          "reason": "Unauthenticated gate"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-PLATFORM-INV-01-005-01": 3,
+        "CHK-DOC-WSTG-ATHZ-04-003-01": 3,
+        "CHK-DOC-WSTG-ATHZ-04-004-01": 2,
+        "CHK-DOC-CWE-639-003-01": 1,
+        "CHK-DOC-PLATFORM-INV-01-004-01": 0
+      },
+      "notes": "Negative control evidence-gap query evaluating structural response delta between active check and static handler."
+    },
+    {
+      "query_id": "VAPT-Q086",
+      "query": "Paired probe testing with invalid entity identifier for CWE-639 authorization bypass",
+      "security_domain": "TESTING_METHODOLOGY_EXPERIMENTATION",
+      "difficulty": "EASY",
+      "query_type": "NEGATIVE_CONTROL",
+      "evidence_gap_type": "MISSING_CROSS_IDENTITY_OBJECT_VERIFICATION",
+      "is_negative_control": true,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": true,
+      "is_adversarial_or_paraphrased": false,
+      "expected_knowledge_types": [
+        "EXPERIMENT_PATTERN",
+        "TESTING_METHODOLOGY"
+      ],
+      "expected_categories": [
+        "CWE-639",
+        "IDOR",
+        "Authorization"
+      ],
+      "relevance_requirements": [
+        "Must retrieve CWE-639 experiment design step 3 or WSTG non-existent object probe"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-639-003-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-003-01"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-005-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-004-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-003-01",
+          "reason": "Role hierarchy"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-CWE-639-003-01": 3,
+        "CHK-DOC-WSTG-ATHZ-04-003-01": 3,
+        "CHK-DOC-PLATFORM-INV-01-005-01": 2,
+        "CHK-DOC-WSTG-ATHZ-04-004-01": 1,
+        "CHK-DOC-PLATFORM-INV-01-003-01": 0
+      },
+      "notes": "Evaluates paired probe testing with dummy entity identifier to differentiate 404 from bypass."
+    },
+    {
+      "query_id": "VAPT-Q087",
+      "query": "Systematic cross-identity session token and resource identifier matrix testing",
+      "security_domain": "TESTING_METHODOLOGY_EXPERIMENTATION",
+      "difficulty": "HARD",
+      "query_type": "PARAPHRASED",
+      "evidence_gap_type": "MISSING_CROSS_IDENTITY_OBJECT_VERIFICATION",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": true,
+      "expected_knowledge_types": [
+        "TESTING_METHODOLOGY"
+      ],
+      "expected_categories": [
+        "IDOR",
+        "Authorization",
+        "Horizontal_Privilege_Escalation"
+      ],
+      "relevance_requirements": [
+        "Must retrieve WSTG multi-identity verification workflow"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-002-01"
+        },
+        {
+          "type": "knowledge_type",
+          "value": "TESTING_METHODOLOGY"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-005-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-285-003-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-004-01",
+          "reason": "Unauthenticated gate"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-WSTG-ATHZ-04-002-01": 3,
+        "CHK-DOC-PLATFORM-INV-01-005-01": 2,
+        "CHK-DOC-CWE-285-003-01": 1,
+        "CHK-DOC-PLATFORM-INV-01-004-01": 0
+      },
+      "notes": "Hard query describing authorization matrix testing across tokens and object keys."
+    },
+    {
+      "query_id": "VAPT-Q088",
+      "query": "Distinguishing valid multi-identity authorization testing from single-identity parameter fuzzing",
+      "security_domain": "TESTING_METHODOLOGY_EXPERIMENTATION",
+      "difficulty": "MEDIUM",
+      "query_type": "NEGATIVE_CONTROL",
+      "evidence_gap_type": "MISSING_CROSS_IDENTITY_OBJECT_VERIFICATION",
+      "is_negative_control": true,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": false,
+      "expected_knowledge_types": [
+        "TESTING_METHODOLOGY",
+        "SECURITY_INVARIANT"
+      ],
+      "expected_categories": [
+        "IDOR",
+        "Platform_Invariants",
+        "Authorization"
+      ],
+      "relevance_requirements": [
+        "Must retrieve multi-identity verification workflow and automated hypothesis testing"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-002-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-005-01"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-639-003-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-002-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-004-01",
+          "reason": "Unauthenticated gate"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-WSTG-ATHZ-04-002-01": 3,
+        "CHK-DOC-PLATFORM-INV-01-005-01": 3,
+        "CHK-DOC-CWE-639-003-01": 2,
+        "CHK-DOC-PLATFORM-INV-01-002-01": 1,
+        "CHK-DOC-PLATFORM-INV-01-004-01": 0
+      },
+      "notes": "Negative control query testing discrimination between multi-account authorization verification and blind fuzzing."
+    },
+    {
+      "query_id": "VAPT-Q089",
+      "query": "False positive prevention for broken function level authorization in WSTG",
+      "security_domain": "FALSE_POSITIVE_CONTROLS_BOUNDARY_VERIFICATION",
+      "difficulty": "EASY",
+      "query_type": "DIRECT_CONCEPT",
+      "evidence_gap_type": "MISSING_ROLE_HIERARCHY_ENFORCEMENT",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": false,
+      "expected_knowledge_types": [
+        "TESTING_METHODOLOGY"
+      ],
+      "expected_categories": [
+        "BFLA",
+        "Vertical_Privilege_Escalation",
+        "Role_Hierarchy"
+      ],
+      "relevance_requirements": [
+        "Must retrieve WSTG BFLA False Positive Prevention guidance"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-004-01"
+        },
+        {
+          "type": "category",
+          "value": "BFLA"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-003-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-004-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-002-01",
+          "reason": "Horizontal isolation"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-WSTG-ATHZ-02-004-01": 3,
+        "CHK-DOC-WSTG-ATHZ-02-003-01": 2,
+        "CHK-DOC-WSTG-ATHZ-04-004-01": 1,
+        "CHK-DOC-PLATFORM-INV-01-002-01": 0
+      },
+      "notes": "Evaluates direct retrieval of WSTG BFLA false positive prevention guidance."
+    },
+    {
+      "query_id": "VAPT-Q090",
+      "query": "False positive traps and boundary verification in IDOR testing",
+      "security_domain": "FALSE_POSITIVE_CONTROLS_BOUNDARY_VERIFICATION",
+      "difficulty": "EASY",
+      "query_type": "DIRECT_CONCEPT",
+      "evidence_gap_type": "MISSING_CROSS_IDENTITY_OBJECT_VERIFICATION",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": false,
+      "expected_knowledge_types": [
+        "TESTING_METHODOLOGY"
+      ],
+      "expected_categories": [
+        "IDOR",
+        "Authorization",
+        "Horizontal_Privilege_Escalation"
+      ],
+      "relevance_requirements": [
+        "Must retrieve WSTG IDOR False Positive Guidance and Traps"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-004-01"
+        },
+        {
+          "type": "category",
+          "value": "IDOR"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-003-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-004-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-003-01",
+          "reason": "Role hierarchy"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-WSTG-ATHZ-04-004-01": 3,
+        "CHK-DOC-WSTG-ATHZ-04-003-01": 2,
+        "CHK-DOC-WSTG-ATHZ-02-004-01": 1,
+        "CHK-DOC-PLATFORM-INV-01-003-01": 0
+      },
+      "notes": "Evaluates direct retrieval of WSTG IDOR false positive traps."
+    },
+    {
+      "query_id": "VAPT-Q091",
+      "query": "Non-existent object probe testing using dummy identifiers to establish dummy handlers",
+      "security_domain": "FALSE_POSITIVE_CONTROLS_BOUNDARY_VERIFICATION",
+      "difficulty": "EASY",
+      "query_type": "EXPERIMENT",
+      "evidence_gap_type": "MISSING_CROSS_IDENTITY_OBJECT_VERIFICATION",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": true,
+      "is_adversarial_or_paraphrased": false,
+      "expected_knowledge_types": [
+        "TESTING_METHODOLOGY",
+        "EXPERIMENT_PATTERN"
+      ],
+      "expected_categories": [
+        "IDOR",
+        "CWE-639",
+        "Authorization"
+      ],
+      "relevance_requirements": [
+        "Must retrieve non-existent object probe from WSTG IDOR negative controls or CWE-639"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-003-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-639-003-01"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-004-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-005-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-004-01",
+          "reason": "Unauthenticated gate"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-WSTG-ATHZ-04-003-01": 3,
+        "CHK-DOC-CWE-639-003-01": 3,
+        "CHK-DOC-WSTG-ATHZ-04-004-01": 2,
+        "CHK-DOC-PLATFORM-INV-01-005-01": 1,
+        "CHK-DOC-PLATFORM-INV-01-004-01": 0
+      },
+      "notes": "Experiment query testing non-existent object probe with dummy IDs."
+    },
+    {
+      "query_id": "VAPT-Q092",
+      "query": "Identifying deliberately public resources that mimic unauthorized object references",
+      "security_domain": "FALSE_POSITIVE_CONTROLS_BOUNDARY_VERIFICATION",
+      "difficulty": "MEDIUM",
+      "query_type": "DIRECT_CONCEPT",
+      "evidence_gap_type": "MISSING_CROSS_IDENTITY_OBJECT_VERIFICATION",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": false,
+      "expected_knowledge_types": [
+        "TESTING_METHODOLOGY"
+      ],
+      "expected_categories": [
+        "IDOR",
+        "Authorization",
+        "Horizontal_Privilege_Escalation"
+      ],
+      "relevance_requirements": [
+        "Must retrieve Public Data Exposure trap from WSTG IDOR false positive guidance"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-004-01"
+        },
+        {
+          "type": "knowledge_type",
+          "value": "TESTING_METHODOLOGY"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-003-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-002-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-003-01",
+          "reason": "Role hierarchy"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-WSTG-ATHZ-04-004-01": 3,
+        "CHK-DOC-WSTG-ATHZ-04-003-01": 2,
+        "CHK-DOC-PLATFORM-INV-01-002-01": 1,
+        "CHK-DOC-PLATFORM-INV-01-003-01": 0
+      },
+      "notes": "Evaluates retrieval of public data exposure traps mimicking IDOR."
+    },
+    {
+      "query_id": "VAPT-Q093",
+      "query": "What evidence is required to confirm that an endpoint returning 200 OK is an informational rejection rather than an authorization bypass?",
+      "security_domain": "FALSE_POSITIVE_CONTROLS_BOUNDARY_VERIFICATION",
+      "difficulty": "MEDIUM",
+      "query_type": "NEGATIVE_CONTROL",
+      "evidence_gap_type": "MISSING_ROLE_HIERARCHY_ENFORCEMENT",
+      "is_negative_control": true,
+      "is_security_invariant": false,
+      "is_evidence_gap": true,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": false,
+      "expected_knowledge_types": [
+        "TESTING_METHODOLOGY"
+      ],
+      "expected_categories": [
+        "BFLA",
+        "Vertical_Privilege_Escalation",
+        "Role_Hierarchy"
+      ],
+      "relevance_requirements": [
+        "Must retrieve Informational Status Codes guidance in WSTG BFLA false positive prevention"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-004-01"
+        },
+        {
+          "type": "knowledge_type",
+          "value": "TESTING_METHODOLOGY"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-003-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-285-003-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-004-01",
+          "reason": "Unauthenticated gate"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-WSTG-ATHZ-02-004-01": 3,
+        "CHK-DOC-WSTG-ATHZ-02-003-01": 2,
+        "CHK-DOC-CWE-285-003-01": 1,
+        "CHK-DOC-PLATFORM-INV-01-004-01": 0
+      },
+      "notes": "Negative control evidence-gap query evaluating 200 OK informational denial status code trap."
+    },
+    {
+      "query_id": "VAPT-Q094",
+      "query": "Probing non-existent identifier to determine if endpoint returns static template or empty array",
+      "security_domain": "FALSE_POSITIVE_CONTROLS_BOUNDARY_VERIFICATION",
+      "difficulty": "MEDIUM",
+      "query_type": "EXPERIMENT",
+      "evidence_gap_type": "MISSING_CROSS_IDENTITY_OBJECT_VERIFICATION",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": true,
+      "is_adversarial_or_paraphrased": false,
+      "expected_knowledge_types": [
+        "TESTING_METHODOLOGY"
+      ],
+      "expected_categories": [
+        "IDOR",
+        "Authorization",
+        "Horizontal_Privilege_Escalation"
+      ],
+      "relevance_requirements": [
+        "Must retrieve non-existent object probe and idempotent read handler traps"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-003-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-004-01"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-639-003-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-005-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-003-01",
+          "reason": "Role hierarchy"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-WSTG-ATHZ-04-003-01": 3,
+        "CHK-DOC-WSTG-ATHZ-04-004-01": 3,
+        "CHK-DOC-CWE-639-003-01": 2,
+        "CHK-DOC-PLATFORM-INV-01-005-01": 1,
+        "CHK-DOC-PLATFORM-INV-01-003-01": 0
+      },
+      "notes": "Experiment query testing probe for empty collection and idempotent read handlers."
+    },
+    {
+      "query_id": "VAPT-Q095",
+      "query": "What observation proves that an API serves shared mock fixtures from a sandbox rather than tenant database records?",
+      "security_domain": "FALSE_POSITIVE_CONTROLS_BOUNDARY_VERIFICATION",
+      "difficulty": "HARD",
+      "query_type": "NEGATIVE_CONTROL",
+      "evidence_gap_type": "MISSING_TENANT_ISOLATION_CHECK",
+      "is_negative_control": true,
+      "is_security_invariant": false,
+      "is_evidence_gap": true,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": true,
+      "expected_knowledge_types": [
+        "TESTING_METHODOLOGY"
+      ],
+      "expected_categories": [
+        "IDOR",
+        "Authorization",
+        "Horizontal_Privilege_Escalation"
+      ],
+      "relevance_requirements": [
+        "Must retrieve Synthetic Sandbox Environments guidance from WSTG IDOR traps"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-004-01"
+        },
+        {
+          "type": "knowledge_type",
+          "value": "TESTING_METHODOLOGY"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-003-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-002-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-004-01",
+          "reason": "Unauthenticated gate"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-WSTG-ATHZ-04-004-01": 3,
+        "CHK-DOC-WSTG-ATHZ-04-003-01": 2,
+        "CHK-DOC-PLATFORM-INV-01-002-01": 1,
+        "CHK-DOC-PLATFORM-INV-01-004-01": 0
+      },
+      "notes": "Negative control evidence-gap query evaluating synthetic sandbox mock trap."
+    },
+    {
+      "query_id": "VAPT-Q096",
+      "query": "Prototype endpoints that accept JSON payloads without triggering underlying business logic",
+      "security_domain": "FALSE_POSITIVE_CONTROLS_BOUNDARY_VERIFICATION",
+      "difficulty": "HARD",
+      "query_type": "PARAPHRASED",
+      "evidence_gap_type": "MISSING_ROLE_HIERARCHY_ENFORCEMENT",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": true,
+      "expected_knowledge_types": [
+        "TESTING_METHODOLOGY"
+      ],
+      "expected_categories": [
+        "BFLA",
+        "Vertical_Privilege_Escalation",
+        "Role_Hierarchy"
+      ],
+      "relevance_requirements": [
+        "Must retrieve Staged or Non-Operational Endpoints false positive trap in WSTG BFLA"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-004-01"
+        },
+        {
+          "type": "knowledge_type",
+          "value": "TESTING_METHODOLOGY"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-003-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-285-002-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-004-01",
+          "reason": "Unauthenticated gate"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-WSTG-ATHZ-02-004-01": 3,
+        "CHK-DOC-WSTG-ATHZ-02-003-01": 2,
+        "CHK-DOC-CWE-285-002-01": 1,
+        "CHK-DOC-PLATFORM-INV-01-004-01": 0
+      },
+      "notes": "Hard paraphrased query targeting prototype routes that parse JSON without executing business logic."
+    },
+    {
+      "query_id": "VAPT-Q097",
+      "query": "ASVS negative control preventing sensitive object metadata leakage in error responses",
+      "security_domain": "FALSE_POSITIVE_CONTROLS_BOUNDARY_VERIFICATION",
+      "difficulty": "EASY",
+      "query_type": "SECURITY_INVARIANT",
+      "evidence_gap_type": "MISSING_TENANT_ISOLATION_CHECK",
+      "is_negative_control": false,
+      "is_security_invariant": true,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": false,
+      "expected_knowledge_types": [
+        "SECURITY_INVARIANT"
+      ],
+      "expected_categories": [
+        "Access_Control",
+        "Security_Invariants",
+        "ASVS"
+      ],
+      "relevance_requirements": [
+        "Must retrieve ASVS negative control guidance regarding error responses leaking object metadata or tenant identifiers"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-004-01"
+        },
+        {
+          "type": "knowledge_type",
+          "value": "SECURITY_INVARIANT"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-ASVS-V4-01-001-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-002-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-003-01",
+          "reason": "Role hierarchy"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-ASVS-V4-01-004-01": 3,
+        "CHK-DOC-ASVS-V4-01-001-01": 2,
+        "CHK-DOC-PLATFORM-INV-01-002-01": 1,
+        "CHK-DOC-PLATFORM-INV-01-003-01": 0
+      },
+      "notes": "Evaluates direct retrieval of ASVS negative control guidance prohibiting sensitive metadata leakage in error responses."
+    },
+    {
+      "query_id": "VAPT-Q098",
+      "query": "Detecting false positive alerts triggered by endpoints returning identical static bodies for all user keys",
+      "security_domain": "FALSE_POSITIVE_CONTROLS_BOUNDARY_VERIFICATION",
+      "difficulty": "HARD",
+      "query_type": "PARAPHRASED",
+      "evidence_gap_type": "MISSING_CROSS_IDENTITY_OBJECT_VERIFICATION",
+      "is_negative_control": false,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": true,
+      "expected_knowledge_types": [
+        "TESTING_METHODOLOGY"
+      ],
+      "expected_categories": [
+        "IDOR",
+        "Authorization",
+        "Horizontal_Privilege_Escalation"
+      ],
+      "relevance_requirements": [
+        "Must retrieve Idempotent Read Handlers guidance from WSTG IDOR traps"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-004-01"
+        },
+        {
+          "type": "knowledge_type",
+          "value": "TESTING_METHODOLOGY"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-003-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-005-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-004-01",
+          "reason": "Unauthenticated gate"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-WSTG-ATHZ-04-004-01": 3,
+        "CHK-DOC-WSTG-ATHZ-04-003-01": 2,
+        "CHK-DOC-PLATFORM-INV-01-005-01": 1,
+        "CHK-DOC-PLATFORM-INV-01-004-01": 0
+      },
+      "notes": "Hard query targeting identical response bodies returned for all keys."
+    },
+    {
+      "query_id": "VAPT-Q099",
+      "query": "Distinguishing genuine cross-tenant data leakage from public catalog item retrieval",
+      "security_domain": "FALSE_POSITIVE_CONTROLS_BOUNDARY_VERIFICATION",
+      "difficulty": "MEDIUM",
+      "query_type": "NEGATIVE_CONTROL",
+      "evidence_gap_type": "MISSING_CROSS_IDENTITY_OBJECT_VERIFICATION",
+      "is_negative_control": true,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": false,
+      "expected_knowledge_types": [
+        "TESTING_METHODOLOGY"
+      ],
+      "expected_categories": [
+        "IDOR",
+        "Authorization",
+        "Horizontal_Privilege_Escalation"
+      ],
+      "relevance_requirements": [
+        "Must retrieve Public Data Exposure trap in WSTG IDOR false positive guidance and unauthenticated baseline"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-004-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-04-003-01"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-002-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-639-001-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-003-01",
+          "reason": "Role hierarchy"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-WSTG-ATHZ-04-004-01": 3,
+        "CHK-DOC-WSTG-ATHZ-04-003-01": 3,
+        "CHK-DOC-PLATFORM-INV-01-002-01": 2,
+        "CHK-DOC-CWE-639-001-01": 1,
+        "CHK-DOC-PLATFORM-INV-01-003-01": 0
+      },
+      "notes": "Negative control query testing discrimination between public resource access and genuine IDOR."
+    },
+    {
+      "query_id": "VAPT-Q100",
+      "query": "Differentiating active administrative route vulnerability from legacy non-operational route parsing",
+      "security_domain": "FALSE_POSITIVE_CONTROLS_BOUNDARY_VERIFICATION",
+      "difficulty": "HARD",
+      "query_type": "NEGATIVE_CONTROL",
+      "evidence_gap_type": "MISSING_ROLE_HIERARCHY_ENFORCEMENT",
+      "is_negative_control": true,
+      "is_security_invariant": false,
+      "is_evidence_gap": false,
+      "is_experiment": false,
+      "is_adversarial_or_paraphrased": true,
+      "expected_knowledge_types": [
+        "TESTING_METHODOLOGY"
+      ],
+      "expected_categories": [
+        "BFLA",
+        "Vertical_Privilege_Escalation",
+        "Role_Hierarchy"
+      ],
+      "relevance_requirements": [
+        "Must retrieve Staged or Non-Operational Endpoints trap in WSTG BFLA"
+      ],
+      "must_retrieve": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-004-01"
+        },
+        {
+          "type": "knowledge_type",
+          "value": "TESTING_METHODOLOGY"
+        }
+      ],
+      "acceptable_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-WSTG-ATHZ-02-003-01"
+        },
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-CWE-285-003-01"
+        }
+      ],
+      "irrelevant_retrievals": [
+        {
+          "type": "chunk_id",
+          "value": "CHK-DOC-PLATFORM-INV-01-004-01",
+          "reason": "Unauthenticated gate"
+        }
+      ],
+      "relevance_ratings": {
+        "CHK-DOC-WSTG-ATHZ-02-004-01": 3,
+        "CHK-DOC-WSTG-ATHZ-02-003-01": 2,
+        "CHK-DOC-CWE-285-003-01": 1,
+        "CHK-DOC-PLATFORM-INV-01-004-01": 0
+      },
+      "notes": "Negative control query evaluating active vulnerability vs non-operational legacy route parsing."
+    }
+  ]
+}

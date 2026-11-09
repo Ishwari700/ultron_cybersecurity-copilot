@@ -1,0 +1,44 @@
+{
+  "archived_artifacts": [
+    {
+      "affected_track": "BASELINE",
+      "archived_path": "data\\eval\\aborted_m4_8_run_20260921\\m4_ablation_baseline_20260921.json",
+      "live_llm_calls_occurred": false,
+      "original_path": "data/eval/m4_ablation_baseline_20260921.json",
+      "reason_for_invalidation": "TypeError: OllamaRunner.generate_raw() got unexpected seed kwarg; zero live LLM calls made (all 20 failed locally as RUNTIME_TRANSPORT_FAILURE)",
+      "run_status": "ABORTED_NON_EVALUABLE",
+      "sha256": "b7e46aef47ecbfc6e835421cdc9b91981d6fc39fcde2bbe3b8c262d719725c85"
+    },
+    {
+      "affected_track": "E1",
+      "archived_path": "data\\eval\\aborted_m4_8_run_20260921\\m4_ablation_e1_schema_20260921.json",
+      "live_llm_calls_occurred": true,
+      "original_path": "data/eval/m4_ablation_e1_schema_20260921.json",
+      "reason_for_invalidation": "Generated prior to full harness validation; excluded to ensure single-session official dataset parity",
+      "run_status": "ABORTED_NON_EVALUABLE",
+      "sha256": "9379fd88031c7b7040cca9eda9f367ea2d9b8ab0f4dc3ed938fc9e8cae5fed1c"
+    },
+    {
+      "affected_track": "E2",
+      "archived_path": "data\\eval\\aborted_m4_8_run_20260921\\m4_ablation_e2_namespace_20260921.json",
+      "live_llm_calls_occurred": true,
+      "original_path": "data/eval/m4_ablation_e2_namespace_20260921.json",
+      "reason_for_invalidation": "Generated prior to full harness validation; excluded to ensure single-session official dataset parity",
+      "run_status": "ABORTED_NON_EVALUABLE",
+      "sha256": "de4645b3246e550610ef86ed7c65bf7d5dbbd998c3d3ffcde28202213fd17bf6"
+    },
+    {
+      "affected_track": "E3",
+      "archived_path": "data\\eval\\aborted_m4_8_run_20260921\\m4_ablation_e3_counterfactual_20260921.json",
+      "live_llm_calls_occurred": true,
+      "original_path": "data/eval/m4_ablation_e3_counterfactual_20260921.json",
+      "reason_for_invalidation": "Generated prior to full harness validation; excluded to ensure single-session official dataset parity",
+      "run_status": "ABORTED_NON_EVALUABLE",
+      "sha256": "ee2ea363d0fb0b27b7f594fd9563d7a871d3240b57b549ffd4a40d8175c11c22"
+    }
+  ],
+  "classification": "M4.8 ABORTED / NON-EVALUABLE RUN",
+  "incident_schema_version": "1.0.0",
+  "summary": "Initial screening attempt aborted due to harness execution defects: Baseline suffered a harness TypeError (unexpected seed parameter in generate_raw) resulting in 0 live calls, E1-E3 completed 20 calls each, and E4 aborted at scenario 1 due to an I4ExecutionResult result-field discrepancy. All artifacts from this aborted run are preserved byte-for-byte and strictly excluded from official M4.8 metrics and selection.",
+  "timestamp": "2026-09-21T05:22:38.978732+00:00"
+}

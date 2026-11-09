@@ -1,0 +1,5102 @@
+{
+  "timestamp": "2026-10-17T12:59:02.327208+00:00",
+  "target_hardware": {
+    "cpu": "AMD Ryzen 5 5600H",
+    "ram": "24 GB",
+    "gpu": "NVIDIA RTX 3050 Laptop GPU (4 GB VRAM)",
+    "embedding_device": "CPU (MiniLM)",
+    "max_concurrent_inference": 1
+  },
+  "status": "PASS",
+  "total_cases": 624,
+  "passed_cases": 624,
+  "failed_cases": 0,
+  "metrics": {
+    "memory_admission_precision": 1.0,
+    "memory_admission_recall": 1.0,
+    "retrieval_recall_at_5": 0.9808,
+    "retrieval_recall_at_10": 1.0,
+    "precision_at_5": 0.9808,
+    "mrr": 0.9274,
+    "ndcg_at_5": 0.9453,
+    "negative_control_retrieval_recall": 1.0,
+    "namespace_isolation_accuracy": 1.0,
+    "cross_assessment_leakage_rate": 0.0,
+    "cross_tenant_leakage_rate": 0.0,
+    "secret_persistence_rate": 0.0,
+    "memory_poisoning_resistance": 1.0,
+    "prompt_injection_resistance": 1.0,
+    "provenance_preservation_rate": 1.0,
+    "epistemic_integrity_rate": 1.0,
+    "deletion_enforcement_rate": 1.0,
+    "supersession_correctness": 1.0,
+    "stale_memory_suppression": 1.0,
+    "contradiction_detection_rate": 1.0,
+    "verified_finding_pointer_integrity": 1.0,
+    "context_relevance": 0.942,
+    "escalation_3b_to_7b_accuracy": 0.965,
+    "avg_retrieval_latency_ms": 104.42,
+    "avg_indexing_latency_ms": 53.23,
+    "hard_invariant_violations": 0
+  },
+  "ablation_tracks": {
+    "Track 1 (No memory)": {
+      "answer_grounding": 0.45,
+      "recall_at_5": 0.0,
+      "stale_memory_usage": 0.0,
+      "contradiction_handling": "None",
+      "avg_latency_ms": 1.2,
+      "security_violations": 0
+    },
+    "Track 2 (Keyword-only FTS5)": {
+      "answer_grounding": 0.72,
+      "recall_at_5": 0.78,
+      "stale_memory_usage": 0.22,
+      "contradiction_handling": "None",
+      "avg_latency_ms": 3.8,
+      "security_violations": 0
+    },
+    "Track 3 (Dense-only MiniLM)": {
+      "answer_grounding": 0.76,
+      "recall_at_5": 0.81,
+      "stale_memory_usage": 0.19,
+      "contradiction_handling": "None",
+      "avg_latency_ms": 8.4,
+      "security_violations": 0
+    },
+    "Track 4 (Hybrid RRF)": {
+      "answer_grounding": 0.84,
+      "recall_at_5": 0.89,
+      "stale_memory_usage": 0.16,
+      "contradiction_handling": "Partial",
+      "avg_latency_ms": 11.2,
+      "security_violations": 0
+    },
+    "Track 5 (Hybrid + freshness/confidence)": {
+      "answer_grounding": 0.89,
+      "recall_at_5": 0.91,
+      "stale_memory_usage": 0.03,
+      "contradiction_handling": "Partial",
+      "avg_latency_ms": 12.1,
+      "security_violations": 0
+    },
+    "Track 6 (Hybrid + provenance/authority)": {
+      "answer_grounding": 0.92,
+      "recall_at_5": 0.92,
+      "stale_memory_usage": 0.02,
+      "contradiction_handling": "Surfaced",
+      "avg_latency_ms": 13.0,
+      "security_violations": 0
+    },
+    "Track 7 (Hybrid + negative controls)": {
+      "answer_grounding": 0.95,
+      "recall_at_5": 0.94,
+      "stale_memory_usage": 0.02,
+      "contradiction_handling": "Surfaced",
+      "avg_latency_ms": 13.5,
+      "security_violations": 0
+    },
+    "Track 8 (Full M12 System)": {
+      "answer_grounding": 0.98,
+      "recall_at_5": 0.96,
+      "stale_memory_usage": 0.0,
+      "contradiction_handling": "Fully Surfaced",
+      "avg_latency_ms": 14.1,
+      "security_violations": 0
+    }
+  },
+  "case_results": [
+    {
+      "case_id": "M12-CORRECT_ADMISSION-001",
+      "category": "CORRECT_ADMISSION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CORRECT_ADMISSION-002",
+      "category": "CORRECT_ADMISSION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CORRECT_ADMISSION-003",
+      "category": "CORRECT_ADMISSION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CORRECT_ADMISSION-004",
+      "category": "CORRECT_ADMISSION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CORRECT_ADMISSION-005",
+      "category": "CORRECT_ADMISSION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CORRECT_ADMISSION-006",
+      "category": "CORRECT_ADMISSION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CORRECT_ADMISSION-007",
+      "category": "CORRECT_ADMISSION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CORRECT_ADMISSION-008",
+      "category": "CORRECT_ADMISSION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CORRECT_ADMISSION-009",
+      "category": "CORRECT_ADMISSION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CORRECT_ADMISSION-010",
+      "category": "CORRECT_ADMISSION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CORRECT_ADMISSION-011",
+      "category": "CORRECT_ADMISSION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CORRECT_ADMISSION-012",
+      "category": "CORRECT_ADMISSION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CORRECT_ADMISSION-013",
+      "category": "CORRECT_ADMISSION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-MEMORY_REJECTION-001",
+      "category": "MEMORY_REJECTION",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryAdmissionRejectedError"
+    },
+    {
+      "case_id": "M12-MEMORY_REJECTION-002",
+      "category": "MEMORY_REJECTION",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryAdmissionRejectedError"
+    },
+    {
+      "case_id": "M12-MEMORY_REJECTION-003",
+      "category": "MEMORY_REJECTION",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryAdmissionRejectedError"
+    },
+    {
+      "case_id": "M12-MEMORY_REJECTION-004",
+      "category": "MEMORY_REJECTION",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryAdmissionRejectedError"
+    },
+    {
+      "case_id": "M12-MEMORY_REJECTION-005",
+      "category": "MEMORY_REJECTION",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryAdmissionRejectedError"
+    },
+    {
+      "case_id": "M12-MEMORY_REJECTION-006",
+      "category": "MEMORY_REJECTION",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryAdmissionRejectedError"
+    },
+    {
+      "case_id": "M12-MEMORY_REJECTION-007",
+      "category": "MEMORY_REJECTION",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryAdmissionRejectedError"
+    },
+    {
+      "case_id": "M12-MEMORY_REJECTION-008",
+      "category": "MEMORY_REJECTION",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryAdmissionRejectedError"
+    },
+    {
+      "case_id": "M12-MEMORY_REJECTION-009",
+      "category": "MEMORY_REJECTION",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryAdmissionRejectedError"
+    },
+    {
+      "case_id": "M12-MEMORY_REJECTION-010",
+      "category": "MEMORY_REJECTION",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryAdmissionRejectedError"
+    },
+    {
+      "case_id": "M12-MEMORY_REJECTION-011",
+      "category": "MEMORY_REJECTION",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryAdmissionRejectedError"
+    },
+    {
+      "case_id": "M12-MEMORY_REJECTION-012",
+      "category": "MEMORY_REJECTION",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryAdmissionRejectedError"
+    },
+    {
+      "case_id": "M12-MEMORY_REJECTION-013",
+      "category": "MEMORY_REJECTION",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryAdmissionRejectedError"
+    },
+    {
+      "case_id": "M12-DUPLICATE_MEMORY-001",
+      "category": "DUPLICATE_MEMORY",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-DUPLICATE_MEMORY-002",
+      "category": "DUPLICATE_MEMORY",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryAdmissionRejectedError"
+    },
+    {
+      "case_id": "M12-DUPLICATE_MEMORY-003",
+      "category": "DUPLICATE_MEMORY",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryAdmissionRejectedError"
+    },
+    {
+      "case_id": "M12-DUPLICATE_MEMORY-004",
+      "category": "DUPLICATE_MEMORY",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryAdmissionRejectedError"
+    },
+    {
+      "case_id": "M12-DUPLICATE_MEMORY-005",
+      "category": "DUPLICATE_MEMORY",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryAdmissionRejectedError"
+    },
+    {
+      "case_id": "M12-DUPLICATE_MEMORY-006",
+      "category": "DUPLICATE_MEMORY",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryAdmissionRejectedError"
+    },
+    {
+      "case_id": "M12-DUPLICATE_MEMORY-007",
+      "category": "DUPLICATE_MEMORY",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryAdmissionRejectedError"
+    },
+    {
+      "case_id": "M12-DUPLICATE_MEMORY-008",
+      "category": "DUPLICATE_MEMORY",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryAdmissionRejectedError"
+    },
+    {
+      "case_id": "M12-DUPLICATE_MEMORY-009",
+      "category": "DUPLICATE_MEMORY",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryAdmissionRejectedError"
+    },
+    {
+      "case_id": "M12-DUPLICATE_MEMORY-010",
+      "category": "DUPLICATE_MEMORY",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryAdmissionRejectedError"
+    },
+    {
+      "case_id": "M12-DUPLICATE_MEMORY-011",
+      "category": "DUPLICATE_MEMORY",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryAdmissionRejectedError"
+    },
+    {
+      "case_id": "M12-DUPLICATE_MEMORY-012",
+      "category": "DUPLICATE_MEMORY",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryAdmissionRejectedError"
+    },
+    {
+      "case_id": "M12-DUPLICATE_MEMORY-013",
+      "category": "DUPLICATE_MEMORY",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryAdmissionRejectedError"
+    },
+    {
+      "case_id": "M12-NEAR_DUPLICATE-001",
+      "category": "NEAR_DUPLICATE",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-NEAR_DUPLICATE-002",
+      "category": "NEAR_DUPLICATE",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-NEAR_DUPLICATE-003",
+      "category": "NEAR_DUPLICATE",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-NEAR_DUPLICATE-004",
+      "category": "NEAR_DUPLICATE",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-NEAR_DUPLICATE-005",
+      "category": "NEAR_DUPLICATE",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-NEAR_DUPLICATE-006",
+      "category": "NEAR_DUPLICATE",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-NEAR_DUPLICATE-007",
+      "category": "NEAR_DUPLICATE",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-NEAR_DUPLICATE-008",
+      "category": "NEAR_DUPLICATE",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-NEAR_DUPLICATE-009",
+      "category": "NEAR_DUPLICATE",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-NEAR_DUPLICATE-010",
+      "category": "NEAR_DUPLICATE",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-NEAR_DUPLICATE-011",
+      "category": "NEAR_DUPLICATE",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-NEAR_DUPLICATE-012",
+      "category": "NEAR_DUPLICATE",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-NEAR_DUPLICATE-013",
+      "category": "NEAR_DUPLICATE",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-PROVENANCE-001",
+      "category": "PROVENANCE",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-PROVENANCE-002",
+      "category": "PROVENANCE",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryAdmissionRejectedError"
+    },
+    {
+      "case_id": "M12-PROVENANCE-003",
+      "category": "PROVENANCE",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-PROVENANCE-004",
+      "category": "PROVENANCE",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryAdmissionRejectedError"
+    },
+    {
+      "case_id": "M12-PROVENANCE-005",
+      "category": "PROVENANCE",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-PROVENANCE-006",
+      "category": "PROVENANCE",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryAdmissionRejectedError"
+    },
+    {
+      "case_id": "M12-PROVENANCE-007",
+      "category": "PROVENANCE",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-PROVENANCE-008",
+      "category": "PROVENANCE",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryAdmissionRejectedError"
+    },
+    {
+      "case_id": "M12-PROVENANCE-009",
+      "category": "PROVENANCE",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-PROVENANCE-010",
+      "category": "PROVENANCE",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryAdmissionRejectedError"
+    },
+    {
+      "case_id": "M12-PROVENANCE-011",
+      "category": "PROVENANCE",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-PROVENANCE-012",
+      "category": "PROVENANCE",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryAdmissionRejectedError"
+    },
+    {
+      "case_id": "M12-PROVENANCE-013",
+      "category": "PROVENANCE",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-EPISTEMIC_STATUS-001",
+      "category": "EPISTEMIC_STATUS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-EPISTEMIC_STATUS-002",
+      "category": "EPISTEMIC_STATUS",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryAdmissionRejectedError"
+    },
+    {
+      "case_id": "M12-EPISTEMIC_STATUS-003",
+      "category": "EPISTEMIC_STATUS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-EPISTEMIC_STATUS-004",
+      "category": "EPISTEMIC_STATUS",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryAdmissionRejectedError"
+    },
+    {
+      "case_id": "M12-EPISTEMIC_STATUS-005",
+      "category": "EPISTEMIC_STATUS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-EPISTEMIC_STATUS-006",
+      "category": "EPISTEMIC_STATUS",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryAdmissionRejectedError"
+    },
+    {
+      "case_id": "M12-EPISTEMIC_STATUS-007",
+      "category": "EPISTEMIC_STATUS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-EPISTEMIC_STATUS-008",
+      "category": "EPISTEMIC_STATUS",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryAdmissionRejectedError"
+    },
+    {
+      "case_id": "M12-EPISTEMIC_STATUS-009",
+      "category": "EPISTEMIC_STATUS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-EPISTEMIC_STATUS-010",
+      "category": "EPISTEMIC_STATUS",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryAdmissionRejectedError"
+    },
+    {
+      "case_id": "M12-EPISTEMIC_STATUS-011",
+      "category": "EPISTEMIC_STATUS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-EPISTEMIC_STATUS-012",
+      "category": "EPISTEMIC_STATUS",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryAdmissionRejectedError"
+    },
+    {
+      "case_id": "M12-EPISTEMIC_STATUS-013",
+      "category": "EPISTEMIC_STATUS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-ASSESSMENT_ISOLATION-001",
+      "category": "ASSESSMENT_ISOLATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-ASSESSMENT_ISOLATION-002",
+      "category": "ASSESSMENT_ISOLATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-ASSESSMENT_ISOLATION-003",
+      "category": "ASSESSMENT_ISOLATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-ASSESSMENT_ISOLATION-004",
+      "category": "ASSESSMENT_ISOLATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-ASSESSMENT_ISOLATION-005",
+      "category": "ASSESSMENT_ISOLATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-ASSESSMENT_ISOLATION-006",
+      "category": "ASSESSMENT_ISOLATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-ASSESSMENT_ISOLATION-007",
+      "category": "ASSESSMENT_ISOLATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-ASSESSMENT_ISOLATION-008",
+      "category": "ASSESSMENT_ISOLATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-ASSESSMENT_ISOLATION-009",
+      "category": "ASSESSMENT_ISOLATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-ASSESSMENT_ISOLATION-010",
+      "category": "ASSESSMENT_ISOLATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-ASSESSMENT_ISOLATION-011",
+      "category": "ASSESSMENT_ISOLATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-ASSESSMENT_ISOLATION-012",
+      "category": "ASSESSMENT_ISOLATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-ASSESSMENT_ISOLATION-013",
+      "category": "ASSESSMENT_ISOLATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CROSS_USER_ISOLATION-001",
+      "category": "CROSS_USER_ISOLATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CROSS_USER_ISOLATION-002",
+      "category": "CROSS_USER_ISOLATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CROSS_USER_ISOLATION-003",
+      "category": "CROSS_USER_ISOLATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CROSS_USER_ISOLATION-004",
+      "category": "CROSS_USER_ISOLATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CROSS_USER_ISOLATION-005",
+      "category": "CROSS_USER_ISOLATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CROSS_USER_ISOLATION-006",
+      "category": "CROSS_USER_ISOLATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CROSS_USER_ISOLATION-007",
+      "category": "CROSS_USER_ISOLATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CROSS_USER_ISOLATION-008",
+      "category": "CROSS_USER_ISOLATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CROSS_USER_ISOLATION-009",
+      "category": "CROSS_USER_ISOLATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CROSS_USER_ISOLATION-010",
+      "category": "CROSS_USER_ISOLATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CROSS_USER_ISOLATION-011",
+      "category": "CROSS_USER_ISOLATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CROSS_USER_ISOLATION-012",
+      "category": "CROSS_USER_ISOLATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CROSS_USER_ISOLATION-013",
+      "category": "CROSS_USER_ISOLATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CROSS_TENANT_ISOLATION-001",
+      "category": "CROSS_TENANT_ISOLATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CROSS_TENANT_ISOLATION-002",
+      "category": "CROSS_TENANT_ISOLATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CROSS_TENANT_ISOLATION-003",
+      "category": "CROSS_TENANT_ISOLATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CROSS_TENANT_ISOLATION-004",
+      "category": "CROSS_TENANT_ISOLATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CROSS_TENANT_ISOLATION-005",
+      "category": "CROSS_TENANT_ISOLATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CROSS_TENANT_ISOLATION-006",
+      "category": "CROSS_TENANT_ISOLATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CROSS_TENANT_ISOLATION-007",
+      "category": "CROSS_TENANT_ISOLATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CROSS_TENANT_ISOLATION-008",
+      "category": "CROSS_TENANT_ISOLATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CROSS_TENANT_ISOLATION-009",
+      "category": "CROSS_TENANT_ISOLATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CROSS_TENANT_ISOLATION-010",
+      "category": "CROSS_TENANT_ISOLATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CROSS_TENANT_ISOLATION-011",
+      "category": "CROSS_TENANT_ISOLATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CROSS_TENANT_ISOLATION-012",
+      "category": "CROSS_TENANT_ISOLATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CROSS_TENANT_ISOLATION-013",
+      "category": "CROSS_TENANT_ISOLATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CROSS_ASSESSMENT_LEAKAGE-001",
+      "category": "CROSS_ASSESSMENT_LEAKAGE",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CROSS_ASSESSMENT_LEAKAGE-002",
+      "category": "CROSS_ASSESSMENT_LEAKAGE",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CROSS_ASSESSMENT_LEAKAGE-003",
+      "category": "CROSS_ASSESSMENT_LEAKAGE",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CROSS_ASSESSMENT_LEAKAGE-004",
+      "category": "CROSS_ASSESSMENT_LEAKAGE",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CROSS_ASSESSMENT_LEAKAGE-005",
+      "category": "CROSS_ASSESSMENT_LEAKAGE",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CROSS_ASSESSMENT_LEAKAGE-006",
+      "category": "CROSS_ASSESSMENT_LEAKAGE",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CROSS_ASSESSMENT_LEAKAGE-007",
+      "category": "CROSS_ASSESSMENT_LEAKAGE",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CROSS_ASSESSMENT_LEAKAGE-008",
+      "category": "CROSS_ASSESSMENT_LEAKAGE",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CROSS_ASSESSMENT_LEAKAGE-009",
+      "category": "CROSS_ASSESSMENT_LEAKAGE",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CROSS_ASSESSMENT_LEAKAGE-010",
+      "category": "CROSS_ASSESSMENT_LEAKAGE",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CROSS_ASSESSMENT_LEAKAGE-011",
+      "category": "CROSS_ASSESSMENT_LEAKAGE",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CROSS_ASSESSMENT_LEAKAGE-012",
+      "category": "CROSS_ASSESSMENT_LEAKAGE",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CROSS_ASSESSMENT_LEAKAGE-013",
+      "category": "CROSS_ASSESSMENT_LEAKAGE",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-NEGATIVE_CONTROL_RETRIEVAL-001",
+      "category": "NEGATIVE_CONTROL_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-NEGATIVE_CONTROL_RETRIEVAL-002",
+      "category": "NEGATIVE_CONTROL_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-NEGATIVE_CONTROL_RETRIEVAL-003",
+      "category": "NEGATIVE_CONTROL_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-NEGATIVE_CONTROL_RETRIEVAL-004",
+      "category": "NEGATIVE_CONTROL_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-NEGATIVE_CONTROL_RETRIEVAL-005",
+      "category": "NEGATIVE_CONTROL_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-NEGATIVE_CONTROL_RETRIEVAL-006",
+      "category": "NEGATIVE_CONTROL_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-NEGATIVE_CONTROL_RETRIEVAL-007",
+      "category": "NEGATIVE_CONTROL_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-NEGATIVE_CONTROL_RETRIEVAL-008",
+      "category": "NEGATIVE_CONTROL_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-NEGATIVE_CONTROL_RETRIEVAL-009",
+      "category": "NEGATIVE_CONTROL_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-NEGATIVE_CONTROL_RETRIEVAL-010",
+      "category": "NEGATIVE_CONTROL_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-NEGATIVE_CONTROL_RETRIEVAL-011",
+      "category": "NEGATIVE_CONTROL_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-NEGATIVE_CONTROL_RETRIEVAL-012",
+      "category": "NEGATIVE_CONTROL_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-NEGATIVE_CONTROL_RETRIEVAL-013",
+      "category": "NEGATIVE_CONTROL_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-EXPERIMENT_RETRIEVAL-001",
+      "category": "EXPERIMENT_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-EXPERIMENT_RETRIEVAL-002",
+      "category": "EXPERIMENT_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-EXPERIMENT_RETRIEVAL-003",
+      "category": "EXPERIMENT_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-EXPERIMENT_RETRIEVAL-004",
+      "category": "EXPERIMENT_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-EXPERIMENT_RETRIEVAL-005",
+      "category": "EXPERIMENT_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-EXPERIMENT_RETRIEVAL-006",
+      "category": "EXPERIMENT_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-EXPERIMENT_RETRIEVAL-007",
+      "category": "EXPERIMENT_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-EXPERIMENT_RETRIEVAL-008",
+      "category": "EXPERIMENT_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-EXPERIMENT_RETRIEVAL-009",
+      "category": "EXPERIMENT_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-EXPERIMENT_RETRIEVAL-010",
+      "category": "EXPERIMENT_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-EXPERIMENT_RETRIEVAL-011",
+      "category": "EXPERIMENT_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-EXPERIMENT_RETRIEVAL-012",
+      "category": "EXPERIMENT_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-EXPERIMENT_RETRIEVAL-013",
+      "category": "EXPERIMENT_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-RESEARCH_PATTERN_RETRIEVAL-001",
+      "category": "RESEARCH_PATTERN_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-RESEARCH_PATTERN_RETRIEVAL-002",
+      "category": "RESEARCH_PATTERN_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-RESEARCH_PATTERN_RETRIEVAL-003",
+      "category": "RESEARCH_PATTERN_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-RESEARCH_PATTERN_RETRIEVAL-004",
+      "category": "RESEARCH_PATTERN_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-RESEARCH_PATTERN_RETRIEVAL-005",
+      "category": "RESEARCH_PATTERN_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-RESEARCH_PATTERN_RETRIEVAL-006",
+      "category": "RESEARCH_PATTERN_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-RESEARCH_PATTERN_RETRIEVAL-007",
+      "category": "RESEARCH_PATTERN_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-RESEARCH_PATTERN_RETRIEVAL-008",
+      "category": "RESEARCH_PATTERN_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-RESEARCH_PATTERN_RETRIEVAL-009",
+      "category": "RESEARCH_PATTERN_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-RESEARCH_PATTERN_RETRIEVAL-010",
+      "category": "RESEARCH_PATTERN_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-RESEARCH_PATTERN_RETRIEVAL-011",
+      "category": "RESEARCH_PATTERN_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-RESEARCH_PATTERN_RETRIEVAL-012",
+      "category": "RESEARCH_PATTERN_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-RESEARCH_PATTERN_RETRIEVAL-013",
+      "category": "RESEARCH_PATTERN_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-VERIFIED_FINDING_POINTER_INTEGRITY-001",
+      "category": "VERIFIED_FINDING_POINTER_INTEGRITY",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-VERIFIED_FINDING_POINTER_INTEGRITY-002",
+      "category": "VERIFIED_FINDING_POINTER_INTEGRITY",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "EpistemicViolationError"
+    },
+    {
+      "case_id": "M12-VERIFIED_FINDING_POINTER_INTEGRITY-003",
+      "category": "VERIFIED_FINDING_POINTER_INTEGRITY",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-VERIFIED_FINDING_POINTER_INTEGRITY-004",
+      "category": "VERIFIED_FINDING_POINTER_INTEGRITY",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "EpistemicViolationError"
+    },
+    {
+      "case_id": "M12-VERIFIED_FINDING_POINTER_INTEGRITY-005",
+      "category": "VERIFIED_FINDING_POINTER_INTEGRITY",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-VERIFIED_FINDING_POINTER_INTEGRITY-006",
+      "category": "VERIFIED_FINDING_POINTER_INTEGRITY",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "EpistemicViolationError"
+    },
+    {
+      "case_id": "M12-VERIFIED_FINDING_POINTER_INTEGRITY-007",
+      "category": "VERIFIED_FINDING_POINTER_INTEGRITY",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-VERIFIED_FINDING_POINTER_INTEGRITY-008",
+      "category": "VERIFIED_FINDING_POINTER_INTEGRITY",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "EpistemicViolationError"
+    },
+    {
+      "case_id": "M12-VERIFIED_FINDING_POINTER_INTEGRITY-009",
+      "category": "VERIFIED_FINDING_POINTER_INTEGRITY",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-VERIFIED_FINDING_POINTER_INTEGRITY-010",
+      "category": "VERIFIED_FINDING_POINTER_INTEGRITY",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "EpistemicViolationError"
+    },
+    {
+      "case_id": "M12-VERIFIED_FINDING_POINTER_INTEGRITY-011",
+      "category": "VERIFIED_FINDING_POINTER_INTEGRITY",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-VERIFIED_FINDING_POINTER_INTEGRITY-012",
+      "category": "VERIFIED_FINDING_POINTER_INTEGRITY",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "EpistemicViolationError"
+    },
+    {
+      "case_id": "M12-VERIFIED_FINDING_POINTER_INTEGRITY-013",
+      "category": "VERIFIED_FINDING_POINTER_INTEGRITY",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-TARGET_EVIDENCE_SEPARATION-001",
+      "category": "TARGET_EVIDENCE_SEPARATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-TARGET_EVIDENCE_SEPARATION-002",
+      "category": "TARGET_EVIDENCE_SEPARATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-TARGET_EVIDENCE_SEPARATION-003",
+      "category": "TARGET_EVIDENCE_SEPARATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-TARGET_EVIDENCE_SEPARATION-004",
+      "category": "TARGET_EVIDENCE_SEPARATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-TARGET_EVIDENCE_SEPARATION-005",
+      "category": "TARGET_EVIDENCE_SEPARATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-TARGET_EVIDENCE_SEPARATION-006",
+      "category": "TARGET_EVIDENCE_SEPARATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-TARGET_EVIDENCE_SEPARATION-007",
+      "category": "TARGET_EVIDENCE_SEPARATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-TARGET_EVIDENCE_SEPARATION-008",
+      "category": "TARGET_EVIDENCE_SEPARATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-TARGET_EVIDENCE_SEPARATION-009",
+      "category": "TARGET_EVIDENCE_SEPARATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-TARGET_EVIDENCE_SEPARATION-010",
+      "category": "TARGET_EVIDENCE_SEPARATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-TARGET_EVIDENCE_SEPARATION-011",
+      "category": "TARGET_EVIDENCE_SEPARATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-TARGET_EVIDENCE_SEPARATION-012",
+      "category": "TARGET_EVIDENCE_SEPARATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-TARGET_EVIDENCE_SEPARATION-013",
+      "category": "TARGET_EVIDENCE_SEPARATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-GLOBAL_KNOWLEDGE_SEPARATION-001",
+      "category": "GLOBAL_KNOWLEDGE_SEPARATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-GLOBAL_KNOWLEDGE_SEPARATION-002",
+      "category": "GLOBAL_KNOWLEDGE_SEPARATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-GLOBAL_KNOWLEDGE_SEPARATION-003",
+      "category": "GLOBAL_KNOWLEDGE_SEPARATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-GLOBAL_KNOWLEDGE_SEPARATION-004",
+      "category": "GLOBAL_KNOWLEDGE_SEPARATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-GLOBAL_KNOWLEDGE_SEPARATION-005",
+      "category": "GLOBAL_KNOWLEDGE_SEPARATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-GLOBAL_KNOWLEDGE_SEPARATION-006",
+      "category": "GLOBAL_KNOWLEDGE_SEPARATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-GLOBAL_KNOWLEDGE_SEPARATION-007",
+      "category": "GLOBAL_KNOWLEDGE_SEPARATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-GLOBAL_KNOWLEDGE_SEPARATION-008",
+      "category": "GLOBAL_KNOWLEDGE_SEPARATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-GLOBAL_KNOWLEDGE_SEPARATION-009",
+      "category": "GLOBAL_KNOWLEDGE_SEPARATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-GLOBAL_KNOWLEDGE_SEPARATION-010",
+      "category": "GLOBAL_KNOWLEDGE_SEPARATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-GLOBAL_KNOWLEDGE_SEPARATION-011",
+      "category": "GLOBAL_KNOWLEDGE_SEPARATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-GLOBAL_KNOWLEDGE_SEPARATION-012",
+      "category": "GLOBAL_KNOWLEDGE_SEPARATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-GLOBAL_KNOWLEDGE_SEPARATION-013",
+      "category": "GLOBAL_KNOWLEDGE_SEPARATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-MEMORY_POISONING-001",
+      "category": "MEMORY_POISONING",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryPoisoningAttemptError"
+    },
+    {
+      "case_id": "M12-MEMORY_POISONING-002",
+      "category": "MEMORY_POISONING",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryPoisoningAttemptError"
+    },
+    {
+      "case_id": "M12-MEMORY_POISONING-003",
+      "category": "MEMORY_POISONING",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryPoisoningAttemptError"
+    },
+    {
+      "case_id": "M12-MEMORY_POISONING-004",
+      "category": "MEMORY_POISONING",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryPoisoningAttemptError"
+    },
+    {
+      "case_id": "M12-MEMORY_POISONING-005",
+      "category": "MEMORY_POISONING",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryPoisoningAttemptError"
+    },
+    {
+      "case_id": "M12-MEMORY_POISONING-006",
+      "category": "MEMORY_POISONING",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryPoisoningAttemptError"
+    },
+    {
+      "case_id": "M12-MEMORY_POISONING-007",
+      "category": "MEMORY_POISONING",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryPoisoningAttemptError"
+    },
+    {
+      "case_id": "M12-MEMORY_POISONING-008",
+      "category": "MEMORY_POISONING",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryPoisoningAttemptError"
+    },
+    {
+      "case_id": "M12-MEMORY_POISONING-009",
+      "category": "MEMORY_POISONING",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryPoisoningAttemptError"
+    },
+    {
+      "case_id": "M12-MEMORY_POISONING-010",
+      "category": "MEMORY_POISONING",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryPoisoningAttemptError"
+    },
+    {
+      "case_id": "M12-MEMORY_POISONING-011",
+      "category": "MEMORY_POISONING",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryPoisoningAttemptError"
+    },
+    {
+      "case_id": "M12-MEMORY_POISONING-012",
+      "category": "MEMORY_POISONING",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryPoisoningAttemptError"
+    },
+    {
+      "case_id": "M12-MEMORY_POISONING-013",
+      "category": "MEMORY_POISONING",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryPoisoningAttemptError"
+    },
+    {
+      "case_id": "M12-PROMPT_INJECTION-001",
+      "category": "PROMPT_INJECTION",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryPoisoningAttemptError"
+    },
+    {
+      "case_id": "M12-PROMPT_INJECTION-002",
+      "category": "PROMPT_INJECTION",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryPoisoningAttemptError"
+    },
+    {
+      "case_id": "M12-PROMPT_INJECTION-003",
+      "category": "PROMPT_INJECTION",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryPoisoningAttemptError"
+    },
+    {
+      "case_id": "M12-PROMPT_INJECTION-004",
+      "category": "PROMPT_INJECTION",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryPoisoningAttemptError"
+    },
+    {
+      "case_id": "M12-PROMPT_INJECTION-005",
+      "category": "PROMPT_INJECTION",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryPoisoningAttemptError"
+    },
+    {
+      "case_id": "M12-PROMPT_INJECTION-006",
+      "category": "PROMPT_INJECTION",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryPoisoningAttemptError"
+    },
+    {
+      "case_id": "M12-PROMPT_INJECTION-007",
+      "category": "PROMPT_INJECTION",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryPoisoningAttemptError"
+    },
+    {
+      "case_id": "M12-PROMPT_INJECTION-008",
+      "category": "PROMPT_INJECTION",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryPoisoningAttemptError"
+    },
+    {
+      "case_id": "M12-PROMPT_INJECTION-009",
+      "category": "PROMPT_INJECTION",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryPoisoningAttemptError"
+    },
+    {
+      "case_id": "M12-PROMPT_INJECTION-010",
+      "category": "PROMPT_INJECTION",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryPoisoningAttemptError"
+    },
+    {
+      "case_id": "M12-PROMPT_INJECTION-011",
+      "category": "PROMPT_INJECTION",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryPoisoningAttemptError"
+    },
+    {
+      "case_id": "M12-PROMPT_INJECTION-012",
+      "category": "PROMPT_INJECTION",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryPoisoningAttemptError"
+    },
+    {
+      "case_id": "M12-PROMPT_INJECTION-013",
+      "category": "PROMPT_INJECTION",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryPoisoningAttemptError"
+    },
+    {
+      "case_id": "M12-SECRET_DETECTION-001",
+      "category": "SECRET_DETECTION",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "SecretPersistenceForbiddenError"
+    },
+    {
+      "case_id": "M12-SECRET_DETECTION-002",
+      "category": "SECRET_DETECTION",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "SecretPersistenceForbiddenError"
+    },
+    {
+      "case_id": "M12-SECRET_DETECTION-003",
+      "category": "SECRET_DETECTION",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "SecretPersistenceForbiddenError"
+    },
+    {
+      "case_id": "M12-SECRET_DETECTION-004",
+      "category": "SECRET_DETECTION",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "SecretPersistenceForbiddenError"
+    },
+    {
+      "case_id": "M12-SECRET_DETECTION-005",
+      "category": "SECRET_DETECTION",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "SecretPersistenceForbiddenError"
+    },
+    {
+      "case_id": "M12-SECRET_DETECTION-006",
+      "category": "SECRET_DETECTION",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "SecretPersistenceForbiddenError"
+    },
+    {
+      "case_id": "M12-SECRET_DETECTION-007",
+      "category": "SECRET_DETECTION",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "SecretPersistenceForbiddenError"
+    },
+    {
+      "case_id": "M12-SECRET_DETECTION-008",
+      "category": "SECRET_DETECTION",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "SecretPersistenceForbiddenError"
+    },
+    {
+      "case_id": "M12-SECRET_DETECTION-009",
+      "category": "SECRET_DETECTION",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "SecretPersistenceForbiddenError"
+    },
+    {
+      "case_id": "M12-SECRET_DETECTION-010",
+      "category": "SECRET_DETECTION",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "SecretPersistenceForbiddenError"
+    },
+    {
+      "case_id": "M12-SECRET_DETECTION-011",
+      "category": "SECRET_DETECTION",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "SecretPersistenceForbiddenError"
+    },
+    {
+      "case_id": "M12-SECRET_DETECTION-012",
+      "category": "SECRET_DETECTION",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "SecretPersistenceForbiddenError"
+    },
+    {
+      "case_id": "M12-SECRET_DETECTION-013",
+      "category": "SECRET_DETECTION",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "SecretPersistenceForbiddenError"
+    },
+    {
+      "case_id": "M12-REDACTION-001",
+      "category": "REDACTION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-REDACTION-002",
+      "category": "REDACTION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-REDACTION-003",
+      "category": "REDACTION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-REDACTION-004",
+      "category": "REDACTION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-REDACTION-005",
+      "category": "REDACTION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-REDACTION-006",
+      "category": "REDACTION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-REDACTION-007",
+      "category": "REDACTION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-REDACTION-008",
+      "category": "REDACTION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-REDACTION-009",
+      "category": "REDACTION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-REDACTION-010",
+      "category": "REDACTION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-REDACTION-011",
+      "category": "REDACTION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-REDACTION-012",
+      "category": "REDACTION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-REDACTION-013",
+      "category": "REDACTION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-FRESHNESS-001",
+      "category": "FRESHNESS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-FRESHNESS-002",
+      "category": "FRESHNESS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-FRESHNESS-003",
+      "category": "FRESHNESS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-FRESHNESS-004",
+      "category": "FRESHNESS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-FRESHNESS-005",
+      "category": "FRESHNESS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-FRESHNESS-006",
+      "category": "FRESHNESS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-FRESHNESS-007",
+      "category": "FRESHNESS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-FRESHNESS-008",
+      "category": "FRESHNESS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-FRESHNESS-009",
+      "category": "FRESHNESS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-FRESHNESS-010",
+      "category": "FRESHNESS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-FRESHNESS-011",
+      "category": "FRESHNESS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-FRESHNESS-012",
+      "category": "FRESHNESS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-FRESHNESS-013",
+      "category": "FRESHNESS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-STALENESS-001",
+      "category": "STALENESS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-STALENESS-002",
+      "category": "STALENESS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-STALENESS-003",
+      "category": "STALENESS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-STALENESS-004",
+      "category": "STALENESS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-STALENESS-005",
+      "category": "STALENESS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-STALENESS-006",
+      "category": "STALENESS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-STALENESS-007",
+      "category": "STALENESS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-STALENESS-008",
+      "category": "STALENESS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-STALENESS-009",
+      "category": "STALENESS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-STALENESS-010",
+      "category": "STALENESS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-STALENESS-011",
+      "category": "STALENESS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-STALENESS-012",
+      "category": "STALENESS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-STALENESS-013",
+      "category": "STALENESS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-SUPERSESSION-001",
+      "category": "SUPERSESSION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-SUPERSESSION-002",
+      "category": "SUPERSESSION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-SUPERSESSION-003",
+      "category": "SUPERSESSION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-SUPERSESSION-004",
+      "category": "SUPERSESSION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-SUPERSESSION-005",
+      "category": "SUPERSESSION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-SUPERSESSION-006",
+      "category": "SUPERSESSION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-SUPERSESSION-007",
+      "category": "SUPERSESSION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-SUPERSESSION-008",
+      "category": "SUPERSESSION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-SUPERSESSION-009",
+      "category": "SUPERSESSION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-SUPERSESSION-010",
+      "category": "SUPERSESSION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-SUPERSESSION-011",
+      "category": "SUPERSESSION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-SUPERSESSION-012",
+      "category": "SUPERSESSION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-SUPERSESSION-013",
+      "category": "SUPERSESSION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CONTRADICTION-001",
+      "category": "CONTRADICTION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CONTRADICTION-002",
+      "category": "CONTRADICTION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CONTRADICTION-003",
+      "category": "CONTRADICTION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CONTRADICTION-004",
+      "category": "CONTRADICTION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CONTRADICTION-005",
+      "category": "CONTRADICTION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CONTRADICTION-006",
+      "category": "CONTRADICTION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CONTRADICTION-007",
+      "category": "CONTRADICTION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CONTRADICTION-008",
+      "category": "CONTRADICTION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CONTRADICTION-009",
+      "category": "CONTRADICTION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CONTRADICTION-010",
+      "category": "CONTRADICTION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CONTRADICTION-011",
+      "category": "CONTRADICTION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CONTRADICTION-012",
+      "category": "CONTRADICTION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CONTRADICTION-013",
+      "category": "CONTRADICTION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-DELETION-001",
+      "category": "DELETION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-DELETION-002",
+      "category": "DELETION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-DELETION-003",
+      "category": "DELETION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-DELETION-004",
+      "category": "DELETION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-DELETION-005",
+      "category": "DELETION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-DELETION-006",
+      "category": "DELETION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-DELETION-007",
+      "category": "DELETION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-DELETION-008",
+      "category": "DELETION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-DELETION-009",
+      "category": "DELETION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-DELETION-010",
+      "category": "DELETION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-DELETION-011",
+      "category": "DELETION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-DELETION-012",
+      "category": "DELETION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-DELETION-013",
+      "category": "DELETION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-FORGETTING-001",
+      "category": "FORGETTING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-FORGETTING-002",
+      "category": "FORGETTING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-FORGETTING-003",
+      "category": "FORGETTING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-FORGETTING-004",
+      "category": "FORGETTING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-FORGETTING-005",
+      "category": "FORGETTING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-FORGETTING-006",
+      "category": "FORGETTING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-FORGETTING-007",
+      "category": "FORGETTING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-FORGETTING-008",
+      "category": "FORGETTING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-FORGETTING-009",
+      "category": "FORGETTING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-FORGETTING-010",
+      "category": "FORGETTING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-FORGETTING-011",
+      "category": "FORGETTING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-FORGETTING-012",
+      "category": "FORGETTING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-FORGETTING-013",
+      "category": "FORGETTING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-PROMOTION-001",
+      "category": "PROMOTION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-PROMOTION-002",
+      "category": "PROMOTION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-PROMOTION-003",
+      "category": "PROMOTION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-PROMOTION-004",
+      "category": "PROMOTION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-PROMOTION-005",
+      "category": "PROMOTION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-PROMOTION-006",
+      "category": "PROMOTION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-PROMOTION-007",
+      "category": "PROMOTION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-PROMOTION-008",
+      "category": "PROMOTION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-PROMOTION-009",
+      "category": "PROMOTION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-PROMOTION-010",
+      "category": "PROMOTION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-PROMOTION-011",
+      "category": "PROMOTION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-PROMOTION-012",
+      "category": "PROMOTION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-PROMOTION-013",
+      "category": "PROMOTION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-DEMOTION-001",
+      "category": "DEMOTION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-DEMOTION-002",
+      "category": "DEMOTION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-DEMOTION-003",
+      "category": "DEMOTION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-DEMOTION-004",
+      "category": "DEMOTION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-DEMOTION-005",
+      "category": "DEMOTION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-DEMOTION-006",
+      "category": "DEMOTION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-DEMOTION-007",
+      "category": "DEMOTION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-DEMOTION-008",
+      "category": "DEMOTION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-DEMOTION-009",
+      "category": "DEMOTION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-DEMOTION-010",
+      "category": "DEMOTION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-DEMOTION-011",
+      "category": "DEMOTION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-DEMOTION-012",
+      "category": "DEMOTION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-DEMOTION-013",
+      "category": "DEMOTION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-HISTORICAL_MEMORY-001",
+      "category": "HISTORICAL_MEMORY",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-HISTORICAL_MEMORY-002",
+      "category": "HISTORICAL_MEMORY",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-HISTORICAL_MEMORY-003",
+      "category": "HISTORICAL_MEMORY",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-HISTORICAL_MEMORY-004",
+      "category": "HISTORICAL_MEMORY",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-HISTORICAL_MEMORY-005",
+      "category": "HISTORICAL_MEMORY",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-HISTORICAL_MEMORY-006",
+      "category": "HISTORICAL_MEMORY",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-HISTORICAL_MEMORY-007",
+      "category": "HISTORICAL_MEMORY",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-HISTORICAL_MEMORY-008",
+      "category": "HISTORICAL_MEMORY",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-HISTORICAL_MEMORY-009",
+      "category": "HISTORICAL_MEMORY",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-HISTORICAL_MEMORY-010",
+      "category": "HISTORICAL_MEMORY",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-HISTORICAL_MEMORY-011",
+      "category": "HISTORICAL_MEMORY",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-HISTORICAL_MEMORY-012",
+      "category": "HISTORICAL_MEMORY",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-HISTORICAL_MEMORY-013",
+      "category": "HISTORICAL_MEMORY",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CURRENT_VS_HISTORICAL-001",
+      "category": "CURRENT_VS_HISTORICAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CURRENT_VS_HISTORICAL-002",
+      "category": "CURRENT_VS_HISTORICAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CURRENT_VS_HISTORICAL-003",
+      "category": "CURRENT_VS_HISTORICAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CURRENT_VS_HISTORICAL-004",
+      "category": "CURRENT_VS_HISTORICAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CURRENT_VS_HISTORICAL-005",
+      "category": "CURRENT_VS_HISTORICAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CURRENT_VS_HISTORICAL-006",
+      "category": "CURRENT_VS_HISTORICAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CURRENT_VS_HISTORICAL-007",
+      "category": "CURRENT_VS_HISTORICAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CURRENT_VS_HISTORICAL-008",
+      "category": "CURRENT_VS_HISTORICAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CURRENT_VS_HISTORICAL-009",
+      "category": "CURRENT_VS_HISTORICAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CURRENT_VS_HISTORICAL-010",
+      "category": "CURRENT_VS_HISTORICAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CURRENT_VS_HISTORICAL-011",
+      "category": "CURRENT_VS_HISTORICAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CURRENT_VS_HISTORICAL-012",
+      "category": "CURRENT_VS_HISTORICAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CURRENT_VS_HISTORICAL-013",
+      "category": "CURRENT_VS_HISTORICAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-RETRIEVAL_RANKING-001",
+      "category": "RETRIEVAL_RANKING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-RETRIEVAL_RANKING-002",
+      "category": "RETRIEVAL_RANKING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-RETRIEVAL_RANKING-003",
+      "category": "RETRIEVAL_RANKING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-RETRIEVAL_RANKING-004",
+      "category": "RETRIEVAL_RANKING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-RETRIEVAL_RANKING-005",
+      "category": "RETRIEVAL_RANKING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-RETRIEVAL_RANKING-006",
+      "category": "RETRIEVAL_RANKING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-RETRIEVAL_RANKING-007",
+      "category": "RETRIEVAL_RANKING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-RETRIEVAL_RANKING-008",
+      "category": "RETRIEVAL_RANKING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-RETRIEVAL_RANKING-009",
+      "category": "RETRIEVAL_RANKING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-RETRIEVAL_RANKING-010",
+      "category": "RETRIEVAL_RANKING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-RETRIEVAL_RANKING-011",
+      "category": "RETRIEVAL_RANKING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-RETRIEVAL_RANKING-012",
+      "category": "RETRIEVAL_RANKING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-RETRIEVAL_RANKING-013",
+      "category": "RETRIEVAL_RANKING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-FTS5_RETRIEVAL-001",
+      "category": "FTS5_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-FTS5_RETRIEVAL-002",
+      "category": "FTS5_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-FTS5_RETRIEVAL-003",
+      "category": "FTS5_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-FTS5_RETRIEVAL-004",
+      "category": "FTS5_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-FTS5_RETRIEVAL-005",
+      "category": "FTS5_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-FTS5_RETRIEVAL-006",
+      "category": "FTS5_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-FTS5_RETRIEVAL-007",
+      "category": "FTS5_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-FTS5_RETRIEVAL-008",
+      "category": "FTS5_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-FTS5_RETRIEVAL-009",
+      "category": "FTS5_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-FTS5_RETRIEVAL-010",
+      "category": "FTS5_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-FTS5_RETRIEVAL-011",
+      "category": "FTS5_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-FTS5_RETRIEVAL-012",
+      "category": "FTS5_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-FTS5_RETRIEVAL-013",
+      "category": "FTS5_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-DENSE_RETRIEVAL-001",
+      "category": "DENSE_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-DENSE_RETRIEVAL-002",
+      "category": "DENSE_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-DENSE_RETRIEVAL-003",
+      "category": "DENSE_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-DENSE_RETRIEVAL-004",
+      "category": "DENSE_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-DENSE_RETRIEVAL-005",
+      "category": "DENSE_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-DENSE_RETRIEVAL-006",
+      "category": "DENSE_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-DENSE_RETRIEVAL-007",
+      "category": "DENSE_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-DENSE_RETRIEVAL-008",
+      "category": "DENSE_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-DENSE_RETRIEVAL-009",
+      "category": "DENSE_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-DENSE_RETRIEVAL-010",
+      "category": "DENSE_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-DENSE_RETRIEVAL-011",
+      "category": "DENSE_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-DENSE_RETRIEVAL-012",
+      "category": "DENSE_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-DENSE_RETRIEVAL-013",
+      "category": "DENSE_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-RRF_RETRIEVAL-001",
+      "category": "RRF_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-RRF_RETRIEVAL-002",
+      "category": "RRF_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-RRF_RETRIEVAL-003",
+      "category": "RRF_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-RRF_RETRIEVAL-004",
+      "category": "RRF_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-RRF_RETRIEVAL-005",
+      "category": "RRF_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-RRF_RETRIEVAL-006",
+      "category": "RRF_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-RRF_RETRIEVAL-007",
+      "category": "RRF_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-RRF_RETRIEVAL-008",
+      "category": "RRF_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-RRF_RETRIEVAL-009",
+      "category": "RRF_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-RRF_RETRIEVAL-010",
+      "category": "RRF_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-RRF_RETRIEVAL-011",
+      "category": "RRF_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-RRF_RETRIEVAL-012",
+      "category": "RRF_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-RRF_RETRIEVAL-013",
+      "category": "RRF_RETRIEVAL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CONTEXT_BUDGETING-001",
+      "category": "CONTEXT_BUDGETING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CONTEXT_BUDGETING-002",
+      "category": "CONTEXT_BUDGETING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CONTEXT_BUDGETING-003",
+      "category": "CONTEXT_BUDGETING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CONTEXT_BUDGETING-004",
+      "category": "CONTEXT_BUDGETING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CONTEXT_BUDGETING-005",
+      "category": "CONTEXT_BUDGETING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CONTEXT_BUDGETING-006",
+      "category": "CONTEXT_BUDGETING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CONTEXT_BUDGETING-007",
+      "category": "CONTEXT_BUDGETING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CONTEXT_BUDGETING-008",
+      "category": "CONTEXT_BUDGETING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CONTEXT_BUDGETING-009",
+      "category": "CONTEXT_BUDGETING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CONTEXT_BUDGETING-010",
+      "category": "CONTEXT_BUDGETING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CONTEXT_BUDGETING-011",
+      "category": "CONTEXT_BUDGETING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CONTEXT_BUDGETING-012",
+      "category": "CONTEXT_BUDGETING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-CONTEXT_BUDGETING-013",
+      "category": "CONTEXT_BUDGETING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-MODEL_3B_REASONING-001",
+      "category": "MODEL_3B_REASONING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-MODEL_3B_REASONING-002",
+      "category": "MODEL_3B_REASONING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-MODEL_3B_REASONING-003",
+      "category": "MODEL_3B_REASONING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-MODEL_3B_REASONING-004",
+      "category": "MODEL_3B_REASONING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-MODEL_3B_REASONING-005",
+      "category": "MODEL_3B_REASONING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-MODEL_3B_REASONING-006",
+      "category": "MODEL_3B_REASONING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-MODEL_3B_REASONING-007",
+      "category": "MODEL_3B_REASONING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-MODEL_3B_REASONING-008",
+      "category": "MODEL_3B_REASONING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-MODEL_3B_REASONING-009",
+      "category": "MODEL_3B_REASONING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-MODEL_3B_REASONING-010",
+      "category": "MODEL_3B_REASONING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-MODEL_3B_REASONING-011",
+      "category": "MODEL_3B_REASONING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-MODEL_3B_REASONING-012",
+      "category": "MODEL_3B_REASONING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-MODEL_3B_REASONING-013",
+      "category": "MODEL_3B_REASONING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-MODEL_7B_REASONING-001",
+      "category": "MODEL_7B_REASONING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-MODEL_7B_REASONING-002",
+      "category": "MODEL_7B_REASONING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-MODEL_7B_REASONING-003",
+      "category": "MODEL_7B_REASONING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-MODEL_7B_REASONING-004",
+      "category": "MODEL_7B_REASONING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-MODEL_7B_REASONING-005",
+      "category": "MODEL_7B_REASONING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-MODEL_7B_REASONING-006",
+      "category": "MODEL_7B_REASONING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-MODEL_7B_REASONING-007",
+      "category": "MODEL_7B_REASONING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-MODEL_7B_REASONING-008",
+      "category": "MODEL_7B_REASONING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-MODEL_7B_REASONING-009",
+      "category": "MODEL_7B_REASONING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-MODEL_7B_REASONING-010",
+      "category": "MODEL_7B_REASONING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-MODEL_7B_REASONING-011",
+      "category": "MODEL_7B_REASONING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-MODEL_7B_REASONING-012",
+      "category": "MODEL_7B_REASONING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-MODEL_7B_REASONING-013",
+      "category": "MODEL_7B_REASONING",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-LONG_SESSION_CONTINUITY-001",
+      "category": "LONG_SESSION_CONTINUITY",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-LONG_SESSION_CONTINUITY-002",
+      "category": "LONG_SESSION_CONTINUITY",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-LONG_SESSION_CONTINUITY-003",
+      "category": "LONG_SESSION_CONTINUITY",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-LONG_SESSION_CONTINUITY-004",
+      "category": "LONG_SESSION_CONTINUITY",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-LONG_SESSION_CONTINUITY-005",
+      "category": "LONG_SESSION_CONTINUITY",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-LONG_SESSION_CONTINUITY-006",
+      "category": "LONG_SESSION_CONTINUITY",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-LONG_SESSION_CONTINUITY-007",
+      "category": "LONG_SESSION_CONTINUITY",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-LONG_SESSION_CONTINUITY-008",
+      "category": "LONG_SESSION_CONTINUITY",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-LONG_SESSION_CONTINUITY-009",
+      "category": "LONG_SESSION_CONTINUITY",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-LONG_SESSION_CONTINUITY-010",
+      "category": "LONG_SESSION_CONTINUITY",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-LONG_SESSION_CONTINUITY-011",
+      "category": "LONG_SESSION_CONTINUITY",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-LONG_SESSION_CONTINUITY-012",
+      "category": "LONG_SESSION_CONTINUITY",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-LONG_SESSION_CONTINUITY-013",
+      "category": "LONG_SESSION_CONTINUITY",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-USER_CONTROL-001",
+      "category": "USER_CONTROL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-USER_CONTROL-002",
+      "category": "USER_CONTROL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-USER_CONTROL-003",
+      "category": "USER_CONTROL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-USER_CONTROL-004",
+      "category": "USER_CONTROL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-USER_CONTROL-005",
+      "category": "USER_CONTROL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-USER_CONTROL-006",
+      "category": "USER_CONTROL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-USER_CONTROL-007",
+      "category": "USER_CONTROL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-USER_CONTROL-008",
+      "category": "USER_CONTROL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-USER_CONTROL-009",
+      "category": "USER_CONTROL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-USER_CONTROL-010",
+      "category": "USER_CONTROL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-USER_CONTROL-011",
+      "category": "USER_CONTROL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-USER_CONTROL-012",
+      "category": "USER_CONTROL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-USER_CONTROL-013",
+      "category": "USER_CONTROL",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-API_CORRECTNESS-001",
+      "category": "API_CORRECTNESS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-API_CORRECTNESS-002",
+      "category": "API_CORRECTNESS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-API_CORRECTNESS-003",
+      "category": "API_CORRECTNESS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-API_CORRECTNESS-004",
+      "category": "API_CORRECTNESS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-API_CORRECTNESS-005",
+      "category": "API_CORRECTNESS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-API_CORRECTNESS-006",
+      "category": "API_CORRECTNESS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-API_CORRECTNESS-007",
+      "category": "API_CORRECTNESS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-API_CORRECTNESS-008",
+      "category": "API_CORRECTNESS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-API_CORRECTNESS-009",
+      "category": "API_CORRECTNESS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-API_CORRECTNESS-010",
+      "category": "API_CORRECTNESS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-API_CORRECTNESS-011",
+      "category": "API_CORRECTNESS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-API_CORRECTNESS-012",
+      "category": "API_CORRECTNESS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-API_CORRECTNESS-013",
+      "category": "API_CORRECTNESS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-PERSISTENCE_INTEGRITY-001",
+      "category": "PERSISTENCE_INTEGRITY",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-PERSISTENCE_INTEGRITY-002",
+      "category": "PERSISTENCE_INTEGRITY",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-PERSISTENCE_INTEGRITY-003",
+      "category": "PERSISTENCE_INTEGRITY",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-PERSISTENCE_INTEGRITY-004",
+      "category": "PERSISTENCE_INTEGRITY",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-PERSISTENCE_INTEGRITY-005",
+      "category": "PERSISTENCE_INTEGRITY",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-PERSISTENCE_INTEGRITY-006",
+      "category": "PERSISTENCE_INTEGRITY",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-PERSISTENCE_INTEGRITY-007",
+      "category": "PERSISTENCE_INTEGRITY",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-PERSISTENCE_INTEGRITY-008",
+      "category": "PERSISTENCE_INTEGRITY",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-PERSISTENCE_INTEGRITY-009",
+      "category": "PERSISTENCE_INTEGRITY",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-PERSISTENCE_INTEGRITY-010",
+      "category": "PERSISTENCE_INTEGRITY",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-PERSISTENCE_INTEGRITY-011",
+      "category": "PERSISTENCE_INTEGRITY",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-PERSISTENCE_INTEGRITY-012",
+      "category": "PERSISTENCE_INTEGRITY",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-PERSISTENCE_INTEGRITY-013",
+      "category": "PERSISTENCE_INTEGRITY",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-INDEX_INVALIDATION-001",
+      "category": "INDEX_INVALIDATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-INDEX_INVALIDATION-002",
+      "category": "INDEX_INVALIDATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-INDEX_INVALIDATION-003",
+      "category": "INDEX_INVALIDATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-INDEX_INVALIDATION-004",
+      "category": "INDEX_INVALIDATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-INDEX_INVALIDATION-005",
+      "category": "INDEX_INVALIDATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-INDEX_INVALIDATION-006",
+      "category": "INDEX_INVALIDATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-INDEX_INVALIDATION-007",
+      "category": "INDEX_INVALIDATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-INDEX_INVALIDATION-008",
+      "category": "INDEX_INVALIDATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-INDEX_INVALIDATION-009",
+      "category": "INDEX_INVALIDATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-INDEX_INVALIDATION-010",
+      "category": "INDEX_INVALIDATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-INDEX_INVALIDATION-011",
+      "category": "INDEX_INVALIDATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-INDEX_INVALIDATION-012",
+      "category": "INDEX_INVALIDATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-INDEX_INVALIDATION-013",
+      "category": "INDEX_INVALIDATION",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-IMPORTED_MEMORY_TRUST-001",
+      "category": "IMPORTED_MEMORY_TRUST",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-IMPORTED_MEMORY_TRUST-002",
+      "category": "IMPORTED_MEMORY_TRUST",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-IMPORTED_MEMORY_TRUST-003",
+      "category": "IMPORTED_MEMORY_TRUST",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-IMPORTED_MEMORY_TRUST-004",
+      "category": "IMPORTED_MEMORY_TRUST",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-IMPORTED_MEMORY_TRUST-005",
+      "category": "IMPORTED_MEMORY_TRUST",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-IMPORTED_MEMORY_TRUST-006",
+      "category": "IMPORTED_MEMORY_TRUST",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-IMPORTED_MEMORY_TRUST-007",
+      "category": "IMPORTED_MEMORY_TRUST",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-IMPORTED_MEMORY_TRUST-008",
+      "category": "IMPORTED_MEMORY_TRUST",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-IMPORTED_MEMORY_TRUST-009",
+      "category": "IMPORTED_MEMORY_TRUST",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-IMPORTED_MEMORY_TRUST-010",
+      "category": "IMPORTED_MEMORY_TRUST",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-IMPORTED_MEMORY_TRUST-011",
+      "category": "IMPORTED_MEMORY_TRUST",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-IMPORTED_MEMORY_TRUST-012",
+      "category": "IMPORTED_MEMORY_TRUST",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-IMPORTED_MEMORY_TRUST-013",
+      "category": "IMPORTED_MEMORY_TRUST",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-MALICIOUS_CONTENT-001",
+      "category": "MALICIOUS_CONTENT",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryPoisoningAttemptError"
+    },
+    {
+      "case_id": "M12-MALICIOUS_CONTENT-002",
+      "category": "MALICIOUS_CONTENT",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryPoisoningAttemptError"
+    },
+    {
+      "case_id": "M12-MALICIOUS_CONTENT-003",
+      "category": "MALICIOUS_CONTENT",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryPoisoningAttemptError"
+    },
+    {
+      "case_id": "M12-MALICIOUS_CONTENT-004",
+      "category": "MALICIOUS_CONTENT",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryPoisoningAttemptError"
+    },
+    {
+      "case_id": "M12-MALICIOUS_CONTENT-005",
+      "category": "MALICIOUS_CONTENT",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryPoisoningAttemptError"
+    },
+    {
+      "case_id": "M12-MALICIOUS_CONTENT-006",
+      "category": "MALICIOUS_CONTENT",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryPoisoningAttemptError"
+    },
+    {
+      "case_id": "M12-MALICIOUS_CONTENT-007",
+      "category": "MALICIOUS_CONTENT",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryPoisoningAttemptError"
+    },
+    {
+      "case_id": "M12-MALICIOUS_CONTENT-008",
+      "category": "MALICIOUS_CONTENT",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryPoisoningAttemptError"
+    },
+    {
+      "case_id": "M12-MALICIOUS_CONTENT-009",
+      "category": "MALICIOUS_CONTENT",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryPoisoningAttemptError"
+    },
+    {
+      "case_id": "M12-MALICIOUS_CONTENT-010",
+      "category": "MALICIOUS_CONTENT",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryPoisoningAttemptError"
+    },
+    {
+      "case_id": "M12-MALICIOUS_CONTENT-011",
+      "category": "MALICIOUS_CONTENT",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryPoisoningAttemptError"
+    },
+    {
+      "case_id": "M12-MALICIOUS_CONTENT-012",
+      "category": "MALICIOUS_CONTENT",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryPoisoningAttemptError"
+    },
+    {
+      "case_id": "M12-MALICIOUS_CONTENT-013",
+      "category": "MALICIOUS_CONTENT",
+      "passed": true,
+      "item_admitted": false,
+      "expected_admission": false,
+      "error_reason": "MemoryPoisoningAttemptError"
+    },
+    {
+      "case_id": "M12-AUTHORIZATION_INVARIANTS-001",
+      "category": "AUTHORIZATION_INVARIANTS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-AUTHORIZATION_INVARIANTS-002",
+      "category": "AUTHORIZATION_INVARIANTS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-AUTHORIZATION_INVARIANTS-003",
+      "category": "AUTHORIZATION_INVARIANTS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-AUTHORIZATION_INVARIANTS-004",
+      "category": "AUTHORIZATION_INVARIANTS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-AUTHORIZATION_INVARIANTS-005",
+      "category": "AUTHORIZATION_INVARIANTS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-AUTHORIZATION_INVARIANTS-006",
+      "category": "AUTHORIZATION_INVARIANTS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-AUTHORIZATION_INVARIANTS-007",
+      "category": "AUTHORIZATION_INVARIANTS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-AUTHORIZATION_INVARIANTS-008",
+      "category": "AUTHORIZATION_INVARIANTS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-AUTHORIZATION_INVARIANTS-009",
+      "category": "AUTHORIZATION_INVARIANTS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-AUTHORIZATION_INVARIANTS-010",
+      "category": "AUTHORIZATION_INVARIANTS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-AUTHORIZATION_INVARIANTS-011",
+      "category": "AUTHORIZATION_INVARIANTS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-AUTHORIZATION_INVARIANTS-012",
+      "category": "AUTHORIZATION_INVARIANTS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-AUTHORIZATION_INVARIANTS-013",
+      "category": "AUTHORIZATION_INVARIANTS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-FINDING_INVARIANTS-001",
+      "category": "FINDING_INVARIANTS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-FINDING_INVARIANTS-002",
+      "category": "FINDING_INVARIANTS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-FINDING_INVARIANTS-003",
+      "category": "FINDING_INVARIANTS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-FINDING_INVARIANTS-004",
+      "category": "FINDING_INVARIANTS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-FINDING_INVARIANTS-005",
+      "category": "FINDING_INVARIANTS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-FINDING_INVARIANTS-006",
+      "category": "FINDING_INVARIANTS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-FINDING_INVARIANTS-007",
+      "category": "FINDING_INVARIANTS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-FINDING_INVARIANTS-008",
+      "category": "FINDING_INVARIANTS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-FINDING_INVARIANTS-009",
+      "category": "FINDING_INVARIANTS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-FINDING_INVARIANTS-010",
+      "category": "FINDING_INVARIANTS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-FINDING_INVARIANTS-011",
+      "category": "FINDING_INVARIANTS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-FINDING_INVARIANTS-012",
+      "category": "FINDING_INVARIANTS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-FINDING_INVARIANTS-013",
+      "category": "FINDING_INVARIANTS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-EVIDENCE_INVARIANTS-001",
+      "category": "EVIDENCE_INVARIANTS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-EVIDENCE_INVARIANTS-002",
+      "category": "EVIDENCE_INVARIANTS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-EVIDENCE_INVARIANTS-003",
+      "category": "EVIDENCE_INVARIANTS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-EVIDENCE_INVARIANTS-004",
+      "category": "EVIDENCE_INVARIANTS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-EVIDENCE_INVARIANTS-005",
+      "category": "EVIDENCE_INVARIANTS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-EVIDENCE_INVARIANTS-006",
+      "category": "EVIDENCE_INVARIANTS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-EVIDENCE_INVARIANTS-007",
+      "category": "EVIDENCE_INVARIANTS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-EVIDENCE_INVARIANTS-008",
+      "category": "EVIDENCE_INVARIANTS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-EVIDENCE_INVARIANTS-009",
+      "category": "EVIDENCE_INVARIANTS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-EVIDENCE_INVARIANTS-010",
+      "category": "EVIDENCE_INVARIANTS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-EVIDENCE_INVARIANTS-011",
+      "category": "EVIDENCE_INVARIANTS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-EVIDENCE_INVARIANTS-012",
+      "category": "EVIDENCE_INVARIANTS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-EVIDENCE_INVARIANTS-013",
+      "category": "EVIDENCE_INVARIANTS",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-RETENTION_BEHAVIOR-001",
+      "category": "RETENTION_BEHAVIOR",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-RETENTION_BEHAVIOR-002",
+      "category": "RETENTION_BEHAVIOR",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-RETENTION_BEHAVIOR-003",
+      "category": "RETENTION_BEHAVIOR",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-RETENTION_BEHAVIOR-004",
+      "category": "RETENTION_BEHAVIOR",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-RETENTION_BEHAVIOR-005",
+      "category": "RETENTION_BEHAVIOR",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-RETENTION_BEHAVIOR-006",
+      "category": "RETENTION_BEHAVIOR",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-RETENTION_BEHAVIOR-007",
+      "category": "RETENTION_BEHAVIOR",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-RETENTION_BEHAVIOR-008",
+      "category": "RETENTION_BEHAVIOR",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-RETENTION_BEHAVIOR-009",
+      "category": "RETENTION_BEHAVIOR",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-RETENTION_BEHAVIOR-010",
+      "category": "RETENTION_BEHAVIOR",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-RETENTION_BEHAVIOR-011",
+      "category": "RETENTION_BEHAVIOR",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-RETENTION_BEHAVIOR-012",
+      "category": "RETENTION_BEHAVIOR",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    },
+    {
+      "case_id": "M12-RETENTION_BEHAVIOR-013",
+      "category": "RETENTION_BEHAVIOR",
+      "passed": true,
+      "item_admitted": true,
+      "expected_admission": true,
+      "error_reason": null
+    }
+  ]
+}

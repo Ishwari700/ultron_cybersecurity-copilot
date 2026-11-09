@@ -1,0 +1,47 @@
+{
+  "interaction_id": "INT-01",
+  "method": "GET",
+  "observed_owner": "user_b",
+  "observed_resource": "INV-200",
+  "observed_state_transition": {
+    "state_after": "ISSUED",
+    "state_before": "ISSUED"
+  },
+  "observed_tenant": "org_b",
+  "parameters": [
+    {
+      "location": "path",
+      "name": "id",
+      "param_id": "PARAM-SAAS-INV-ID",
+      "value": ""
+    }
+  ],
+  "request_headers": {
+    "Authorization": "Bearer [REDACTED]"
+  },
+  "requester_identity": "user_a",
+  "requester_role": "customer",
+  "requester_tenant": "org_a",
+  "response_body": {
+    "invoice": {
+      "amount": 99.0,
+      "id": "INV-200",
+      "owner": "user_b",
+      "status": "ISSUED",
+      "tenant": "org_b"
+    }
+  },
+  "response_headers": {
+    "Content-Type": "application/json"
+  },
+  "response_status": 200,
+  "route": "/api/v1/invoices/INV-200",
+  "scenario_id": "SCEN-SAAS_BILLING-INV-SUMMARY-VULN-03",
+  "sequence_metadata": {
+    "probe_index": 1
+  },
+  "source_fact_ids": [
+    "FACT-OBSERVED-INTERACTION-01"
+  ],
+  "trace_timestamp": "2026-09-18T17:45:00.000Z"
+}

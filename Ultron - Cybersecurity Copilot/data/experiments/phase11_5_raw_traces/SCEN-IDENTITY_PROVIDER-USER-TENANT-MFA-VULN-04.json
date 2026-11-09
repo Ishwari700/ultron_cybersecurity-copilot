@@ -1,0 +1,41 @@
+{
+  "interaction_id": "INT-01",
+  "method": "DELETE",
+  "observed_owner": "user_b",
+  "observed_resource": "user_b",
+  "observed_state_transition": {
+    "state_after": "ACTIVE",
+    "state_before": "ACTIVE"
+  },
+  "observed_tenant": "org_b",
+  "parameters": [
+    {
+      "location": "path",
+      "name": "id",
+      "param_id": "PARAM-IDP-USER-ID",
+      "value": ""
+    }
+  ],
+  "request_headers": {
+    "Authorization": "Bearer [REDACTED]"
+  },
+  "requester_identity": "user_a",
+  "requester_role": "customer",
+  "requester_tenant": "org_a",
+  "response_body": {
+    "status": "MFA disabled"
+  },
+  "response_headers": {
+    "Content-Type": "application/json"
+  },
+  "response_status": 200,
+  "route": "/api/v1/users/user_b/mfa",
+  "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-TENANT-MFA-VULN-04",
+  "sequence_metadata": {
+    "probe_index": 1
+  },
+  "source_fact_ids": [
+    "FACT-OBSERVED-INTERACTION-01"
+  ],
+  "trace_timestamp": "2026-09-18T17:45:00.000Z"
+}

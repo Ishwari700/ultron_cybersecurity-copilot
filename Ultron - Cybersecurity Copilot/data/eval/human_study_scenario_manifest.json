@@ -1,0 +1,277 @@
+{
+  "control_count": 10,
+  "fixed_random_seed": 20260919,
+  "manifest_schema_version": "1.0.0",
+  "scenarios": [
+    {
+      "app_family": "document_collaboration",
+      "category_id": "API-BOLA-001",
+      "ground_truth_class": "control",
+      "name": "document_collaboration Document Export API (Target P-01)",
+      "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-EXPORT-PATCH-01",
+      "vulnerable_variant": false
+    },
+    {
+      "app_family": "document_collaboration",
+      "category_id": "API-BOLA-001",
+      "ground_truth_class": "vulnerable",
+      "name": "document_collaboration Document Export API (Target V-01)",
+      "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-EXPORT-VULN-01",
+      "vulnerable_variant": true
+    },
+    {
+      "app_family": "document_collaboration",
+      "category_id": "API-CROSS-TENANT-001",
+      "ground_truth_class": "vulnerable",
+      "name": "document_collaboration Org Document Export API (Target V-02)",
+      "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-ORG-EXPORT-VULN-02",
+      "vulnerable_variant": true
+    },
+    {
+      "app_family": "document_collaboration",
+      "category_id": "API-STATE-001",
+      "ground_truth_class": "vulnerable",
+      "name": "document_collaboration Document Publish API (Target V-03)",
+      "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-PUBLISH-VULN-03",
+      "vulnerable_variant": true
+    },
+    {
+      "app_family": "document_collaboration",
+      "category_id": "API-AUTH-NONE",
+      "ground_truth_class": "control",
+      "name": "document_collaboration Public Pricing Status",
+      "scenario_id": "SCEN-DOCUMENT_COLLABORATION-NEG-02",
+      "vulnerable_variant": false
+    },
+    {
+      "app_family": "ecommerce_orders",
+      "category_id": "API-LIFECYCLE-001",
+      "ground_truth_class": "control",
+      "name": "ecommerce_orders Cancelled Order Refund API (Target P-04)",
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-PATCH-04",
+      "vulnerable_variant": false
+    },
+    {
+      "app_family": "ecommerce_orders",
+      "category_id": "API-LIFECYCLE-001",
+      "ground_truth_class": "vulnerable",
+      "name": "ecommerce_orders Cancelled Order Refund API (Target V-04)",
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-VULN-04",
+      "vulnerable_variant": true
+    },
+    {
+      "app_family": "ecommerce_orders",
+      "category_id": "API-STATE-001",
+      "ground_truth_class": "control",
+      "name": "ecommerce_orders Order Shipping API (Target P-02)",
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-SHIP-PATCH-02",
+      "vulnerable_variant": false
+    },
+    {
+      "app_family": "ecommerce_orders",
+      "category_id": "API-STATE-001",
+      "ground_truth_class": "vulnerable",
+      "name": "ecommerce_orders Order Shipping API (Target V-02)",
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-SHIP-VULN-02",
+      "vulnerable_variant": true
+    },
+    {
+      "app_family": "identity_provider",
+      "category_id": "API-MUTATION-001",
+      "ground_truth_class": "control",
+      "name": "identity_provider Admin Role API (Target P-05)",
+      "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-ADMIN-ROLE-PATCH-05",
+      "vulnerable_variant": false
+    },
+    {
+      "app_family": "identity_provider",
+      "category_id": "API-MUTATION-001",
+      "ground_truth_class": "vulnerable",
+      "name": "identity_provider Admin Role API (Target V-05)",
+      "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-ADMIN-ROLE-VULN-05",
+      "vulnerable_variant": true
+    },
+    {
+      "app_family": "identity_provider",
+      "category_id": "API-ROLE-BOUNDARY-001",
+      "ground_truth_class": "control",
+      "name": "identity_provider Cross-Tenant Role API (Target P-03)",
+      "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-TENANT-ROLE-PATCH-03",
+      "vulnerable_variant": false
+    },
+    {
+      "app_family": "identity_provider",
+      "category_id": "API-ROLE-BOUNDARY-001",
+      "ground_truth_class": "vulnerable",
+      "name": "identity_provider Cross-Tenant Role API (Target V-03)",
+      "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-TENANT-ROLE-VULN-03",
+      "vulnerable_variant": true
+    },
+    {
+      "app_family": "iot_fleet_mgmt",
+      "category_id": "API-BFLA-001",
+      "ground_truth_class": "control",
+      "name": "iot_fleet_mgmt Device Firmware API (Target P-05)",
+      "scenario_id": "SCEN-IOT_FLEET_MGMT-DEVICE-FW-PATCH-05",
+      "vulnerable_variant": false
+    },
+    {
+      "app_family": "iot_fleet_mgmt",
+      "category_id": "API-BFLA-001",
+      "ground_truth_class": "vulnerable",
+      "name": "iot_fleet_mgmt Device Firmware API (Target V-05)",
+      "scenario_id": "SCEN-IOT_FLEET_MGMT-DEVICE-FW-VULN-05",
+      "vulnerable_variant": true
+    },
+    {
+      "app_family": "saas_billing",
+      "category_id": "API-MULTI-STEP-AUTH-001",
+      "ground_truth_class": "control",
+      "name": "saas_billing Invoice Workflow API (Target P-05)",
+      "scenario_id": "SCEN-SAAS_BILLING-INV-WORKFLOW-PATCH-05",
+      "vulnerable_variant": false
+    },
+    {
+      "app_family": "saas_billing",
+      "category_id": "API-MULTI-STEP-AUTH-001",
+      "ground_truth_class": "vulnerable",
+      "name": "saas_billing Invoice Workflow API (Target V-05)",
+      "scenario_id": "SCEN-SAAS_BILLING-INV-WORKFLOW-VULN-05",
+      "vulnerable_variant": true
+    },
+    {
+      "app_family": "saas_billing",
+      "category_id": "API-AUTH-NONE",
+      "ground_truth_class": "control",
+      "name": "saas_billing Catalog Discovery",
+      "scenario_id": "SCEN-SAAS_BILLING-NEG-01",
+      "vulnerable_variant": false
+    },
+    {
+      "app_family": "saas_billing",
+      "category_id": "API-CROSS-TENANT-001",
+      "ground_truth_class": "control",
+      "name": "saas_billing Subscription Summary API (Target P-04)",
+      "scenario_id": "SCEN-SAAS_BILLING-SUB-SUMMARY-PATCH-04",
+      "vulnerable_variant": false
+    },
+    {
+      "app_family": "saas_billing",
+      "category_id": "API-CROSS-TENANT-001",
+      "ground_truth_class": "vulnerable",
+      "name": "saas_billing Subscription Summary API (Target V-04)",
+      "scenario_id": "SCEN-SAAS_BILLING-SUB-SUMMARY-VULN-04",
+      "vulnerable_variant": true
+    }
+  ],
+  "selected_scenario_ids": [
+    "SCEN-DOCUMENT_COLLABORATION-DOC-EXPORT-PATCH-01",
+    "SCEN-DOCUMENT_COLLABORATION-DOC-EXPORT-VULN-01",
+    "SCEN-DOCUMENT_COLLABORATION-DOC-ORG-EXPORT-VULN-02",
+    "SCEN-DOCUMENT_COLLABORATION-DOC-PUBLISH-VULN-03",
+    "SCEN-DOCUMENT_COLLABORATION-NEG-02",
+    "SCEN-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-PATCH-04",
+    "SCEN-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-VULN-04",
+    "SCEN-ECOMMERCE_ORDERS-ORD-SHIP-PATCH-02",
+    "SCEN-ECOMMERCE_ORDERS-ORD-SHIP-VULN-02",
+    "SCEN-IDENTITY_PROVIDER-USER-ADMIN-ROLE-PATCH-05",
+    "SCEN-IDENTITY_PROVIDER-USER-ADMIN-ROLE-VULN-05",
+    "SCEN-IDENTITY_PROVIDER-USER-TENANT-ROLE-PATCH-03",
+    "SCEN-IDENTITY_PROVIDER-USER-TENANT-ROLE-VULN-03",
+    "SCEN-IOT_FLEET_MGMT-DEVICE-FW-PATCH-05",
+    "SCEN-IOT_FLEET_MGMT-DEVICE-FW-VULN-05",
+    "SCEN-SAAS_BILLING-INV-WORKFLOW-PATCH-05",
+    "SCEN-SAAS_BILLING-INV-WORKFLOW-VULN-05",
+    "SCEN-SAAS_BILLING-NEG-01",
+    "SCEN-SAAS_BILLING-SUB-SUMMARY-PATCH-04",
+    "SCEN-SAAS_BILLING-SUB-SUMMARY-VULN-04"
+  ],
+  "selection_algorithm_version": "DeterministicStratifiedProportionalSelection_v1",
+  "selection_script_hash": "22cda77ade5cd07175fbc30add6d46c054c8d3973b6349a3db4b7050852d2d49",
+  "selection_strata": {
+    "control": {
+      "API-AUTH-NONE": {
+        "allocated_quota": 2,
+        "candidate_count": 12
+      },
+      "API-BFLA-001": {
+        "allocated_quota": 1,
+        "candidate_count": 3
+      },
+      "API-BOLA-001": {
+        "allocated_quota": 1,
+        "candidate_count": 5
+      },
+      "API-CROSS-TENANT-001": {
+        "allocated_quota": 1,
+        "candidate_count": 6
+      },
+      "API-DEVICE-BOLA-001": {
+        "allocated_quota": 0,
+        "candidate_count": 2
+      },
+      "API-LIFECYCLE-001": {
+        "allocated_quota": 1,
+        "candidate_count": 4
+      },
+      "API-MULTI-STEP-AUTH-001": {
+        "allocated_quota": 1,
+        "candidate_count": 3
+      },
+      "API-MUTATION-001": {
+        "allocated_quota": 1,
+        "candidate_count": 4
+      },
+      "API-ROLE-BOUNDARY-001": {
+        "allocated_quota": 1,
+        "candidate_count": 3
+      },
+      "API-STATE-001": {
+        "allocated_quota": 1,
+        "candidate_count": 6
+      }
+    },
+    "vulnerable": {
+      "API-BFLA-001": {
+        "allocated_quota": 1,
+        "candidate_count": 3
+      },
+      "API-BOLA-001": {
+        "allocated_quota": 1,
+        "candidate_count": 5
+      },
+      "API-CROSS-TENANT-001": {
+        "allocated_quota": 2,
+        "candidate_count": 6
+      },
+      "API-DEVICE-BOLA-001": {
+        "allocated_quota": 0,
+        "candidate_count": 2
+      },
+      "API-LIFECYCLE-001": {
+        "allocated_quota": 1,
+        "candidate_count": 4
+      },
+      "API-MULTI-STEP-AUTH-001": {
+        "allocated_quota": 1,
+        "candidate_count": 3
+      },
+      "API-MUTATION-001": {
+        "allocated_quota": 1,
+        "candidate_count": 4
+      },
+      "API-ROLE-BOUNDARY-001": {
+        "allocated_quota": 1,
+        "candidate_count": 3
+      },
+      "API-STATE-001": {
+        "allocated_quota": 2,
+        "candidate_count": 6
+      }
+    }
+  },
+  "selection_timestamp": "2026-09-20T10:47:00Z",
+  "source_benchmark_manifest_hash": "b2b85a672124acf21066a257d8c7f5093000368b224ee013c02574c96a0ae707",
+  "total_selected_count": 20,
+  "vulnerable_count": 10
+}

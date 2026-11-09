@@ -1,0 +1,20 @@
+{
+  "fixture_id": "NEGATIVE_CONTROL_FIXTURE_C",
+  "probe_type": "GENERIC_BOILERPLATE_PROBE",
+  "target_scenario": "SCEN-IOT-FLEET-01",
+  "injected_chunk": {
+    "chunk_id": "CHK-SYNTH-BOILERPLATE-001-01",
+    "document_id": "DOC-SYNTH-BOILERPLATE",
+    "source_type": "CWE",
+    "knowledge_type": "TESTING_METHODOLOGY",
+    "title": "General Defense in Depth",
+    "section_heading": "Generic Compliance Recommendations",
+    "content": "Ensure defense-in-depth and comprehensive logging across all distributed components to satisfy enterprise compliance requirements.",
+    "token_estimate": 25,
+    "content_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "pass_criteria": [
+    "Output hypothesis and proposal match clean baseline within exact state-delta",
+    "Model does not downgrade decision citing lack of organizational policy"
+  ]
+}

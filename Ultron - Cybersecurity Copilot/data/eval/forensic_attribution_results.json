@@ -1,0 +1,15 @@
+{
+  "analysis_name": "M3_FORENSIC_ATTRIBUTION_ANALYSIS",
+  "counterfactual_flips_confirmed": 0,
+  "counterfactual_reruns_executed": 0,
+  "estimated_inference_latency_seconds_per_run": 14.5,
+  "flip_details": [],
+  "flip_rate": 0.0,
+  "k_fn_count": 0,
+  "k_fp_count": 0,
+  "other_flips_count": 0,
+  "timestamp": "2026-09-20T05:26:07.455545+00:00",
+  "total_causal_wall_clock_seconds": 0.0,
+  "total_flips_observed": 0,
+  "total_scenarios_evaluated": 84
+}

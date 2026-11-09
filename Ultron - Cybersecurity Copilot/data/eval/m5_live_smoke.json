@@ -1,0 +1,1414 @@
+{
+  "schema_version": "5.0.0",
+  "milestone": "M5",
+  "phase": "PHASE_6_LIVE_SMOKE",
+  "timestamp": "2026-09-21T10:48:09.903286+00:00",
+  "metadata": {
+    "m4_9_sha": "459b9ec63c3a2dc760abde12ec196760f7e505fbab5317f0da0c46b32c5eaac7",
+    "benchmark_manifest_sha": "b2b85a672124acf21066a257d8c7f5093000368b224ee013c02574c96a0ae707",
+    "planning_freeze_commit": "1e1a87070a018542a0a2e79f8a78654f34df5aba",
+    "model_name": "qwen2.5-coder:7b",
+    "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+    "runtime_version": "ollama version is 0.34.1",
+    "primary_inference_parameters": {
+      "num_ctx": 2048,
+      "num_predict": 300,
+      "temperature": 0.0,
+      "seed": 42,
+      "keep_alive": "60m"
+    }
+  },
+  "pre_registered_matrix": {
+    "scenarios": [
+      "SCEN-SAAS_BILLING-INV-DETAILS-VULN-01",
+      "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-VULN-01",
+      "SCEN-SAAS_BILLING-INV-DETAILS-PATCH-01"
+    ],
+    "tracks": [
+      "TRACK_A",
+      "TRACK_B",
+      "TRACK_C",
+      "TRACK_D"
+    ],
+    "i1_conditions": [
+      false,
+      true
+    ],
+    "total_calls": 24,
+    "retries_count": 0,
+    "semantic_repairs_count": 0
+  },
+  "summary": {
+    "total_calls": 24,
+    "valid_executions": 8,
+    "failed_executions": 16,
+    "parser_failures": 0,
+    "schema_failures": 3,
+    "truncation_failures": 0,
+    "grounding_rejections": 13,
+    "transport_failures": 0,
+    "mean_latency_ms": 20317.528725000255,
+    "decisions_reached": {
+      "HYPOTHESIS": 0,
+      "INSUFFICIENT_EVIDENCE": 0,
+      "NO_RELEVANT_FUNCTIONALITY": 8,
+      "NONE": 16
+    },
+    "i1_comparison": {
+      "i1_off": {
+        "calls": 12,
+        "valid": 4,
+        "parser_failures": 0,
+        "schema_failures": 2,
+        "mean_latency_ms": 19654.88550833349
+      },
+      "i1_on": {
+        "calls": 12,
+        "valid": 4,
+        "parser_failures": 0,
+        "schema_failures": 1,
+        "mean_latency_ms": 20980.17194166702
+      }
+    }
+  },
+  "records": [
+    {
+      "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-VULN-01",
+      "track_id": "TRACK_A",
+      "i1_enabled": false,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "b3d7d8eb62ed023c93585d5ca541b62604d4a02a8b98ede3ff63931aaefaa260",
+      "prompt_hash": "ba41927f7c5b99a45db973c101250a6994fd142b84c1154c8c30fa64b5f160ea",
+      "target_evidence_bytes_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_model_response": "```json\n{\n  \"invariant\": \"Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.\",\n  \"evidence_gap\": \"The evidence does not demonstrate explicit server-side object ownership verification or cross-identity access without authorization comparison.\",\n  \"affected_target\": \"/api/v1/invoices/{id}\",\n  \"decision\": \"INSUFFICIENT_EVIDENCE\",\n  \"empirical_facts\": [\"FACT-SAAS_BILLING-INV-DETAILS-DOC\"],\n  \"methodology_references\": [\"CHK-001\"],\n  \"falsification_plan\": \"Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or HTTP 404 Not Found. If the response is HTTP 403 Forbidden or HTTP 404 Not Found, the hypothesis is disproved. If the response is successful, the hypothesis is confirmed.\"\n}\n```",
+      "latency_ms": 22204.772400000365,
+      "eval_count": 196,
+      "prompt_eval_count": 1517,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": false,
+      "primary_failure_category": "SEMANTIC_GROUNDING_FAILURE",
+      "error_message": "Grounding failure: Cited methodology chunks not found in active signed corpus manifest: ['CHK-001']",
+      "parsed_output": null,
+      "canonical_s0_output": null,
+      "decision": null,
+      "grounding_status": "GROUNDING_REJECTED",
+      "grounding_result": {
+        "valid": false,
+        "status": "DISCARD",
+        "error_code": "CITATION_VALIDITY_ERROR",
+        "reason": "Cited methodology chunks not found in active signed corpus manifest: ['CHK-001']",
+        "invalid_fact_ids": [],
+        "invalid_chunk_ids": [
+          "CHK-001"
+        ],
+        "compliance_failures": []
+      },
+      "timestamp": "2026-09-21T10:40:24.460626+00:00"
+    },
+    {
+      "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-VULN-01",
+      "track_id": "TRACK_A",
+      "i1_enabled": true,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "b3d7d8eb62ed023c93585d5ca541b62604d4a02a8b98ede3ff63931aaefaa260",
+      "prompt_hash": "ba41927f7c5b99a45db973c101250a6994fd142b84c1154c8c30fa64b5f160ea",
+      "target_evidence_bytes_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_model_response": "{\n  \"invariant\": \"Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.\",\n  \"evidence_gap\": \"The evidence does not demonstrate explicit server-side object ownership verification. The observed facts indicate that the endpoint retrieves billing invoice records for the specified invoice identifier without verifying the requesting identity's ownership or authorization.\",\n  \"affected_target\": \"/api/v1/invoices/{id}\",\n  \"decision\": \"HYPOTHESIS\",\n  \"empirical_facts\": [\"FACT-SAAS_BILLING-INV-DETAILS-DOC\"],\n  \"methodology_references\": [\"CHK-API-BOLA-001\"],\n  \"falsification_plan\": \"Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or 404 Not Found. If the response is HTTP 403 Forbidden, it disproves the hypothesis. If the response is HTTP 404 Not Found, it also disproves the hypothesis.\"\n}",
+      "latency_ms": 23702.851199996076,
+      "eval_count": 210,
+      "prompt_eval_count": 1517,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": false,
+      "primary_failure_category": "SCHEMA_VALIDITY_FAILURE",
+      "error_message": "Schema validation error: BAIR JSON schema validation error: 1 validation error for BairJsonObject\n  Value error, Falsification plan missing supporting observation specification [type=value_error, input_value={'invariant': 'Object acc...proves the hypothesis.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error",
+      "parsed_output": null,
+      "canonical_s0_output": null,
+      "decision": null,
+      "grounding_status": "NOT_EVALUATED",
+      "grounding_result": null,
+      "timestamp": "2026-09-21T10:40:48.164093+00:00"
+    },
+    {
+      "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-VULN-01",
+      "track_id": "TRACK_B",
+      "i1_enabled": false,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "b3d7d8eb62ed023c93585d5ca541b62604d4a02a8b98ede3ff63931aaefaa260",
+      "prompt_hash": "77816fbd08fa1b5ac50c9cb749fcffd7c531b58164e19e81de2e31688a7e7bde",
+      "target_evidence_bytes_hash": "56e159483adb462cf9a300bd7990bca497b66a78a53ac15581299e234dc7fd5f",
+      "raw_model_response": "{\n  \"invariant\": \"Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.\",\n  \"evidence_gap\": \"The evidence does not demonstrate explicit server-side object ownership verification, nor does it show cross-identity access without authorization comparison.\",\n  \"affected_target\": \"/api/v1/invoices/{id}\",\n  \"decision\": \"INSUFFICIENT_EVIDENCE\",\n  \"empirical_facts\": [\"FACT-SAAS_BILLING-INV-DETAILS-DOC\"],\n  \"methodology_references\": [\"CHK-001\"],\n  \"falsification_plan\": \"Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or HTTP 404 Not Found. If the response is HTTP 403 Forbidden, it disproves the hypothesis. If the response is HTTP 404 Not Found, it also disproves the hypothesis.\"\n}",
+      "latency_ms": 21212.40590000525,
+      "eval_count": 196,
+      "prompt_eval_count": 1569,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": false,
+      "primary_failure_category": "SEMANTIC_GROUNDING_FAILURE",
+      "error_message": "Grounding failure: Cited methodology chunks not found in active signed corpus manifest: ['CHK-001']",
+      "parsed_output": null,
+      "canonical_s0_output": null,
+      "decision": null,
+      "grounding_status": "GROUNDING_REJECTED",
+      "grounding_result": {
+        "valid": false,
+        "status": "DISCARD",
+        "error_code": "CITATION_VALIDITY_ERROR",
+        "reason": "Cited methodology chunks not found in active signed corpus manifest: ['CHK-001']",
+        "invalid_fact_ids": [],
+        "invalid_chunk_ids": [
+          "CHK-001"
+        ],
+        "compliance_failures": []
+      },
+      "timestamp": "2026-09-21T10:41:09.377728+00:00"
+    },
+    {
+      "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-VULN-01",
+      "track_id": "TRACK_B",
+      "i1_enabled": true,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "b3d7d8eb62ed023c93585d5ca541b62604d4a02a8b98ede3ff63931aaefaa260",
+      "prompt_hash": "77816fbd08fa1b5ac50c9cb749fcffd7c531b58164e19e81de2e31688a7e7bde",
+      "target_evidence_bytes_hash": "56e159483adb462cf9a300bd7990bca497b66a78a53ac15581299e234dc7fd5f",
+      "raw_model_response": "{\n  \"invariant\": \"Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.\",\n  \"evidence_gap\": \"The evidence does not demonstrate explicit server-side object ownership verification, nor does it show cross-identity access without authorization comparison.\",\n  \"affected_target\": \"/api/v1/invoices/{id}\",\n  \"decision\": \"INSUFFICIENT_EVIDENCE\",\n  \"empirical_facts\": [\"FACT-SAAS_BILLING-INV-DETAILS-DOC\"],\n  \"methodology_references\": [\"CHK-001\"],\n  \"falsification_plan\": \"Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or HTTP 404 Not Found. If the response is HTTP 403 Forbidden, it disproves the hypothesis. If the response is HTTP 404 Not Found, it also disproves the hypothesis.\"\n}",
+      "latency_ms": 22124.229499997455,
+      "eval_count": 196,
+      "prompt_eval_count": 1569,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": false,
+      "primary_failure_category": "SEMANTIC_GROUNDING_FAILURE",
+      "error_message": "Grounding failure: Cited methodology chunks not found in active signed corpus manifest: ['CHK-001']",
+      "parsed_output": null,
+      "canonical_s0_output": null,
+      "decision": null,
+      "grounding_status": "GROUNDING_REJECTED",
+      "grounding_result": {
+        "valid": false,
+        "status": "DISCARD",
+        "error_code": "CITATION_VALIDITY_ERROR",
+        "reason": "Cited methodology chunks not found in active signed corpus manifest: ['CHK-001']",
+        "invalid_fact_ids": [],
+        "invalid_chunk_ids": [
+          "CHK-001"
+        ],
+        "compliance_failures": []
+      },
+      "timestamp": "2026-09-21T10:41:31.502548+00:00"
+    },
+    {
+      "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-VULN-01",
+      "track_id": "TRACK_C",
+      "i1_enabled": false,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "b3d7d8eb62ed023c93585d5ca541b62604d4a02a8b98ede3ff63931aaefaa260",
+      "prompt_hash": "9d3c11e3b0175b6cc27531461e95661c4876f12086e49ebd95942ed7ab8aaddf",
+      "target_evidence_bytes_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_model_response": "{\n  \"invariant\": \"Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.\",\n  \"evidence_gap\": \"The evidence does not demonstrate explicit server-side object ownership verification or cross-identity access without authorization comparison.\",\n  \"affected_target\": \"/api/v1/invoices/{id}\",\n  \"decision\": \"INSUFFICIENT_EVIDENCE\",\n  \"empirical_facts\": [\"FACT-SAAS_BILLING-INV-DETAILS-DOC\"],\n  \"methodology_references\": [\"CHK-DOC-PLATFORM-INV-01-002-01\"],\n  \"falsification_plan\": \"Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or 404 Not Found.\"\n}",
+      "latency_ms": 18488.301700010197,
+      "eval_count": 167,
+      "prompt_eval_count": 1797,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": true,
+      "primary_failure_category": "VALID",
+      "error_message": null,
+      "parsed_output": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": "The evidence does not demonstrate explicit server-side object ownership verification or cross-identity access without authorization comparison.",
+        "affected_target": "/api/v1/invoices/{id}",
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "empirical_facts": [
+          "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+        ],
+        "methodology_references": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "falsification_plan": "Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or 404 Not Found."
+      },
+      "canonical_s0_output": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": "The evidence does not demonstrate explicit server-side object ownership verification or cross-identity access without authorization comparison.",
+        "affected_target": "/api/v1/invoices/{id}",
+        "decision": "NO_RELEVANT_FUNCTIONALITY",
+        "supporting_evidence_ids": [
+          "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+        ],
+        "methodology_references": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "reasoning_summary": "BAIR evaluation: Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.. Evidence gap: The evidence does not demonstrate explicit server-side object ownership verification or cross-identity access without authorization comparison..",
+        "experiment_proposal": "Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or 404 Not Found.",
+        "category": "API-BOLA-001",
+        "asset_id": "ASSET-SAAS_BILLING-INV-DETAILS-01",
+        "parameter_ids": [],
+        "missing_evidence": [
+          "The evidence does not demonstrate explicit server-side object ownership verification or cross-identity access without authorization comparison."
+        ],
+        "cited_methodology_chunk_ids": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "contradicting_evidence_ids": [],
+        "app_model_delta": null,
+        "violation_assessment": null,
+        "actor_identity_id": null,
+        "target_identity_id": null,
+        "safety_check": null,
+        "evidence_sufficiency": 0.5
+      },
+      "decision": "NO_RELEVANT_FUNCTIONALITY",
+      "grounding_status": "GROUNDING_PASSED",
+      "grounding_result": {
+        "valid": true,
+        "status": "VALID",
+        "error_code": null,
+        "reason": "Dual evidence and methodology grounding validated successfully",
+        "invalid_fact_ids": [],
+        "invalid_chunk_ids": [],
+        "compliance_failures": []
+      },
+      "timestamp": "2026-09-21T10:41:49.992272+00:00"
+    },
+    {
+      "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-VULN-01",
+      "track_id": "TRACK_C",
+      "i1_enabled": true,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "b3d7d8eb62ed023c93585d5ca541b62604d4a02a8b98ede3ff63931aaefaa260",
+      "prompt_hash": "9d3c11e3b0175b6cc27531461e95661c4876f12086e49ebd95942ed7ab8aaddf",
+      "target_evidence_bytes_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_model_response": "{\n  \"invariant\": \"Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.\",\n  \"evidence_gap\": \"The evidence does not demonstrate explicit server-side object ownership verification or cross-identity access without authorization comparison.\",\n  \"affected_target\": \"/api/v1/invoices/{id}\",\n  \"decision\": \"INSUFFICIENT_EVIDENCE\",\n  \"empirical_facts\": [\"FACT-SAAS_BILLING-INV-DETAILS-DOC\"],\n  \"methodology_references\": [\"CHK-DOC-PLATFORM-INV-01-002-01\"],\n  \"falsification_plan\": \"Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or 404 Not Found.\"\n}",
+      "latency_ms": 19101.239199997508,
+      "eval_count": 167,
+      "prompt_eval_count": 1797,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": true,
+      "primary_failure_category": "VALID",
+      "error_message": null,
+      "parsed_output": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": "The evidence does not demonstrate explicit server-side object ownership verification or cross-identity access without authorization comparison.",
+        "affected_target": "/api/v1/invoices/{id}",
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "empirical_facts": [
+          "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+        ],
+        "methodology_references": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "falsification_plan": "Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or 404 Not Found."
+      },
+      "canonical_s0_output": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": "The evidence does not demonstrate explicit server-side object ownership verification or cross-identity access without authorization comparison.",
+        "affected_target": "/api/v1/invoices/{id}",
+        "decision": "NO_RELEVANT_FUNCTIONALITY",
+        "supporting_evidence_ids": [
+          "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+        ],
+        "methodology_references": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "reasoning_summary": "BAIR evaluation: Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.. Evidence gap: The evidence does not demonstrate explicit server-side object ownership verification or cross-identity access without authorization comparison..",
+        "experiment_proposal": "Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or 404 Not Found.",
+        "category": "API-BOLA-001",
+        "asset_id": "ASSET-SAAS_BILLING-INV-DETAILS-01",
+        "parameter_ids": [],
+        "missing_evidence": [
+          "The evidence does not demonstrate explicit server-side object ownership verification or cross-identity access without authorization comparison."
+        ],
+        "cited_methodology_chunk_ids": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "contradicting_evidence_ids": [],
+        "app_model_delta": null,
+        "violation_assessment": null,
+        "actor_identity_id": null,
+        "target_identity_id": null,
+        "safety_check": null,
+        "evidence_sufficiency": 0.5
+      },
+      "decision": "NO_RELEVANT_FUNCTIONALITY",
+      "grounding_status": "GROUNDING_PASSED",
+      "grounding_result": {
+        "valid": true,
+        "status": "VALID",
+        "error_code": null,
+        "reason": "Dual evidence and methodology grounding validated successfully",
+        "invalid_fact_ids": [],
+        "invalid_chunk_ids": [],
+        "compliance_failures": []
+      },
+      "timestamp": "2026-09-21T10:42:09.094124+00:00"
+    },
+    {
+      "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-VULN-01",
+      "track_id": "TRACK_D",
+      "i1_enabled": false,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "b3d7d8eb62ed023c93585d5ca541b62604d4a02a8b98ede3ff63931aaefaa260",
+      "prompt_hash": "32942c30766acde86eb5b652a939358b6faad50f5a8e30ed6e3f14f10400c310",
+      "target_evidence_bytes_hash": "56e159483adb462cf9a300bd7990bca497b66a78a53ac15581299e234dc7fd5f",
+      "raw_model_response": "```json\n{\n  \"invariant\": \"Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.\",\n  \"evidence_gap\": \"Missing observation or gap in evidence (null if none)\",\n  \"affected_target\": \"Endpoint ID: EP-SCEN-SAAS_BILLING-INV-DETAILS-VULN-01\",\n  \"decision\": \"NO_RELEVANT_FUNCTIONALITY\",\n  \"empirical_facts\": [\"FACT-SAAS_BILLING-INV-DETAILS-DOC\"],\n  \"methodology_references\": [\"CHK-DOC-PLATFORM-INV-01-002-01\"],\n  \"falsification_plan\": \"No relevant functionality to falsify.\"\n}\n```",
+      "latency_ms": 17352.000700004282,
+      "eval_count": 157,
+      "prompt_eval_count": 1849,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": true,
+      "primary_failure_category": "VALID",
+      "error_message": null,
+      "parsed_output": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": "Missing observation or gap in evidence (null if none)",
+        "affected_target": "Endpoint ID: EP-SCEN-SAAS_BILLING-INV-DETAILS-VULN-01",
+        "decision": "NO_RELEVANT_FUNCTIONALITY",
+        "empirical_facts": [
+          "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+        ],
+        "methodology_references": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "falsification_plan": "No relevant functionality to falsify."
+      },
+      "canonical_s0_output": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": "Missing observation or gap in evidence (null if none)",
+        "affected_target": "Endpoint ID: EP-SCEN-SAAS_BILLING-INV-DETAILS-VULN-01",
+        "decision": "NO_RELEVANT_FUNCTIONALITY",
+        "supporting_evidence_ids": [
+          "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+        ],
+        "methodology_references": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "reasoning_summary": "BAIR evaluation: Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.. Evidence gap: Missing observation or gap in evidence (null if none).",
+        "experiment_proposal": "No relevant functionality to falsify.",
+        "category": "API-BOLA-001",
+        "asset_id": "ASSET-SAAS_BILLING-INV-DETAILS-01",
+        "parameter_ids": [],
+        "missing_evidence": [
+          "Missing observation or gap in evidence (null if none)"
+        ],
+        "cited_methodology_chunk_ids": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "contradicting_evidence_ids": [],
+        "app_model_delta": null,
+        "violation_assessment": null,
+        "actor_identity_id": null,
+        "target_identity_id": null,
+        "safety_check": null,
+        "evidence_sufficiency": 0.5
+      },
+      "decision": "NO_RELEVANT_FUNCTIONALITY",
+      "grounding_status": "GROUNDING_PASSED",
+      "grounding_result": {
+        "valid": true,
+        "status": "VALID",
+        "error_code": null,
+        "reason": "Dual evidence and methodology grounding validated successfully",
+        "invalid_fact_ids": [],
+        "invalid_chunk_ids": [],
+        "compliance_failures": []
+      },
+      "timestamp": "2026-09-21T10:42:26.447575+00:00"
+    },
+    {
+      "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-VULN-01",
+      "track_id": "TRACK_D",
+      "i1_enabled": true,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "b3d7d8eb62ed023c93585d5ca541b62604d4a02a8b98ede3ff63931aaefaa260",
+      "prompt_hash": "32942c30766acde86eb5b652a939358b6faad50f5a8e30ed6e3f14f10400c310",
+      "target_evidence_bytes_hash": "56e159483adb462cf9a300bd7990bca497b66a78a53ac15581299e234dc7fd5f",
+      "raw_model_response": "{\n  \"invariant\": \"Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.\",\n  \"evidence_gap\": \"The evidence does not demonstrate explicit server-side object ownership verification or cross-identity access without authorization comparison.\",\n  \"affected_target\": \"/api/v1/invoices/{id}\",\n  \"decision\": \"INSUFFICIENT_EVIDENCE\",\n  \"empirical_facts\": [\"FACT-SAAS_BILLING-INV-DETAILS-DOC\"],\n  \"methodology_references\": [\"CHK-DOC-PLATFORM-INV-01-002-01\"],\n  \"falsification_plan\": \"Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or 404 Not Found.\"\n}",
+      "latency_ms": 19165.612199998577,
+      "eval_count": 167,
+      "prompt_eval_count": 1849,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": true,
+      "primary_failure_category": "VALID",
+      "error_message": null,
+      "parsed_output": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": "The evidence does not demonstrate explicit server-side object ownership verification or cross-identity access without authorization comparison.",
+        "affected_target": "/api/v1/invoices/{id}",
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "empirical_facts": [
+          "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+        ],
+        "methodology_references": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "falsification_plan": "Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or 404 Not Found."
+      },
+      "canonical_s0_output": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": "The evidence does not demonstrate explicit server-side object ownership verification or cross-identity access without authorization comparison.",
+        "affected_target": "/api/v1/invoices/{id}",
+        "decision": "NO_RELEVANT_FUNCTIONALITY",
+        "supporting_evidence_ids": [
+          "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+        ],
+        "methodology_references": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "reasoning_summary": "BAIR evaluation: Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.. Evidence gap: The evidence does not demonstrate explicit server-side object ownership verification or cross-identity access without authorization comparison..",
+        "experiment_proposal": "Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or 404 Not Found.",
+        "category": "API-BOLA-001",
+        "asset_id": "ASSET-SAAS_BILLING-INV-DETAILS-01",
+        "parameter_ids": [],
+        "missing_evidence": [
+          "The evidence does not demonstrate explicit server-side object ownership verification or cross-identity access without authorization comparison."
+        ],
+        "cited_methodology_chunk_ids": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "contradicting_evidence_ids": [],
+        "app_model_delta": null,
+        "violation_assessment": null,
+        "actor_identity_id": null,
+        "target_identity_id": null,
+        "safety_check": null,
+        "evidence_sufficiency": 0.5
+      },
+      "decision": "NO_RELEVANT_FUNCTIONALITY",
+      "grounding_status": "GROUNDING_PASSED",
+      "grounding_result": {
+        "valid": true,
+        "status": "VALID",
+        "error_code": null,
+        "reason": "Dual evidence and methodology grounding validated successfully",
+        "invalid_fact_ids": [],
+        "invalid_chunk_ids": [],
+        "compliance_failures": []
+      },
+      "timestamp": "2026-09-21T10:42:45.613945+00:00"
+    },
+    {
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-VULN-01",
+      "track_id": "TRACK_A",
+      "i1_enabled": false,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "c6f146385b020a8d0ab934f2f5e2191d5fb579e31d87cc9960359a0e279aa055",
+      "prompt_hash": "5d46727da32bca0a9d6f03ae128f0ade0c0cd7f52e4b67d4d9425b5d098dc008",
+      "target_evidence_bytes_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_model_response": "```json\n{\n  \"invariant\": \"Business logic state transitions must follow a valid, strictly ordered finite state machine; transitions from invalid current states must be rejected.\",\n  \"evidence_gap\": \"The evidence does not show that the endpoint validates the current state of the order before processing a refund request.\",\n  \"affected_target\": \"/api/v1/orders/{id}/refund\",\n  \"decision\": \"HYPOTHESIS\",\n  \"empirical_facts\": [\"FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC\"],\n  \"methodology_references\": [\"CHK-001\"],\n  \"falsification_plan\": \"An observation showing a refund request being processed for an order that is not in the PAID state, resulting in an HTTP 409 Conflict or 400 Bad Request response.\"\n}\n```",
+      "latency_ms": 19257.606999992277,
+      "eval_count": 173,
+      "prompt_eval_count": 1498,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": false,
+      "primary_failure_category": "SCHEMA_VALIDITY_FAILURE",
+      "error_message": "Schema validation error: BAIR JSON schema validation error: 1 validation error for BairJsonObject\n  Value error, Falsification plan missing supporting observation specification [type=value_error, input_value={'invariant': 'Business l... Bad Request response.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error",
+      "parsed_output": null,
+      "canonical_s0_output": null,
+      "decision": null,
+      "grounding_status": "NOT_EVALUATED",
+      "grounding_result": null,
+      "timestamp": "2026-09-21T10:43:04.874663+00:00"
+    },
+    {
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-VULN-01",
+      "track_id": "TRACK_A",
+      "i1_enabled": true,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "c6f146385b020a8d0ab934f2f5e2191d5fb579e31d87cc9960359a0e279aa055",
+      "prompt_hash": "5d46727da32bca0a9d6f03ae128f0ade0c0cd7f52e4b67d4d9425b5d098dc008",
+      "target_evidence_bytes_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_model_response": "{\n  \"invariant\": \"Business logic state transitions must follow a valid, strictly ordered finite state machine; transitions from invalid current states must be rejected.\",\n  \"evidence_gap\": \"The evidence does not show that the endpoint validates the current state of the order before processing a refund request.\",\n  \"affected_target\": \"/api/v1/orders/{id}/refund\",\n  \"decision\": \"HYPOTHESIS\",\n  \"empirical_facts\": [\"FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC\"],\n  \"methodology_references\": [\"CHK-001\"],\n  \"falsification_plan\": \"An observation supporting the hypothesis would be a successful refund request for an order that is not in the PAID state. A falsification observation would be a rejection of a refund request with HTTP 409 Conflict or 400 Bad Request when the order is not in the PAID state.\"\n}",
+      "latency_ms": 21316.901900005178,
+      "eval_count": 191,
+      "prompt_eval_count": 1498,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": false,
+      "primary_failure_category": "SEMANTIC_GROUNDING_FAILURE",
+      "error_message": "Grounding failure: Cited methodology chunks not found in active signed corpus manifest: ['CHK-001']",
+      "parsed_output": null,
+      "canonical_s0_output": null,
+      "decision": null,
+      "grounding_status": "GROUNDING_REJECTED",
+      "grounding_result": {
+        "valid": false,
+        "status": "DISCARD",
+        "error_code": "CITATION_VALIDITY_ERROR",
+        "reason": "Cited methodology chunks not found in active signed corpus manifest: ['CHK-001']",
+        "invalid_fact_ids": [],
+        "invalid_chunk_ids": [
+          "CHK-001"
+        ],
+        "compliance_failures": []
+      },
+      "timestamp": "2026-09-21T10:43:26.192283+00:00"
+    },
+    {
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-VULN-01",
+      "track_id": "TRACK_B",
+      "i1_enabled": false,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "c6f146385b020a8d0ab934f2f5e2191d5fb579e31d87cc9960359a0e279aa055",
+      "prompt_hash": "a4806107c4e908031c033a0db1428ef27f0be79de8599333c8f1c26a80f149d3",
+      "target_evidence_bytes_hash": "6bcff23ce6814585baed100a2192adb5b7fd990cff8d5ded4a0c9c5cd1856cd6",
+      "raw_model_response": "{\n  \"invariant\": \"Business logic state transitions must follow a valid, strictly ordered finite state machine; transitions from invalid current states must be rejected.\",\n  \"evidence_gap\": \"The evidence does not show that the endpoint validates the current state of the order before processing a refund request.\",\n  \"affected_target\": \"/api/v1/orders/{id}/refund\",\n  \"decision\": \"HYPOTHESIS\",\n  \"empirical_facts\": [\"FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC\"],\n  \"methodology_references\": [\"CHK-001\"],\n  \"falsification_plan\": \"An observation supporting the hypothesis would be a successful refund request for an order that is not in the PAID state. An observation disproving the hypothesis would be a 409 Conflict or 400 Bad Request response when attempting to refund an order that is not in the PAID state.\"\n}",
+      "latency_ms": 20333.128599988413,
+      "eval_count": 191,
+      "prompt_eval_count": 1550,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": false,
+      "primary_failure_category": "SEMANTIC_GROUNDING_FAILURE",
+      "error_message": "Grounding failure: Cited methodology chunks not found in active signed corpus manifest: ['CHK-001']",
+      "parsed_output": null,
+      "canonical_s0_output": null,
+      "decision": null,
+      "grounding_status": "GROUNDING_REJECTED",
+      "grounding_result": {
+        "valid": false,
+        "status": "DISCARD",
+        "error_code": "CITATION_VALIDITY_ERROR",
+        "reason": "Cited methodology chunks not found in active signed corpus manifest: ['CHK-001']",
+        "invalid_fact_ids": [],
+        "invalid_chunk_ids": [
+          "CHK-001"
+        ],
+        "compliance_failures": []
+      },
+      "timestamp": "2026-09-21T10:43:46.526682+00:00"
+    },
+    {
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-VULN-01",
+      "track_id": "TRACK_B",
+      "i1_enabled": true,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "c6f146385b020a8d0ab934f2f5e2191d5fb579e31d87cc9960359a0e279aa055",
+      "prompt_hash": "a4806107c4e908031c033a0db1428ef27f0be79de8599333c8f1c26a80f149d3",
+      "target_evidence_bytes_hash": "6bcff23ce6814585baed100a2192adb5b7fd990cff8d5ded4a0c9c5cd1856cd6",
+      "raw_model_response": "{\n  \"invariant\": \"Business logic state transitions must follow a valid, strictly ordered finite state machine; transitions from invalid current states must be rejected.\",\n  \"evidence_gap\": \"The evidence does not show that the endpoint validates the current state of the order before processing a refund request.\",\n  \"affected_target\": \"/api/v1/orders/{id}/refund\",\n  \"decision\": \"HYPOTHESIS\",\n  \"empirical_facts\": [\"FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC\"],\n  \"methodology_references\": [\"CHK-001\"],\n  \"falsification_plan\": \"An observation supporting the hypothesis would be a successful refund request for an order that is not in the PAID state. An observation disproving the hypothesis would be a 409 Conflict or 400 Bad Request response when attempting to refund an order that is not in the PAID state.\"\n}",
+      "latency_ms": 21345.80600001209,
+      "eval_count": 191,
+      "prompt_eval_count": 1550,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": false,
+      "primary_failure_category": "SEMANTIC_GROUNDING_FAILURE",
+      "error_message": "Grounding failure: Cited methodology chunks not found in active signed corpus manifest: ['CHK-001']",
+      "parsed_output": null,
+      "canonical_s0_output": null,
+      "decision": null,
+      "grounding_status": "GROUNDING_REJECTED",
+      "grounding_result": {
+        "valid": false,
+        "status": "DISCARD",
+        "error_code": "CITATION_VALIDITY_ERROR",
+        "reason": "Cited methodology chunks not found in active signed corpus manifest: ['CHK-001']",
+        "invalid_fact_ids": [],
+        "invalid_chunk_ids": [
+          "CHK-001"
+        ],
+        "compliance_failures": []
+      },
+      "timestamp": "2026-09-21T10:44:07.873064+00:00"
+    },
+    {
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-VULN-01",
+      "track_id": "TRACK_C",
+      "i1_enabled": false,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "c6f146385b020a8d0ab934f2f5e2191d5fb579e31d87cc9960359a0e279aa055",
+      "prompt_hash": "5d46727da32bca0a9d6f03ae128f0ade0c0cd7f52e4b67d4d9425b5d098dc008",
+      "target_evidence_bytes_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_model_response": "```json\n{\n  \"invariant\": \"Business logic state transitions must follow a valid, strictly ordered finite state machine; transitions from invalid current states must be rejected.\",\n  \"evidence_gap\": \"The evidence does not show that the endpoint validates the current state of the order before processing a refund request.\",\n  \"affected_target\": \"/api/v1/orders/{id}/refund\",\n  \"decision\": \"HYPOTHESIS\",\n  \"empirical_facts\": [\"FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC\"],\n  \"methodology_references\": [\"CHK-001\"],\n  \"falsification_plan\": \"An observation showing a refund request being processed for an order that is not in the PAID state, resulting in an HTTP 409 Conflict or 400 Bad Request response.\"\n}\n```",
+      "latency_ms": 18361.32520000683,
+      "eval_count": 173,
+      "prompt_eval_count": 1498,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": false,
+      "primary_failure_category": "SCHEMA_VALIDITY_FAILURE",
+      "error_message": "Schema validation error: BAIR JSON schema validation error: 1 validation error for BairJsonObject\n  Value error, Falsification plan missing supporting observation specification [type=value_error, input_value={'invariant': 'Business l... Bad Request response.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error",
+      "parsed_output": null,
+      "canonical_s0_output": null,
+      "decision": null,
+      "grounding_status": "NOT_EVALUATED",
+      "grounding_result": null,
+      "timestamp": "2026-09-21T10:44:26.235434+00:00"
+    },
+    {
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-VULN-01",
+      "track_id": "TRACK_C",
+      "i1_enabled": true,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "c6f146385b020a8d0ab934f2f5e2191d5fb579e31d87cc9960359a0e279aa055",
+      "prompt_hash": "5d46727da32bca0a9d6f03ae128f0ade0c0cd7f52e4b67d4d9425b5d098dc008",
+      "target_evidence_bytes_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_model_response": "{\n  \"invariant\": \"Business logic state transitions must follow a valid, strictly ordered finite state machine; transitions from invalid current states must be rejected.\",\n  \"evidence_gap\": \"The evidence does not show that the endpoint validates the current state of the order before processing a refund request.\",\n  \"affected_target\": \"/api/v1/orders/{id}/refund\",\n  \"decision\": \"HYPOTHESIS\",\n  \"empirical_facts\": [\"FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC\"],\n  \"methodology_references\": [\"CHK-001\"],\n  \"falsification_plan\": \"An observation supporting the hypothesis would be a successful refund request for an order that is not in the PAID state. A falsification observation would be a rejection of a refund request with HTTP 409 Conflict or 400 Bad Request when the order is not in the PAID state.\"\n}",
+      "latency_ms": 21312.701900009415,
+      "eval_count": 191,
+      "prompt_eval_count": 1498,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": false,
+      "primary_failure_category": "SEMANTIC_GROUNDING_FAILURE",
+      "error_message": "Grounding failure: Cited methodology chunks not found in active signed corpus manifest: ['CHK-001']",
+      "parsed_output": null,
+      "canonical_s0_output": null,
+      "decision": null,
+      "grounding_status": "GROUNDING_REJECTED",
+      "grounding_result": {
+        "valid": false,
+        "status": "DISCARD",
+        "error_code": "CITATION_VALIDITY_ERROR",
+        "reason": "Cited methodology chunks not found in active signed corpus manifest: ['CHK-001']",
+        "invalid_fact_ids": [],
+        "invalid_chunk_ids": [
+          "CHK-001"
+        ],
+        "compliance_failures": []
+      },
+      "timestamp": "2026-09-21T10:44:47.548817+00:00"
+    },
+    {
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-VULN-01",
+      "track_id": "TRACK_D",
+      "i1_enabled": false,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "c6f146385b020a8d0ab934f2f5e2191d5fb579e31d87cc9960359a0e279aa055",
+      "prompt_hash": "a4806107c4e908031c033a0db1428ef27f0be79de8599333c8f1c26a80f149d3",
+      "target_evidence_bytes_hash": "6bcff23ce6814585baed100a2192adb5b7fd990cff8d5ded4a0c9c5cd1856cd6",
+      "raw_model_response": "{\n  \"invariant\": \"Business logic state transitions must follow a valid, strictly ordered finite state machine; transitions from invalid current states must be rejected.\",\n  \"evidence_gap\": \"The evidence does not show that the endpoint validates the current state of the order before processing a refund request.\",\n  \"affected_target\": \"/api/v1/orders/{id}/refund\",\n  \"decision\": \"HYPOTHESIS\",\n  \"empirical_facts\": [\"FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC\"],\n  \"methodology_references\": [\"CHK-001\"],\n  \"falsification_plan\": \"An observation supporting the hypothesis would be a successful refund request for an order that is not in the PAID state. An observation disproving the hypothesis would be a 409 Conflict or 400 Bad Request response when attempting to refund an order that is not in the PAID state.\"\n}",
+      "latency_ms": 20366.17349999142,
+      "eval_count": 191,
+      "prompt_eval_count": 1550,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": false,
+      "primary_failure_category": "SEMANTIC_GROUNDING_FAILURE",
+      "error_message": "Grounding failure: Cited methodology chunks not found in active signed corpus manifest: ['CHK-001']",
+      "parsed_output": null,
+      "canonical_s0_output": null,
+      "decision": null,
+      "grounding_status": "GROUNDING_REJECTED",
+      "grounding_result": {
+        "valid": false,
+        "status": "DISCARD",
+        "error_code": "CITATION_VALIDITY_ERROR",
+        "reason": "Cited methodology chunks not found in active signed corpus manifest: ['CHK-001']",
+        "invalid_fact_ids": [],
+        "invalid_chunk_ids": [
+          "CHK-001"
+        ],
+        "compliance_failures": []
+      },
+      "timestamp": "2026-09-21T10:45:07.916252+00:00"
+    },
+    {
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-VULN-01",
+      "track_id": "TRACK_D",
+      "i1_enabled": true,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "c6f146385b020a8d0ab934f2f5e2191d5fb579e31d87cc9960359a0e279aa055",
+      "prompt_hash": "a4806107c4e908031c033a0db1428ef27f0be79de8599333c8f1c26a80f149d3",
+      "target_evidence_bytes_hash": "6bcff23ce6814585baed100a2192adb5b7fd990cff8d5ded4a0c9c5cd1856cd6",
+      "raw_model_response": "{\n  \"invariant\": \"Business logic state transitions must follow a valid, strictly ordered finite state machine; transitions from invalid current states must be rejected.\",\n  \"evidence_gap\": \"The evidence does not show that the endpoint validates the current state of the order before processing a refund request.\",\n  \"affected_target\": \"/api/v1/orders/{id}/refund\",\n  \"decision\": \"HYPOTHESIS\",\n  \"empirical_facts\": [\"FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC\"],\n  \"methodology_references\": [\"CHK-001\"],\n  \"falsification_plan\": \"An observation supporting the hypothesis would be a successful refund request for an order that is not in the PAID state. An observation disproving the hypothesis would be a 409 Conflict or 400 Bad Request response when attempting to refund an order that is not in the PAID state.\"\n}",
+      "latency_ms": 21329.580999998143,
+      "eval_count": 191,
+      "prompt_eval_count": 1550,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": false,
+      "primary_failure_category": "SEMANTIC_GROUNDING_FAILURE",
+      "error_message": "Grounding failure: Cited methodology chunks not found in active signed corpus manifest: ['CHK-001']",
+      "parsed_output": null,
+      "canonical_s0_output": null,
+      "decision": null,
+      "grounding_status": "GROUNDING_REJECTED",
+      "grounding_result": {
+        "valid": false,
+        "status": "DISCARD",
+        "error_code": "CITATION_VALIDITY_ERROR",
+        "reason": "Cited methodology chunks not found in active signed corpus manifest: ['CHK-001']",
+        "invalid_fact_ids": [],
+        "invalid_chunk_ids": [
+          "CHK-001"
+        ],
+        "compliance_failures": []
+      },
+      "timestamp": "2026-09-21T10:45:29.246516+00:00"
+    },
+    {
+      "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-PATCH-01",
+      "track_id": "TRACK_A",
+      "i1_enabled": false,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "b3d7d8eb62ed023c93585d5ca541b62604d4a02a8b98ede3ff63931aaefaa260",
+      "prompt_hash": "ee3cf59e6b45a4584b1d5eb90c35dac786140b2df28a3ed82b5b90b3e2c00863",
+      "target_evidence_bytes_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_model_response": "```json\n{\n  \"invariant\": \"Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.\",\n  \"evidence_gap\": \"The evidence does not demonstrate explicit server-side object ownership verification or cross-identity access without authorization comparison.\",\n  \"affected_target\": \"/api/v1/invoices/{id}\",\n  \"decision\": \"INSUFFICIENT_EVIDENCE\",\n  \"empirical_facts\": [\"FACT-SAAS_BILLING-INV-DETAILS-DOC\"],\n  \"methodology_references\": [\"CHK-001\"],\n  \"falsification_plan\": \"Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or HTTP 404 Not Found. If the response is HTTP 403 Forbidden or HTTP 404 Not Found, the hypothesis is disproved. If the response is successful, the hypothesis is confirmed.\"\n}\n```",
+      "latency_ms": 21819.295799999963,
+      "eval_count": 196,
+      "prompt_eval_count": 1516,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": false,
+      "primary_failure_category": "SEMANTIC_GROUNDING_FAILURE",
+      "error_message": "Grounding failure: Cited methodology chunks not found in active signed corpus manifest: ['CHK-001']",
+      "parsed_output": null,
+      "canonical_s0_output": null,
+      "decision": null,
+      "grounding_status": "GROUNDING_REJECTED",
+      "grounding_result": {
+        "valid": false,
+        "status": "DISCARD",
+        "error_code": "CITATION_VALIDITY_ERROR",
+        "reason": "Cited methodology chunks not found in active signed corpus manifest: ['CHK-001']",
+        "invalid_fact_ids": [],
+        "invalid_chunk_ids": [
+          "CHK-001"
+        ],
+        "compliance_failures": []
+      },
+      "timestamp": "2026-09-21T10:45:51.070048+00:00"
+    },
+    {
+      "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-PATCH-01",
+      "track_id": "TRACK_A",
+      "i1_enabled": true,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "b3d7d8eb62ed023c93585d5ca541b62604d4a02a8b98ede3ff63931aaefaa260",
+      "prompt_hash": "ee3cf59e6b45a4584b1d5eb90c35dac786140b2df28a3ed82b5b90b3e2c00863",
+      "target_evidence_bytes_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_model_response": "{\n  \"invariant\": \"Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.\",\n  \"evidence_gap\": \"The evidence does not demonstrate explicit server-side object ownership verification or cross-identity access without authorization comparison.\",\n  \"affected_target\": \"/api/v1/invoices/{id}\",\n  \"decision\": \"INSUFFICIENT_EVIDENCE\",\n  \"empirical_facts\": [\"FACT-SAAS_BILLING-INV-DETAILS-DOC\"],\n  \"methodology_references\": [\"CHK-001\"],\n  \"falsification_plan\": \"Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or HTTP 404 Not Found. If the response is HTTP 403 Forbidden or HTTP 404 Not Found, the hypothesis is disproved. If the response is successful, the hypothesis is confirmed.\"\n}",
+      "latency_ms": 21612.212799998815,
+      "eval_count": 192,
+      "prompt_eval_count": 1516,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": false,
+      "primary_failure_category": "SEMANTIC_GROUNDING_FAILURE",
+      "error_message": "Grounding failure: Cited methodology chunks not found in active signed corpus manifest: ['CHK-001']",
+      "parsed_output": null,
+      "canonical_s0_output": null,
+      "decision": null,
+      "grounding_status": "GROUNDING_REJECTED",
+      "grounding_result": {
+        "valid": false,
+        "status": "DISCARD",
+        "error_code": "CITATION_VALIDITY_ERROR",
+        "reason": "Cited methodology chunks not found in active signed corpus manifest: ['CHK-001']",
+        "invalid_fact_ids": [],
+        "invalid_chunk_ids": [
+          "CHK-001"
+        ],
+        "compliance_failures": []
+      },
+      "timestamp": "2026-09-21T10:46:12.682918+00:00"
+    },
+    {
+      "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-PATCH-01",
+      "track_id": "TRACK_B",
+      "i1_enabled": false,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "b3d7d8eb62ed023c93585d5ca541b62604d4a02a8b98ede3ff63931aaefaa260",
+      "prompt_hash": "0c8023e77925f372511fe3273fd17dc3a69f2062386a8032f9e4ceee82adb633",
+      "target_evidence_bytes_hash": "56e159483adb462cf9a300bd7990bca497b66a78a53ac15581299e234dc7fd5f",
+      "raw_model_response": "{\n  \"invariant\": \"Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.\",\n  \"evidence_gap\": \"The evidence does not demonstrate explicit server-side object ownership verification, nor does it show cross-identity access without authorization comparison.\",\n  \"affected_target\": \"/api/v1/invoices/{id}\",\n  \"decision\": \"INSUFFICIENT_EVIDENCE\",\n  \"empirical_facts\": [\"FACT-SAAS_BILLING-INV-DETAILS-DOC\"],\n  \"methodology_references\": [\"CHK-001\"],\n  \"falsification_plan\": \"Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or HTTP 404 Not Found. If the response is HTTP 403 Forbidden, it disproves the hypothesis. If the response is HTTP 404 Not Found, it also disproves the hypothesis.\"\n}",
+      "latency_ms": 21052.11830000917,
+      "eval_count": 196,
+      "prompt_eval_count": 1568,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": false,
+      "primary_failure_category": "SEMANTIC_GROUNDING_FAILURE",
+      "error_message": "Grounding failure: Cited methodology chunks not found in active signed corpus manifest: ['CHK-001']",
+      "parsed_output": null,
+      "canonical_s0_output": null,
+      "decision": null,
+      "grounding_status": "GROUNDING_REJECTED",
+      "grounding_result": {
+        "valid": false,
+        "status": "DISCARD",
+        "error_code": "CITATION_VALIDITY_ERROR",
+        "reason": "Cited methodology chunks not found in active signed corpus manifest: ['CHK-001']",
+        "invalid_fact_ids": [],
+        "invalid_chunk_ids": [
+          "CHK-001"
+        ],
+        "compliance_failures": []
+      },
+      "timestamp": "2026-09-21T10:46:33.736202+00:00"
+    },
+    {
+      "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-PATCH-01",
+      "track_id": "TRACK_B",
+      "i1_enabled": true,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "b3d7d8eb62ed023c93585d5ca541b62604d4a02a8b98ede3ff63931aaefaa260",
+      "prompt_hash": "0c8023e77925f372511fe3273fd17dc3a69f2062386a8032f9e4ceee82adb633",
+      "target_evidence_bytes_hash": "56e159483adb462cf9a300bd7990bca497b66a78a53ac15581299e234dc7fd5f",
+      "raw_model_response": "{\n  \"invariant\": \"Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.\",\n  \"evidence_gap\": \"The evidence does not demonstrate explicit server-side object ownership verification, nor does it show cross-identity access without authorization comparison.\",\n  \"affected_target\": \"/api/v1/invoices/{id}\",\n  \"decision\": \"INSUFFICIENT_EVIDENCE\",\n  \"empirical_facts\": [\"FACT-SAAS_BILLING-INV-DETAILS-DOC\"],\n  \"methodology_references\": [\"CHK-001\"],\n  \"falsification_plan\": \"Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or HTTP 404 Not Found. If the response is HTTP 403 Forbidden, it disproves the hypothesis. If the response is HTTP 404 Not Found, it also disproves the hypothesis.\"\n}",
+      "latency_ms": 22057.33670000336,
+      "eval_count": 196,
+      "prompt_eval_count": 1568,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": false,
+      "primary_failure_category": "SEMANTIC_GROUNDING_FAILURE",
+      "error_message": "Grounding failure: Cited methodology chunks not found in active signed corpus manifest: ['CHK-001']",
+      "parsed_output": null,
+      "canonical_s0_output": null,
+      "decision": null,
+      "grounding_status": "GROUNDING_REJECTED",
+      "grounding_result": {
+        "valid": false,
+        "status": "DISCARD",
+        "error_code": "CITATION_VALIDITY_ERROR",
+        "reason": "Cited methodology chunks not found in active signed corpus manifest: ['CHK-001']",
+        "invalid_fact_ids": [],
+        "invalid_chunk_ids": [
+          "CHK-001"
+        ],
+        "compliance_failures": []
+      },
+      "timestamp": "2026-09-21T10:46:55.794142+00:00"
+    },
+    {
+      "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-PATCH-01",
+      "track_id": "TRACK_C",
+      "i1_enabled": false,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "b3d7d8eb62ed023c93585d5ca541b62604d4a02a8b98ede3ff63931aaefaa260",
+      "prompt_hash": "7695f5e87579d6c06c3b96b676d73a7d1ad80ac80bee229621f1e0b29c8a3ab3",
+      "target_evidence_bytes_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_model_response": "```json\n{\n  \"invariant\": \"Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.\",\n  \"evidence_gap\": \"The evidence does not demonstrate explicit server-side object ownership verification or cross-identity access without authorization comparison.\",\n  \"affected_target\": \"/api/v1/invoices/{id}\",\n  \"decision\": \"INSUFFICIENT_EVIDENCE\",\n  \"empirical_facts\": [\"FACT-SAAS_BILLING-INV-DETAILS-DOC\"],\n  \"methodology_references\": [\"CHK-DOC-PLATFORM-INV-01-002-01\"],\n  \"falsification_plan\": \"Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or 404 Not Found.\"\n}\n```",
+      "latency_ms": 18996.913700000732,
+      "eval_count": 171,
+      "prompt_eval_count": 1796,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": true,
+      "primary_failure_category": "VALID",
+      "error_message": null,
+      "parsed_output": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": "The evidence does not demonstrate explicit server-side object ownership verification or cross-identity access without authorization comparison.",
+        "affected_target": "/api/v1/invoices/{id}",
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "empirical_facts": [
+          "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+        ],
+        "methodology_references": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "falsification_plan": "Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or 404 Not Found."
+      },
+      "canonical_s0_output": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": "The evidence does not demonstrate explicit server-side object ownership verification or cross-identity access without authorization comparison.",
+        "affected_target": "/api/v1/invoices/{id}",
+        "decision": "NO_RELEVANT_FUNCTIONALITY",
+        "supporting_evidence_ids": [
+          "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+        ],
+        "methodology_references": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "reasoning_summary": "BAIR evaluation: Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.. Evidence gap: The evidence does not demonstrate explicit server-side object ownership verification or cross-identity access without authorization comparison..",
+        "experiment_proposal": "Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or 404 Not Found.",
+        "category": "API-BOLA-001",
+        "asset_id": "ASSET-SAAS_BILLING-INV-DETAILS-01",
+        "parameter_ids": [],
+        "missing_evidence": [
+          "The evidence does not demonstrate explicit server-side object ownership verification or cross-identity access without authorization comparison."
+        ],
+        "cited_methodology_chunk_ids": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "contradicting_evidence_ids": [],
+        "app_model_delta": null,
+        "violation_assessment": null,
+        "actor_identity_id": null,
+        "target_identity_id": null,
+        "safety_check": null,
+        "evidence_sufficiency": 0.5
+      },
+      "decision": "NO_RELEVANT_FUNCTIONALITY",
+      "grounding_status": "GROUNDING_PASSED",
+      "grounding_result": {
+        "valid": true,
+        "status": "VALID",
+        "error_code": null,
+        "reason": "Dual evidence and methodology grounding validated successfully",
+        "invalid_fact_ids": [],
+        "invalid_chunk_ids": [],
+        "compliance_failures": []
+      },
+      "timestamp": "2026-09-21T10:47:14.792426+00:00"
+    },
+    {
+      "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-PATCH-01",
+      "track_id": "TRACK_C",
+      "i1_enabled": true,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "b3d7d8eb62ed023c93585d5ca541b62604d4a02a8b98ede3ff63931aaefaa260",
+      "prompt_hash": "7695f5e87579d6c06c3b96b676d73a7d1ad80ac80bee229621f1e0b29c8a3ab3",
+      "target_evidence_bytes_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_model_response": "{\n  \"invariant\": \"Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.\",\n  \"evidence_gap\": \"The evidence does not demonstrate explicit server-side object ownership verification or cross-identity access without authorization comparison.\",\n  \"affected_target\": \"/api/v1/invoices/{id}\",\n  \"decision\": \"INSUFFICIENT_EVIDENCE\",\n  \"empirical_facts\": [\"FACT-SAAS_BILLING-INV-DETAILS-DOC\"],\n  \"methodology_references\": [\"CHK-DOC-PLATFORM-INV-01-002-01\"],\n  \"falsification_plan\": \"Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or 404 Not Found.\"\n}",
+      "latency_ms": 19231.741999989026,
+      "eval_count": 167,
+      "prompt_eval_count": 1796,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": true,
+      "primary_failure_category": "VALID",
+      "error_message": null,
+      "parsed_output": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": "The evidence does not demonstrate explicit server-side object ownership verification or cross-identity access without authorization comparison.",
+        "affected_target": "/api/v1/invoices/{id}",
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "empirical_facts": [
+          "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+        ],
+        "methodology_references": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "falsification_plan": "Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or 404 Not Found."
+      },
+      "canonical_s0_output": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": "The evidence does not demonstrate explicit server-side object ownership verification or cross-identity access without authorization comparison.",
+        "affected_target": "/api/v1/invoices/{id}",
+        "decision": "NO_RELEVANT_FUNCTIONALITY",
+        "supporting_evidence_ids": [
+          "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+        ],
+        "methodology_references": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "reasoning_summary": "BAIR evaluation: Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.. Evidence gap: The evidence does not demonstrate explicit server-side object ownership verification or cross-identity access without authorization comparison..",
+        "experiment_proposal": "Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or 404 Not Found.",
+        "category": "API-BOLA-001",
+        "asset_id": "ASSET-SAAS_BILLING-INV-DETAILS-01",
+        "parameter_ids": [],
+        "missing_evidence": [
+          "The evidence does not demonstrate explicit server-side object ownership verification or cross-identity access without authorization comparison."
+        ],
+        "cited_methodology_chunk_ids": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "contradicting_evidence_ids": [],
+        "app_model_delta": null,
+        "violation_assessment": null,
+        "actor_identity_id": null,
+        "target_identity_id": null,
+        "safety_check": null,
+        "evidence_sufficiency": 0.5
+      },
+      "decision": "NO_RELEVANT_FUNCTIONALITY",
+      "grounding_status": "GROUNDING_PASSED",
+      "grounding_result": {
+        "valid": true,
+        "status": "VALID",
+        "error_code": null,
+        "reason": "Dual evidence and methodology grounding validated successfully",
+        "invalid_fact_ids": [],
+        "invalid_chunk_ids": [],
+        "compliance_failures": []
+      },
+      "timestamp": "2026-09-21T10:47:34.024869+00:00"
+    },
+    {
+      "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-PATCH-01",
+      "track_id": "TRACK_D",
+      "i1_enabled": false,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "b3d7d8eb62ed023c93585d5ca541b62604d4a02a8b98ede3ff63931aaefaa260",
+      "prompt_hash": "0343a8a0426c988e2ed8a3392727fb5fcc6d1e95c4d7602f83f35d5a94964609",
+      "target_evidence_bytes_hash": "56e159483adb462cf9a300bd7990bca497b66a78a53ac15581299e234dc7fd5f",
+      "raw_model_response": "```json\n{\n  \"invariant\": \"Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.\",\n  \"evidence_gap\": \"Missing observation or gap in evidence (null if none)\",\n  \"affected_target\": \"Target endpoint, asset ID, or parameter\",\n  \"decision\": \"NO_RELEVANT_FUNCTIONALITY\",\n  \"empirical_facts\": [\"FACT-SAAS_BILLING-INV-DETAILS-DOC\"],\n  \"methodology_references\": [\"CHK-DOC-PLATFORM-INV-01-002-01\"],\n  \"falsification_plan\": \"observation supporting hypothesis AND observation disproving/falsifying hypothesis\"\n}\n```",
+      "latency_ms": 16414.583299992955,
+      "eval_count": 147,
+      "prompt_eval_count": 1848,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": true,
+      "primary_failure_category": "VALID",
+      "error_message": null,
+      "parsed_output": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": "Missing observation or gap in evidence (null if none)",
+        "affected_target": "Target endpoint, asset ID, or parameter",
+        "decision": "NO_RELEVANT_FUNCTIONALITY",
+        "empirical_facts": [
+          "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+        ],
+        "methodology_references": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "falsification_plan": "observation supporting hypothesis AND observation disproving/falsifying hypothesis"
+      },
+      "canonical_s0_output": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": "Missing observation or gap in evidence (null if none)",
+        "affected_target": "Target endpoint, asset ID, or parameter",
+        "decision": "NO_RELEVANT_FUNCTIONALITY",
+        "supporting_evidence_ids": [
+          "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+        ],
+        "methodology_references": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "reasoning_summary": "BAIR evaluation: Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.. Evidence gap: Missing observation or gap in evidence (null if none).",
+        "experiment_proposal": "observation supporting hypothesis AND observation disproving/falsifying hypothesis",
+        "category": "API-BOLA-001",
+        "asset_id": "ASSET-SAAS_BILLING-INV-DETAILS-01",
+        "parameter_ids": [],
+        "missing_evidence": [
+          "Missing observation or gap in evidence (null if none)"
+        ],
+        "cited_methodology_chunk_ids": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "contradicting_evidence_ids": [],
+        "app_model_delta": null,
+        "violation_assessment": null,
+        "actor_identity_id": null,
+        "target_identity_id": null,
+        "safety_check": null,
+        "evidence_sufficiency": 0.5
+      },
+      "decision": "NO_RELEVANT_FUNCTIONALITY",
+      "grounding_status": "GROUNDING_PASSED",
+      "grounding_result": {
+        "valid": true,
+        "status": "VALID",
+        "error_code": null,
+        "reason": "Dual evidence and methodology grounding validated successfully",
+        "invalid_fact_ids": [],
+        "invalid_chunk_ids": [],
+        "compliance_failures": []
+      },
+      "timestamp": "2026-09-21T10:47:50.440679+00:00"
+    },
+    {
+      "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-PATCH-01",
+      "track_id": "TRACK_D",
+      "i1_enabled": true,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "b3d7d8eb62ed023c93585d5ca541b62604d4a02a8b98ede3ff63931aaefaa260",
+      "prompt_hash": "0343a8a0426c988e2ed8a3392727fb5fcc6d1e95c4d7602f83f35d5a94964609",
+      "target_evidence_bytes_hash": "56e159483adb462cf9a300bd7990bca497b66a78a53ac15581299e234dc7fd5f",
+      "raw_model_response": "{\n  \"invariant\": \"Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.\",\n  \"evidence_gap\": \"The evidence does not demonstrate explicit server-side object ownership verification or cross-identity access without authorization comparison.\",\n  \"affected_target\": \"GET /api/v1/invoices/{id}\",\n  \"decision\": \"INSUFFICIENT_EVIDENCE\",\n  \"empirical_facts\": [\"FACT-SAAS_BILLING-INV-DETAILS-DOC\"],\n  \"methodology_references\": [\"CHK-DOC-PLATFORM-INV-01-002-01\"],\n  \"falsification_plan\": \"Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or 404 Not Found.\"\n}",
+      "latency_ms": 19461.848899998586,
+      "eval_count": 169,
+      "prompt_eval_count": 1848,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": true,
+      "primary_failure_category": "VALID",
+      "error_message": null,
+      "parsed_output": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": "The evidence does not demonstrate explicit server-side object ownership verification or cross-identity access without authorization comparison.",
+        "affected_target": "GET /api/v1/invoices/{id}",
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "empirical_facts": [
+          "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+        ],
+        "methodology_references": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "falsification_plan": "Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or 404 Not Found."
+      },
+      "canonical_s0_output": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": "The evidence does not demonstrate explicit server-side object ownership verification or cross-identity access without authorization comparison.",
+        "affected_target": "GET /api/v1/invoices/{id}",
+        "decision": "NO_RELEVANT_FUNCTIONALITY",
+        "supporting_evidence_ids": [
+          "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+        ],
+        "methodology_references": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "reasoning_summary": "BAIR evaluation: Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.. Evidence gap: The evidence does not demonstrate explicit server-side object ownership verification or cross-identity access without authorization comparison..",
+        "experiment_proposal": "Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or 404 Not Found.",
+        "category": "API-BOLA-001",
+        "asset_id": "ASSET-SAAS_BILLING-INV-DETAILS-01",
+        "parameter_ids": [],
+        "missing_evidence": [
+          "The evidence does not demonstrate explicit server-side object ownership verification or cross-identity access without authorization comparison."
+        ],
+        "cited_methodology_chunk_ids": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "contradicting_evidence_ids": [],
+        "app_model_delta": null,
+        "violation_assessment": null,
+        "actor_identity_id": null,
+        "target_identity_id": null,
+        "safety_check": null,
+        "evidence_sufficiency": 0.5
+      },
+      "decision": "NO_RELEVANT_FUNCTIONALITY",
+      "grounding_status": "GROUNDING_PASSED",
+      "grounding_result": {
+        "valid": true,
+        "status": "VALID",
+        "error_code": null,
+        "reason": "Dual evidence and methodology grounding validated successfully",
+        "invalid_fact_ids": [],
+        "invalid_chunk_ids": [],
+        "compliance_failures": []
+      },
+      "timestamp": "2026-09-21T10:48:09.903205+00:00"
+    }
+  ]
+}

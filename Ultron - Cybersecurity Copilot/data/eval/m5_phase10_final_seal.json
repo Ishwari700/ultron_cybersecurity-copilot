@@ -1,0 +1,162 @@
+{
+  "milestone": "M5_PHASE10",
+  "status": "FINAL_AUDITED",
+  "description": "Milestone M5 Phase 10 full-population confirmatory benchmark provenance seal and cryptographic audit manifest.",
+  "sealed_at_utc": "2026-09-26T15:56:00Z",
+  "experimental_design": {
+    "type": "2x2 Factorial",
+    "architecture_dimension": ["DETERMINISTIC_EXPERIMENT_SKELETON", "BASELINE_EXISTING_ARCHITECTURE"],
+    "context_dimension": ["TRACK_A", "TRACK_D"],
+    "total_benchmark_calls": 336,
+    "scenarios_count": 84,
+    "vulnerable_count": 36,
+    "controls_count": 48,
+    "calls_per_condition": {
+      "C1": 84,
+      "C2": 84,
+      "C3": 84,
+      "C4": 84
+    },
+    "deterministic_order_seed": "M5_PHASE10_FACTORIAL_ORDER_SEED_42"
+  },
+  "runtime_environment": {
+    "freeze_commit": "d3c531e71855098dddf568f54aef8dfb5e49c089",
+    "model": "qwen2.5-coder:7b",
+    "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+    "ollama_version": "0.34.1",
+    "num_ctx": 2048,
+    "num_predict": 300,
+    "temperature": 0.0,
+    "seed": 42,
+    "retries": 0,
+    "keep_alive": "60m",
+    "network_bound": "loopback_only"
+  },
+  "runtime_control_telemetry": {
+    "hard_timeout_ceiling_ms": 30000.0,
+    "teardown_tolerance_bound_ms": 500.0,
+    "runtime_control_deviation": true,
+    "runtime_timeout_count": 37,
+    "timeout_teardown_tolerance_exceedances": 4,
+    "max_timeout_latency_ms": 30892.6,
+    "deviation_classification": "POST-BENCHMARK RUNTIME-CONTROL DEVIATION",
+    "deviation_cause": "OS-level Windows socket closure and TCP reset latency during HTTP deadline cancellation",
+    "human_reviewer_estimand_measured": false
+  },
+  "failure_category_totals": {
+    "VALID": 151,
+    "RUNTIME_TIMEOUT": 37,
+    "RUNTIME_TRANSPORT_FAILURE": 0,
+    "PARSER_FAILURE": 0,
+    "SCHEMA_VALIDITY_FAILURE": 8,
+    "SEMANTIC_GROUNDING_FAILURE": 26,
+    "SEMANTIC_EXPERIMENT_POLARITY_FAILURE": 114,
+    "CATEGORY_ACTION_INCOMPATIBILITY": 0,
+    "total_calls": 336
+  },
+  "condition_allocation": {
+    "C1": {
+      "name": "DETERMINISTIC_EXPERIMENT_SKELETON_TRACK_A",
+      "total_calls": 84,
+      "VALID": 52,
+      "RUNTIME_TIMEOUT": 10,
+      "RUNTIME_TRANSPORT_FAILURE": 0,
+      "PARSER_FAILURE": 0,
+      "SCHEMA_VALIDITY_FAILURE": 0,
+      "SEMANTIC_GROUNDING_FAILURE": 0,
+      "SEMANTIC_EXPERIMENT_POLARITY_FAILURE": 22,
+      "CATEGORY_ACTION_INCOMPATIBILITY": 0,
+      "candidate_hypotheses": 56,
+      "candidate_abstentions": 28,
+      "valid_typed_experiments": 34,
+      "useful_vulnerable_hypotheses": 14
+    },
+    "C2": {
+      "name": "DETERMINISTIC_EXPERIMENT_SKELETON_TRACK_D",
+      "total_calls": 84,
+      "VALID": 14,
+      "RUNTIME_TIMEOUT": 19,
+      "RUNTIME_TRANSPORT_FAILURE": 0,
+      "PARSER_FAILURE": 0,
+      "SCHEMA_VALIDITY_FAILURE": 0,
+      "SEMANTIC_GROUNDING_FAILURE": 26,
+      "SEMANTIC_EXPERIMENT_POLARITY_FAILURE": 25,
+      "CATEGORY_ACTION_INCOMPATIBILITY": 0,
+      "candidate_hypotheses": 51,
+      "candidate_abstentions": 33,
+      "valid_typed_experiments": 2,
+      "useful_vulnerable_hypotheses": 1
+    },
+    "C3": {
+      "name": "BASELINE_EXISTING_ARCHITECTURE_TRACK_A",
+      "total_calls": 84,
+      "VALID": 40,
+      "RUNTIME_TIMEOUT": 7,
+      "RUNTIME_TRANSPORT_FAILURE": 0,
+      "PARSER_FAILURE": 0,
+      "SCHEMA_VALIDITY_FAILURE": 0,
+      "SEMANTIC_GROUNDING_FAILURE": 0,
+      "SEMANTIC_EXPERIMENT_POLARITY_FAILURE": 37,
+      "CATEGORY_ACTION_INCOMPATIBILITY": 0,
+      "candidate_hypotheses": 37,
+      "candidate_abstentions": 47,
+      "valid_typed_experiments": 0,
+      "useful_vulnerable_hypotheses": 0
+    },
+    "C4": {
+      "name": "BASELINE_EXISTING_ARCHITECTURE_TRACK_D",
+      "total_calls": 84,
+      "VALID": 45,
+      "RUNTIME_TIMEOUT": 1,
+      "RUNTIME_TRANSPORT_FAILURE": 0,
+      "PARSER_FAILURE": 0,
+      "SCHEMA_VALIDITY_FAILURE": 8,
+      "SEMANTIC_GROUNDING_FAILURE": 0,
+      "SEMANTIC_EXPERIMENT_POLARITY_FAILURE": 30,
+      "CATEGORY_ACTION_INCOMPATIBILITY": 0,
+      "candidate_hypotheses": 36,
+      "candidate_abstentions": 48,
+      "valid_typed_experiments": 0,
+      "useful_vulnerable_hypotheses": 0
+    }
+  },
+  "artifact_provenance": {
+    "canonical_analysis_dataset": {
+      "path": "data/eval/m5_phase10_full_population_validation.json",
+      "format": "POSIX_LF_NORMALIZED",
+      "sha256": "6821d207729de97ac99657a09e38c25895a73285fe9c485d299dc27f37d2bdba"
+    },
+    "runtime_checkpoint": {
+      "path": "data/eval/m5_phase10_checkpoint.json",
+      "format": "WINDOWS_CRLF_FLUSHED",
+      "sha256": "40f9f725fca5fdf05a76836182960b7f0d4c303a182d6e8af068a1b57e8f4537"
+    },
+    "reconstructed_crlf_artifact": {
+      "path": "data/eval/m5_phase10_full_population_validation_raw_crlf.json",
+      "format": "RECONSTRUCTED_CRLF_EQUIVALENT",
+      "sha256": "c7e4fb33061db2dd5539c6d8795c1210ea275ef419b9cc5bd2746713405a2e41",
+      "provenance_note": "Reconstructed post-collection by converting canonical LF dataset to CRLF representation; verified semantically invariant with checkpoint and canonical dataset."
+    },
+    "historical_artifacts": {
+      "phase7_benchmark_final": {
+        "path": "data/eval/m5_phase7_benchmark_final.json",
+        "sha256": "1e0ed90c4aa672f135d2d2f2240a14d22fa0037c03efda33634f4bf10ff0b125"
+      },
+      "phase8_semantic_study": {
+        "path": "data/eval/m5_phase8_semantic_study.json",
+        "sha256": "b1df9a62fb07d76e0abf6e3935ccbabdaa1713f4c594019ae30c9e59567a45c6"
+      },
+      "phase9_semantic_budget_study": {
+        "path": "data/eval/m5_phase9_semantic_budget_study.json",
+        "sha256": "3c0d3e503c7ed24470b14dfde0bd763c631a9b5dbf70c047bbca72cfaab07f95"
+      },
+      "scenarios_registry": {
+        "path": "src/eval/scenarios.py",
+        "sha256": "102789655bfb04041de9259d1bf6db7f088979e5bce9bac9eb050564ef0110a8"
+      }
+    }
+  },
+  "semantic_invariance_verified": true,
+  "rerun_benchmark_count": 0,
+  "post_collection_model_output_modifications": 0
+}

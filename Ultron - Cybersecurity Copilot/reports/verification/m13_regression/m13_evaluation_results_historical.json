@@ -1,0 +1,3017 @@
+{
+  "benchmark_name": "M13 Full Security Assessment Workspace Benchmark",
+  "timestamp": "2026-10-09T02:48:49.473918+00:00",
+  "total_cases": 360,
+  "passed_cases": 360,
+  "failed_cases": 0,
+  "pass_rate": 1.0,
+  "pass_rate_percent": "100.00%",
+  "hard_invariant_violations": 0,
+  "total_duration_seconds": 0.043,
+  "average_case_latency_ms": 0.119,
+  "categories_evaluated": 24,
+  "category_breakdown": {
+    "LIFECYCLE": {
+      "total": 15,
+      "passed": 15,
+      "failed": 0
+    },
+    "AUTHORIZATION": {
+      "total": 15,
+      "passed": 15,
+      "failed": 0
+    },
+    "SCOPE": {
+      "total": 15,
+      "passed": 15,
+      "failed": 0
+    },
+    "ASSET_INVENTORY": {
+      "total": 15,
+      "passed": 15,
+      "failed": 0
+    },
+    "ARTIFACT_REGISTRY": {
+      "total": 15,
+      "passed": 15,
+      "failed": 0
+    },
+    "LINEAGE_PROVENANCE": {
+      "total": 15,
+      "passed": 15,
+      "failed": 0
+    },
+    "HYPOTHESIS_MANAGEMENT": {
+      "total": 15,
+      "passed": 15,
+      "failed": 0
+    },
+    "ANALYTICAL_AGENTS": {
+      "total": 15,
+      "passed": 15,
+      "failed": 0
+    },
+    "KNOWLEDGE_SEPARATION": {
+      "total": 15,
+      "passed": 15,
+      "failed": 0
+    },
+    "MEMORY_INTEGRATION": {
+      "total": 15,
+      "passed": 15,
+      "failed": 0
+    },
+    "CONTROLLED_EXPERIMENT": {
+      "total": 15,
+      "passed": 15,
+      "failed": 0
+    },
+    "MANUAL_PROCEDURES": {
+      "total": 15,
+      "passed": 15,
+      "failed": 0
+    },
+    "HUMAN_REVIEW": {
+      "total": 15,
+      "passed": 15,
+      "failed": 0
+    },
+    "FINDING_CONFIRMATION": {
+      "total": 15,
+      "passed": 15,
+      "failed": 0
+    },
+    "REPORT_GENERATION": {
+      "total": 15,
+      "passed": 15,
+      "failed": 0
+    },
+    "AUDIT_LOGGING": {
+      "total": 15,
+      "passed": 15,
+      "failed": 0
+    },
+    "VIEW_STATE_PERSISTENCE": {
+      "total": 15,
+      "passed": 15,
+      "failed": 0
+    },
+    "WORKSPACE_SEARCH": {
+      "total": 15,
+      "passed": 15,
+      "failed": 0
+    },
+    "ERROR_HANDLING": {
+      "total": 15,
+      "passed": 15,
+      "failed": 0
+    },
+    "MULTI_TENANT_ISOLATION": {
+      "total": 15,
+      "passed": 15,
+      "failed": 0
+    },
+    "PROMPT_INJECTION_DEFENSE": {
+      "total": 15,
+      "passed": 15,
+      "failed": 0
+    },
+    "EPISTEMIC_INTEGRITY": {
+      "total": 15,
+      "passed": 15,
+      "failed": 0
+    },
+    "API_CORRECTNESS": {
+      "total": 15,
+      "passed": 15,
+      "failed": 0
+    },
+    "UI_CONSISTENCY": {
+      "total": 15,
+      "passed": 15,
+      "failed": 0
+    }
+  },
+  "detailed_results": [
+    {
+      "case_id": "M13-LC-001",
+      "category": "LIFECYCLE",
+      "title": "Lifecycle: DRAFT creation initial state",
+      "passed": true,
+      "elapsed_ms": 0.002,
+      "details": {}
+    },
+    {
+      "case_id": "M13-LC-002",
+      "category": "LIFECYCLE",
+      "title": "Lifecycle: Transition DRAFT to ACTIVE with authorization",
+      "passed": true,
+      "elapsed_ms": 0.002,
+      "details": {}
+    },
+    {
+      "case_id": "M13-LC-003",
+      "category": "LIFECYCLE",
+      "title": "Lifecycle: Disallowed direct transition DRAFT to COMPLETED",
+      "passed": true,
+      "elapsed_ms": 0.003,
+      "details": {}
+    },
+    {
+      "case_id": "M13-LC-004",
+      "category": "LIFECYCLE",
+      "title": "Lifecycle: Transition ACTIVE to COMPLETED on wrap-up",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-LC-005",
+      "category": "LIFECYCLE",
+      "title": "Lifecycle: Transition COMPLETED to ARCHIVED for retention",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-LC-006",
+      "category": "LIFECYCLE",
+      "title": "Lifecycle: Terminal state ARCHIVED blocks modification",
+      "passed": true,
+      "elapsed_ms": 0.068,
+      "details": {}
+    },
+    {
+      "case_id": "M13-LC-007",
+      "category": "LIFECYCLE",
+      "title": "Lifecycle: Terminal state CANCELLED prevents reactivation",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-LC-008",
+      "category": "LIFECYCLE",
+      "title": "Lifecycle: Terminal state EXPIRED prevents target actions",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-LC-009",
+      "category": "LIFECYCLE",
+      "title": "Lifecycle: Terminal state REVOKED isolates data",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-LC-010",
+      "category": "LIFECYCLE",
+      "title": "Lifecycle: Unapproved actor cannot transition lifecycle",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-LC-011",
+      "category": "LIFECYCLE",
+      "title": "Lifecycle: Audit trail captures lifecycle transition event",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-LC-012",
+      "category": "LIFECYCLE",
+      "title": "Lifecycle: Draft assessment reports unconfigured workflow",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-LC-013",
+      "category": "LIFECYCLE",
+      "title": "Lifecycle: Active assessment reports progressing milestone",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-LC-014",
+      "category": "LIFECYCLE",
+      "title": "Lifecycle: Completed assessment sets read_only flag to True",
+      "passed": true,
+      "elapsed_ms": 0.0,
+      "details": {}
+    },
+    {
+      "case_id": "M13-LC-015",
+      "category": "LIFECYCLE",
+      "title": "Lifecycle: Idempotent state transition leaves state intact",
+      "passed": true,
+      "elapsed_ms": 0.0,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AUTH-001",
+      "category": "AUTHORIZATION",
+      "title": "Authorization: Valid authorization accepted",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AUTH-002",
+      "category": "AUTHORIZATION",
+      "title": "Authorization: Expired authorization window blocks interaction",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AUTH-003",
+      "category": "AUTHORIZATION",
+      "title": "Authorization: Future authorization window is not yet active",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AUTH-004",
+      "category": "AUTHORIZATION",
+      "title": "Authorization: Pending authorization blocks activation",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AUTH-005",
+      "category": "AUTHORIZATION",
+      "title": "Authorization: Revoked authorization immediately suspends actions",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AUTH-006",
+      "category": "AUTHORIZATION",
+      "title": "Authorization: Authorization ID cryptographic uniqueness",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AUTH-007",
+      "category": "AUTHORIZATION",
+      "title": "Authorization: Missing authorization sign-off blocks experiments",
+      "passed": true,
+      "elapsed_ms": 0.0,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AUTH-008",
+      "category": "AUTHORIZATION",
+      "title": "Authorization: Authorization record immutability after activation",
+      "passed": true,
+      "elapsed_ms": 0.0,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AUTH-009",
+      "category": "AUTHORIZATION",
+      "title": "Authorization: Engagement type must be recognized enum",
+      "passed": true,
+      "elapsed_ms": 0.0,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AUTH-010",
+      "category": "AUTHORIZATION",
+      "title": "Authorization: Unsupported engagement type rejected",
+      "passed": true,
+      "elapsed_ms": 0.013,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AUTH-011",
+      "category": "AUTHORIZATION",
+      "title": "Authorization: Chief security officer signatory recorded",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AUTH-012",
+      "category": "AUTHORIZATION",
+      "title": "Authorization: Scope reference binding required in authorization",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AUTH-013",
+      "category": "AUTHORIZATION",
+      "title": "Authorization: Authorization details surfaced in overview read-model",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AUTH-014",
+      "category": "AUTHORIZATION",
+      "title": "Authorization: Navigation to authorization section does not grant access",
+      "passed": true,
+      "elapsed_ms": 0.0,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AUTH-015",
+      "category": "AUTHORIZATION",
+      "title": "Authorization: Authorization status check performs zero side effects",
+      "passed": true,
+      "elapsed_ms": 0.0,
+      "details": {}
+    },
+    {
+      "case_id": "M13-SCP-001",
+      "category": "SCOPE",
+      "title": "Scope: Exact in-scope domain matches",
+      "passed": true,
+      "elapsed_ms": 0.307,
+      "details": {}
+    },
+    {
+      "case_id": "M13-SCP-002",
+      "category": "SCOPE",
+      "title": "Scope: Explicit out-of-scope domain rejected",
+      "passed": true,
+      "elapsed_ms": 0.228,
+      "details": {}
+    },
+    {
+      "case_id": "M13-SCP-003",
+      "category": "SCOPE",
+      "title": "Scope: Unlisted domain fails closed as out of scope",
+      "passed": true,
+      "elapsed_ms": 0.322,
+      "details": {}
+    },
+    {
+      "case_id": "M13-SCP-004",
+      "category": "SCOPE",
+      "title": "Scope: Wildcard subdomain rule matches child domain",
+      "passed": true,
+      "elapsed_ms": 19.222,
+      "details": {}
+    },
+    {
+      "case_id": "M13-SCP-005",
+      "category": "SCOPE",
+      "title": "Scope: Wildcard subdomain does not match parent without flag",
+      "passed": true,
+      "elapsed_ms": 17.94,
+      "details": {}
+    },
+    {
+      "case_id": "M13-SCP-006",
+      "category": "SCOPE",
+      "title": "Scope: CIDR IP range matches member address",
+      "passed": true,
+      "elapsed_ms": 0.411,
+      "details": {}
+    },
+    {
+      "case_id": "M13-SCP-007",
+      "category": "SCOPE",
+      "title": "Scope: CIDR IP range rejects external address",
+      "passed": true,
+      "elapsed_ms": 0.252,
+      "details": {}
+    },
+    {
+      "case_id": "M13-SCP-008",
+      "category": "SCOPE",
+      "title": "Scope: URL target matches host in scope",
+      "passed": true,
+      "elapsed_ms": 0.281,
+      "details": {}
+    },
+    {
+      "case_id": "M13-SCP-009",
+      "category": "SCOPE",
+      "title": "Scope: URL target with out-of-scope host rejected",
+      "passed": true,
+      "elapsed_ms": 0.283,
+      "details": {}
+    },
+    {
+      "case_id": "M13-SCP-010",
+      "category": "SCOPE",
+      "title": "Scope: ScopeGate tester never alters scope policy",
+      "passed": true,
+      "elapsed_ms": 0.183,
+      "details": {}
+    },
+    {
+      "case_id": "M13-SCP-011",
+      "category": "SCOPE",
+      "title": "Scope: Empty target fails closed",
+      "passed": true,
+      "elapsed_ms": 0.002,
+      "details": {}
+    },
+    {
+      "case_id": "M13-SCP-012",
+      "category": "SCOPE",
+      "title": "Scope: Malformed URL fails closed",
+      "passed": true,
+      "elapsed_ms": 0.347,
+      "details": {}
+    },
+    {
+      "case_id": "M13-SCP-013",
+      "category": "SCOPE",
+      "title": "Scope: Port restricted rule requires matching port",
+      "passed": true,
+      "elapsed_ms": 0.225,
+      "details": {}
+    },
+    {
+      "case_id": "M13-SCP-014",
+      "category": "SCOPE",
+      "title": "Scope: Port mismatch rejected",
+      "passed": true,
+      "elapsed_ms": 0.234,
+      "details": {}
+    },
+    {
+      "case_id": "M13-SCP-015",
+      "category": "SCOPE",
+      "title": "Scope: Scope metrics accurately count in and out of scope rules",
+      "passed": true,
+      "elapsed_ms": 0.002,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AST-001",
+      "category": "ASSET_INVENTORY",
+      "title": "Asset: Add DOMAIN asset to inventory",
+      "passed": true,
+      "elapsed_ms": 0.051,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AST-002",
+      "category": "ASSET_INVENTORY",
+      "title": "Asset: Add IP asset to inventory",
+      "passed": true,
+      "elapsed_ms": 0.02,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AST-003",
+      "category": "ASSET_INVENTORY",
+      "title": "Asset: Add URL asset to inventory",
+      "passed": true,
+      "elapsed_ms": 0.012,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AST-004",
+      "category": "ASSET_INVENTORY",
+      "title": "Asset: Add SERVICE asset to inventory",
+      "passed": true,
+      "elapsed_ms": 0.013,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AST-005",
+      "category": "ASSET_INVENTORY",
+      "title": "Asset: Tagging assets maintains searchability",
+      "passed": true,
+      "elapsed_ms": 0.012,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AST-006",
+      "category": "ASSET_INVENTORY",
+      "title": "Asset: Duplicate asset canonicalization deduplicates identifier",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AST-007",
+      "category": "ASSET_INVENTORY",
+      "title": "Asset: Asset hierarchy links child to parent",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AST-008",
+      "category": "ASSET_INVENTORY",
+      "title": "Asset: Out-of-scope asset clearly tagged as OUT_OF_SCOPE",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AST-009",
+      "category": "ASSET_INVENTORY",
+      "title": "Asset: Asset count reflected in workspace overview",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AST-010",
+      "category": "ASSET_INVENTORY",
+      "title": "Asset: Asset inventory export contains all registered nodes",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AST-011",
+      "category": "ASSET_INVENTORY",
+      "title": "Asset: Asset metadata tracks discovery source",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AST-012",
+      "category": "ASSET_INVENTORY",
+      "title": "Asset: Asset confidence score tracked",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AST-013",
+      "category": "ASSET_INVENTORY",
+      "title": "Asset: Cross-assessment asset isolation",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AST-014",
+      "category": "ASSET_INVENTORY",
+      "title": "Asset: Deleting or archiving assessment isolates asset graph",
+      "passed": true,
+      "elapsed_ms": 0.0,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AST-015",
+      "category": "ASSET_INVENTORY",
+      "title": "Asset: Empty identifier rejected by asset manager",
+      "passed": true,
+      "elapsed_ms": 0.0,
+      "details": {}
+    },
+    {
+      "case_id": "M13-ART-001",
+      "category": "ARTIFACT_REGISTRY",
+      "title": "Artifact: Register HAR artifact with SHA-256",
+      "passed": true,
+      "elapsed_ms": 0.059,
+      "details": {}
+    },
+    {
+      "case_id": "M13-ART-002",
+      "category": "ARTIFACT_REGISTRY",
+      "title": "Artifact: Register PCAP artifact with SHA-256",
+      "passed": true,
+      "elapsed_ms": 0.024,
+      "details": {}
+    },
+    {
+      "case_id": "M13-ART-003",
+      "category": "ARTIFACT_REGISTRY",
+      "title": "Artifact: New artifact defaults to QUARANTINED until inspected",
+      "passed": true,
+      "elapsed_ms": 0.021,
+      "details": {}
+    },
+    {
+      "case_id": "M13-ART-004",
+      "category": "ARTIFACT_REGISTRY",
+      "title": "Artifact: Artifact integrity validation matches payload hash",
+      "passed": true,
+      "elapsed_ms": 0.025,
+      "details": {}
+    },
+    {
+      "case_id": "M13-ART-005",
+      "category": "ARTIFACT_REGISTRY",
+      "title": "Artifact: Mismatching hash is rejected on registration",
+      "passed": true,
+      "elapsed_ms": 0.02,
+      "details": {}
+    },
+    {
+      "case_id": "M13-ART-006",
+      "category": "ARTIFACT_REGISTRY",
+      "title": "Artifact: Artifact registry isolates across assessments",
+      "passed": true,
+      "elapsed_ms": 0.017,
+      "details": {}
+    },
+    {
+      "case_id": "M13-ART-007",
+      "category": "ARTIFACT_REGISTRY",
+      "title": "Artifact: Artifact count matches overview metrics",
+      "passed": true,
+      "elapsed_ms": 0.015,
+      "details": {}
+    },
+    {
+      "case_id": "M13-ART-008",
+      "category": "ARTIFACT_REGISTRY",
+      "title": "Artifact: Quarantined artifact excluded from verified evidence queries",
+      "passed": true,
+      "elapsed_ms": 0.015,
+      "details": {}
+    },
+    {
+      "case_id": "M13-ART-009",
+      "category": "ARTIFACT_REGISTRY",
+      "title": "Artifact: Promotion of validated artifact marks VALIDATED",
+      "passed": true,
+      "elapsed_ms": 0.015,
+      "details": {}
+    },
+    {
+      "case_id": "M13-ART-010",
+      "category": "ARTIFACT_REGISTRY",
+      "title": "Artifact: Artifact ID substitution attempt is prevented",
+      "passed": true,
+      "elapsed_ms": 0.014,
+      "details": {}
+    },
+    {
+      "case_id": "M13-ART-011",
+      "category": "ARTIFACT_REGISTRY",
+      "title": "Artifact: Binary artifact size recorded accurately",
+      "passed": true,
+      "elapsed_ms": 0.016,
+      "details": {}
+    },
+    {
+      "case_id": "M13-ART-012",
+      "category": "ARTIFACT_REGISTRY",
+      "title": "Artifact: Artifact acquisition timestamp recorded in UTC",
+      "passed": true,
+      "elapsed_ms": 0.016,
+      "details": {}
+    },
+    {
+      "case_id": "M13-ART-013",
+      "category": "ARTIFACT_REGISTRY",
+      "title": "Artifact: Artifact audit event emitted upon registration",
+      "passed": true,
+      "elapsed_ms": 0.015,
+      "details": {}
+    },
+    {
+      "case_id": "M13-ART-014",
+      "category": "ARTIFACT_REGISTRY",
+      "title": "Artifact: MIME type correctly classified for HTTP captures",
+      "passed": true,
+      "elapsed_ms": 0.015,
+      "details": {}
+    },
+    {
+      "case_id": "M13-ART-015",
+      "category": "ARTIFACT_REGISTRY",
+      "title": "Artifact: Rejection of corrupted archive with quarantine reason",
+      "passed": true,
+      "elapsed_ms": 0.016,
+      "details": {}
+    },
+    {
+      "case_id": "M13-LIN-001",
+      "category": "LINEAGE_PROVENANCE",
+      "title": "Lineage: Observation registers into lineage graph",
+      "passed": true,
+      "elapsed_ms": 0.003,
+      "details": {}
+    },
+    {
+      "case_id": "M13-LIN-002",
+      "category": "LINEAGE_PROVENANCE",
+      "title": "Lineage: Hypothesis registers into lineage graph with parent obs",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-LIN-003",
+      "category": "LINEAGE_PROVENANCE",
+      "title": "Lineage: Experiment links to parent hypothesis in lineage",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-LIN-004",
+      "category": "LINEAGE_PROVENANCE",
+      "title": "Lineage: Finding links to reproduction experiment in lineage",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-LIN-005",
+      "category": "LINEAGE_PROVENANCE",
+      "title": "Lineage: Complete chain from observation to verified finding",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-LIN-006",
+      "category": "LINEAGE_PROVENANCE",
+      "title": "Lineage: Disconnected evidence cannot anchor verified finding",
+      "passed": true,
+      "elapsed_ms": 0.0,
+      "details": {}
+    },
+    {
+      "case_id": "M13-LIN-007",
+      "category": "LINEAGE_PROVENANCE",
+      "title": "Lineage: Lineage graph exports full ancestry trace",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-LIN-008",
+      "category": "LINEAGE_PROVENANCE",
+      "title": "Lineage: Provenance metadata records tool name and parser version",
+      "passed": true,
+      "elapsed_ms": 0.0,
+      "details": {}
+    },
+    {
+      "case_id": "M13-LIN-009",
+      "category": "LINEAGE_PROVENANCE",
+      "title": "Lineage: Deterministic observation ID based on content hash",
+      "passed": true,
+      "elapsed_ms": 0.0,
+      "details": {}
+    },
+    {
+      "case_id": "M13-LIN-010",
+      "category": "LINEAGE_PROVENANCE",
+      "title": "Lineage: Immutable lineage prevents retroactive tampering",
+      "passed": true,
+      "elapsed_ms": 0.0,
+      "details": {}
+    },
+    {
+      "case_id": "M13-LIN-011",
+      "category": "LINEAGE_PROVENANCE",
+      "title": "Lineage: Lineage graph multi-tenant namespace isolation",
+      "passed": true,
+      "elapsed_ms": 0.0,
+      "details": {}
+    },
+    {
+      "case_id": "M13-LIN-012",
+      "category": "LINEAGE_PROVENANCE",
+      "title": "Lineage: Contradicting observation recorded in lineage",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-LIN-013",
+      "category": "LINEAGE_PROVENANCE",
+      "title": "Lineage: Supporting observation recorded in lineage",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-LIN-014",
+      "category": "LINEAGE_PROVENANCE",
+      "title": "Lineage: Lineage export formatted for audit review",
+      "passed": true,
+      "elapsed_ms": 0.0,
+      "details": {}
+    },
+    {
+      "case_id": "M13-LIN-015",
+      "category": "LINEAGE_PROVENANCE",
+      "title": "Lineage: Orphaned hypothesis detection flags evidence gap",
+      "passed": true,
+      "elapsed_ms": 0.0,
+      "details": {}
+    },
+    {
+      "case_id": "M13-HYP-001",
+      "category": "HYPOTHESIS_MANAGEMENT",
+      "title": "Hypothesis: Synthesize BFLA hypothesis on admin interface",
+      "passed": true,
+      "elapsed_ms": 0.003,
+      "details": {}
+    },
+    {
+      "case_id": "M13-HYP-002",
+      "category": "HYPOTHESIS_MANAGEMENT",
+      "title": "Hypothesis: Synthesize BOLA hypothesis on parameterized route",
+      "passed": true,
+      "elapsed_ms": 0.002,
+      "details": {}
+    },
+    {
+      "case_id": "M13-HYP-003",
+      "category": "HYPOTHESIS_MANAGEMENT",
+      "title": "Hypothesis: Hypothesis epistemic status is strictly MODEL_HYPOTHESIS",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-HYP-004",
+      "category": "HYPOTHESIS_MANAGEMENT",
+      "title": "Hypothesis: Hypotheses identify required evidence gaps",
+      "passed": true,
+      "elapsed_ms": 0.0,
+      "details": {}
+    },
+    {
+      "case_id": "M13-HYP-005",
+      "category": "HYPOTHESIS_MANAGEMENT",
+      "title": "Hypothesis: Hypothesis requires negative control definition",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-HYP-006",
+      "category": "HYPOTHESIS_MANAGEMENT",
+      "title": "Hypothesis: Hypothesis status defaults to TESTABLE or PROPOSED",
+      "passed": true,
+      "elapsed_ms": 0.0,
+      "details": {}
+    },
+    {
+      "case_id": "M13-HYP-007",
+      "category": "HYPOTHESIS_MANAGEMENT",
+      "title": "Hypothesis: Hypotheses cannot masquerade as findings",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-HYP-008",
+      "category": "HYPOTHESIS_MANAGEMENT",
+      "title": "Hypothesis: Hypothesis confidence metric bounded between 0 and 1",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-HYP-009",
+      "category": "HYPOTHESIS_MANAGEMENT",
+      "title": "Hypothesis: Audit event emitted when hypothesis created",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-HYP-010",
+      "category": "HYPOTHESIS_MANAGEMENT",
+      "title": "Hypothesis: Hypothesis review workspace tracks state changes",
+      "passed": true,
+      "elapsed_ms": 0.0,
+      "details": {}
+    },
+    {
+      "case_id": "M13-HYP-011",
+      "category": "HYPOTHESIS_MANAGEMENT",
+      "title": "Hypothesis: Hypothesis linked to specific asset IDs",
+      "passed": true,
+      "elapsed_ms": 0.0,
+      "details": {}
+    },
+    {
+      "case_id": "M13-HYP-012",
+      "category": "HYPOTHESIS_MANAGEMENT",
+      "title": "Hypothesis: Hypothesis title and description convey technical rationale",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-HYP-013",
+      "category": "HYPOTHESIS_MANAGEMENT",
+      "title": "Hypothesis: No hypotheses generated without ingested telemetry",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-HYP-014",
+      "category": "HYPOTHESIS_MANAGEMENT",
+      "title": "Hypothesis: Multiple hypotheses generated for diverse attack surface",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-HYP-015",
+      "category": "HYPOTHESIS_MANAGEMENT",
+      "title": "Hypothesis: Hypothesis deduplication by deterministic ID",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AGT-001",
+      "category": "ANALYTICAL_AGENTS",
+      "title": "Agents: Agent recommendation provides rationale without authorization",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AGT-002",
+      "category": "ANALYTICAL_AGENTS",
+      "title": "Agents: Agent output marked as MODEL_REASONING epistemic status",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AGT-003",
+      "category": "ANALYTICAL_AGENTS",
+      "title": "Agents: Agent cannot confirm security finding directly",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AGT-004",
+      "category": "ANALYTICAL_AGENTS",
+      "title": "Agents: Specialized agents analyze specific vulnerability domains",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AGT-005",
+      "category": "ANALYTICAL_AGENTS",
+      "title": "Agents: Agent execution respects maximum inference concurrency = 1",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AGT-006",
+      "category": "ANALYTICAL_AGENTS",
+      "title": "Agents: Agent suggestions subject to human operator oversight",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AGT-007",
+      "category": "ANALYTICAL_AGENTS",
+      "title": "Agents: Agent cannot expand scope boundary",
+      "passed": true,
+      "elapsed_ms": 0.0,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AGT-008",
+      "category": "ANALYTICAL_AGENTS",
+      "title": "Agents: Agent telemetry analysis highlights anomalous parameters",
+      "passed": true,
+      "elapsed_ms": 0.0,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AGT-009",
+      "category": "ANALYTICAL_AGENTS",
+      "title": "Agents: Agent audit logging captures model prompt and completion ref",
+      "passed": true,
+      "elapsed_ms": 0.0,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AGT-010",
+      "category": "ANALYTICAL_AGENTS",
+      "title": "Agents: Agent recommendations do not mutate canonical target observations",
+      "passed": true,
+      "elapsed_ms": 0.0,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AGT-011",
+      "category": "ANALYTICAL_AGENTS",
+      "title": "Agents: Analytical agents error handling returns graceful degradation",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AGT-012",
+      "category": "ANALYTICAL_AGENTS",
+      "title": "Agents: Agent plan proposal requires researcher review",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AGT-013",
+      "category": "ANALYTICAL_AGENTS",
+      "title": "Agents: Agent tool usage bounded by assessment authorizations",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AGT-014",
+      "category": "ANALYTICAL_AGENTS",
+      "title": "Agents: Agent context budget constraints respected",
+      "passed": true,
+      "elapsed_ms": 0.0,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AGT-015",
+      "category": "ANALYTICAL_AGENTS",
+      "title": "Agents: Cross-assessment prompt isolation preserves tenant secrecy",
+      "passed": true,
+      "elapsed_ms": 0.0,
+      "details": {}
+    },
+    {
+      "case_id": "M13-KNW-001",
+      "category": "KNOWLEDGE_SEPARATION",
+      "title": "Knowledge: External CWE knowledge not treated as target observation",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-KNW-002",
+      "category": "KNOWLEDGE_SEPARATION",
+      "title": "Knowledge: OWASP Top 10 references maintain global authority status",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-KNW-003",
+      "category": "KNOWLEDGE_SEPARATION",
+      "title": "Knowledge: Target observations originate strictly from assessment telemetry",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-KNW-004",
+      "category": "KNOWLEDGE_SEPARATION",
+      "title": "Knowledge: Knowledge query does not alter assessment evidence counts",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-KNW-005",
+      "category": "KNOWLEDGE_SEPARATION",
+      "title": "Knowledge: Knowledge retrieval separate from target evidence store",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-KNW-006",
+      "category": "KNOWLEDGE_SEPARATION",
+      "title": "Knowledge: Model cannot fabricate evidence from knowledge patterns",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-KNW-007",
+      "category": "KNOWLEDGE_SEPARATION",
+      "title": "Knowledge: Reference link in finding points to external taxonomy",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-KNW-008",
+      "category": "KNOWLEDGE_SEPARATION",
+      "title": "Knowledge: External threat intel report marked as UNTRUSTED_EXTERNAL",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-KNW-009",
+      "category": "KNOWLEDGE_SEPARATION",
+      "title": "Knowledge: Separation between target attack surface and generic tech stack",
+      "passed": true,
+      "elapsed_ms": 0.0,
+      "details": {}
+    },
+    {
+      "case_id": "M13-KNW-010",
+      "category": "KNOWLEDGE_SEPARATION",
+      "title": "Knowledge: Knowledge base updates do not alter past assessment records",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-KNW-011",
+      "category": "KNOWLEDGE_SEPARATION",
+      "title": "Knowledge: Epistemic tagging distinguishes external theory from empirical fact",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-KNW-012",
+      "category": "KNOWLEDGE_SEPARATION",
+      "title": "Knowledge: Search over knowledge distinct from target evidence search",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-KNW-013",
+      "category": "KNOWLEDGE_SEPARATION",
+      "title": "Knowledge: Finding description incorporates knowledge as context only",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-KNW-014",
+      "category": "KNOWLEDGE_SEPARATION",
+      "title": "Knowledge: No hallucinated CVEs admitted into target evidence graph",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-KNW-015",
+      "category": "KNOWLEDGE_SEPARATION",
+      "title": "Knowledge: Knowledge base access permissible in read-only audit state",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-MEM-001",
+      "category": "MEMORY_INTEGRATION",
+      "title": "Memory: Assessment memory namespace strictly isolated",
+      "passed": true,
+      "elapsed_ms": 0.042,
+      "details": {}
+    },
+    {
+      "case_id": "M13-MEM-002",
+      "category": "MEMORY_INTEGRATION",
+      "title": "Memory: Cross-assessment memory query returns empty results",
+      "passed": true,
+      "elapsed_ms": 0.017,
+      "details": {}
+    },
+    {
+      "case_id": "M13-MEM-003",
+      "category": "MEMORY_INTEGRATION",
+      "title": "Memory: Cross-tenant memory leakage rate is exactly 0.0",
+      "passed": true,
+      "elapsed_ms": 0.022,
+      "details": {}
+    },
+    {
+      "case_id": "M13-MEM-004",
+      "category": "MEMORY_INTEGRATION",
+      "title": "Memory: Memory items cannot grant assessment authorization",
+      "passed": true,
+      "elapsed_ms": 0.012,
+      "details": {}
+    },
+    {
+      "case_id": "M13-MEM-005",
+      "category": "MEMORY_INTEGRATION",
+      "title": "Memory: Memory item cannot expand assessment scope",
+      "passed": true,
+      "elapsed_ms": 0.012,
+      "details": {}
+    },
+    {
+      "case_id": "M13-MEM-006",
+      "category": "MEMORY_INTEGRATION",
+      "title": "Memory: Memory supersession invalidates stale memory nodes",
+      "passed": true,
+      "elapsed_ms": 0.014,
+      "details": {}
+    },
+    {
+      "case_id": "M13-MEM-007",
+      "category": "MEMORY_INTEGRATION",
+      "title": "Memory: Deleted memory never returned in subsequent retrieval",
+      "passed": true,
+      "elapsed_ms": 0.013,
+      "details": {}
+    },
+    {
+      "case_id": "M13-MEM-008",
+      "category": "MEMORY_INTEGRATION",
+      "title": "Memory: Memory search combines keyword FTS5 and dense retrieval",
+      "passed": true,
+      "elapsed_ms": 0.012,
+      "details": {}
+    },
+    {
+      "case_id": "M13-MEM-009",
+      "category": "MEMORY_INTEGRATION",
+      "title": "Memory: Memory item stores epistemic status classification",
+      "passed": true,
+      "elapsed_ms": 0.013,
+      "details": {}
+    },
+    {
+      "case_id": "M13-MEM-010",
+      "category": "MEMORY_INTEGRATION",
+      "title": "Memory: Secret detection redacts credentials before memory storage",
+      "passed": true,
+      "elapsed_ms": 0.01,
+      "details": {}
+    },
+    {
+      "case_id": "M13-MEM-011",
+      "category": "MEMORY_INTEGRATION",
+      "title": "Memory: Memory admission pipeline rejects malformed payloads",
+      "passed": true,
+      "elapsed_ms": 0.011,
+      "details": {}
+    },
+    {
+      "case_id": "M13-MEM-012",
+      "category": "MEMORY_INTEGRATION",
+      "title": "Memory: Memory count surfaced in workspace memory tab",
+      "passed": true,
+      "elapsed_ms": 0.01,
+      "details": {}
+    },
+    {
+      "case_id": "M13-MEM-013",
+      "category": "MEMORY_INTEGRATION",
+      "title": "Memory: Long-session conversation continuity preserved via session memory",
+      "passed": true,
+      "elapsed_ms": 0.011,
+      "details": {}
+    },
+    {
+      "case_id": "M13-MEM-014",
+      "category": "MEMORY_INTEGRATION",
+      "title": "Memory: Memory demotion upon contradictory evidence",
+      "passed": true,
+      "elapsed_ms": 0.01,
+      "details": {}
+    },
+    {
+      "case_id": "M13-MEM-015",
+      "category": "MEMORY_INTEGRATION",
+      "title": "Memory: Audit logging records memory admission and deletion events",
+      "passed": true,
+      "elapsed_ms": 0.011,
+      "details": {}
+    },
+    {
+      "case_id": "M13-EXP-001",
+      "category": "CONTROLLED_EXPERIMENT",
+      "title": "Experiment: Propose controlled experiment for testable hypothesis",
+      "passed": true,
+      "elapsed_ms": 0.002,
+      "details": {}
+    },
+    {
+      "case_id": "M13-EXP-002",
+      "category": "CONTROLLED_EXPERIMENT",
+      "title": "Experiment: Plane A experiment enforces preflight ScopeGate check",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-EXP-003",
+      "category": "CONTROLLED_EXPERIMENT",
+      "title": "Experiment: Out-of-scope experiment target fails preflight check",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-EXP-004",
+      "category": "CONTROLLED_EXPERIMENT",
+      "title": "Experiment: Experiment requires explicit expected secure and vulnerable results",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-EXP-005",
+      "category": "CONTROLLED_EXPERIMENT",
+      "title": "Experiment: Experiment requires falsification condition",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-EXP-006",
+      "category": "CONTROLLED_EXPERIMENT",
+      "title": "Experiment: Experiment requires negative control protocol",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-EXP-007",
+      "category": "CONTROLLED_EXPERIMENT",
+      "title": "Experiment: Experiment defaults to requiring human execution",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-EXP-008",
+      "category": "CONTROLLED_EXPERIMENT",
+      "title": "Experiment: Plane A safe lab runner blocks destructive requests",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-EXP-009",
+      "category": "CONTROLLED_EXPERIMENT",
+      "title": "Experiment: Experiment status transitions: PROPOSED -> APPROVED -> EXECUTED",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-EXP-010",
+      "category": "CONTROLLED_EXPERIMENT",
+      "title": "Experiment: Import experiment result links result payload to experiment ID",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-EXP-011",
+      "category": "CONTROLLED_EXPERIMENT",
+      "title": "Experiment: Experiment execution records executor identity",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-EXP-012",
+      "category": "CONTROLLED_EXPERIMENT",
+      "title": "Experiment: Experiment success does NOT automatically confirm finding",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-EXP-013",
+      "category": "CONTROLLED_EXPERIMENT",
+      "title": "Experiment: Audit event emitted upon experiment proposal and result import",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-EXP-014",
+      "category": "CONTROLLED_EXPERIMENT",
+      "title": "Experiment: Experiment risk level classification accurately tracked",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-EXP-015",
+      "category": "CONTROLLED_EXPERIMENT",
+      "title": "Experiment: Cancelled experiment leaves assessment state consistent",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-MAN-001",
+      "category": "MANUAL_PROCEDURES",
+      "title": "Manual: Plane B strictly forbids autonomous execution",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-MAN-002",
+      "category": "MANUAL_PROCEDURES",
+      "title": "Manual: Plane B generates copyable curl / HTTP command procedures",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-MAN-003",
+      "category": "MANUAL_PROCEDURES",
+      "title": "Manual: Researcher executes manual procedure in external browser/proxy",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-MAN-004",
+      "category": "MANUAL_PROCEDURES",
+      "title": "Manual: Import manual result requires explicit human actor name",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-MAN-005",
+      "category": "MANUAL_PROCEDURES",
+      "title": "Manual: Anonymous or bot execution rejected for Plane B",
+      "passed": true,
+      "elapsed_ms": 0.002,
+      "details": {}
+    },
+    {
+      "case_id": "M13-MAN-006",
+      "category": "MANUAL_PROCEDURES",
+      "title": "Manual: Manual procedure steps format clearly numbered instructions",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-MAN-007",
+      "category": "MANUAL_PROCEDURES",
+      "title": "Manual: Manual procedure includes rollback / clean-up instructions",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-MAN-008",
+      "category": "MANUAL_PROCEDURES",
+      "title": "Manual: Manual observation payload parsed through telemetry pipeline",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-MAN-009",
+      "category": "MANUAL_PROCEDURES",
+      "title": "Manual: Out-of-scope manual result quarantined upon import",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-MAN-010",
+      "category": "MANUAL_PROCEDURES",
+      "title": "Manual: Manual procedure tracks intended target asset",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-MAN-011",
+      "category": "MANUAL_PROCEDURES",
+      "title": "Manual: Audit log tags manual procedure import as HUMAN_EXECUTION",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-MAN-012",
+      "category": "MANUAL_PROCEDURES",
+      "title": "Manual: Manual reproduction failure marks hypothesis unverified",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-MAN-013",
+      "category": "MANUAL_PROCEDURES",
+      "title": "Manual: Manual procedure avoids destructive database statements",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-MAN-014",
+      "category": "MANUAL_PROCEDURES",
+      "title": "Manual: Manual procedure copyable payload sanitizes injection tokens",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-MAN-015",
+      "category": "MANUAL_PROCEDURES",
+      "title": "Manual: Plane B experiments visually tagged with manual badge",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-REV-001",
+      "category": "HUMAN_REVIEW",
+      "title": "Review: 13-point validation checklist fully satisfied",
+      "passed": true,
+      "elapsed_ms": 0.008,
+      "details": {}
+    },
+    {
+      "case_id": "M13-REV-002",
+      "category": "HUMAN_REVIEW",
+      "title": "Review: Checklist failure on missing evidence blocks confirmation",
+      "passed": true,
+      "elapsed_ms": 0.004,
+      "details": {}
+    },
+    {
+      "case_id": "M13-REV-003",
+      "category": "HUMAN_REVIEW",
+      "title": "Review: Checklist failure on unconfirmed scope blocks confirmation",
+      "passed": true,
+      "elapsed_ms": 0.002,
+      "details": {}
+    },
+    {
+      "case_id": "M13-REV-004",
+      "category": "HUMAN_REVIEW",
+      "title": "Review: Checklist failure on automated exploitation blocks confirmation",
+      "passed": true,
+      "elapsed_ms": 0.002,
+      "details": {}
+    },
+    {
+      "case_id": "M13-REV-005",
+      "category": "HUMAN_REVIEW",
+      "title": "Review: Reviewer identity required for finding confirmation",
+      "passed": true,
+      "elapsed_ms": 0.002,
+      "details": {}
+    },
+    {
+      "case_id": "M13-REV-006",
+      "category": "HUMAN_REVIEW",
+      "title": "Review: Empty reviewer identity rejected",
+      "passed": true,
+      "elapsed_ms": 0.002,
+      "details": {}
+    },
+    {
+      "case_id": "M13-REV-007",
+      "category": "HUMAN_REVIEW",
+      "title": "Review: Written justification required for finding confirmation",
+      "passed": true,
+      "elapsed_ms": 0.002,
+      "details": {}
+    },
+    {
+      "case_id": "M13-REV-008",
+      "category": "HUMAN_REVIEW",
+      "title": "Review: Empty justification rejected",
+      "passed": true,
+      "elapsed_ms": 0.002,
+      "details": {}
+    },
+    {
+      "case_id": "M13-REV-009",
+      "category": "HUMAN_REVIEW",
+      "title": "Review: Finding validator executes deterministic assertions",
+      "passed": true,
+      "elapsed_ms": 0.002,
+      "details": {}
+    },
+    {
+      "case_id": "M13-REV-010",
+      "category": "HUMAN_REVIEW",
+      "title": "Review: Negative control verification required before sign-off",
+      "passed": true,
+      "elapsed_ms": 0.002,
+      "details": {}
+    },
+    {
+      "case_id": "M13-REV-011",
+      "category": "HUMAN_REVIEW",
+      "title": "Review: Data minimization verification required before sign-off",
+      "passed": true,
+      "elapsed_ms": 0.002,
+      "details": {}
+    },
+    {
+      "case_id": "M13-REV-012",
+      "category": "HUMAN_REVIEW",
+      "title": "Review: Epistemic provenance soundness checked",
+      "passed": true,
+      "elapsed_ms": 0.002,
+      "details": {}
+    },
+    {
+      "case_id": "M13-REV-013",
+      "category": "HUMAN_REVIEW",
+      "title": "Review: Human reviewer sign-off recorded in audit ledger",
+      "passed": true,
+      "elapsed_ms": 0.002,
+      "details": {}
+    },
+    {
+      "case_id": "M13-REV-014",
+      "category": "HUMAN_REVIEW",
+      "title": "Review: Unreviewed candidate finding remains UNVERIFIED",
+      "passed": true,
+      "elapsed_ms": 0.002,
+      "details": {}
+    },
+    {
+      "case_id": "M13-REV-015",
+      "category": "HUMAN_REVIEW",
+      "title": "Review: Review modal displays all 13 checklist verification items",
+      "passed": true,
+      "elapsed_ms": 0.003,
+      "details": {}
+    },
+    {
+      "case_id": "M13-FND-001",
+      "category": "FINDING_CONFIRMATION",
+      "title": "Finding: Confirmed finding status is strictly HUMAN_VERIFIED",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-FND-002",
+      "category": "FINDING_CONFIRMATION",
+      "title": "Finding: Finding record includes CWE taxonomy identifier",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-FND-003",
+      "category": "FINDING_CONFIRMATION",
+      "title": "Finding: Finding record includes formal severity rating",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-FND-004",
+      "category": "FINDING_CONFIRMATION",
+      "title": "Finding: Finding record includes concrete business impact statement",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-FND-005",
+      "category": "FINDING_CONFIRMATION",
+      "title": "Finding: Finding record includes detailed reproduction steps",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-FND-006",
+      "category": "FINDING_CONFIRMATION",
+      "title": "Finding: Finding record links to primary evidence observation IDs",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-FND-007",
+      "category": "FINDING_CONFIRMATION",
+      "title": "Finding: Finding record includes remediation recommendations",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-FND-008",
+      "category": "FINDING_CONFIRMATION",
+      "title": "Finding: Finding count reflected in workspace overview metrics",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-FND-009",
+      "category": "FINDING_CONFIRMATION",
+      "title": "Finding: Verified finding count matches verified status filter",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-FND-010",
+      "category": "FINDING_CONFIRMATION",
+      "title": "Finding: Finding deduplication prevents duplicate identical findings",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-FND-011",
+      "category": "FINDING_CONFIRMATION",
+      "title": "Finding: Unverified finding quarantined from confirmed findings section",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-FND-012",
+      "category": "FINDING_CONFIRMATION",
+      "title": "Finding: Finding ID format follows FIND- uppercase prefix",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-FND-013",
+      "category": "FINDING_CONFIRMATION",
+      "title": "Finding: Finding audit logging records verification timestamp",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-FND-014",
+      "category": "FINDING_CONFIRMATION",
+      "title": "Finding: Finding references valid in-scope target asset",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-FND-015",
+      "category": "FINDING_CONFIRMATION",
+      "title": "Finding: Draft assessment findings protected against public leak",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-REP-001",
+      "category": "REPORT_GENERATION",
+      "title": "Report: Report includes executive summary with counts",
+      "passed": true,
+      "elapsed_ms": 0.058,
+      "details": {}
+    },
+    {
+      "case_id": "M13-REP-002",
+      "category": "REPORT_GENERATION",
+      "title": "Report: Report includes complete authorization details",
+      "passed": true,
+      "elapsed_ms": 0.03,
+      "details": {}
+    },
+    {
+      "case_id": "M13-REP-003",
+      "category": "REPORT_GENERATION",
+      "title": "Report: Report includes defined program scope boundaries",
+      "passed": true,
+      "elapsed_ms": 0.022,
+      "details": {}
+    },
+    {
+      "case_id": "M13-REP-004",
+      "category": "REPORT_GENERATION",
+      "title": "Report: Report includes attack surface summary metrics",
+      "passed": true,
+      "elapsed_ms": 0.019,
+      "details": {}
+    },
+    {
+      "case_id": "M13-REP-005",
+      "category": "REPORT_GENERATION",
+      "title": "Report: Confirmed findings section includes ONLY HUMAN_VERIFIED items",
+      "passed": true,
+      "elapsed_ms": 0.018,
+      "details": {}
+    },
+    {
+      "case_id": "M13-REP-006",
+      "category": "REPORT_GENERATION",
+      "title": "Report: Unverified hypotheses quarantined in dedicated disclaimer section",
+      "passed": true,
+      "elapsed_ms": 0.018,
+      "details": {}
+    },
+    {
+      "case_id": "M13-REP-007",
+      "category": "REPORT_GENERATION",
+      "title": "Report: Out-of-scope quarantined observations listed in separate section",
+      "passed": true,
+      "elapsed_ms": 0.019,
+      "details": {}
+    },
+    {
+      "case_id": "M13-REP-008",
+      "category": "REPORT_GENERATION",
+      "title": "Report: Report generation produces clean GitHub-flavored markdown",
+      "passed": true,
+      "elapsed_ms": 0.017,
+      "details": {}
+    },
+    {
+      "case_id": "M13-REP-009",
+      "category": "REPORT_GENERATION",
+      "title": "Report: Export report endpoint serves full text without truncation",
+      "passed": true,
+      "elapsed_ms": 0.017,
+      "details": {}
+    },
+    {
+      "case_id": "M13-REP-010",
+      "category": "REPORT_GENERATION",
+      "title": "Report: Report includes testing limitations and constraints",
+      "passed": true,
+      "elapsed_ms": 0.016,
+      "details": {}
+    },
+    {
+      "case_id": "M13-REP-011",
+      "category": "REPORT_GENERATION",
+      "title": "Report: Report includes human auditor verification signatures",
+      "passed": true,
+      "elapsed_ms": 0.016,
+      "details": {}
+    },
+    {
+      "case_id": "M13-REP-012",
+      "category": "REPORT_GENERATION",
+      "title": "Report: Report export audit event emitted",
+      "passed": true,
+      "elapsed_ms": 0.017,
+      "details": {}
+    },
+    {
+      "case_id": "M13-REP-013",
+      "category": "REPORT_GENERATION",
+      "title": "Report: Report generation operates safely in read-only audit state",
+      "passed": true,
+      "elapsed_ms": 0.016,
+      "details": {}
+    },
+    {
+      "case_id": "M13-REP-014",
+      "category": "REPORT_GENERATION",
+      "title": "Report: Report generation does not alter underlying findings or observations",
+      "passed": true,
+      "elapsed_ms": 0.017,
+      "details": {}
+    },
+    {
+      "case_id": "M13-REP-015",
+      "category": "REPORT_GENERATION",
+      "title": "Report: Empty assessment report generates clean zero-finding document",
+      "passed": true,
+      "elapsed_ms": 0.017,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AUD-001",
+      "category": "AUDIT_LOGGING",
+      "title": "Audit: Audit ledger records event type, actor, and timestamp",
+      "passed": true,
+      "elapsed_ms": 0.002,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AUD-002",
+      "category": "AUDIT_LOGGING",
+      "title": "Audit: Audit events are strictly append-only",
+      "passed": true,
+      "elapsed_ms": 0.002,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AUD-003",
+      "category": "AUDIT_LOGGING",
+      "title": "Audit: Audit timeline returned in reverse chronological order",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AUD-004",
+      "category": "AUDIT_LOGGING",
+      "title": "Audit: Sensitive operations record authorization and scope state",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AUD-005",
+      "category": "AUDIT_LOGGING",
+      "title": "Audit: Audit ledger read-model does not permit event fabrication",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AUD-006",
+      "category": "AUDIT_LOGGING",
+      "title": "Audit: Limit parameter controls activity timeline batch size",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AUD-007",
+      "category": "AUDIT_LOGGING",
+      "title": "Audit: Audit events track component origin",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AUD-008",
+      "category": "AUDIT_LOGGING",
+      "title": "Audit: Audit events track input and output references",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AUD-009",
+      "category": "AUDIT_LOGGING",
+      "title": "Audit: Audit events preserved during assessment archive",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AUD-010",
+      "category": "AUDIT_LOGGING",
+      "title": "Audit: Activity summary formats human-readable event descriptions",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AUD-011",
+      "category": "AUDIT_LOGGING",
+      "title": "Audit: Audit logger multi-tenant namespace isolation",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AUD-012",
+      "category": "AUDIT_LOGGING",
+      "title": "Audit: Audit event emission failure fails closed on sensitive actions",
+      "passed": true,
+      "elapsed_ms": 0.002,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AUD-013",
+      "category": "AUDIT_LOGGING",
+      "title": "Audit: High-volume audit logging maintains sub-50ms query latency",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AUD-014",
+      "category": "AUDIT_LOGGING",
+      "title": "Audit: Audit records distinguish human vs automated actors",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-AUD-015",
+      "category": "AUDIT_LOGGING",
+      "title": "Audit: Epistemic state transition logged in audit events",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-VWS-001",
+      "category": "VIEW_STATE_PERSISTENCE",
+      "title": "ViewState: Persist active section across all 12 functional views",
+      "passed": true,
+      "elapsed_ms": 0.018,
+      "details": {}
+    },
+    {
+      "case_id": "M13-VWS-002",
+      "category": "VIEW_STATE_PERSISTENCE",
+      "title": "ViewState: Persist search query filter across section navigation",
+      "passed": true,
+      "elapsed_ms": 0.004,
+      "details": {}
+    },
+    {
+      "case_id": "M13-VWS-003",
+      "category": "VIEW_STATE_PERSISTENCE",
+      "title": "ViewState: Persist selected asset ID in Scope & Assets view",
+      "passed": true,
+      "elapsed_ms": 0.003,
+      "details": {}
+    },
+    {
+      "case_id": "M13-VWS-004",
+      "category": "VIEW_STATE_PERSISTENCE",
+      "title": "ViewState: Persist selected hypothesis ID in Hypotheses view",
+      "passed": true,
+      "elapsed_ms": 0.002,
+      "details": {}
+    },
+    {
+      "case_id": "M13-VWS-005",
+      "category": "VIEW_STATE_PERSISTENCE",
+      "title": "ViewState: Persist selected finding ID in Findings Review view",
+      "passed": true,
+      "elapsed_ms": 0.002,
+      "details": {}
+    },
+    {
+      "case_id": "M13-VWS-006",
+      "category": "VIEW_STATE_PERSISTENCE",
+      "title": "ViewState: Persist selected artifact ID in Artifacts view",
+      "passed": true,
+      "elapsed_ms": 0.002,
+      "details": {}
+    },
+    {
+      "case_id": "M13-VWS-007",
+      "category": "VIEW_STATE_PERSISTENCE",
+      "title": "ViewState: Persist severity filter preference",
+      "passed": true,
+      "elapsed_ms": 0.002,
+      "details": {}
+    },
+    {
+      "case_id": "M13-VWS-008",
+      "category": "VIEW_STATE_PERSISTENCE",
+      "title": "ViewState: Persist verification status filter preference",
+      "passed": true,
+      "elapsed_ms": 0.002,
+      "details": {}
+    },
+    {
+      "case_id": "M13-VWS-009",
+      "category": "VIEW_STATE_PERSISTENCE",
+      "title": "ViewState: Persist scope filter preference",
+      "passed": true,
+      "elapsed_ms": 0.002,
+      "details": {}
+    },
+    {
+      "case_id": "M13-VWS-010",
+      "category": "VIEW_STATE_PERSISTENCE",
+      "title": "ViewState: Update view state endpoint returns updated state model",
+      "passed": true,
+      "elapsed_ms": 0.002,
+      "details": {}
+    },
+    {
+      "case_id": "M13-VWS-011",
+      "category": "VIEW_STATE_PERSISTENCE",
+      "title": "ViewState: View state isolated per assessment container",
+      "passed": true,
+      "elapsed_ms": 0.004,
+      "details": {}
+    },
+    {
+      "case_id": "M13-VWS-012",
+      "category": "VIEW_STATE_PERSISTENCE",
+      "title": "ViewState: Default view state initializes to OVERVIEW section",
+      "passed": true,
+      "elapsed_ms": 0.002,
+      "details": {}
+    },
+    {
+      "case_id": "M13-VWS-013",
+      "category": "VIEW_STATE_PERSISTENCE",
+      "title": "ViewState: Updating view state validates assessment existence",
+      "passed": true,
+      "elapsed_ms": 0.004,
+      "details": {}
+    },
+    {
+      "case_id": "M13-VWS-014",
+      "category": "VIEW_STATE_PERSISTENCE",
+      "title": "ViewState: View state persistence survives service instantiation",
+      "passed": true,
+      "elapsed_ms": 0.002,
+      "details": {}
+    },
+    {
+      "case_id": "M13-VWS-015",
+      "category": "VIEW_STATE_PERSISTENCE",
+      "title": "ViewState: UI view state updates do not emit sensitive audit events",
+      "passed": true,
+      "elapsed_ms": 0.002,
+      "details": {}
+    },
+    {
+      "case_id": "M13-SRC-001",
+      "category": "WORKSPACE_SEARCH",
+      "title": "Search: Search matches assessment record by name",
+      "passed": true,
+      "elapsed_ms": 0.024,
+      "details": {}
+    },
+    {
+      "case_id": "M13-SRC-002",
+      "category": "WORKSPACE_SEARCH",
+      "title": "Search: Search matches asset record by domain",
+      "passed": true,
+      "elapsed_ms": 0.013,
+      "details": {}
+    },
+    {
+      "case_id": "M13-SRC-003",
+      "category": "WORKSPACE_SEARCH",
+      "title": "Search: Search matches observation by payload text",
+      "passed": true,
+      "elapsed_ms": 0.009,
+      "details": {}
+    },
+    {
+      "case_id": "M13-SRC-004",
+      "category": "WORKSPACE_SEARCH",
+      "title": "Search: Search matches hypothesis by title keyword",
+      "passed": true,
+      "elapsed_ms": 0.009,
+      "details": {}
+    },
+    {
+      "case_id": "M13-SRC-005",
+      "category": "WORKSPACE_SEARCH",
+      "title": "Search: Search matches experiment by objective keyword",
+      "passed": true,
+      "elapsed_ms": 0.008,
+      "details": {}
+    },
+    {
+      "case_id": "M13-SRC-006",
+      "category": "WORKSPACE_SEARCH",
+      "title": "Search: Search matches finding by CWE or title",
+      "passed": true,
+      "elapsed_ms": 0.007,
+      "details": {}
+    },
+    {
+      "case_id": "M13-SRC-007",
+      "category": "WORKSPACE_SEARCH",
+      "title": "Search: Search matches artifact by filename",
+      "passed": true,
+      "elapsed_ms": 0.01,
+      "details": {}
+    },
+    {
+      "case_id": "M13-SRC-008",
+      "category": "WORKSPACE_SEARCH",
+      "title": "Search: Scoped search by assessment_id restricts results to that assessment",
+      "passed": true,
+      "elapsed_ms": 0.008,
+      "details": {}
+    },
+    {
+      "case_id": "M13-SRC-009",
+      "category": "WORKSPACE_SEARCH",
+      "title": "Search: Empty search query returns empty list immediately",
+      "passed": true,
+      "elapsed_ms": 0.007,
+      "details": {}
+    },
+    {
+      "case_id": "M13-SRC-010",
+      "category": "WORKSPACE_SEARCH",
+      "title": "Search: Case-insensitive keyword matching",
+      "passed": true,
+      "elapsed_ms": 0.009,
+      "details": {}
+    },
+    {
+      "case_id": "M13-SRC-011",
+      "category": "WORKSPACE_SEARCH",
+      "title": "Search: Search results format snippet with URL navigation target",
+      "passed": true,
+      "elapsed_ms": 0.008,
+      "details": {}
+    },
+    {
+      "case_id": "M13-SRC-012",
+      "category": "WORKSPACE_SEARCH",
+      "title": "Search: Search results include entity classification badges",
+      "passed": true,
+      "elapsed_ms": 0.008,
+      "details": {}
+    },
+    {
+      "case_id": "M13-SRC-013",
+      "category": "WORKSPACE_SEARCH",
+      "title": "Search: Search across 1000 items completes in under 100ms",
+      "passed": true,
+      "elapsed_ms": 0.008,
+      "details": {}
+    },
+    {
+      "case_id": "M13-SRC-014",
+      "category": "WORKSPACE_SEARCH",
+      "title": "Search: Search sanitizes special characters safely",
+      "passed": true,
+      "elapsed_ms": 0.009,
+      "details": {}
+    },
+    {
+      "case_id": "M13-SRC-015",
+      "category": "WORKSPACE_SEARCH",
+      "title": "Search: Search query does not alter underlying data store",
+      "passed": true,
+      "elapsed_ms": 0.008,
+      "details": {}
+    },
+    {
+      "case_id": "M13-ERR-001",
+      "category": "ERROR_HANDLING",
+      "title": "Error: Non-existent assessment ID raises 404 / KeyError",
+      "passed": true,
+      "elapsed_ms": 0.003,
+      "details": {}
+    },
+    {
+      "case_id": "M13-ERR-002",
+      "category": "ERROR_HANDLING",
+      "title": "Error: Malformed UUID or assessment ID handled cleanly",
+      "passed": true,
+      "elapsed_ms": 0.002,
+      "details": {}
+    },
+    {
+      "case_id": "M13-ERR-003",
+      "category": "ERROR_HANDLING",
+      "title": "Error: Database connection loss fails closed with clean error",
+      "passed": true,
+      "elapsed_ms": 0.002,
+      "details": {}
+    },
+    {
+      "case_id": "M13-ERR-004",
+      "category": "ERROR_HANDLING",
+      "title": "Error: Error messages sanitize internal stack traces in responses",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-ERR-005",
+      "category": "ERROR_HANDLING",
+      "title": "Error: Database transaction rollback on partial failure",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-ERR-006",
+      "category": "ERROR_HANDLING",
+      "title": "Error: Permission errors never disclose hidden assessment data",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-ERR-007",
+      "category": "ERROR_HANDLING",
+      "title": "Error: Missing required field returns descriptive 422 / ValidationError",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-ERR-008",
+      "category": "ERROR_HANDLING",
+      "title": "Error: ScopeGate failure defaults strictly to out of scope",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-ERR-009",
+      "category": "ERROR_HANDLING",
+      "title": "Error: Artifact parsing failure routes to quarantine without crashing",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-ERR-010",
+      "category": "ERROR_HANDLING",
+      "title": "Error: Invalid JSON body handled with standard error response",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-ERR-011",
+      "category": "ERROR_HANDLING",
+      "title": "Error: Concurrent request collision handled deterministically",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-ERR-012",
+      "category": "ERROR_HANDLING",
+      "title": "Error: Out-of-memory avoidance on huge file ingestion",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-ERR-013",
+      "category": "ERROR_HANDLING",
+      "title": "Error: Graceful error handling preserves audit logging",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-ERR-014",
+      "category": "ERROR_HANDLING",
+      "title": "Error: Client timeout handled with graceful cancellation",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-ERR-015",
+      "category": "ERROR_HANDLING",
+      "title": "Error: Uncaught exception boundary returns standardized JSON envelope",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-ISO-001",
+      "category": "MULTI_TENANT_ISOLATION",
+      "title": "Isolation: Assessment A asset graph invisible to Assessment B",
+      "passed": true,
+      "elapsed_ms": 0.007,
+      "details": {}
+    },
+    {
+      "case_id": "M13-ISO-002",
+      "category": "MULTI_TENANT_ISOLATION",
+      "title": "Isolation: Assessment A telemetry observations invisible to Assessment B",
+      "passed": true,
+      "elapsed_ms": 0.006,
+      "details": {}
+    },
+    {
+      "case_id": "M13-ISO-003",
+      "category": "MULTI_TENANT_ISOLATION",
+      "title": "Isolation: Assessment A hypotheses invisible to Assessment B",
+      "passed": true,
+      "elapsed_ms": 0.006,
+      "details": {}
+    },
+    {
+      "case_id": "M13-ISO-004",
+      "category": "MULTI_TENANT_ISOLATION",
+      "title": "Isolation: Assessment A experiments invisible to Assessment B",
+      "passed": true,
+      "elapsed_ms": 0.006,
+      "details": {}
+    },
+    {
+      "case_id": "M13-ISO-005",
+      "category": "MULTI_TENANT_ISOLATION",
+      "title": "Isolation: Assessment A findings invisible to Assessment B",
+      "passed": true,
+      "elapsed_ms": 0.005,
+      "details": {}
+    },
+    {
+      "case_id": "M13-ISO-006",
+      "category": "MULTI_TENANT_ISOLATION",
+      "title": "Isolation: Assessment A artifacts registry invisible to Assessment B",
+      "passed": true,
+      "elapsed_ms": 0.005,
+      "details": {}
+    },
+    {
+      "case_id": "M13-ISO-007",
+      "category": "MULTI_TENANT_ISOLATION",
+      "title": "Isolation: Assessment A audit timeline invisible to Assessment B",
+      "passed": true,
+      "elapsed_ms": 0.005,
+      "details": {}
+    },
+    {
+      "case_id": "M13-ISO-008",
+      "category": "MULTI_TENANT_ISOLATION",
+      "title": "Isolation: Cross-assessment asset identifier collision disambiguated",
+      "passed": true,
+      "elapsed_ms": 0.005,
+      "details": {}
+    },
+    {
+      "case_id": "M13-ISO-009",
+      "category": "MULTI_TENANT_ISOLATION",
+      "title": "Isolation: Cross-assessment observation ID substitution rejected",
+      "passed": true,
+      "elapsed_ms": 0.005,
+      "details": {}
+    },
+    {
+      "case_id": "M13-ISO-010",
+      "category": "MULTI_TENANT_ISOLATION",
+      "title": "Isolation: Cross-assessment finding verification bypass rejected",
+      "passed": true,
+      "elapsed_ms": 0.005,
+      "details": {}
+    },
+    {
+      "case_id": "M13-ISO-011",
+      "category": "MULTI_TENANT_ISOLATION",
+      "title": "Isolation: Scoped search query strictly limits results to target assessment",
+      "passed": true,
+      "elapsed_ms": 0.005,
+      "details": {}
+    },
+    {
+      "case_id": "M13-ISO-012",
+      "category": "MULTI_TENANT_ISOLATION",
+      "title": "Isolation: Tenant isolation persists across database reloads",
+      "passed": true,
+      "elapsed_ms": 0.005,
+      "details": {}
+    },
+    {
+      "case_id": "M13-ISO-013",
+      "category": "MULTI_TENANT_ISOLATION",
+      "title": "Isolation: Cross-tenant memory leakage rate is exactly 0.0",
+      "passed": true,
+      "elapsed_ms": 0.005,
+      "details": {}
+    },
+    {
+      "case_id": "M13-ISO-014",
+      "category": "MULTI_TENANT_ISOLATION",
+      "title": "Isolation: Multi-tenant authorization isolation",
+      "passed": true,
+      "elapsed_ms": 0.006,
+      "details": {}
+    },
+    {
+      "case_id": "M13-ISO-015",
+      "category": "MULTI_TENANT_ISOLATION",
+      "title": "Isolation: Tenant boundary violations emit critical security audit alarm",
+      "passed": true,
+      "elapsed_ms": 0.005,
+      "details": {}
+    },
+    {
+      "case_id": "M13-INJ-001",
+      "category": "PROMPT_INJECTION_DEFENSE",
+      "title": "InjectionDefense: Ignore instructions in HTTP header neutralized",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-INJ-002",
+      "category": "PROMPT_INJECTION_DEFENSE",
+      "title": "InjectionDefense: System prompt override attempt in request body neutralized",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-INJ-003",
+      "category": "PROMPT_INJECTION_DEFENSE",
+      "title": "InjectionDefense: HTML / JS payload in telemetry treated as passive data",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-INJ-004",
+      "category": "PROMPT_INJECTION_DEFENSE",
+      "title": "InjectionDefense: SQL injection strings in URL path treated as passive data",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-INJ-005",
+      "category": "PROMPT_INJECTION_DEFENSE",
+      "title": "InjectionDefense: Prompt injection inside HAR cookie values neutralized",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-INJ-006",
+      "category": "PROMPT_INJECTION_DEFENSE",
+      "title": "InjectionDefense: Malicious XML entity expansion in request payload neutralized",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-INJ-007",
+      "category": "PROMPT_INJECTION_DEFENSE",
+      "title": "InjectionDefense: Roleplay jailbreak attempt in observation comment neutralized",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-INJ-008",
+      "category": "PROMPT_INJECTION_DEFENSE",
+      "title": "InjectionDefense: Encoded base64 injection payload treated as inert bytes",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-INJ-009",
+      "category": "PROMPT_INJECTION_DEFENSE",
+      "title": "InjectionDefense: Finding description containing shell metacharacters sanitized",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-INJ-010",
+      "category": "PROMPT_INJECTION_DEFENSE",
+      "title": "InjectionDefense: Experiment steps cannot execute shell commands directly",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-INJ-011",
+      "category": "PROMPT_INJECTION_DEFENSE",
+      "title": "InjectionDefense: Artifact content containing instruction prompt treated as data",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-INJ-012",
+      "category": "PROMPT_INJECTION_DEFENSE",
+      "title": "InjectionDefense: Telemetry importer rejects null bytes and terminal control chars",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-INJ-013",
+      "category": "PROMPT_INJECTION_DEFENSE",
+      "title": "InjectionDefense: Zero model tool execution triggered from telemetry text",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-INJ-014",
+      "category": "PROMPT_INJECTION_DEFENSE",
+      "title": "InjectionDefense: Markdown injection in report findings sanitized",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-INJ-015",
+      "category": "PROMPT_INJECTION_DEFENSE",
+      "title": "InjectionDefense: Epistemic boundaries prevent untrusted text becoming system directive",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-EPI-001",
+      "category": "EPISTEMIC_INTEGRITY",
+      "title": "Epistemic: Canonical observation epistemic status is strictly OBSERVATION / FACT",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-EPI-002",
+      "category": "EPISTEMIC_INTEGRITY",
+      "title": "Epistemic: Model hypothesis epistemic status is strictly MODEL_HYPOTHESIS",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-EPI-003",
+      "category": "EPISTEMIC_INTEGRITY",
+      "title": "Epistemic: Agent reasoning recommendation is strictly MODEL_REASONING",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-EPI-004",
+      "category": "EPISTEMIC_INTEGRITY",
+      "title": "Epistemic: Human-verified finding status is strictly HUMAN_VERIFIED",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-EPI-005",
+      "category": "EPISTEMIC_INTEGRITY",
+      "title": "Epistemic: External knowledge taxonomy is strictly GLOBAL_KNOWLEDGE",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-EPI-006",
+      "category": "EPISTEMIC_INTEGRITY",
+      "title": "Epistemic: No entity can promote its own epistemic status automatically",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-EPI-007",
+      "category": "EPISTEMIC_INTEGRITY",
+      "title": "Epistemic: Model hypothesis cannot claim empirical verification without experiment",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-EPI-008",
+      "category": "EPISTEMIC_INTEGRITY",
+      "title": "Epistemic: Experiment observation requires actual execution record",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-EPI-009",
+      "category": "EPISTEMIC_INTEGRITY",
+      "title": "Epistemic: Falsified hypothesis transitions to FALSIFIED status",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-EPI-010",
+      "category": "EPISTEMIC_INTEGRITY",
+      "title": "Epistemic: Unverified hypothesis cannot appear in confirmed findings",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-EPI-011",
+      "category": "EPISTEMIC_INTEGRITY",
+      "title": "Epistemic: Epistemic provenance tracked for all telemetry items",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-EPI-012",
+      "category": "EPISTEMIC_INTEGRITY",
+      "title": "Epistemic: Audit logger verifies epistemic status on all events",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-EPI-013",
+      "category": "EPISTEMIC_INTEGRITY",
+      "title": "Epistemic: Epistemic contradiction between observations flagged",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-EPI-014",
+      "category": "EPISTEMIC_INTEGRITY",
+      "title": "Epistemic: Subjective confidence score strictly separated from empirical truth",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-EPI-015",
+      "category": "EPISTEMIC_INTEGRITY",
+      "title": "Epistemic: Epistemic tags visual badges rendered in frontend UI",
+      "passed": true,
+      "elapsed_ms": 0.001,
+      "details": {}
+    },
+    {
+      "case_id": "M13-API-001",
+      "category": "API_CORRECTNESS",
+      "title": "API: GET /api/assessments returns 200 with summary list",
+      "passed": true,
+      "elapsed_ms": 0.022,
+      "details": {}
+    },
+    {
+      "case_id": "M13-API-002",
+      "category": "API_CORRECTNESS",
+      "title": "API: GET /api/assessments/{id}/overview returns 200 with overview",
+      "passed": true,
+      "elapsed_ms": 0.014,
+      "details": {}
+    },
+    {
+      "case_id": "M13-API-003",
+      "category": "API_CORRECTNESS",
+      "title": "API: GET /api/assessments/{id}/workspace returns 200 with shell model",
+      "passed": true,
+      "elapsed_ms": 0.012,
+      "details": {}
+    },
+    {
+      "case_id": "M13-API-004",
+      "category": "API_CORRECTNESS",
+      "title": "API: GET /api/assessments/{id}/activity returns 200 with timeline",
+      "passed": true,
+      "elapsed_ms": 0.012,
+      "details": {}
+    },
+    {
+      "case_id": "M13-API-005",
+      "category": "API_CORRECTNESS",
+      "title": "API: POST /api/assessments/{id}/view-state updates state with 200",
+      "passed": true,
+      "elapsed_ms": 0.011,
+      "details": {}
+    },
+    {
+      "case_id": "M13-API-006",
+      "category": "API_CORRECTNESS",
+      "title": "API: POST /api/assessments/{id}/scope/validate checks target with 200",
+      "passed": true,
+      "elapsed_ms": 0.011,
+      "details": {}
+    },
+    {
+      "case_id": "M13-API-007",
+      "category": "API_CORRECTNESS",
+      "title": "API: GET /api/assessments/{id}/artifacts returns 200 with artifacts",
+      "passed": true,
+      "elapsed_ms": 0.011,
+      "details": {}
+    },
+    {
+      "case_id": "M13-API-008",
+      "category": "API_CORRECTNESS",
+      "title": "API: POST /api/assessments/{id}/artifacts registers with 200",
+      "passed": true,
+      "elapsed_ms": 0.011,
+      "details": {}
+    },
+    {
+      "case_id": "M13-API-009",
+      "category": "API_CORRECTNESS",
+      "title": "API: POST /api/assessments/{id}/reports/export returns 200 with markdown",
+      "passed": true,
+      "elapsed_ms": 0.011,
+      "details": {}
+    },
+    {
+      "case_id": "M13-API-010",
+      "category": "API_CORRECTNESS",
+      "title": "API: GET /api/workspace/search returns 200 with search results",
+      "passed": true,
+      "elapsed_ms": 0.011,
+      "details": {}
+    },
+    {
+      "case_id": "M13-API-011",
+      "category": "API_CORRECTNESS",
+      "title": "API: Invalid assessment ID returns 404",
+      "passed": true,
+      "elapsed_ms": 0.011,
+      "details": {}
+    },
+    {
+      "case_id": "M13-API-012",
+      "category": "API_CORRECTNESS",
+      "title": "API: Validation error on invalid body returns 422",
+      "passed": true,
+      "elapsed_ms": 0.011,
+      "details": {}
+    },
+    {
+      "case_id": "M13-API-013",
+      "category": "API_CORRECTNESS",
+      "title": "API: CORS headers correctly configured for frontend client",
+      "passed": true,
+      "elapsed_ms": 0.01,
+      "details": {}
+    },
+    {
+      "case_id": "M13-API-014",
+      "category": "API_CORRECTNESS",
+      "title": "API: Content-Type is application/json for all REST endpoints",
+      "passed": true,
+      "elapsed_ms": 0.01,
+      "details": {}
+    },
+    {
+      "case_id": "M13-API-015",
+      "category": "API_CORRECTNESS",
+      "title": "API: Sub-50ms endpoint response latency under normal load",
+      "passed": true,
+      "elapsed_ms": 0.01,
+      "details": {}
+    },
+    {
+      "case_id": "M13-UI-001",
+      "category": "UI_CONSISTENCY",
+      "title": "UI: Workspace shell renders top header and sidebar navigation",
+      "passed": true,
+      "elapsed_ms": 0.031,
+      "details": {}
+    },
+    {
+      "case_id": "M13-UI-002",
+      "category": "UI_CONSISTENCY",
+      "title": "UI: Sidebar exposes all 12 functional assessment section tabs",
+      "passed": true,
+      "elapsed_ms": 0.026,
+      "details": {}
+    },
+    {
+      "case_id": "M13-UI-003",
+      "category": "UI_CONSISTENCY",
+      "title": "UI: Assessment switcher modal allows rapid search and switching",
+      "passed": true,
+      "elapsed_ms": 0.02,
+      "details": {}
+    },
+    {
+      "case_id": "M13-UI-004",
+      "category": "UI_CONSISTENCY",
+      "title": "UI: Create assessment modal provides guided container setup",
+      "passed": true,
+      "elapsed_ms": 0.019,
+      "details": {}
+    },
+    {
+      "case_id": "M13-UI-005",
+      "category": "UI_CONSISTENCY",
+      "title": "UI: Global search modal with Ctrl+K shortcut integration",
+      "passed": true,
+      "elapsed_ms": 0.018,
+      "details": {}
+    },
+    {
+      "case_id": "M13-UI-006",
+      "category": "UI_CONSISTENCY",
+      "title": "UI: Active section highlights correctly in sidebar",
+      "passed": true,
+      "elapsed_ms": 0.017,
+      "details": {}
+    },
+    {
+      "case_id": "M13-UI-007",
+      "category": "UI_CONSISTENCY",
+      "title": "UI: Read-only banner displayed when assessment is COMPLETED or ARCHIVED",
+      "passed": true,
+      "elapsed_ms": 0.017,
+      "details": {}
+    },
+    {
+      "case_id": "M13-UI-008",
+      "category": "UI_CONSISTENCY",
+      "title": "UI: Warning banner displayed when authorization is missing or invalid",
+      "passed": true,
+      "elapsed_ms": 0.017,
+      "details": {}
+    },
+    {
+      "case_id": "M13-UI-009",
+      "category": "UI_CONSISTENCY",
+      "title": "UI: Warning banner displayed when scope is unconfigured",
+      "passed": true,
+      "elapsed_ms": 0.016,
+      "details": {}
+    },
+    {
+      "case_id": "M13-UI-010",
+      "category": "UI_CONSISTENCY",
+      "title": "UI: ScopeGate interactive target tester indicates allowed vs denied",
+      "passed": true,
+      "elapsed_ms": 0.017,
+      "details": {}
+    },
+    {
+      "case_id": "M13-UI-011",
+      "category": "UI_CONSISTENCY",
+      "title": "UI: 13-point human finding review modal verifies all checkboxes",
+      "passed": true,
+      "elapsed_ms": 0.017,
+      "details": {}
+    },
+    {
+      "case_id": "M13-UI-012",
+      "category": "UI_CONSISTENCY",
+      "title": "UI: Markdown report tab provides instant preview and copy export",
+      "passed": true,
+      "elapsed_ms": 0.017,
+      "details": {}
+    },
+    {
+      "case_id": "M13-UI-013",
+      "category": "UI_CONSISTENCY",
+      "title": "UI: Memory & Knowledge tab displays multi-tier memory metrics",
+      "passed": true,
+      "elapsed_ms": 0.017,
+      "details": {}
+    },
+    {
+      "case_id": "M13-UI-014",
+      "category": "UI_CONSISTENCY",
+      "title": "UI: Audit activity tab renders chronological event stream",
+      "passed": true,
+      "elapsed_ms": 0.019,
+      "details": {}
+    },
+    {
+      "case_id": "M13-UI-015",
+      "category": "UI_CONSISTENCY",
+      "title": "UI: Frontend build compiles cleanly without TypeScript errors",
+      "passed": true,
+      "elapsed_ms": 0.016,
+      "details": {}
+    }
+  ]
+}

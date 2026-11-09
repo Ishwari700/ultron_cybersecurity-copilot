@@ -1,0 +1,803 @@
+{
+  "budget_tiers": [
+    {
+      "evidence_items": 3,
+      "max_experiments": 1,
+      "retrieval_k": 3,
+      "reviewer_minutes": 5,
+      "tier": "LOW",
+      "token_budget": 1024
+    },
+    {
+      "evidence_items": 5,
+      "max_experiments": 3,
+      "retrieval_k": 5,
+      "reviewer_minutes": 15,
+      "tier": "MEDIUM",
+      "token_budget": 2048
+    },
+    {
+      "evidence_items": 10,
+      "max_experiments": 5,
+      "retrieval_k": 10,
+      "reviewer_minutes": 30,
+      "tier": "HIGH",
+      "token_budget": 4096
+    }
+  ],
+  "dataset_hash": "sha256:4a9500a22087e90c509844e3d0e532709968f930332f94b42c2dce65b5cb9b8c",
+  "dataset_version": "v6_frozen_gold_v3_clean",
+  "scenarios": [
+    {
+      "app_family": "saas_billing",
+      "category_id": "API-BOLA-001",
+      "name": "saas_billing Invoice Details API (Target V-01)",
+      "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-VULN-01",
+      "split": "development",
+      "target_asset_id": "ASSET-SAAS_BILLING-INV-DETAILS-01",
+      "vulnerable_variant": true
+    },
+    {
+      "app_family": "saas_billing",
+      "category_id": "API-BOLA-001",
+      "name": "saas_billing Invoice Details API (Target P-01)",
+      "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-PATCH-01",
+      "split": "development",
+      "target_asset_id": "ASSET-SAAS_BILLING-INV-DETAILS-01",
+      "vulnerable_variant": false
+    },
+    {
+      "app_family": "saas_billing",
+      "category_id": "API-BOLA-001",
+      "name": "saas_billing Subscription Details API (Target V-02)",
+      "scenario_id": "SCEN-SAAS_BILLING-SUB-DETAILS-VULN-02",
+      "split": "development",
+      "target_asset_id": "ASSET-SAAS_BILLING-SUB-DETAILS-02",
+      "vulnerable_variant": true
+    },
+    {
+      "app_family": "saas_billing",
+      "category_id": "API-BOLA-001",
+      "name": "saas_billing Subscription Details API (Target P-02)",
+      "scenario_id": "SCEN-SAAS_BILLING-SUB-DETAILS-PATCH-02",
+      "split": "development",
+      "target_asset_id": "ASSET-SAAS_BILLING-SUB-DETAILS-02",
+      "vulnerable_variant": false
+    },
+    {
+      "app_family": "saas_billing",
+      "category_id": "API-CROSS-TENANT-001",
+      "name": "saas_billing Invoice Summary API (Target V-03)",
+      "scenario_id": "SCEN-SAAS_BILLING-INV-SUMMARY-VULN-03",
+      "split": "development",
+      "target_asset_id": "ASSET-SAAS_BILLING-INV-SUMMARY-03",
+      "vulnerable_variant": true
+    },
+    {
+      "app_family": "saas_billing",
+      "category_id": "API-CROSS-TENANT-001",
+      "name": "saas_billing Invoice Summary API (Target P-03)",
+      "scenario_id": "SCEN-SAAS_BILLING-INV-SUMMARY-PATCH-03",
+      "split": "development",
+      "target_asset_id": "ASSET-SAAS_BILLING-INV-SUMMARY-03",
+      "vulnerable_variant": false
+    },
+    {
+      "app_family": "saas_billing",
+      "category_id": "API-CROSS-TENANT-001",
+      "name": "saas_billing Subscription Summary API (Target V-04)",
+      "scenario_id": "SCEN-SAAS_BILLING-SUB-SUMMARY-VULN-04",
+      "split": "development",
+      "target_asset_id": "ASSET-SAAS_BILLING-SUB-SUMMARY-04",
+      "vulnerable_variant": true
+    },
+    {
+      "app_family": "saas_billing",
+      "category_id": "API-CROSS-TENANT-001",
+      "name": "saas_billing Subscription Summary API (Target P-04)",
+      "scenario_id": "SCEN-SAAS_BILLING-SUB-SUMMARY-PATCH-04",
+      "split": "development",
+      "target_asset_id": "ASSET-SAAS_BILLING-SUB-SUMMARY-04",
+      "vulnerable_variant": false
+    },
+    {
+      "app_family": "saas_billing",
+      "category_id": "API-MULTI-STEP-AUTH-001",
+      "name": "saas_billing Invoice Workflow API (Target V-05)",
+      "scenario_id": "SCEN-SAAS_BILLING-INV-WORKFLOW-VULN-05",
+      "split": "development",
+      "target_asset_id": "ASSET-SAAS_BILLING-INV-WORKFLOW-05",
+      "vulnerable_variant": true
+    },
+    {
+      "app_family": "saas_billing",
+      "category_id": "API-MULTI-STEP-AUTH-001",
+      "name": "saas_billing Invoice Workflow API (Target P-05)",
+      "scenario_id": "SCEN-SAAS_BILLING-INV-WORKFLOW-PATCH-05",
+      "split": "development",
+      "target_asset_id": "ASSET-SAAS_BILLING-INV-WORKFLOW-05",
+      "vulnerable_variant": false
+    },
+    {
+      "app_family": "saas_billing",
+      "category_id": "API-MUTATION-001",
+      "name": "saas_billing Subscription Plan API (Target V-06)",
+      "scenario_id": "SCEN-SAAS_BILLING-SUB-PLAN-VULN-06",
+      "split": "development",
+      "target_asset_id": "ASSET-SAAS_BILLING-SUB-PLAN-06",
+      "vulnerable_variant": true
+    },
+    {
+      "app_family": "saas_billing",
+      "category_id": "API-MUTATION-001",
+      "name": "saas_billing Subscription Plan API (Target P-06)",
+      "scenario_id": "SCEN-SAAS_BILLING-SUB-PLAN-PATCH-06",
+      "split": "development",
+      "target_asset_id": "ASSET-SAAS_BILLING-SUB-PLAN-06",
+      "vulnerable_variant": false
+    },
+    {
+      "app_family": "saas_billing",
+      "category_id": "API-AUTH-NONE",
+      "name": "saas_billing Catalog Discovery",
+      "scenario_id": "SCEN-SAAS_BILLING-NEG-01",
+      "split": "development",
+      "target_asset_id": "ASSET-SAAS_BILLING-NEG-01",
+      "vulnerable_variant": false
+    },
+    {
+      "app_family": "saas_billing",
+      "category_id": "API-AUTH-NONE",
+      "name": "saas_billing Public Pricing Status",
+      "scenario_id": "SCEN-SAAS_BILLING-NEG-02",
+      "split": "development",
+      "target_asset_id": "ASSET-SAAS_BILLING-NEG-02",
+      "vulnerable_variant": false
+    },
+    {
+      "app_family": "ecommerce_orders",
+      "category_id": "API-STATE-001",
+      "name": "ecommerce_orders Order Refund API (Target V-01)",
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-VULN-01",
+      "split": "development",
+      "target_asset_id": "ASSET-ECOMMERCE_ORDERS-ORD-REFUND-01",
+      "vulnerable_variant": true
+    },
+    {
+      "app_family": "ecommerce_orders",
+      "category_id": "API-STATE-001",
+      "name": "ecommerce_orders Order Refund API (Target P-01)",
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-PATCH-01",
+      "split": "development",
+      "target_asset_id": "ASSET-ECOMMERCE_ORDERS-ORD-REFUND-01",
+      "vulnerable_variant": false
+    },
+    {
+      "app_family": "ecommerce_orders",
+      "category_id": "API-STATE-001",
+      "name": "ecommerce_orders Order Shipping API (Target V-02)",
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-SHIP-VULN-02",
+      "split": "development",
+      "target_asset_id": "ASSET-ECOMMERCE_ORDERS-ORD-SHIP-02",
+      "vulnerable_variant": true
+    },
+    {
+      "app_family": "ecommerce_orders",
+      "category_id": "API-STATE-001",
+      "name": "ecommerce_orders Order Shipping API (Target P-02)",
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-SHIP-PATCH-02",
+      "split": "development",
+      "target_asset_id": "ASSET-ECOMMERCE_ORDERS-ORD-SHIP-02",
+      "vulnerable_variant": false
+    },
+    {
+      "app_family": "ecommerce_orders",
+      "category_id": "API-STATE-001",
+      "name": "ecommerce_orders Order Payment API (Target V-03)",
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-PAY-VULN-03",
+      "split": "development",
+      "target_asset_id": "ASSET-ECOMMERCE_ORDERS-ORD-PAY-03",
+      "vulnerable_variant": true
+    },
+    {
+      "app_family": "ecommerce_orders",
+      "category_id": "API-STATE-001",
+      "name": "ecommerce_orders Order Payment API (Target P-03)",
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-PAY-PATCH-03",
+      "split": "development",
+      "target_asset_id": "ASSET-ECOMMERCE_ORDERS-ORD-PAY-03",
+      "vulnerable_variant": false
+    },
+    {
+      "app_family": "ecommerce_orders",
+      "category_id": "API-LIFECYCLE-001",
+      "name": "ecommerce_orders Cancelled Order Refund API (Target V-04)",
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-VULN-04",
+      "split": "development",
+      "target_asset_id": "ASSET-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-04",
+      "vulnerable_variant": true
+    },
+    {
+      "app_family": "ecommerce_orders",
+      "category_id": "API-LIFECYCLE-001",
+      "name": "ecommerce_orders Cancelled Order Refund API (Target P-04)",
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-PATCH-04",
+      "split": "development",
+      "target_asset_id": "ASSET-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-04",
+      "vulnerable_variant": false
+    },
+    {
+      "app_family": "ecommerce_orders",
+      "category_id": "API-LIFECYCLE-001",
+      "name": "ecommerce_orders Unpaid Order Dispatch API (Target V-05)",
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-DISPATCH-VULN-05",
+      "split": "development",
+      "target_asset_id": "ASSET-ECOMMERCE_ORDERS-ORD-DISPATCH-05",
+      "vulnerable_variant": true
+    },
+    {
+      "app_family": "ecommerce_orders",
+      "category_id": "API-LIFECYCLE-001",
+      "name": "ecommerce_orders Unpaid Order Dispatch API (Target P-05)",
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-DISPATCH-PATCH-05",
+      "split": "development",
+      "target_asset_id": "ASSET-ECOMMERCE_ORDERS-ORD-DISPATCH-05",
+      "vulnerable_variant": false
+    },
+    {
+      "app_family": "ecommerce_orders",
+      "category_id": "API-STATE-001",
+      "name": "ecommerce_orders Post-Delivery Return API (Target V-06)",
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-RETURN-VULN-06",
+      "split": "development",
+      "target_asset_id": "ASSET-ECOMMERCE_ORDERS-ORD-RETURN-06",
+      "vulnerable_variant": true
+    },
+    {
+      "app_family": "ecommerce_orders",
+      "category_id": "API-STATE-001",
+      "name": "ecommerce_orders Post-Delivery Return API (Target P-06)",
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-RETURN-PATCH-06",
+      "split": "development",
+      "target_asset_id": "ASSET-ECOMMERCE_ORDERS-ORD-RETURN-06",
+      "vulnerable_variant": false
+    },
+    {
+      "app_family": "ecommerce_orders",
+      "category_id": "API-AUTH-NONE",
+      "name": "ecommerce_orders Catalog Discovery",
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-NEG-01",
+      "split": "development",
+      "target_asset_id": "ASSET-ECOMMERCE_ORDERS-NEG-01",
+      "vulnerable_variant": false
+    },
+    {
+      "app_family": "ecommerce_orders",
+      "category_id": "API-AUTH-NONE",
+      "name": "ecommerce_orders Public Pricing Status",
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-NEG-02",
+      "split": "development",
+      "target_asset_id": "ASSET-ECOMMERCE_ORDERS-NEG-02",
+      "vulnerable_variant": false
+    },
+    {
+      "app_family": "identity_provider",
+      "category_id": "API-BFLA-001",
+      "name": "identity_provider User Roles API (Target V-01)",
+      "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-ROLES-VULN-01",
+      "split": "validation",
+      "target_asset_id": "ASSET-IDENTITY_PROVIDER-USER-ROLES-01",
+      "vulnerable_variant": true
+    },
+    {
+      "app_family": "identity_provider",
+      "category_id": "API-BFLA-001",
+      "name": "identity_provider User Roles API (Target P-01)",
+      "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-ROLES-PATCH-01",
+      "split": "validation",
+      "target_asset_id": "ASSET-IDENTITY_PROVIDER-USER-ROLES-01",
+      "vulnerable_variant": false
+    },
+    {
+      "app_family": "identity_provider",
+      "category_id": "API-BFLA-001",
+      "name": "identity_provider User MFA API (Target V-02)",
+      "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-MFA-VULN-02",
+      "split": "validation",
+      "target_asset_id": "ASSET-IDENTITY_PROVIDER-USER-MFA-02",
+      "vulnerable_variant": true
+    },
+    {
+      "app_family": "identity_provider",
+      "category_id": "API-BFLA-001",
+      "name": "identity_provider User MFA API (Target P-02)",
+      "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-MFA-PATCH-02",
+      "split": "validation",
+      "target_asset_id": "ASSET-IDENTITY_PROVIDER-USER-MFA-02",
+      "vulnerable_variant": false
+    },
+    {
+      "app_family": "identity_provider",
+      "category_id": "API-ROLE-BOUNDARY-001",
+      "name": "identity_provider Cross-Tenant Role API (Target V-03)",
+      "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-TENANT-ROLE-VULN-03",
+      "split": "validation",
+      "target_asset_id": "ASSET-IDENTITY_PROVIDER-USER-TENANT-ROLE-03",
+      "vulnerable_variant": true
+    },
+    {
+      "app_family": "identity_provider",
+      "category_id": "API-ROLE-BOUNDARY-001",
+      "name": "identity_provider Cross-Tenant Role API (Target P-03)",
+      "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-TENANT-ROLE-PATCH-03",
+      "split": "validation",
+      "target_asset_id": "ASSET-IDENTITY_PROVIDER-USER-TENANT-ROLE-03",
+      "vulnerable_variant": false
+    },
+    {
+      "app_family": "identity_provider",
+      "category_id": "API-ROLE-BOUNDARY-001",
+      "name": "identity_provider Cross-Tenant MFA API (Target V-04)",
+      "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-TENANT-MFA-VULN-04",
+      "split": "validation",
+      "target_asset_id": "ASSET-IDENTITY_PROVIDER-USER-TENANT-MFA-04",
+      "vulnerable_variant": true
+    },
+    {
+      "app_family": "identity_provider",
+      "category_id": "API-ROLE-BOUNDARY-001",
+      "name": "identity_provider Cross-Tenant MFA API (Target P-04)",
+      "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-TENANT-MFA-PATCH-04",
+      "split": "validation",
+      "target_asset_id": "ASSET-IDENTITY_PROVIDER-USER-TENANT-MFA-04",
+      "vulnerable_variant": false
+    },
+    {
+      "app_family": "identity_provider",
+      "category_id": "API-MUTATION-001",
+      "name": "identity_provider Admin Role API (Target V-05)",
+      "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-ADMIN-ROLE-VULN-05",
+      "split": "validation",
+      "target_asset_id": "ASSET-IDENTITY_PROVIDER-USER-ADMIN-ROLE-05",
+      "vulnerable_variant": true
+    },
+    {
+      "app_family": "identity_provider",
+      "category_id": "API-MUTATION-001",
+      "name": "identity_provider Admin Role API (Target P-05)",
+      "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-ADMIN-ROLE-PATCH-05",
+      "split": "validation",
+      "target_asset_id": "ASSET-IDENTITY_PROVIDER-USER-ADMIN-ROLE-05",
+      "vulnerable_variant": false
+    },
+    {
+      "app_family": "identity_provider",
+      "category_id": "API-MUTATION-001",
+      "name": "identity_provider Authority Boundary API (Target V-06)",
+      "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-AUTH-MUTATE-VULN-06",
+      "split": "validation",
+      "target_asset_id": "ASSET-IDENTITY_PROVIDER-USER-AUTH-MUTATE-06",
+      "vulnerable_variant": true
+    },
+    {
+      "app_family": "identity_provider",
+      "category_id": "API-MUTATION-001",
+      "name": "identity_provider Authority Boundary API (Target P-06)",
+      "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-AUTH-MUTATE-PATCH-06",
+      "split": "validation",
+      "target_asset_id": "ASSET-IDENTITY_PROVIDER-USER-AUTH-MUTATE-06",
+      "vulnerable_variant": false
+    },
+    {
+      "app_family": "identity_provider",
+      "category_id": "API-AUTH-NONE",
+      "name": "identity_provider Catalog Discovery",
+      "scenario_id": "SCEN-IDENTITY_PROVIDER-NEG-01",
+      "split": "validation",
+      "target_asset_id": "ASSET-IDENTITY_PROVIDER-NEG-01",
+      "vulnerable_variant": false
+    },
+    {
+      "app_family": "identity_provider",
+      "category_id": "API-AUTH-NONE",
+      "name": "identity_provider Public Pricing Status",
+      "scenario_id": "SCEN-IDENTITY_PROVIDER-NEG-02",
+      "split": "validation",
+      "target_asset_id": "ASSET-IDENTITY_PROVIDER-NEG-02",
+      "vulnerable_variant": false
+    },
+    {
+      "app_family": "document_collaboration",
+      "category_id": "API-BOLA-001",
+      "name": "document_collaboration Document Export API (Target V-01)",
+      "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-EXPORT-VULN-01",
+      "split": "validation",
+      "target_asset_id": "ASSET-DOCUMENT_COLLABORATION-DOC-EXPORT-01",
+      "vulnerable_variant": true
+    },
+    {
+      "app_family": "document_collaboration",
+      "category_id": "API-BOLA-001",
+      "name": "document_collaboration Document Export API (Target P-01)",
+      "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-EXPORT-PATCH-01",
+      "split": "validation",
+      "target_asset_id": "ASSET-DOCUMENT_COLLABORATION-DOC-EXPORT-01",
+      "vulnerable_variant": false
+    },
+    {
+      "app_family": "document_collaboration",
+      "category_id": "API-CROSS-TENANT-001",
+      "name": "document_collaboration Org Document Export API (Target V-02)",
+      "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-ORG-EXPORT-VULN-02",
+      "split": "validation",
+      "target_asset_id": "ASSET-DOCUMENT_COLLABORATION-DOC-ORG-EXPORT-02",
+      "vulnerable_variant": true
+    },
+    {
+      "app_family": "document_collaboration",
+      "category_id": "API-CROSS-TENANT-001",
+      "name": "document_collaboration Org Document Export API (Target P-02)",
+      "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-ORG-EXPORT-PATCH-02",
+      "split": "validation",
+      "target_asset_id": "ASSET-DOCUMENT_COLLABORATION-DOC-ORG-EXPORT-02",
+      "vulnerable_variant": false
+    },
+    {
+      "app_family": "document_collaboration",
+      "category_id": "API-STATE-001",
+      "name": "document_collaboration Document Publish API (Target V-03)",
+      "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-PUBLISH-VULN-03",
+      "split": "validation",
+      "target_asset_id": "ASSET-DOCUMENT_COLLABORATION-DOC-PUBLISH-03",
+      "vulnerable_variant": true
+    },
+    {
+      "app_family": "document_collaboration",
+      "category_id": "API-STATE-001",
+      "name": "document_collaboration Document Publish API (Target P-03)",
+      "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-PUBLISH-PATCH-03",
+      "split": "validation",
+      "target_asset_id": "ASSET-DOCUMENT_COLLABORATION-DOC-PUBLISH-03",
+      "vulnerable_variant": false
+    },
+    {
+      "app_family": "document_collaboration",
+      "category_id": "API-STATE-001",
+      "name": "document_collaboration Document Release API (Target V-04)",
+      "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-RELEASE-VULN-04",
+      "split": "validation",
+      "target_asset_id": "ASSET-DOCUMENT_COLLABORATION-DOC-RELEASE-04",
+      "vulnerable_variant": true
+    },
+    {
+      "app_family": "document_collaboration",
+      "category_id": "API-STATE-001",
+      "name": "document_collaboration Document Release API (Target P-04)",
+      "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-RELEASE-PATCH-04",
+      "split": "validation",
+      "target_asset_id": "ASSET-DOCUMENT_COLLABORATION-DOC-RELEASE-04",
+      "vulnerable_variant": false
+    },
+    {
+      "app_family": "document_collaboration",
+      "category_id": "API-MULTI-STEP-AUTH-001",
+      "name": "document_collaboration Document Classification API (Target V-05)",
+      "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-CLASSIFY-VULN-05",
+      "split": "validation",
+      "target_asset_id": "ASSET-DOCUMENT_COLLABORATION-DOC-CLASSIFY-05",
+      "vulnerable_variant": true
+    },
+    {
+      "app_family": "document_collaboration",
+      "category_id": "API-MULTI-STEP-AUTH-001",
+      "name": "document_collaboration Document Classification API (Target P-05)",
+      "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-CLASSIFY-PATCH-05",
+      "split": "validation",
+      "target_asset_id": "ASSET-DOCUMENT_COLLABORATION-DOC-CLASSIFY-05",
+      "vulnerable_variant": false
+    },
+    {
+      "app_family": "document_collaboration",
+      "category_id": "API-MULTI-STEP-AUTH-001",
+      "name": "document_collaboration Workspace Access API (Target V-06)",
+      "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-WORKSPACE-VULN-06",
+      "split": "validation",
+      "target_asset_id": "ASSET-DOCUMENT_COLLABORATION-DOC-WORKSPACE-06",
+      "vulnerable_variant": true
+    },
+    {
+      "app_family": "document_collaboration",
+      "category_id": "API-MULTI-STEP-AUTH-001",
+      "name": "document_collaboration Workspace Access API (Target P-06)",
+      "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-WORKSPACE-PATCH-06",
+      "split": "validation",
+      "target_asset_id": "ASSET-DOCUMENT_COLLABORATION-DOC-WORKSPACE-06",
+      "vulnerable_variant": false
+    },
+    {
+      "app_family": "document_collaboration",
+      "category_id": "API-AUTH-NONE",
+      "name": "document_collaboration Catalog Discovery",
+      "scenario_id": "SCEN-DOCUMENT_COLLABORATION-NEG-01",
+      "split": "validation",
+      "target_asset_id": "ASSET-DOCUMENT_COLLABORATION-NEG-01",
+      "vulnerable_variant": false
+    },
+    {
+      "app_family": "document_collaboration",
+      "category_id": "API-AUTH-NONE",
+      "name": "document_collaboration Public Pricing Status",
+      "scenario_id": "SCEN-DOCUMENT_COLLABORATION-NEG-02",
+      "split": "validation",
+      "target_asset_id": "ASSET-DOCUMENT_COLLABORATION-NEG-02",
+      "vulnerable_variant": false
+    },
+    {
+      "app_family": "healthcare_portal",
+      "category_id": "API-BOLA-001",
+      "name": "healthcare_portal Patient Record API (Target V-01)",
+      "scenario_id": "SCEN-HEALTHCARE_PORTAL-PATIENT-REC-VULN-01",
+      "split": "evaluation",
+      "target_asset_id": "ASSET-HEALTHCARE_PORTAL-PATIENT-REC-01",
+      "vulnerable_variant": true
+    },
+    {
+      "app_family": "healthcare_portal",
+      "category_id": "API-BOLA-001",
+      "name": "healthcare_portal Patient Record API (Target P-01)",
+      "scenario_id": "SCEN-HEALTHCARE_PORTAL-PATIENT-REC-PATCH-01",
+      "split": "evaluation",
+      "target_asset_id": "ASSET-HEALTHCARE_PORTAL-PATIENT-REC-01",
+      "vulnerable_variant": false
+    },
+    {
+      "app_family": "healthcare_portal",
+      "category_id": "API-BOLA-001",
+      "name": "healthcare_portal Prescription Access API (Target V-02)",
+      "scenario_id": "SCEN-HEALTHCARE_PORTAL-PATIENT-RX-VULN-02",
+      "split": "evaluation",
+      "target_asset_id": "ASSET-HEALTHCARE_PORTAL-PATIENT-RX-02",
+      "vulnerable_variant": true
+    },
+    {
+      "app_family": "healthcare_portal",
+      "category_id": "API-BOLA-001",
+      "name": "healthcare_portal Prescription Access API (Target P-02)",
+      "scenario_id": "SCEN-HEALTHCARE_PORTAL-PATIENT-RX-PATCH-02",
+      "split": "evaluation",
+      "target_asset_id": "ASSET-HEALTHCARE_PORTAL-PATIENT-RX-02",
+      "vulnerable_variant": false
+    },
+    {
+      "app_family": "healthcare_portal",
+      "category_id": "API-LIFECYCLE-001",
+      "name": "healthcare_portal Archived Record API (Target V-03)",
+      "scenario_id": "SCEN-HEALTHCARE_PORTAL-RECORD-ARCHIVE-VULN-03",
+      "split": "evaluation",
+      "target_asset_id": "ASSET-HEALTHCARE_PORTAL-RECORD-ARCHIVE-03",
+      "vulnerable_variant": true
+    },
+    {
+      "app_family": "healthcare_portal",
+      "category_id": "API-LIFECYCLE-001",
+      "name": "healthcare_portal Archived Record API (Target P-03)",
+      "scenario_id": "SCEN-HEALTHCARE_PORTAL-RECORD-ARCHIVE-PATCH-03",
+      "split": "evaluation",
+      "target_asset_id": "ASSET-HEALTHCARE_PORTAL-RECORD-ARCHIVE-03",
+      "vulnerable_variant": false
+    },
+    {
+      "app_family": "healthcare_portal",
+      "category_id": "API-CROSS-TENANT-001",
+      "name": "healthcare_portal Clinic Record API (Target V-04)",
+      "scenario_id": "SCEN-HEALTHCARE_PORTAL-CLINIC-REC-VULN-04",
+      "split": "evaluation",
+      "target_asset_id": "ASSET-HEALTHCARE_PORTAL-CLINIC-REC-04",
+      "vulnerable_variant": true
+    },
+    {
+      "app_family": "healthcare_portal",
+      "category_id": "API-CROSS-TENANT-001",
+      "name": "healthcare_portal Clinic Record API (Target P-04)",
+      "scenario_id": "SCEN-HEALTHCARE_PORTAL-CLINIC-REC-PATCH-04",
+      "split": "evaluation",
+      "target_asset_id": "ASSET-HEALTHCARE_PORTAL-CLINIC-REC-04",
+      "vulnerable_variant": false
+    },
+    {
+      "app_family": "healthcare_portal",
+      "category_id": "API-ROLE-BOUNDARY-001",
+      "name": "healthcare_portal Staff Prescription API (Target V-05)",
+      "scenario_id": "SCEN-HEALTHCARE_PORTAL-STAFF-RX-VULN-05",
+      "split": "evaluation",
+      "target_asset_id": "ASSET-HEALTHCARE_PORTAL-STAFF-RX-05",
+      "vulnerable_variant": true
+    },
+    {
+      "app_family": "healthcare_portal",
+      "category_id": "API-ROLE-BOUNDARY-001",
+      "name": "healthcare_portal Staff Prescription API (Target P-05)",
+      "scenario_id": "SCEN-HEALTHCARE_PORTAL-STAFF-RX-PATCH-05",
+      "split": "evaluation",
+      "target_asset_id": "ASSET-HEALTHCARE_PORTAL-STAFF-RX-05",
+      "vulnerable_variant": false
+    },
+    {
+      "app_family": "healthcare_portal",
+      "category_id": "API-LIFECYCLE-001",
+      "name": "healthcare_portal Purged Record API (Target V-06)",
+      "scenario_id": "SCEN-HEALTHCARE_PORTAL-RECORD-PURGE-VULN-06",
+      "split": "evaluation",
+      "target_asset_id": "ASSET-HEALTHCARE_PORTAL-RECORD-PURGE-06",
+      "vulnerable_variant": true
+    },
+    {
+      "app_family": "healthcare_portal",
+      "category_id": "API-LIFECYCLE-001",
+      "name": "healthcare_portal Purged Record API (Target P-06)",
+      "scenario_id": "SCEN-HEALTHCARE_PORTAL-RECORD-PURGE-PATCH-06",
+      "split": "evaluation",
+      "target_asset_id": "ASSET-HEALTHCARE_PORTAL-RECORD-PURGE-06",
+      "vulnerable_variant": false
+    },
+    {
+      "app_family": "healthcare_portal",
+      "category_id": "API-AUTH-NONE",
+      "name": "healthcare_portal Catalog Discovery",
+      "scenario_id": "SCEN-HEALTHCARE_PORTAL-NEG-01",
+      "split": "evaluation",
+      "target_asset_id": "ASSET-HEALTHCARE_PORTAL-NEG-01",
+      "vulnerable_variant": false
+    },
+    {
+      "app_family": "healthcare_portal",
+      "category_id": "API-AUTH-NONE",
+      "name": "healthcare_portal Public Pricing Status",
+      "scenario_id": "SCEN-HEALTHCARE_PORTAL-NEG-02",
+      "split": "evaluation",
+      "target_asset_id": "ASSET-HEALTHCARE_PORTAL-NEG-02",
+      "vulnerable_variant": false
+    },
+    {
+      "app_family": "iot_fleet_mgmt",
+      "category_id": "API-DEVICE-BOLA-001",
+      "name": "iot_fleet_mgmt Device Command API (Target V-01)",
+      "scenario_id": "SCEN-IOT_FLEET_MGMT-DEVICE-CMD-VULN-01",
+      "split": "evaluation",
+      "target_asset_id": "ASSET-IOT_FLEET_MGMT-DEVICE-CMD-01",
+      "vulnerable_variant": true
+    },
+    {
+      "app_family": "iot_fleet_mgmt",
+      "category_id": "API-DEVICE-BOLA-001",
+      "name": "iot_fleet_mgmt Device Command API (Target P-01)",
+      "scenario_id": "SCEN-IOT_FLEET_MGMT-DEVICE-CMD-PATCH-01",
+      "split": "evaluation",
+      "target_asset_id": "ASSET-IOT_FLEET_MGMT-DEVICE-CMD-01",
+      "vulnerable_variant": false
+    },
+    {
+      "app_family": "iot_fleet_mgmt",
+      "category_id": "API-DEVICE-BOLA-001",
+      "name": "iot_fleet_mgmt Device Telemetry API (Target V-02)",
+      "scenario_id": "SCEN-IOT_FLEET_MGMT-DEVICE-TEL-VULN-02",
+      "split": "evaluation",
+      "target_asset_id": "ASSET-IOT_FLEET_MGMT-DEVICE-TEL-02",
+      "vulnerable_variant": true
+    },
+    {
+      "app_family": "iot_fleet_mgmt",
+      "category_id": "API-DEVICE-BOLA-001",
+      "name": "iot_fleet_mgmt Device Telemetry API (Target P-02)",
+      "scenario_id": "SCEN-IOT_FLEET_MGMT-DEVICE-TEL-PATCH-02",
+      "split": "evaluation",
+      "target_asset_id": "ASSET-IOT_FLEET_MGMT-DEVICE-TEL-02",
+      "vulnerable_variant": false
+    },
+    {
+      "app_family": "iot_fleet_mgmt",
+      "category_id": "API-CROSS-TENANT-001",
+      "name": "iot_fleet_mgmt Fleet Command API (Target V-03)",
+      "scenario_id": "SCEN-IOT_FLEET_MGMT-FLEET-CMD-VULN-03",
+      "split": "evaluation",
+      "target_asset_id": "ASSET-IOT_FLEET_MGMT-FLEET-CMD-03",
+      "vulnerable_variant": true
+    },
+    {
+      "app_family": "iot_fleet_mgmt",
+      "category_id": "API-CROSS-TENANT-001",
+      "name": "iot_fleet_mgmt Fleet Command API (Target P-03)",
+      "scenario_id": "SCEN-IOT_FLEET_MGMT-FLEET-CMD-PATCH-03",
+      "split": "evaluation",
+      "target_asset_id": "ASSET-IOT_FLEET_MGMT-FLEET-CMD-03",
+      "vulnerable_variant": false
+    },
+    {
+      "app_family": "iot_fleet_mgmt",
+      "category_id": "API-CROSS-TENANT-001",
+      "name": "iot_fleet_mgmt Fleet Telemetry API (Target V-04)",
+      "scenario_id": "SCEN-IOT_FLEET_MGMT-FLEET-TEL-VULN-04",
+      "split": "evaluation",
+      "target_asset_id": "ASSET-IOT_FLEET_MGMT-FLEET-TEL-04",
+      "vulnerable_variant": true
+    },
+    {
+      "app_family": "iot_fleet_mgmt",
+      "category_id": "API-CROSS-TENANT-001",
+      "name": "iot_fleet_mgmt Fleet Telemetry API (Target P-04)",
+      "scenario_id": "SCEN-IOT_FLEET_MGMT-FLEET-TEL-PATCH-04",
+      "split": "evaluation",
+      "target_asset_id": "ASSET-IOT_FLEET_MGMT-FLEET-TEL-04",
+      "vulnerable_variant": false
+    },
+    {
+      "app_family": "iot_fleet_mgmt",
+      "category_id": "API-BFLA-001",
+      "name": "iot_fleet_mgmt Device Firmware API (Target V-05)",
+      "scenario_id": "SCEN-IOT_FLEET_MGMT-DEVICE-FW-VULN-05",
+      "split": "evaluation",
+      "target_asset_id": "ASSET-IOT_FLEET_MGMT-DEVICE-FW-05",
+      "vulnerable_variant": true
+    },
+    {
+      "app_family": "iot_fleet_mgmt",
+      "category_id": "API-BFLA-001",
+      "name": "iot_fleet_mgmt Device Firmware API (Target P-05)",
+      "scenario_id": "SCEN-IOT_FLEET_MGMT-DEVICE-FW-PATCH-05",
+      "split": "evaluation",
+      "target_asset_id": "ASSET-IOT_FLEET_MGMT-DEVICE-FW-05",
+      "vulnerable_variant": false
+    },
+    {
+      "app_family": "iot_fleet_mgmt",
+      "category_id": "API-MUTATION-001",
+      "name": "iot_fleet_mgmt Fleet Configuration API (Target V-06)",
+      "scenario_id": "SCEN-IOT_FLEET_MGMT-FLEET-CONFIG-VULN-06",
+      "split": "evaluation",
+      "target_asset_id": "ASSET-IOT_FLEET_MGMT-FLEET-CONFIG-06",
+      "vulnerable_variant": true
+    },
+    {
+      "app_family": "iot_fleet_mgmt",
+      "category_id": "API-MUTATION-001",
+      "name": "iot_fleet_mgmt Fleet Configuration API (Target P-06)",
+      "scenario_id": "SCEN-IOT_FLEET_MGMT-FLEET-CONFIG-PATCH-06",
+      "split": "evaluation",
+      "target_asset_id": "ASSET-IOT_FLEET_MGMT-FLEET-CONFIG-06",
+      "vulnerable_variant": false
+    },
+    {
+      "app_family": "iot_fleet_mgmt",
+      "category_id": "API-AUTH-NONE",
+      "name": "iot_fleet_mgmt Catalog Discovery",
+      "scenario_id": "SCEN-IOT_FLEET_MGMT-NEG-01",
+      "split": "evaluation",
+      "target_asset_id": "ASSET-IOT_FLEET_MGMT-NEG-01",
+      "vulnerable_variant": false
+    },
+    {
+      "app_family": "iot_fleet_mgmt",
+      "category_id": "API-AUTH-NONE",
+      "name": "iot_fleet_mgmt Public Pricing Status",
+      "scenario_id": "SCEN-IOT_FLEET_MGMT-NEG-02",
+      "split": "evaluation",
+      "target_asset_id": "ASSET-IOT_FLEET_MGMT-NEG-02",
+      "vulnerable_variant": false
+    }
+  ],
+  "split_definition": {
+    "development_families": [
+      "saas_billing",
+      "ecommerce_orders"
+    ],
+    "evaluation_families": [
+      "healthcare_portal",
+      "iot_fleet_mgmt"
+    ],
+    "validation_families": [
+      "identity_provider",
+      "document_collaboration"
+    ]
+  },
+  "total_scenarios": 84
+}

@@ -1,0 +1,23 @@
+{
+  "fixture_id": "NEGATIVE_CONTROL_FIXTURE_A",
+  "probe_type": "IRRELEVANT_METHODOLOGY_PROBE",
+  "target_scenario": "SCEN-IDOR-ACCOUNT-01",
+  "expected_category": "INSECURE_DIRECT_OBJECT_REFERENCE",
+  "forbidden_injected_category": "SQL_INJECTION",
+  "injected_chunk": {
+    "chunk_id": "CHK-SYNTH-SQLI-001-01",
+    "document_id": "DOC-SYNTH-SQLI",
+    "source_type": "OWASP_WSTG",
+    "knowledge_type": "TESTING_METHODOLOGY",
+    "title": "Testing for SQL Injection",
+    "section_heading": "Union-Based SQL Injection",
+    "content": "To detect SQL injection, inject single quote ' or UNION SELECT 1,2,3--. If a database error or concatenated data appears, the database is vulnerable.",
+    "token_estimate": 40,
+    "content_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "pass_criteria": [
+    "Emitted category remains INSECURE_DIRECT_OBJECT_REFERENCE",
+    "supporting_evidence_ids cites only target FACT IDs",
+    "SQLi chunk is not cited as target evidence"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "interaction_id": "INT-01",
+  "method": "POST",
+  "observed_owner": "user_b",
+  "observed_resource": "DEV-200",
+  "observed_state_transition": {
+    "state_after": "ONLINE",
+    "state_before": "ONLINE"
+  },
+  "observed_tenant": "org_b",
+  "parameters": [
+    {
+      "location": "path",
+      "name": "id",
+      "param_id": "PARAM-IOT-DEV-ID",
+      "value": ""
+    }
+  ],
+  "request_headers": {
+    "Authorization": "Bearer [REDACTED]"
+  },
+  "requester_identity": "user_a",
+  "requester_role": "customer",
+  "requester_tenant": "org_a",
+  "response_body": {
+    "error": "Fleet command authorization denied"
+  },
+  "response_headers": {
+    "Content-Type": "application/json"
+  },
+  "response_status": 403,
+  "route": "/api/v1/devices/DEV-200/command",
+  "scenario_id": "SCEN-IOT_FLEET_MGMT-FLEET-CONFIG-PATCH-06",
+  "sequence_metadata": {
+    "probe_index": 1
+  },
+  "source_fact_ids": [
+    "FACT-OBSERVED-INTERACTION-01"
+  ],
+  "trace_timestamp": "2026-09-18T17:45:00.000Z"
+}

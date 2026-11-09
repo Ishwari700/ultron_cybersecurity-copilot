@@ -1,0 +1,83 @@
+{
+  "breakdown_by_condition": {
+    "C1": 84,
+    "C2": 84,
+    "C3": 84,
+    "C4": 84,
+    "P1": 10,
+    "P2": 10,
+    "P3": 10,
+    "P3-300": 16,
+    "P3-512": 16,
+    "P3-768": 12,
+    "P4": 10,
+    "TRACK_A": 84,
+    "TRACK_B": 84,
+    "TRACK_C": 84,
+    "TRACK_D": 84
+  },
+  "breakdown_by_phase": {
+    "PHASE_10": 336,
+    "PHASE_7": 336,
+    "PHASE_8": 40,
+    "PHASE_9": 44
+  },
+  "breakdown_by_primary_code": {
+    "ABSTENTION_TOO_EARLY": 110,
+    "ACTION_SELECTION_FAILURE": 137,
+    "GROUNDING_FAILURE": 32,
+    "POLARITY_FAILURE": 145,
+    "RUNTIME_TIMEOUT": 37,
+    "SCHEMA_FAILURE": 28,
+    "UNRESOLVED": 27,
+    "VALID_TYPED": 240
+  },
+  "corpus_file_path": "data/eval/m5_phase11_1_failure_corpus.jsonl",
+  "corpus_file_sha256": "f425fbd515bbd022df565b6351fe45dacdc3c0faecbde8405e332bb29fd8ce8b",
+  "corpus_pipeline_version": "1.0.0",
+  "created_at_utc": "2026-09-28T18:00:00Z",
+  "manifest_version": "1.0.0",
+  "source_artifacts": {
+    "PHASE_10": {
+      "source_path": "data/eval/m5_phase10_full_population_validation.json",
+      "source_sha256": "6821d207729de97ac99657a09e38c25895a73285fe9c485d299dc27f37d2bdba",
+      "total_records_extracted": 336
+    },
+    "PHASE_7": {
+      "source_path": "data/eval/m5_phase7_benchmark_final.json",
+      "source_sha256": "1e0ed90c4aa672f135d2d2f2240a14d22fa0037c03efda33634f4bf10ff0b125",
+      "total_records_extracted": 336
+    },
+    "PHASE_8": {
+      "source_path": "data/eval/m5_phase8_semantic_study.json",
+      "source_sha256": "b1df9a62fb07d76e0abf6e3935ccbabdaa1713f4c594019ae30c9e59567a45c6",
+      "total_records_extracted": 40
+    },
+    "PHASE_9": {
+      "source_path": "data/eval/m5_phase9_semantic_budget_study.json",
+      "source_sha256": "3c0d3e503c7ed24470b14dfde0bd763c631a9b5dbf70c047bbca72cfaab07f95",
+      "total_records_extracted": 44
+    }
+  },
+  "taxonomy_reference": {
+    "ABSTENTION_TOO_EARLY": "ABSTENTION_TOO_EARLY",
+    "ACTION_SELECTION_FAILURE": "ACTION_SELECTION_FAILURE",
+    "CASCADE_HANDOFF_FAILURE": "CASCADE_HANDOFF_FAILURE",
+    "CATEGORY_SELECTION_FAILURE": "CATEGORY_SELECTION_FAILURE",
+    "CONTEXT_OVERLOAD_OR_CONTEXT_CONFUSION": "CONTEXT_OVERLOAD_OR_CONTEXT_CONFUSION",
+    "EVIDENCE_INTERPRETATION_FAILURE": "EVIDENCE_INTERPRETATION_FAILURE",
+    "GROUNDING_FAILURE": "GROUNDING_FAILURE",
+    "IDENTIFIER_CONFUSION": "IDENTIFIER_CONFUSION",
+    "OTHER": "OTHER",
+    "PARSER_FAILURE": "PARSER_FAILURE",
+    "POLARITY_FAILURE": "POLARITY_FAILURE",
+    "RAG_DISTRACTION_OR_RAG_CONFLICT": "RAG_DISTRACTION_OR_RAG_CONFLICT",
+    "RUNTIME_TIMEOUT": "RUNTIME_TIMEOUT",
+    "SCHEMA_FAILURE": "SCHEMA_FAILURE",
+    "SEMANTIC_STATE_POLARITY_MISMATCH": "SEMANTIC_STATE_POLARITY_MISMATCH",
+    "TRANSPORT_FAILURE": "TRANSPORT_FAILURE",
+    "UNRESOLVED": "UNRESOLVED",
+    "VALID_TYPED": "VALID_TYPED"
+  },
+  "total_corpus_records": 756
+}

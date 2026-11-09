@@ -1,0 +1,355 @@
+{
+  "backend": "Candidate 1 (OnnxVectorFts5Retriever)",
+  "bootstrap_resamples": 2000,
+  "bootstrap_seed": 42,
+  "dataset_sha256": "1bf7ad3749c2f957d8bb5eef8a65a5f1cc5f92cbbf4fb6801bd0b460b8104c65",
+  "evaluation_name": "RETRIEVAL_FINAL_EVAL_GENERALIZATION",
+  "evaluation_timestamp": "2026-09-20T05:23:24.297138+00:00",
+  "metrics": {
+    "injection_hit_at_p4_256": {
+      "ci_95_lower": 0.8,
+      "ci_95_upper": 1.0,
+      "point_estimate": 0.933333
+    },
+    "mean_latency_ms": 1.626,
+    "mrr_at_5": {
+      "ci_95_lower": 0.866667,
+      "ci_95_upper": 1.0,
+      "point_estimate": 0.955556
+    },
+    "precision_at_5_diagnostic": {
+      "ci_95_lower": 0.333333,
+      "ci_95_upper": 0.4,
+      "point_estimate": 0.373333
+    },
+    "recall_at_5": {
+      "ci_95_lower": 0.833333,
+      "ci_95_upper": 1.0,
+      "point_estimate": 0.933333
+    },
+    "recall_at_k_fit_diagnostic": {
+      "ci_95_lower": 0.4,
+      "ci_95_upper": 0.5,
+      "point_estimate": 0.466667
+    }
+  },
+  "per_query_results": [
+    {
+      "gold_chunk_ids": [
+        "CHK-DOC-WSTG-ATHZ-04-002-01",
+        "CHK-DOC-PLATFORM-INV-01-002-01"
+      ],
+      "injection_hit_256": 1,
+      "latency_ms": 2.73,
+      "mrr_at_5": 1.0,
+      "precision_at_5": 0.4,
+      "query_id": "Q-FINAL-001",
+      "recall_at_5": 1.0,
+      "recall_at_k_fit": 0.5,
+      "rendered_query": "Method: GET | Route: /api/v1/medical/records/{record_id} | Evidence Gap: Missing Cross Identity Object Verification | Invariant: Horizontal tenant object isolation",
+      "retrieved_chunk_ids": [
+        "CHK-DOC-PLATFORM-INV-01-002-01",
+        "CHK-DOC-WSTG-ATHZ-04-003-01",
+        "CHK-DOC-WSTG-ATHZ-04-002-01",
+        "CHK-DOC-CWE-639-002-01",
+        "CHK-DOC-ASVS-V4-01-004-01"
+      ]
+    },
+    {
+      "gold_chunk_ids": [
+        "CHK-DOC-WSTG-ATHZ-04-002-01",
+        "CHK-DOC-PLATFORM-INV-01-002-01"
+      ],
+      "injection_hit_256": 1,
+      "latency_ms": 1.65,
+      "mrr_at_5": 1.0,
+      "precision_at_5": 0.4,
+      "query_id": "Q-FINAL-002",
+      "recall_at_5": 1.0,
+      "recall_at_k_fit": 0.5,
+      "rendered_query": "Method: GET | Route: /api/v1/banking/statements/{statement_id} | Evidence Gap: Missing Cross Identity Object Verification | Invariant: Horizontal tenant object isolation",
+      "retrieved_chunk_ids": [
+        "CHK-DOC-PLATFORM-INV-01-002-01",
+        "CHK-DOC-WSTG-ATHZ-04-003-01",
+        "CHK-DOC-WSTG-ATHZ-04-002-01",
+        "CHK-DOC-CWE-639-002-01",
+        "CHK-DOC-ASVS-V4-01-004-01"
+      ]
+    },
+    {
+      "gold_chunk_ids": [
+        "CHK-DOC-PLATFORM-INV-01-003-01",
+        "CHK-DOC-WSTG-ATHZ-02-003-01"
+      ],
+      "injection_hit_256": 1,
+      "latency_ms": 1.52,
+      "mrr_at_5": 1.0,
+      "precision_at_5": 0.4,
+      "query_id": "Q-FINAL-003",
+      "recall_at_5": 1.0,
+      "recall_at_k_fit": 0.5,
+      "rendered_query": "Method: POST | Route: /api/v1/admin/cluster/nodes/reboot | Evidence Gap: Missing Role Hierarchy Enforcement | Invariant: Vertical role privilege hierarchy",
+      "retrieved_chunk_ids": [
+        "CHK-DOC-PLATFORM-INV-01-003-01",
+        "CHK-DOC-WSTG-ATHZ-02-003-01",
+        "CHK-DOC-CWE-285-002-01",
+        "CHK-DOC-WSTG-ATHZ-04-002-01",
+        "CHK-DOC-CWE-639-002-01"
+      ]
+    },
+    {
+      "gold_chunk_ids": [
+        "CHK-DOC-PLATFORM-INV-01-002-01",
+        "CHK-DOC-PLATFORM-INV-01-003-01"
+      ],
+      "injection_hit_256": 1,
+      "latency_ms": 1.68,
+      "mrr_at_5": 1.0,
+      "precision_at_5": 0.4,
+      "query_id": "Q-FINAL-004",
+      "recall_at_5": 1.0,
+      "recall_at_k_fit": 0.5,
+      "rendered_query": "Method: GET | Route: /api/v1/organizations/{org_id}/api_tokens | Evidence Gap: Missing Tenant Isolation Check | Invariant: Horizontal tenant object isolation, Vertical role privilege hierarchy",
+      "retrieved_chunk_ids": [
+        "CHK-DOC-PLATFORM-INV-01-002-01",
+        "CHK-DOC-WSTG-ATHZ-04-002-01",
+        "CHK-DOC-PLATFORM-INV-01-003-01",
+        "CHK-DOC-CWE-639-002-01",
+        "CHK-DOC-PLATFORM-INV-01-005-01"
+      ]
+    },
+    {
+      "gold_chunk_ids": [
+        "CHK-DOC-WSTG-ATHZ-04-002-01",
+        "CHK-DOC-PLATFORM-INV-01-002-01"
+      ],
+      "injection_hit_256": 1,
+      "latency_ms": 1.56,
+      "mrr_at_5": 1.0,
+      "precision_at_5": 0.4,
+      "query_id": "Q-FINAL-005",
+      "recall_at_5": 1.0,
+      "recall_at_k_fit": 0.5,
+      "rendered_query": "Method: GET | Route: /api/v1/devices/{device_id}/telemetry | Evidence Gap: Missing Cross Identity Object Verification | Invariant: Horizontal tenant object isolation",
+      "retrieved_chunk_ids": [
+        "CHK-DOC-PLATFORM-INV-01-002-01",
+        "CHK-DOC-WSTG-ATHZ-04-003-01",
+        "CHK-DOC-WSTG-ATHZ-04-002-01",
+        "CHK-DOC-CWE-639-002-01",
+        "CHK-DOC-ASVS-V4-01-004-01"
+      ]
+    },
+    {
+      "gold_chunk_ids": [
+        "CHK-DOC-PLATFORM-INV-01-003-01",
+        "CHK-DOC-WSTG-ATHZ-02-003-01"
+      ],
+      "injection_hit_256": 1,
+      "latency_ms": 1.5,
+      "mrr_at_5": 1.0,
+      "precision_at_5": 0.4,
+      "query_id": "Q-FINAL-006",
+      "recall_at_5": 1.0,
+      "recall_at_k_fit": 0.5,
+      "rendered_query": "Method: POST | Route: /api/v1/admin/iam/policies/attach | Evidence Gap: Missing Role Hierarchy Enforcement | Invariant: Vertical role privilege hierarchy",
+      "retrieved_chunk_ids": [
+        "CHK-DOC-PLATFORM-INV-01-003-01",
+        "CHK-DOC-WSTG-ATHZ-02-003-01",
+        "CHK-DOC-CWE-285-002-01",
+        "CHK-DOC-WSTG-ATHZ-04-002-01",
+        "CHK-DOC-CWE-639-002-01"
+      ]
+    },
+    {
+      "gold_chunk_ids": [
+        "CHK-DOC-ASVS-V4-01-002-01",
+        "CHK-DOC-PLATFORM-INV-01-004-01"
+      ],
+      "injection_hit_256": 1,
+      "latency_ms": 1.44,
+      "mrr_at_5": 1.0,
+      "precision_at_5": 0.4,
+      "query_id": "Q-FINAL-007",
+      "recall_at_5": 1.0,
+      "recall_at_k_fit": 0.5,
+      "rendered_query": "Method: GET | Route: /api/v1/internal/ops/debug/pprof | Evidence Gap: Missing Unauthenticated Access Check",
+      "retrieved_chunk_ids": [
+        "CHK-DOC-ASVS-V4-01-002-01",
+        "CHK-DOC-CWE-285-002-01",
+        "CHK-DOC-PLATFORM-INV-01-004-01",
+        "CHK-DOC-WSTG-ATHZ-02-003-01",
+        "CHK-DOC-WSTG-ATHZ-04-003-01"
+      ]
+    },
+    {
+      "gold_chunk_ids": [
+        "CHK-DOC-WSTG-ATHZ-04-002-01",
+        "CHK-DOC-PLATFORM-INV-01-002-01"
+      ],
+      "injection_hit_256": 1,
+      "latency_ms": 1.6,
+      "mrr_at_5": 1.0,
+      "precision_at_5": 0.4,
+      "query_id": "Q-FINAL-008",
+      "recall_at_5": 1.0,
+      "recall_at_k_fit": 0.5,
+      "rendered_query": "Method: PUT | Route: /api/v1/accounts/{account_id}/security_pin | Evidence Gap: Missing Cross Identity Object Verification | Invariant: Horizontal tenant object isolation",
+      "retrieved_chunk_ids": [
+        "CHK-DOC-WSTG-ATHZ-04-002-01",
+        "CHK-DOC-PLATFORM-INV-01-002-01",
+        "CHK-DOC-WSTG-ATHZ-04-003-01",
+        "CHK-DOC-CWE-639-002-01",
+        "CHK-DOC-ASVS-V4-01-004-01"
+      ]
+    },
+    {
+      "gold_chunk_ids": [
+        "CHK-DOC-PLATFORM-INV-01-003-01",
+        "CHK-DOC-WSTG-ATHZ-02-003-01"
+      ],
+      "injection_hit_256": 1,
+      "latency_ms": 1.55,
+      "mrr_at_5": 1.0,
+      "precision_at_5": 0.4,
+      "query_id": "Q-FINAL-009",
+      "recall_at_5": 1.0,
+      "recall_at_k_fit": 0.5,
+      "rendered_query": "Method: POST | Route: /api/v1/admin/dns/zones/flush | Evidence Gap: Missing Role Hierarchy Enforcement | Invariant: Vertical role privilege hierarchy",
+      "retrieved_chunk_ids": [
+        "CHK-DOC-PLATFORM-INV-01-003-01",
+        "CHK-DOC-WSTG-ATHZ-02-003-01",
+        "CHK-DOC-WSTG-ATHZ-04-002-01",
+        "CHK-DOC-CWE-285-002-01",
+        "CHK-DOC-CWE-639-002-01"
+      ]
+    },
+    {
+      "gold_chunk_ids": [
+        "CHK-DOC-WSTG-ATHZ-04-002-01",
+        "CHK-DOC-PLATFORM-INV-01-002-01"
+      ],
+      "injection_hit_256": 1,
+      "latency_ms": 1.55,
+      "mrr_at_5": 1.0,
+      "precision_at_5": 0.4,
+      "query_id": "Q-FINAL-010",
+      "recall_at_5": 1.0,
+      "recall_at_k_fit": 0.5,
+      "rendered_query": "Method: GET | Route: /api/v1/tax_filings/{filing_id}/pdf | Evidence Gap: Missing Cross Identity Object Verification | Invariant: Horizontal tenant object isolation",
+      "retrieved_chunk_ids": [
+        "CHK-DOC-PLATFORM-INV-01-002-01",
+        "CHK-DOC-WSTG-ATHZ-04-003-01",
+        "CHK-DOC-WSTG-ATHZ-04-002-01",
+        "CHK-DOC-CWE-639-002-01",
+        "CHK-DOC-ASVS-V4-01-004-01"
+      ]
+    },
+    {
+      "gold_chunk_ids": [
+        "CHK-DOC-PLATFORM-INV-01-003-01",
+        "CHK-DOC-WSTG-ATHZ-02-003-01"
+      ],
+      "injection_hit_256": 1,
+      "latency_ms": 1.51,
+      "mrr_at_5": 1.0,
+      "precision_at_5": 0.4,
+      "query_id": "Q-FINAL-011",
+      "recall_at_5": 1.0,
+      "recall_at_k_fit": 0.5,
+      "rendered_query": "Method: POST | Route: /api/v1/system/crypto/keys/rotate | Evidence Gap: Missing Role Hierarchy Enforcement | Invariant: Vertical role privilege hierarchy",
+      "retrieved_chunk_ids": [
+        "CHK-DOC-PLATFORM-INV-01-003-01",
+        "CHK-DOC-CWE-639-002-01",
+        "CHK-DOC-WSTG-ATHZ-02-003-01",
+        "CHK-DOC-CWE-285-002-01",
+        "CHK-DOC-WSTG-ATHZ-04-002-01"
+      ]
+    },
+    {
+      "gold_chunk_ids": [
+        "CHK-DOC-PLATFORM-INV-01-002-01",
+        "CHK-DOC-PLATFORM-INV-01-003-01"
+      ],
+      "injection_hit_256": 1,
+      "latency_ms": 1.63,
+      "mrr_at_5": 1.0,
+      "precision_at_5": 0.2,
+      "query_id": "Q-FINAL-012",
+      "recall_at_5": 0.5,
+      "recall_at_k_fit": 0.5,
+      "rendered_query": "Method: POST | Route: /api/v1/enterprise/tenants/{tenant_id}/export | Evidence Gap: Missing Tenant Isolation Check | Invariant: Horizontal tenant object isolation, Vertical role privilege hierarchy",
+      "retrieved_chunk_ids": [
+        "CHK-DOC-PLATFORM-INV-01-002-01",
+        "CHK-DOC-CWE-285-002-01",
+        "CHK-DOC-WSTG-ATHZ-04-002-01",
+        "CHK-DOC-CWE-639-002-01",
+        "CHK-DOC-PLATFORM-INV-01-005-01"
+      ]
+    },
+    {
+      "gold_chunk_ids": [
+        "CHK-DOC-PLATFORM-INV-01-005-01",
+        "CHK-DOC-WSTG-ATHZ-04-002-01"
+      ],
+      "injection_hit_256": 0,
+      "latency_ms": 1.55,
+      "mrr_at_5": 0.333333,
+      "precision_at_5": 0.2,
+      "query_id": "Q-FINAL-013",
+      "recall_at_5": 0.5,
+      "recall_at_k_fit": 0.0,
+      "rendered_query": "Method: POST | Route: /api/v1/transactions/{txn_id}/reverse | Evidence Gap: Missing Mutation State Boundary | Invariant: Horizontal tenant object isolation",
+      "retrieved_chunk_ids": [
+        "CHK-DOC-CWE-639-002-01",
+        "CHK-DOC-WSTG-ATHZ-04-003-01",
+        "CHK-DOC-WSTG-ATHZ-04-002-01",
+        "CHK-DOC-PLATFORM-INV-01-002-01",
+        "CHK-DOC-WSTG-ATHZ-02-002-01"
+      ]
+    },
+    {
+      "gold_chunk_ids": [
+        "CHK-DOC-PLATFORM-INV-01-003-01",
+        "CHK-DOC-WSTG-ATHZ-02-003-01"
+      ],
+      "injection_hit_256": 1,
+      "latency_ms": 1.55,
+      "mrr_at_5": 1.0,
+      "precision_at_5": 0.4,
+      "query_id": "Q-FINAL-014",
+      "recall_at_5": 1.0,
+      "recall_at_k_fit": 0.5,
+      "rendered_query": "Method: PUT | Route: /api/v1/admin/network/routes/update | Evidence Gap: Missing Role Hierarchy Enforcement | Invariant: Vertical role privilege hierarchy",
+      "retrieved_chunk_ids": [
+        "CHK-DOC-PLATFORM-INV-01-003-01",
+        "CHK-DOC-WSTG-ATHZ-02-003-01",
+        "CHK-DOC-CWE-639-002-01",
+        "CHK-DOC-WSTG-ATHZ-02-004-01",
+        "CHK-DOC-CWE-285-002-01"
+      ]
+    },
+    {
+      "gold_chunk_ids": [
+        "CHK-DOC-ASVS-V4-01-002-01",
+        "CHK-DOC-PLATFORM-INV-01-004-01"
+      ],
+      "injection_hit_256": 1,
+      "latency_ms": 1.36,
+      "mrr_at_5": 1.0,
+      "precision_at_5": 0.4,
+      "query_id": "Q-FINAL-015",
+      "recall_at_5": 1.0,
+      "recall_at_k_fit": 0.5,
+      "rendered_query": "Method: GET | Route: /api/v1/internal/actuator/env | Evidence Gap: Missing Unauthenticated Access Check",
+      "retrieved_chunk_ids": [
+        "CHK-DOC-ASVS-V4-01-002-01",
+        "CHK-DOC-WSTG-ATHZ-02-003-01",
+        "CHK-DOC-PLATFORM-INV-01-004-01",
+        "CHK-DOC-CWE-285-002-01",
+        "CHK-DOC-WSTG-ATHZ-04-003-01"
+      ]
+    }
+  ],
+  "query_count": 15,
+  "renderer": "RENDERER_S"
+}

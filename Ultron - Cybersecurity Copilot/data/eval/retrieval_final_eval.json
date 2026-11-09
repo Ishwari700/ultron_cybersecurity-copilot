@@ -1,0 +1,287 @@
+[
+  {
+    "query_id": "Q-FINAL-001",
+    "fixture_schema_version": "1.0.0",
+    "query_builder_version": "3.0.0",
+    "route_template": "/api/v1/medical/records/{record_id}",
+    "http_method": "GET",
+    "has_cross_identity_object_access_success": true,
+    "has_privilege_level_delta": false,
+    "evidence_gap_type": "MISSING_CROSS_IDENTITY_OBJECT_VERIFICATION",
+    "expected_rendered_query": {
+      "RENDERER_S": "Method: GET | Route: /api/v1/medical/records/{record_id} | Evidence Gap: Missing Cross Identity Object Verification | Invariant: Horizontal tenant object isolation",
+      "RENDERER_N": "How should GET /api/v1/medical/records/{record_id} enforce Missing Cross Identity Object Verification? Relevant invariant: Horizontal tenant object isolation."
+    },
+    "acceptable_chunk_ids": [
+      "CHK-DOC-PLATFORM-INV-01-002-01",
+      "CHK-DOC-WSTG-ATHZ-04-002-01"
+    ],
+    "split": "RETRIEVAL_FINAL_EVAL"
+  },
+  {
+    "query_id": "Q-FINAL-002",
+    "fixture_schema_version": "1.0.0",
+    "query_builder_version": "3.0.0",
+    "route_template": "/api/v1/banking/statements/{statement_id}",
+    "http_method": "GET",
+    "has_cross_identity_object_access_success": true,
+    "has_privilege_level_delta": false,
+    "evidence_gap_type": "MISSING_CROSS_IDENTITY_OBJECT_VERIFICATION",
+    "expected_rendered_query": {
+      "RENDERER_S": "Method: GET | Route: /api/v1/banking/statements/{statement_id} | Evidence Gap: Missing Cross Identity Object Verification | Invariant: Horizontal tenant object isolation",
+      "RENDERER_N": "How should GET /api/v1/banking/statements/{statement_id} enforce Missing Cross Identity Object Verification? Relevant invariant: Horizontal tenant object isolation."
+    },
+    "acceptable_chunk_ids": [
+      "CHK-DOC-PLATFORM-INV-01-002-01",
+      "CHK-DOC-WSTG-ATHZ-04-002-01"
+    ],
+    "split": "RETRIEVAL_FINAL_EVAL"
+  },
+  {
+    "query_id": "Q-FINAL-003",
+    "fixture_schema_version": "1.0.0",
+    "query_builder_version": "3.0.0",
+    "route_template": "/api/v1/admin/cluster/nodes/reboot",
+    "http_method": "POST",
+    "has_cross_identity_object_access_success": false,
+    "has_privilege_level_delta": true,
+    "evidence_gap_type": "MISSING_ROLE_HIERARCHY_ENFORCEMENT",
+    "expected_rendered_query": {
+      "RENDERER_S": "Method: POST | Route: /api/v1/admin/cluster/nodes/reboot | Evidence Gap: Missing Role Hierarchy Enforcement | Invariant: Vertical role privilege hierarchy",
+      "RENDERER_N": "How should POST /api/v1/admin/cluster/nodes/reboot enforce Missing Role Hierarchy Enforcement? Relevant invariant: Vertical role privilege hierarchy."
+    },
+    "acceptable_chunk_ids": [
+      "CHK-DOC-PLATFORM-INV-01-003-01",
+      "CHK-DOC-WSTG-ATHZ-02-003-01"
+    ],
+    "split": "RETRIEVAL_FINAL_EVAL"
+  },
+  {
+    "query_id": "Q-FINAL-004",
+    "fixture_schema_version": "1.0.0",
+    "query_builder_version": "3.0.0",
+    "route_template": "/api/v1/organizations/{org_id}/api_tokens",
+    "http_method": "GET",
+    "has_cross_identity_object_access_success": true,
+    "has_privilege_level_delta": true,
+    "evidence_gap_type": "MISSING_TENANT_ISOLATION_CHECK",
+    "expected_rendered_query": {
+      "RENDERER_S": "Method: GET | Route: /api/v1/organizations/{org_id}/api_tokens | Evidence Gap: Missing Tenant Isolation Check | Invariant: Horizontal tenant object isolation, Vertical role privilege hierarchy",
+      "RENDERER_N": "How should GET /api/v1/organizations/{org_id}/api_tokens enforce Missing Tenant Isolation Check? Relevant invariant: Horizontal tenant object isolation, Vertical role privilege hierarchy."
+    },
+    "acceptable_chunk_ids": [
+      "CHK-DOC-PLATFORM-INV-01-002-01",
+      "CHK-DOC-PLATFORM-INV-01-003-01"
+    ],
+    "split": "RETRIEVAL_FINAL_EVAL"
+  },
+  {
+    "query_id": "Q-FINAL-005",
+    "fixture_schema_version": "1.0.0",
+    "query_builder_version": "3.0.0",
+    "route_template": "/api/v1/devices/{device_id}/telemetry",
+    "http_method": "GET",
+    "has_cross_identity_object_access_success": true,
+    "has_privilege_level_delta": false,
+    "evidence_gap_type": "MISSING_CROSS_IDENTITY_OBJECT_VERIFICATION",
+    "expected_rendered_query": {
+      "RENDERER_S": "Method: GET | Route: /api/v1/devices/{device_id}/telemetry | Evidence Gap: Missing Cross Identity Object Verification | Invariant: Horizontal tenant object isolation",
+      "RENDERER_N": "How should GET /api/v1/devices/{device_id}/telemetry enforce Missing Cross Identity Object Verification? Relevant invariant: Horizontal tenant object isolation."
+    },
+    "acceptable_chunk_ids": [
+      "CHK-DOC-PLATFORM-INV-01-002-01",
+      "CHK-DOC-WSTG-ATHZ-04-002-01"
+    ],
+    "split": "RETRIEVAL_FINAL_EVAL"
+  },
+  {
+    "query_id": "Q-FINAL-006",
+    "fixture_schema_version": "1.0.0",
+    "query_builder_version": "3.0.0",
+    "route_template": "/api/v1/admin/iam/policies/attach",
+    "http_method": "POST",
+    "has_cross_identity_object_access_success": false,
+    "has_privilege_level_delta": true,
+    "evidence_gap_type": "MISSING_ROLE_HIERARCHY_ENFORCEMENT",
+    "expected_rendered_query": {
+      "RENDERER_S": "Method: POST | Route: /api/v1/admin/iam/policies/attach | Evidence Gap: Missing Role Hierarchy Enforcement | Invariant: Vertical role privilege hierarchy",
+      "RENDERER_N": "How should POST /api/v1/admin/iam/policies/attach enforce Missing Role Hierarchy Enforcement? Relevant invariant: Vertical role privilege hierarchy."
+    },
+    "acceptable_chunk_ids": [
+      "CHK-DOC-PLATFORM-INV-01-003-01",
+      "CHK-DOC-WSTG-ATHZ-02-003-01"
+    ],
+    "split": "RETRIEVAL_FINAL_EVAL"
+  },
+  {
+    "query_id": "Q-FINAL-007",
+    "fixture_schema_version": "1.0.0",
+    "query_builder_version": "3.0.0",
+    "route_template": "/api/v1/internal/ops/debug/pprof",
+    "http_method": "GET",
+    "has_cross_identity_object_access_success": false,
+    "has_privilege_level_delta": false,
+    "evidence_gap_type": "MISSING_UNAUTHENTICATED_ACCESS_CHECK",
+    "expected_rendered_query": {
+      "RENDERER_S": "Method: GET | Route: /api/v1/internal/ops/debug/pprof | Evidence Gap: Missing Unauthenticated Access Check",
+      "RENDERER_N": "How should GET /api/v1/internal/ops/debug/pprof enforce Missing Unauthenticated Access Check? Relevant invariant: General authorization boundary."
+    },
+    "acceptable_chunk_ids": [
+      "CHK-DOC-PLATFORM-INV-01-004-01",
+      "CHK-DOC-ASVS-V4-01-002-01"
+    ],
+    "split": "RETRIEVAL_FINAL_EVAL"
+  },
+  {
+    "query_id": "Q-FINAL-008",
+    "fixture_schema_version": "1.0.0",
+    "query_builder_version": "3.0.0",
+    "route_template": "/api/v1/accounts/{account_id}/security_pin",
+    "http_method": "PUT",
+    "has_cross_identity_object_access_success": true,
+    "has_privilege_level_delta": false,
+    "evidence_gap_type": "MISSING_CROSS_IDENTITY_OBJECT_VERIFICATION",
+    "expected_rendered_query": {
+      "RENDERER_S": "Method: PUT | Route: /api/v1/accounts/{account_id}/security_pin | Evidence Gap: Missing Cross Identity Object Verification | Invariant: Horizontal tenant object isolation",
+      "RENDERER_N": "How should PUT /api/v1/accounts/{account_id}/security_pin enforce Missing Cross Identity Object Verification? Relevant invariant: Horizontal tenant object isolation."
+    },
+    "acceptable_chunk_ids": [
+      "CHK-DOC-PLATFORM-INV-01-002-01",
+      "CHK-DOC-WSTG-ATHZ-04-002-01"
+    ],
+    "split": "RETRIEVAL_FINAL_EVAL"
+  },
+  {
+    "query_id": "Q-FINAL-009",
+    "fixture_schema_version": "1.0.0",
+    "query_builder_version": "3.0.0",
+    "route_template": "/api/v1/admin/dns/zones/flush",
+    "http_method": "POST",
+    "has_cross_identity_object_access_success": false,
+    "has_privilege_level_delta": true,
+    "evidence_gap_type": "MISSING_ROLE_HIERARCHY_ENFORCEMENT",
+    "expected_rendered_query": {
+      "RENDERER_S": "Method: POST | Route: /api/v1/admin/dns/zones/flush | Evidence Gap: Missing Role Hierarchy Enforcement | Invariant: Vertical role privilege hierarchy",
+      "RENDERER_N": "How should POST /api/v1/admin/dns/zones/flush enforce Missing Role Hierarchy Enforcement? Relevant invariant: Vertical role privilege hierarchy."
+    },
+    "acceptable_chunk_ids": [
+      "CHK-DOC-PLATFORM-INV-01-003-01",
+      "CHK-DOC-WSTG-ATHZ-02-003-01"
+    ],
+    "split": "RETRIEVAL_FINAL_EVAL"
+  },
+  {
+    "query_id": "Q-FINAL-010",
+    "fixture_schema_version": "1.0.0",
+    "query_builder_version": "3.0.0",
+    "route_template": "/api/v1/tax_filings/{filing_id}/pdf",
+    "http_method": "GET",
+    "has_cross_identity_object_access_success": true,
+    "has_privilege_level_delta": false,
+    "evidence_gap_type": "MISSING_CROSS_IDENTITY_OBJECT_VERIFICATION",
+    "expected_rendered_query": {
+      "RENDERER_S": "Method: GET | Route: /api/v1/tax_filings/{filing_id}/pdf | Evidence Gap: Missing Cross Identity Object Verification | Invariant: Horizontal tenant object isolation",
+      "RENDERER_N": "How should GET /api/v1/tax_filings/{filing_id}/pdf enforce Missing Cross Identity Object Verification? Relevant invariant: Horizontal tenant object isolation."
+    },
+    "acceptable_chunk_ids": [
+      "CHK-DOC-PLATFORM-INV-01-002-01",
+      "CHK-DOC-WSTG-ATHZ-04-002-01"
+    ],
+    "split": "RETRIEVAL_FINAL_EVAL"
+  },
+  {
+    "query_id": "Q-FINAL-011",
+    "fixture_schema_version": "1.0.0",
+    "query_builder_version": "3.0.0",
+    "route_template": "/api/v1/system/crypto/keys/rotate",
+    "http_method": "POST",
+    "has_cross_identity_object_access_success": false,
+    "has_privilege_level_delta": true,
+    "evidence_gap_type": "MISSING_ROLE_HIERARCHY_ENFORCEMENT",
+    "expected_rendered_query": {
+      "RENDERER_S": "Method: POST | Route: /api/v1/system/crypto/keys/rotate | Evidence Gap: Missing Role Hierarchy Enforcement | Invariant: Vertical role privilege hierarchy",
+      "RENDERER_N": "How should POST /api/v1/system/crypto/keys/rotate enforce Missing Role Hierarchy Enforcement? Relevant invariant: Vertical role privilege hierarchy."
+    },
+    "acceptable_chunk_ids": [
+      "CHK-DOC-PLATFORM-INV-01-003-01",
+      "CHK-DOC-WSTG-ATHZ-02-003-01"
+    ],
+    "split": "RETRIEVAL_FINAL_EVAL"
+  },
+  {
+    "query_id": "Q-FINAL-012",
+    "fixture_schema_version": "1.0.0",
+    "query_builder_version": "3.0.0",
+    "route_template": "/api/v1/enterprise/tenants/{tenant_id}/export",
+    "http_method": "POST",
+    "has_cross_identity_object_access_success": true,
+    "has_privilege_level_delta": true,
+    "evidence_gap_type": "MISSING_TENANT_ISOLATION_CHECK",
+    "expected_rendered_query": {
+      "RENDERER_S": "Method: POST | Route: /api/v1/enterprise/tenants/{tenant_id}/export | Evidence Gap: Missing Tenant Isolation Check | Invariant: Horizontal tenant object isolation, Vertical role privilege hierarchy",
+      "RENDERER_N": "How should POST /api/v1/enterprise/tenants/{tenant_id}/export enforce Missing Tenant Isolation Check? Relevant invariant: Horizontal tenant object isolation, Vertical role privilege hierarchy."
+    },
+    "acceptable_chunk_ids": [
+      "CHK-DOC-PLATFORM-INV-01-002-01",
+      "CHK-DOC-PLATFORM-INV-01-003-01"
+    ],
+    "split": "RETRIEVAL_FINAL_EVAL"
+  },
+  {
+    "query_id": "Q-FINAL-013",
+    "fixture_schema_version": "1.0.0",
+    "query_builder_version": "3.0.0",
+    "route_template": "/api/v1/transactions/{txn_id}/reverse",
+    "http_method": "POST",
+    "has_cross_identity_object_access_success": true,
+    "has_privilege_level_delta": false,
+    "evidence_gap_type": "MISSING_MUTATION_STATE_BOUNDARY",
+    "expected_rendered_query": {
+      "RENDERER_S": "Method: POST | Route: /api/v1/transactions/{txn_id}/reverse | Evidence Gap: Missing Mutation State Boundary | Invariant: Horizontal tenant object isolation",
+      "RENDERER_N": "How should POST /api/v1/transactions/{txn_id}/reverse enforce Missing Mutation State Boundary? Relevant invariant: Horizontal tenant object isolation."
+    },
+    "acceptable_chunk_ids": [
+      "CHK-DOC-PLATFORM-INV-01-005-01",
+      "CHK-DOC-WSTG-ATHZ-04-002-01"
+    ],
+    "split": "RETRIEVAL_FINAL_EVAL"
+  },
+  {
+    "query_id": "Q-FINAL-014",
+    "fixture_schema_version": "1.0.0",
+    "query_builder_version": "3.0.0",
+    "route_template": "/api/v1/admin/network/routes/update",
+    "http_method": "PUT",
+    "has_cross_identity_object_access_success": false,
+    "has_privilege_level_delta": true,
+    "evidence_gap_type": "MISSING_ROLE_HIERARCHY_ENFORCEMENT",
+    "expected_rendered_query": {
+      "RENDERER_S": "Method: PUT | Route: /api/v1/admin/network/routes/update | Evidence Gap: Missing Role Hierarchy Enforcement | Invariant: Vertical role privilege hierarchy",
+      "RENDERER_N": "How should PUT /api/v1/admin/network/routes/update enforce Missing Role Hierarchy Enforcement? Relevant invariant: Vertical role privilege hierarchy."
+    },
+    "acceptable_chunk_ids": [
+      "CHK-DOC-PLATFORM-INV-01-003-01",
+      "CHK-DOC-WSTG-ATHZ-02-003-01"
+    ],
+    "split": "RETRIEVAL_FINAL_EVAL"
+  },
+  {
+    "query_id": "Q-FINAL-015",
+    "fixture_schema_version": "1.0.0",
+    "query_builder_version": "3.0.0",
+    "route_template": "/api/v1/internal/actuator/env",
+    "http_method": "GET",
+    "has_cross_identity_object_access_success": false,
+    "has_privilege_level_delta": false,
+    "evidence_gap_type": "MISSING_UNAUTHENTICATED_ACCESS_CHECK",
+    "expected_rendered_query": {
+      "RENDERER_S": "Method: GET | Route: /api/v1/internal/actuator/env | Evidence Gap: Missing Unauthenticated Access Check",
+      "RENDERER_N": "How should GET /api/v1/internal/actuator/env enforce Missing Unauthenticated Access Check? Relevant invariant: General authorization boundary."
+    },
+    "acceptable_chunk_ids": [
+      "CHK-DOC-PLATFORM-INV-01-004-01",
+      "CHK-DOC-ASVS-V4-01-002-01"
+    ],
+    "split": "RETRIEVAL_FINAL_EVAL"
+  }
+]

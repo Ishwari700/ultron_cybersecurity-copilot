@@ -1,0 +1,1625 @@
+{
+  "schema_version": "6.0.0",
+  "milestone": "M5",
+  "phase": "PHASE_6_7_TYPED_PROTOCOL_LIVE_SMOKE",
+  "timestamp": "2026-09-21T14:46:10.996049+00:00",
+  "metadata": {
+    "m4_9_sha": "459b9ec63c3a2dc760abde12ec196760f7e505fbab5317f0da0c46b32c5eaac7",
+    "benchmark_manifest_sha": "b2b85a672124acf21066a257d8c7f5093000368b224ee013c02574c96a0ae707",
+    "planning_freeze_commit": "1e1a87070a018542a0a2e79f8a78654f34df5aba",
+    "phase6_sha": "7ee8b6b2ec33eca0fcb8a3f0948d1f36b7e41877354ae4a64190f8e19c679b5e",
+    "phase6_2_sha": "830c225b22f6767ee13b4ce3b443a14aede3ea767ee25ae7343c1a153c4a0818",
+    "model_name": "qwen2.5-coder:7b",
+    "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+    "runtime_version": "ollama version is 0.34.1",
+    "primary_inference_parameters": {
+      "num_ctx": 2048,
+      "num_predict": 300,
+      "temperature": 0.0,
+      "seed": 42,
+      "keep_alive": "60m"
+    }
+  },
+  "pre_registered_matrix": {
+    "scenarios": [
+      "SCEN-SAAS_BILLING-INV-DETAILS-VULN-01",
+      "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-VULN-01",
+      "SCEN-SAAS_BILLING-INV-DETAILS-PATCH-01"
+    ],
+    "tracks": [
+      "TRACK_A",
+      "TRACK_B",
+      "TRACK_C",
+      "TRACK_D"
+    ],
+    "i1_conditions": [
+      false,
+      true
+    ],
+    "total_calls": 24,
+    "retries_count": 0,
+    "semantic_repairs_count": 0
+  },
+  "summary": {
+    "total_calls": 24,
+    "valid_executions": 3,
+    "failed_executions": 21,
+    "parser_failures": 4,
+    "schema_failures": 6,
+    "truncation_failures": 1,
+    "grounding_rejections": 0,
+    "polarity_rejections": 10,
+    "transport_failures": 0,
+    "mean_latency_ms": 23192.01963750129,
+    "min_latency_ms": 16426.407899998594,
+    "max_latency_ms": 31717.233200004557,
+    "decisions_reached": {
+      "HYPOTHESIS": 0,
+      "INSUFFICIENT_EVIDENCE": 3,
+      "NO_RELEVANT_FUNCTIONALITY": 0,
+      "NONE": 21
+    },
+    "candidate_decisions": {
+      "HYPOTHESIS": 16,
+      "INSUFFICIENT_EVIDENCE": 0,
+      "NO_RELEVANT_FUNCTIONALITY": 3,
+      "NONE": 5
+    },
+    "typed_fields_completeness": {
+      "action_present": 15,
+      "supporting_present": 15,
+      "disproving_present": 15,
+      "description_present": 11
+    },
+    "i1_comparison": {
+      "i1_off": {
+        "calls": 12,
+        "valid": 0,
+        "parser_failures": 4,
+        "schema_failures": 4,
+        "polarity_failures": 4,
+        "mean_latency_ms": 21125.5346583348
+      },
+      "i1_on": {
+        "calls": 12,
+        "valid": 3,
+        "parser_failures": 0,
+        "schema_failures": 2,
+        "polarity_failures": 6,
+        "mean_latency_ms": 25258.50461666778
+      }
+    }
+  },
+  "records": [
+    {
+      "call_index": 1,
+      "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-VULN-01",
+      "track_id": "TRACK_A",
+      "i1_enabled": false,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "b3d7d8eb62ed023c93585d5ca541b62604d4a02a8b98ede3ff63931aaefaa260",
+      "prompt_hash": "4715abf2fdab1b632209bfcabf2975f5217d86a4fc65b22a56a84bd6c78acba8",
+      "target_evidence_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "vapt_pack_hash": "NONE",
+      "raw_model_response": "```json\n{\n  \"invariant\": \"Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.\",\n  \"evidence_gap\": \"MISSING_CROSS_IDENTITY_OBJECT_VERIFICATION\",\n  \"affected_target\": \"GET /api/v1/invoices/{id}\",\n  \"decision\": \"HYPOTHESIS\",\n  \"empirical_facts\": [\"FACT-SAAS_BILLING-INV-DETAILS-DOC\"],\n  \"methodology_references\": [],\n  \"experiment_action\": \"SUBSTITUTE_RESOURCE_IDENTIFIER\",\n  \"supporting_outcome\": \"HTTP_403_FORBIDDEN\",\n  \"disproving_outcome\": \"HTTP_200_OK\",\n  \"falsification_plan\": \"Substitute a different invoice identifier in the request and verify if the response is a 403 Forbidden, indicating that the endpoint is not verifying object access.\"\n}\n```",
+      "latency_ms": 23111.209099995904,
+      "eval_count": 190,
+      "prompt_eval_count": 1902,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": false,
+      "primary_failure_category": "SEMANTIC_EXPERIMENT_POLARITY_FAILURE",
+      "error_message": "Experiment polarity failure: HYPOTHESIS experiment proposal is incomplete or missing supporting/disproving specification: Outcome 'HTTP_403_FORBIDDEN' is not a valid breach outcome for category 'API-BOLA-001' and action 'SUBSTITUTE_RESOURCE_IDENTIFIER'",
+      "parsed_json": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": "MISSING_CROSS_IDENTITY_OBJECT_VERIFICATION",
+        "affected_target": "GET /api/v1/invoices/{id}",
+        "decision": "HYPOTHESIS",
+        "empirical_facts": [
+          "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+        ],
+        "methodology_references": [],
+        "experiment_action": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+        "supporting_outcome": "HTTP_403_FORBIDDEN",
+        "disproving_outcome": "HTTP_200_OK",
+        "falsification_plan": "Substitute a different invoice identifier in the request and verify if the response is a 403 Forbidden, indicating that the endpoint is not verifying object access."
+      },
+      "schema_validity": true,
+      "typed_experiment_fields": {
+        "experiment_action": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+        "supporting_outcome": "HTTP_403_FORBIDDEN",
+        "disproving_outcome": "HTTP_200_OK",
+        "falsification_description": null
+      },
+      "grounding_result": null,
+      "ExperimentPolarityValidator_result": {
+        "is_valid": false,
+        "reason": "Outcome 'HTTP_403_FORBIDDEN' is not a valid breach outcome for category 'API-BOLA-001' and action 'SUBSTITUTE_RESOURCE_IDENTIFIER'",
+        "category_id": "API-BOLA-001",
+        "experiment_action": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+        "supporting_outcome": "HTTP_403_FORBIDDEN",
+        "disproving_outcome": "HTTP_200_OK"
+      },
+      "candidate_decision": "HYPOTHESIS",
+      "final_deterministic_decision": null,
+      "canonical_s0_output": null,
+      "timestamp": "2026-09-21T14:37:17.469840+00:00"
+    },
+    {
+      "call_index": 2,
+      "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-VULN-01",
+      "track_id": "TRACK_A",
+      "i1_enabled": true,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "b3d7d8eb62ed023c93585d5ca541b62604d4a02a8b98ede3ff63931aaefaa260",
+      "prompt_hash": "4715abf2fdab1b632209bfcabf2975f5217d86a4fc65b22a56a84bd6c78acba8",
+      "target_evidence_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "vapt_pack_hash": "NONE",
+      "raw_model_response": "{\n  \"invariant\": \"Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.\",\n  \"evidence_gap\": \"MISSING_CROSS_IDENTITY_OBJECT_VERIFICATION\",\n  \"affected_target\": \"GET /api/v1/invoices/{id}\",\n  \"decision\": \"HYPOTHESIS\",\n  \"empirical_facts\": [\"FACT-SAAS_BILLING-INV-DETAILS-DOC\"],\n  \"methodology_references\": [],\n  \"experiment_action\": \"SUBSTITUTE_RESOURCE_IDENTIFIER\",\n  \"supporting_outcome\": \"HTTP_403_FORBIDDEN\",\n  \"disproving_outcome\": \"HTTP_200_OK\",\n  \"falsification_description\": \"The endpoint should return a 403 Forbidden status when a request is made with an unauthorized identity attempting to access an invoice record that does not belong to them.\"\n}",
+      "latency_ms": 21728.994199991575,
+      "eval_count": 187,
+      "prompt_eval_count": 1902,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": false,
+      "primary_failure_category": "SEMANTIC_EXPERIMENT_POLARITY_FAILURE",
+      "error_message": "Experiment polarity failure: HYPOTHESIS experiment proposal is incomplete or missing supporting/disproving specification: Outcome 'HTTP_403_FORBIDDEN' is not a valid breach outcome for category 'API-BOLA-001' and action 'SUBSTITUTE_RESOURCE_IDENTIFIER'",
+      "parsed_json": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": "MISSING_CROSS_IDENTITY_OBJECT_VERIFICATION",
+        "affected_target": "GET /api/v1/invoices/{id}",
+        "decision": "HYPOTHESIS",
+        "empirical_facts": [
+          "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+        ],
+        "methodology_references": [],
+        "experiment_action": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+        "supporting_outcome": "HTTP_403_FORBIDDEN",
+        "disproving_outcome": "HTTP_200_OK",
+        "falsification_description": "The endpoint should return a 403 Forbidden status when a request is made with an unauthorized identity attempting to access an invoice record that does not belong to them."
+      },
+      "schema_validity": true,
+      "typed_experiment_fields": {
+        "experiment_action": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+        "supporting_outcome": "HTTP_403_FORBIDDEN",
+        "disproving_outcome": "HTTP_200_OK",
+        "falsification_description": "The endpoint should return a 403 Forbidden status when a request is made with an unauthorized identity attempting to access an invoice record that does not belong to them."
+      },
+      "grounding_result": null,
+      "ExperimentPolarityValidator_result": {
+        "is_valid": false,
+        "reason": "Outcome 'HTTP_403_FORBIDDEN' is not a valid breach outcome for category 'API-BOLA-001' and action 'SUBSTITUTE_RESOURCE_IDENTIFIER'",
+        "category_id": "API-BOLA-001",
+        "experiment_action": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+        "supporting_outcome": "HTTP_403_FORBIDDEN",
+        "disproving_outcome": "HTTP_200_OK"
+      },
+      "candidate_decision": "HYPOTHESIS",
+      "final_deterministic_decision": null,
+      "canonical_s0_output": null,
+      "timestamp": "2026-09-21T14:37:39.199741+00:00"
+    },
+    {
+      "call_index": 3,
+      "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-VULN-01",
+      "track_id": "TRACK_B",
+      "i1_enabled": false,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "b3d7d8eb62ed023c93585d5ca541b62604d4a02a8b98ede3ff63931aaefaa260",
+      "prompt_hash": "e2c8b225ed88fbbb605e0c66df82078495de0d72eb85371d4279a91f506112b6",
+      "target_evidence_hash": "56e159483adb462cf9a300bd7990bca497b66a78a53ac15581299e234dc7fd5f",
+      "vapt_pack_hash": "NONE",
+      "raw_model_response": "```json\n{\n  \"invariant\": \"Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.\",\n  \"evidence_gap\": \"MISSING_CROSS_IDENTITY_OBJECT_VERIFICATION\",\n  \"affected_target\": \"/api/v1/invoices/{id}\",\n  \"decision\": \"HYPOTHESIS\",\n  \"empirical_facts\": [\"FACT-SAAS_BILLING-INV-DETAILS-DOC\"],\n  \"methodology_references\": [],\n  \"falsification_plan\": \"To falsify this hypothesis, perform a request to /api/v1/invoices/{id} using an unauthorized session or a session belonging to a different customer. If the request is successful and returns invoice details, the invariant is violated.\"\n}\n```",
+      "latency_ms": 18740.033600013703,
+      "eval_count": 159,
+      "prompt_eval_count": 1954,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": false,
+      "primary_failure_category": "SCHEMA_VALIDITY_FAILURE",
+      "error_message": "Schema validation error: BAIR JSON schema validation error: 1 validation error for BairJsonObject\n  Value error, Legacy free-text falsification_plan cannot authorize a HYPOTHESIS under JSON_BAIR protocol; typed experiment fields (experiment_action, supporting_outcome, disproving_outcome) are mandatory [type=value_error, input_value={'invariant': 'Object acc...invariant is violated.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error",
+      "parsed_json": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": "MISSING_CROSS_IDENTITY_OBJECT_VERIFICATION",
+        "affected_target": "/api/v1/invoices/{id}",
+        "decision": "HYPOTHESIS",
+        "empirical_facts": [
+          "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+        ],
+        "methodology_references": [],
+        "falsification_plan": "To falsify this hypothesis, perform a request to /api/v1/invoices/{id} using an unauthorized session or a session belonging to a different customer. If the request is successful and returns invoice details, the invariant is violated."
+      },
+      "schema_validity": false,
+      "typed_experiment_fields": {
+        "experiment_action": null,
+        "supporting_outcome": null,
+        "disproving_outcome": null,
+        "falsification_description": null
+      },
+      "grounding_result": null,
+      "ExperimentPolarityValidator_result": {
+        "is_valid": false,
+        "reason": "Experiment action is missing or null",
+        "category_id": "API-BOLA-001",
+        "experiment_action": null,
+        "supporting_outcome": null,
+        "disproving_outcome": null
+      },
+      "candidate_decision": "HYPOTHESIS",
+      "final_deterministic_decision": null,
+      "canonical_s0_output": null,
+      "timestamp": "2026-09-21T14:37:57.941278+00:00"
+    },
+    {
+      "call_index": 4,
+      "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-VULN-01",
+      "track_id": "TRACK_B",
+      "i1_enabled": true,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "b3d7d8eb62ed023c93585d5ca541b62604d4a02a8b98ede3ff63931aaefaa260",
+      "prompt_hash": "e2c8b225ed88fbbb605e0c66df82078495de0d72eb85371d4279a91f506112b6",
+      "target_evidence_hash": "56e159483adb462cf9a300bd7990bca497b66a78a53ac15581299e234dc7fd5f",
+      "vapt_pack_hash": "NONE",
+      "raw_model_response": "{\n  \"invariant\": \"Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.\",\n  \"evidence_gap\": \"MISSING_CROSS_IDENTITY_OBJECT_VERIFICATION\",\n  \"affected_target\": \"/api/v1/invoices/{id}\",\n  \"decision\": \"HYPOTHESIS\",\n  \"empirical_facts\": [\"FACT-SAAS_BILLING-INV-DETAILS-DOC\"],\n  \"methodology_references\": [],\n  \"experiment_action\": \"INVOKE_WITHOUT_CREDENTIALS\",\n  \"supporting_outcome\": \"CROSS_IDENTITY_OBJECT_ACCESSIBLE\",\n  \"disproving_outcome\": \"CROSS_IDENTITY_OBJECT_ACCESSIBLE\",\n  \"falsification_description\": \"The system allows access to billing invoice records for any invoice identifier without proper authorization, indicating a missing cross-identity object verification mechanism.\"\n}",
+      "latency_ms": 23417.764400001033,
+      "eval_count": 194,
+      "prompt_eval_count": 1954,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": false,
+      "primary_failure_category": "SCHEMA_VALIDITY_FAILURE",
+      "error_message": "Schema validation error: BAIR JSON schema validation error: 1 validation error for BairJsonObject\n  Value error, supporting_outcome and disproving_outcome cannot be identical ('CROSS_IDENTITY_OBJECT_ACCESSIBLE') [type=value_error, input_value={'invariant': 'Object acc...erification mechanism.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error",
+      "parsed_json": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": "MISSING_CROSS_IDENTITY_OBJECT_VERIFICATION",
+        "affected_target": "/api/v1/invoices/{id}",
+        "decision": "HYPOTHESIS",
+        "empirical_facts": [
+          "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+        ],
+        "methodology_references": [],
+        "experiment_action": "INVOKE_WITHOUT_CREDENTIALS",
+        "supporting_outcome": "CROSS_IDENTITY_OBJECT_ACCESSIBLE",
+        "disproving_outcome": "CROSS_IDENTITY_OBJECT_ACCESSIBLE",
+        "falsification_description": "The system allows access to billing invoice records for any invoice identifier without proper authorization, indicating a missing cross-identity object verification mechanism."
+      },
+      "schema_validity": false,
+      "typed_experiment_fields": {
+        "experiment_action": "INVOKE_WITHOUT_CREDENTIALS",
+        "supporting_outcome": "CROSS_IDENTITY_OBJECT_ACCESSIBLE",
+        "disproving_outcome": "CROSS_IDENTITY_OBJECT_ACCESSIBLE",
+        "falsification_description": "The system allows access to billing invoice records for any invoice identifier without proper authorization, indicating a missing cross-identity object verification mechanism."
+      },
+      "grounding_result": null,
+      "ExperimentPolarityValidator_result": {
+        "is_valid": false,
+        "reason": "Experiment action 'INVOKE_WITHOUT_CREDENTIALS' is not compatible with category 'API-BOLA-001'",
+        "category_id": "API-BOLA-001",
+        "experiment_action": "INVOKE_WITHOUT_CREDENTIALS",
+        "supporting_outcome": "CROSS_IDENTITY_OBJECT_ACCESSIBLE",
+        "disproving_outcome": "CROSS_IDENTITY_OBJECT_ACCESSIBLE"
+      },
+      "candidate_decision": "HYPOTHESIS",
+      "final_deterministic_decision": null,
+      "canonical_s0_output": null,
+      "timestamp": "2026-09-21T14:38:21.359878+00:00"
+    },
+    {
+      "call_index": 5,
+      "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-VULN-01",
+      "track_id": "TRACK_C",
+      "i1_enabled": false,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "b3d7d8eb62ed023c93585d5ca541b62604d4a02a8b98ede3ff63931aaefaa260",
+      "prompt_hash": "3376c1f5e488fd351d88b85fa3f983b7bbc12fbe7cb138a69767b35df50bd53f",
+      "target_evidence_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "vapt_pack_hash": "4d1e192390bdbc78d36cd6343ce11b2b332a65f43ea37c12893044b318d3c557",
+      "raw_model_response": "### Evaluation of Invariant\n\n**Invariant:** Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.\n\n### Evidence Gap\n\n**Evidence Gap:** The evidence indicates that there is no mechanism in place to verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier. The endpoint `/api/v1/invoices/{id}` retrieves billing invoice records for the specified invoice identifier without any checks on the identity of the requester.\n\n### Falsification Plan\n\n**Falsification Plan:** To falsify this invariant, an attacker could attempt to access an invoice record that does not belong to them. If the endpoint does not perform any authorization checks, the attacker should be able to retrieve the invoice record, thereby demonstrating a vulnerability.\n\n### Conclusion\n\n**NO_RELEVANT_FUNCTIONALITY:** The endpoint `/api/v1/invoices/{id}` is a public informational endpoint with no state mutation, and it does not require any authentication or authorization checks. Therefore, it is outside the examined security property, and there is no relevant functionality to test for this invariant.",
+      "latency_ms": 23061.80859998858,
+      "eval_count": 224,
+      "prompt_eval_count": 1026,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": false,
+      "primary_failure_category": "PARSER_FAILURE",
+      "error_message": "Invalid JSON syntax: JSON parse error in BAIR response: Expecting value: line 1 column 1 (char 0)",
+      "parsed_json": null,
+      "schema_validity": false,
+      "typed_experiment_fields": {
+        "experiment_action": null,
+        "supporting_outcome": null,
+        "disproving_outcome": null,
+        "falsification_description": null
+      },
+      "grounding_result": null,
+      "ExperimentPolarityValidator_result": null,
+      "candidate_decision": null,
+      "final_deterministic_decision": null,
+      "canonical_s0_output": null,
+      "timestamp": "2026-09-21T14:38:44.423000+00:00"
+    },
+    {
+      "call_index": 6,
+      "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-VULN-01",
+      "track_id": "TRACK_C",
+      "i1_enabled": true,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "b3d7d8eb62ed023c93585d5ca541b62604d4a02a8b98ede3ff63931aaefaa260",
+      "prompt_hash": "3376c1f5e488fd351d88b85fa3f983b7bbc12fbe7cb138a69767b35df50bd53f",
+      "target_evidence_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "vapt_pack_hash": "4d1e192390bdbc78d36cd6343ce11b2b332a65f43ea37c12893044b318d3c557",
+      "raw_model_response": "{\n  \"invariant\": \"Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.\",\n  \"evidence_gap\": \"The evidence indicates that there is no mechanism in place to verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier. This is a violation of the invariant.\",\n  \"affected_target\": \"The target endpoint /api/v1/invoices/{id} is vulnerable to Broken Object Level Authorization (BOLA/IDOR).\",\n  \"decision\": \"NO_RELEVANT_FUNCTIONALITY\",\n  \"empirical_facts\": [\n    \"FACT-SAAS_BILLING-INV-DETAILS-DOC\"\n  ],\n  \"methodology_references\": [\n    \"CHK-DOC-PLATFORM-INV-01-002-01\"\n  ],\n  \"experiment_action\": \"INVOKE_WITHOUT_CREDENTIALS\",\n  \"supporting_outcome\": \"UNAUTHENTICATED_ACCESS_DENIED\",\n  \"disproving_outcome\": \"UNAUTHENTICATED_ACCESS_ALLOWED\",\n  \"falsification_description\": \"The endpoint /api/v1/invoices/{id} should return a 403 Forbidden or 404 Not Found status code when accessed by an unauthenticated user or a user without the necessary permissions. However, the evidence indicates that the endpoint does",
+      "latency_ms": 31717.233200004557,
+      "eval_count": 300,
+      "prompt_eval_count": 1026,
+      "done_reason": "length",
+      "contract_valid": true,
+      "is_valid": false,
+      "primary_failure_category": "MAX_TOKEN_TRUNCATION",
+      "error_message": "Terminated at 300 token ceiling mid-generation (eval_count=300, done_reason=length)",
+      "parsed_json": null,
+      "schema_validity": false,
+      "typed_experiment_fields": {
+        "experiment_action": null,
+        "supporting_outcome": null,
+        "disproving_outcome": null,
+        "falsification_description": null
+      },
+      "grounding_result": null,
+      "ExperimentPolarityValidator_result": null,
+      "candidate_decision": null,
+      "final_deterministic_decision": null,
+      "canonical_s0_output": null,
+      "timestamp": "2026-09-21T14:39:16.140886+00:00"
+    },
+    {
+      "call_index": 7,
+      "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-VULN-01",
+      "track_id": "TRACK_D",
+      "i1_enabled": false,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "b3d7d8eb62ed023c93585d5ca541b62604d4a02a8b98ede3ff63931aaefaa260",
+      "prompt_hash": "66afbac1d60a151693568e2c2bda1a5e3423d7746e2f55bd165c464dfb5ebf72",
+      "target_evidence_hash": "56e159483adb462cf9a300bd7990bca497b66a78a53ac15581299e234dc7fd5f",
+      "vapt_pack_hash": "4d1e192390bdbc78d36cd6343ce11b2b332a65f43ea37c12893044b318d3c557",
+      "raw_model_response": "### Evaluation of Invariant\n\n**Invariant:** Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.\n\n**Evidence Gap:** The evidence provided does not include any verification that the requesting identity owns or is explicitly authorized to access the specific target resource identifier. The evidence only confirms that the endpoint retrieves billing invoice records for the specified invoice identifier and requires an active customer session.\n\n**Falsification Plan:** To falsify this invariant, an attacker could attempt to access an invoice record that does not belong to them or for which they do not have explicit authorization. If the endpoint does not verify ownership or authorization, the attacker should receive a 200 OK response with the invoice record, indicating a violation of the invariant.\n\n### Conclusion\n\n**NO_RELEVANT_FUNCTIONALITY**",
+      "latency_ms": 16528.014800001984,
+      "eval_count": 165,
+      "prompt_eval_count": 1026,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": false,
+      "primary_failure_category": "PARSER_FAILURE",
+      "error_message": "Invalid JSON syntax: JSON parse error in BAIR response: Expecting value: line 1 column 1 (char 0)",
+      "parsed_json": null,
+      "schema_validity": false,
+      "typed_experiment_fields": {
+        "experiment_action": null,
+        "supporting_outcome": null,
+        "disproving_outcome": null,
+        "falsification_description": null
+      },
+      "grounding_result": null,
+      "ExperimentPolarityValidator_result": null,
+      "candidate_decision": null,
+      "final_deterministic_decision": null,
+      "canonical_s0_output": null,
+      "timestamp": "2026-09-21T14:39:32.670172+00:00"
+    },
+    {
+      "call_index": 8,
+      "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-VULN-01",
+      "track_id": "TRACK_D",
+      "i1_enabled": true,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "b3d7d8eb62ed023c93585d5ca541b62604d4a02a8b98ede3ff63931aaefaa260",
+      "prompt_hash": "66afbac1d60a151693568e2c2bda1a5e3423d7746e2f55bd165c464dfb5ebf72",
+      "target_evidence_hash": "56e159483adb462cf9a300bd7990bca497b66a78a53ac15581299e234dc7fd5f",
+      "vapt_pack_hash": "4d1e192390bdbc78d36cd6343ce11b2b332a65f43ea37c12893044b318d3c557",
+      "raw_model_response": "{\n  \"invariant\": \"Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.\",\n  \"evidence_gap\": \"The evidence does not demonstrate that the system verifies the ownership or explicit authorization of the requesting identity to access the specific target resource identifier.\",\n  \"affected_target\": \"GET /api/v1/invoices/{id}\",\n  \"decision\": \"NO_RELEVANT_FUNCTIONALITY\",\n  \"empirical_facts\": [\"FACT-SAAS_BILLING-INV-DETAILS-DOC\"],\n  \"methodology_references\": [\"CHK-DOC-PLATFORM-INV-01-002-01\"],\n  \"experiment_action\": \"INVOKE_WITHOUT_CREDENTIALS\",\n  \"supporting_outcome\": \"UNAUTHENTICATED_ACCESS_DENIED\",\n  \"disproving_outcome\": \"UNAUTHENTICATED_ACCESS_ALLOWED\",\n  \"falsification_description\": \"The system allows unauthenticated access to retrieve billing invoice records for a specified invoice identifier, which violates the invariant that object access must verify ownership or explicit authorization.\"\n}",
+      "latency_ms": 26018.560600001365,
+      "eval_count": 244,
+      "prompt_eval_count": 1026,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": true,
+      "primary_failure_category": "VALID",
+      "error_message": null,
+      "parsed_json": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": "The evidence does not demonstrate that the system verifies the ownership or explicit authorization of the requesting identity to access the specific target resource identifier.",
+        "affected_target": "GET /api/v1/invoices/{id}",
+        "decision": "NO_RELEVANT_FUNCTIONALITY",
+        "empirical_facts": [
+          "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+        ],
+        "methodology_references": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "experiment_action": "INVOKE_WITHOUT_CREDENTIALS",
+        "supporting_outcome": "UNAUTHENTICATED_ACCESS_DENIED",
+        "disproving_outcome": "UNAUTHENTICATED_ACCESS_ALLOWED",
+        "falsification_description": "The system allows unauthenticated access to retrieve billing invoice records for a specified invoice identifier, which violates the invariant that object access must verify ownership or explicit authorization."
+      },
+      "schema_validity": true,
+      "typed_experiment_fields": {
+        "experiment_action": "INVOKE_WITHOUT_CREDENTIALS",
+        "supporting_outcome": "UNAUTHENTICATED_ACCESS_DENIED",
+        "disproving_outcome": "UNAUTHENTICATED_ACCESS_ALLOWED",
+        "falsification_description": "The system allows unauthenticated access to retrieve billing invoice records for a specified invoice identifier, which violates the invariant that object access must verify ownership or explicit authorization."
+      },
+      "grounding_result": {
+        "valid": true,
+        "status": "VALID",
+        "error_code": null,
+        "reason": "Dual evidence and methodology grounding validated successfully",
+        "invalid_fact_ids": [],
+        "invalid_chunk_ids": [],
+        "compliance_failures": []
+      },
+      "ExperimentPolarityValidator_result": null,
+      "candidate_decision": "NO_RELEVANT_FUNCTIONALITY",
+      "final_deterministic_decision": "INSUFFICIENT_EVIDENCE",
+      "canonical_s0_output": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": "The evidence does not demonstrate that the system verifies the ownership or explicit authorization of the requesting identity to access the specific target resource identifier.",
+        "affected_target": "GET /api/v1/invoices/{id}",
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "supporting_evidence_ids": [
+          "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+        ],
+        "methodology_references": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "reasoning_summary": "BAIR evaluation: Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.. Evidence gap: The evidence does not demonstrate that the system verifies the ownership or explicit authorization of the requesting identity to access the specific target resource identifier..",
+        "experiment_proposal": "Action: INVOKE_WITHOUT_CREDENTIALS; Breach: UNAUTHENTICATED_ACCESS_DENIED; Safe: UNAUTHENTICATED_ACCESS_ALLOWED (The system allows unauthenticated access to retrieve billing invoice records for a specified invoice identifier, which violates the invariant that object access must verify ownership or explicit authorization.)",
+        "experiment_action": "INVOKE_WITHOUT_CREDENTIALS",
+        "supporting_outcome": "UNAUTHENTICATED_ACCESS_DENIED",
+        "disproving_outcome": "UNAUTHENTICATED_ACCESS_ALLOWED",
+        "falsification_description": "The system allows unauthenticated access to retrieve billing invoice records for a specified invoice identifier, which violates the invariant that object access must verify ownership or explicit authorization.",
+        "category": "API-BOLA-001",
+        "asset_id": "ASSET-SAAS_BILLING-INV-DETAILS-01",
+        "parameter_ids": [],
+        "missing_evidence": [
+          "The evidence does not demonstrate that the system verifies the ownership or explicit authorization of the requesting identity to access the specific target resource identifier."
+        ],
+        "cited_methodology_chunk_ids": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "contradicting_evidence_ids": [],
+        "app_model_delta": null,
+        "violation_assessment": null,
+        "actor_identity_id": null,
+        "target_identity_id": null,
+        "safety_check": null,
+        "evidence_sufficiency": 0.5
+      },
+      "timestamp": "2026-09-21T14:39:58.689705+00:00"
+    },
+    {
+      "call_index": 9,
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-VULN-01",
+      "track_id": "TRACK_A",
+      "i1_enabled": false,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "c6f146385b020a8d0ab934f2f5e2191d5fb579e31d87cc9960359a0e279aa055",
+      "prompt_hash": "419d2114be951f691082bf838ed80845b7a5c5c7e945d7d9b6dc212f55a08594",
+      "target_evidence_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "vapt_pack_hash": "NONE",
+      "raw_model_response": "```json\n{\n  \"invariant\": \"Business logic state transitions must follow a valid, strictly ordered finite state machine; transitions from invalid current states must be rejected.\",\n  \"evidence_gap\": \"The evidence does not show that the endpoint validates the current state of the order before processing a refund request.\",\n  \"affected_target\": \"/api/v1/orders/{id}/refund\",\n  \"decision\": \"HYPOTHESIS\",\n  \"empirical_facts\": [\"FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC\"],\n  \"methodology_references\": [],\n  \"experiment_action\": \"TAMPER_REQUEST_PARAMETER\",\n  \"supporting_outcome\": \"HTTP_409_CONFLICT\",\n  \"disproving_outcome\": \"HTTP_200_OK\",\n  \"falsification_plan\": \"Send a POST request to /api/v1/orders/{id}/refund with an order ID that is in a state other than PAID (e.g., SHIPPED, CANCELLED). Verify that the response status code is 409 Conflict.\"\n}\n```",
+      "latency_ms": 25718.640000006417,
+      "eval_count": 225,
+      "prompt_eval_count": 1884,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": false,
+      "primary_failure_category": "SEMANTIC_EXPERIMENT_POLARITY_FAILURE",
+      "error_message": "Experiment polarity failure: HYPOTHESIS experiment proposal is incomplete or missing supporting/disproving specification: Experiment action 'TAMPER_REQUEST_PARAMETER' is not compatible with category 'API-STATE-001'",
+      "parsed_json": {
+        "invariant": "Business logic state transitions must follow a valid, strictly ordered finite state machine; transitions from invalid current states must be rejected.",
+        "evidence_gap": "The evidence does not show that the endpoint validates the current state of the order before processing a refund request.",
+        "affected_target": "/api/v1/orders/{id}/refund",
+        "decision": "HYPOTHESIS",
+        "empirical_facts": [
+          "FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC"
+        ],
+        "methodology_references": [],
+        "experiment_action": "TAMPER_REQUEST_PARAMETER",
+        "supporting_outcome": "HTTP_409_CONFLICT",
+        "disproving_outcome": "HTTP_200_OK",
+        "falsification_plan": "Send a POST request to /api/v1/orders/{id}/refund with an order ID that is in a state other than PAID (e.g., SHIPPED, CANCELLED). Verify that the response status code is 409 Conflict."
+      },
+      "schema_validity": true,
+      "typed_experiment_fields": {
+        "experiment_action": "TAMPER_REQUEST_PARAMETER",
+        "supporting_outcome": "HTTP_409_CONFLICT",
+        "disproving_outcome": "HTTP_200_OK",
+        "falsification_description": null
+      },
+      "grounding_result": null,
+      "ExperimentPolarityValidator_result": {
+        "is_valid": false,
+        "reason": "Experiment action 'TAMPER_REQUEST_PARAMETER' is not compatible with category 'API-STATE-001'",
+        "category_id": "API-STATE-001",
+        "experiment_action": "TAMPER_REQUEST_PARAMETER",
+        "supporting_outcome": "HTTP_409_CONFLICT",
+        "disproving_outcome": "HTTP_200_OK"
+      },
+      "candidate_decision": "HYPOTHESIS",
+      "final_deterministic_decision": null,
+      "canonical_s0_output": null,
+      "timestamp": "2026-09-21T14:40:24.411700+00:00"
+    },
+    {
+      "call_index": 10,
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-VULN-01",
+      "track_id": "TRACK_A",
+      "i1_enabled": true,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "c6f146385b020a8d0ab934f2f5e2191d5fb579e31d87cc9960359a0e279aa055",
+      "prompt_hash": "419d2114be951f691082bf838ed80845b7a5c5c7e945d7d9b6dc212f55a08594",
+      "target_evidence_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "vapt_pack_hash": "NONE",
+      "raw_model_response": "{\n  \"invariant\": \"Business logic state transitions must follow a valid, strictly ordered finite state machine; transitions from invalid current states must be rejected.\",\n  \"evidence_gap\": \"The evidence does not show that the endpoint validates the current state of the order before processing a refund request.\",\n  \"affected_target\": \"/api/v1/orders/{id}/refund\",\n  \"decision\": \"HYPOTHESIS\",\n  \"empirical_facts\": [\"FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC\"],\n  \"methodology_references\": [],\n  \"experiment_action\": \"TAMPER_REQUEST_PARAMETER\",\n  \"supporting_outcome\": \"HTTP_409_CONFLICT\",\n  \"disproving_outcome\": \"HTTP_200_OK\",\n  \"falsification_description\": \"The endpoint should reject refund requests for orders that are not in the expected state (PAID). If a refund request is processed for an order in a different state, the endpoint should return a 409 Conflict status code.\"\n}",
+      "latency_ms": 24789.225200001965,
+      "eval_count": 215,
+      "prompt_eval_count": 1884,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": false,
+      "primary_failure_category": "SEMANTIC_EXPERIMENT_POLARITY_FAILURE",
+      "error_message": "Experiment polarity failure: HYPOTHESIS experiment proposal is incomplete or missing supporting/disproving specification: Experiment action 'TAMPER_REQUEST_PARAMETER' is not compatible with category 'API-STATE-001'",
+      "parsed_json": {
+        "invariant": "Business logic state transitions must follow a valid, strictly ordered finite state machine; transitions from invalid current states must be rejected.",
+        "evidence_gap": "The evidence does not show that the endpoint validates the current state of the order before processing a refund request.",
+        "affected_target": "/api/v1/orders/{id}/refund",
+        "decision": "HYPOTHESIS",
+        "empirical_facts": [
+          "FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC"
+        ],
+        "methodology_references": [],
+        "experiment_action": "TAMPER_REQUEST_PARAMETER",
+        "supporting_outcome": "HTTP_409_CONFLICT",
+        "disproving_outcome": "HTTP_200_OK",
+        "falsification_description": "The endpoint should reject refund requests for orders that are not in the expected state (PAID). If a refund request is processed for an order in a different state, the endpoint should return a 409 Conflict status code."
+      },
+      "schema_validity": true,
+      "typed_experiment_fields": {
+        "experiment_action": "TAMPER_REQUEST_PARAMETER",
+        "supporting_outcome": "HTTP_409_CONFLICT",
+        "disproving_outcome": "HTTP_200_OK",
+        "falsification_description": "The endpoint should reject refund requests for orders that are not in the expected state (PAID). If a refund request is processed for an order in a different state, the endpoint should return a 409 Conflict status code."
+      },
+      "grounding_result": null,
+      "ExperimentPolarityValidator_result": {
+        "is_valid": false,
+        "reason": "Experiment action 'TAMPER_REQUEST_PARAMETER' is not compatible with category 'API-STATE-001'",
+        "category_id": "API-STATE-001",
+        "experiment_action": "TAMPER_REQUEST_PARAMETER",
+        "supporting_outcome": "HTTP_409_CONFLICT",
+        "disproving_outcome": "HTTP_200_OK"
+      },
+      "candidate_decision": "HYPOTHESIS",
+      "final_deterministic_decision": null,
+      "canonical_s0_output": null,
+      "timestamp": "2026-09-21T14:40:49.201708+00:00"
+    },
+    {
+      "call_index": 11,
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-VULN-01",
+      "track_id": "TRACK_B",
+      "i1_enabled": false,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "c6f146385b020a8d0ab934f2f5e2191d5fb579e31d87cc9960359a0e279aa055",
+      "prompt_hash": "346e9f6208897c439a6a67e5c658ff271ac541eee97f00b2269a8531c6d11de1",
+      "target_evidence_hash": "6bcff23ce6814585baed100a2192adb5b7fd990cff8d5ded4a0c9c5cd1856cd6",
+      "vapt_pack_hash": "NONE",
+      "raw_model_response": "```json\n{\n  \"invariant\": \"Business logic state transitions must follow a valid, strictly ordered finite state machine; transitions from invalid current states must be rejected.\",\n  \"evidence_gap\": \"The evidence does not show that the endpoint validates the current state of the order before processing a refund request.\",\n  \"affected_target\": \"/api/v1/orders/{id}/refund\",\n  \"decision\": \"HYPOTHESIS\",\n  \"empirical_facts\": [\"FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC\"],\n  \"falsification_plan\": \"To falsify this hypothesis, perform a test where a refund request is made for an order that is not in the expected state (e.g., an order that is already refunded or in a different state). If the endpoint processes the refund request successfully, this would indicate a violation of the invariant.\"\n}\n```",
+      "latency_ms": 20951.48240000708,
+      "eval_count": 181,
+      "prompt_eval_count": 1936,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": false,
+      "primary_failure_category": "SCHEMA_VALIDITY_FAILURE",
+      "error_message": "Schema validation error: BAIR JSON schema validation error: 1 validation error for BairJsonObject\n  Value error, Legacy free-text falsification_plan cannot authorize a HYPOTHESIS under JSON_BAIR protocol; typed experiment fields (experiment_action, supporting_outcome, disproving_outcome) are mandatory [type=value_error, input_value={'invariant': 'Business l...tion of the invariant.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error",
+      "parsed_json": {
+        "invariant": "Business logic state transitions must follow a valid, strictly ordered finite state machine; transitions from invalid current states must be rejected.",
+        "evidence_gap": "The evidence does not show that the endpoint validates the current state of the order before processing a refund request.",
+        "affected_target": "/api/v1/orders/{id}/refund",
+        "decision": "HYPOTHESIS",
+        "empirical_facts": [
+          "FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC"
+        ],
+        "falsification_plan": "To falsify this hypothesis, perform a test where a refund request is made for an order that is not in the expected state (e.g., an order that is already refunded or in a different state). If the endpoint processes the refund request successfully, this would indicate a violation of the invariant."
+      },
+      "schema_validity": false,
+      "typed_experiment_fields": {
+        "experiment_action": null,
+        "supporting_outcome": null,
+        "disproving_outcome": null,
+        "falsification_description": null
+      },
+      "grounding_result": null,
+      "ExperimentPolarityValidator_result": {
+        "is_valid": false,
+        "reason": "Experiment action is missing or null",
+        "category_id": "API-STATE-001",
+        "experiment_action": null,
+        "supporting_outcome": null,
+        "disproving_outcome": null
+      },
+      "candidate_decision": "HYPOTHESIS",
+      "final_deterministic_decision": null,
+      "canonical_s0_output": null,
+      "timestamp": "2026-09-21T14:41:10.154629+00:00"
+    },
+    {
+      "call_index": 12,
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-VULN-01",
+      "track_id": "TRACK_B",
+      "i1_enabled": true,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "c6f146385b020a8d0ab934f2f5e2191d5fb579e31d87cc9960359a0e279aa055",
+      "prompt_hash": "346e9f6208897c439a6a67e5c658ff271ac541eee97f00b2269a8531c6d11de1",
+      "target_evidence_hash": "6bcff23ce6814585baed100a2192adb5b7fd990cff8d5ded4a0c9c5cd1856cd6",
+      "vapt_pack_hash": "NONE",
+      "raw_model_response": "{\n  \"invariant\": \"Business logic state transitions must follow a valid, strictly ordered finite state machine; transitions from invalid current states must be rejected.\",\n  \"evidence_gap\": \"The evidence does not show that the endpoint validates the current state of the order before processing a refund request.\",\n  \"affected_target\": \"/api/v1/orders/{id}/refund\",\n  \"decision\": \"HYPOTHESIS\",\n  \"empirical_facts\": [\"FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC\"],\n  \"methodology_references\": [],\n  \"experiment_action\": \"SUBSTITUTE_RESOURCE_IDENTIFIER\",\n  \"supporting_outcome\": \"STATE_TRANSITION_REJECTED\",\n  \"disproving_outcome\": \"STATE_TRANSITION_ACCEPTED\",\n  \"falsification_description\": \"The endpoint processes a refund request for an order that is not in the expected state (PAID).\"\n}",
+      "latency_ms": 24538.92690000066,
+      "eval_count": 209,
+      "prompt_eval_count": 1936,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": false,
+      "primary_failure_category": "SEMANTIC_EXPERIMENT_POLARITY_FAILURE",
+      "error_message": "Experiment polarity failure: HYPOTHESIS experiment proposal is incomplete or missing supporting/disproving specification: Experiment action 'SUBSTITUTE_RESOURCE_IDENTIFIER' is not compatible with category 'API-STATE-001'",
+      "parsed_json": {
+        "invariant": "Business logic state transitions must follow a valid, strictly ordered finite state machine; transitions from invalid current states must be rejected.",
+        "evidence_gap": "The evidence does not show that the endpoint validates the current state of the order before processing a refund request.",
+        "affected_target": "/api/v1/orders/{id}/refund",
+        "decision": "HYPOTHESIS",
+        "empirical_facts": [
+          "FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC"
+        ],
+        "methodology_references": [],
+        "experiment_action": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+        "supporting_outcome": "STATE_TRANSITION_REJECTED",
+        "disproving_outcome": "STATE_TRANSITION_ACCEPTED",
+        "falsification_description": "The endpoint processes a refund request for an order that is not in the expected state (PAID)."
+      },
+      "schema_validity": true,
+      "typed_experiment_fields": {
+        "experiment_action": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+        "supporting_outcome": "STATE_TRANSITION_REJECTED",
+        "disproving_outcome": "STATE_TRANSITION_ACCEPTED",
+        "falsification_description": "The endpoint processes a refund request for an order that is not in the expected state (PAID)."
+      },
+      "grounding_result": null,
+      "ExperimentPolarityValidator_result": {
+        "is_valid": false,
+        "reason": "Experiment action 'SUBSTITUTE_RESOURCE_IDENTIFIER' is not compatible with category 'API-STATE-001'",
+        "category_id": "API-STATE-001",
+        "experiment_action": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+        "supporting_outcome": "STATE_TRANSITION_REJECTED",
+        "disproving_outcome": "STATE_TRANSITION_ACCEPTED"
+      },
+      "candidate_decision": "HYPOTHESIS",
+      "final_deterministic_decision": null,
+      "canonical_s0_output": null,
+      "timestamp": "2026-09-21T14:41:34.694394+00:00"
+    },
+    {
+      "call_index": 13,
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-VULN-01",
+      "track_id": "TRACK_C",
+      "i1_enabled": false,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "c6f146385b020a8d0ab934f2f5e2191d5fb579e31d87cc9960359a0e279aa055",
+      "prompt_hash": "419d2114be951f691082bf838ed80845b7a5c5c7e945d7d9b6dc212f55a08594",
+      "target_evidence_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "vapt_pack_hash": "NONE",
+      "raw_model_response": "```json\n{\n  \"invariant\": \"Business logic state transitions must follow a valid, strictly ordered finite state machine; transitions from invalid current states must be rejected.\",\n  \"evidence_gap\": \"The evidence does not show that the endpoint validates the current state of the order before processing a refund request.\",\n  \"affected_target\": \"/api/v1/orders/{id}/refund\",\n  \"decision\": \"HYPOTHESIS\",\n  \"empirical_facts\": [\"FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC\"],\n  \"methodology_references\": [],\n  \"experiment_action\": \"TAMPER_REQUEST_PARAMETER\",\n  \"supporting_outcome\": \"HTTP_409_CONFLICT\",\n  \"disproving_outcome\": \"HTTP_200_OK\",\n  \"falsification_plan\": \"Send a POST request to /api/v1/orders/{id}/refund with an order ID that is in a state other than PAID (e.g., SHIPPED, CANCELLED). Verify that the response status code is 409 Conflict.\"\n}\n```",
+      "latency_ms": 25699.18230001349,
+      "eval_count": 225,
+      "prompt_eval_count": 1884,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": false,
+      "primary_failure_category": "SEMANTIC_EXPERIMENT_POLARITY_FAILURE",
+      "error_message": "Experiment polarity failure: HYPOTHESIS experiment proposal is incomplete or missing supporting/disproving specification: Experiment action 'TAMPER_REQUEST_PARAMETER' is not compatible with category 'API-STATE-001'",
+      "parsed_json": {
+        "invariant": "Business logic state transitions must follow a valid, strictly ordered finite state machine; transitions from invalid current states must be rejected.",
+        "evidence_gap": "The evidence does not show that the endpoint validates the current state of the order before processing a refund request.",
+        "affected_target": "/api/v1/orders/{id}/refund",
+        "decision": "HYPOTHESIS",
+        "empirical_facts": [
+          "FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC"
+        ],
+        "methodology_references": [],
+        "experiment_action": "TAMPER_REQUEST_PARAMETER",
+        "supporting_outcome": "HTTP_409_CONFLICT",
+        "disproving_outcome": "HTTP_200_OK",
+        "falsification_plan": "Send a POST request to /api/v1/orders/{id}/refund with an order ID that is in a state other than PAID (e.g., SHIPPED, CANCELLED). Verify that the response status code is 409 Conflict."
+      },
+      "schema_validity": true,
+      "typed_experiment_fields": {
+        "experiment_action": "TAMPER_REQUEST_PARAMETER",
+        "supporting_outcome": "HTTP_409_CONFLICT",
+        "disproving_outcome": "HTTP_200_OK",
+        "falsification_description": null
+      },
+      "grounding_result": null,
+      "ExperimentPolarityValidator_result": {
+        "is_valid": false,
+        "reason": "Experiment action 'TAMPER_REQUEST_PARAMETER' is not compatible with category 'API-STATE-001'",
+        "category_id": "API-STATE-001",
+        "experiment_action": "TAMPER_REQUEST_PARAMETER",
+        "supporting_outcome": "HTTP_409_CONFLICT",
+        "disproving_outcome": "HTTP_200_OK"
+      },
+      "candidate_decision": "HYPOTHESIS",
+      "final_deterministic_decision": null,
+      "canonical_s0_output": null,
+      "timestamp": "2026-09-21T14:42:00.395143+00:00"
+    },
+    {
+      "call_index": 14,
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-VULN-01",
+      "track_id": "TRACK_C",
+      "i1_enabled": true,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "c6f146385b020a8d0ab934f2f5e2191d5fb579e31d87cc9960359a0e279aa055",
+      "prompt_hash": "419d2114be951f691082bf838ed80845b7a5c5c7e945d7d9b6dc212f55a08594",
+      "target_evidence_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "vapt_pack_hash": "NONE",
+      "raw_model_response": "{\n  \"invariant\": \"Business logic state transitions must follow a valid, strictly ordered finite state machine; transitions from invalid current states must be rejected.\",\n  \"evidence_gap\": \"The evidence does not show that the endpoint validates the current state of the order before processing a refund request.\",\n  \"affected_target\": \"/api/v1/orders/{id}/refund\",\n  \"decision\": \"HYPOTHESIS\",\n  \"empirical_facts\": [\"FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC\"],\n  \"methodology_references\": [],\n  \"experiment_action\": \"TAMPER_REQUEST_PARAMETER\",\n  \"supporting_outcome\": \"HTTP_409_CONFLICT\",\n  \"disproving_outcome\": \"HTTP_200_OK\",\n  \"falsification_description\": \"The endpoint should reject refund requests for orders that are not in the expected state (PAID). If a refund request is processed for an order in a different state, the endpoint should return a 409 Conflict status code.\"\n}",
+      "latency_ms": 24579.200799998944,
+      "eval_count": 215,
+      "prompt_eval_count": 1884,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": false,
+      "primary_failure_category": "SEMANTIC_EXPERIMENT_POLARITY_FAILURE",
+      "error_message": "Experiment polarity failure: HYPOTHESIS experiment proposal is incomplete or missing supporting/disproving specification: Experiment action 'TAMPER_REQUEST_PARAMETER' is not compatible with category 'API-STATE-001'",
+      "parsed_json": {
+        "invariant": "Business logic state transitions must follow a valid, strictly ordered finite state machine; transitions from invalid current states must be rejected.",
+        "evidence_gap": "The evidence does not show that the endpoint validates the current state of the order before processing a refund request.",
+        "affected_target": "/api/v1/orders/{id}/refund",
+        "decision": "HYPOTHESIS",
+        "empirical_facts": [
+          "FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC"
+        ],
+        "methodology_references": [],
+        "experiment_action": "TAMPER_REQUEST_PARAMETER",
+        "supporting_outcome": "HTTP_409_CONFLICT",
+        "disproving_outcome": "HTTP_200_OK",
+        "falsification_description": "The endpoint should reject refund requests for orders that are not in the expected state (PAID). If a refund request is processed for an order in a different state, the endpoint should return a 409 Conflict status code."
+      },
+      "schema_validity": true,
+      "typed_experiment_fields": {
+        "experiment_action": "TAMPER_REQUEST_PARAMETER",
+        "supporting_outcome": "HTTP_409_CONFLICT",
+        "disproving_outcome": "HTTP_200_OK",
+        "falsification_description": "The endpoint should reject refund requests for orders that are not in the expected state (PAID). If a refund request is processed for an order in a different state, the endpoint should return a 409 Conflict status code."
+      },
+      "grounding_result": null,
+      "ExperimentPolarityValidator_result": {
+        "is_valid": false,
+        "reason": "Experiment action 'TAMPER_REQUEST_PARAMETER' is not compatible with category 'API-STATE-001'",
+        "category_id": "API-STATE-001",
+        "experiment_action": "TAMPER_REQUEST_PARAMETER",
+        "supporting_outcome": "HTTP_409_CONFLICT",
+        "disproving_outcome": "HTTP_200_OK"
+      },
+      "candidate_decision": "HYPOTHESIS",
+      "final_deterministic_decision": null,
+      "canonical_s0_output": null,
+      "timestamp": "2026-09-21T14:42:24.975187+00:00"
+    },
+    {
+      "call_index": 15,
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-VULN-01",
+      "track_id": "TRACK_D",
+      "i1_enabled": false,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "c6f146385b020a8d0ab934f2f5e2191d5fb579e31d87cc9960359a0e279aa055",
+      "prompt_hash": "346e9f6208897c439a6a67e5c658ff271ac541eee97f00b2269a8531c6d11de1",
+      "target_evidence_hash": "6bcff23ce6814585baed100a2192adb5b7fd990cff8d5ded4a0c9c5cd1856cd6",
+      "vapt_pack_hash": "NONE",
+      "raw_model_response": "```json\n{\n  \"invariant\": \"Business logic state transitions must follow a valid, strictly ordered finite state machine; transitions from invalid current states must be rejected.\",\n  \"evidence_gap\": \"The evidence does not show that the endpoint validates the current state of the order before processing a refund request.\",\n  \"affected_target\": \"/api/v1/orders/{id}/refund\",\n  \"decision\": \"HYPOTHESIS\",\n  \"empirical_facts\": [\"FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC\"],\n  \"falsification_plan\": \"To falsify this hypothesis, perform a test where a refund request is made for an order that is not in the expected state (e.g., an order that is already refunded or in a different state). If the endpoint processes the refund request successfully, this would indicate a violation of the invariant.\"\n}\n```",
+      "latency_ms": 20907.766600008472,
+      "eval_count": 181,
+      "prompt_eval_count": 1936,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": false,
+      "primary_failure_category": "SCHEMA_VALIDITY_FAILURE",
+      "error_message": "Schema validation error: BAIR JSON schema validation error: 1 validation error for BairJsonObject\n  Value error, Legacy free-text falsification_plan cannot authorize a HYPOTHESIS under JSON_BAIR protocol; typed experiment fields (experiment_action, supporting_outcome, disproving_outcome) are mandatory [type=value_error, input_value={'invariant': 'Business l...tion of the invariant.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error",
+      "parsed_json": {
+        "invariant": "Business logic state transitions must follow a valid, strictly ordered finite state machine; transitions from invalid current states must be rejected.",
+        "evidence_gap": "The evidence does not show that the endpoint validates the current state of the order before processing a refund request.",
+        "affected_target": "/api/v1/orders/{id}/refund",
+        "decision": "HYPOTHESIS",
+        "empirical_facts": [
+          "FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC"
+        ],
+        "falsification_plan": "To falsify this hypothesis, perform a test where a refund request is made for an order that is not in the expected state (e.g., an order that is already refunded or in a different state). If the endpoint processes the refund request successfully, this would indicate a violation of the invariant."
+      },
+      "schema_validity": false,
+      "typed_experiment_fields": {
+        "experiment_action": null,
+        "supporting_outcome": null,
+        "disproving_outcome": null,
+        "falsification_description": null
+      },
+      "grounding_result": null,
+      "ExperimentPolarityValidator_result": {
+        "is_valid": false,
+        "reason": "Experiment action is missing or null",
+        "category_id": "API-STATE-001",
+        "experiment_action": null,
+        "supporting_outcome": null,
+        "disproving_outcome": null
+      },
+      "candidate_decision": "HYPOTHESIS",
+      "final_deterministic_decision": null,
+      "canonical_s0_output": null,
+      "timestamp": "2026-09-21T14:42:45.884219+00:00"
+    },
+    {
+      "call_index": 16,
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-VULN-01",
+      "track_id": "TRACK_D",
+      "i1_enabled": true,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "c6f146385b020a8d0ab934f2f5e2191d5fb579e31d87cc9960359a0e279aa055",
+      "prompt_hash": "346e9f6208897c439a6a67e5c658ff271ac541eee97f00b2269a8531c6d11de1",
+      "target_evidence_hash": "6bcff23ce6814585baed100a2192adb5b7fd990cff8d5ded4a0c9c5cd1856cd6",
+      "vapt_pack_hash": "NONE",
+      "raw_model_response": "{\n  \"invariant\": \"Business logic state transitions must follow a valid, strictly ordered finite state machine; transitions from invalid current states must be rejected.\",\n  \"evidence_gap\": \"The evidence does not show that the endpoint validates the current state of the order before processing a refund request.\",\n  \"affected_target\": \"/api/v1/orders/{id}/refund\",\n  \"decision\": \"HYPOTHESIS\",\n  \"empirical_facts\": [\"FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC\"],\n  \"methodology_references\": [],\n  \"experiment_action\": \"SUBSTITUTE_RESOURCE_IDENTIFIER\",\n  \"supporting_outcome\": \"STATE_TRANSITION_REJECTED\",\n  \"disproving_outcome\": \"STATE_TRANSITION_ACCEPTED\",\n  \"falsification_description\": \"The endpoint processes a refund request for an order that is not in the expected state (PAID).\"\n}",
+      "latency_ms": 25281.070900004124,
+      "eval_count": 209,
+      "prompt_eval_count": 1936,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": false,
+      "primary_failure_category": "SEMANTIC_EXPERIMENT_POLARITY_FAILURE",
+      "error_message": "Experiment polarity failure: HYPOTHESIS experiment proposal is incomplete or missing supporting/disproving specification: Experiment action 'SUBSTITUTE_RESOURCE_IDENTIFIER' is not compatible with category 'API-STATE-001'",
+      "parsed_json": {
+        "invariant": "Business logic state transitions must follow a valid, strictly ordered finite state machine; transitions from invalid current states must be rejected.",
+        "evidence_gap": "The evidence does not show that the endpoint validates the current state of the order before processing a refund request.",
+        "affected_target": "/api/v1/orders/{id}/refund",
+        "decision": "HYPOTHESIS",
+        "empirical_facts": [
+          "FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC"
+        ],
+        "methodology_references": [],
+        "experiment_action": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+        "supporting_outcome": "STATE_TRANSITION_REJECTED",
+        "disproving_outcome": "STATE_TRANSITION_ACCEPTED",
+        "falsification_description": "The endpoint processes a refund request for an order that is not in the expected state (PAID)."
+      },
+      "schema_validity": true,
+      "typed_experiment_fields": {
+        "experiment_action": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+        "supporting_outcome": "STATE_TRANSITION_REJECTED",
+        "disproving_outcome": "STATE_TRANSITION_ACCEPTED",
+        "falsification_description": "The endpoint processes a refund request for an order that is not in the expected state (PAID)."
+      },
+      "grounding_result": null,
+      "ExperimentPolarityValidator_result": {
+        "is_valid": false,
+        "reason": "Experiment action 'SUBSTITUTE_RESOURCE_IDENTIFIER' is not compatible with category 'API-STATE-001'",
+        "category_id": "API-STATE-001",
+        "experiment_action": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+        "supporting_outcome": "STATE_TRANSITION_REJECTED",
+        "disproving_outcome": "STATE_TRANSITION_ACCEPTED"
+      },
+      "candidate_decision": "HYPOTHESIS",
+      "final_deterministic_decision": null,
+      "canonical_s0_output": null,
+      "timestamp": "2026-09-21T14:43:11.165984+00:00"
+    },
+    {
+      "call_index": 17,
+      "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-PATCH-01",
+      "track_id": "TRACK_A",
+      "i1_enabled": false,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "b3d7d8eb62ed023c93585d5ca541b62604d4a02a8b98ede3ff63931aaefaa260",
+      "prompt_hash": "649abf81fa83160e21db28f90a7bed399e15fab110a6e47dbba515df01ba6405",
+      "target_evidence_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "vapt_pack_hash": "NONE",
+      "raw_model_response": "```json\n{\n  \"invariant\": \"Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.\",\n  \"evidence_gap\": \"MISSING_CROSS_IDENTITY_OBJECT_VERIFICATION\",\n  \"affected_target\": \"GET /api/v1/invoices/{id}\",\n  \"decision\": \"HYPOTHESIS\",\n  \"empirical_facts\": [\"FACT-SAAS_BILLING-INV-DETAILS-DOC\"],\n  \"methodology_references\": [],\n  \"experiment_action\": \"SUBSTITUTE_RESOURCE_IDENTIFIER\",\n  \"supporting_outcome\": \"HTTP_403_FORBIDDEN\",\n  \"disproving_outcome\": \"HTTP_200_OK\",\n  \"falsification_plan\": \"To falsify the hypothesis, perform a GET request to /api/v1/invoices/{id} using a different customer's invoice identifier and verify that the response is a 403 Forbidden status code.\"\n}\n```",
+      "latency_ms": 22863.886299994192,
+      "eval_count": 200,
+      "prompt_eval_count": 1901,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": false,
+      "primary_failure_category": "SEMANTIC_EXPERIMENT_POLARITY_FAILURE",
+      "error_message": "Experiment polarity failure: HYPOTHESIS experiment proposal is incomplete or missing supporting/disproving specification: Outcome 'HTTP_403_FORBIDDEN' is not a valid breach outcome for category 'API-BOLA-001' and action 'SUBSTITUTE_RESOURCE_IDENTIFIER'",
+      "parsed_json": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": "MISSING_CROSS_IDENTITY_OBJECT_VERIFICATION",
+        "affected_target": "GET /api/v1/invoices/{id}",
+        "decision": "HYPOTHESIS",
+        "empirical_facts": [
+          "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+        ],
+        "methodology_references": [],
+        "experiment_action": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+        "supporting_outcome": "HTTP_403_FORBIDDEN",
+        "disproving_outcome": "HTTP_200_OK",
+        "falsification_plan": "To falsify the hypothesis, perform a GET request to /api/v1/invoices/{id} using a different customer's invoice identifier and verify that the response is a 403 Forbidden status code."
+      },
+      "schema_validity": true,
+      "typed_experiment_fields": {
+        "experiment_action": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+        "supporting_outcome": "HTTP_403_FORBIDDEN",
+        "disproving_outcome": "HTTP_200_OK",
+        "falsification_description": null
+      },
+      "grounding_result": null,
+      "ExperimentPolarityValidator_result": {
+        "is_valid": false,
+        "reason": "Outcome 'HTTP_403_FORBIDDEN' is not a valid breach outcome for category 'API-BOLA-001' and action 'SUBSTITUTE_RESOURCE_IDENTIFIER'",
+        "category_id": "API-BOLA-001",
+        "experiment_action": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+        "supporting_outcome": "HTTP_403_FORBIDDEN",
+        "disproving_outcome": "HTTP_200_OK"
+      },
+      "candidate_decision": "HYPOTHESIS",
+      "final_deterministic_decision": null,
+      "canonical_s0_output": null,
+      "timestamp": "2026-09-21T14:43:34.033239+00:00"
+    },
+    {
+      "call_index": 18,
+      "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-PATCH-01",
+      "track_id": "TRACK_A",
+      "i1_enabled": true,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "b3d7d8eb62ed023c93585d5ca541b62604d4a02a8b98ede3ff63931aaefaa260",
+      "prompt_hash": "649abf81fa83160e21db28f90a7bed399e15fab110a6e47dbba515df01ba6405",
+      "target_evidence_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "vapt_pack_hash": "NONE",
+      "raw_model_response": "{\n  \"invariant\": \"Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.\",\n  \"evidence_gap\": \"MISSING_CROSS_IDENTITY_OBJECT_VERIFICATION\",\n  \"affected_target\": \"GET /api/v1/invoices/{id}\",\n  \"decision\": \"HYPOTHESIS\",\n  \"empirical_facts\": [\"FACT-SAAS_BILLING-INV-DETAILS-DOC\"],\n  \"methodology_references\": [],\n  \"experiment_action\": \"SUBSTITUTE_RESOURCE_IDENTIFIER\",\n  \"supporting_outcome\": \"HTTP_403_FORBIDDEN\",\n  \"disproving_outcome\": \"HTTP_200_OK\",\n  \"falsification_description\": \"The endpoint should return HTTP 403 Forbidden when a request is made with an unauthorized identity attempting to access a different invoice identifier.\"\n}",
+      "latency_ms": 20905.82309999445,
+      "eval_count": 181,
+      "prompt_eval_count": 1901,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": false,
+      "primary_failure_category": "SEMANTIC_EXPERIMENT_POLARITY_FAILURE",
+      "error_message": "Experiment polarity failure: HYPOTHESIS experiment proposal is incomplete or missing supporting/disproving specification: Outcome 'HTTP_403_FORBIDDEN' is not a valid breach outcome for category 'API-BOLA-001' and action 'SUBSTITUTE_RESOURCE_IDENTIFIER'",
+      "parsed_json": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": "MISSING_CROSS_IDENTITY_OBJECT_VERIFICATION",
+        "affected_target": "GET /api/v1/invoices/{id}",
+        "decision": "HYPOTHESIS",
+        "empirical_facts": [
+          "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+        ],
+        "methodology_references": [],
+        "experiment_action": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+        "supporting_outcome": "HTTP_403_FORBIDDEN",
+        "disproving_outcome": "HTTP_200_OK",
+        "falsification_description": "The endpoint should return HTTP 403 Forbidden when a request is made with an unauthorized identity attempting to access a different invoice identifier."
+      },
+      "schema_validity": true,
+      "typed_experiment_fields": {
+        "experiment_action": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+        "supporting_outcome": "HTTP_403_FORBIDDEN",
+        "disproving_outcome": "HTTP_200_OK",
+        "falsification_description": "The endpoint should return HTTP 403 Forbidden when a request is made with an unauthorized identity attempting to access a different invoice identifier."
+      },
+      "grounding_result": null,
+      "ExperimentPolarityValidator_result": {
+        "is_valid": false,
+        "reason": "Outcome 'HTTP_403_FORBIDDEN' is not a valid breach outcome for category 'API-BOLA-001' and action 'SUBSTITUTE_RESOURCE_IDENTIFIER'",
+        "category_id": "API-BOLA-001",
+        "experiment_action": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+        "supporting_outcome": "HTTP_403_FORBIDDEN",
+        "disproving_outcome": "HTTP_200_OK"
+      },
+      "candidate_decision": "HYPOTHESIS",
+      "final_deterministic_decision": null,
+      "canonical_s0_output": null,
+      "timestamp": "2026-09-21T14:43:54.939890+00:00"
+    },
+    {
+      "call_index": 19,
+      "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-PATCH-01",
+      "track_id": "TRACK_B",
+      "i1_enabled": false,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "b3d7d8eb62ed023c93585d5ca541b62604d4a02a8b98ede3ff63931aaefaa260",
+      "prompt_hash": "6261c2a79052b782b9f25420e98fa1fc393247f642d8020f547a80f13168438f",
+      "target_evidence_hash": "56e159483adb462cf9a300bd7990bca497b66a78a53ac15581299e234dc7fd5f",
+      "vapt_pack_hash": "NONE",
+      "raw_model_response": "```json\n{\n  \"invariant\": \"Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.\",\n  \"evidence_gap\": \"MISSING_CROSS_IDENTITY_OBJECT_VERIFICATION\",\n  \"affected_target\": \"GET /api/v1/invoices/{id}\",\n  \"decision\": \"HYPOTHESIS\",\n  \"empirical_facts\": [\"FACT-SAAS_BILLING-INV-DETAILS-DOC\"],\n  \"methodology_references\": [],\n  \"falsification_plan\": \"To falsify this hypothesis, perform a test where a user attempts to access an invoice record that does not belong to them. If the system allows access, the invariant is violated.\"\n}\n```",
+      "latency_ms": 17501.81089999387,
+      "eval_count": 150,
+      "prompt_eval_count": 1953,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": false,
+      "primary_failure_category": "SCHEMA_VALIDITY_FAILURE",
+      "error_message": "Schema validation error: BAIR JSON schema validation error: 1 validation error for BairJsonObject\n  Value error, Legacy free-text falsification_plan cannot authorize a HYPOTHESIS under JSON_BAIR protocol; typed experiment fields (experiment_action, supporting_outcome, disproving_outcome) are mandatory [type=value_error, input_value={'invariant': 'Object acc...invariant is violated.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error",
+      "parsed_json": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": "MISSING_CROSS_IDENTITY_OBJECT_VERIFICATION",
+        "affected_target": "GET /api/v1/invoices/{id}",
+        "decision": "HYPOTHESIS",
+        "empirical_facts": [
+          "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+        ],
+        "methodology_references": [],
+        "falsification_plan": "To falsify this hypothesis, perform a test where a user attempts to access an invoice record that does not belong to them. If the system allows access, the invariant is violated."
+      },
+      "schema_validity": false,
+      "typed_experiment_fields": {
+        "experiment_action": null,
+        "supporting_outcome": null,
+        "disproving_outcome": null,
+        "falsification_description": null
+      },
+      "grounding_result": null,
+      "ExperimentPolarityValidator_result": {
+        "is_valid": false,
+        "reason": "Experiment action is missing or null",
+        "category_id": "API-BOLA-001",
+        "experiment_action": null,
+        "supporting_outcome": null,
+        "disproving_outcome": null
+      },
+      "candidate_decision": "HYPOTHESIS",
+      "final_deterministic_decision": null,
+      "canonical_s0_output": null,
+      "timestamp": "2026-09-21T14:44:12.443000+00:00"
+    },
+    {
+      "call_index": 20,
+      "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-PATCH-01",
+      "track_id": "TRACK_B",
+      "i1_enabled": true,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "b3d7d8eb62ed023c93585d5ca541b62604d4a02a8b98ede3ff63931aaefaa260",
+      "prompt_hash": "6261c2a79052b782b9f25420e98fa1fc393247f642d8020f547a80f13168438f",
+      "target_evidence_hash": "56e159483adb462cf9a300bd7990bca497b66a78a53ac15581299e234dc7fd5f",
+      "vapt_pack_hash": "NONE",
+      "raw_model_response": "{\n  \"invariant\": \"Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.\",\n  \"evidence_gap\": \"MISSING_CROSS_IDENTITY_OBJECT_VERIFICATION\",\n  \"affected_target\": \"GET /api/v1/invoices/{id}\",\n  \"decision\": \"HYPOTHESIS\",\n  \"empirical_facts\": [\"FACT-SAAS_BILLING-INV-DETAILS-DOC\"],\n  \"methodology_references\": [],\n  \"experiment_action\": \"INVOKE_WITHOUT_CREDENTIALS\",\n  \"supporting_outcome\": \"CROSS_IDENTITY_OBJECT_ACCESSIBLE\",\n  \"disproving_outcome\": \"CROSS_IDENTITY_OBJECT_ACCESSIBLE\",\n  \"falsification_description\": \"The system allows access to billing invoice records for any invoice identifier without proper authorization, indicating a missing cross-identity object verification mechanism.\"\n}",
+      "latency_ms": 23159.817700012354,
+      "eval_count": 196,
+      "prompt_eval_count": 1953,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": false,
+      "primary_failure_category": "SCHEMA_VALIDITY_FAILURE",
+      "error_message": "Schema validation error: BAIR JSON schema validation error: 1 validation error for BairJsonObject\n  Value error, supporting_outcome and disproving_outcome cannot be identical ('CROSS_IDENTITY_OBJECT_ACCESSIBLE') [type=value_error, input_value={'invariant': 'Object acc...erification mechanism.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error",
+      "parsed_json": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": "MISSING_CROSS_IDENTITY_OBJECT_VERIFICATION",
+        "affected_target": "GET /api/v1/invoices/{id}",
+        "decision": "HYPOTHESIS",
+        "empirical_facts": [
+          "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+        ],
+        "methodology_references": [],
+        "experiment_action": "INVOKE_WITHOUT_CREDENTIALS",
+        "supporting_outcome": "CROSS_IDENTITY_OBJECT_ACCESSIBLE",
+        "disproving_outcome": "CROSS_IDENTITY_OBJECT_ACCESSIBLE",
+        "falsification_description": "The system allows access to billing invoice records for any invoice identifier without proper authorization, indicating a missing cross-identity object verification mechanism."
+      },
+      "schema_validity": false,
+      "typed_experiment_fields": {
+        "experiment_action": "INVOKE_WITHOUT_CREDENTIALS",
+        "supporting_outcome": "CROSS_IDENTITY_OBJECT_ACCESSIBLE",
+        "disproving_outcome": "CROSS_IDENTITY_OBJECT_ACCESSIBLE",
+        "falsification_description": "The system allows access to billing invoice records for any invoice identifier without proper authorization, indicating a missing cross-identity object verification mechanism."
+      },
+      "grounding_result": null,
+      "ExperimentPolarityValidator_result": {
+        "is_valid": false,
+        "reason": "Experiment action 'INVOKE_WITHOUT_CREDENTIALS' is not compatible with category 'API-BOLA-001'",
+        "category_id": "API-BOLA-001",
+        "experiment_action": "INVOKE_WITHOUT_CREDENTIALS",
+        "supporting_outcome": "CROSS_IDENTITY_OBJECT_ACCESSIBLE",
+        "disproving_outcome": "CROSS_IDENTITY_OBJECT_ACCESSIBLE"
+      },
+      "candidate_decision": "HYPOTHESIS",
+      "final_deterministic_decision": null,
+      "canonical_s0_output": null,
+      "timestamp": "2026-09-21T14:44:35.603581+00:00"
+    },
+    {
+      "call_index": 21,
+      "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-PATCH-01",
+      "track_id": "TRACK_C",
+      "i1_enabled": false,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "b3d7d8eb62ed023c93585d5ca541b62604d4a02a8b98ede3ff63931aaefaa260",
+      "prompt_hash": "5fdbd57a5ecf62270ba67676e5d93d8aa0b31f1577e46a57282ba99b932abbec",
+      "target_evidence_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "vapt_pack_hash": "4d1e192390bdbc78d36cd6343ce11b2b332a65f43ea37c12893044b318d3c557",
+      "raw_model_response": "### Evaluation of Invariant\n\n**Invariant:** Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.\n\n### Evidence Gap\n\n**Evidence Gap:** The evidence does not demonstrate that the system verifies whether the requesting identity owns or is explicitly authorized to access the specific target resource identifier. The evidence indicates that the endpoint retrieves billing invoice records for the specified invoice identifier but does not provide any information on how the system enforces access control based on the identity of the requester.\n\n### Falsification Plan\n\n**Falsification Plan:** To falsify this invariant, an attacker could attempt to access an invoice record that does not belong to them or for which they do not have explicit authorization. If the system does not enforce proper access control, the attacker should be able to retrieve the invoice record without being denied access.\n\n### Conclusion\n\n**NO_RELEVANT_FUNCTIONALITY:** The tested functionality is entirely outside the examined security property. The endpoint retrieves billing invoice records but does not provide any evidence that the system enforces access control based on the identity of the requester.",
+      "latency_ms": 21996.173399995314,
+      "eval_count": 220,
+      "prompt_eval_count": 1026,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": false,
+      "primary_failure_category": "PARSER_FAILURE",
+      "error_message": "Invalid JSON syntax: JSON parse error in BAIR response: Expecting value: line 1 column 1 (char 0)",
+      "parsed_json": null,
+      "schema_validity": false,
+      "typed_experiment_fields": {
+        "experiment_action": null,
+        "supporting_outcome": null,
+        "disproving_outcome": null,
+        "falsification_description": null
+      },
+      "grounding_result": null,
+      "ExperimentPolarityValidator_result": null,
+      "candidate_decision": null,
+      "final_deterministic_decision": null,
+      "canonical_s0_output": null,
+      "timestamp": "2026-09-21T14:44:57.601083+00:00"
+    },
+    {
+      "call_index": 22,
+      "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-PATCH-01",
+      "track_id": "TRACK_C",
+      "i1_enabled": true,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "b3d7d8eb62ed023c93585d5ca541b62604d4a02a8b98ede3ff63931aaefaa260",
+      "prompt_hash": "5fdbd57a5ecf62270ba67676e5d93d8aa0b31f1577e46a57282ba99b932abbec",
+      "target_evidence_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "vapt_pack_hash": "4d1e192390bdbc78d36cd6343ce11b2b332a65f43ea37c12893044b318d3c557",
+      "raw_model_response": "{\n  \"invariant\": \"Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.\",\n  \"evidence_gap\": \"The evidence does not demonstrate that the system verifies the requesting identity's ownership or explicit authorization to access the specific target resource identifier.\",\n  \"affected_target\": \"The target endpoint /api/v1/invoices/{id} is vulnerable to Broken Object Level Authorization (BOLA/IDOR) because it does not verify the requesting identity's ownership or explicit authorization to access the specific target resource identifier.\",\n  \"decision\": \"NO_RELEVANT_FUNCTIONALITY\",\n  \"empirical_facts\": [\n    \"FACT-SAAS_BILLING-INV-DETAILS-DOC\"\n  ],\n  \"methodology_references\": [\n    \"CHK-DOC-PLATFORM-INV-01-002-01\"\n  ],\n  \"experiment_action\": \"INVOKE_WITHOUT_CREDENTIALS\",\n  \"supporting_outcome\": \"UNAUTHENTICATED_ACCESS_DENIED\",\n  \"disproving_outcome\": \"UNAUTHENTICATED_ACCESS_ALLOWED\",\n  \"falsification_description\": \"The system allows unauthenticated access to the billing invoice details endpoint, which violates the invariant that object access must verify the requesting identity's ownership or explicit authorization to access the specific target resource identifier.\"\n}",
+      "latency_ms": 31291.25280000153,
+      "eval_count": 296,
+      "prompt_eval_count": 1026,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": true,
+      "primary_failure_category": "VALID",
+      "error_message": null,
+      "parsed_json": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": "The evidence does not demonstrate that the system verifies the requesting identity's ownership or explicit authorization to access the specific target resource identifier.",
+        "affected_target": "The target endpoint /api/v1/invoices/{id} is vulnerable to Broken Object Level Authorization (BOLA/IDOR) because it does not verify the requesting identity's ownership or explicit authorization to access the specific target resource identifier.",
+        "decision": "NO_RELEVANT_FUNCTIONALITY",
+        "empirical_facts": [
+          "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+        ],
+        "methodology_references": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "experiment_action": "INVOKE_WITHOUT_CREDENTIALS",
+        "supporting_outcome": "UNAUTHENTICATED_ACCESS_DENIED",
+        "disproving_outcome": "UNAUTHENTICATED_ACCESS_ALLOWED",
+        "falsification_description": "The system allows unauthenticated access to the billing invoice details endpoint, which violates the invariant that object access must verify the requesting identity's ownership or explicit authorization to access the specific target resource identifier."
+      },
+      "schema_validity": true,
+      "typed_experiment_fields": {
+        "experiment_action": "INVOKE_WITHOUT_CREDENTIALS",
+        "supporting_outcome": "UNAUTHENTICATED_ACCESS_DENIED",
+        "disproving_outcome": "UNAUTHENTICATED_ACCESS_ALLOWED",
+        "falsification_description": "The system allows unauthenticated access to the billing invoice details endpoint, which violates the invariant that object access must verify the requesting identity's ownership or explicit authorization to access the specific target resource identifier."
+      },
+      "grounding_result": {
+        "valid": true,
+        "status": "VALID",
+        "error_code": null,
+        "reason": "Dual evidence and methodology grounding validated successfully",
+        "invalid_fact_ids": [],
+        "invalid_chunk_ids": [],
+        "compliance_failures": []
+      },
+      "ExperimentPolarityValidator_result": null,
+      "candidate_decision": "NO_RELEVANT_FUNCTIONALITY",
+      "final_deterministic_decision": "INSUFFICIENT_EVIDENCE",
+      "canonical_s0_output": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": "The evidence does not demonstrate that the system verifies the requesting identity's ownership or explicit authorization to access the specific target resource identifier.",
+        "affected_target": "The target endpoint /api/v1/invoices/{id} is vulnerable to Broken Object Level Authorization (BOLA/IDOR) because it does not verify the requesting identity's ownership or explicit authorization to access the specific target resource identifier.",
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "supporting_evidence_ids": [
+          "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+        ],
+        "methodology_references": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "reasoning_summary": "BAIR evaluation: Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.. Evidence gap: The evidence does not demonstrate that the system verifies the requesting identity's ownership or explicit authorization to access the specific target resource identifier..",
+        "experiment_proposal": "Action: INVOKE_WITHOUT_CREDENTIALS; Breach: UNAUTHENTICATED_ACCESS_DENIED; Safe: UNAUTHENTICATED_ACCESS_ALLOWED (The system allows unauthenticated access to the billing invoice details endpoint, which violates the invariant that object access must verify the requesting identity's ownership or explicit authorization to access the specific target resource identifier.)",
+        "experiment_action": "INVOKE_WITHOUT_CREDENTIALS",
+        "supporting_outcome": "UNAUTHENTICATED_ACCESS_DENIED",
+        "disproving_outcome": "UNAUTHENTICATED_ACCESS_ALLOWED",
+        "falsification_description": "The system allows unauthenticated access to the billing invoice details endpoint, which violates the invariant that object access must verify the requesting identity's ownership or explicit authorization to access the specific target resource identifier.",
+        "category": "API-BOLA-001",
+        "asset_id": "ASSET-SAAS_BILLING-INV-DETAILS-01",
+        "parameter_ids": [],
+        "missing_evidence": [
+          "The evidence does not demonstrate that the system verifies the requesting identity's ownership or explicit authorization to access the specific target resource identifier."
+        ],
+        "cited_methodology_chunk_ids": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "contradicting_evidence_ids": [],
+        "app_model_delta": null,
+        "violation_assessment": null,
+        "actor_identity_id": null,
+        "target_identity_id": null,
+        "safety_check": null,
+        "evidence_sufficiency": 0.5
+      },
+      "timestamp": "2026-09-21T14:45:28.893290+00:00"
+    },
+    {
+      "call_index": 23,
+      "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-PATCH-01",
+      "track_id": "TRACK_D",
+      "i1_enabled": false,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "b3d7d8eb62ed023c93585d5ca541b62604d4a02a8b98ede3ff63931aaefaa260",
+      "prompt_hash": "643cb4c1f6a0c21c6df9e4ef187bcd63cc97ef7746448c36c1fda361fe491338",
+      "target_evidence_hash": "56e159483adb462cf9a300bd7990bca497b66a78a53ac15581299e234dc7fd5f",
+      "vapt_pack_hash": "4d1e192390bdbc78d36cd6343ce11b2b332a65f43ea37c12893044b318d3c557",
+      "raw_model_response": "### Evaluation of Invariant\n\n**Invariant:** Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.\n\n**Evidence Gap:** The evidence provided does not include any verification that the requesting identity owns or is explicitly authorized to access the specific target resource identifier. The evidence only confirms that the endpoint retrieves billing invoice records for the specified invoice identifier and requires an active customer session.\n\n**Falsification Plan:** To falsify this invariant, an attacker could attempt to access an invoice record that does not belong to them or for which they do not have explicit authorization. If the endpoint does not verify ownership or authorization, the attacker should receive a 200 OK response with the invoice record, indicating a violation of the invariant.\n\n### Conclusion\n\n**NO_RELEVANT_FUNCTIONALITY**",
+      "latency_ms": 16426.407899998594,
+      "eval_count": 165,
+      "prompt_eval_count": 1026,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": false,
+      "primary_failure_category": "PARSER_FAILURE",
+      "error_message": "Invalid JSON syntax: JSON parse error in BAIR response: Expecting value: line 1 column 1 (char 0)",
+      "parsed_json": null,
+      "schema_validity": false,
+      "typed_experiment_fields": {
+        "experiment_action": null,
+        "supporting_outcome": null,
+        "disproving_outcome": null,
+        "falsification_description": null
+      },
+      "grounding_result": null,
+      "ExperimentPolarityValidator_result": null,
+      "candidate_decision": null,
+      "final_deterministic_decision": null,
+      "canonical_s0_output": null,
+      "timestamp": "2026-09-21T14:45:45.320865+00:00"
+    },
+    {
+      "call_index": 24,
+      "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-PATCH-01",
+      "track_id": "TRACK_D",
+      "i1_enabled": true,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "b3d7d8eb62ed023c93585d5ca541b62604d4a02a8b98ede3ff63931aaefaa260",
+      "prompt_hash": "643cb4c1f6a0c21c6df9e4ef187bcd63cc97ef7746448c36c1fda361fe491338",
+      "target_evidence_hash": "56e159483adb462cf9a300bd7990bca497b66a78a53ac15581299e234dc7fd5f",
+      "vapt_pack_hash": "4d1e192390bdbc78d36cd6343ce11b2b332a65f43ea37c12893044b318d3c557",
+      "raw_model_response": "{\n  \"invariant\": \"Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.\",\n  \"evidence_gap\": \"The evidence does not demonstrate that the system verifies ownership or explicit authorization for the specific target resource identifier.\",\n  \"affected_target\": \"GET /api/v1/invoices/{id}\",\n  \"decision\": \"NO_RELEVANT_FUNCTIONALITY\",\n  \"empirical_facts\": [\"FACT-SAAS_BILLING-INV-DETAILS-DOC\"],\n  \"methodology_references\": [\"CHK-DOC-PLATFORM-INV-01-002-01\"],\n  \"experiment_action\": \"INVOKE_WITHOUT_CREDENTIALS\",\n  \"supporting_outcome\": \"UNAUTHENTICATED_ACCESS_DENIED\",\n  \"disproving_outcome\": \"UNAUTHENTICATED_ACCESS_ALLOWED\",\n  \"falsification_description\": \"The system allows unauthenticated access to retrieve billing invoice records for a specified invoice identifier, which violates the invariant that object access must verify ownership or explicit authorization.\"\n}",
+      "latency_ms": 25674.185600000783,
+      "eval_count": 241,
+      "prompt_eval_count": 1026,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": true,
+      "primary_failure_category": "VALID",
+      "error_message": null,
+      "parsed_json": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": "The evidence does not demonstrate that the system verifies ownership or explicit authorization for the specific target resource identifier.",
+        "affected_target": "GET /api/v1/invoices/{id}",
+        "decision": "NO_RELEVANT_FUNCTIONALITY",
+        "empirical_facts": [
+          "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+        ],
+        "methodology_references": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "experiment_action": "INVOKE_WITHOUT_CREDENTIALS",
+        "supporting_outcome": "UNAUTHENTICATED_ACCESS_DENIED",
+        "disproving_outcome": "UNAUTHENTICATED_ACCESS_ALLOWED",
+        "falsification_description": "The system allows unauthenticated access to retrieve billing invoice records for a specified invoice identifier, which violates the invariant that object access must verify ownership or explicit authorization."
+      },
+      "schema_validity": true,
+      "typed_experiment_fields": {
+        "experiment_action": "INVOKE_WITHOUT_CREDENTIALS",
+        "supporting_outcome": "UNAUTHENTICATED_ACCESS_DENIED",
+        "disproving_outcome": "UNAUTHENTICATED_ACCESS_ALLOWED",
+        "falsification_description": "The system allows unauthenticated access to retrieve billing invoice records for a specified invoice identifier, which violates the invariant that object access must verify ownership or explicit authorization."
+      },
+      "grounding_result": {
+        "valid": true,
+        "status": "VALID",
+        "error_code": null,
+        "reason": "Dual evidence and methodology grounding validated successfully",
+        "invalid_fact_ids": [],
+        "invalid_chunk_ids": [],
+        "compliance_failures": []
+      },
+      "ExperimentPolarityValidator_result": null,
+      "candidate_decision": "NO_RELEVANT_FUNCTIONALITY",
+      "final_deterministic_decision": "INSUFFICIENT_EVIDENCE",
+      "canonical_s0_output": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": "The evidence does not demonstrate that the system verifies ownership or explicit authorization for the specific target resource identifier.",
+        "affected_target": "GET /api/v1/invoices/{id}",
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "supporting_evidence_ids": [
+          "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+        ],
+        "methodology_references": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "reasoning_summary": "BAIR evaluation: Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.. Evidence gap: The evidence does not demonstrate that the system verifies ownership or explicit authorization for the specific target resource identifier..",
+        "experiment_proposal": "Action: INVOKE_WITHOUT_CREDENTIALS; Breach: UNAUTHENTICATED_ACCESS_DENIED; Safe: UNAUTHENTICATED_ACCESS_ALLOWED (The system allows unauthenticated access to retrieve billing invoice records for a specified invoice identifier, which violates the invariant that object access must verify ownership or explicit authorization.)",
+        "experiment_action": "INVOKE_WITHOUT_CREDENTIALS",
+        "supporting_outcome": "UNAUTHENTICATED_ACCESS_DENIED",
+        "disproving_outcome": "UNAUTHENTICATED_ACCESS_ALLOWED",
+        "falsification_description": "The system allows unauthenticated access to retrieve billing invoice records for a specified invoice identifier, which violates the invariant that object access must verify ownership or explicit authorization.",
+        "category": "API-BOLA-001",
+        "asset_id": "ASSET-SAAS_BILLING-INV-DETAILS-01",
+        "parameter_ids": [],
+        "missing_evidence": [
+          "The evidence does not demonstrate that the system verifies ownership or explicit authorization for the specific target resource identifier."
+        ],
+        "cited_methodology_chunk_ids": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "contradicting_evidence_ids": [],
+        "app_model_delta": null,
+        "violation_assessment": null,
+        "actor_identity_id": null,
+        "target_identity_id": null,
+        "safety_check": null,
+        "evidence_sufficiency": 0.5
+      },
+      "timestamp": "2026-09-21T14:46:10.995938+00:00"
+    }
+  ]
+}

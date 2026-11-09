@@ -1,0 +1,3890 @@
+{
+  "benchmark_type": "M3_POST_RAG_VALIDATION_RERUN",
+  "benchmark_version": "2.3.8",
+  "causal_parity": {
+    "contract": "TargetEvidencePayload(Track B) == TargetEvidencePayload(Track D) byte-identical",
+    "discrepancy_count": 0,
+    "verified_all_scenarios": true,
+    "verified_pair_count": 84
+  },
+  "completion_timestamp": "2026-09-20T05:39:13.729873+00:00",
+  "execution_mode": "DETERMINISTIC_HERMETIC_SIMULATOR",
+  "forensic_attribution": {
+    "counterfactual_reruns_executed": 0,
+    "flip_rate": 0.0,
+    "k_fn_count": 0,
+    "k_fp_count": 0,
+    "other_flips_count": 0,
+    "total_flips": 0
+  },
+  "model_execution_detail": {
+    "description": "Deterministic hermetic simulation mode (real prompt assembly, real ONNX+FTS5 retrieval, real context budgeting, real grounding validation; simulated reasoning output).",
+    "is_live_ollama_inference": false,
+    "model_digest": null,
+    "model_name": null,
+    "seed": 42,
+    "temperature": 0.0,
+    "tokenizer": "cl100k_base (CanonicalP4CapacityOracle/tiktoken)"
+  },
+  "per_scenario_results": [
+    {
+      "category_id": "API-BOLA-001",
+      "ground_truth_vulnerable": true,
+      "name": "saas_billing Invoice Details API (Target V-01)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-VULN-01",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.26,
+          "supporting_evidence_ids": [
+            "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+          ]
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.5,
+          "supporting_evidence_ids": [
+            "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+          ]
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-002-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.14,
+          "supporting_evidence_ids": [
+            "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+          ]
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-002-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 3.55,
+          "retrieved_chunk_count": 1,
+          "supporting_evidence_ids": [
+            "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+          ]
+        }
+      }
+    },
+    {
+      "category_id": "API-BOLA-001",
+      "ground_truth_vulnerable": false,
+      "name": "saas_billing Invoice Details API (Target P-01)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-PATCH-01",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.27,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.26,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.81,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.79,
+          "retrieved_chunk_count": 0,
+          "supporting_evidence_ids": []
+        }
+      }
+    },
+    {
+      "category_id": "API-BOLA-001",
+      "ground_truth_vulnerable": true,
+      "name": "saas_billing Subscription Details API (Target V-02)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-SAAS_BILLING-SUB-DETAILS-VULN-02",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.24,
+          "supporting_evidence_ids": [
+            "FACT-SAAS_BILLING-SUB-DETAILS-DOC"
+          ]
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": [
+            "FACT-SAAS_BILLING-SUB-DETAILS-DOC"
+          ]
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-002-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.01,
+          "supporting_evidence_ids": [
+            "FACT-SAAS_BILLING-SUB-DETAILS-DOC"
+          ]
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-002-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.02,
+          "retrieved_chunk_count": 1,
+          "supporting_evidence_ids": [
+            "FACT-SAAS_BILLING-SUB-DETAILS-DOC"
+          ]
+        }
+      }
+    },
+    {
+      "category_id": "API-BOLA-001",
+      "ground_truth_vulnerable": false,
+      "name": "saas_billing Subscription Details API (Target P-02)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-SAAS_BILLING-SUB-DETAILS-PATCH-02",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.26,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.81,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.84,
+          "retrieved_chunk_count": 0,
+          "supporting_evidence_ids": []
+        }
+      }
+    },
+    {
+      "category_id": "API-CROSS-TENANT-001",
+      "ground_truth_vulnerable": true,
+      "name": "saas_billing Invoice Summary API (Target V-03)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-SAAS_BILLING-INV-SUMMARY-VULN-03",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.26,
+          "supporting_evidence_ids": [
+            "FACT-SAAS_BILLING-INV-SUMMARY-DOC"
+          ]
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.24,
+          "supporting_evidence_ids": [
+            "FACT-SAAS_BILLING-INV-SUMMARY-DOC"
+          ]
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-002-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.07,
+          "supporting_evidence_ids": [
+            "FACT-SAAS_BILLING-INV-SUMMARY-DOC"
+          ]
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-002-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.02,
+          "retrieved_chunk_count": 1,
+          "supporting_evidence_ids": [
+            "FACT-SAAS_BILLING-INV-SUMMARY-DOC"
+          ]
+        }
+      }
+    },
+    {
+      "category_id": "API-CROSS-TENANT-001",
+      "ground_truth_vulnerable": false,
+      "name": "saas_billing Invoice Summary API (Target P-03)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-SAAS_BILLING-INV-SUMMARY-PATCH-03",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.26,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.77,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.76,
+          "retrieved_chunk_count": 0,
+          "supporting_evidence_ids": []
+        }
+      }
+    },
+    {
+      "category_id": "API-CROSS-TENANT-001",
+      "ground_truth_vulnerable": true,
+      "name": "saas_billing Subscription Summary API (Target V-04)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-SAAS_BILLING-SUB-SUMMARY-VULN-04",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.27,
+          "supporting_evidence_ids": [
+            "FACT-SAAS_BILLING-SUB-SUMMARY-DOC"
+          ]
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.27,
+          "supporting_evidence_ids": [
+            "FACT-SAAS_BILLING-SUB-SUMMARY-DOC"
+          ]
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-002-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.08,
+          "supporting_evidence_ids": [
+            "FACT-SAAS_BILLING-SUB-SUMMARY-DOC"
+          ]
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-002-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.26,
+          "retrieved_chunk_count": 1,
+          "supporting_evidence_ids": [
+            "FACT-SAAS_BILLING-SUB-SUMMARY-DOC"
+          ]
+        }
+      }
+    },
+    {
+      "category_id": "API-CROSS-TENANT-001",
+      "ground_truth_vulnerable": false,
+      "name": "saas_billing Subscription Summary API (Target P-04)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-SAAS_BILLING-SUB-SUMMARY-PATCH-04",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.32,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.24,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 2.05,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.87,
+          "retrieved_chunk_count": 0,
+          "supporting_evidence_ids": []
+        }
+      }
+    },
+    {
+      "category_id": "API-MULTI-STEP-AUTH-001",
+      "ground_truth_vulnerable": true,
+      "name": "saas_billing Invoice Workflow API (Target V-05)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-SAAS_BILLING-INV-WORKFLOW-VULN-05",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.24,
+          "supporting_evidence_ids": [
+            "FACT-SAAS_BILLING-INV-WORKFLOW-DOC"
+          ]
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": [
+            "FACT-SAAS_BILLING-INV-WORKFLOW-DOC"
+          ]
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-003-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 1.97,
+          "supporting_evidence_ids": [
+            "FACT-SAAS_BILLING-INV-WORKFLOW-DOC"
+          ]
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-003-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.19,
+          "retrieved_chunk_count": 1,
+          "supporting_evidence_ids": [
+            "FACT-SAAS_BILLING-INV-WORKFLOW-DOC"
+          ]
+        }
+      }
+    },
+    {
+      "category_id": "API-MULTI-STEP-AUTH-001",
+      "ground_truth_vulnerable": false,
+      "name": "saas_billing Invoice Workflow API (Target P-05)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-SAAS_BILLING-INV-WORKFLOW-PATCH-05",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.26,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.26,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.72,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.85,
+          "retrieved_chunk_count": 0,
+          "supporting_evidence_ids": []
+        }
+      }
+    },
+    {
+      "category_id": "API-MUTATION-001",
+      "ground_truth_vulnerable": true,
+      "name": "saas_billing Subscription Plan API (Target V-06)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-SAAS_BILLING-SUB-PLAN-VULN-06",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": [
+            "FACT-SAAS_BILLING-SUB-PLAN-DOC"
+          ]
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": [
+            "FACT-SAAS_BILLING-SUB-PLAN-DOC"
+          ]
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-003-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.24,
+          "supporting_evidence_ids": [
+            "FACT-SAAS_BILLING-SUB-PLAN-DOC"
+          ]
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-003-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 1.99,
+          "retrieved_chunk_count": 1,
+          "supporting_evidence_ids": [
+            "FACT-SAAS_BILLING-SUB-PLAN-DOC"
+          ]
+        }
+      }
+    },
+    {
+      "category_id": "API-MUTATION-001",
+      "ground_truth_vulnerable": false,
+      "name": "saas_billing Subscription Plan API (Target P-06)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-SAAS_BILLING-SUB-PLAN-PATCH-06",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.28,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.66,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.73,
+          "retrieved_chunk_count": 0,
+          "supporting_evidence_ids": []
+        }
+      }
+    },
+    {
+      "category_id": "API-AUTH-NONE",
+      "ground_truth_vulnerable": false,
+      "name": "saas_billing Catalog Discovery",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-SAAS_BILLING-NEG-01",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.29,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.72,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.98,
+          "retrieved_chunk_count": 0,
+          "supporting_evidence_ids": []
+        }
+      }
+    },
+    {
+      "category_id": "API-AUTH-NONE",
+      "ground_truth_vulnerable": false,
+      "name": "saas_billing Public Pricing Status",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-SAAS_BILLING-NEG-02",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.24,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.76,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.7,
+          "retrieved_chunk_count": 0,
+          "supporting_evidence_ids": []
+        }
+      }
+    },
+    {
+      "category_id": "API-STATE-001",
+      "ground_truth_vulnerable": true,
+      "name": "ecommerce_orders Order Refund API (Target V-01)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-VULN-01",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": [
+            "FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC"
+          ]
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.26,
+          "supporting_evidence_ids": [
+            "FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC"
+          ]
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-003-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.02,
+          "supporting_evidence_ids": [
+            "FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC"
+          ]
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-003-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.16,
+          "retrieved_chunk_count": 1,
+          "supporting_evidence_ids": [
+            "FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC"
+          ]
+        }
+      }
+    },
+    {
+      "category_id": "API-STATE-001",
+      "ground_truth_vulnerable": false,
+      "name": "ecommerce_orders Order Refund API (Target P-01)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-PATCH-01",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.26,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.28,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.71,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.91,
+          "retrieved_chunk_count": 0,
+          "supporting_evidence_ids": []
+        }
+      }
+    },
+    {
+      "category_id": "API-STATE-001",
+      "ground_truth_vulnerable": true,
+      "name": "ecommerce_orders Order Shipping API (Target V-02)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-SHIP-VULN-02",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.24,
+          "supporting_evidence_ids": [
+            "FACT-ECOMMERCE_ORDERS-ORD-SHIP-DOC"
+          ]
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": [
+            "FACT-ECOMMERCE_ORDERS-ORD-SHIP-DOC"
+          ]
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-003-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.22,
+          "supporting_evidence_ids": [
+            "FACT-ECOMMERCE_ORDERS-ORD-SHIP-DOC"
+          ]
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-003-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.03,
+          "retrieved_chunk_count": 1,
+          "supporting_evidence_ids": [
+            "FACT-ECOMMERCE_ORDERS-ORD-SHIP-DOC"
+          ]
+        }
+      }
+    },
+    {
+      "category_id": "API-STATE-001",
+      "ground_truth_vulnerable": false,
+      "name": "ecommerce_orders Order Shipping API (Target P-02)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-SHIP-PATCH-02",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.24,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.26,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.7,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.73,
+          "retrieved_chunk_count": 0,
+          "supporting_evidence_ids": []
+        }
+      }
+    },
+    {
+      "category_id": "API-STATE-001",
+      "ground_truth_vulnerable": true,
+      "name": "ecommerce_orders Order Payment API (Target V-03)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-PAY-VULN-03",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.26,
+          "supporting_evidence_ids": [
+            "FACT-ECOMMERCE_ORDERS-ORD-PAY-DOC"
+          ]
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.27,
+          "supporting_evidence_ids": [
+            "FACT-ECOMMERCE_ORDERS-ORD-PAY-DOC"
+          ]
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-003-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.08,
+          "supporting_evidence_ids": [
+            "FACT-ECOMMERCE_ORDERS-ORD-PAY-DOC"
+          ]
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-003-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.1,
+          "retrieved_chunk_count": 1,
+          "supporting_evidence_ids": [
+            "FACT-ECOMMERCE_ORDERS-ORD-PAY-DOC"
+          ]
+        }
+      }
+    },
+    {
+      "category_id": "API-STATE-001",
+      "ground_truth_vulnerable": false,
+      "name": "ecommerce_orders Order Payment API (Target P-03)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-PAY-PATCH-03",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.24,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.26,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.64,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.64,
+          "retrieved_chunk_count": 0,
+          "supporting_evidence_ids": []
+        }
+      }
+    },
+    {
+      "category_id": "API-LIFECYCLE-001",
+      "ground_truth_vulnerable": true,
+      "name": "ecommerce_orders Cancelled Order Refund API (Target V-04)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-VULN-04",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.24,
+          "supporting_evidence_ids": [
+            "FACT-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-DOC"
+          ]
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.27,
+          "supporting_evidence_ids": [
+            "FACT-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-DOC"
+          ]
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-003-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.0,
+          "supporting_evidence_ids": [
+            "FACT-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-DOC"
+          ]
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-003-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.15,
+          "retrieved_chunk_count": 1,
+          "supporting_evidence_ids": [
+            "FACT-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-DOC"
+          ]
+        }
+      }
+    },
+    {
+      "category_id": "API-LIFECYCLE-001",
+      "ground_truth_vulnerable": false,
+      "name": "ecommerce_orders Cancelled Order Refund API (Target P-04)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-PATCH-04",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.24,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.27,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.69,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.64,
+          "retrieved_chunk_count": 0,
+          "supporting_evidence_ids": []
+        }
+      }
+    },
+    {
+      "category_id": "API-LIFECYCLE-001",
+      "ground_truth_vulnerable": true,
+      "name": "ecommerce_orders Unpaid Order Dispatch API (Target V-05)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-DISPATCH-VULN-05",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.24,
+          "supporting_evidence_ids": [
+            "FACT-ECOMMERCE_ORDERS-ORD-DISPATCH-DOC"
+          ]
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": [
+            "FACT-ECOMMERCE_ORDERS-ORD-DISPATCH-DOC"
+          ]
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-003-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.0,
+          "supporting_evidence_ids": [
+            "FACT-ECOMMERCE_ORDERS-ORD-DISPATCH-DOC"
+          ]
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-003-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.03,
+          "retrieved_chunk_count": 1,
+          "supporting_evidence_ids": [
+            "FACT-ECOMMERCE_ORDERS-ORD-DISPATCH-DOC"
+          ]
+        }
+      }
+    },
+    {
+      "category_id": "API-LIFECYCLE-001",
+      "ground_truth_vulnerable": false,
+      "name": "ecommerce_orders Unpaid Order Dispatch API (Target P-05)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-DISPATCH-PATCH-05",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.26,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.7,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.78,
+          "retrieved_chunk_count": 0,
+          "supporting_evidence_ids": []
+        }
+      }
+    },
+    {
+      "category_id": "API-STATE-001",
+      "ground_truth_vulnerable": true,
+      "name": "ecommerce_orders Post-Delivery Return API (Target V-06)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-RETURN-VULN-06",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.24,
+          "supporting_evidence_ids": [
+            "FACT-ECOMMERCE_ORDERS-ORD-RETURN-DOC"
+          ]
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.26,
+          "supporting_evidence_ids": [
+            "FACT-ECOMMERCE_ORDERS-ORD-RETURN-DOC"
+          ]
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-003-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.13,
+          "supporting_evidence_ids": [
+            "FACT-ECOMMERCE_ORDERS-ORD-RETURN-DOC"
+          ]
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-003-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.02,
+          "retrieved_chunk_count": 1,
+          "supporting_evidence_ids": [
+            "FACT-ECOMMERCE_ORDERS-ORD-RETURN-DOC"
+          ]
+        }
+      }
+    },
+    {
+      "category_id": "API-STATE-001",
+      "ground_truth_vulnerable": false,
+      "name": "ecommerce_orders Post-Delivery Return API (Target P-06)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-RETURN-PATCH-06",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.24,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.27,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.71,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.7,
+          "retrieved_chunk_count": 0,
+          "supporting_evidence_ids": []
+        }
+      }
+    },
+    {
+      "category_id": "API-AUTH-NONE",
+      "ground_truth_vulnerable": false,
+      "name": "ecommerce_orders Catalog Discovery",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-NEG-01",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.71,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.69,
+          "retrieved_chunk_count": 0,
+          "supporting_evidence_ids": []
+        }
+      }
+    },
+    {
+      "category_id": "API-AUTH-NONE",
+      "ground_truth_vulnerable": false,
+      "name": "ecommerce_orders Public Pricing Status",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-NEG-02",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.24,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.24,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.69,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.68,
+          "retrieved_chunk_count": 0,
+          "supporting_evidence_ids": []
+        }
+      }
+    },
+    {
+      "category_id": "API-BFLA-001",
+      "ground_truth_vulnerable": true,
+      "name": "identity_provider User Roles API (Target V-01)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-ROLES-VULN-01",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.29,
+          "supporting_evidence_ids": [
+            "FACT-IDENTITY_PROVIDER-USER-ROLES-DOC"
+          ]
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.26,
+          "supporting_evidence_ids": [
+            "FACT-IDENTITY_PROVIDER-USER-ROLES-DOC"
+          ]
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-003-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.03,
+          "supporting_evidence_ids": [
+            "FACT-IDENTITY_PROVIDER-USER-ROLES-DOC"
+          ]
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-003-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.14,
+          "retrieved_chunk_count": 1,
+          "supporting_evidence_ids": [
+            "FACT-IDENTITY_PROVIDER-USER-ROLES-DOC"
+          ]
+        }
+      }
+    },
+    {
+      "category_id": "API-BFLA-001",
+      "ground_truth_vulnerable": false,
+      "name": "identity_provider User Roles API (Target P-01)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-ROLES-PATCH-01",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 2.0,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.8,
+          "retrieved_chunk_count": 0,
+          "supporting_evidence_ids": []
+        }
+      }
+    },
+    {
+      "category_id": "API-BFLA-001",
+      "ground_truth_vulnerable": true,
+      "name": "identity_provider User MFA API (Target V-02)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-MFA-VULN-02",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": [
+            "FACT-IDENTITY_PROVIDER-USER-MFA-DOC"
+          ]
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.29,
+          "supporting_evidence_ids": [
+            "FACT-IDENTITY_PROVIDER-USER-MFA-DOC"
+          ]
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-003-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.12,
+          "supporting_evidence_ids": [
+            "FACT-IDENTITY_PROVIDER-USER-MFA-DOC"
+          ]
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-003-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.18,
+          "retrieved_chunk_count": 1,
+          "supporting_evidence_ids": [
+            "FACT-IDENTITY_PROVIDER-USER-MFA-DOC"
+          ]
+        }
+      }
+    },
+    {
+      "category_id": "API-BFLA-001",
+      "ground_truth_vulnerable": false,
+      "name": "identity_provider User MFA API (Target P-02)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-MFA-PATCH-02",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.28,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.79,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.97,
+          "retrieved_chunk_count": 0,
+          "supporting_evidence_ids": []
+        }
+      }
+    },
+    {
+      "category_id": "API-ROLE-BOUNDARY-001",
+      "ground_truth_vulnerable": true,
+      "name": "identity_provider Cross-Tenant Role API (Target V-03)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-TENANT-ROLE-VULN-03",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.27,
+          "supporting_evidence_ids": [
+            "FACT-IDENTITY_PROVIDER-USER-TENANT-ROLE-DOC"
+          ]
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.26,
+          "supporting_evidence_ids": [
+            "FACT-IDENTITY_PROVIDER-USER-TENANT-ROLE-DOC"
+          ]
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-003-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.14,
+          "supporting_evidence_ids": [
+            "FACT-IDENTITY_PROVIDER-USER-TENANT-ROLE-DOC"
+          ]
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-003-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.04,
+          "retrieved_chunk_count": 1,
+          "supporting_evidence_ids": [
+            "FACT-IDENTITY_PROVIDER-USER-TENANT-ROLE-DOC"
+          ]
+        }
+      }
+    },
+    {
+      "category_id": "API-ROLE-BOUNDARY-001",
+      "ground_truth_vulnerable": false,
+      "name": "identity_provider Cross-Tenant Role API (Target P-03)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-TENANT-ROLE-PATCH-03",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.24,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.81,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.81,
+          "retrieved_chunk_count": 0,
+          "supporting_evidence_ids": []
+        }
+      }
+    },
+    {
+      "category_id": "API-ROLE-BOUNDARY-001",
+      "ground_truth_vulnerable": true,
+      "name": "identity_provider Cross-Tenant MFA API (Target V-04)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-TENANT-MFA-VULN-04",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": [
+            "FACT-IDENTITY_PROVIDER-USER-TENANT-MFA-DOC"
+          ]
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": [
+            "FACT-IDENTITY_PROVIDER-USER-TENANT-MFA-DOC"
+          ]
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-003-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.05,
+          "supporting_evidence_ids": [
+            "FACT-IDENTITY_PROVIDER-USER-TENANT-MFA-DOC"
+          ]
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-003-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.19,
+          "retrieved_chunk_count": 1,
+          "supporting_evidence_ids": [
+            "FACT-IDENTITY_PROVIDER-USER-TENANT-MFA-DOC"
+          ]
+        }
+      }
+    },
+    {
+      "category_id": "API-ROLE-BOUNDARY-001",
+      "ground_truth_vulnerable": false,
+      "name": "identity_provider Cross-Tenant MFA API (Target P-04)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-TENANT-MFA-PATCH-04",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.88,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.79,
+          "retrieved_chunk_count": 0,
+          "supporting_evidence_ids": []
+        }
+      }
+    },
+    {
+      "category_id": "API-MUTATION-001",
+      "ground_truth_vulnerable": true,
+      "name": "identity_provider Admin Role API (Target V-05)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-ADMIN-ROLE-VULN-05",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": [
+            "FACT-IDENTITY_PROVIDER-USER-ADMIN-ROLE-DOC"
+          ]
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": [
+            "FACT-IDENTITY_PROVIDER-USER-ADMIN-ROLE-DOC"
+          ]
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-002-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.05,
+          "supporting_evidence_ids": [
+            "FACT-IDENTITY_PROVIDER-USER-ADMIN-ROLE-DOC"
+          ]
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-002-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.05,
+          "retrieved_chunk_count": 1,
+          "supporting_evidence_ids": [
+            "FACT-IDENTITY_PROVIDER-USER-ADMIN-ROLE-DOC"
+          ]
+        }
+      }
+    },
+    {
+      "category_id": "API-MUTATION-001",
+      "ground_truth_vulnerable": false,
+      "name": "identity_provider Admin Role API (Target P-05)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-ADMIN-ROLE-PATCH-05",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.29,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.77,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.87,
+          "retrieved_chunk_count": 0,
+          "supporting_evidence_ids": []
+        }
+      }
+    },
+    {
+      "category_id": "API-MUTATION-001",
+      "ground_truth_vulnerable": true,
+      "name": "identity_provider Authority Boundary API (Target V-06)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-AUTH-MUTATE-VULN-06",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": [
+            "FACT-IDENTITY_PROVIDER-USER-AUTH-MUTATE-DOC"
+          ]
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": [
+            "FACT-IDENTITY_PROVIDER-USER-AUTH-MUTATE-DOC"
+          ]
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-002-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.26,
+          "supporting_evidence_ids": [
+            "FACT-IDENTITY_PROVIDER-USER-AUTH-MUTATE-DOC"
+          ]
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-002-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.29,
+          "retrieved_chunk_count": 1,
+          "supporting_evidence_ids": [
+            "FACT-IDENTITY_PROVIDER-USER-AUTH-MUTATE-DOC"
+          ]
+        }
+      }
+    },
+    {
+      "category_id": "API-MUTATION-001",
+      "ground_truth_vulnerable": false,
+      "name": "identity_provider Authority Boundary API (Target P-06)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-AUTH-MUTATE-PATCH-06",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.27,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.73,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.81,
+          "retrieved_chunk_count": 0,
+          "supporting_evidence_ids": []
+        }
+      }
+    },
+    {
+      "category_id": "API-AUTH-NONE",
+      "ground_truth_vulnerable": false,
+      "name": "identity_provider Catalog Discovery",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-IDENTITY_PROVIDER-NEG-01",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.26,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.72,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.82,
+          "retrieved_chunk_count": 0,
+          "supporting_evidence_ids": []
+        }
+      }
+    },
+    {
+      "category_id": "API-AUTH-NONE",
+      "ground_truth_vulnerable": false,
+      "name": "identity_provider Public Pricing Status",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-IDENTITY_PROVIDER-NEG-02",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.24,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.72,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.67,
+          "retrieved_chunk_count": 0,
+          "supporting_evidence_ids": []
+        }
+      }
+    },
+    {
+      "category_id": "API-BOLA-001",
+      "ground_truth_vulnerable": true,
+      "name": "document_collaboration Document Export API (Target V-01)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-EXPORT-VULN-01",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": [
+            "FACT-DOCUMENT_COLLABORATION-DOC-EXPORT-DOC"
+          ]
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.26,
+          "supporting_evidence_ids": [
+            "FACT-DOCUMENT_COLLABORATION-DOC-EXPORT-DOC"
+          ]
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-002-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.06,
+          "supporting_evidence_ids": [
+            "FACT-DOCUMENT_COLLABORATION-DOC-EXPORT-DOC"
+          ]
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-002-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.12,
+          "retrieved_chunk_count": 1,
+          "supporting_evidence_ids": [
+            "FACT-DOCUMENT_COLLABORATION-DOC-EXPORT-DOC"
+          ]
+        }
+      }
+    },
+    {
+      "category_id": "API-BOLA-001",
+      "ground_truth_vulnerable": false,
+      "name": "document_collaboration Document Export API (Target P-01)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-EXPORT-PATCH-01",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.88,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.9,
+          "retrieved_chunk_count": 0,
+          "supporting_evidence_ids": []
+        }
+      }
+    },
+    {
+      "category_id": "API-CROSS-TENANT-001",
+      "ground_truth_vulnerable": true,
+      "name": "document_collaboration Org Document Export API (Target V-02)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-ORG-EXPORT-VULN-02",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.28,
+          "supporting_evidence_ids": [
+            "FACT-DOCUMENT_COLLABORATION-DOC-ORG-EXPORT-DOC"
+          ]
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.27,
+          "supporting_evidence_ids": [
+            "FACT-DOCUMENT_COLLABORATION-DOC-ORG-EXPORT-DOC"
+          ]
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-002-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.22,
+          "supporting_evidence_ids": [
+            "FACT-DOCUMENT_COLLABORATION-DOC-ORG-EXPORT-DOC"
+          ]
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-002-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.12,
+          "retrieved_chunk_count": 1,
+          "supporting_evidence_ids": [
+            "FACT-DOCUMENT_COLLABORATION-DOC-ORG-EXPORT-DOC"
+          ]
+        }
+      }
+    },
+    {
+      "category_id": "API-CROSS-TENANT-001",
+      "ground_truth_vulnerable": false,
+      "name": "document_collaboration Org Document Export API (Target P-02)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-ORG-EXPORT-PATCH-02",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.26,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.87,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.88,
+          "retrieved_chunk_count": 0,
+          "supporting_evidence_ids": []
+        }
+      }
+    },
+    {
+      "category_id": "API-STATE-001",
+      "ground_truth_vulnerable": true,
+      "name": "document_collaboration Document Publish API (Target V-03)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-PUBLISH-VULN-03",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.26,
+          "supporting_evidence_ids": [
+            "FACT-DOCUMENT_COLLABORATION-DOC-PUBLISH-DOC"
+          ]
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": [
+            "FACT-DOCUMENT_COLLABORATION-DOC-PUBLISH-DOC"
+          ]
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-003-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.08,
+          "supporting_evidence_ids": [
+            "FACT-DOCUMENT_COLLABORATION-DOC-PUBLISH-DOC"
+          ]
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-003-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.09,
+          "retrieved_chunk_count": 1,
+          "supporting_evidence_ids": [
+            "FACT-DOCUMENT_COLLABORATION-DOC-PUBLISH-DOC"
+          ]
+        }
+      }
+    },
+    {
+      "category_id": "API-STATE-001",
+      "ground_truth_vulnerable": false,
+      "name": "document_collaboration Document Publish API (Target P-03)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-PUBLISH-PATCH-03",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.27,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.27,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.84,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.77,
+          "retrieved_chunk_count": 0,
+          "supporting_evidence_ids": []
+        }
+      }
+    },
+    {
+      "category_id": "API-STATE-001",
+      "ground_truth_vulnerable": true,
+      "name": "document_collaboration Document Release API (Target V-04)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-RELEASE-VULN-04",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.31,
+          "supporting_evidence_ids": [
+            "FACT-DOCUMENT_COLLABORATION-DOC-RELEASE-DOC"
+          ]
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.3,
+          "supporting_evidence_ids": [
+            "FACT-DOCUMENT_COLLABORATION-DOC-RELEASE-DOC"
+          ]
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-003-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.8,
+          "supporting_evidence_ids": [
+            "FACT-DOCUMENT_COLLABORATION-DOC-RELEASE-DOC"
+          ]
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-003-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.55,
+          "retrieved_chunk_count": 1,
+          "supporting_evidence_ids": [
+            "FACT-DOCUMENT_COLLABORATION-DOC-RELEASE-DOC"
+          ]
+        }
+      }
+    },
+    {
+      "category_id": "API-STATE-001",
+      "ground_truth_vulnerable": false,
+      "name": "document_collaboration Document Release API (Target P-04)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-RELEASE-PATCH-04",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.33,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.35,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.97,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 2.26,
+          "retrieved_chunk_count": 0,
+          "supporting_evidence_ids": []
+        }
+      }
+    },
+    {
+      "category_id": "API-MULTI-STEP-AUTH-001",
+      "ground_truth_vulnerable": true,
+      "name": "document_collaboration Document Classification API (Target V-05)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-CLASSIFY-VULN-05",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.33,
+          "supporting_evidence_ids": [
+            "FACT-DOCUMENT_COLLABORATION-DOC-CLASSIFY-DOC"
+          ]
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.31,
+          "supporting_evidence_ids": [
+            "FACT-DOCUMENT_COLLABORATION-DOC-CLASSIFY-DOC"
+          ]
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-003-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.8,
+          "supporting_evidence_ids": [
+            "FACT-DOCUMENT_COLLABORATION-DOC-CLASSIFY-DOC"
+          ]
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-003-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.89,
+          "retrieved_chunk_count": 1,
+          "supporting_evidence_ids": [
+            "FACT-DOCUMENT_COLLABORATION-DOC-CLASSIFY-DOC"
+          ]
+        }
+      }
+    },
+    {
+      "category_id": "API-MULTI-STEP-AUTH-001",
+      "ground_truth_vulnerable": false,
+      "name": "document_collaboration Document Classification API (Target P-05)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-CLASSIFY-PATCH-05",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.27,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.46,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.97,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.99,
+          "retrieved_chunk_count": 0,
+          "supporting_evidence_ids": []
+        }
+      }
+    },
+    {
+      "category_id": "API-MULTI-STEP-AUTH-001",
+      "ground_truth_vulnerable": true,
+      "name": "document_collaboration Workspace Access API (Target V-06)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-WORKSPACE-VULN-06",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": [
+            "FACT-DOCUMENT_COLLABORATION-DOC-WORKSPACE-DOC"
+          ]
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": [
+            "FACT-DOCUMENT_COLLABORATION-DOC-WORKSPACE-DOC"
+          ]
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-003-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.18,
+          "supporting_evidence_ids": [
+            "FACT-DOCUMENT_COLLABORATION-DOC-WORKSPACE-DOC"
+          ]
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-003-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.1,
+          "retrieved_chunk_count": 1,
+          "supporting_evidence_ids": [
+            "FACT-DOCUMENT_COLLABORATION-DOC-WORKSPACE-DOC"
+          ]
+        }
+      }
+    },
+    {
+      "category_id": "API-MULTI-STEP-AUTH-001",
+      "ground_truth_vulnerable": false,
+      "name": "document_collaboration Workspace Access API (Target P-06)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-WORKSPACE-PATCH-06",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.26,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.3,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.89,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 2.0,
+          "retrieved_chunk_count": 0,
+          "supporting_evidence_ids": []
+        }
+      }
+    },
+    {
+      "category_id": "API-AUTH-NONE",
+      "ground_truth_vulnerable": false,
+      "name": "document_collaboration Catalog Discovery",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-DOCUMENT_COLLABORATION-NEG-01",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.76,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.72,
+          "retrieved_chunk_count": 0,
+          "supporting_evidence_ids": []
+        }
+      }
+    },
+    {
+      "category_id": "API-AUTH-NONE",
+      "ground_truth_vulnerable": false,
+      "name": "document_collaboration Public Pricing Status",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-DOCUMENT_COLLABORATION-NEG-02",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.24,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.71,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.72,
+          "retrieved_chunk_count": 0,
+          "supporting_evidence_ids": []
+        }
+      }
+    },
+    {
+      "category_id": "API-BOLA-001",
+      "ground_truth_vulnerable": true,
+      "name": "healthcare_portal Patient Record API (Target V-01)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-HEALTHCARE_PORTAL-PATIENT-REC-VULN-01",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": [
+            "FACT-HEALTHCARE_PORTAL-PATIENT-REC-DOC"
+          ]
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": [
+            "FACT-HEALTHCARE_PORTAL-PATIENT-REC-DOC"
+          ]
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-002-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.06,
+          "supporting_evidence_ids": [
+            "FACT-HEALTHCARE_PORTAL-PATIENT-REC-DOC"
+          ]
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-002-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.09,
+          "retrieved_chunk_count": 1,
+          "supporting_evidence_ids": [
+            "FACT-HEALTHCARE_PORTAL-PATIENT-REC-DOC"
+          ]
+        }
+      }
+    },
+    {
+      "category_id": "API-BOLA-001",
+      "ground_truth_vulnerable": false,
+      "name": "healthcare_portal Patient Record API (Target P-01)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-HEALTHCARE_PORTAL-PATIENT-REC-PATCH-01",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.24,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.84,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.81,
+          "retrieved_chunk_count": 0,
+          "supporting_evidence_ids": []
+        }
+      }
+    },
+    {
+      "category_id": "API-BOLA-001",
+      "ground_truth_vulnerable": true,
+      "name": "healthcare_portal Prescription Access API (Target V-02)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-HEALTHCARE_PORTAL-PATIENT-RX-VULN-02",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": [
+            "FACT-HEALTHCARE_PORTAL-PATIENT-RX-DOC"
+          ]
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": [
+            "FACT-HEALTHCARE_PORTAL-PATIENT-RX-DOC"
+          ]
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-002-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 1.99,
+          "supporting_evidence_ids": [
+            "FACT-HEALTHCARE_PORTAL-PATIENT-RX-DOC"
+          ]
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-002-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.02,
+          "retrieved_chunk_count": 1,
+          "supporting_evidence_ids": [
+            "FACT-HEALTHCARE_PORTAL-PATIENT-RX-DOC"
+          ]
+        }
+      }
+    },
+    {
+      "category_id": "API-BOLA-001",
+      "ground_truth_vulnerable": false,
+      "name": "healthcare_portal Prescription Access API (Target P-02)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-HEALTHCARE_PORTAL-PATIENT-RX-PATCH-02",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.24,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.78,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.85,
+          "retrieved_chunk_count": 0,
+          "supporting_evidence_ids": []
+        }
+      }
+    },
+    {
+      "category_id": "API-LIFECYCLE-001",
+      "ground_truth_vulnerable": true,
+      "name": "healthcare_portal Archived Record API (Target V-03)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-HEALTHCARE_PORTAL-RECORD-ARCHIVE-VULN-03",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.29,
+          "supporting_evidence_ids": [
+            "FACT-HEALTHCARE_PORTAL-RECORD-ARCHIVE-DOC"
+          ]
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": [
+            "FACT-HEALTHCARE_PORTAL-RECORD-ARCHIVE-DOC"
+          ]
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-002-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.08,
+          "supporting_evidence_ids": [
+            "FACT-HEALTHCARE_PORTAL-RECORD-ARCHIVE-DOC"
+          ]
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-002-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.01,
+          "retrieved_chunk_count": 1,
+          "supporting_evidence_ids": [
+            "FACT-HEALTHCARE_PORTAL-RECORD-ARCHIVE-DOC"
+          ]
+        }
+      }
+    },
+    {
+      "category_id": "API-LIFECYCLE-001",
+      "ground_truth_vulnerable": false,
+      "name": "healthcare_portal Archived Record API (Target P-03)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-HEALTHCARE_PORTAL-RECORD-ARCHIVE-PATCH-03",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.24,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.65,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.67,
+          "retrieved_chunk_count": 0,
+          "supporting_evidence_ids": []
+        }
+      }
+    },
+    {
+      "category_id": "API-CROSS-TENANT-001",
+      "ground_truth_vulnerable": true,
+      "name": "healthcare_portal Clinic Record API (Target V-04)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-HEALTHCARE_PORTAL-CLINIC-REC-VULN-04",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": [
+            "FACT-HEALTHCARE_PORTAL-CLINIC-REC-DOC"
+          ]
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.29,
+          "supporting_evidence_ids": [
+            "FACT-HEALTHCARE_PORTAL-CLINIC-REC-DOC"
+          ]
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-002-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.04,
+          "supporting_evidence_ids": [
+            "FACT-HEALTHCARE_PORTAL-CLINIC-REC-DOC"
+          ]
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-002-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.08,
+          "retrieved_chunk_count": 1,
+          "supporting_evidence_ids": [
+            "FACT-HEALTHCARE_PORTAL-CLINIC-REC-DOC"
+          ]
+        }
+      }
+    },
+    {
+      "category_id": "API-CROSS-TENANT-001",
+      "ground_truth_vulnerable": false,
+      "name": "healthcare_portal Clinic Record API (Target P-04)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-HEALTHCARE_PORTAL-CLINIC-REC-PATCH-04",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 2.02,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.8,
+          "retrieved_chunk_count": 0,
+          "supporting_evidence_ids": []
+        }
+      }
+    },
+    {
+      "category_id": "API-ROLE-BOUNDARY-001",
+      "ground_truth_vulnerable": true,
+      "name": "healthcare_portal Staff Prescription API (Target V-05)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-HEALTHCARE_PORTAL-STAFF-RX-VULN-05",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": [
+            "FACT-HEALTHCARE_PORTAL-STAFF-RX-DOC"
+          ]
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.28,
+          "supporting_evidence_ids": [
+            "FACT-HEALTHCARE_PORTAL-STAFF-RX-DOC"
+          ]
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-003-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 1.98,
+          "supporting_evidence_ids": [
+            "FACT-HEALTHCARE_PORTAL-STAFF-RX-DOC"
+          ]
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-003-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.07,
+          "retrieved_chunk_count": 1,
+          "supporting_evidence_ids": [
+            "FACT-HEALTHCARE_PORTAL-STAFF-RX-DOC"
+          ]
+        }
+      }
+    },
+    {
+      "category_id": "API-ROLE-BOUNDARY-001",
+      "ground_truth_vulnerable": false,
+      "name": "healthcare_portal Staff Prescription API (Target P-05)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-HEALTHCARE_PORTAL-STAFF-RX-PATCH-05",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.26,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 2.05,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.81,
+          "retrieved_chunk_count": 0,
+          "supporting_evidence_ids": []
+        }
+      }
+    },
+    {
+      "category_id": "API-LIFECYCLE-001",
+      "ground_truth_vulnerable": true,
+      "name": "healthcare_portal Purged Record API (Target V-06)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-HEALTHCARE_PORTAL-RECORD-PURGE-VULN-06",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.24,
+          "supporting_evidence_ids": [
+            "FACT-HEALTHCARE_PORTAL-RECORD-PURGE-DOC"
+          ]
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.26,
+          "supporting_evidence_ids": [
+            "FACT-HEALTHCARE_PORTAL-RECORD-PURGE-DOC"
+          ]
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-002-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.11,
+          "supporting_evidence_ids": [
+            "FACT-HEALTHCARE_PORTAL-RECORD-PURGE-DOC"
+          ]
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-002-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.0,
+          "retrieved_chunk_count": 1,
+          "supporting_evidence_ids": [
+            "FACT-HEALTHCARE_PORTAL-RECORD-PURGE-DOC"
+          ]
+        }
+      }
+    },
+    {
+      "category_id": "API-LIFECYCLE-001",
+      "ground_truth_vulnerable": false,
+      "name": "healthcare_portal Purged Record API (Target P-06)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-HEALTHCARE_PORTAL-RECORD-PURGE-PATCH-06",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.69,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.73,
+          "retrieved_chunk_count": 0,
+          "supporting_evidence_ids": []
+        }
+      }
+    },
+    {
+      "category_id": "API-AUTH-NONE",
+      "ground_truth_vulnerable": false,
+      "name": "healthcare_portal Catalog Discovery",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-HEALTHCARE_PORTAL-NEG-01",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.73,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.74,
+          "retrieved_chunk_count": 0,
+          "supporting_evidence_ids": []
+        }
+      }
+    },
+    {
+      "category_id": "API-AUTH-NONE",
+      "ground_truth_vulnerable": false,
+      "name": "healthcare_portal Public Pricing Status",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-HEALTHCARE_PORTAL-NEG-02",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.24,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.24,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.67,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.7,
+          "retrieved_chunk_count": 0,
+          "supporting_evidence_ids": []
+        }
+      }
+    },
+    {
+      "category_id": "API-DEVICE-BOLA-001",
+      "ground_truth_vulnerable": true,
+      "name": "iot_fleet_mgmt Device Command API (Target V-01)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-IOT_FLEET_MGMT-DEVICE-CMD-VULN-01",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.28,
+          "supporting_evidence_ids": [
+            "FACT-IOT_FLEET_MGMT-DEVICE-CMD-DOC"
+          ]
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": [
+            "FACT-IOT_FLEET_MGMT-DEVICE-CMD-DOC"
+          ]
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-002-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.02,
+          "supporting_evidence_ids": [
+            "FACT-IOT_FLEET_MGMT-DEVICE-CMD-DOC"
+          ]
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-002-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.13,
+          "retrieved_chunk_count": 1,
+          "supporting_evidence_ids": [
+            "FACT-IOT_FLEET_MGMT-DEVICE-CMD-DOC"
+          ]
+        }
+      }
+    },
+    {
+      "category_id": "API-DEVICE-BOLA-001",
+      "ground_truth_vulnerable": false,
+      "name": "iot_fleet_mgmt Device Command API (Target P-01)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-IOT_FLEET_MGMT-DEVICE-CMD-PATCH-01",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.24,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.24,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.91,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.79,
+          "retrieved_chunk_count": 0,
+          "supporting_evidence_ids": []
+        }
+      }
+    },
+    {
+      "category_id": "API-DEVICE-BOLA-001",
+      "ground_truth_vulnerable": true,
+      "name": "iot_fleet_mgmt Device Telemetry API (Target V-02)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-IOT_FLEET_MGMT-DEVICE-TEL-VULN-02",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.24,
+          "supporting_evidence_ids": [
+            "FACT-IOT_FLEET_MGMT-DEVICE-TEL-DOC"
+          ]
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.26,
+          "supporting_evidence_ids": [
+            "FACT-IOT_FLEET_MGMT-DEVICE-TEL-DOC"
+          ]
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-002-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 1.99,
+          "supporting_evidence_ids": [
+            "FACT-IOT_FLEET_MGMT-DEVICE-TEL-DOC"
+          ]
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-002-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.04,
+          "retrieved_chunk_count": 1,
+          "supporting_evidence_ids": [
+            "FACT-IOT_FLEET_MGMT-DEVICE-TEL-DOC"
+          ]
+        }
+      }
+    },
+    {
+      "category_id": "API-DEVICE-BOLA-001",
+      "ground_truth_vulnerable": false,
+      "name": "iot_fleet_mgmt Device Telemetry API (Target P-02)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-IOT_FLEET_MGMT-DEVICE-TEL-PATCH-02",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.79,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.89,
+          "retrieved_chunk_count": 0,
+          "supporting_evidence_ids": []
+        }
+      }
+    },
+    {
+      "category_id": "API-CROSS-TENANT-001",
+      "ground_truth_vulnerable": true,
+      "name": "iot_fleet_mgmt Fleet Command API (Target V-03)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-IOT_FLEET_MGMT-FLEET-CMD-VULN-03",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.26,
+          "supporting_evidence_ids": [
+            "FACT-IOT_FLEET_MGMT-FLEET-CMD-DOC"
+          ]
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": [
+            "FACT-IOT_FLEET_MGMT-FLEET-CMD-DOC"
+          ]
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-002-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.11,
+          "supporting_evidence_ids": [
+            "FACT-IOT_FLEET_MGMT-FLEET-CMD-DOC"
+          ]
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-002-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.03,
+          "retrieved_chunk_count": 1,
+          "supporting_evidence_ids": [
+            "FACT-IOT_FLEET_MGMT-FLEET-CMD-DOC"
+          ]
+        }
+      }
+    },
+    {
+      "category_id": "API-CROSS-TENANT-001",
+      "ground_truth_vulnerable": false,
+      "name": "iot_fleet_mgmt Fleet Command API (Target P-03)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-IOT_FLEET_MGMT-FLEET-CMD-PATCH-03",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.26,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.82,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.81,
+          "retrieved_chunk_count": 0,
+          "supporting_evidence_ids": []
+        }
+      }
+    },
+    {
+      "category_id": "API-CROSS-TENANT-001",
+      "ground_truth_vulnerable": true,
+      "name": "iot_fleet_mgmt Fleet Telemetry API (Target V-04)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-IOT_FLEET_MGMT-FLEET-TEL-VULN-04",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.31,
+          "supporting_evidence_ids": [
+            "FACT-IOT_FLEET_MGMT-FLEET-TEL-DOC"
+          ]
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.26,
+          "supporting_evidence_ids": [
+            "FACT-IOT_FLEET_MGMT-FLEET-TEL-DOC"
+          ]
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-002-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.03,
+          "supporting_evidence_ids": [
+            "FACT-IOT_FLEET_MGMT-FLEET-TEL-DOC"
+          ]
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-002-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.2,
+          "retrieved_chunk_count": 1,
+          "supporting_evidence_ids": [
+            "FACT-IOT_FLEET_MGMT-FLEET-TEL-DOC"
+          ]
+        }
+      }
+    },
+    {
+      "category_id": "API-CROSS-TENANT-001",
+      "ground_truth_vulnerable": false,
+      "name": "iot_fleet_mgmt Fleet Telemetry API (Target P-04)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-IOT_FLEET_MGMT-FLEET-TEL-PATCH-04",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.24,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.89,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.76,
+          "retrieved_chunk_count": 0,
+          "supporting_evidence_ids": []
+        }
+      }
+    },
+    {
+      "category_id": "API-BFLA-001",
+      "ground_truth_vulnerable": true,
+      "name": "iot_fleet_mgmt Device Firmware API (Target V-05)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-IOT_FLEET_MGMT-DEVICE-FW-VULN-05",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.35,
+          "supporting_evidence_ids": [
+            "FACT-IOT_FLEET_MGMT-DEVICE-FW-DOC"
+          ]
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.26,
+          "supporting_evidence_ids": [
+            "FACT-IOT_FLEET_MGMT-DEVICE-FW-DOC"
+          ]
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-003-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.18,
+          "supporting_evidence_ids": [
+            "FACT-IOT_FLEET_MGMT-DEVICE-FW-DOC"
+          ]
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-003-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.05,
+          "retrieved_chunk_count": 1,
+          "supporting_evidence_ids": [
+            "FACT-IOT_FLEET_MGMT-DEVICE-FW-DOC"
+          ]
+        }
+      }
+    },
+    {
+      "category_id": "API-BFLA-001",
+      "ground_truth_vulnerable": false,
+      "name": "iot_fleet_mgmt Device Firmware API (Target P-05)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-IOT_FLEET_MGMT-DEVICE-FW-PATCH-05",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.27,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.77,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 2.02,
+          "retrieved_chunk_count": 0,
+          "supporting_evidence_ids": []
+        }
+      }
+    },
+    {
+      "category_id": "API-MUTATION-001",
+      "ground_truth_vulnerable": true,
+      "name": "iot_fleet_mgmt Fleet Configuration API (Target V-06)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-IOT_FLEET_MGMT-FLEET-CONFIG-VULN-06",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.29,
+          "supporting_evidence_ids": [
+            "FACT-IOT_FLEET_MGMT-FLEET-CONFIG-DOC"
+          ]
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": [
+            "FACT-IOT_FLEET_MGMT-FLEET-CONFIG-DOC"
+          ]
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-003-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.16,
+          "supporting_evidence_ids": [
+            "FACT-IOT_FLEET_MGMT-FLEET-CONFIG-DOC"
+          ]
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [
+            "CHK-DOC-PLATFORM-INV-01-003-01"
+          ],
+          "decision": "HYPOTHESIS",
+          "grounding_status": "VALID",
+          "latency_ms": 2.0,
+          "retrieved_chunk_count": 1,
+          "supporting_evidence_ids": [
+            "FACT-IOT_FLEET_MGMT-FLEET-CONFIG-DOC"
+          ]
+        }
+      }
+    },
+    {
+      "category_id": "API-MUTATION-001",
+      "ground_truth_vulnerable": false,
+      "name": "iot_fleet_mgmt Fleet Configuration API (Target P-06)",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-IOT_FLEET_MGMT-FLEET-CONFIG-PATCH-06",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.24,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.26,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.65,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.69,
+          "retrieved_chunk_count": 0,
+          "supporting_evidence_ids": []
+        }
+      }
+    },
+    {
+      "category_id": "API-AUTH-NONE",
+      "ground_truth_vulnerable": false,
+      "name": "iot_fleet_mgmt Catalog Discovery",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-IOT_FLEET_MGMT-NEG-01",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.26,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.25,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.71,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.89,
+          "retrieved_chunk_count": 0,
+          "supporting_evidence_ids": []
+        }
+      }
+    },
+    {
+      "category_id": "API-AUTH-NONE",
+      "ground_truth_vulnerable": false,
+      "name": "iot_fleet_mgmt Public Pricing Status",
+      "paired_b_d_decision_flipped": false,
+      "paired_b_d_flip_type": null,
+      "paired_b_d_parity_verified": true,
+      "scenario_id": "SCEN-IOT_FLEET_MGMT-NEG-02",
+      "tracks": {
+        "TRACK_A": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.24,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_B": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 0.24,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_C": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.82,
+          "supporting_evidence_ids": []
+        },
+        "TRACK_D": {
+          "cited_methodology_chunk_ids": [],
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "grounding_status": "VALID",
+          "latency_ms": 1.7,
+          "retrieved_chunk_count": 0,
+          "supporting_evidence_ids": []
+        }
+      }
+    }
+  ],
+  "retrieval_configuration": {
+    "fts5_table": "vapt_chunks_fts",
+    "onnx_model": "all-MiniLM-L6-v2 (quantized ONNX)",
+    "p4_budget_ceiling": 256,
+    "rrf_k": 60,
+    "rrf_weights": {
+      "fts5": 0.5,
+      "vector": 0.5
+    },
+    "selected_backend": "Candidate 1 (Local ONNX Vector + SQLite FTS5)"
+  },
+  "source_commit": "cc8858d50428e1c4283d755f8e1e78ac44cbb70d",
+  "start_timestamp": "2026-09-20T05:39:13.341488+00:00",
+  "total_scenarios_evaluated": 84,
+  "track_summaries": {
+    "TRACK_A": {
+      "abstention_decisions": 48,
+      "abstention_rate": 0.5714,
+      "grounding_validity_rate": 1.0,
+      "hypothesis_decisions": 36,
+      "mean_latency_ms": 0.26,
+      "total_scenarios": 84,
+      "true_negative_rate_controls": 1.0,
+      "true_positive_rate_vulnerable": 1.0,
+      "valid_grounding_count": 84
+    },
+    "TRACK_B": {
+      "abstention_decisions": 48,
+      "abstention_rate": 0.5714,
+      "grounding_validity_rate": 1.0,
+      "hypothesis_decisions": 36,
+      "mean_latency_ms": 0.26,
+      "total_scenarios": 84,
+      "true_negative_rate_controls": 1.0,
+      "true_positive_rate_vulnerable": 1.0,
+      "valid_grounding_count": 84
+    },
+    "TRACK_C": {
+      "abstention_decisions": 48,
+      "abstention_rate": 0.5714,
+      "grounding_validity_rate": 1.0,
+      "hypothesis_decisions": 36,
+      "mean_latency_ms": 1.93,
+      "total_scenarios": 84,
+      "true_negative_rate_controls": 1.0,
+      "true_positive_rate_vulnerable": 1.0,
+      "valid_grounding_count": 84
+    },
+    "TRACK_D": {
+      "abstention_decisions": 48,
+      "abstention_rate": 0.5714,
+      "grounding_validity_rate": 1.0,
+      "hypothesis_decisions": 36,
+      "mean_latency_ms": 1.96,
+      "total_scenarios": 84,
+      "true_negative_rate_controls": 1.0,
+      "true_positive_rate_vulnerable": 1.0,
+      "valid_grounding_count": 84
+    }
+  },
+  "tracks_evaluated": [
+    "TRACK_A",
+    "TRACK_B",
+    "TRACK_C",
+    "TRACK_D"
+  ],
+  "wall_clock_seconds": 0.388
+}

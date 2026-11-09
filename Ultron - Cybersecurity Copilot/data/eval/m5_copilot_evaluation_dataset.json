@@ -1,0 +1,1706 @@
+[
+  {
+    "case_id": "M5-QA-001",
+    "category": "General Cybersecurity Q&A",
+    "difficulty": "easy",
+    "question": "What is the difference between authentication and authorization?",
+    "expected_intent": "COMPARE",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "AUTHORIZATION",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "identity",
+      "permissions"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-QA-002",
+    "category": "General Cybersecurity Q&A",
+    "difficulty": "easy",
+    "question": "Explain the concept of defense in depth.",
+    "expected_intent": "GENERAL_SECURITY",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "SECURITY_ARCHITECTURE",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "layered",
+      "redundant"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-QA-003",
+    "category": "General Cybersecurity Q&A",
+    "difficulty": "easy",
+    "question": "What does the CIA triad stand for in information security?",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "GENERAL_CYBERSECURITY",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "confidentiality",
+      "integrity",
+      "availability"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-QA-004",
+    "category": "General Cybersecurity Q&A",
+    "difficulty": "medium",
+    "question": "Explain how zero trust architecture replaces perimeter-based security.",
+    "expected_intent": "GENERAL_SECURITY",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "SECURITY_ARCHITECTURE",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "never trust",
+      "always verify"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-QA-005",
+    "category": "General Cybersecurity Q&A",
+    "difficulty": "easy",
+    "question": "What is the purpose of hashing versus encryption?",
+    "expected_intent": "COMPARE",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "CRYPTOGRAPHY",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "one-way",
+      "reversible"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-QA-006",
+    "category": "General Cybersecurity Q&A",
+    "difficulty": "medium",
+    "question": "How does public key infrastructure (PKI) establish trust?",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "CRYPTOGRAPHY",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "certificate authority",
+      "digital signature"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-QA-007",
+    "category": "General Cybersecurity Q&A",
+    "difficulty": "easy",
+    "question": "What is social engineering and what are common vectors?",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "GENERAL_CYBERSECURITY",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "phishing",
+      "pretexting"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-QA-008",
+    "category": "General Cybersecurity Q&A",
+    "difficulty": "medium",
+    "question": "Explain threat modeling using the STRIDE methodology.",
+    "expected_intent": "GENERAL_SECURITY",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "SECURITY_ARCHITECTURE",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "spoofing",
+      "tampering"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-QA-009",
+    "category": "General Cybersecurity Q&A",
+    "difficulty": "hard",
+    "question": "How do side-channel timing attacks exploit non-constant-time comparisons?",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "CRYPTOGRAPHY",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "execution time",
+      "cache"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-QA-010",
+    "category": "General Cybersecurity Q&A",
+    "difficulty": "easy",
+    "question": "What is a Denial of Service (DoS) attack?",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "NETWORK_SECURITY",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "resource exhaustion",
+      "availability"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-QA-011",
+    "category": "General Cybersecurity Q&A",
+    "difficulty": "medium",
+    "question": "Compare symmetric encryption algorithms AES and ChaCha20.",
+    "expected_intent": "COMPARE",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "CRYPTOGRAPHY",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "block cipher",
+      "stream cipher"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-QA-012",
+    "category": "General Cybersecurity Q&A",
+    "difficulty": "easy",
+    "question": "What is multi-factor authentication (MFA) and why is it effective?",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "AUTHENTICATION",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "factors",
+      "possession"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-QA-013",
+    "category": "General Cybersecurity Q&A",
+    "difficulty": "medium",
+    "question": "Explain the difference between CVSS Base, Temporal, and Environmental metrics.",
+    "expected_intent": "COMPARE",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "VULNERABILITY_RESEARCH",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "severity",
+      "score"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-QA-014",
+    "category": "General Cybersecurity Q&A",
+    "difficulty": "medium",
+    "question": "What are security invariants and how do they formalize protection boundaries?",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "SECURITY_ARCHITECTURE",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "invariant",
+      "formal boundary"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-QA-015",
+    "category": "General Cybersecurity Q&A",
+    "difficulty": "hard",
+    "question": "How does forward secrecy protect past sessions against private key compromise?",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "TLS_SECURITY",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "ephemeral",
+      "diffie-hellman"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-WEB-001",
+    "category": "Web & API Security",
+    "difficulty": "easy",
+    "question": "What is Cross-Site Scripting (XSS) and what are the main types?",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "WEB_APPLICATION_SECURITY",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "stored",
+      "reflected",
+      "dom"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-WEB-002",
+    "category": "Web & API Security",
+    "difficulty": "medium",
+    "question": "How does Cross-Site Request Forgery (CSRF) work and how does SameSite cookie prevent it?",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "WEB_APPLICATION_SECURITY",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "samesite",
+      "anti-csrf token"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-WEB-003",
+    "category": "Web & API Security",
+    "difficulty": "medium",
+    "question": "What is Broken Object Level Authorization (BOLA/IDOR) in REST APIs?",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "API_SECURITY",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "object id",
+      "ownership"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-WEB-004",
+    "category": "Web & API Security",
+    "difficulty": "hard",
+    "question": "Explain HTTP Request Smuggling TE.CL desynchronization.",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "WEB_APPLICATION_SECURITY",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "transfer-encoding",
+      "content-length"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-WEB-005",
+    "category": "Web & API Security",
+    "difficulty": "medium",
+    "question": "How does Server-Side Request Forgery (SSRF) allow attackers to reach cloud metadata?",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "WEB_APPLICATION_SECURITY",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "169.254.169.254",
+      "internal network"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-WEB-006",
+    "category": "Web & API Security",
+    "difficulty": "easy",
+    "question": "What is SQL Injection and how do parameterized queries neutralize it?",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "WEB_APPLICATION_SECURITY",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "prepared statements",
+      "syntax"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-WEB-007",
+    "category": "Web & API Security",
+    "difficulty": "medium",
+    "question": "Explain Mass Assignment vulnerabilities in modern API frameworks.",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "API_SECURITY",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "object binding",
+      "allowlist"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-WEB-008",
+    "category": "Web & API Security",
+    "difficulty": "hard",
+    "question": "How does prototype pollution in JavaScript lead to remote code execution?",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "WEB_APPLICATION_SECURITY",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "__proto__",
+      "object hierarchy"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-WEB-009",
+    "category": "Web & API Security",
+    "difficulty": "medium",
+    "question": "What is CORS misconfiguration with Access-Control-Allow-Credentials?",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "WEB_APPLICATION_SECURITY",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "origin reflection",
+      "credentials"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-WEB-010",
+    "category": "Web & API Security",
+    "difficulty": "hard",
+    "question": "Explain web cache poisoning and unkeyed header injection.",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "WEB_APPLICATION_SECURITY",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "cache key",
+      "unkeyed input"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-AUTH-001",
+    "category": "Authentication & Authorization",
+    "difficulty": "easy",
+    "question": "How does OAuth 2.0 authorization code flow work?",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "AUTHENTICATION",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "auth code",
+      "token endpoint"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-AUTH-002",
+    "category": "Authentication & Authorization",
+    "difficulty": "medium",
+    "question": "What is PKCE in OAuth and why is it essential for mobile and SPA clients?",
+    "expected_intent": "RESEARCH",
+    "expected_mode": "RESEARCH",
+    "expected_domain": "AUTHENTICATION",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "code_verifier",
+      "code_challenge"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-AUTH-003",
+    "category": "Authentication & Authorization",
+    "difficulty": "medium",
+    "question": "Explain JSON Web Token (JWT) structure and 'none' algorithm flaw.",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "AUTHENTICATION",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "header",
+      "payload",
+      "signature"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-AUTH-004",
+    "category": "Authentication & Authorization",
+    "difficulty": "hard",
+    "question": "How does SAML XML Signature Wrapping (XSW) bypass authentication?",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "AUTHENTICATION",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "assertion",
+      "digest"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-AUTH-005",
+    "category": "Authentication & Authorization",
+    "difficulty": "medium",
+    "question": "Compare Role-Based Access Control (RBAC) and Attribute-Based Access Control (ABAC).",
+    "expected_intent": "COMPARE",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "AUTHORIZATION",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "roles",
+      "attributes"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-AUTH-006",
+    "category": "Authentication & Authorization",
+    "difficulty": "medium",
+    "question": "What is OpenID Connect (OIDC) and how does it build on OAuth 2.0?",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "AUTHENTICATION",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "id token",
+      "userinfo"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-AUTH-007",
+    "category": "Authentication & Authorization",
+    "difficulty": "hard",
+    "question": "How does JWT key confusion between RSA public keys and HMAC secret work?",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "AUTHENTICATION",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "public key as secret",
+      "algorithm confusion"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-AUTH-008",
+    "category": "Authentication & Authorization",
+    "difficulty": "easy",
+    "question": "What is session fixation and how should session IDs be managed after login?",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "SESSION_SECURITY",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "regenerate session",
+      "cookie"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-AUTH-009",
+    "category": "Authentication & Authorization",
+    "difficulty": "medium",
+    "question": "Explain Broken Function Level Authorization (BFLA) in administrative APIs.",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "AUTHORIZATION",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "role check",
+      "endpoint"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-AUTH-010",
+    "category": "Authentication & Authorization",
+    "difficulty": "hard",
+    "question": "What is WebAuthn / FIDO2 and how does it resist phishing?",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "AUTHENTICATION",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "origin bound",
+      "hardware token"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-NET-001",
+    "category": "Network, DNS & TLS",
+    "difficulty": "easy",
+    "question": "How does the TCP 3-way handshake work?",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "NETWORK_PROTOCOLS",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "syn",
+      "syn-ack",
+      "ack"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-NET-002",
+    "category": "Network, DNS & TLS",
+    "difficulty": "medium",
+    "question": "Explain DNS rebinding attacks and how web origin protections are bypassed.",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "NETWORK_PROTOCOLS",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "ttl",
+      "loopback"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-NET-003",
+    "category": "Network, DNS & TLS",
+    "difficulty": "medium",
+    "question": "What is the difference between TLS 1.2 and TLS 1.3 handshakes?",
+    "expected_intent": "COMPARE",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "TLS_SECURITY",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "round trips",
+      "cipher suites"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-NET-004",
+    "category": "Network, DNS & TLS",
+    "difficulty": "easy",
+    "question": "What is ARP poisoning and how does it facilitate machine-in-the-middle attacks?",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "NETWORK_SECURITY",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "arp cache",
+      "mac address"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-NET-005",
+    "category": "Network, DNS & TLS",
+    "difficulty": "medium",
+    "question": "Explain Server Name Indication (SNI) in TLS and encrypted SNI (ECH).",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "TLS_SECURITY",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "hostname",
+      "client hello"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-NET-006",
+    "category": "Network, DNS & TLS",
+    "difficulty": "hard",
+    "question": "What is BGP route hijacking and how does RPKI mitigate it?",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "NETWORK_PROTOCOLS",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "as path",
+      "route origin authorization"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-NET-007",
+    "category": "Network, DNS & TLS",
+    "difficulty": "medium",
+    "question": "How does DNS over HTTPS (DoH) improve privacy and what are the enterprise security implications?",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "NETWORK_PROTOCOLS",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "encryption",
+      "resolver"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-NET-008",
+    "category": "Network, DNS & TLS",
+    "difficulty": "hard",
+    "question": "Explain HTTP/2 stream multiplexing and rapid reset vulnerabilities (CVE-2023-44487).",
+    "expected_intent": "VULNERABILITY_RESEARCH",
+    "expected_mode": "RESEARCH",
+    "expected_domain": "NETWORK_PROTOCOLS",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "rst_stream",
+      "ddos"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-NET-009",
+    "category": "Network, DNS & TLS",
+    "difficulty": "easy",
+    "question": "What are the common DNS record types: A, AAAA, CNAME, TXT, MX?",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "NETWORK_PROTOCOLS",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "ip address",
+      "alias"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-NET-010",
+    "category": "Network, DNS & TLS",
+    "difficulty": "medium",
+    "question": "What is mutual TLS (mTLS) and when is it required?",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "TLS_SECURITY",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "client certificate",
+      "zero trust"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-CLD-001",
+    "category": "Cloud & Container Security",
+    "difficulty": "medium",
+    "question": "How does AWS IMDSv2 mitigate SSRF attacks targeting instance credentials?",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "CLOUD_SECURITY",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "put request",
+      "token session"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-CLD-002",
+    "category": "Cloud & Container Security",
+    "difficulty": "easy",
+    "question": "What are common misconfigurations in AWS S3 bucket policies?",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "CLOUD_SECURITY",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "public read",
+      "principal *"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-CLD-003",
+    "category": "Cloud & Container Security",
+    "difficulty": "medium",
+    "question": "Explain Docker container escape via exposed docker.sock.",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "CONTAINER_SECURITY",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "unix socket",
+      "host root"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-CLD-004",
+    "category": "Cloud & Container Security",
+    "difficulty": "hard",
+    "question": "What is Kubernetes RBAC misconfiguration and cluster-admin escalation?",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "CONTAINER_SECURITY",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "clusterrolebinding",
+      "serviceaccount"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-CLD-005",
+    "category": "Cloud & Container Security",
+    "difficulty": "medium",
+    "question": "Explain Linux namespaces and cgroups in container isolation.",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "CONTAINER_SECURITY",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "pid namespace",
+      "resource limit"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-CLD-006",
+    "category": "Cloud & Container Security",
+    "difficulty": "medium",
+    "question": "What is the security risk of running containers with --privileged flag?",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "CONTAINER_SECURITY",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "cap_sys_admin",
+      "device nodes"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-CLD-007",
+    "category": "Cloud & Container Security",
+    "difficulty": "hard",
+    "question": "How do IAM role delegation and assume-role policy chains work in AWS?",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "CLOUD_SECURITY",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "sts assume-role",
+      "trust policy"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-CLD-008",
+    "category": "Cloud & Container Security",
+    "difficulty": "medium",
+    "question": "Explain GCP service account key leakage and privilege escalation.",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "CLOUD_SECURITY",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "service account",
+      "iam roles"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-CLD-009",
+    "category": "Cloud & Container Security",
+    "difficulty": "easy",
+    "question": "What is a serverless function cold start security boundary?",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "CLOUD_SECURITY",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "microvm",
+      "execution environment"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-CLD-010",
+    "category": "Cloud & Container Security",
+    "difficulty": "hard",
+    "question": "How do container image supply chain attacks inject malicious layers?",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "CONTAINER_SECURITY",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "base image",
+      "signed attestations"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-OS-001",
+    "category": "Linux & Windows Security",
+    "difficulty": "medium",
+    "question": "Explain Linux SUID binaries and privilege escalation vectors.",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "LINUX_SECURITY",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "setuid",
+      "root privileges"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-OS-002",
+    "category": "Linux & Windows Security",
+    "difficulty": "medium",
+    "question": "What is Kerberoasting in Active Directory and how does it work?",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "ACTIVE_DIRECTORY",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "spn",
+      "tgs-rep"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-OS-003",
+    "category": "Linux & Windows Security",
+    "difficulty": "hard",
+    "question": "Explain Active Directory DCSync attacks and replication rights.",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "ACTIVE_DIRECTORY",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "drsuapi",
+      "ntlm hash"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-OS-004",
+    "category": "Linux & Windows Security",
+    "difficulty": "easy",
+    "question": "What is Windows User Account Control (UAC) and common bypass concepts?",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "WINDOWS_SECURITY",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "integrity level",
+      "auto-elevate"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-OS-005",
+    "category": "Linux & Windows Security",
+    "difficulty": "medium",
+    "question": "How do Linux AppArmor and SELinux enforce mandatory access control?",
+    "expected_intent": "COMPARE",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "LINUX_SECURITY",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "mac",
+      "profiles"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-OS-006",
+    "category": "Linux & Windows Security",
+    "difficulty": "hard",
+    "question": "Explain Pass-the-Hash (PtH) and credential dumping from LSASS.",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "WINDOWS_SECURITY",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "lsass",
+      "ntlm hash"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-OS-007",
+    "category": "Linux & Windows Security",
+    "difficulty": "medium",
+    "question": "What are Linux capability boundaries and how does CAP_SETUID enable root switch?",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "LINUX_SECURITY",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "capabilities",
+      "privilege drop"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-OS-008",
+    "category": "Linux & Windows Security",
+    "difficulty": "hard",
+    "question": "Explain Active Directory Golden Ticket vs Silver Ticket attacks.",
+    "expected_intent": "COMPARE",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "ACTIVE_DIRECTORY",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "krbtgt",
+      "service ticket"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-OS-009",
+    "category": "Linux & Windows Security",
+    "difficulty": "medium",
+    "question": "How does Windows DPAPI protect stored secrets and browser credentials?",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "WINDOWS_SECURITY",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "master key",
+      "cryptprotectdata"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-OS-010",
+    "category": "Linux & Windows Security",
+    "difficulty": "easy",
+    "question": "What is the purpose of /etc/shadow permissions in Linux security?",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "LINUX_SECURITY",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "password hashes",
+      "read permissions"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-MOB-001",
+    "category": "Android & Mobile Security",
+    "difficulty": "medium",
+    "question": "What are exported components in Android and why is android:exported='true' risky?",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "ANDROID_SECURITY",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "intent",
+      "permission"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-MOB-002",
+    "category": "Android & Mobile Security",
+    "difficulty": "medium",
+    "question": "How does Android Keystore protect cryptographic keys against root compromise?",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "ANDROID_SECURITY",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "hardware-backed",
+      "tee"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-MOB-003",
+    "category": "Android & Mobile Security",
+    "difficulty": "hard",
+    "question": "Explain dynamic instrumentation with Frida for Android SSL pinning bypass.",
+    "expected_intent": "EXPLAIN_TOOL",
+    "expected_mode": "TOOL_EXPLANATION",
+    "expected_domain": "ANDROID_SECURITY",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "hooking",
+      "trustmanager"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-MOB-004",
+    "category": "Android & Mobile Security",
+    "difficulty": "easy",
+    "question": "What is Android APK signing (v1, v2, v3, v4 schemes)?",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "ANDROID_SECURITY",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "signature scheme",
+      "apk digest"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-MOB-005",
+    "category": "Android & Mobile Security",
+    "difficulty": "medium",
+    "question": "Explain Android Content Provider path traversal and SQL injection.",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "ANDROID_SECURITY",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "content://",
+      "openfile"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-MOB-006",
+    "category": "Android & Mobile Security",
+    "difficulty": "medium",
+    "question": "What is iOS Keychain and how does it compare to Android Keystore?",
+    "expected_intent": "COMPARE",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "MOBILE_SECURITY",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "secure enclave",
+      "keychain"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-MOB-007",
+    "category": "Android & Mobile Security",
+    "difficulty": "hard",
+    "question": "Explain deep link validation flaws leading to OAuth account takeover in mobile apps.",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "ANDROID_SECURITY",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "custom scheme",
+      "intent filter"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-MOB-008",
+    "category": "Android & Mobile Security",
+    "difficulty": "easy",
+    "question": "What risks arise from setting android:debuggable='true' in production builds?",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "ANDROID_SECURITY",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "jdwp",
+      "debugger"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-MOB-009",
+    "category": "Android & Mobile Security",
+    "difficulty": "medium",
+    "question": "How do broadcast receivers with implicit intents leak sensitive data?",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "ANDROID_SECURITY",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "broadcast",
+      "receiver permission"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-MOB-010",
+    "category": "Android & Mobile Security",
+    "difficulty": "hard",
+    "question": "Explain root detection evasion mechanisms in Android security.",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "ANDROID_SECURITY",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "su binary",
+      "magisk"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-REV-001",
+    "category": "Reverse Engineering & Malware",
+    "difficulty": "easy",
+    "question": "What is the difference between static and dynamic malware analysis?",
+    "expected_intent": "COMPARE",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "MALWARE_ANALYSIS",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "sandbox",
+      "disassembly"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-REV-002",
+    "category": "Reverse Engineering & Malware",
+    "difficulty": "medium",
+    "question": "Explain how Ghidra performs decompilation from binary assembly to C.",
+    "expected_intent": "EXPLAIN_TOOL",
+    "expected_mode": "TOOL_EXPLANATION",
+    "expected_domain": "REVERSE_ENGINEERING",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "p-code",
+      "control flow"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-REV-003",
+    "category": "Reverse Engineering & Malware",
+    "difficulty": "medium",
+    "question": "What are YARA rules and how are they used in threat hunting?",
+    "expected_intent": "EXPLAIN_TOOL",
+    "expected_mode": "TOOL_EXPLANATION",
+    "expected_domain": "MALWARE_ANALYSIS",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "strings",
+      "condition"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-REV-004",
+    "category": "Reverse Engineering & Malware",
+    "difficulty": "hard",
+    "question": "Explain process hollowing and memory injection techniques used by malware.",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "MALWARE_ANALYSIS",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "unmap",
+      "writeprocessmemory"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-REV-005",
+    "category": "Reverse Engineering & Malware",
+    "difficulty": "medium",
+    "question": "What is binary packing and how do analysts unpack UPX executables?",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "REVERSE_ENGINEERING",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "stub",
+      "original entry point"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-REV-006",
+    "category": "Reverse Engineering & Malware",
+    "difficulty": "hard",
+    "question": "How does Volatility analyze memory dumps to identify malfind process injections?",
+    "expected_intent": "EXPLAIN_TOOL",
+    "expected_mode": "TOOL_EXPLANATION",
+    "expected_domain": "DIGITAL_FORENSICS",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "vad",
+      "page_execute_readwrite"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-REV-007",
+    "category": "Reverse Engineering & Malware",
+    "difficulty": "easy",
+    "question": "What is an Import Address Table (IAT) in PE executables?",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "REVERSE_ENGINEERING",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "dll imports",
+      "pointers"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-REV-008",
+    "category": "Reverse Engineering & Malware",
+    "difficulty": "medium",
+    "question": "Explain Command and Control (C2) beaconing and domain generation algorithms (DGA).",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "MALWARE_ANALYSIS",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "jitter",
+      "dns entropy"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-REV-009",
+    "category": "Reverse Engineering & Malware",
+    "difficulty": "hard",
+    "question": "What is anti-debugging and how do binaries detect ptrace or IsDebuggerPresent?",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "REVERSE_ENGINEERING",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "peb",
+      "timing"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-REV-010",
+    "category": "Reverse Engineering & Malware",
+    "difficulty": "medium",
+    "question": "Explain ransomware encryption workflows and key generation boundaries.",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "MALWARE_ANALYSIS",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "hybrid encryption",
+      "asymmetric"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-COD-001",
+    "category": "Secure Coding",
+    "difficulty": "easy",
+    "question": "How do parameterized queries prevent SQL injection in Go?",
+    "expected_intent": "CODE_SECURITY_REVIEW",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "SECURE_CODING",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "sql.db",
+      "placeholder"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-COD-002",
+    "category": "Secure Coding",
+    "difficulty": "medium",
+    "question": "What constitutes safe deserialization in Python applications?",
+    "expected_intent": "CODE_SECURITY_REVIEW",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "SECURE_CODING",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "json",
+      "avoid pickle"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-COD-003",
+    "category": "Secure Coding",
+    "difficulty": "medium",
+    "question": "Review safe cryptographic random number generation in Java (SecureRandom vs Random).",
+    "expected_intent": "CODE_SECURITY_REVIEW",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "SECURE_CODING",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "securerandom",
+      "entropy"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-COD-004",
+    "category": "Secure Coding",
+    "difficulty": "hard",
+    "question": "Explain memory safety guarantees in Rust vs C++ buffer overflows.",
+    "expected_intent": "COMPARE",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "SECURE_CODING",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "borrow checker",
+      "bounds checking"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-COD-005",
+    "category": "Secure Coding",
+    "difficulty": "medium",
+    "question": "What are best practices for secrets management in source control?",
+    "expected_intent": "EXPLAIN",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "SECURE_CODING",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "environment variables",
+      "vault"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-TOL-001",
+    "category": "Tool Interpretation",
+    "difficulty": "easy",
+    "question": "How does Nmap -sV service detection work and what does 'filtered' mean?",
+    "expected_intent": "EXPLAIN_TOOL",
+    "expected_mode": "TOOL_EXPLANATION",
+    "expected_domain": "SECURITY_TOOLING",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "probes",
+      "firewall"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-TOL-002",
+    "category": "Tool Interpretation",
+    "difficulty": "medium",
+    "question": "How do I use Burp Suite Intruder without causing a denial of service?",
+    "expected_intent": "EXPLAIN_TOOL",
+    "expected_mode": "TOOL_EXPLANATION",
+    "expected_domain": "SECURITY_TOOLING",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "throttle",
+      "threads"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-TOL-003",
+    "category": "Tool Interpretation",
+    "difficulty": "medium",
+    "question": "How does Semgrep differentiate between taint sources and sinks?",
+    "expected_intent": "EXPLAIN_TOOL",
+    "expected_mode": "TOOL_EXPLANATION",
+    "expected_domain": "SECURITY_TOOLING",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "pattern-sources",
+      "pattern-sinks"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-TOL-004",
+    "category": "Tool Interpretation",
+    "difficulty": "hard",
+    "question": "Explain how Wireshark decrypts TLS traffic using an SSLKEYLOGFILE.",
+    "expected_intent": "EXPLAIN_TOOL",
+    "expected_mode": "TOOL_EXPLANATION",
+    "expected_domain": "SECURITY_TOOLING",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "pre-master secret",
+      "pcap"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-TOL-005",
+    "category": "Tool Interpretation",
+    "difficulty": "medium",
+    "question": "What is the difference between ffuf and gobuster in web fuzzing?",
+    "expected_intent": "COMPARE",
+    "expected_mode": "GENERAL_QA",
+    "expected_domain": "SECURITY_TOOLING",
+    "is_evidence_grounded": false,
+    "target_evidence": null,
+    "expected_escalation": false,
+    "expected_keywords": [
+      "fuzzing keyword",
+      "filtering"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-INV-001",
+    "category": "Investigation Reasoning",
+    "difficulty": "medium",
+    "question": "Observed HTTP 200 on /api/v1/workspaces/99 when authenticated as tenant 42. What is the hypothesis?",
+    "expected_intent": "INVESTIGATE",
+    "expected_mode": "INVESTIGATION",
+    "expected_domain": "API_SECURITY",
+    "is_evidence_grounded": true,
+    "target_evidence": null,
+    "expected_escalation": true,
+    "expected_keywords": [
+      "bola",
+      "idor"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-INV-002",
+    "category": "Investigation Reasoning",
+    "difficulty": "medium",
+    "question": "Observed HTTP 403 on tenant B invoice. Does this confirm an IDOR vulnerability?",
+    "expected_intent": "VERIFY_HYPOTHESIS",
+    "expected_mode": "INVESTIGATION",
+    "expected_domain": "AUTHORIZATION",
+    "is_evidence_grounded": true,
+    "target_evidence": null,
+    "expected_escalation": true,
+    "expected_keywords": [
+      "negative control",
+      "not vulnerable"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-INV-003",
+    "category": "Investigation Reasoning",
+    "difficulty": "hard",
+    "question": "What evidence gap exists when observing unauthenticated access to /catalog/products?",
+    "expected_intent": "IDENTIFY_EVIDENCE_GAP",
+    "expected_mode": "INVESTIGATION",
+    "expected_domain": "API_SECURITY",
+    "is_evidence_grounded": true,
+    "target_evidence": null,
+    "expected_escalation": true,
+    "expected_keywords": [
+      "public catalog",
+      "missing private object"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-INV-004",
+    "category": "Investigation Reasoning",
+    "difficulty": "hard",
+    "question": "Design a manual experiment to verify if role escalation to admin is possible on /admin/users.",
+    "expected_intent": "DESIGN_EXPERIMENT",
+    "expected_mode": "INVESTIGATION",
+    "expected_domain": "AUTHORIZATION",
+    "is_evidence_grounded": true,
+    "target_evidence": null,
+    "expected_escalation": true,
+    "expected_keywords": [
+      "differential test",
+      "low privilege"
+    ],
+    "forbidden_claims": []
+  },
+  {
+    "case_id": "M5-INV-005",
+    "category": "Investigation Reasoning",
+    "difficulty": "medium",
+    "question": "Interpret this HTTP response: HTTP/1.1 401 Unauthorized WWW-Authenticate: Bearer error='invalid_token'.",
+    "expected_intent": "INTERPRET_EVIDENCE",
+    "expected_mode": "INVESTIGATION",
+    "expected_domain": "AUTHENTICATION",
+    "is_evidence_grounded": true,
+    "target_evidence": null,
+    "expected_escalation": true,
+    "expected_keywords": [
+      "token rejected",
+      "expired"
+    ],
+    "forbidden_claims": []
+  }
+]

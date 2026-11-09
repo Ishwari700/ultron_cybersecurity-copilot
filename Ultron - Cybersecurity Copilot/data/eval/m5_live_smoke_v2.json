@@ -1,0 +1,1837 @@
+{
+  "schema_version": "5.0.0",
+  "milestone": "M5",
+  "phase": "PHASE_6_2_LIVE_SMOKE",
+  "timestamp": "2026-09-21T11:24:41.564339+00:00",
+  "metadata": {
+    "m4_9_sha": "459b9ec63c3a2dc760abde12ec196760f7e505fbab5317f0da0c46b32c5eaac7",
+    "benchmark_manifest_sha": "b2b85a672124acf21066a257d8c7f5093000368b224ee013c02574c96a0ae707",
+    "planning_freeze_commit": "1e1a87070a018542a0a2e79f8a78654f34df5aba",
+    "model_name": "qwen2.5-coder:7b",
+    "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+    "runtime_version": "ollama version is 0.34.1",
+    "primary_inference_parameters": {
+      "num_ctx": 2048,
+      "num_predict": 300,
+      "temperature": 0.0,
+      "seed": 42,
+      "keep_alive": "60m"
+    }
+  },
+  "pre_registered_matrix": {
+    "scenarios": [
+      "SCEN-SAAS_BILLING-INV-DETAILS-VULN-01",
+      "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-VULN-01",
+      "SCEN-SAAS_BILLING-INV-DETAILS-PATCH-01"
+    ],
+    "tracks": [
+      "TRACK_A",
+      "TRACK_B",
+      "TRACK_C",
+      "TRACK_D"
+    ],
+    "i1_conditions": [
+      false,
+      true
+    ],
+    "total_calls": 24,
+    "retries_count": 0,
+    "semantic_repairs_count": 0
+  },
+  "summary": {
+    "total_calls": 24,
+    "valid_executions": 21,
+    "failed_executions": 3,
+    "parser_failures": 0,
+    "schema_failures": 3,
+    "truncation_failures": 0,
+    "grounding_rejections": 0,
+    "transport_failures": 0,
+    "mean_latency_ms": 20159.534283332807,
+    "decisions_reached": {
+      "HYPOTHESIS": 11,
+      "INSUFFICIENT_EVIDENCE": 10,
+      "NO_RELEVANT_FUNCTIONALITY": 0,
+      "NONE": 3
+    },
+    "i1_comparison": {
+      "i1_off": {
+        "calls": 12,
+        "valid": 11,
+        "parser_failures": 0,
+        "schema_failures": 1,
+        "mean_latency_ms": 20205.04584166459
+      },
+      "i1_on": {
+        "calls": 12,
+        "valid": 10,
+        "parser_failures": 0,
+        "schema_failures": 2,
+        "mean_latency_ms": 20114.022725001025
+      }
+    }
+  },
+  "records": [
+    {
+      "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-VULN-01",
+      "track_id": "TRACK_A",
+      "i1_enabled": false,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "b3d7d8eb62ed023c93585d5ca541b62604d4a02a8b98ede3ff63931aaefaa260",
+      "prompt_hash": "b79ce80c69431617a011eb81938be68728cfd103d98cb5f5cc836a30bb89f6c7",
+      "target_evidence_bytes_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_model_response": "```json\n{\n  \"invariant\": \"Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.\",\n  \"evidence_gap\": \"The evidence does not demonstrate explicit server-side object ownership verification, nor does it show cross-identity access without authorization comparison.\",\n  \"affected_target\": \"/api/v1/invoices/{id}\",\n  \"decision\": \"INSUFFICIENT_EVIDENCE\",\n  \"empirical_facts\": [\"FACT-SAAS_BILLING-INV-DETAILS-DOC\"],\n  \"methodology_references\": [],\n  \"falsification_plan\": \"Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or HTTP 404 Not Found. If the response is HTTP 403 Forbidden, it disproves the hypothesis. If the response is HTTP 404 Not Found, it also disproves the hypothesis.\"\n}\n```",
+      "latency_ms": 24340.041300005396,
+      "eval_count": 194,
+      "prompt_eval_count": 1582,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": true,
+      "primary_failure_category": "VALID",
+      "error_message": null,
+      "parsed_output": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": "The evidence does not demonstrate explicit server-side object ownership verification, nor does it show cross-identity access without authorization comparison.",
+        "affected_target": "/api/v1/invoices/{id}",
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "empirical_facts": [
+          "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+        ],
+        "methodology_references": [],
+        "falsification_plan": "Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or HTTP 404 Not Found. If the response is HTTP 403 Forbidden, it disproves the hypothesis. If the response is HTTP 404 Not Found, it also disproves the hypothesis."
+      },
+      "canonical_s0_output": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": "The evidence does not demonstrate explicit server-side object ownership verification, nor does it show cross-identity access without authorization comparison.",
+        "affected_target": "/api/v1/invoices/{id}",
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "supporting_evidence_ids": [
+          "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+        ],
+        "methodology_references": [],
+        "reasoning_summary": "BAIR evaluation: Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.. Evidence gap: The evidence does not demonstrate explicit server-side object ownership verification, nor does it show cross-identity access without authorization comparison..",
+        "experiment_proposal": "Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or HTTP 404 Not Found. If the response is HTTP 403 Forbidden, it disproves the hypothesis. If the response is HTTP 404 Not Found, it also disproves the hypothesis.",
+        "category": "API-BOLA-001",
+        "asset_id": "ASSET-SAAS_BILLING-INV-DETAILS-01",
+        "parameter_ids": [],
+        "missing_evidence": [
+          "The evidence does not demonstrate explicit server-side object ownership verification, nor does it show cross-identity access without authorization comparison."
+        ],
+        "cited_methodology_chunk_ids": [],
+        "contradicting_evidence_ids": [],
+        "app_model_delta": null,
+        "violation_assessment": null,
+        "actor_identity_id": null,
+        "target_identity_id": null,
+        "safety_check": null,
+        "evidence_sufficiency": 0.5
+      },
+      "decision": "INSUFFICIENT_EVIDENCE",
+      "grounding_status": "GROUNDING_PASSED",
+      "grounding_result": {
+        "valid": true,
+        "status": "VALID",
+        "error_code": null,
+        "reason": "Dual evidence and methodology grounding validated successfully",
+        "invalid_fact_ids": [],
+        "invalid_chunk_ids": [],
+        "compliance_failures": []
+      },
+      "timestamp": "2026-09-21T11:17:02.048679+00:00"
+    },
+    {
+      "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-VULN-01",
+      "track_id": "TRACK_A",
+      "i1_enabled": true,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "b3d7d8eb62ed023c93585d5ca541b62604d4a02a8b98ede3ff63931aaefaa260",
+      "prompt_hash": "b79ce80c69431617a011eb81938be68728cfd103d98cb5f5cc836a30bb89f6c7",
+      "target_evidence_bytes_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_model_response": "{\n  \"invariant\": \"Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.\",\n  \"evidence_gap\": \"The evidence does not demonstrate explicit server-side object ownership verification, nor does it show cross-identity access without authorization comparison.\",\n  \"affected_target\": \"/api/v1/invoices/{id}\",\n  \"decision\": \"INSUFFICIENT_EVIDENCE\",\n  \"empirical_facts\": [\"FACT-SAAS_BILLING-INV-DETAILS-DOC\"],\n  \"methodology_references\": [],\n  \"falsification_plan\": \"Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or HTTP 404 Not Found. If the response is HTTP 403 Forbidden, it disproves the hypothesis. If the response is HTTP 404 Not Found, it also disproves the hypothesis.\"\n}",
+      "latency_ms": 21491.55520000204,
+      "eval_count": 190,
+      "prompt_eval_count": 1582,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": true,
+      "primary_failure_category": "VALID",
+      "error_message": null,
+      "parsed_output": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": "The evidence does not demonstrate explicit server-side object ownership verification, nor does it show cross-identity access without authorization comparison.",
+        "affected_target": "/api/v1/invoices/{id}",
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "empirical_facts": [
+          "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+        ],
+        "methodology_references": [],
+        "falsification_plan": "Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or HTTP 404 Not Found. If the response is HTTP 403 Forbidden, it disproves the hypothesis. If the response is HTTP 404 Not Found, it also disproves the hypothesis."
+      },
+      "canonical_s0_output": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": "The evidence does not demonstrate explicit server-side object ownership verification, nor does it show cross-identity access without authorization comparison.",
+        "affected_target": "/api/v1/invoices/{id}",
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "supporting_evidence_ids": [
+          "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+        ],
+        "methodology_references": [],
+        "reasoning_summary": "BAIR evaluation: Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.. Evidence gap: The evidence does not demonstrate explicit server-side object ownership verification, nor does it show cross-identity access without authorization comparison..",
+        "experiment_proposal": "Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or HTTP 404 Not Found. If the response is HTTP 403 Forbidden, it disproves the hypothesis. If the response is HTTP 404 Not Found, it also disproves the hypothesis.",
+        "category": "API-BOLA-001",
+        "asset_id": "ASSET-SAAS_BILLING-INV-DETAILS-01",
+        "parameter_ids": [],
+        "missing_evidence": [
+          "The evidence does not demonstrate explicit server-side object ownership verification, nor does it show cross-identity access without authorization comparison."
+        ],
+        "cited_methodology_chunk_ids": [],
+        "contradicting_evidence_ids": [],
+        "app_model_delta": null,
+        "violation_assessment": null,
+        "actor_identity_id": null,
+        "target_identity_id": null,
+        "safety_check": null,
+        "evidence_sufficiency": 0.5
+      },
+      "decision": "INSUFFICIENT_EVIDENCE",
+      "grounding_status": "GROUNDING_PASSED",
+      "grounding_result": {
+        "valid": true,
+        "status": "VALID",
+        "error_code": null,
+        "reason": "Dual evidence and methodology grounding validated successfully",
+        "invalid_fact_ids": [],
+        "invalid_chunk_ids": [],
+        "compliance_failures": []
+      },
+      "timestamp": "2026-09-21T11:17:23.540987+00:00"
+    },
+    {
+      "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-VULN-01",
+      "track_id": "TRACK_B",
+      "i1_enabled": false,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "b3d7d8eb62ed023c93585d5ca541b62604d4a02a8b98ede3ff63931aaefaa260",
+      "prompt_hash": "04c35bc90914dd86b2f292f678f4166374046e963300372d8545a89d86b9031b",
+      "target_evidence_bytes_hash": "56e159483adb462cf9a300bd7990bca497b66a78a53ac15581299e234dc7fd5f",
+      "raw_model_response": "```json\n{\n  \"invariant\": \"Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.\",\n  \"evidence_gap\": \"Missing observation or gap in evidence (null if none)\",\n  \"affected_target\": \"Endpoint ID: EP-SCEN-SAAS_BILLING-INV-DETAILS-VULN-01\",\n  \"decision\": \"INSUFFICIENT_EVIDENCE\",\n  \"empirical_facts\": [\"FACT-SAAS_BILLING-INV-DETAILS-DOC\"],\n  \"methodology_references\": [],\n  \"falsification_plan\": \"Substitute a foreign object identifier in the request and observe the response. If the response is HTTP 403 Forbidden or 404 Not Found, the hypothesis is disproved. If the response is successful, the hypothesis is confirmed.\"\n}\n```",
+      "latency_ms": 19557.714299997315,
+      "eval_count": 180,
+      "prompt_eval_count": 1634,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": true,
+      "primary_failure_category": "VALID",
+      "error_message": null,
+      "parsed_output": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": "Missing observation or gap in evidence (null if none)",
+        "affected_target": "Endpoint ID: EP-SCEN-SAAS_BILLING-INV-DETAILS-VULN-01",
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "empirical_facts": [
+          "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+        ],
+        "methodology_references": [],
+        "falsification_plan": "Substitute a foreign object identifier in the request and observe the response. If the response is HTTP 403 Forbidden or 404 Not Found, the hypothesis is disproved. If the response is successful, the hypothesis is confirmed."
+      },
+      "canonical_s0_output": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": "Missing observation or gap in evidence (null if none)",
+        "affected_target": "Endpoint ID: EP-SCEN-SAAS_BILLING-INV-DETAILS-VULN-01",
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "supporting_evidence_ids": [
+          "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+        ],
+        "methodology_references": [],
+        "reasoning_summary": "BAIR evaluation: Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.. Evidence gap: Missing observation or gap in evidence (null if none).",
+        "experiment_proposal": "Substitute a foreign object identifier in the request and observe the response. If the response is HTTP 403 Forbidden or 404 Not Found, the hypothesis is disproved. If the response is successful, the hypothesis is confirmed.",
+        "category": "API-BOLA-001",
+        "asset_id": "ASSET-SAAS_BILLING-INV-DETAILS-01",
+        "parameter_ids": [],
+        "missing_evidence": [
+          "Missing observation or gap in evidence (null if none)"
+        ],
+        "cited_methodology_chunk_ids": [],
+        "contradicting_evidence_ids": [],
+        "app_model_delta": null,
+        "violation_assessment": null,
+        "actor_identity_id": null,
+        "target_identity_id": null,
+        "safety_check": null,
+        "evidence_sufficiency": 0.5
+      },
+      "decision": "INSUFFICIENT_EVIDENCE",
+      "grounding_status": "GROUNDING_PASSED",
+      "grounding_result": {
+        "valid": true,
+        "status": "VALID",
+        "error_code": null,
+        "reason": "Dual evidence and methodology grounding validated successfully",
+        "invalid_fact_ids": [],
+        "invalid_chunk_ids": [],
+        "compliance_failures": []
+      },
+      "timestamp": "2026-09-21T11:17:43.099994+00:00"
+    },
+    {
+      "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-VULN-01",
+      "track_id": "TRACK_B",
+      "i1_enabled": true,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "b3d7d8eb62ed023c93585d5ca541b62604d4a02a8b98ede3ff63931aaefaa260",
+      "prompt_hash": "04c35bc90914dd86b2f292f678f4166374046e963300372d8545a89d86b9031b",
+      "target_evidence_bytes_hash": "56e159483adb462cf9a300bd7990bca497b66a78a53ac15581299e234dc7fd5f",
+      "raw_model_response": "{\n  \"invariant\": \"Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.\",\n  \"evidence_gap\": \"MISSING_CROSS_IDENTITY_OBJECT_VERIFICATION\",\n  \"affected_target\": \"GET /api/v1/invoices/{id}\",\n  \"decision\": \"HYPOTHESIS\",\n  \"empirical_facts\": [\"FACT-SAAS_BILLING-INV-DETAILS-DOC\"],\n  \"methodology_references\": [],\n  \"falsification_plan\": \"Substitute a foreign invoice identifier in the request and observe if the response is HTTP 403 Forbidden or HTTP 404 Not Found.\"\n}",
+      "latency_ms": 15725.96209999756,
+      "eval_count": 140,
+      "prompt_eval_count": 1634,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": false,
+      "primary_failure_category": "SCHEMA_VALIDITY_FAILURE",
+      "error_message": "Schema validation error: BAIR JSON schema validation error: 1 validation error for BairJsonObject\n  Value error, Falsification plan missing supporting observation specification [type=value_error, input_value={'invariant': 'Object acc...or HTTP 404 Not Found.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error",
+      "parsed_output": null,
+      "canonical_s0_output": null,
+      "decision": null,
+      "grounding_status": "NOT_EVALUATED",
+      "grounding_result": null,
+      "timestamp": "2026-09-21T11:17:58.826510+00:00"
+    },
+    {
+      "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-VULN-01",
+      "track_id": "TRACK_C",
+      "i1_enabled": false,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "b3d7d8eb62ed023c93585d5ca541b62604d4a02a8b98ede3ff63931aaefaa260",
+      "prompt_hash": "491c817f872b6c02ce4e056f4159633a3ecfdcfc3056aa4f34acc3594d50250e",
+      "target_evidence_bytes_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_model_response": "{\n  \"invariant\": \"Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.\",\n  \"evidence_gap\": \"The evidence does not demonstrate explicit server-side object ownership verification. The observed facts indicate that cross-identity object access is possible without authorization comparison.\",\n  \"affected_target\": \"/api/v1/invoices/{id}\",\n  \"decision\": \"HYPOTHESIS\",\n  \"empirical_facts\": [\"FACT-SAAS_BILLING-INV-DETAILS-DOC\"],\n  \"methodology_references\": [\"CHK-DOC-PLATFORM-INV-01-002-01\"],\n  \"falsification_plan\": \"Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or 404 Not Found. If the response is 200 OK with the foreign object's contents, the hypothesis is confirmed.\"\n}",
+      "latency_ms": 22255.537100005313,
+      "eval_count": 194,
+      "prompt_eval_count": 1830,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": true,
+      "primary_failure_category": "VALID",
+      "error_message": null,
+      "parsed_output": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": "The evidence does not demonstrate explicit server-side object ownership verification. The observed facts indicate that cross-identity object access is possible without authorization comparison.",
+        "affected_target": "/api/v1/invoices/{id}",
+        "decision": "HYPOTHESIS",
+        "empirical_facts": [
+          "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+        ],
+        "methodology_references": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "falsification_plan": "Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or 404 Not Found. If the response is 200 OK with the foreign object's contents, the hypothesis is confirmed."
+      },
+      "canonical_s0_output": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": "The evidence does not demonstrate explicit server-side object ownership verification. The observed facts indicate that cross-identity object access is possible without authorization comparison.",
+        "affected_target": "/api/v1/invoices/{id}",
+        "decision": "HYPOTHESIS",
+        "supporting_evidence_ids": [
+          "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+        ],
+        "methodology_references": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "reasoning_summary": "BAIR evaluation: Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.. Evidence gap: The evidence does not demonstrate explicit server-side object ownership verification. The observed facts indicate that cross-identity object access is possible without authorization comparison..",
+        "experiment_proposal": "Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or 404 Not Found. If the response is 200 OK with the foreign object's contents, the hypothesis is confirmed.",
+        "category": "API-BOLA-001",
+        "asset_id": "ASSET-SAAS_BILLING-INV-DETAILS-01",
+        "parameter_ids": [],
+        "missing_evidence": [
+          "The evidence does not demonstrate explicit server-side object ownership verification. The observed facts indicate that cross-identity object access is possible without authorization comparison."
+        ],
+        "cited_methodology_chunk_ids": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "contradicting_evidence_ids": [],
+        "app_model_delta": null,
+        "violation_assessment": null,
+        "actor_identity_id": null,
+        "target_identity_id": null,
+        "safety_check": null,
+        "evidence_sufficiency": 0.5
+      },
+      "decision": "HYPOTHESIS",
+      "grounding_status": "GROUNDING_PASSED",
+      "grounding_result": {
+        "valid": true,
+        "status": "VALID",
+        "error_code": null,
+        "reason": "Dual evidence and methodology grounding validated successfully",
+        "invalid_fact_ids": [],
+        "invalid_chunk_ids": [],
+        "compliance_failures": []
+      },
+      "timestamp": "2026-09-21T11:18:21.083308+00:00"
+    },
+    {
+      "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-VULN-01",
+      "track_id": "TRACK_C",
+      "i1_enabled": true,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "b3d7d8eb62ed023c93585d5ca541b62604d4a02a8b98ede3ff63931aaefaa260",
+      "prompt_hash": "491c817f872b6c02ce4e056f4159633a3ecfdcfc3056aa4f34acc3594d50250e",
+      "target_evidence_bytes_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_model_response": "{\n  \"invariant\": \"Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.\",\n  \"evidence_gap\": \"The evidence does not demonstrate explicit server-side object ownership verification. The observed facts indicate that cross-identity object access is successful without authorization comparison.\",\n  \"affected_target\": \"/api/v1/invoices/{id}\",\n  \"decision\": \"HYPOTHESIS\",\n  \"empirical_facts\": [\"FACT-SAAS_BILLING-INV-DETAILS-DOC\"],\n  \"methodology_references\": [\"CHK-DOC-PLATFORM-INV-01-002-01\"],\n  \"falsification_plan\": \"Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or 404 Not Found. If the response is 200 OK with the foreign object's contents, the hypothesis is confirmed.\"\n}",
+      "latency_ms": 22451.441900004284,
+      "eval_count": 194,
+      "prompt_eval_count": 1830,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": true,
+      "primary_failure_category": "VALID",
+      "error_message": null,
+      "parsed_output": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": "The evidence does not demonstrate explicit server-side object ownership verification. The observed facts indicate that cross-identity object access is successful without authorization comparison.",
+        "affected_target": "/api/v1/invoices/{id}",
+        "decision": "HYPOTHESIS",
+        "empirical_facts": [
+          "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+        ],
+        "methodology_references": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "falsification_plan": "Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or 404 Not Found. If the response is 200 OK with the foreign object's contents, the hypothesis is confirmed."
+      },
+      "canonical_s0_output": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": "The evidence does not demonstrate explicit server-side object ownership verification. The observed facts indicate that cross-identity object access is successful without authorization comparison.",
+        "affected_target": "/api/v1/invoices/{id}",
+        "decision": "HYPOTHESIS",
+        "supporting_evidence_ids": [
+          "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+        ],
+        "methodology_references": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "reasoning_summary": "BAIR evaluation: Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.. Evidence gap: The evidence does not demonstrate explicit server-side object ownership verification. The observed facts indicate that cross-identity object access is successful without authorization comparison..",
+        "experiment_proposal": "Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or 404 Not Found. If the response is 200 OK with the foreign object's contents, the hypothesis is confirmed.",
+        "category": "API-BOLA-001",
+        "asset_id": "ASSET-SAAS_BILLING-INV-DETAILS-01",
+        "parameter_ids": [],
+        "missing_evidence": [
+          "The evidence does not demonstrate explicit server-side object ownership verification. The observed facts indicate that cross-identity object access is successful without authorization comparison."
+        ],
+        "cited_methodology_chunk_ids": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "contradicting_evidence_ids": [],
+        "app_model_delta": null,
+        "violation_assessment": null,
+        "actor_identity_id": null,
+        "target_identity_id": null,
+        "safety_check": null,
+        "evidence_sufficiency": 0.5
+      },
+      "decision": "HYPOTHESIS",
+      "grounding_status": "GROUNDING_PASSED",
+      "grounding_result": {
+        "valid": true,
+        "status": "VALID",
+        "error_code": null,
+        "reason": "Dual evidence and methodology grounding validated successfully",
+        "invalid_fact_ids": [],
+        "invalid_chunk_ids": [],
+        "compliance_failures": []
+      },
+      "timestamp": "2026-09-21T11:18:43.535511+00:00"
+    },
+    {
+      "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-VULN-01",
+      "track_id": "TRACK_D",
+      "i1_enabled": false,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "b3d7d8eb62ed023c93585d5ca541b62604d4a02a8b98ede3ff63931aaefaa260",
+      "prompt_hash": "701abdc666ae500bbbced37dc94081750b21e6c40e86d2be70f18f1b03e85852",
+      "target_evidence_bytes_hash": "56e159483adb462cf9a300bd7990bca497b66a78a53ac15581299e234dc7fd5f",
+      "raw_model_response": "```json\n{\n  \"invariant\": \"Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.\",\n  \"evidence_gap\": \"The evidence does not demonstrate explicit server-side object ownership verification. The observed facts indicate that cross-identity object access is successful without authorization comparison.\",\n  \"affected_target\": \"/api/v1/invoices/{id}\",\n  \"decision\": \"HYPOTHESIS\",\n  \"empirical_facts\": [\"FACT-SAAS_BILLING-INV-DETAILS-DOC\"],\n  \"methodology_references\": [\"CHK-DOC-PLATFORM-INV-01-002-01\"],\n  \"falsification_plan\": \"Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or 404 Not Found. If the response is 200 OK, the hypothesis is confirmed.\"\n}\n```",
+      "latency_ms": 21519.70469999651,
+      "eval_count": 192,
+      "prompt_eval_count": 1882,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": true,
+      "primary_failure_category": "VALID",
+      "error_message": null,
+      "parsed_output": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": "The evidence does not demonstrate explicit server-side object ownership verification. The observed facts indicate that cross-identity object access is successful without authorization comparison.",
+        "affected_target": "/api/v1/invoices/{id}",
+        "decision": "HYPOTHESIS",
+        "empirical_facts": [
+          "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+        ],
+        "methodology_references": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "falsification_plan": "Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or 404 Not Found. If the response is 200 OK, the hypothesis is confirmed."
+      },
+      "canonical_s0_output": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": "The evidence does not demonstrate explicit server-side object ownership verification. The observed facts indicate that cross-identity object access is successful without authorization comparison.",
+        "affected_target": "/api/v1/invoices/{id}",
+        "decision": "HYPOTHESIS",
+        "supporting_evidence_ids": [
+          "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+        ],
+        "methodology_references": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "reasoning_summary": "BAIR evaluation: Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.. Evidence gap: The evidence does not demonstrate explicit server-side object ownership verification. The observed facts indicate that cross-identity object access is successful without authorization comparison..",
+        "experiment_proposal": "Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or 404 Not Found. If the response is 200 OK, the hypothesis is confirmed.",
+        "category": "API-BOLA-001",
+        "asset_id": "ASSET-SAAS_BILLING-INV-DETAILS-01",
+        "parameter_ids": [],
+        "missing_evidence": [
+          "The evidence does not demonstrate explicit server-side object ownership verification. The observed facts indicate that cross-identity object access is successful without authorization comparison."
+        ],
+        "cited_methodology_chunk_ids": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "contradicting_evidence_ids": [],
+        "app_model_delta": null,
+        "violation_assessment": null,
+        "actor_identity_id": null,
+        "target_identity_id": null,
+        "safety_check": null,
+        "evidence_sufficiency": 0.5
+      },
+      "decision": "HYPOTHESIS",
+      "grounding_status": "GROUNDING_PASSED",
+      "grounding_result": {
+        "valid": true,
+        "status": "VALID",
+        "error_code": null,
+        "reason": "Dual evidence and methodology grounding validated successfully",
+        "invalid_fact_ids": [],
+        "invalid_chunk_ids": [],
+        "compliance_failures": []
+      },
+      "timestamp": "2026-09-21T11:19:05.056387+00:00"
+    },
+    {
+      "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-VULN-01",
+      "track_id": "TRACK_D",
+      "i1_enabled": true,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "b3d7d8eb62ed023c93585d5ca541b62604d4a02a8b98ede3ff63931aaefaa260",
+      "prompt_hash": "701abdc666ae500bbbced37dc94081750b21e6c40e86d2be70f18f1b03e85852",
+      "target_evidence_bytes_hash": "56e159483adb462cf9a300bd7990bca497b66a78a53ac15581299e234dc7fd5f",
+      "raw_model_response": "{\n  \"invariant\": \"Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.\",\n  \"evidence_gap\": \"The evidence does not demonstrate explicit server-side object ownership verification. The observed facts indicate that cross-identity object access is successful without authorization comparison.\",\n  \"affected_target\": \"/api/v1/invoices/{id}\",\n  \"decision\": \"HYPOTHESIS\",\n  \"empirical_facts\": [\"FACT-SAAS_BILLING-INV-DETAILS-DOC\"],\n  \"methodology_references\": [\"CHK-DOC-PLATFORM-INV-01-002-01\"],\n  \"falsification_plan\": \"Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or 404 Not Found. If the response is 200 OK with the foreign object's contents, the hypothesis is confirmed.\"\n}",
+      "latency_ms": 23881.43459999992,
+      "eval_count": 194,
+      "prompt_eval_count": 1882,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": true,
+      "primary_failure_category": "VALID",
+      "error_message": null,
+      "parsed_output": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": "The evidence does not demonstrate explicit server-side object ownership verification. The observed facts indicate that cross-identity object access is successful without authorization comparison.",
+        "affected_target": "/api/v1/invoices/{id}",
+        "decision": "HYPOTHESIS",
+        "empirical_facts": [
+          "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+        ],
+        "methodology_references": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "falsification_plan": "Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or 404 Not Found. If the response is 200 OK with the foreign object's contents, the hypothesis is confirmed."
+      },
+      "canonical_s0_output": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": "The evidence does not demonstrate explicit server-side object ownership verification. The observed facts indicate that cross-identity object access is successful without authorization comparison.",
+        "affected_target": "/api/v1/invoices/{id}",
+        "decision": "HYPOTHESIS",
+        "supporting_evidence_ids": [
+          "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+        ],
+        "methodology_references": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "reasoning_summary": "BAIR evaluation: Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.. Evidence gap: The evidence does not demonstrate explicit server-side object ownership verification. The observed facts indicate that cross-identity object access is successful without authorization comparison..",
+        "experiment_proposal": "Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or 404 Not Found. If the response is 200 OK with the foreign object's contents, the hypothesis is confirmed.",
+        "category": "API-BOLA-001",
+        "asset_id": "ASSET-SAAS_BILLING-INV-DETAILS-01",
+        "parameter_ids": [],
+        "missing_evidence": [
+          "The evidence does not demonstrate explicit server-side object ownership verification. The observed facts indicate that cross-identity object access is successful without authorization comparison."
+        ],
+        "cited_methodology_chunk_ids": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "contradicting_evidence_ids": [],
+        "app_model_delta": null,
+        "violation_assessment": null,
+        "actor_identity_id": null,
+        "target_identity_id": null,
+        "safety_check": null,
+        "evidence_sufficiency": 0.5
+      },
+      "decision": "HYPOTHESIS",
+      "grounding_status": "GROUNDING_PASSED",
+      "grounding_result": {
+        "valid": true,
+        "status": "VALID",
+        "error_code": null,
+        "reason": "Dual evidence and methodology grounding validated successfully",
+        "invalid_fact_ids": [],
+        "invalid_chunk_ids": [],
+        "compliance_failures": []
+      },
+      "timestamp": "2026-09-21T11:19:28.938463+00:00"
+    },
+    {
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-VULN-01",
+      "track_id": "TRACK_A",
+      "i1_enabled": false,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "c6f146385b020a8d0ab934f2f5e2191d5fb579e31d87cc9960359a0e279aa055",
+      "prompt_hash": "d743b25f07523298ee6656ab29981693dbc3a3cd05d6435407630ddf91190bd5",
+      "target_evidence_bytes_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_model_response": "```json\n{\n  \"invariant\": \"Business logic state transitions must follow a valid, strictly ordered finite state machine; transitions from invalid current states must be rejected.\",\n  \"evidence_gap\": \"The endpoint does not validate that the target entity is currently in an eligible state for the requested transition.\",\n  \"affected_target\": \"/api/v1/orders/{id}/refund\",\n  \"decision\": \"HYPOTHESIS\",\n  \"empirical_facts\": [\"FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC\"],\n  \"methodology_references\": [],\n  \"falsification_plan\": \"An observation supporting the hypothesis would be a state machine validation that rejects an out-of-order transition with HTTP 409 Conflict or 400 Bad Request. An observation disproving the hypothesis would be a successful out-of-order transition without any error response.\"\n}\n```",
+      "latency_ms": 22005.964199997834,
+      "eval_count": 180,
+      "prompt_eval_count": 1564,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": true,
+      "primary_failure_category": "VALID",
+      "error_message": null,
+      "parsed_output": {
+        "invariant": "Business logic state transitions must follow a valid, strictly ordered finite state machine; transitions from invalid current states must be rejected.",
+        "evidence_gap": "The endpoint does not validate that the target entity is currently in an eligible state for the requested transition.",
+        "affected_target": "/api/v1/orders/{id}/refund",
+        "decision": "HYPOTHESIS",
+        "empirical_facts": [
+          "FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC"
+        ],
+        "methodology_references": [],
+        "falsification_plan": "An observation supporting the hypothesis would be a state machine validation that rejects an out-of-order transition with HTTP 409 Conflict or 400 Bad Request. An observation disproving the hypothesis would be a successful out-of-order transition without any error response."
+      },
+      "canonical_s0_output": {
+        "invariant": "Business logic state transitions must follow a valid, strictly ordered finite state machine; transitions from invalid current states must be rejected.",
+        "evidence_gap": "The endpoint does not validate that the target entity is currently in an eligible state for the requested transition.",
+        "affected_target": "/api/v1/orders/{id}/refund",
+        "decision": "HYPOTHESIS",
+        "supporting_evidence_ids": [
+          "FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC"
+        ],
+        "methodology_references": [],
+        "reasoning_summary": "BAIR evaluation: Business logic state transitions must follow a valid, strictly ordered finite state machine; transitions from invalid current states must be rejected.. Evidence gap: The endpoint does not validate that the target entity is currently in an eligible state for the requested transition..",
+        "experiment_proposal": "An observation supporting the hypothesis would be a state machine validation that rejects an out-of-order transition with HTTP 409 Conflict or 400 Bad Request. An observation disproving the hypothesis would be a successful out-of-order transition without any error response.",
+        "category": "API-STATE-001",
+        "asset_id": "ASSET-ECOMMERCE_ORDERS-ORD-REFUND-01",
+        "parameter_ids": [],
+        "missing_evidence": [
+          "The endpoint does not validate that the target entity is currently in an eligible state for the requested transition."
+        ],
+        "cited_methodology_chunk_ids": [],
+        "contradicting_evidence_ids": [],
+        "app_model_delta": null,
+        "violation_assessment": null,
+        "actor_identity_id": null,
+        "target_identity_id": null,
+        "safety_check": null,
+        "evidence_sufficiency": 0.5
+      },
+      "decision": "HYPOTHESIS",
+      "grounding_status": "GROUNDING_PASSED",
+      "grounding_result": {
+        "valid": true,
+        "status": "VALID",
+        "error_code": null,
+        "reason": "Dual evidence and methodology grounding validated successfully",
+        "invalid_fact_ids": [],
+        "invalid_chunk_ids": [],
+        "compliance_failures": []
+      },
+      "timestamp": "2026-09-21T11:19:50.947555+00:00"
+    },
+    {
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-VULN-01",
+      "track_id": "TRACK_A",
+      "i1_enabled": true,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "c6f146385b020a8d0ab934f2f5e2191d5fb579e31d87cc9960359a0e279aa055",
+      "prompt_hash": "d743b25f07523298ee6656ab29981693dbc3a3cd05d6435407630ddf91190bd5",
+      "target_evidence_bytes_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_model_response": "{\n  \"invariant\": \"Business logic state transitions must follow a valid, strictly ordered finite state machine; transitions from invalid current states must be rejected.\",\n  \"evidence_gap\": \"The evidence does not show that the endpoint validates that the target entity is currently in an eligible state for the requested transition.\",\n  \"affected_target\": \"/api/v1/orders/{id}/refund\",\n  \"decision\": \"INSUFFICIENT_EVIDENCE\",\n  \"empirical_facts\": [\"FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC\"],\n  \"methodology_references\": [],\n  \"falsification_plan\": \"To falsify the hypothesis, observe an HTTP 409 Conflict or 400 Bad Request response when attempting to trigger a refund transition from an invalid state.\"\n}",
+      "latency_ms": 18403.17530000175,
+      "eval_count": 164,
+      "prompt_eval_count": 1564,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": true,
+      "primary_failure_category": "VALID",
+      "error_message": null,
+      "parsed_output": {
+        "invariant": "Business logic state transitions must follow a valid, strictly ordered finite state machine; transitions from invalid current states must be rejected.",
+        "evidence_gap": "The evidence does not show that the endpoint validates that the target entity is currently in an eligible state for the requested transition.",
+        "affected_target": "/api/v1/orders/{id}/refund",
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "empirical_facts": [
+          "FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC"
+        ],
+        "methodology_references": [],
+        "falsification_plan": "To falsify the hypothesis, observe an HTTP 409 Conflict or 400 Bad Request response when attempting to trigger a refund transition from an invalid state."
+      },
+      "canonical_s0_output": {
+        "invariant": "Business logic state transitions must follow a valid, strictly ordered finite state machine; transitions from invalid current states must be rejected.",
+        "evidence_gap": "The evidence does not show that the endpoint validates that the target entity is currently in an eligible state for the requested transition.",
+        "affected_target": "/api/v1/orders/{id}/refund",
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "supporting_evidence_ids": [
+          "FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC"
+        ],
+        "methodology_references": [],
+        "reasoning_summary": "BAIR evaluation: Business logic state transitions must follow a valid, strictly ordered finite state machine; transitions from invalid current states must be rejected.. Evidence gap: The evidence does not show that the endpoint validates that the target entity is currently in an eligible state for the requested transition..",
+        "experiment_proposal": "To falsify the hypothesis, observe an HTTP 409 Conflict or 400 Bad Request response when attempting to trigger a refund transition from an invalid state.",
+        "category": "API-STATE-001",
+        "asset_id": "ASSET-ECOMMERCE_ORDERS-ORD-REFUND-01",
+        "parameter_ids": [],
+        "missing_evidence": [
+          "The evidence does not show that the endpoint validates that the target entity is currently in an eligible state for the requested transition."
+        ],
+        "cited_methodology_chunk_ids": [],
+        "contradicting_evidence_ids": [],
+        "app_model_delta": null,
+        "violation_assessment": null,
+        "actor_identity_id": null,
+        "target_identity_id": null,
+        "safety_check": null,
+        "evidence_sufficiency": 0.5
+      },
+      "decision": "INSUFFICIENT_EVIDENCE",
+      "grounding_status": "GROUNDING_PASSED",
+      "grounding_result": {
+        "valid": true,
+        "status": "VALID",
+        "error_code": null,
+        "reason": "Dual evidence and methodology grounding validated successfully",
+        "invalid_fact_ids": [],
+        "invalid_chunk_ids": [],
+        "compliance_failures": []
+      },
+      "timestamp": "2026-09-21T11:20:09.351406+00:00"
+    },
+    {
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-VULN-01",
+      "track_id": "TRACK_B",
+      "i1_enabled": false,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "c6f146385b020a8d0ab934f2f5e2191d5fb579e31d87cc9960359a0e279aa055",
+      "prompt_hash": "a1e42977aee0a26ee319bdca811b26d9ba3ff5a15d6586cf45abbf23221deaa0",
+      "target_evidence_bytes_hash": "6bcff23ce6814585baed100a2192adb5b7fd990cff8d5ded4a0c9c5cd1856cd6",
+      "raw_model_response": "```json\n{\n  \"invariant\": \"Business logic state transitions must follow a valid, strictly ordered finite state machine; transitions from invalid current states must be rejected.\",\n  \"evidence_gap\": \"The endpoint does not validate that the target entity is currently in an eligible state for the requested transition.\",\n  \"affected_target\": \"/api/v1/orders/{id}/refund\",\n  \"decision\": \"HYPOTHESIS\",\n  \"empirical_facts\": [\"FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC\"],\n  \"methodology_references\": [],\n  \"falsification_plan\": \"An observation supporting the hypothesis would be a state machine validation that rejects an out-of-order transition with HTTP 409 Conflict or 400 Bad Request. An observation disproving the hypothesis would be a successful out-of-order transition without such a rejection.\"\n}\n```",
+      "latency_ms": 19773.99419998983,
+      "eval_count": 180,
+      "prompt_eval_count": 1616,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": true,
+      "primary_failure_category": "VALID",
+      "error_message": null,
+      "parsed_output": {
+        "invariant": "Business logic state transitions must follow a valid, strictly ordered finite state machine; transitions from invalid current states must be rejected.",
+        "evidence_gap": "The endpoint does not validate that the target entity is currently in an eligible state for the requested transition.",
+        "affected_target": "/api/v1/orders/{id}/refund",
+        "decision": "HYPOTHESIS",
+        "empirical_facts": [
+          "FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC"
+        ],
+        "methodology_references": [],
+        "falsification_plan": "An observation supporting the hypothesis would be a state machine validation that rejects an out-of-order transition with HTTP 409 Conflict or 400 Bad Request. An observation disproving the hypothesis would be a successful out-of-order transition without such a rejection."
+      },
+      "canonical_s0_output": {
+        "invariant": "Business logic state transitions must follow a valid, strictly ordered finite state machine; transitions from invalid current states must be rejected.",
+        "evidence_gap": "The endpoint does not validate that the target entity is currently in an eligible state for the requested transition.",
+        "affected_target": "/api/v1/orders/{id}/refund",
+        "decision": "HYPOTHESIS",
+        "supporting_evidence_ids": [
+          "FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC"
+        ],
+        "methodology_references": [],
+        "reasoning_summary": "BAIR evaluation: Business logic state transitions must follow a valid, strictly ordered finite state machine; transitions from invalid current states must be rejected.. Evidence gap: The endpoint does not validate that the target entity is currently in an eligible state for the requested transition..",
+        "experiment_proposal": "An observation supporting the hypothesis would be a state machine validation that rejects an out-of-order transition with HTTP 409 Conflict or 400 Bad Request. An observation disproving the hypothesis would be a successful out-of-order transition without such a rejection.",
+        "category": "API-STATE-001",
+        "asset_id": "ASSET-ECOMMERCE_ORDERS-ORD-REFUND-01",
+        "parameter_ids": [],
+        "missing_evidence": [
+          "The endpoint does not validate that the target entity is currently in an eligible state for the requested transition."
+        ],
+        "cited_methodology_chunk_ids": [],
+        "contradicting_evidence_ids": [],
+        "app_model_delta": null,
+        "violation_assessment": null,
+        "actor_identity_id": null,
+        "target_identity_id": null,
+        "safety_check": null,
+        "evidence_sufficiency": 0.5
+      },
+      "decision": "HYPOTHESIS",
+      "grounding_status": "GROUNDING_PASSED",
+      "grounding_result": {
+        "valid": true,
+        "status": "VALID",
+        "error_code": null,
+        "reason": "Dual evidence and methodology grounding validated successfully",
+        "invalid_fact_ids": [],
+        "invalid_chunk_ids": [],
+        "compliance_failures": []
+      },
+      "timestamp": "2026-09-21T11:20:29.126731+00:00"
+    },
+    {
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-VULN-01",
+      "track_id": "TRACK_B",
+      "i1_enabled": true,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "c6f146385b020a8d0ab934f2f5e2191d5fb579e31d87cc9960359a0e279aa055",
+      "prompt_hash": "a1e42977aee0a26ee319bdca811b26d9ba3ff5a15d6586cf45abbf23221deaa0",
+      "target_evidence_bytes_hash": "6bcff23ce6814585baed100a2192adb5b7fd990cff8d5ded4a0c9c5cd1856cd6",
+      "raw_model_response": "{\n  \"invariant\": \"Business logic state transitions must follow a valid, strictly ordered finite state machine; transitions from invalid current states must be rejected.\",\n  \"evidence_gap\": \"The evidence does not show that the endpoint validates that the target entity is currently in an eligible state for the requested transition.\",\n  \"affected_target\": \"/api/v1/orders/{id}/refund\",\n  \"decision\": \"HYPOTHESIS\",\n  \"empirical_facts\": [\"FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC\"],\n  \"methodology_references\": [],\n  \"falsification_plan\": \"An observation supporting the hypothesis would be a state machine validation that rejects an out-of-order transition with HTTP 409 Conflict or 400 Bad Request. An observation disproving the hypothesis would be a successful out-of-order transition without such a rejection.\"\n}",
+      "latency_ms": 20429.585300007602,
+      "eval_count": 180,
+      "prompt_eval_count": 1616,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": true,
+      "primary_failure_category": "VALID",
+      "error_message": null,
+      "parsed_output": {
+        "invariant": "Business logic state transitions must follow a valid, strictly ordered finite state machine; transitions from invalid current states must be rejected.",
+        "evidence_gap": "The evidence does not show that the endpoint validates that the target entity is currently in an eligible state for the requested transition.",
+        "affected_target": "/api/v1/orders/{id}/refund",
+        "decision": "HYPOTHESIS",
+        "empirical_facts": [
+          "FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC"
+        ],
+        "methodology_references": [],
+        "falsification_plan": "An observation supporting the hypothesis would be a state machine validation that rejects an out-of-order transition with HTTP 409 Conflict or 400 Bad Request. An observation disproving the hypothesis would be a successful out-of-order transition without such a rejection."
+      },
+      "canonical_s0_output": {
+        "invariant": "Business logic state transitions must follow a valid, strictly ordered finite state machine; transitions from invalid current states must be rejected.",
+        "evidence_gap": "The evidence does not show that the endpoint validates that the target entity is currently in an eligible state for the requested transition.",
+        "affected_target": "/api/v1/orders/{id}/refund",
+        "decision": "HYPOTHESIS",
+        "supporting_evidence_ids": [
+          "FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC"
+        ],
+        "methodology_references": [],
+        "reasoning_summary": "BAIR evaluation: Business logic state transitions must follow a valid, strictly ordered finite state machine; transitions from invalid current states must be rejected.. Evidence gap: The evidence does not show that the endpoint validates that the target entity is currently in an eligible state for the requested transition..",
+        "experiment_proposal": "An observation supporting the hypothesis would be a state machine validation that rejects an out-of-order transition with HTTP 409 Conflict or 400 Bad Request. An observation disproving the hypothesis would be a successful out-of-order transition without such a rejection.",
+        "category": "API-STATE-001",
+        "asset_id": "ASSET-ECOMMERCE_ORDERS-ORD-REFUND-01",
+        "parameter_ids": [],
+        "missing_evidence": [
+          "The evidence does not show that the endpoint validates that the target entity is currently in an eligible state for the requested transition."
+        ],
+        "cited_methodology_chunk_ids": [],
+        "contradicting_evidence_ids": [],
+        "app_model_delta": null,
+        "violation_assessment": null,
+        "actor_identity_id": null,
+        "target_identity_id": null,
+        "safety_check": null,
+        "evidence_sufficiency": 0.5
+      },
+      "decision": "HYPOTHESIS",
+      "grounding_status": "GROUNDING_PASSED",
+      "grounding_result": {
+        "valid": true,
+        "status": "VALID",
+        "error_code": null,
+        "reason": "Dual evidence and methodology grounding validated successfully",
+        "invalid_fact_ids": [],
+        "invalid_chunk_ids": [],
+        "compliance_failures": []
+      },
+      "timestamp": "2026-09-21T11:20:49.557029+00:00"
+    },
+    {
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-VULN-01",
+      "track_id": "TRACK_C",
+      "i1_enabled": false,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "c6f146385b020a8d0ab934f2f5e2191d5fb579e31d87cc9960359a0e279aa055",
+      "prompt_hash": "d743b25f07523298ee6656ab29981693dbc3a3cd05d6435407630ddf91190bd5",
+      "target_evidence_bytes_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_model_response": "```json\n{\n  \"invariant\": \"Business logic state transitions must follow a valid, strictly ordered finite state machine; transitions from invalid current states must be rejected.\",\n  \"evidence_gap\": \"The endpoint does not validate that the target entity is currently in an eligible state for the requested transition.\",\n  \"affected_target\": \"/api/v1/orders/{id}/refund\",\n  \"decision\": \"HYPOTHESIS\",\n  \"empirical_facts\": [\"FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC\"],\n  \"methodology_references\": [],\n  \"falsification_plan\": \"An observation supporting the hypothesis would be a state machine validation that rejects an out-of-order transition with HTTP 409 Conflict or 400 Bad Request. An observation disproving the hypothesis would be a successful out-of-order transition without any error response.\"\n}\n```",
+      "latency_ms": 19294.21029999503,
+      "eval_count": 180,
+      "prompt_eval_count": 1564,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": true,
+      "primary_failure_category": "VALID",
+      "error_message": null,
+      "parsed_output": {
+        "invariant": "Business logic state transitions must follow a valid, strictly ordered finite state machine; transitions from invalid current states must be rejected.",
+        "evidence_gap": "The endpoint does not validate that the target entity is currently in an eligible state for the requested transition.",
+        "affected_target": "/api/v1/orders/{id}/refund",
+        "decision": "HYPOTHESIS",
+        "empirical_facts": [
+          "FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC"
+        ],
+        "methodology_references": [],
+        "falsification_plan": "An observation supporting the hypothesis would be a state machine validation that rejects an out-of-order transition with HTTP 409 Conflict or 400 Bad Request. An observation disproving the hypothesis would be a successful out-of-order transition without any error response."
+      },
+      "canonical_s0_output": {
+        "invariant": "Business logic state transitions must follow a valid, strictly ordered finite state machine; transitions from invalid current states must be rejected.",
+        "evidence_gap": "The endpoint does not validate that the target entity is currently in an eligible state for the requested transition.",
+        "affected_target": "/api/v1/orders/{id}/refund",
+        "decision": "HYPOTHESIS",
+        "supporting_evidence_ids": [
+          "FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC"
+        ],
+        "methodology_references": [],
+        "reasoning_summary": "BAIR evaluation: Business logic state transitions must follow a valid, strictly ordered finite state machine; transitions from invalid current states must be rejected.. Evidence gap: The endpoint does not validate that the target entity is currently in an eligible state for the requested transition..",
+        "experiment_proposal": "An observation supporting the hypothesis would be a state machine validation that rejects an out-of-order transition with HTTP 409 Conflict or 400 Bad Request. An observation disproving the hypothesis would be a successful out-of-order transition without any error response.",
+        "category": "API-STATE-001",
+        "asset_id": "ASSET-ECOMMERCE_ORDERS-ORD-REFUND-01",
+        "parameter_ids": [],
+        "missing_evidence": [
+          "The endpoint does not validate that the target entity is currently in an eligible state for the requested transition."
+        ],
+        "cited_methodology_chunk_ids": [],
+        "contradicting_evidence_ids": [],
+        "app_model_delta": null,
+        "violation_assessment": null,
+        "actor_identity_id": null,
+        "target_identity_id": null,
+        "safety_check": null,
+        "evidence_sufficiency": 0.5
+      },
+      "decision": "HYPOTHESIS",
+      "grounding_status": "GROUNDING_PASSED",
+      "grounding_result": {
+        "valid": true,
+        "status": "VALID",
+        "error_code": null,
+        "reason": "Dual evidence and methodology grounding validated successfully",
+        "invalid_fact_ids": [],
+        "invalid_chunk_ids": [],
+        "compliance_failures": []
+      },
+      "timestamp": "2026-09-21T11:21:08.852577+00:00"
+    },
+    {
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-VULN-01",
+      "track_id": "TRACK_C",
+      "i1_enabled": true,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "c6f146385b020a8d0ab934f2f5e2191d5fb579e31d87cc9960359a0e279aa055",
+      "prompt_hash": "d743b25f07523298ee6656ab29981693dbc3a3cd05d6435407630ddf91190bd5",
+      "target_evidence_bytes_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_model_response": "{\n  \"invariant\": \"Business logic state transitions must follow a valid, strictly ordered finite state machine; transitions from invalid current states must be rejected.\",\n  \"evidence_gap\": \"The evidence does not show that the endpoint validates that the target entity is currently in an eligible state for the requested transition.\",\n  \"affected_target\": \"/api/v1/orders/{id}/refund\",\n  \"decision\": \"INSUFFICIENT_EVIDENCE\",\n  \"empirical_facts\": [\"FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC\"],\n  \"methodology_references\": [],\n  \"falsification_plan\": \"To falsify the hypothesis, observe an HTTP 409 Conflict or 400 Bad Request response when attempting to trigger a refund transition from an invalid state.\"\n}",
+      "latency_ms": 18486.504300002707,
+      "eval_count": 164,
+      "prompt_eval_count": 1564,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": true,
+      "primary_failure_category": "VALID",
+      "error_message": null,
+      "parsed_output": {
+        "invariant": "Business logic state transitions must follow a valid, strictly ordered finite state machine; transitions from invalid current states must be rejected.",
+        "evidence_gap": "The evidence does not show that the endpoint validates that the target entity is currently in an eligible state for the requested transition.",
+        "affected_target": "/api/v1/orders/{id}/refund",
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "empirical_facts": [
+          "FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC"
+        ],
+        "methodology_references": [],
+        "falsification_plan": "To falsify the hypothesis, observe an HTTP 409 Conflict or 400 Bad Request response when attempting to trigger a refund transition from an invalid state."
+      },
+      "canonical_s0_output": {
+        "invariant": "Business logic state transitions must follow a valid, strictly ordered finite state machine; transitions from invalid current states must be rejected.",
+        "evidence_gap": "The evidence does not show that the endpoint validates that the target entity is currently in an eligible state for the requested transition.",
+        "affected_target": "/api/v1/orders/{id}/refund",
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "supporting_evidence_ids": [
+          "FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC"
+        ],
+        "methodology_references": [],
+        "reasoning_summary": "BAIR evaluation: Business logic state transitions must follow a valid, strictly ordered finite state machine; transitions from invalid current states must be rejected.. Evidence gap: The evidence does not show that the endpoint validates that the target entity is currently in an eligible state for the requested transition..",
+        "experiment_proposal": "To falsify the hypothesis, observe an HTTP 409 Conflict or 400 Bad Request response when attempting to trigger a refund transition from an invalid state.",
+        "category": "API-STATE-001",
+        "asset_id": "ASSET-ECOMMERCE_ORDERS-ORD-REFUND-01",
+        "parameter_ids": [],
+        "missing_evidence": [
+          "The evidence does not show that the endpoint validates that the target entity is currently in an eligible state for the requested transition."
+        ],
+        "cited_methodology_chunk_ids": [],
+        "contradicting_evidence_ids": [],
+        "app_model_delta": null,
+        "violation_assessment": null,
+        "actor_identity_id": null,
+        "target_identity_id": null,
+        "safety_check": null,
+        "evidence_sufficiency": 0.5
+      },
+      "decision": "INSUFFICIENT_EVIDENCE",
+      "grounding_status": "GROUNDING_PASSED",
+      "grounding_result": {
+        "valid": true,
+        "status": "VALID",
+        "error_code": null,
+        "reason": "Dual evidence and methodology grounding validated successfully",
+        "invalid_fact_ids": [],
+        "invalid_chunk_ids": [],
+        "compliance_failures": []
+      },
+      "timestamp": "2026-09-21T11:21:27.339767+00:00"
+    },
+    {
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-VULN-01",
+      "track_id": "TRACK_D",
+      "i1_enabled": false,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "c6f146385b020a8d0ab934f2f5e2191d5fb579e31d87cc9960359a0e279aa055",
+      "prompt_hash": "a1e42977aee0a26ee319bdca811b26d9ba3ff5a15d6586cf45abbf23221deaa0",
+      "target_evidence_bytes_hash": "6bcff23ce6814585baed100a2192adb5b7fd990cff8d5ded4a0c9c5cd1856cd6",
+      "raw_model_response": "```json\n{\n  \"invariant\": \"Business logic state transitions must follow a valid, strictly ordered finite state machine; transitions from invalid current states must be rejected.\",\n  \"evidence_gap\": \"The endpoint does not validate that the target entity is currently in an eligible state for the requested transition.\",\n  \"affected_target\": \"/api/v1/orders/{id}/refund\",\n  \"decision\": \"HYPOTHESIS\",\n  \"empirical_facts\": [\"FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC\"],\n  \"methodology_references\": [],\n  \"falsification_plan\": \"An observation supporting the hypothesis would be a state machine validation that rejects an out-of-order transition with HTTP 409 Conflict or 400 Bad Request. An observation disproving the hypothesis would be a successful out-of-order transition without such a rejection.\"\n}\n```",
+      "latency_ms": 19219.977799992193,
+      "eval_count": 180,
+      "prompt_eval_count": 1616,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": true,
+      "primary_failure_category": "VALID",
+      "error_message": null,
+      "parsed_output": {
+        "invariant": "Business logic state transitions must follow a valid, strictly ordered finite state machine; transitions from invalid current states must be rejected.",
+        "evidence_gap": "The endpoint does not validate that the target entity is currently in an eligible state for the requested transition.",
+        "affected_target": "/api/v1/orders/{id}/refund",
+        "decision": "HYPOTHESIS",
+        "empirical_facts": [
+          "FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC"
+        ],
+        "methodology_references": [],
+        "falsification_plan": "An observation supporting the hypothesis would be a state machine validation that rejects an out-of-order transition with HTTP 409 Conflict or 400 Bad Request. An observation disproving the hypothesis would be a successful out-of-order transition without such a rejection."
+      },
+      "canonical_s0_output": {
+        "invariant": "Business logic state transitions must follow a valid, strictly ordered finite state machine; transitions from invalid current states must be rejected.",
+        "evidence_gap": "The endpoint does not validate that the target entity is currently in an eligible state for the requested transition.",
+        "affected_target": "/api/v1/orders/{id}/refund",
+        "decision": "HYPOTHESIS",
+        "supporting_evidence_ids": [
+          "FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC"
+        ],
+        "methodology_references": [],
+        "reasoning_summary": "BAIR evaluation: Business logic state transitions must follow a valid, strictly ordered finite state machine; transitions from invalid current states must be rejected.. Evidence gap: The endpoint does not validate that the target entity is currently in an eligible state for the requested transition..",
+        "experiment_proposal": "An observation supporting the hypothesis would be a state machine validation that rejects an out-of-order transition with HTTP 409 Conflict or 400 Bad Request. An observation disproving the hypothesis would be a successful out-of-order transition without such a rejection.",
+        "category": "API-STATE-001",
+        "asset_id": "ASSET-ECOMMERCE_ORDERS-ORD-REFUND-01",
+        "parameter_ids": [],
+        "missing_evidence": [
+          "The endpoint does not validate that the target entity is currently in an eligible state for the requested transition."
+        ],
+        "cited_methodology_chunk_ids": [],
+        "contradicting_evidence_ids": [],
+        "app_model_delta": null,
+        "violation_assessment": null,
+        "actor_identity_id": null,
+        "target_identity_id": null,
+        "safety_check": null,
+        "evidence_sufficiency": 0.5
+      },
+      "decision": "HYPOTHESIS",
+      "grounding_status": "GROUNDING_PASSED",
+      "grounding_result": {
+        "valid": true,
+        "status": "VALID",
+        "error_code": null,
+        "reason": "Dual evidence and methodology grounding validated successfully",
+        "invalid_fact_ids": [],
+        "invalid_chunk_ids": [],
+        "compliance_failures": []
+      },
+      "timestamp": "2026-09-21T11:21:46.561114+00:00"
+    },
+    {
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-VULN-01",
+      "track_id": "TRACK_D",
+      "i1_enabled": true,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "c6f146385b020a8d0ab934f2f5e2191d5fb579e31d87cc9960359a0e279aa055",
+      "prompt_hash": "a1e42977aee0a26ee319bdca811b26d9ba3ff5a15d6586cf45abbf23221deaa0",
+      "target_evidence_bytes_hash": "6bcff23ce6814585baed100a2192adb5b7fd990cff8d5ded4a0c9c5cd1856cd6",
+      "raw_model_response": "{\n  \"invariant\": \"Business logic state transitions must follow a valid, strictly ordered finite state machine; transitions from invalid current states must be rejected.\",\n  \"evidence_gap\": \"The evidence does not show that the endpoint validates that the target entity is currently in an eligible state for the requested transition.\",\n  \"affected_target\": \"/api/v1/orders/{id}/refund\",\n  \"decision\": \"HYPOTHESIS\",\n  \"empirical_facts\": [\"FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC\"],\n  \"methodology_references\": [],\n  \"falsification_plan\": \"An observation supporting the hypothesis would be a state machine validation that rejects an out-of-order transition with HTTP 409 Conflict or 400 Bad Request. An observation disproving the hypothesis would be a successful out-of-order transition without such a rejection.\"\n}",
+      "latency_ms": 20269.29789999849,
+      "eval_count": 180,
+      "prompt_eval_count": 1616,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": true,
+      "primary_failure_category": "VALID",
+      "error_message": null,
+      "parsed_output": {
+        "invariant": "Business logic state transitions must follow a valid, strictly ordered finite state machine; transitions from invalid current states must be rejected.",
+        "evidence_gap": "The evidence does not show that the endpoint validates that the target entity is currently in an eligible state for the requested transition.",
+        "affected_target": "/api/v1/orders/{id}/refund",
+        "decision": "HYPOTHESIS",
+        "empirical_facts": [
+          "FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC"
+        ],
+        "methodology_references": [],
+        "falsification_plan": "An observation supporting the hypothesis would be a state machine validation that rejects an out-of-order transition with HTTP 409 Conflict or 400 Bad Request. An observation disproving the hypothesis would be a successful out-of-order transition without such a rejection."
+      },
+      "canonical_s0_output": {
+        "invariant": "Business logic state transitions must follow a valid, strictly ordered finite state machine; transitions from invalid current states must be rejected.",
+        "evidence_gap": "The evidence does not show that the endpoint validates that the target entity is currently in an eligible state for the requested transition.",
+        "affected_target": "/api/v1/orders/{id}/refund",
+        "decision": "HYPOTHESIS",
+        "supporting_evidence_ids": [
+          "FACT-ECOMMERCE_ORDERS-ORD-REFUND-DOC"
+        ],
+        "methodology_references": [],
+        "reasoning_summary": "BAIR evaluation: Business logic state transitions must follow a valid, strictly ordered finite state machine; transitions from invalid current states must be rejected.. Evidence gap: The evidence does not show that the endpoint validates that the target entity is currently in an eligible state for the requested transition..",
+        "experiment_proposal": "An observation supporting the hypothesis would be a state machine validation that rejects an out-of-order transition with HTTP 409 Conflict or 400 Bad Request. An observation disproving the hypothesis would be a successful out-of-order transition without such a rejection.",
+        "category": "API-STATE-001",
+        "asset_id": "ASSET-ECOMMERCE_ORDERS-ORD-REFUND-01",
+        "parameter_ids": [],
+        "missing_evidence": [
+          "The evidence does not show that the endpoint validates that the target entity is currently in an eligible state for the requested transition."
+        ],
+        "cited_methodology_chunk_ids": [],
+        "contradicting_evidence_ids": [],
+        "app_model_delta": null,
+        "violation_assessment": null,
+        "actor_identity_id": null,
+        "target_identity_id": null,
+        "safety_check": null,
+        "evidence_sufficiency": 0.5
+      },
+      "decision": "HYPOTHESIS",
+      "grounding_status": "GROUNDING_PASSED",
+      "grounding_result": {
+        "valid": true,
+        "status": "VALID",
+        "error_code": null,
+        "reason": "Dual evidence and methodology grounding validated successfully",
+        "invalid_fact_ids": [],
+        "invalid_chunk_ids": [],
+        "compliance_failures": []
+      },
+      "timestamp": "2026-09-21T11:22:06.830997+00:00"
+    },
+    {
+      "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-PATCH-01",
+      "track_id": "TRACK_A",
+      "i1_enabled": false,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "b3d7d8eb62ed023c93585d5ca541b62604d4a02a8b98ede3ff63931aaefaa260",
+      "prompt_hash": "aa60eeda36348aadaa4570eabb3303e65f4d08c67e5cf0bc772b5190f5936bf4",
+      "target_evidence_bytes_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_model_response": "```json\n{\n  \"invariant\": \"Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.\",\n  \"evidence_gap\": \"The evidence does not demonstrate explicit server-side object ownership verification, nor does it show cross-identity access without authorization comparison.\",\n  \"affected_target\": \"/api/v1/invoices/{id}\",\n  \"decision\": \"INSUFFICIENT_EVIDENCE\",\n  \"empirical_facts\": [\"FACT-SAAS_BILLING-INV-DETAILS-DOC\"],\n  \"methodology_references\": [],\n  \"falsification_plan\": \"Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or HTTP 404 Not Found. If the response is HTTP 403 Forbidden, it disproves the hypothesis. If the response is HTTP 404 Not Found, it also disproves the hypothesis.\"\n}\n```",
+      "latency_ms": 21929.57930000557,
+      "eval_count": 194,
+      "prompt_eval_count": 1581,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": true,
+      "primary_failure_category": "VALID",
+      "error_message": null,
+      "parsed_output": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": "The evidence does not demonstrate explicit server-side object ownership verification, nor does it show cross-identity access without authorization comparison.",
+        "affected_target": "/api/v1/invoices/{id}",
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "empirical_facts": [
+          "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+        ],
+        "methodology_references": [],
+        "falsification_plan": "Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or HTTP 404 Not Found. If the response is HTTP 403 Forbidden, it disproves the hypothesis. If the response is HTTP 404 Not Found, it also disproves the hypothesis."
+      },
+      "canonical_s0_output": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": "The evidence does not demonstrate explicit server-side object ownership verification, nor does it show cross-identity access without authorization comparison.",
+        "affected_target": "/api/v1/invoices/{id}",
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "supporting_evidence_ids": [
+          "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+        ],
+        "methodology_references": [],
+        "reasoning_summary": "BAIR evaluation: Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.. Evidence gap: The evidence does not demonstrate explicit server-side object ownership verification, nor does it show cross-identity access without authorization comparison..",
+        "experiment_proposal": "Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or HTTP 404 Not Found. If the response is HTTP 403 Forbidden, it disproves the hypothesis. If the response is HTTP 404 Not Found, it also disproves the hypothesis.",
+        "category": "API-BOLA-001",
+        "asset_id": "ASSET-SAAS_BILLING-INV-DETAILS-01",
+        "parameter_ids": [],
+        "missing_evidence": [
+          "The evidence does not demonstrate explicit server-side object ownership verification, nor does it show cross-identity access without authorization comparison."
+        ],
+        "cited_methodology_chunk_ids": [],
+        "contradicting_evidence_ids": [],
+        "app_model_delta": null,
+        "violation_assessment": null,
+        "actor_identity_id": null,
+        "target_identity_id": null,
+        "safety_check": null,
+        "evidence_sufficiency": 0.5
+      },
+      "decision": "INSUFFICIENT_EVIDENCE",
+      "grounding_status": "GROUNDING_PASSED",
+      "grounding_result": {
+        "valid": true,
+        "status": "VALID",
+        "error_code": null,
+        "reason": "Dual evidence and methodology grounding validated successfully",
+        "invalid_fact_ids": [],
+        "invalid_chunk_ids": [],
+        "compliance_failures": []
+      },
+      "timestamp": "2026-09-21T11:22:28.764649+00:00"
+    },
+    {
+      "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-PATCH-01",
+      "track_id": "TRACK_A",
+      "i1_enabled": true,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "b3d7d8eb62ed023c93585d5ca541b62604d4a02a8b98ede3ff63931aaefaa260",
+      "prompt_hash": "aa60eeda36348aadaa4570eabb3303e65f4d08c67e5cf0bc772b5190f5936bf4",
+      "target_evidence_bytes_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_model_response": "{\n  \"invariant\": \"Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.\",\n  \"evidence_gap\": \"The evidence does not demonstrate explicit server-side object ownership verification, nor does it show cross-identity access without authorization comparison.\",\n  \"affected_target\": \"/api/v1/invoices/{id}\",\n  \"decision\": \"INSUFFICIENT_EVIDENCE\",\n  \"empirical_facts\": [\"FACT-SAAS_BILLING-INV-DETAILS-DOC\"],\n  \"methodology_references\": [],\n  \"falsification_plan\": \"Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or HTTP 404 Not Found. If the response is HTTP 403 Forbidden, it disproves the hypothesis. If the response is HTTP 404 Not Found, it also disproves the hypothesis.\"\n}",
+      "latency_ms": 21549.233400000958,
+      "eval_count": 190,
+      "prompt_eval_count": 1581,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": true,
+      "primary_failure_category": "VALID",
+      "error_message": null,
+      "parsed_output": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": "The evidence does not demonstrate explicit server-side object ownership verification, nor does it show cross-identity access without authorization comparison.",
+        "affected_target": "/api/v1/invoices/{id}",
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "empirical_facts": [
+          "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+        ],
+        "methodology_references": [],
+        "falsification_plan": "Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or HTTP 404 Not Found. If the response is HTTP 403 Forbidden, it disproves the hypothesis. If the response is HTTP 404 Not Found, it also disproves the hypothesis."
+      },
+      "canonical_s0_output": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": "The evidence does not demonstrate explicit server-side object ownership verification, nor does it show cross-identity access without authorization comparison.",
+        "affected_target": "/api/v1/invoices/{id}",
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "supporting_evidence_ids": [
+          "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+        ],
+        "methodology_references": [],
+        "reasoning_summary": "BAIR evaluation: Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.. Evidence gap: The evidence does not demonstrate explicit server-side object ownership verification, nor does it show cross-identity access without authorization comparison..",
+        "experiment_proposal": "Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or HTTP 404 Not Found. If the response is HTTP 403 Forbidden, it disproves the hypothesis. If the response is HTTP 404 Not Found, it also disproves the hypothesis.",
+        "category": "API-BOLA-001",
+        "asset_id": "ASSET-SAAS_BILLING-INV-DETAILS-01",
+        "parameter_ids": [],
+        "missing_evidence": [
+          "The evidence does not demonstrate explicit server-side object ownership verification, nor does it show cross-identity access without authorization comparison."
+        ],
+        "cited_methodology_chunk_ids": [],
+        "contradicting_evidence_ids": [],
+        "app_model_delta": null,
+        "violation_assessment": null,
+        "actor_identity_id": null,
+        "target_identity_id": null,
+        "safety_check": null,
+        "evidence_sufficiency": 0.5
+      },
+      "decision": "INSUFFICIENT_EVIDENCE",
+      "grounding_status": "GROUNDING_PASSED",
+      "grounding_result": {
+        "valid": true,
+        "status": "VALID",
+        "error_code": null,
+        "reason": "Dual evidence and methodology grounding validated successfully",
+        "invalid_fact_ids": [],
+        "invalid_chunk_ids": [],
+        "compliance_failures": []
+      },
+      "timestamp": "2026-09-21T11:22:50.314593+00:00"
+    },
+    {
+      "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-PATCH-01",
+      "track_id": "TRACK_B",
+      "i1_enabled": false,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "b3d7d8eb62ed023c93585d5ca541b62604d4a02a8b98ede3ff63931aaefaa260",
+      "prompt_hash": "919f9be16b1da91487bb3ecfe6ff00f35e6af2265f76cb06850b7cb3d32d7d61",
+      "target_evidence_bytes_hash": "56e159483adb462cf9a300bd7990bca497b66a78a53ac15581299e234dc7fd5f",
+      "raw_model_response": "```json\n{\n  \"invariant\": \"Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.\",\n  \"evidence_gap\": \"Missing observation or gap in evidence (null if none)\",\n  \"affected_target\": \"Target endpoint, asset ID, or parameter\",\n  \"decision\": \"NO_RELEVANT_FUNCTIONALITY\",\n  \"empirical_facts\": [\"FACT-SAAS_BILLING-INV-DETAILS-DOC\"],\n  \"methodology_references\": [],\n  \"falsification_plan\": \"observation supporting hypothesis AND observation disproving/falsifying hypothesis\"\n}\n```",
+      "latency_ms": 13796.706999986782,
+      "eval_count": 129,
+      "prompt_eval_count": 1633,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": true,
+      "primary_failure_category": "VALID",
+      "error_message": null,
+      "parsed_output": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": "Missing observation or gap in evidence (null if none)",
+        "affected_target": "Target endpoint, asset ID, or parameter",
+        "decision": "NO_RELEVANT_FUNCTIONALITY",
+        "empirical_facts": [
+          "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+        ],
+        "methodology_references": [],
+        "falsification_plan": "observation supporting hypothesis AND observation disproving/falsifying hypothesis"
+      },
+      "canonical_s0_output": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": "Missing observation or gap in evidence (null if none)",
+        "affected_target": "Target endpoint, asset ID, or parameter",
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "supporting_evidence_ids": [
+          "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+        ],
+        "methodology_references": [],
+        "reasoning_summary": "BAIR evaluation: Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.. Evidence gap: Missing observation or gap in evidence (null if none).",
+        "experiment_proposal": "observation supporting hypothesis AND observation disproving/falsifying hypothesis",
+        "category": "API-BOLA-001",
+        "asset_id": "ASSET-SAAS_BILLING-INV-DETAILS-01",
+        "parameter_ids": [],
+        "missing_evidence": [
+          "Missing observation or gap in evidence (null if none)"
+        ],
+        "cited_methodology_chunk_ids": [],
+        "contradicting_evidence_ids": [],
+        "app_model_delta": null,
+        "violation_assessment": null,
+        "actor_identity_id": null,
+        "target_identity_id": null,
+        "safety_check": null,
+        "evidence_sufficiency": 0.5
+      },
+      "decision": "INSUFFICIENT_EVIDENCE",
+      "grounding_status": "GROUNDING_PASSED",
+      "grounding_result": {
+        "valid": true,
+        "status": "VALID",
+        "error_code": null,
+        "reason": "Dual evidence and methodology grounding validated successfully",
+        "invalid_fact_ids": [],
+        "invalid_chunk_ids": [],
+        "compliance_failures": []
+      },
+      "timestamp": "2026-09-21T11:23:04.112470+00:00"
+    },
+    {
+      "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-PATCH-01",
+      "track_id": "TRACK_B",
+      "i1_enabled": true,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "b3d7d8eb62ed023c93585d5ca541b62604d4a02a8b98ede3ff63931aaefaa260",
+      "prompt_hash": "919f9be16b1da91487bb3ecfe6ff00f35e6af2265f76cb06850b7cb3d32d7d61",
+      "target_evidence_bytes_hash": "56e159483adb462cf9a300bd7990bca497b66a78a53ac15581299e234dc7fd5f",
+      "raw_model_response": "{\n  \"invariant\": \"Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.\",\n  \"evidence_gap\": \"MISSING_CROSS_IDENTITY_OBJECT_VERIFICATION\",\n  \"affected_target\": \"GET /api/v1/invoices/{id}\",\n  \"decision\": \"HYPOTHESIS\",\n  \"empirical_facts\": [\"FACT-SAAS_BILLING-INV-DETAILS-DOC\"],\n  \"methodology_references\": [],\n  \"falsification_plan\": \"Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or HTTP 404 Not Found.\"\n}",
+      "latency_ms": 15907.869700007723,
+      "eval_count": 140,
+      "prompt_eval_count": 1633,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": false,
+      "primary_failure_category": "SCHEMA_VALIDITY_FAILURE",
+      "error_message": "Schema validation error: BAIR JSON schema validation error: 1 validation error for BairJsonObject\n  Value error, Falsification plan missing supporting observation specification [type=value_error, input_value={'invariant': 'Object acc...or HTTP 404 Not Found.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error",
+      "parsed_output": null,
+      "canonical_s0_output": null,
+      "decision": null,
+      "grounding_status": "NOT_EVALUATED",
+      "grounding_result": null,
+      "timestamp": "2026-09-21T11:23:20.020992+00:00"
+    },
+    {
+      "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-PATCH-01",
+      "track_id": "TRACK_C",
+      "i1_enabled": false,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "b3d7d8eb62ed023c93585d5ca541b62604d4a02a8b98ede3ff63931aaefaa260",
+      "prompt_hash": "e49eb9dc27ebf60c8d19194bbe08225062589416395e2a2777fd758aee392194",
+      "target_evidence_bytes_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_model_response": "```json\n{\n  \"invariant\": \"Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.\",\n  \"evidence_gap\": \"The evidence does not demonstrate explicit server-side object ownership verification or cross-identity access without authorization comparison.\",\n  \"affected_target\": \"/api/v1/invoices/{id}\",\n  \"decision\": \"INSUFFICIENT_EVIDENCE\",\n  \"empirical_facts\": [\"FACT-SAAS_BILLING-INV-DETAILS-DOC\"],\n  \"methodology_references\": [\"CHK-DOC-PLATFORM-INV-01-002-01\"],\n  \"falsification_plan\": \"Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or 404 Not Found.\"\n}\n```",
+      "latency_ms": 19018.605899997056,
+      "eval_count": 171,
+      "prompt_eval_count": 1829,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": true,
+      "primary_failure_category": "VALID",
+      "error_message": null,
+      "parsed_output": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": "The evidence does not demonstrate explicit server-side object ownership verification or cross-identity access without authorization comparison.",
+        "affected_target": "/api/v1/invoices/{id}",
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "empirical_facts": [
+          "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+        ],
+        "methodology_references": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "falsification_plan": "Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or 404 Not Found."
+      },
+      "canonical_s0_output": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": "The evidence does not demonstrate explicit server-side object ownership verification or cross-identity access without authorization comparison.",
+        "affected_target": "/api/v1/invoices/{id}",
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "supporting_evidence_ids": [
+          "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+        ],
+        "methodology_references": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "reasoning_summary": "BAIR evaluation: Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.. Evidence gap: The evidence does not demonstrate explicit server-side object ownership verification or cross-identity access without authorization comparison..",
+        "experiment_proposal": "Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or 404 Not Found.",
+        "category": "API-BOLA-001",
+        "asset_id": "ASSET-SAAS_BILLING-INV-DETAILS-01",
+        "parameter_ids": [],
+        "missing_evidence": [
+          "The evidence does not demonstrate explicit server-side object ownership verification or cross-identity access without authorization comparison."
+        ],
+        "cited_methodology_chunk_ids": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "contradicting_evidence_ids": [],
+        "app_model_delta": null,
+        "violation_assessment": null,
+        "actor_identity_id": null,
+        "target_identity_id": null,
+        "safety_check": null,
+        "evidence_sufficiency": 0.5
+      },
+      "decision": "INSUFFICIENT_EVIDENCE",
+      "grounding_status": "GROUNDING_PASSED",
+      "grounding_result": {
+        "valid": true,
+        "status": "VALID",
+        "error_code": null,
+        "reason": "Dual evidence and methodology grounding validated successfully",
+        "invalid_fact_ids": [],
+        "invalid_chunk_ids": [],
+        "compliance_failures": []
+      },
+      "timestamp": "2026-09-21T11:23:39.040964+00:00"
+    },
+    {
+      "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-PATCH-01",
+      "track_id": "TRACK_C",
+      "i1_enabled": true,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "b3d7d8eb62ed023c93585d5ca541b62604d4a02a8b98ede3ff63931aaefaa260",
+      "prompt_hash": "e49eb9dc27ebf60c8d19194bbe08225062589416395e2a2777fd758aee392194",
+      "target_evidence_bytes_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_model_response": "{\n  \"invariant\": \"Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.\",\n  \"evidence_gap\": \"The evidence does not demonstrate explicit server-side object ownership verification, nor does it show cross-identity access without authorization comparison.\",\n  \"affected_target\": \"/api/v1/invoices/{id}\",\n  \"decision\": \"INSUFFICIENT_EVIDENCE\",\n  \"empirical_facts\": [\"FACT-SAAS_BILLING-INV-DETAILS-DOC\"],\n  \"methodology_references\": [\"CHK-DOC-PLATFORM-INV-01-002-01\"],\n  \"falsification_plan\": \"Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or 404 Not Found.\"\n}",
+      "latency_ms": 19733.184099997743,
+      "eval_count": 171,
+      "prompt_eval_count": 1829,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": true,
+      "primary_failure_category": "VALID",
+      "error_message": null,
+      "parsed_output": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": "The evidence does not demonstrate explicit server-side object ownership verification, nor does it show cross-identity access without authorization comparison.",
+        "affected_target": "/api/v1/invoices/{id}",
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "empirical_facts": [
+          "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+        ],
+        "methodology_references": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "falsification_plan": "Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or 404 Not Found."
+      },
+      "canonical_s0_output": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": "The evidence does not demonstrate explicit server-side object ownership verification, nor does it show cross-identity access without authorization comparison.",
+        "affected_target": "/api/v1/invoices/{id}",
+        "decision": "INSUFFICIENT_EVIDENCE",
+        "supporting_evidence_ids": [
+          "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+        ],
+        "methodology_references": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "reasoning_summary": "BAIR evaluation: Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.. Evidence gap: The evidence does not demonstrate explicit server-side object ownership verification, nor does it show cross-identity access without authorization comparison..",
+        "experiment_proposal": "Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or 404 Not Found.",
+        "category": "API-BOLA-001",
+        "asset_id": "ASSET-SAAS_BILLING-INV-DETAILS-01",
+        "parameter_ids": [],
+        "missing_evidence": [
+          "The evidence does not demonstrate explicit server-side object ownership verification, nor does it show cross-identity access without authorization comparison."
+        ],
+        "cited_methodology_chunk_ids": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "contradicting_evidence_ids": [],
+        "app_model_delta": null,
+        "violation_assessment": null,
+        "actor_identity_id": null,
+        "target_identity_id": null,
+        "safety_check": null,
+        "evidence_sufficiency": 0.5
+      },
+      "decision": "INSUFFICIENT_EVIDENCE",
+      "grounding_status": "GROUNDING_PASSED",
+      "grounding_result": {
+        "valid": true,
+        "status": "VALID",
+        "error_code": null,
+        "reason": "Dual evidence and methodology grounding validated successfully",
+        "invalid_fact_ids": [],
+        "invalid_chunk_ids": [],
+        "compliance_failures": []
+      },
+      "timestamp": "2026-09-21T11:23:58.774881+00:00"
+    },
+    {
+      "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-PATCH-01",
+      "track_id": "TRACK_D",
+      "i1_enabled": false,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "b3d7d8eb62ed023c93585d5ca541b62604d4a02a8b98ede3ff63931aaefaa260",
+      "prompt_hash": "81f03bf1daf0cc634732bd5c9330888eff3ef749dbf5631b47f2c0b3d7cc7116",
+      "target_evidence_bytes_hash": "56e159483adb462cf9a300bd7990bca497b66a78a53ac15581299e234dc7fd5f",
+      "raw_model_response": "```json\n{\n  \"invariant\": \"Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.\",\n  \"evidence_gap\": \"The evidence does not demonstrate explicit server-side object ownership verification. The observed facts indicate that cross-identity object access is possible without authorization comparison.\",\n  \"affected_target\": \"/api/v1/invoices/{id}\",\n  \"decision\": \"HYPOTHESIS\",\n  \"empirical_facts\": [\"FACT-SAAS_BILLING-INV-DETAILS-DOC\"],\n  \"methodology_references\": [\"CHK-DOC-PLATFORM-INV-01-002-01\"],\n  \"falsification_plan\": \"Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or 404 Not Found.\"\n}\n```",
+      "latency_ms": 19748.514000006253,
+      "eval_count": 177,
+      "prompt_eval_count": 1881,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": false,
+      "primary_failure_category": "SCHEMA_VALIDITY_FAILURE",
+      "error_message": "Schema validation error: BAIR JSON schema validation error: 1 validation error for BairJsonObject\n  Value error, Falsification plan missing supporting observation specification [type=value_error, input_value={'invariant': 'Object acc...dden or 404 Not Found.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error",
+      "parsed_output": null,
+      "canonical_s0_output": null,
+      "decision": null,
+      "grounding_status": "NOT_EVALUATED",
+      "grounding_result": null,
+      "timestamp": "2026-09-21T11:24:18.524620+00:00"
+    },
+    {
+      "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-PATCH-01",
+      "track_id": "TRACK_D",
+      "i1_enabled": true,
+      "protocol_identifier": "JSON_BAIR",
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "runtime_version": "ollama version is 0.34.1",
+      "inference_parameters": {
+        "num_ctx": 2048,
+        "num_predict": 300,
+        "temperature": 0.0,
+        "seed": 42,
+        "keep_alive": "60m"
+      },
+      "canonical_input_hash": "b3d7d8eb62ed023c93585d5ca541b62604d4a02a8b98ede3ff63931aaefaa260",
+      "prompt_hash": "81f03bf1daf0cc634732bd5c9330888eff3ef749dbf5631b47f2c0b3d7cc7116",
+      "target_evidence_bytes_hash": "56e159483adb462cf9a300bd7990bca497b66a78a53ac15581299e234dc7fd5f",
+      "raw_model_response": "{\n  \"invariant\": \"Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.\",\n  \"evidence_gap\": \"The evidence does not demonstrate explicit server-side object ownership verification. The observed facts indicate that cross-identity object access is possible without authorization comparison.\",\n  \"affected_target\": \"/api/v1/invoices/{id}\",\n  \"decision\": \"HYPOTHESIS\",\n  \"empirical_facts\": [\"FACT-SAAS_BILLING-INV-DETAILS-DOC\"],\n  \"methodology_references\": [\"CHK-DOC-PLATFORM-INV-01-002-01\"],\n  \"falsification_plan\": \"Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or 404 Not Found. If the response is 200 OK with the foreign object's contents, the hypothesis is confirmed.\"\n}",
+      "latency_ms": 23039.028899991536,
+      "eval_count": 194,
+      "prompt_eval_count": 1881,
+      "done_reason": null,
+      "contract_valid": true,
+      "is_valid": true,
+      "primary_failure_category": "VALID",
+      "error_message": null,
+      "parsed_output": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": "The evidence does not demonstrate explicit server-side object ownership verification. The observed facts indicate that cross-identity object access is possible without authorization comparison.",
+        "affected_target": "/api/v1/invoices/{id}",
+        "decision": "HYPOTHESIS",
+        "empirical_facts": [
+          "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+        ],
+        "methodology_references": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "falsification_plan": "Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or 404 Not Found. If the response is 200 OK with the foreign object's contents, the hypothesis is confirmed."
+      },
+      "canonical_s0_output": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": "The evidence does not demonstrate explicit server-side object ownership verification. The observed facts indicate that cross-identity object access is possible without authorization comparison.",
+        "affected_target": "/api/v1/invoices/{id}",
+        "decision": "HYPOTHESIS",
+        "supporting_evidence_ids": [
+          "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+        ],
+        "methodology_references": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "reasoning_summary": "BAIR evaluation: Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.. Evidence gap: The evidence does not demonstrate explicit server-side object ownership verification. The observed facts indicate that cross-identity object access is possible without authorization comparison..",
+        "experiment_proposal": "Substitute a foreign object identifier in the request and observe if the response is HTTP 403 Forbidden or 404 Not Found. If the response is 200 OK with the foreign object's contents, the hypothesis is confirmed.",
+        "category": "API-BOLA-001",
+        "asset_id": "ASSET-SAAS_BILLING-INV-DETAILS-01",
+        "parameter_ids": [],
+        "missing_evidence": [
+          "The evidence does not demonstrate explicit server-side object ownership verification. The observed facts indicate that cross-identity object access is possible without authorization comparison."
+        ],
+        "cited_methodology_chunk_ids": [
+          "CHK-DOC-PLATFORM-INV-01-002-01"
+        ],
+        "contradicting_evidence_ids": [],
+        "app_model_delta": null,
+        "violation_assessment": null,
+        "actor_identity_id": null,
+        "target_identity_id": null,
+        "safety_check": null,
+        "evidence_sufficiency": 0.5
+      },
+      "decision": "HYPOTHESIS",
+      "grounding_status": "GROUNDING_PASSED",
+      "grounding_result": {
+        "valid": true,
+        "status": "VALID",
+        "error_code": null,
+        "reason": "Dual evidence and methodology grounding validated successfully",
+        "invalid_fact_ids": [],
+        "invalid_chunk_ids": [],
+        "compliance_failures": []
+      },
+      "timestamp": "2026-09-21T11:24:41.564269+00:00"
+    }
+  ]
+}

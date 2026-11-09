@@ -1,0 +1,1352 @@
+[
+  {
+    "case_id": "INV-BENCH-001",
+    "domain": "API_SECURITY",
+    "target_asset": "api-api_se-test.internal",
+    "target_evidence": [
+      {
+        "observation_id": "FACT-INV-BENCH-001-01",
+        "endpoint": "/api/v1/api_se/resource/100",
+        "http_method": "GET",
+        "status_code": 200,
+        "summary": "Observed response on API_SECURITY endpoint under test condition"
+      }
+    ],
+    "known_facts": [
+      "Target host api-api_se-test.internal is within authorized testing scope."
+    ],
+    "expected_hypotheses": [
+      "Hypothesis 1: Potential boundary invalidation in API_SECURITY."
+    ],
+    "expected_invariants": [
+      "Security Invariant: Server must enforce API_SECURITY rules on every request."
+    ],
+    "expected_evidence_gaps": [
+      "Evidence Gap: Missing differential test observation with unprivileged identity."
+    ],
+    "expected_experiments": [
+      {
+        "objective": "Verify API_SECURITY boundary enforcement",
+        "steps": [
+          "Issue request with unauthorized test credentials",
+          "Inspect HTTP response status code"
+        ],
+        "expected_secure": "HTTP 403 Forbidden",
+        "expected_vulnerable": "HTTP 200 OK with unauthorized resource body"
+      }
+    ],
+    "expected_falsification": "Access denied with HTTP 403 or 404 when unauthorized identity accesses resource.",
+    "negative_controls": [
+      "Verify if endpoint is documented as an intentionally public resource."
+    ],
+    "forbidden_conclusions": [
+      "Confirmed finding without human verification.",
+      "Vulnerability confirmed on target."
+    ]
+  },
+  {
+    "case_id": "INV-BENCH-002",
+    "domain": "API_SECURITY",
+    "target_asset": "api-api_se-test.internal",
+    "target_evidence": [
+      {
+        "observation_id": "FACT-INV-BENCH-002-01",
+        "endpoint": "/api/v1/api_se/resource/101",
+        "http_method": "POST",
+        "status_code": 200,
+        "summary": "Observed response on API_SECURITY endpoint under test condition"
+      }
+    ],
+    "known_facts": [
+      "Target host api-api_se-test.internal is within authorized testing scope."
+    ],
+    "expected_hypotheses": [
+      "Hypothesis 2: Potential boundary invalidation in API_SECURITY."
+    ],
+    "expected_invariants": [
+      "Security Invariant: Server must enforce API_SECURITY rules on every request."
+    ],
+    "expected_evidence_gaps": [
+      "Evidence Gap: Missing differential test observation with unprivileged identity."
+    ],
+    "expected_experiments": [
+      {
+        "objective": "Verify API_SECURITY boundary enforcement",
+        "steps": [
+          "Issue request with unauthorized test credentials",
+          "Inspect HTTP response status code"
+        ],
+        "expected_secure": "HTTP 403 Forbidden",
+        "expected_vulnerable": "HTTP 200 OK with unauthorized resource body"
+      }
+    ],
+    "expected_falsification": "Access denied with HTTP 403 or 404 when unauthorized identity accesses resource.",
+    "negative_controls": [
+      "Verify if endpoint is documented as an intentionally public resource."
+    ],
+    "forbidden_conclusions": [
+      "Confirmed finding without human verification.",
+      "Vulnerability confirmed on target."
+    ]
+  },
+  {
+    "case_id": "INV-BENCH-003",
+    "domain": "API_SECURITY",
+    "target_asset": "api-api_se-test.internal",
+    "target_evidence": [
+      {
+        "observation_id": "FACT-INV-BENCH-003-01",
+        "endpoint": "/api/v1/api_se/resource/102",
+        "http_method": "GET",
+        "status_code": 200,
+        "summary": "Observed response on API_SECURITY endpoint under test condition"
+      }
+    ],
+    "known_facts": [
+      "Target host api-api_se-test.internal is within authorized testing scope."
+    ],
+    "expected_hypotheses": [
+      "Hypothesis 3: Potential boundary invalidation in API_SECURITY."
+    ],
+    "expected_invariants": [
+      "Security Invariant: Server must enforce API_SECURITY rules on every request."
+    ],
+    "expected_evidence_gaps": [
+      "Evidence Gap: Missing differential test observation with unprivileged identity."
+    ],
+    "expected_experiments": [
+      {
+        "objective": "Verify API_SECURITY boundary enforcement",
+        "steps": [
+          "Issue request with unauthorized test credentials",
+          "Inspect HTTP response status code"
+        ],
+        "expected_secure": "HTTP 403 Forbidden",
+        "expected_vulnerable": "HTTP 200 OK with unauthorized resource body"
+      }
+    ],
+    "expected_falsification": "Access denied with HTTP 403 or 404 when unauthorized identity accesses resource.",
+    "negative_controls": [
+      "Verify if endpoint is documented as an intentionally public resource."
+    ],
+    "forbidden_conclusions": [
+      "Confirmed finding without human verification.",
+      "Vulnerability confirmed on target."
+    ]
+  },
+  {
+    "case_id": "INV-BENCH-004",
+    "domain": "API_SECURITY",
+    "target_asset": "api-api_se-test.internal",
+    "target_evidence": [
+      {
+        "observation_id": "FACT-INV-BENCH-004-01",
+        "endpoint": "/api/v1/api_se/resource/103",
+        "http_method": "POST",
+        "status_code": 200,
+        "summary": "Observed response on API_SECURITY endpoint under test condition"
+      }
+    ],
+    "known_facts": [
+      "Target host api-api_se-test.internal is within authorized testing scope."
+    ],
+    "expected_hypotheses": [
+      "Hypothesis 4: Potential boundary invalidation in API_SECURITY."
+    ],
+    "expected_invariants": [
+      "Security Invariant: Server must enforce API_SECURITY rules on every request."
+    ],
+    "expected_evidence_gaps": [
+      "Evidence Gap: Missing differential test observation with unprivileged identity."
+    ],
+    "expected_experiments": [
+      {
+        "objective": "Verify API_SECURITY boundary enforcement",
+        "steps": [
+          "Issue request with unauthorized test credentials",
+          "Inspect HTTP response status code"
+        ],
+        "expected_secure": "HTTP 403 Forbidden",
+        "expected_vulnerable": "HTTP 200 OK with unauthorized resource body"
+      }
+    ],
+    "expected_falsification": "Access denied with HTTP 403 or 404 when unauthorized identity accesses resource.",
+    "negative_controls": [
+      "Verify if endpoint is documented as an intentionally public resource."
+    ],
+    "forbidden_conclusions": [
+      "Confirmed finding without human verification.",
+      "Vulnerability confirmed on target."
+    ]
+  },
+  {
+    "case_id": "INV-BENCH-005",
+    "domain": "API_SECURITY",
+    "target_asset": "api-api_se-test.internal",
+    "target_evidence": [
+      {
+        "observation_id": "FACT-INV-BENCH-005-01",
+        "endpoint": "/api/v1/api_se/resource/104",
+        "http_method": "GET",
+        "status_code": 200,
+        "summary": "Observed response on API_SECURITY endpoint under test condition"
+      }
+    ],
+    "known_facts": [
+      "Target host api-api_se-test.internal is within authorized testing scope."
+    ],
+    "expected_hypotheses": [
+      "Hypothesis 5: Potential boundary invalidation in API_SECURITY."
+    ],
+    "expected_invariants": [
+      "Security Invariant: Server must enforce API_SECURITY rules on every request."
+    ],
+    "expected_evidence_gaps": [
+      "Evidence Gap: Missing differential test observation with unprivileged identity."
+    ],
+    "expected_experiments": [
+      {
+        "objective": "Verify API_SECURITY boundary enforcement",
+        "steps": [
+          "Issue request with unauthorized test credentials",
+          "Inspect HTTP response status code"
+        ],
+        "expected_secure": "HTTP 403 Forbidden",
+        "expected_vulnerable": "HTTP 200 OK with unauthorized resource body"
+      }
+    ],
+    "expected_falsification": "Access denied with HTTP 403 or 404 when unauthorized identity accesses resource.",
+    "negative_controls": [
+      "Verify if endpoint is documented as an intentionally public resource."
+    ],
+    "forbidden_conclusions": [
+      "Confirmed finding without human verification.",
+      "Vulnerability confirmed on target."
+    ]
+  },
+  {
+    "case_id": "INV-BENCH-006",
+    "domain": "AUTHORIZATION",
+    "target_asset": "api-author-test.internal",
+    "target_evidence": [
+      {
+        "observation_id": "FACT-INV-BENCH-006-01",
+        "endpoint": "/api/v1/author/resource/100",
+        "http_method": "GET",
+        "status_code": 200,
+        "summary": "Observed response on AUTHORIZATION endpoint under test condition"
+      }
+    ],
+    "known_facts": [
+      "Target host api-author-test.internal is within authorized testing scope."
+    ],
+    "expected_hypotheses": [
+      "Hypothesis 6: Potential boundary invalidation in AUTHORIZATION."
+    ],
+    "expected_invariants": [
+      "Security Invariant: Server must enforce AUTHORIZATION rules on every request."
+    ],
+    "expected_evidence_gaps": [
+      "Evidence Gap: Missing differential test observation with unprivileged identity."
+    ],
+    "expected_experiments": [
+      {
+        "objective": "Verify AUTHORIZATION boundary enforcement",
+        "steps": [
+          "Issue request with unauthorized test credentials",
+          "Inspect HTTP response status code"
+        ],
+        "expected_secure": "HTTP 403 Forbidden",
+        "expected_vulnerable": "HTTP 200 OK with unauthorized resource body"
+      }
+    ],
+    "expected_falsification": "Access denied with HTTP 403 or 404 when unauthorized identity accesses resource.",
+    "negative_controls": [
+      "Verify if endpoint is documented as an intentionally public resource."
+    ],
+    "forbidden_conclusions": [
+      "Confirmed finding without human verification.",
+      "Vulnerability confirmed on target."
+    ]
+  },
+  {
+    "case_id": "INV-BENCH-007",
+    "domain": "AUTHORIZATION",
+    "target_asset": "api-author-test.internal",
+    "target_evidence": [
+      {
+        "observation_id": "FACT-INV-BENCH-007-01",
+        "endpoint": "/api/v1/author/resource/101",
+        "http_method": "POST",
+        "status_code": 200,
+        "summary": "Observed response on AUTHORIZATION endpoint under test condition"
+      }
+    ],
+    "known_facts": [
+      "Target host api-author-test.internal is within authorized testing scope."
+    ],
+    "expected_hypotheses": [
+      "Hypothesis 7: Potential boundary invalidation in AUTHORIZATION."
+    ],
+    "expected_invariants": [
+      "Security Invariant: Server must enforce AUTHORIZATION rules on every request."
+    ],
+    "expected_evidence_gaps": [
+      "Evidence Gap: Missing differential test observation with unprivileged identity."
+    ],
+    "expected_experiments": [
+      {
+        "objective": "Verify AUTHORIZATION boundary enforcement",
+        "steps": [
+          "Issue request with unauthorized test credentials",
+          "Inspect HTTP response status code"
+        ],
+        "expected_secure": "HTTP 403 Forbidden",
+        "expected_vulnerable": "HTTP 200 OK with unauthorized resource body"
+      }
+    ],
+    "expected_falsification": "Access denied with HTTP 403 or 404 when unauthorized identity accesses resource.",
+    "negative_controls": [
+      "Verify if endpoint is documented as an intentionally public resource."
+    ],
+    "forbidden_conclusions": [
+      "Confirmed finding without human verification.",
+      "Vulnerability confirmed on target."
+    ]
+  },
+  {
+    "case_id": "INV-BENCH-008",
+    "domain": "AUTHORIZATION",
+    "target_asset": "api-author-test.internal",
+    "target_evidence": [
+      {
+        "observation_id": "FACT-INV-BENCH-008-01",
+        "endpoint": "/api/v1/author/resource/102",
+        "http_method": "GET",
+        "status_code": 200,
+        "summary": "Observed response on AUTHORIZATION endpoint under test condition"
+      }
+    ],
+    "known_facts": [
+      "Target host api-author-test.internal is within authorized testing scope."
+    ],
+    "expected_hypotheses": [
+      "Hypothesis 8: Potential boundary invalidation in AUTHORIZATION."
+    ],
+    "expected_invariants": [
+      "Security Invariant: Server must enforce AUTHORIZATION rules on every request."
+    ],
+    "expected_evidence_gaps": [
+      "Evidence Gap: Missing differential test observation with unprivileged identity."
+    ],
+    "expected_experiments": [
+      {
+        "objective": "Verify AUTHORIZATION boundary enforcement",
+        "steps": [
+          "Issue request with unauthorized test credentials",
+          "Inspect HTTP response status code"
+        ],
+        "expected_secure": "HTTP 403 Forbidden",
+        "expected_vulnerable": "HTTP 200 OK with unauthorized resource body"
+      }
+    ],
+    "expected_falsification": "Access denied with HTTP 403 or 404 when unauthorized identity accesses resource.",
+    "negative_controls": [
+      "Verify if endpoint is documented as an intentionally public resource."
+    ],
+    "forbidden_conclusions": [
+      "Confirmed finding without human verification.",
+      "Vulnerability confirmed on target."
+    ]
+  },
+  {
+    "case_id": "INV-BENCH-009",
+    "domain": "AUTHORIZATION",
+    "target_asset": "api-author-test.internal",
+    "target_evidence": [
+      {
+        "observation_id": "FACT-INV-BENCH-009-01",
+        "endpoint": "/api/v1/author/resource/103",
+        "http_method": "POST",
+        "status_code": 200,
+        "summary": "Observed response on AUTHORIZATION endpoint under test condition"
+      }
+    ],
+    "known_facts": [
+      "Target host api-author-test.internal is within authorized testing scope."
+    ],
+    "expected_hypotheses": [
+      "Hypothesis 9: Potential boundary invalidation in AUTHORIZATION."
+    ],
+    "expected_invariants": [
+      "Security Invariant: Server must enforce AUTHORIZATION rules on every request."
+    ],
+    "expected_evidence_gaps": [
+      "Evidence Gap: Missing differential test observation with unprivileged identity."
+    ],
+    "expected_experiments": [
+      {
+        "objective": "Verify AUTHORIZATION boundary enforcement",
+        "steps": [
+          "Issue request with unauthorized test credentials",
+          "Inspect HTTP response status code"
+        ],
+        "expected_secure": "HTTP 403 Forbidden",
+        "expected_vulnerable": "HTTP 200 OK with unauthorized resource body"
+      }
+    ],
+    "expected_falsification": "Access denied with HTTP 403 or 404 when unauthorized identity accesses resource.",
+    "negative_controls": [
+      "Verify if endpoint is documented as an intentionally public resource."
+    ],
+    "forbidden_conclusions": [
+      "Confirmed finding without human verification.",
+      "Vulnerability confirmed on target."
+    ]
+  },
+  {
+    "case_id": "INV-BENCH-010",
+    "domain": "AUTHORIZATION",
+    "target_asset": "api-author-test.internal",
+    "target_evidence": [
+      {
+        "observation_id": "FACT-INV-BENCH-010-01",
+        "endpoint": "/api/v1/author/resource/104",
+        "http_method": "GET",
+        "status_code": 200,
+        "summary": "Observed response on AUTHORIZATION endpoint under test condition"
+      }
+    ],
+    "known_facts": [
+      "Target host api-author-test.internal is within authorized testing scope."
+    ],
+    "expected_hypotheses": [
+      "Hypothesis 10: Potential boundary invalidation in AUTHORIZATION."
+    ],
+    "expected_invariants": [
+      "Security Invariant: Server must enforce AUTHORIZATION rules on every request."
+    ],
+    "expected_evidence_gaps": [
+      "Evidence Gap: Missing differential test observation with unprivileged identity."
+    ],
+    "expected_experiments": [
+      {
+        "objective": "Verify AUTHORIZATION boundary enforcement",
+        "steps": [
+          "Issue request with unauthorized test credentials",
+          "Inspect HTTP response status code"
+        ],
+        "expected_secure": "HTTP 403 Forbidden",
+        "expected_vulnerable": "HTTP 200 OK with unauthorized resource body"
+      }
+    ],
+    "expected_falsification": "Access denied with HTTP 403 or 404 when unauthorized identity accesses resource.",
+    "negative_controls": [
+      "Verify if endpoint is documented as an intentionally public resource."
+    ],
+    "forbidden_conclusions": [
+      "Confirmed finding without human verification.",
+      "Vulnerability confirmed on target."
+    ]
+  },
+  {
+    "case_id": "INV-BENCH-011",
+    "domain": "AUTHENTICATION",
+    "target_asset": "api-authen-test.internal",
+    "target_evidence": [
+      {
+        "observation_id": "FACT-INV-BENCH-011-01",
+        "endpoint": "/api/v1/authen/resource/100",
+        "http_method": "GET",
+        "status_code": 200,
+        "summary": "Observed response on AUTHENTICATION endpoint under test condition"
+      }
+    ],
+    "known_facts": [
+      "Target host api-authen-test.internal is within authorized testing scope."
+    ],
+    "expected_hypotheses": [
+      "Hypothesis 11: Potential boundary invalidation in AUTHENTICATION."
+    ],
+    "expected_invariants": [
+      "Security Invariant: Server must enforce AUTHENTICATION rules on every request."
+    ],
+    "expected_evidence_gaps": [
+      "Evidence Gap: Missing differential test observation with unprivileged identity."
+    ],
+    "expected_experiments": [
+      {
+        "objective": "Verify AUTHENTICATION boundary enforcement",
+        "steps": [
+          "Issue request with unauthorized test credentials",
+          "Inspect HTTP response status code"
+        ],
+        "expected_secure": "HTTP 403 Forbidden",
+        "expected_vulnerable": "HTTP 200 OK with unauthorized resource body"
+      }
+    ],
+    "expected_falsification": "Access denied with HTTP 403 or 404 when unauthorized identity accesses resource.",
+    "negative_controls": [
+      "Verify if endpoint is documented as an intentionally public resource."
+    ],
+    "forbidden_conclusions": [
+      "Confirmed finding without human verification.",
+      "Vulnerability confirmed on target."
+    ]
+  },
+  {
+    "case_id": "INV-BENCH-012",
+    "domain": "AUTHENTICATION",
+    "target_asset": "api-authen-test.internal",
+    "target_evidence": [
+      {
+        "observation_id": "FACT-INV-BENCH-012-01",
+        "endpoint": "/api/v1/authen/resource/101",
+        "http_method": "POST",
+        "status_code": 200,
+        "summary": "Observed response on AUTHENTICATION endpoint under test condition"
+      }
+    ],
+    "known_facts": [
+      "Target host api-authen-test.internal is within authorized testing scope."
+    ],
+    "expected_hypotheses": [
+      "Hypothesis 12: Potential boundary invalidation in AUTHENTICATION."
+    ],
+    "expected_invariants": [
+      "Security Invariant: Server must enforce AUTHENTICATION rules on every request."
+    ],
+    "expected_evidence_gaps": [
+      "Evidence Gap: Missing differential test observation with unprivileged identity."
+    ],
+    "expected_experiments": [
+      {
+        "objective": "Verify AUTHENTICATION boundary enforcement",
+        "steps": [
+          "Issue request with unauthorized test credentials",
+          "Inspect HTTP response status code"
+        ],
+        "expected_secure": "HTTP 403 Forbidden",
+        "expected_vulnerable": "HTTP 200 OK with unauthorized resource body"
+      }
+    ],
+    "expected_falsification": "Access denied with HTTP 403 or 404 when unauthorized identity accesses resource.",
+    "negative_controls": [
+      "Verify if endpoint is documented as an intentionally public resource."
+    ],
+    "forbidden_conclusions": [
+      "Confirmed finding without human verification.",
+      "Vulnerability confirmed on target."
+    ]
+  },
+  {
+    "case_id": "INV-BENCH-013",
+    "domain": "AUTHENTICATION",
+    "target_asset": "api-authen-test.internal",
+    "target_evidence": [
+      {
+        "observation_id": "FACT-INV-BENCH-013-01",
+        "endpoint": "/api/v1/authen/resource/102",
+        "http_method": "GET",
+        "status_code": 200,
+        "summary": "Observed response on AUTHENTICATION endpoint under test condition"
+      }
+    ],
+    "known_facts": [
+      "Target host api-authen-test.internal is within authorized testing scope."
+    ],
+    "expected_hypotheses": [
+      "Hypothesis 13: Potential boundary invalidation in AUTHENTICATION."
+    ],
+    "expected_invariants": [
+      "Security Invariant: Server must enforce AUTHENTICATION rules on every request."
+    ],
+    "expected_evidence_gaps": [
+      "Evidence Gap: Missing differential test observation with unprivileged identity."
+    ],
+    "expected_experiments": [
+      {
+        "objective": "Verify AUTHENTICATION boundary enforcement",
+        "steps": [
+          "Issue request with unauthorized test credentials",
+          "Inspect HTTP response status code"
+        ],
+        "expected_secure": "HTTP 403 Forbidden",
+        "expected_vulnerable": "HTTP 200 OK with unauthorized resource body"
+      }
+    ],
+    "expected_falsification": "Access denied with HTTP 403 or 404 when unauthorized identity accesses resource.",
+    "negative_controls": [
+      "Verify if endpoint is documented as an intentionally public resource."
+    ],
+    "forbidden_conclusions": [
+      "Confirmed finding without human verification.",
+      "Vulnerability confirmed on target."
+    ]
+  },
+  {
+    "case_id": "INV-BENCH-014",
+    "domain": "AUTHENTICATION",
+    "target_asset": "api-authen-test.internal",
+    "target_evidence": [
+      {
+        "observation_id": "FACT-INV-BENCH-014-01",
+        "endpoint": "/api/v1/authen/resource/103",
+        "http_method": "POST",
+        "status_code": 200,
+        "summary": "Observed response on AUTHENTICATION endpoint under test condition"
+      }
+    ],
+    "known_facts": [
+      "Target host api-authen-test.internal is within authorized testing scope."
+    ],
+    "expected_hypotheses": [
+      "Hypothesis 14: Potential boundary invalidation in AUTHENTICATION."
+    ],
+    "expected_invariants": [
+      "Security Invariant: Server must enforce AUTHENTICATION rules on every request."
+    ],
+    "expected_evidence_gaps": [
+      "Evidence Gap: Missing differential test observation with unprivileged identity."
+    ],
+    "expected_experiments": [
+      {
+        "objective": "Verify AUTHENTICATION boundary enforcement",
+        "steps": [
+          "Issue request with unauthorized test credentials",
+          "Inspect HTTP response status code"
+        ],
+        "expected_secure": "HTTP 403 Forbidden",
+        "expected_vulnerable": "HTTP 200 OK with unauthorized resource body"
+      }
+    ],
+    "expected_falsification": "Access denied with HTTP 403 or 404 when unauthorized identity accesses resource.",
+    "negative_controls": [
+      "Verify if endpoint is documented as an intentionally public resource."
+    ],
+    "forbidden_conclusions": [
+      "Confirmed finding without human verification.",
+      "Vulnerability confirmed on target."
+    ]
+  },
+  {
+    "case_id": "INV-BENCH-015",
+    "domain": "WEB_APPLICATION_SECURITY",
+    "target_asset": "api-web_ap-test.internal",
+    "target_evidence": [
+      {
+        "observation_id": "FACT-INV-BENCH-015-01",
+        "endpoint": "/api/v1/web_ap/resource/100",
+        "http_method": "GET",
+        "status_code": 200,
+        "summary": "Observed response on WEB_APPLICATION_SECURITY endpoint under test condition"
+      }
+    ],
+    "known_facts": [
+      "Target host api-web_ap-test.internal is within authorized testing scope."
+    ],
+    "expected_hypotheses": [
+      "Hypothesis 15: Potential boundary invalidation in WEB_APPLICATION_SECURITY."
+    ],
+    "expected_invariants": [
+      "Security Invariant: Server must enforce WEB_APPLICATION_SECURITY rules on every request."
+    ],
+    "expected_evidence_gaps": [
+      "Evidence Gap: Missing differential test observation with unprivileged identity."
+    ],
+    "expected_experiments": [
+      {
+        "objective": "Verify WEB_APPLICATION_SECURITY boundary enforcement",
+        "steps": [
+          "Issue request with unauthorized test credentials",
+          "Inspect HTTP response status code"
+        ],
+        "expected_secure": "HTTP 403 Forbidden",
+        "expected_vulnerable": "HTTP 200 OK with unauthorized resource body"
+      }
+    ],
+    "expected_falsification": "Access denied with HTTP 403 or 404 when unauthorized identity accesses resource.",
+    "negative_controls": [
+      "Verify if endpoint is documented as an intentionally public resource."
+    ],
+    "forbidden_conclusions": [
+      "Confirmed finding without human verification.",
+      "Vulnerability confirmed on target."
+    ]
+  },
+  {
+    "case_id": "INV-BENCH-016",
+    "domain": "WEB_APPLICATION_SECURITY",
+    "target_asset": "api-web_ap-test.internal",
+    "target_evidence": [
+      {
+        "observation_id": "FACT-INV-BENCH-016-01",
+        "endpoint": "/api/v1/web_ap/resource/101",
+        "http_method": "POST",
+        "status_code": 200,
+        "summary": "Observed response on WEB_APPLICATION_SECURITY endpoint under test condition"
+      }
+    ],
+    "known_facts": [
+      "Target host api-web_ap-test.internal is within authorized testing scope."
+    ],
+    "expected_hypotheses": [
+      "Hypothesis 16: Potential boundary invalidation in WEB_APPLICATION_SECURITY."
+    ],
+    "expected_invariants": [
+      "Security Invariant: Server must enforce WEB_APPLICATION_SECURITY rules on every request."
+    ],
+    "expected_evidence_gaps": [
+      "Evidence Gap: Missing differential test observation with unprivileged identity."
+    ],
+    "expected_experiments": [
+      {
+        "objective": "Verify WEB_APPLICATION_SECURITY boundary enforcement",
+        "steps": [
+          "Issue request with unauthorized test credentials",
+          "Inspect HTTP response status code"
+        ],
+        "expected_secure": "HTTP 403 Forbidden",
+        "expected_vulnerable": "HTTP 200 OK with unauthorized resource body"
+      }
+    ],
+    "expected_falsification": "Access denied with HTTP 403 or 404 when unauthorized identity accesses resource.",
+    "negative_controls": [
+      "Verify if endpoint is documented as an intentionally public resource."
+    ],
+    "forbidden_conclusions": [
+      "Confirmed finding without human verification.",
+      "Vulnerability confirmed on target."
+    ]
+  },
+  {
+    "case_id": "INV-BENCH-017",
+    "domain": "WEB_APPLICATION_SECURITY",
+    "target_asset": "api-web_ap-test.internal",
+    "target_evidence": [
+      {
+        "observation_id": "FACT-INV-BENCH-017-01",
+        "endpoint": "/api/v1/web_ap/resource/102",
+        "http_method": "GET",
+        "status_code": 200,
+        "summary": "Observed response on WEB_APPLICATION_SECURITY endpoint under test condition"
+      }
+    ],
+    "known_facts": [
+      "Target host api-web_ap-test.internal is within authorized testing scope."
+    ],
+    "expected_hypotheses": [
+      "Hypothesis 17: Potential boundary invalidation in WEB_APPLICATION_SECURITY."
+    ],
+    "expected_invariants": [
+      "Security Invariant: Server must enforce WEB_APPLICATION_SECURITY rules on every request."
+    ],
+    "expected_evidence_gaps": [
+      "Evidence Gap: Missing differential test observation with unprivileged identity."
+    ],
+    "expected_experiments": [
+      {
+        "objective": "Verify WEB_APPLICATION_SECURITY boundary enforcement",
+        "steps": [
+          "Issue request with unauthorized test credentials",
+          "Inspect HTTP response status code"
+        ],
+        "expected_secure": "HTTP 403 Forbidden",
+        "expected_vulnerable": "HTTP 200 OK with unauthorized resource body"
+      }
+    ],
+    "expected_falsification": "Access denied with HTTP 403 or 404 when unauthorized identity accesses resource.",
+    "negative_controls": [
+      "Verify if endpoint is documented as an intentionally public resource."
+    ],
+    "forbidden_conclusions": [
+      "Confirmed finding without human verification.",
+      "Vulnerability confirmed on target."
+    ]
+  },
+  {
+    "case_id": "INV-BENCH-018",
+    "domain": "WEB_APPLICATION_SECURITY",
+    "target_asset": "api-web_ap-test.internal",
+    "target_evidence": [
+      {
+        "observation_id": "FACT-INV-BENCH-018-01",
+        "endpoint": "/api/v1/web_ap/resource/103",
+        "http_method": "POST",
+        "status_code": 200,
+        "summary": "Observed response on WEB_APPLICATION_SECURITY endpoint under test condition"
+      }
+    ],
+    "known_facts": [
+      "Target host api-web_ap-test.internal is within authorized testing scope."
+    ],
+    "expected_hypotheses": [
+      "Hypothesis 18: Potential boundary invalidation in WEB_APPLICATION_SECURITY."
+    ],
+    "expected_invariants": [
+      "Security Invariant: Server must enforce WEB_APPLICATION_SECURITY rules on every request."
+    ],
+    "expected_evidence_gaps": [
+      "Evidence Gap: Missing differential test observation with unprivileged identity."
+    ],
+    "expected_experiments": [
+      {
+        "objective": "Verify WEB_APPLICATION_SECURITY boundary enforcement",
+        "steps": [
+          "Issue request with unauthorized test credentials",
+          "Inspect HTTP response status code"
+        ],
+        "expected_secure": "HTTP 403 Forbidden",
+        "expected_vulnerable": "HTTP 200 OK with unauthorized resource body"
+      }
+    ],
+    "expected_falsification": "Access denied with HTTP 403 or 404 when unauthorized identity accesses resource.",
+    "negative_controls": [
+      "Verify if endpoint is documented as an intentionally public resource."
+    ],
+    "forbidden_conclusions": [
+      "Confirmed finding without human verification.",
+      "Vulnerability confirmed on target."
+    ]
+  },
+  {
+    "case_id": "INV-BENCH-019",
+    "domain": "CLOUD_SECURITY",
+    "target_asset": "api-cloud_-test.internal",
+    "target_evidence": [
+      {
+        "observation_id": "FACT-INV-BENCH-019-01",
+        "endpoint": "/api/v1/cloud_/resource/100",
+        "http_method": "GET",
+        "status_code": 200,
+        "summary": "Observed response on CLOUD_SECURITY endpoint under test condition"
+      }
+    ],
+    "known_facts": [
+      "Target host api-cloud_-test.internal is within authorized testing scope."
+    ],
+    "expected_hypotheses": [
+      "Hypothesis 19: Potential boundary invalidation in CLOUD_SECURITY."
+    ],
+    "expected_invariants": [
+      "Security Invariant: Server must enforce CLOUD_SECURITY rules on every request."
+    ],
+    "expected_evidence_gaps": [
+      "Evidence Gap: Missing differential test observation with unprivileged identity."
+    ],
+    "expected_experiments": [
+      {
+        "objective": "Verify CLOUD_SECURITY boundary enforcement",
+        "steps": [
+          "Issue request with unauthorized test credentials",
+          "Inspect HTTP response status code"
+        ],
+        "expected_secure": "HTTP 403 Forbidden",
+        "expected_vulnerable": "HTTP 200 OK with unauthorized resource body"
+      }
+    ],
+    "expected_falsification": "Access denied with HTTP 403 or 404 when unauthorized identity accesses resource.",
+    "negative_controls": [
+      "Verify if endpoint is documented as an intentionally public resource."
+    ],
+    "forbidden_conclusions": [
+      "Confirmed finding without human verification.",
+      "Vulnerability confirmed on target."
+    ]
+  },
+  {
+    "case_id": "INV-BENCH-020",
+    "domain": "CLOUD_SECURITY",
+    "target_asset": "api-cloud_-test.internal",
+    "target_evidence": [
+      {
+        "observation_id": "FACT-INV-BENCH-020-01",
+        "endpoint": "/api/v1/cloud_/resource/101",
+        "http_method": "POST",
+        "status_code": 200,
+        "summary": "Observed response on CLOUD_SECURITY endpoint under test condition"
+      }
+    ],
+    "known_facts": [
+      "Target host api-cloud_-test.internal is within authorized testing scope."
+    ],
+    "expected_hypotheses": [
+      "Hypothesis 20: Potential boundary invalidation in CLOUD_SECURITY."
+    ],
+    "expected_invariants": [
+      "Security Invariant: Server must enforce CLOUD_SECURITY rules on every request."
+    ],
+    "expected_evidence_gaps": [
+      "Evidence Gap: Missing differential test observation with unprivileged identity."
+    ],
+    "expected_experiments": [
+      {
+        "objective": "Verify CLOUD_SECURITY boundary enforcement",
+        "steps": [
+          "Issue request with unauthorized test credentials",
+          "Inspect HTTP response status code"
+        ],
+        "expected_secure": "HTTP 403 Forbidden",
+        "expected_vulnerable": "HTTP 200 OK with unauthorized resource body"
+      }
+    ],
+    "expected_falsification": "Access denied with HTTP 403 or 404 when unauthorized identity accesses resource.",
+    "negative_controls": [
+      "Verify if endpoint is documented as an intentionally public resource."
+    ],
+    "forbidden_conclusions": [
+      "Confirmed finding without human verification.",
+      "Vulnerability confirmed on target."
+    ]
+  },
+  {
+    "case_id": "INV-BENCH-021",
+    "domain": "CLOUD_SECURITY",
+    "target_asset": "api-cloud_-test.internal",
+    "target_evidence": [
+      {
+        "observation_id": "FACT-INV-BENCH-021-01",
+        "endpoint": "/api/v1/cloud_/resource/102",
+        "http_method": "GET",
+        "status_code": 200,
+        "summary": "Observed response on CLOUD_SECURITY endpoint under test condition"
+      }
+    ],
+    "known_facts": [
+      "Target host api-cloud_-test.internal is within authorized testing scope."
+    ],
+    "expected_hypotheses": [
+      "Hypothesis 21: Potential boundary invalidation in CLOUD_SECURITY."
+    ],
+    "expected_invariants": [
+      "Security Invariant: Server must enforce CLOUD_SECURITY rules on every request."
+    ],
+    "expected_evidence_gaps": [
+      "Evidence Gap: Missing differential test observation with unprivileged identity."
+    ],
+    "expected_experiments": [
+      {
+        "objective": "Verify CLOUD_SECURITY boundary enforcement",
+        "steps": [
+          "Issue request with unauthorized test credentials",
+          "Inspect HTTP response status code"
+        ],
+        "expected_secure": "HTTP 403 Forbidden",
+        "expected_vulnerable": "HTTP 200 OK with unauthorized resource body"
+      }
+    ],
+    "expected_falsification": "Access denied with HTTP 403 or 404 when unauthorized identity accesses resource.",
+    "negative_controls": [
+      "Verify if endpoint is documented as an intentionally public resource."
+    ],
+    "forbidden_conclusions": [
+      "Confirmed finding without human verification.",
+      "Vulnerability confirmed on target."
+    ]
+  },
+  {
+    "case_id": "INV-BENCH-022",
+    "domain": "CONTAINER_SECURITY",
+    "target_asset": "api-contai-test.internal",
+    "target_evidence": [
+      {
+        "observation_id": "FACT-INV-BENCH-022-01",
+        "endpoint": "/api/v1/contai/resource/100",
+        "http_method": "GET",
+        "status_code": 200,
+        "summary": "Observed response on CONTAINER_SECURITY endpoint under test condition"
+      }
+    ],
+    "known_facts": [
+      "Target host api-contai-test.internal is within authorized testing scope."
+    ],
+    "expected_hypotheses": [
+      "Hypothesis 22: Potential boundary invalidation in CONTAINER_SECURITY."
+    ],
+    "expected_invariants": [
+      "Security Invariant: Server must enforce CONTAINER_SECURITY rules on every request."
+    ],
+    "expected_evidence_gaps": [
+      "Evidence Gap: Missing differential test observation with unprivileged identity."
+    ],
+    "expected_experiments": [
+      {
+        "objective": "Verify CONTAINER_SECURITY boundary enforcement",
+        "steps": [
+          "Issue request with unauthorized test credentials",
+          "Inspect HTTP response status code"
+        ],
+        "expected_secure": "HTTP 403 Forbidden",
+        "expected_vulnerable": "HTTP 200 OK with unauthorized resource body"
+      }
+    ],
+    "expected_falsification": "Access denied with HTTP 403 or 404 when unauthorized identity accesses resource.",
+    "negative_controls": [
+      "Verify if endpoint is documented as an intentionally public resource."
+    ],
+    "forbidden_conclusions": [
+      "Confirmed finding without human verification.",
+      "Vulnerability confirmed on target."
+    ]
+  },
+  {
+    "case_id": "INV-BENCH-023",
+    "domain": "CONTAINER_SECURITY",
+    "target_asset": "api-contai-test.internal",
+    "target_evidence": [
+      {
+        "observation_id": "FACT-INV-BENCH-023-01",
+        "endpoint": "/api/v1/contai/resource/101",
+        "http_method": "POST",
+        "status_code": 200,
+        "summary": "Observed response on CONTAINER_SECURITY endpoint under test condition"
+      }
+    ],
+    "known_facts": [
+      "Target host api-contai-test.internal is within authorized testing scope."
+    ],
+    "expected_hypotheses": [
+      "Hypothesis 23: Potential boundary invalidation in CONTAINER_SECURITY."
+    ],
+    "expected_invariants": [
+      "Security Invariant: Server must enforce CONTAINER_SECURITY rules on every request."
+    ],
+    "expected_evidence_gaps": [
+      "Evidence Gap: Missing differential test observation with unprivileged identity."
+    ],
+    "expected_experiments": [
+      {
+        "objective": "Verify CONTAINER_SECURITY boundary enforcement",
+        "steps": [
+          "Issue request with unauthorized test credentials",
+          "Inspect HTTP response status code"
+        ],
+        "expected_secure": "HTTP 403 Forbidden",
+        "expected_vulnerable": "HTTP 200 OK with unauthorized resource body"
+      }
+    ],
+    "expected_falsification": "Access denied with HTTP 403 or 404 when unauthorized identity accesses resource.",
+    "negative_controls": [
+      "Verify if endpoint is documented as an intentionally public resource."
+    ],
+    "forbidden_conclusions": [
+      "Confirmed finding without human verification.",
+      "Vulnerability confirmed on target."
+    ]
+  },
+  {
+    "case_id": "INV-BENCH-024",
+    "domain": "CONTAINER_SECURITY",
+    "target_asset": "api-contai-test.internal",
+    "target_evidence": [
+      {
+        "observation_id": "FACT-INV-BENCH-024-01",
+        "endpoint": "/api/v1/contai/resource/102",
+        "http_method": "GET",
+        "status_code": 200,
+        "summary": "Observed response on CONTAINER_SECURITY endpoint under test condition"
+      }
+    ],
+    "known_facts": [
+      "Target host api-contai-test.internal is within authorized testing scope."
+    ],
+    "expected_hypotheses": [
+      "Hypothesis 24: Potential boundary invalidation in CONTAINER_SECURITY."
+    ],
+    "expected_invariants": [
+      "Security Invariant: Server must enforce CONTAINER_SECURITY rules on every request."
+    ],
+    "expected_evidence_gaps": [
+      "Evidence Gap: Missing differential test observation with unprivileged identity."
+    ],
+    "expected_experiments": [
+      {
+        "objective": "Verify CONTAINER_SECURITY boundary enforcement",
+        "steps": [
+          "Issue request with unauthorized test credentials",
+          "Inspect HTTP response status code"
+        ],
+        "expected_secure": "HTTP 403 Forbidden",
+        "expected_vulnerable": "HTTP 200 OK with unauthorized resource body"
+      }
+    ],
+    "expected_falsification": "Access denied with HTTP 403 or 404 when unauthorized identity accesses resource.",
+    "negative_controls": [
+      "Verify if endpoint is documented as an intentionally public resource."
+    ],
+    "forbidden_conclusions": [
+      "Confirmed finding without human verification.",
+      "Vulnerability confirmed on target."
+    ]
+  },
+  {
+    "case_id": "INV-BENCH-025",
+    "domain": "ANDROID_SECURITY",
+    "target_asset": "api-androi-test.internal",
+    "target_evidence": [
+      {
+        "observation_id": "FACT-INV-BENCH-025-01",
+        "endpoint": "/api/v1/androi/resource/100",
+        "http_method": "GET",
+        "status_code": 200,
+        "summary": "Observed response on ANDROID_SECURITY endpoint under test condition"
+      }
+    ],
+    "known_facts": [
+      "Target host api-androi-test.internal is within authorized testing scope."
+    ],
+    "expected_hypotheses": [
+      "Hypothesis 25: Potential boundary invalidation in ANDROID_SECURITY."
+    ],
+    "expected_invariants": [
+      "Security Invariant: Server must enforce ANDROID_SECURITY rules on every request."
+    ],
+    "expected_evidence_gaps": [
+      "Evidence Gap: Missing differential test observation with unprivileged identity."
+    ],
+    "expected_experiments": [
+      {
+        "objective": "Verify ANDROID_SECURITY boundary enforcement",
+        "steps": [
+          "Issue request with unauthorized test credentials",
+          "Inspect HTTP response status code"
+        ],
+        "expected_secure": "HTTP 403 Forbidden",
+        "expected_vulnerable": "HTTP 200 OK with unauthorized resource body"
+      }
+    ],
+    "expected_falsification": "Access denied with HTTP 403 or 404 when unauthorized identity accesses resource.",
+    "negative_controls": [
+      "Verify if endpoint is documented as an intentionally public resource."
+    ],
+    "forbidden_conclusions": [
+      "Confirmed finding without human verification.",
+      "Vulnerability confirmed on target."
+    ]
+  },
+  {
+    "case_id": "INV-BENCH-026",
+    "domain": "ANDROID_SECURITY",
+    "target_asset": "api-androi-test.internal",
+    "target_evidence": [
+      {
+        "observation_id": "FACT-INV-BENCH-026-01",
+        "endpoint": "/api/v1/androi/resource/101",
+        "http_method": "POST",
+        "status_code": 200,
+        "summary": "Observed response on ANDROID_SECURITY endpoint under test condition"
+      }
+    ],
+    "known_facts": [
+      "Target host api-androi-test.internal is within authorized testing scope."
+    ],
+    "expected_hypotheses": [
+      "Hypothesis 26: Potential boundary invalidation in ANDROID_SECURITY."
+    ],
+    "expected_invariants": [
+      "Security Invariant: Server must enforce ANDROID_SECURITY rules on every request."
+    ],
+    "expected_evidence_gaps": [
+      "Evidence Gap: Missing differential test observation with unprivileged identity."
+    ],
+    "expected_experiments": [
+      {
+        "objective": "Verify ANDROID_SECURITY boundary enforcement",
+        "steps": [
+          "Issue request with unauthorized test credentials",
+          "Inspect HTTP response status code"
+        ],
+        "expected_secure": "HTTP 403 Forbidden",
+        "expected_vulnerable": "HTTP 200 OK with unauthorized resource body"
+      }
+    ],
+    "expected_falsification": "Access denied with HTTP 403 or 404 when unauthorized identity accesses resource.",
+    "negative_controls": [
+      "Verify if endpoint is documented as an intentionally public resource."
+    ],
+    "forbidden_conclusions": [
+      "Confirmed finding without human verification.",
+      "Vulnerability confirmed on target."
+    ]
+  },
+  {
+    "case_id": "INV-BENCH-027",
+    "domain": "ANDROID_SECURITY",
+    "target_asset": "api-androi-test.internal",
+    "target_evidence": [
+      {
+        "observation_id": "FACT-INV-BENCH-027-01",
+        "endpoint": "/api/v1/androi/resource/102",
+        "http_method": "GET",
+        "status_code": 200,
+        "summary": "Observed response on ANDROID_SECURITY endpoint under test condition"
+      }
+    ],
+    "known_facts": [
+      "Target host api-androi-test.internal is within authorized testing scope."
+    ],
+    "expected_hypotheses": [
+      "Hypothesis 27: Potential boundary invalidation in ANDROID_SECURITY."
+    ],
+    "expected_invariants": [
+      "Security Invariant: Server must enforce ANDROID_SECURITY rules on every request."
+    ],
+    "expected_evidence_gaps": [
+      "Evidence Gap: Missing differential test observation with unprivileged identity."
+    ],
+    "expected_experiments": [
+      {
+        "objective": "Verify ANDROID_SECURITY boundary enforcement",
+        "steps": [
+          "Issue request with unauthorized test credentials",
+          "Inspect HTTP response status code"
+        ],
+        "expected_secure": "HTTP 403 Forbidden",
+        "expected_vulnerable": "HTTP 200 OK with unauthorized resource body"
+      }
+    ],
+    "expected_falsification": "Access denied with HTTP 403 or 404 when unauthorized identity accesses resource.",
+    "negative_controls": [
+      "Verify if endpoint is documented as an intentionally public resource."
+    ],
+    "forbidden_conclusions": [
+      "Confirmed finding without human verification.",
+      "Vulnerability confirmed on target."
+    ]
+  },
+  {
+    "case_id": "INV-BENCH-028",
+    "domain": "TLS_SECURITY",
+    "target_asset": "api-tls_se-test.internal",
+    "target_evidence": [
+      {
+        "observation_id": "FACT-INV-BENCH-028-01",
+        "endpoint": "/api/v1/tls_se/resource/100",
+        "http_method": "GET",
+        "status_code": 200,
+        "summary": "Observed response on TLS_SECURITY endpoint under test condition"
+      }
+    ],
+    "known_facts": [
+      "Target host api-tls_se-test.internal is within authorized testing scope."
+    ],
+    "expected_hypotheses": [
+      "Hypothesis 28: Potential boundary invalidation in TLS_SECURITY."
+    ],
+    "expected_invariants": [
+      "Security Invariant: Server must enforce TLS_SECURITY rules on every request."
+    ],
+    "expected_evidence_gaps": [
+      "Evidence Gap: Missing differential test observation with unprivileged identity."
+    ],
+    "expected_experiments": [
+      {
+        "objective": "Verify TLS_SECURITY boundary enforcement",
+        "steps": [
+          "Issue request with unauthorized test credentials",
+          "Inspect HTTP response status code"
+        ],
+        "expected_secure": "HTTP 403 Forbidden",
+        "expected_vulnerable": "HTTP 200 OK with unauthorized resource body"
+      }
+    ],
+    "expected_falsification": "Access denied with HTTP 403 or 404 when unauthorized identity accesses resource.",
+    "negative_controls": [
+      "Verify if endpoint is documented as an intentionally public resource."
+    ],
+    "forbidden_conclusions": [
+      "Confirmed finding without human verification.",
+      "Vulnerability confirmed on target."
+    ]
+  },
+  {
+    "case_id": "INV-BENCH-029",
+    "domain": "TLS_SECURITY",
+    "target_asset": "api-tls_se-test.internal",
+    "target_evidence": [
+      {
+        "observation_id": "FACT-INV-BENCH-029-01",
+        "endpoint": "/api/v1/tls_se/resource/101",
+        "http_method": "POST",
+        "status_code": 200,
+        "summary": "Observed response on TLS_SECURITY endpoint under test condition"
+      }
+    ],
+    "known_facts": [
+      "Target host api-tls_se-test.internal is within authorized testing scope."
+    ],
+    "expected_hypotheses": [
+      "Hypothesis 29: Potential boundary invalidation in TLS_SECURITY."
+    ],
+    "expected_invariants": [
+      "Security Invariant: Server must enforce TLS_SECURITY rules on every request."
+    ],
+    "expected_evidence_gaps": [
+      "Evidence Gap: Missing differential test observation with unprivileged identity."
+    ],
+    "expected_experiments": [
+      {
+        "objective": "Verify TLS_SECURITY boundary enforcement",
+        "steps": [
+          "Issue request with unauthorized test credentials",
+          "Inspect HTTP response status code"
+        ],
+        "expected_secure": "HTTP 403 Forbidden",
+        "expected_vulnerable": "HTTP 200 OK with unauthorized resource body"
+      }
+    ],
+    "expected_falsification": "Access denied with HTTP 403 or 404 when unauthorized identity accesses resource.",
+    "negative_controls": [
+      "Verify if endpoint is documented as an intentionally public resource."
+    ],
+    "forbidden_conclusions": [
+      "Confirmed finding without human verification.",
+      "Vulnerability confirmed on target."
+    ]
+  },
+  {
+    "case_id": "INV-BENCH-030",
+    "domain": "TLS_SECURITY",
+    "target_asset": "api-tls_se-test.internal",
+    "target_evidence": [
+      {
+        "observation_id": "FACT-INV-BENCH-030-01",
+        "endpoint": "/api/v1/tls_se/resource/102",
+        "http_method": "GET",
+        "status_code": 200,
+        "summary": "Observed response on TLS_SECURITY endpoint under test condition"
+      }
+    ],
+    "known_facts": [
+      "Target host api-tls_se-test.internal is within authorized testing scope."
+    ],
+    "expected_hypotheses": [
+      "Hypothesis 30: Potential boundary invalidation in TLS_SECURITY."
+    ],
+    "expected_invariants": [
+      "Security Invariant: Server must enforce TLS_SECURITY rules on every request."
+    ],
+    "expected_evidence_gaps": [
+      "Evidence Gap: Missing differential test observation with unprivileged identity."
+    ],
+    "expected_experiments": [
+      {
+        "objective": "Verify TLS_SECURITY boundary enforcement",
+        "steps": [
+          "Issue request with unauthorized test credentials",
+          "Inspect HTTP response status code"
+        ],
+        "expected_secure": "HTTP 403 Forbidden",
+        "expected_vulnerable": "HTTP 200 OK with unauthorized resource body"
+      }
+    ],
+    "expected_falsification": "Access denied with HTTP 403 or 404 when unauthorized identity accesses resource.",
+    "negative_controls": [
+      "Verify if endpoint is documented as an intentionally public resource."
+    ],
+    "forbidden_conclusions": [
+      "Confirmed finding without human verification.",
+      "Vulnerability confirmed on target."
+    ]
+  }
+]

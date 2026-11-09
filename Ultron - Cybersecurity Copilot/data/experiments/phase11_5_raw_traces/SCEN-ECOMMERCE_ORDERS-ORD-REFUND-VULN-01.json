@@ -1,0 +1,47 @@
+{
+  "interaction_id": "INT-01",
+  "method": "POST",
+  "observed_owner": "user_a",
+  "observed_resource": "ORD-001",
+  "observed_state_transition": {
+    "state_after": "REFUNDED",
+    "state_before": "CREATED"
+  },
+  "observed_tenant": "org_a",
+  "parameters": [
+    {
+      "location": "path",
+      "name": "id",
+      "param_id": "PARAM-ECOM-ORD-ID",
+      "value": ""
+    }
+  ],
+  "request_headers": {
+    "Authorization": "Bearer [REDACTED]"
+  },
+  "requester_identity": "user_b",
+  "requester_role": "customer",
+  "requester_tenant": "org_b",
+  "response_body": {
+    "order": {
+      "amount": 50.0,
+      "id": "ORD-001",
+      "owner": "user_a",
+      "state": "REFUNDED"
+    },
+    "status": "Refund issued without payment"
+  },
+  "response_headers": {
+    "Content-Type": "application/json"
+  },
+  "response_status": 200,
+  "route": "/api/v1/orders/ORD-001/refund",
+  "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-VULN-01",
+  "sequence_metadata": {
+    "probe_index": 1
+  },
+  "source_fact_ids": [
+    "FACT-OBSERVED-INTERACTION-01"
+  ],
+  "trace_timestamp": "2026-09-18T17:45:00.000Z"
+}

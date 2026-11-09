@@ -1,0 +1,99 @@
+{
+  "archived_artifacts": [
+    {
+      "affected_track": "BASELINE",
+      "archived_path": "data/eval/aborted_m4_8_run_20260921_attempt3/m4_ablation_baseline_20260921.json",
+      "live_llm_calls_occurred": 20,
+      "original_path": "data/eval/m4_ablation_baseline_20260921.json",
+      "reason_for_invalidation": "Completed cleanly in Attempt 3; excluded from official dataset because COMBINED crashed and single-session/single-call protocol mandates clean restart",
+      "run_status": "ABORTED_NON_EVALUABLE",
+      "sha256": "1e46cae393b7d746f3ce8cdb570d6d151eceb83c3aee95572f3f223d59d8dd67"
+    },
+    {
+      "affected_track": "E1",
+      "archived_path": "data/eval/aborted_m4_8_run_20260921_attempt3/m4_ablation_e1_schema_20260921.json",
+      "live_llm_calls_occurred": 20,
+      "original_path": "data/eval/m4_ablation_e1_schema_20260921.json",
+      "reason_for_invalidation": "Completed cleanly in Attempt 3; excluded from official dataset because COMBINED crashed and single-session/single-call protocol mandates clean restart",
+      "run_status": "ABORTED_NON_EVALUABLE",
+      "sha256": "5eebe921f31c2cd19b6c0128644b4f65aecc346b4ca59806ec51f13d1d2d568e"
+    },
+    {
+      "affected_track": "E2",
+      "archived_path": "data/eval/aborted_m4_8_run_20260921_attempt3/m4_ablation_e2_namespace_20260921.json",
+      "live_llm_calls_occurred": 20,
+      "original_path": "data/eval/m4_ablation_e2_namespace_20260921.json",
+      "reason_for_invalidation": "Completed cleanly in Attempt 3; excluded from official dataset because COMBINED crashed and single-session/single-call protocol mandates clean restart",
+      "run_status": "ABORTED_NON_EVALUABLE",
+      "sha256": "2947e915bf831f76bc813268f49d24a12f761c4bb9660fb4789aff1c96171403"
+    },
+    {
+      "affected_track": "E3",
+      "archived_path": "data/eval/aborted_m4_8_run_20260921_attempt3/m4_ablation_e3_counterfactual_20260921.json",
+      "live_llm_calls_occurred": 20,
+      "original_path": "data/eval/m4_ablation_e3_counterfactual_20260921.json",
+      "reason_for_invalidation": "Completed cleanly in Attempt 3; excluded from official dataset because COMBINED crashed and single-session/single-call protocol mandates clean restart",
+      "run_status": "ABORTED_NON_EVALUABLE",
+      "sha256": "22427f1fa17620bb54b50ff7418ef9ddce6141a61f436c930cb2ba369172123b"
+    },
+    {
+      "affected_track": "E4",
+      "archived_path": "data/eval/aborted_m4_8_run_20260921_attempt3/m4_ablation_e4_bair_20260921.json",
+      "live_llm_calls_occurred": 20,
+      "original_path": "data/eval/m4_ablation_e4_bair_20260921.json",
+      "reason_for_invalidation": "Completed cleanly in Attempt 3; excluded from official dataset because COMBINED crashed and single-session/single-call protocol mandates clean restart",
+      "run_status": "ABORTED_NON_EVALUABLE",
+      "sha256": "df4582ddfc88171f0fbf6d5d30f49650f009f412563de4508dd001cdeb162ff2"
+    },
+    {
+      "affected_track": "E5",
+      "archived_path": "data/eval/aborted_m4_8_run_20260921_attempt3/m4_ablation_e5_decision_policy_20260921.json",
+      "live_llm_calls_occurred": 20,
+      "original_path": "data/eval/m4_ablation_e5_decision_policy_20260921.json",
+      "reason_for_invalidation": "Completed cleanly in Attempt 3; excluded from official dataset because COMBINED crashed and single-session/single-call protocol mandates clean restart",
+      "run_status": "ABORTED_NON_EVALUABLE",
+      "sha256": "e009050012bc2a8e1480940f76ea02080b31a5ddd2bf275b3c214cb557138893"
+    },
+    {
+      "affected_track": "E6",
+      "archived_path": "data/eval/aborted_m4_8_run_20260921_attempt3/m4_ablation_e6_handoff_20260921.json",
+      "live_llm_calls_occurred": 20,
+      "original_path": "data/eval/m4_ablation_e6_handoff_20260921.json",
+      "reason_for_invalidation": "Completed cleanly in Attempt 3; excluded from official dataset because COMBINED crashed and single-session/single-call protocol mandates clean restart",
+      "run_status": "ABORTED_NON_EVALUABLE",
+      "sha256": "829625b9aec76ff591d91044576bd1425bb64677655780a20b8cd211b5b269bc"
+    },
+    {
+      "affected_track": "CONFIG_MANIFEST",
+      "archived_path": "data/eval/aborted_m4_8_run_20260921_attempt3/m4_frozen_config_manifest.json",
+      "live_llm_calls_occurred": 0,
+      "original_path": "data/eval/m4_frozen_config_manifest.json",
+      "reason_for_invalidation": "Frozen selection from Attempt 3; excluded from official dataset because official selection must be recomputed in Attempt 4",
+      "run_status": "ABORTED_NON_EVALUABLE",
+      "sha256": "f3dbe435cd79f4af09aef3c3266fc249f17dfc7f2b2516c9b5582ee40cd81fad"
+    }
+  ],
+  "classification": "M4.8 ATTEMPT 3 \u2014 ABORTED / NON-EVALUABLE",
+  "combined_incident": {
+    "correction_commit": "ee96da6",
+    "error_details": "Missing <bair> or </bair> root tag uncaught in evaluation harness adapter",
+    "error_type": "BairParseError",
+    "live_llm_calls_consumed": 1,
+    "official_combined_artifact_written": false,
+    "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-CLASSIFY-PATCH-05",
+    "status": "ABORTED_SCENARIO_1"
+  },
+  "completed": {
+    "BASELINE": 20,
+    "E1": 20,
+    "E2": 20,
+    "E3": 20,
+    "E4": 20,
+    "E5": 20,
+    "E6": 20,
+    "total_screening_calls": 140
+  },
+  "incident_schema_version": "1.0.0",
+  "summary": "All 140 Baseline/E1/E2/E3/E4/E5/E6 screening calls completed and the configuration selection was completed. However, COMBINED scenario 1 consumed 1 live LLM call before the harness crashed while parsing the response because parse_bair(raw_response) was called without catching BairParseError / BairSchemaError. The fix was committed in ee96da6. Rerunning COMBINED scenario 1 would create a second LLM inference for the same scenario. Therefore, to preserve strict one-call-per-scenario reproducibility and avoid mixing results across different harness code states, Attempt 3 is archived byte-for-byte and strictly excluded from official M4.8 final metrics and selection.",
+  "timestamp": "2026-09-21T06:39:35.558403+00:00"
+}

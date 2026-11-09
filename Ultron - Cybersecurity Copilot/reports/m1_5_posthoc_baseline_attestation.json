@@ -1,0 +1,81 @@
+{
+  "attestation_type": "POST-HOC BENCHMARK BASELINE ATTESTATION",
+  "baseline_identity": {
+    "checksum_contents": "b2b85a672124acf21066a257d8c7f5093000368b224ee013c02574c96a0ae707",
+    "checksum_path": "data/benchmarks/m1_5_frozen_manifest.json.sha256",
+    "checksum_verification": "MATCH / PASS (recomputed from disk byte stream)",
+    "manifest_byte_size": 30826,
+    "manifest_path": "data/benchmarks/m1_5_frozen_manifest.json",
+    "manifest_sha256": "b2b85a672124acf21066a257d8c7f5093000368b224ee013c02574c96a0ae707",
+    "source_base_commit_sha": "6a2eb983baa78be577c0d57d6a82034c4f7e5e43",
+    "source_file": "src/eval/scenarios.py",
+    "source_function": "get_benchmark_manifest()",
+    "source_git_blob_sha": "e6f1289efa0a3b391e19f48ba3c017241f5825ac"
+  },
+  "five_part_cryptographic_stamp": {
+    "1_dataset_sha256": "b2b85a672124acf21066a257d8c7f5093000368b224ee013c02574c96a0ae707",
+    "2_config_hash": {
+      "component_hashes": {
+        "config/default_config.yaml": "e5fcc19418f51733ffc3818cff7981e307df179f165c63310d6694d7c8a99366",
+        "scope.yaml": "e75b56056fb0ac31fc8a7e6e24c5bdf5676b83007d14686daa8362aceb6aa020"
+      },
+      "composite_sha256": "1840ab25764e366bff218858aba6331c201bb860018bccdb6c67b2b9026298c7",
+      "formula": "SHA256(config/default_config.yaml + scope.yaml)"
+    },
+    "3_model_digests": {
+      "qwen2.5-coder:3b": "f72c60cabf6237b07f6e632b2c48d533cef25eda2efbd34bed21c5e9c01e6225",
+      "qwen2.5-coder:7b": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364"
+    },
+    "4_establishment_commit_sha": "a005c5c11ab1a4c93ef9bd7167091b868f3b4f1d",
+    "5_structural_diff_engine": {
+      "schema_version": "2.0.0",
+      "sha256": "2e02c8c6cd02c23c5b48650a7a80c42f42fb6334b832c159736ab2cee1bff96b",
+      "source_file": "src/evidence/structural_diff.py",
+      "version": "v2.0.0"
+    }
+  },
+  "historical_distinction": {
+    "canonical_filename_justification": "The canonical filename 'data/benchmarks/m1_5_frozen_manifest.json' is used because the frozen M2 specification requires this exact path.",
+    "hidden_split_qualification": "The hidden evaluation split cannot be claimed as a previously sealed holdout established before M2 engineering.",
+    "new_baseline_status": "NEW post-hoc benchmark baseline established after M2 Phases 0\u201310.",
+    "original_m1_5_artifact_status": "UNRECOVERABLE / NEVER HISTORICALLY CREATED",
+    "pre_m2_freeze_claim": "This baseline must NOT be described as historical pre-M2 freeze evidence.",
+    "recovery_search_outcome": "Exhaustive search of working tree, Git history, unreachable objects, and stashes confirmed no original freeze artifact was ever created or committed."
+  },
+  "integrity_tests": {
+    "deterministic_double_export_result": "PASS (byte-for-byte identical, 30826 bytes, identical SHA-256)",
+    "post_export_isolation_test": "PASS (5 passed in 0.27s)",
+    "post_export_real_ablation_integrity": "PASS (8 passed in 0.26s)",
+    "pre_export_isolation_test": "PASS (5 passed in 0.28s)",
+    "pre_export_real_ablation_integrity": "PASS (8 passed in 0.26s)"
+  },
+  "label_leakage_and_ground_truth_isolation": {
+    "hidden_ground_truth_labels_in_manifest": false,
+    "result": "PASS (Only neutral observable scenario metadata present: scenario_id, name, app_family, split, vulnerable_variant, category_id, target_asset_id)",
+    "scorer_labels_in_manifest": false,
+    "verdict_fields_in_manifest": false
+  },
+  "provenance_statement": "Post-hoc benchmark baseline established after M2 Phases 0\u201310.",
+  "scenario_composition": {
+    "application_families": {
+      "document_collaboration": 14,
+      "ecommerce_orders": 14,
+      "healthcare_portal": 14,
+      "identity_provider": 14,
+      "iot_fleet_mgmt": 14,
+      "saas_billing": 14
+    },
+    "composition_breakdown": {
+      "negative_controls": 12,
+      "patched_counterparts": 36,
+      "vulnerable": 36
+    },
+    "scenario_id_uniqueness": "PASS (84 unique identifiers, 0 collisions)",
+    "split_counts": {
+      "development": 28,
+      "evaluation": 28,
+      "validation": 28
+    },
+    "total_scenarios": 84
+  }
+}

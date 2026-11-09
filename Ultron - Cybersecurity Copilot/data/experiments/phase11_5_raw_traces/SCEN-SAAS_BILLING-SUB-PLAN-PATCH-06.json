@@ -1,0 +1,41 @@
+{
+  "interaction_id": "INT-01",
+  "method": "GET",
+  "observed_owner": "user_a",
+  "observed_resource": "SUB-100",
+  "observed_state_transition": {
+    "state_after": "ACTIVE",
+    "state_before": "ACTIVE"
+  },
+  "observed_tenant": "org_a",
+  "parameters": [
+    {
+      "location": "path",
+      "name": "id",
+      "param_id": "PARAM-SAAS-SUB-ID",
+      "value": ""
+    }
+  ],
+  "request_headers": {
+    "Authorization": "Bearer [REDACTED]"
+  },
+  "requester_identity": "user_b",
+  "requester_role": "customer",
+  "requester_tenant": "org_b",
+  "response_body": {
+    "error": "Tenant isolation violation"
+  },
+  "response_headers": {
+    "Content-Type": "application/json"
+  },
+  "response_status": 403,
+  "route": "/api/v1/subscriptions/SUB-100",
+  "scenario_id": "SCEN-SAAS_BILLING-SUB-PLAN-PATCH-06",
+  "sequence_metadata": {
+    "probe_index": 1
+  },
+  "source_fact_ids": [
+    "FACT-OBSERVED-INTERACTION-01"
+  ],
+  "trace_timestamp": "2026-09-18T17:45:00.000Z"
+}

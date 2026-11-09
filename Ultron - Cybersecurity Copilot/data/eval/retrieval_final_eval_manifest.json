@@ -1,0 +1,26 @@
+{
+  "manifest_version": "1.0.0",
+  "dataset_version": "3.0.0",
+  "partition_name": "RETRIEVAL_FINAL_EVAL",
+  "query_count": 15,
+  "query_ids": [
+    "Q-FINAL-001",
+    "Q-FINAL-002",
+    "Q-FINAL-003",
+    "Q-FINAL-004",
+    "Q-FINAL-005",
+    "Q-FINAL-006",
+    "Q-FINAL-007",
+    "Q-FINAL-008",
+    "Q-FINAL-009",
+    "Q-FINAL-010",
+    "Q-FINAL-011",
+    "Q-FINAL-012",
+    "Q-FINAL-013",
+    "Q-FINAL-014",
+    "Q-FINAL-015"
+  ],
+  "dataset_sha256": "1bf7ad3749c2f957d8bb5eef8a65a5f1cc5f92cbbf4fb6801bd0b460b8104c65",
+  "pairwise_disjoint_verified": true,
+  "sealed_at": "2026-09-20T00:00:00Z"
+}

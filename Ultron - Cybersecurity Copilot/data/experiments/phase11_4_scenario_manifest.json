@@ -1,0 +1,687 @@
+{
+  "experiment_name": "Phase 11.4 Evidence-Representation Replication and Generalization Experiment",
+  "experiment_version": "1.0.0",
+  "git_commit_sha": "6c7202d6801a6a45fce307388fbdc3e44ff4d0f3",
+  "benchmark_manifest_sha256": "b2b85a672124acf21066a257d8c7f5093000368b224ee013c02574c96a0ae707",
+  "EXPERIMENT_SCENARIO_SET_SHA256": "2857a2208ca30e4b74b56c58e9bc7874bd9901cfce8a7170b4aabef055b6a8a9",
+  "selection_rule": "Deterministic stratification across all 6 application families: for each family in canonical order, select endpoint indices 01, 02, 03, and 04. Pair the vulnerable variant (-VULN-0x) with its matched patched control (-PATCH-0x). Selection is frozen prior to inference with zero dependence on prior model outputs.",
+  "total_scenarios": 48,
+  "vulnerable_count": 24,
+  "control_count": 24,
+  "ordered_scenario_ids": [
+    "SCEN-SAAS_BILLING-INV-DETAILS-VULN-01",
+    "SCEN-SAAS_BILLING-INV-DETAILS-PATCH-01",
+    "SCEN-SAAS_BILLING-SUB-DETAILS-VULN-02",
+    "SCEN-SAAS_BILLING-SUB-DETAILS-PATCH-02",
+    "SCEN-SAAS_BILLING-INV-SUMMARY-VULN-03",
+    "SCEN-SAAS_BILLING-INV-SUMMARY-PATCH-03",
+    "SCEN-SAAS_BILLING-SUB-SUMMARY-VULN-04",
+    "SCEN-SAAS_BILLING-SUB-SUMMARY-PATCH-04",
+    "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-VULN-01",
+    "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-PATCH-01",
+    "SCEN-ECOMMERCE_ORDERS-ORD-SHIP-VULN-02",
+    "SCEN-ECOMMERCE_ORDERS-ORD-SHIP-PATCH-02",
+    "SCEN-ECOMMERCE_ORDERS-ORD-PAY-VULN-03",
+    "SCEN-ECOMMERCE_ORDERS-ORD-PAY-PATCH-03",
+    "SCEN-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-VULN-04",
+    "SCEN-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-PATCH-04",
+    "SCEN-IDENTITY_PROVIDER-USER-ROLES-VULN-01",
+    "SCEN-IDENTITY_PROVIDER-USER-ROLES-PATCH-01",
+    "SCEN-IDENTITY_PROVIDER-USER-MFA-VULN-02",
+    "SCEN-IDENTITY_PROVIDER-USER-MFA-PATCH-02",
+    "SCEN-IDENTITY_PROVIDER-USER-TENANT-ROLE-VULN-03",
+    "SCEN-IDENTITY_PROVIDER-USER-TENANT-ROLE-PATCH-03",
+    "SCEN-IDENTITY_PROVIDER-USER-TENANT-MFA-VULN-04",
+    "SCEN-IDENTITY_PROVIDER-USER-TENANT-MFA-PATCH-04",
+    "SCEN-DOCUMENT_COLLABORATION-DOC-EXPORT-VULN-01",
+    "SCEN-DOCUMENT_COLLABORATION-DOC-EXPORT-PATCH-01",
+    "SCEN-DOCUMENT_COLLABORATION-DOC-ORG-EXPORT-VULN-02",
+    "SCEN-DOCUMENT_COLLABORATION-DOC-ORG-EXPORT-PATCH-02",
+    "SCEN-DOCUMENT_COLLABORATION-DOC-PUBLISH-VULN-03",
+    "SCEN-DOCUMENT_COLLABORATION-DOC-PUBLISH-PATCH-03",
+    "SCEN-DOCUMENT_COLLABORATION-DOC-RELEASE-VULN-04",
+    "SCEN-DOCUMENT_COLLABORATION-DOC-RELEASE-PATCH-04",
+    "SCEN-HEALTHCARE_PORTAL-PATIENT-REC-VULN-01",
+    "SCEN-HEALTHCARE_PORTAL-PATIENT-REC-PATCH-01",
+    "SCEN-HEALTHCARE_PORTAL-PATIENT-RX-VULN-02",
+    "SCEN-HEALTHCARE_PORTAL-PATIENT-RX-PATCH-02",
+    "SCEN-HEALTHCARE_PORTAL-RECORD-ARCHIVE-VULN-03",
+    "SCEN-HEALTHCARE_PORTAL-RECORD-ARCHIVE-PATCH-03",
+    "SCEN-HEALTHCARE_PORTAL-CLINIC-REC-VULN-04",
+    "SCEN-HEALTHCARE_PORTAL-CLINIC-REC-PATCH-04",
+    "SCEN-IOT_FLEET_MGMT-DEVICE-CMD-VULN-01",
+    "SCEN-IOT_FLEET_MGMT-DEVICE-CMD-PATCH-01",
+    "SCEN-IOT_FLEET_MGMT-DEVICE-TEL-VULN-02",
+    "SCEN-IOT_FLEET_MGMT-DEVICE-TEL-PATCH-02",
+    "SCEN-IOT_FLEET_MGMT-FLEET-CMD-VULN-03",
+    "SCEN-IOT_FLEET_MGMT-FLEET-CMD-PATCH-03",
+    "SCEN-IOT_FLEET_MGMT-FLEET-TEL-VULN-04",
+    "SCEN-IOT_FLEET_MGMT-FLEET-TEL-PATCH-04"
+  ],
+  "ordered_scenarios": [
+    {
+      "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-VULN-01",
+      "app_family": "saas_billing",
+      "endpoint_index": "01",
+      "designation": "vulnerable",
+      "category_id": "API-BOLA-001",
+      "paired_control_id": "SCEN-SAAS_BILLING-INV-DETAILS-PATCH-01",
+      "target_asset": {
+        "method": "GET",
+        "raw_path": "/api/v1/invoices/INV-100",
+        "normalized_path": "/api/v1/invoices/{id}"
+      }
+    },
+    {
+      "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-PATCH-01",
+      "app_family": "saas_billing",
+      "endpoint_index": "01",
+      "designation": "control",
+      "category_id": "API-BOLA-001",
+      "paired_vulnerable_id": "SCEN-SAAS_BILLING-INV-DETAILS-VULN-01",
+      "target_asset": {
+        "method": "GET",
+        "raw_path": "/api/v1/invoices/INV-100",
+        "normalized_path": "/api/v1/invoices/{id}"
+      }
+    },
+    {
+      "scenario_id": "SCEN-SAAS_BILLING-SUB-DETAILS-VULN-02",
+      "app_family": "saas_billing",
+      "endpoint_index": "02",
+      "designation": "vulnerable",
+      "category_id": "API-BOLA-001",
+      "paired_control_id": "SCEN-SAAS_BILLING-SUB-DETAILS-PATCH-02",
+      "target_asset": {
+        "method": "GET",
+        "raw_path": "/api/v1/subscriptions/SUB-100",
+        "normalized_path": "/api/v1/subscriptions/{id}"
+      }
+    },
+    {
+      "scenario_id": "SCEN-SAAS_BILLING-SUB-DETAILS-PATCH-02",
+      "app_family": "saas_billing",
+      "endpoint_index": "02",
+      "designation": "control",
+      "category_id": "API-BOLA-001",
+      "paired_vulnerable_id": "SCEN-SAAS_BILLING-SUB-DETAILS-VULN-02",
+      "target_asset": {
+        "method": "GET",
+        "raw_path": "/api/v1/subscriptions/SUB-100",
+        "normalized_path": "/api/v1/subscriptions/{id}"
+      }
+    },
+    {
+      "scenario_id": "SCEN-SAAS_BILLING-INV-SUMMARY-VULN-03",
+      "app_family": "saas_billing",
+      "endpoint_index": "03",
+      "designation": "vulnerable",
+      "category_id": "API-CROSS-TENANT-001",
+      "paired_control_id": "SCEN-SAAS_BILLING-INV-SUMMARY-PATCH-03",
+      "target_asset": {
+        "method": "GET",
+        "raw_path": "/api/v1/invoices/INV-200",
+        "normalized_path": "/api/v1/invoices/{id}"
+      }
+    },
+    {
+      "scenario_id": "SCEN-SAAS_BILLING-INV-SUMMARY-PATCH-03",
+      "app_family": "saas_billing",
+      "endpoint_index": "03",
+      "designation": "control",
+      "category_id": "API-CROSS-TENANT-001",
+      "paired_vulnerable_id": "SCEN-SAAS_BILLING-INV-SUMMARY-VULN-03",
+      "target_asset": {
+        "method": "GET",
+        "raw_path": "/api/v1/invoices/INV-200",
+        "normalized_path": "/api/v1/invoices/{id}"
+      }
+    },
+    {
+      "scenario_id": "SCEN-SAAS_BILLING-SUB-SUMMARY-VULN-04",
+      "app_family": "saas_billing",
+      "endpoint_index": "04",
+      "designation": "vulnerable",
+      "category_id": "API-CROSS-TENANT-001",
+      "paired_control_id": "SCEN-SAAS_BILLING-SUB-SUMMARY-PATCH-04",
+      "target_asset": {
+        "method": "GET",
+        "raw_path": "/api/v1/subscriptions/SUB-200",
+        "normalized_path": "/api/v1/subscriptions/{id}"
+      }
+    },
+    {
+      "scenario_id": "SCEN-SAAS_BILLING-SUB-SUMMARY-PATCH-04",
+      "app_family": "saas_billing",
+      "endpoint_index": "04",
+      "designation": "control",
+      "category_id": "API-CROSS-TENANT-001",
+      "paired_vulnerable_id": "SCEN-SAAS_BILLING-SUB-SUMMARY-VULN-04",
+      "target_asset": {
+        "method": "GET",
+        "raw_path": "/api/v1/subscriptions/SUB-200",
+        "normalized_path": "/api/v1/subscriptions/{id}"
+      }
+    },
+    {
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-VULN-01",
+      "app_family": "ecommerce_orders",
+      "endpoint_index": "01",
+      "designation": "vulnerable",
+      "category_id": "API-STATE-001",
+      "paired_control_id": "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-PATCH-01",
+      "target_asset": {
+        "method": "POST",
+        "raw_path": "/api/v1/orders/ORD-001/refund",
+        "normalized_path": "/api/v1/orders/{id}/refund"
+      }
+    },
+    {
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-PATCH-01",
+      "app_family": "ecommerce_orders",
+      "endpoint_index": "01",
+      "designation": "control",
+      "category_id": "API-STATE-001",
+      "paired_vulnerable_id": "SCEN-ECOMMERCE_ORDERS-ORD-REFUND-VULN-01",
+      "target_asset": {
+        "method": "POST",
+        "raw_path": "/api/v1/orders/ORD-001/refund",
+        "normalized_path": "/api/v1/orders/{id}/refund"
+      }
+    },
+    {
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-SHIP-VULN-02",
+      "app_family": "ecommerce_orders",
+      "endpoint_index": "02",
+      "designation": "vulnerable",
+      "category_id": "API-STATE-001",
+      "paired_control_id": "SCEN-ECOMMERCE_ORDERS-ORD-SHIP-PATCH-02",
+      "target_asset": {
+        "method": "POST",
+        "raw_path": "/api/v1/orders/ORD-001/ship",
+        "normalized_path": "/api/v1/orders/{id}/ship"
+      }
+    },
+    {
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-SHIP-PATCH-02",
+      "app_family": "ecommerce_orders",
+      "endpoint_index": "02",
+      "designation": "control",
+      "category_id": "API-STATE-001",
+      "paired_vulnerable_id": "SCEN-ECOMMERCE_ORDERS-ORD-SHIP-VULN-02",
+      "target_asset": {
+        "method": "POST",
+        "raw_path": "/api/v1/orders/ORD-001/ship",
+        "normalized_path": "/api/v1/orders/{id}/ship"
+      }
+    },
+    {
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-PAY-VULN-03",
+      "app_family": "ecommerce_orders",
+      "endpoint_index": "03",
+      "designation": "vulnerable",
+      "category_id": "API-STATE-001",
+      "paired_control_id": "SCEN-ECOMMERCE_ORDERS-ORD-PAY-PATCH-03",
+      "target_asset": {
+        "method": "POST",
+        "raw_path": "/api/v1/orders/ORD-001/pay",
+        "normalized_path": "/api/v1/orders/{id}/pay"
+      }
+    },
+    {
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-PAY-PATCH-03",
+      "app_family": "ecommerce_orders",
+      "endpoint_index": "03",
+      "designation": "control",
+      "category_id": "API-STATE-001",
+      "paired_vulnerable_id": "SCEN-ECOMMERCE_ORDERS-ORD-PAY-VULN-03",
+      "target_asset": {
+        "method": "POST",
+        "raw_path": "/api/v1/orders/ORD-001/pay",
+        "normalized_path": "/api/v1/orders/{id}/pay"
+      }
+    },
+    {
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-VULN-04",
+      "app_family": "ecommerce_orders",
+      "endpoint_index": "04",
+      "designation": "vulnerable",
+      "category_id": "API-LIFECYCLE-001",
+      "paired_control_id": "SCEN-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-PATCH-04",
+      "target_asset": {
+        "method": "POST",
+        "raw_path": "/api/v1/orders/ORD-001/refund",
+        "normalized_path": "/api/v1/orders/{id}/refund"
+      }
+    },
+    {
+      "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-PATCH-04",
+      "app_family": "ecommerce_orders",
+      "endpoint_index": "04",
+      "designation": "control",
+      "category_id": "API-LIFECYCLE-001",
+      "paired_vulnerable_id": "SCEN-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-VULN-04",
+      "target_asset": {
+        "method": "POST",
+        "raw_path": "/api/v1/orders/ORD-001/refund",
+        "normalized_path": "/api/v1/orders/{id}/refund"
+      }
+    },
+    {
+      "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-ROLES-VULN-01",
+      "app_family": "identity_provider",
+      "endpoint_index": "01",
+      "designation": "vulnerable",
+      "category_id": "API-BFLA-001",
+      "paired_control_id": "SCEN-IDENTITY_PROVIDER-USER-ROLES-PATCH-01",
+      "target_asset": {
+        "method": "POST",
+        "raw_path": "/api/v1/users/user_a/roles",
+        "normalized_path": "/api/v1/users/{id}/roles"
+      }
+    },
+    {
+      "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-ROLES-PATCH-01",
+      "app_family": "identity_provider",
+      "endpoint_index": "01",
+      "designation": "control",
+      "category_id": "API-BFLA-001",
+      "paired_vulnerable_id": "SCEN-IDENTITY_PROVIDER-USER-ROLES-VULN-01",
+      "target_asset": {
+        "method": "POST",
+        "raw_path": "/api/v1/users/user_a/roles",
+        "normalized_path": "/api/v1/users/{id}/roles"
+      }
+    },
+    {
+      "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-MFA-VULN-02",
+      "app_family": "identity_provider",
+      "endpoint_index": "02",
+      "designation": "vulnerable",
+      "category_id": "API-BFLA-001",
+      "paired_control_id": "SCEN-IDENTITY_PROVIDER-USER-MFA-PATCH-02",
+      "target_asset": {
+        "method": "DELETE",
+        "raw_path": "/api/v1/users/user_a/mfa",
+        "normalized_path": "/api/v1/users/{id}/mfa"
+      }
+    },
+    {
+      "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-MFA-PATCH-02",
+      "app_family": "identity_provider",
+      "endpoint_index": "02",
+      "designation": "control",
+      "category_id": "API-BFLA-001",
+      "paired_vulnerable_id": "SCEN-IDENTITY_PROVIDER-USER-MFA-VULN-02",
+      "target_asset": {
+        "method": "DELETE",
+        "raw_path": "/api/v1/users/user_a/mfa",
+        "normalized_path": "/api/v1/users/{id}/mfa"
+      }
+    },
+    {
+      "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-TENANT-ROLE-VULN-03",
+      "app_family": "identity_provider",
+      "endpoint_index": "03",
+      "designation": "vulnerable",
+      "category_id": "API-ROLE-BOUNDARY-001",
+      "paired_control_id": "SCEN-IDENTITY_PROVIDER-USER-TENANT-ROLE-PATCH-03",
+      "target_asset": {
+        "method": "POST",
+        "raw_path": "/api/v1/users/user_b/roles",
+        "normalized_path": "/api/v1/users/{id}/roles"
+      }
+    },
+    {
+      "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-TENANT-ROLE-PATCH-03",
+      "app_family": "identity_provider",
+      "endpoint_index": "03",
+      "designation": "control",
+      "category_id": "API-ROLE-BOUNDARY-001",
+      "paired_vulnerable_id": "SCEN-IDENTITY_PROVIDER-USER-TENANT-ROLE-VULN-03",
+      "target_asset": {
+        "method": "POST",
+        "raw_path": "/api/v1/users/user_b/roles",
+        "normalized_path": "/api/v1/users/{id}/roles"
+      }
+    },
+    {
+      "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-TENANT-MFA-VULN-04",
+      "app_family": "identity_provider",
+      "endpoint_index": "04",
+      "designation": "vulnerable",
+      "category_id": "API-ROLE-BOUNDARY-001",
+      "paired_control_id": "SCEN-IDENTITY_PROVIDER-USER-TENANT-MFA-PATCH-04",
+      "target_asset": {
+        "method": "DELETE",
+        "raw_path": "/api/v1/users/user_b/mfa",
+        "normalized_path": "/api/v1/users/{id}/mfa"
+      }
+    },
+    {
+      "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-TENANT-MFA-PATCH-04",
+      "app_family": "identity_provider",
+      "endpoint_index": "04",
+      "designation": "control",
+      "category_id": "API-ROLE-BOUNDARY-001",
+      "paired_vulnerable_id": "SCEN-IDENTITY_PROVIDER-USER-TENANT-MFA-VULN-04",
+      "target_asset": {
+        "method": "DELETE",
+        "raw_path": "/api/v1/users/user_b/mfa",
+        "normalized_path": "/api/v1/users/{id}/mfa"
+      }
+    },
+    {
+      "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-EXPORT-VULN-01",
+      "app_family": "document_collaboration",
+      "endpoint_index": "01",
+      "designation": "vulnerable",
+      "category_id": "API-BOLA-001",
+      "paired_control_id": "SCEN-DOCUMENT_COLLABORATION-DOC-EXPORT-PATCH-01",
+      "target_asset": {
+        "method": "GET",
+        "raw_path": "/api/v1/docs/DOC-100/export",
+        "normalized_path": "/api/v1/docs/{id}/export"
+      }
+    },
+    {
+      "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-EXPORT-PATCH-01",
+      "app_family": "document_collaboration",
+      "endpoint_index": "01",
+      "designation": "control",
+      "category_id": "API-BOLA-001",
+      "paired_vulnerable_id": "SCEN-DOCUMENT_COLLABORATION-DOC-EXPORT-VULN-01",
+      "target_asset": {
+        "method": "GET",
+        "raw_path": "/api/v1/docs/DOC-100/export",
+        "normalized_path": "/api/v1/docs/{id}/export"
+      }
+    },
+    {
+      "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-ORG-EXPORT-VULN-02",
+      "app_family": "document_collaboration",
+      "endpoint_index": "02",
+      "designation": "vulnerable",
+      "category_id": "API-CROSS-TENANT-001",
+      "paired_control_id": "SCEN-DOCUMENT_COLLABORATION-DOC-ORG-EXPORT-PATCH-02",
+      "target_asset": {
+        "method": "GET",
+        "raw_path": "/api/v1/docs/DOC-200/export",
+        "normalized_path": "/api/v1/docs/{id}/export"
+      }
+    },
+    {
+      "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-ORG-EXPORT-PATCH-02",
+      "app_family": "document_collaboration",
+      "endpoint_index": "02",
+      "designation": "control",
+      "category_id": "API-CROSS-TENANT-001",
+      "paired_vulnerable_id": "SCEN-DOCUMENT_COLLABORATION-DOC-ORG-EXPORT-VULN-02",
+      "target_asset": {
+        "method": "GET",
+        "raw_path": "/api/v1/docs/DOC-200/export",
+        "normalized_path": "/api/v1/docs/{id}/export"
+      }
+    },
+    {
+      "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-PUBLISH-VULN-03",
+      "app_family": "document_collaboration",
+      "endpoint_index": "03",
+      "designation": "vulnerable",
+      "category_id": "API-STATE-001",
+      "paired_control_id": "SCEN-DOCUMENT_COLLABORATION-DOC-PUBLISH-PATCH-03",
+      "target_asset": {
+        "method": "POST",
+        "raw_path": "/api/v1/approvals/APP-100/publish",
+        "normalized_path": "/api/v1/approvals/{id}/publish"
+      }
+    },
+    {
+      "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-PUBLISH-PATCH-03",
+      "app_family": "document_collaboration",
+      "endpoint_index": "03",
+      "designation": "control",
+      "category_id": "API-STATE-001",
+      "paired_vulnerable_id": "SCEN-DOCUMENT_COLLABORATION-DOC-PUBLISH-VULN-03",
+      "target_asset": {
+        "method": "POST",
+        "raw_path": "/api/v1/approvals/APP-100/publish",
+        "normalized_path": "/api/v1/approvals/{id}/publish"
+      }
+    },
+    {
+      "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-RELEASE-VULN-04",
+      "app_family": "document_collaboration",
+      "endpoint_index": "04",
+      "designation": "vulnerable",
+      "category_id": "API-STATE-001",
+      "paired_control_id": "SCEN-DOCUMENT_COLLABORATION-DOC-RELEASE-PATCH-04",
+      "target_asset": {
+        "method": "POST",
+        "raw_path": "/api/v1/approvals/APP-100/publish",
+        "normalized_path": "/api/v1/approvals/{id}/publish"
+      }
+    },
+    {
+      "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-RELEASE-PATCH-04",
+      "app_family": "document_collaboration",
+      "endpoint_index": "04",
+      "designation": "control",
+      "category_id": "API-STATE-001",
+      "paired_vulnerable_id": "SCEN-DOCUMENT_COLLABORATION-DOC-RELEASE-VULN-04",
+      "target_asset": {
+        "method": "POST",
+        "raw_path": "/api/v1/approvals/APP-100/publish",
+        "normalized_path": "/api/v1/approvals/{id}/publish"
+      }
+    },
+    {
+      "scenario_id": "SCEN-HEALTHCARE_PORTAL-PATIENT-REC-VULN-01",
+      "app_family": "healthcare_portal",
+      "endpoint_index": "01",
+      "designation": "vulnerable",
+      "category_id": "API-BOLA-001",
+      "paired_control_id": "SCEN-HEALTHCARE_PORTAL-PATIENT-REC-PATCH-01",
+      "target_asset": {
+        "method": "GET",
+        "raw_path": "/api/v1/records/REC-100",
+        "normalized_path": "/api/v1/records/{id}"
+      }
+    },
+    {
+      "scenario_id": "SCEN-HEALTHCARE_PORTAL-PATIENT-REC-PATCH-01",
+      "app_family": "healthcare_portal",
+      "endpoint_index": "01",
+      "designation": "control",
+      "category_id": "API-BOLA-001",
+      "paired_vulnerable_id": "SCEN-HEALTHCARE_PORTAL-PATIENT-REC-VULN-01",
+      "target_asset": {
+        "method": "GET",
+        "raw_path": "/api/v1/records/REC-100",
+        "normalized_path": "/api/v1/records/{id}"
+      }
+    },
+    {
+      "scenario_id": "SCEN-HEALTHCARE_PORTAL-PATIENT-RX-VULN-02",
+      "app_family": "healthcare_portal",
+      "endpoint_index": "02",
+      "designation": "vulnerable",
+      "category_id": "API-BOLA-001",
+      "paired_control_id": "SCEN-HEALTHCARE_PORTAL-PATIENT-RX-PATCH-02",
+      "target_asset": {
+        "method": "GET",
+        "raw_path": "/api/v1/prescriptions/RX-100",
+        "normalized_path": "/api/v1/prescriptions/{id}"
+      }
+    },
+    {
+      "scenario_id": "SCEN-HEALTHCARE_PORTAL-PATIENT-RX-PATCH-02",
+      "app_family": "healthcare_portal",
+      "endpoint_index": "02",
+      "designation": "control",
+      "category_id": "API-BOLA-001",
+      "paired_vulnerable_id": "SCEN-HEALTHCARE_PORTAL-PATIENT-RX-VULN-02",
+      "target_asset": {
+        "method": "GET",
+        "raw_path": "/api/v1/prescriptions/RX-100",
+        "normalized_path": "/api/v1/prescriptions/{id}"
+      }
+    },
+    {
+      "scenario_id": "SCEN-HEALTHCARE_PORTAL-RECORD-ARCHIVE-VULN-03",
+      "app_family": "healthcare_portal",
+      "endpoint_index": "03",
+      "designation": "vulnerable",
+      "category_id": "API-LIFECYCLE-001",
+      "paired_control_id": "SCEN-HEALTHCARE_PORTAL-RECORD-ARCHIVE-PATCH-03",
+      "target_asset": {
+        "method": "GET",
+        "raw_path": "/api/v1/records/REC-ARCHIVED-100",
+        "normalized_path": "/api/v1/records/{id}"
+      }
+    },
+    {
+      "scenario_id": "SCEN-HEALTHCARE_PORTAL-RECORD-ARCHIVE-PATCH-03",
+      "app_family": "healthcare_portal",
+      "endpoint_index": "03",
+      "designation": "control",
+      "category_id": "API-LIFECYCLE-001",
+      "paired_vulnerable_id": "SCEN-HEALTHCARE_PORTAL-RECORD-ARCHIVE-VULN-03",
+      "target_asset": {
+        "method": "GET",
+        "raw_path": "/api/v1/records/REC-ARCHIVED-100",
+        "normalized_path": "/api/v1/records/{id}"
+      }
+    },
+    {
+      "scenario_id": "SCEN-HEALTHCARE_PORTAL-CLINIC-REC-VULN-04",
+      "app_family": "healthcare_portal",
+      "endpoint_index": "04",
+      "designation": "vulnerable",
+      "category_id": "API-CROSS-TENANT-001",
+      "paired_control_id": "SCEN-HEALTHCARE_PORTAL-CLINIC-REC-PATCH-04",
+      "target_asset": {
+        "method": "GET",
+        "raw_path": "/api/v1/records/REC-100",
+        "normalized_path": "/api/v1/records/{id}"
+      }
+    },
+    {
+      "scenario_id": "SCEN-HEALTHCARE_PORTAL-CLINIC-REC-PATCH-04",
+      "app_family": "healthcare_portal",
+      "endpoint_index": "04",
+      "designation": "control",
+      "category_id": "API-CROSS-TENANT-001",
+      "paired_vulnerable_id": "SCEN-HEALTHCARE_PORTAL-CLINIC-REC-VULN-04",
+      "target_asset": {
+        "method": "GET",
+        "raw_path": "/api/v1/records/REC-100",
+        "normalized_path": "/api/v1/records/{id}"
+      }
+    },
+    {
+      "scenario_id": "SCEN-IOT_FLEET_MGMT-DEVICE-CMD-VULN-01",
+      "app_family": "iot_fleet_mgmt",
+      "endpoint_index": "01",
+      "designation": "vulnerable",
+      "category_id": "API-DEVICE-BOLA-001",
+      "paired_control_id": "SCEN-IOT_FLEET_MGMT-DEVICE-CMD-PATCH-01",
+      "target_asset": {
+        "method": "POST",
+        "raw_path": "/api/v1/devices/DEV-100/command",
+        "normalized_path": "/api/v1/devices/{id}/command"
+      }
+    },
+    {
+      "scenario_id": "SCEN-IOT_FLEET_MGMT-DEVICE-CMD-PATCH-01",
+      "app_family": "iot_fleet_mgmt",
+      "endpoint_index": "01",
+      "designation": "control",
+      "category_id": "API-DEVICE-BOLA-001",
+      "paired_vulnerable_id": "SCEN-IOT_FLEET_MGMT-DEVICE-CMD-VULN-01",
+      "target_asset": {
+        "method": "POST",
+        "raw_path": "/api/v1/devices/DEV-100/command",
+        "normalized_path": "/api/v1/devices/{id}/command"
+      }
+    },
+    {
+      "scenario_id": "SCEN-IOT_FLEET_MGMT-DEVICE-TEL-VULN-02",
+      "app_family": "iot_fleet_mgmt",
+      "endpoint_index": "02",
+      "designation": "vulnerable",
+      "category_id": "API-DEVICE-BOLA-001",
+      "paired_control_id": "SCEN-IOT_FLEET_MGMT-DEVICE-TEL-PATCH-02",
+      "target_asset": {
+        "method": "GET",
+        "raw_path": "/api/v1/devices/DEV-100/telemetry",
+        "normalized_path": "/api/v1/devices/{id}/telemetry"
+      }
+    },
+    {
+      "scenario_id": "SCEN-IOT_FLEET_MGMT-DEVICE-TEL-PATCH-02",
+      "app_family": "iot_fleet_mgmt",
+      "endpoint_index": "02",
+      "designation": "control",
+      "category_id": "API-DEVICE-BOLA-001",
+      "paired_vulnerable_id": "SCEN-IOT_FLEET_MGMT-DEVICE-TEL-VULN-02",
+      "target_asset": {
+        "method": "GET",
+        "raw_path": "/api/v1/devices/DEV-100/telemetry",
+        "normalized_path": "/api/v1/devices/{id}/telemetry"
+      }
+    },
+    {
+      "scenario_id": "SCEN-IOT_FLEET_MGMT-FLEET-CMD-VULN-03",
+      "app_family": "iot_fleet_mgmt",
+      "endpoint_index": "03",
+      "designation": "vulnerable",
+      "category_id": "API-CROSS-TENANT-001",
+      "paired_control_id": "SCEN-IOT_FLEET_MGMT-FLEET-CMD-PATCH-03",
+      "target_asset": {
+        "method": "POST",
+        "raw_path": "/api/v1/devices/DEV-200/command",
+        "normalized_path": "/api/v1/devices/{id}/command"
+      }
+    },
+    {
+      "scenario_id": "SCEN-IOT_FLEET_MGMT-FLEET-CMD-PATCH-03",
+      "app_family": "iot_fleet_mgmt",
+      "endpoint_index": "03",
+      "designation": "control",
+      "category_id": "API-CROSS-TENANT-001",
+      "paired_vulnerable_id": "SCEN-IOT_FLEET_MGMT-FLEET-CMD-VULN-03",
+      "target_asset": {
+        "method": "POST",
+        "raw_path": "/api/v1/devices/DEV-200/command",
+        "normalized_path": "/api/v1/devices/{id}/command"
+      }
+    },
+    {
+      "scenario_id": "SCEN-IOT_FLEET_MGMT-FLEET-TEL-VULN-04",
+      "app_family": "iot_fleet_mgmt",
+      "endpoint_index": "04",
+      "designation": "vulnerable",
+      "category_id": "API-CROSS-TENANT-001",
+      "paired_control_id": "SCEN-IOT_FLEET_MGMT-FLEET-TEL-PATCH-04",
+      "target_asset": {
+        "method": "GET",
+        "raw_path": "/api/v1/devices/DEV-200/telemetry",
+        "normalized_path": "/api/v1/devices/{id}/telemetry"
+      }
+    },
+    {
+      "scenario_id": "SCEN-IOT_FLEET_MGMT-FLEET-TEL-PATCH-04",
+      "app_family": "iot_fleet_mgmt",
+      "endpoint_index": "04",
+      "designation": "control",
+      "category_id": "API-CROSS-TENANT-001",
+      "paired_vulnerable_id": "SCEN-IOT_FLEET_MGMT-FLEET-TEL-VULN-04",
+      "target_asset": {
+        "method": "GET",
+        "raw_path": "/api/v1/devices/DEV-200/telemetry",
+        "normalized_path": "/api/v1/devices/{id}/telemetry"
+      }
+    }
+  ]
+}

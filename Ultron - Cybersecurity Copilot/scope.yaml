@@ -1,0 +1,36 @@
+program_name: "target-bounty-program"
+platform: "hackerone" # hackerone | bugcrowd | intigriti | immunefi | other
+scope_policy_version: "v6"
+
+in_scope:
+  - "*.target.com"
+  - "api.target.com"
+
+out_of_scope:
+  - "staging.target.com"
+  - "internal.target.com"
+  - "*.dev.target.com"
+
+program_constraints:
+  disclosure_embargo_days: 90
+  requires_preapproval_for_automation: false
+  pii_handling_notes: "Do not exfiltrate or store PII. Redact user data."
+  authorization_destination_policy: "resolved_destination" # hostname | resolved_destination
+
+rules_of_engagement:
+  rate_limit_rps: 2
+  no_automated_scanning_on:
+    - "auth.target.com/oauth/token"
+  disallowed_techniques:
+    - "denial_of_service"
+    - "brute_force"
+    - "spamming"
+
+tool_policy:
+  subfinder: "passive"
+  gau: "passive"
+  waybackurls: "passive"
+  httpx: "low_impact_active"
+  katana: "active"
+  nuclei: "active"
+  ffuf: "active"

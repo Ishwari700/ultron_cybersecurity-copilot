@@ -1,0 +1,120 @@
+{
+  "authoritative_rules": [
+    "1. Select the first lexicographic vulnerable and first lexicographic control from each category that contains both variants (9v + 9c).",
+    "2. Select the first lexicographic control from API-AUTH-NONE, because that category contains controls only (0v + 1c -> 10c).",
+    "3. The resulting deterministic selection is 9 vulnerable + 10 controls.",
+    "4. Allocate the remaining 10th vulnerable slot to the category with the largest number of vulnerable scenarios in the frozen benchmark.",
+    "5. Resolve ties by ASCII/lexicographic category_id.",
+    "6. Select the second lexicographic vulnerable scenario from that category (API-CROSS-TENANT-001 -> SCEN-HEALTHCARE_PORTAL-CLINIC-REC-VULN-04).",
+    "7. The final partition MUST be: 20 total, 10 vulnerable, 10 controls.",
+    "8. Do not inspect any E0-E6 results before freezing this decision.",
+    "9. Create and hash the final manifest BEFORE any live screening call.",
+    "10. Do not use Option 2.",
+    "11. Do not use the historical human-study manifest.",
+    "12. Do not resample or substitute scenarios after screening begins."
+  ],
+  "benchmark_source_hash": "b2b85a672124acf21066a257d8c7f5093000368b224ee013c02574c96a0ae707",
+  "context": "M4.8 Pre-Screening Specification Clarification",
+  "decision_record_version": "1.0.0",
+  "frozen_plan_status": "Frozen plan specification gap resolved BEFORE observing any E0-E6 screening results",
+  "generated_manifest_hash": "92f741b9e2c425a9f884df3286b4363a172ee938e43999636dbafef46e233dc1",
+  "justification": "Deterministic clarification necessitated by the mismatch between the frozen 10/10 requirement and the benchmark's 9-category vulnerable availability.",
+  "parent_document": "docs/M4_REASONING_ENGINE_PLAN.md",
+  "parent_section": "12.1 Exploratory Screening Partition Contract",
+  "resolution_details": {
+    "resolution": "Option 1 (Proportional Largest-Category Quota): 9 paired categories (1v+1c) + API-AUTH-NONE (1c) + 2nd lexicographic vulnerable from largest category API-CROSS-TENANT-001.",
+    "selection_log": [
+      {
+        "category_id": "API-BFLA-001",
+        "rule": "first_lexicographic_paired",
+        "selected_control": "SCEN-IDENTITY_PROVIDER-USER-MFA-PATCH-02",
+        "selected_vulnerable": "SCEN-IDENTITY_PROVIDER-USER-MFA-VULN-02"
+      },
+      {
+        "category_id": "API-BOLA-001",
+        "rule": "first_lexicographic_paired",
+        "selected_control": "SCEN-DOCUMENT_COLLABORATION-DOC-EXPORT-PATCH-01",
+        "selected_vulnerable": "SCEN-DOCUMENT_COLLABORATION-DOC-EXPORT-VULN-01"
+      },
+      {
+        "category_id": "API-CROSS-TENANT-001",
+        "rule": "first_lexicographic_paired",
+        "selected_control": "SCEN-DOCUMENT_COLLABORATION-DOC-ORG-EXPORT-PATCH-02",
+        "selected_vulnerable": "SCEN-DOCUMENT_COLLABORATION-DOC-ORG-EXPORT-VULN-02"
+      },
+      {
+        "category_id": "API-DEVICE-BOLA-001",
+        "rule": "first_lexicographic_paired",
+        "selected_control": "SCEN-IOT_FLEET_MGMT-DEVICE-CMD-PATCH-01",
+        "selected_vulnerable": "SCEN-IOT_FLEET_MGMT-DEVICE-CMD-VULN-01"
+      },
+      {
+        "category_id": "API-LIFECYCLE-001",
+        "rule": "first_lexicographic_paired",
+        "selected_control": "SCEN-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-PATCH-04",
+        "selected_vulnerable": "SCEN-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-VULN-04"
+      },
+      {
+        "category_id": "API-MULTI-STEP-AUTH-001",
+        "rule": "first_lexicographic_paired",
+        "selected_control": "SCEN-DOCUMENT_COLLABORATION-DOC-CLASSIFY-PATCH-05",
+        "selected_vulnerable": "SCEN-DOCUMENT_COLLABORATION-DOC-CLASSIFY-VULN-05"
+      },
+      {
+        "category_id": "API-MUTATION-001",
+        "rule": "first_lexicographic_paired",
+        "selected_control": "SCEN-IDENTITY_PROVIDER-USER-ADMIN-ROLE-PATCH-05",
+        "selected_vulnerable": "SCEN-IDENTITY_PROVIDER-USER-ADMIN-ROLE-VULN-05"
+      },
+      {
+        "category_id": "API-ROLE-BOUNDARY-001",
+        "rule": "first_lexicographic_paired",
+        "selected_control": "SCEN-HEALTHCARE_PORTAL-STAFF-RX-PATCH-05",
+        "selected_vulnerable": "SCEN-HEALTHCARE_PORTAL-STAFF-RX-VULN-05"
+      },
+      {
+        "category_id": "API-STATE-001",
+        "rule": "first_lexicographic_paired",
+        "selected_control": "SCEN-DOCUMENT_COLLABORATION-DOC-PUBLISH-PATCH-03",
+        "selected_vulnerable": "SCEN-DOCUMENT_COLLABORATION-DOC-PUBLISH-VULN-03"
+      },
+      {
+        "category_id": "API-AUTH-NONE",
+        "rule": "first_lexicographic_control_only",
+        "selected_control": "SCEN-DOCUMENT_COLLABORATION-NEG-01",
+        "selected_vulnerable": null
+      },
+      {
+        "category_id": "API-CROSS-TENANT-001",
+        "rule": "second_lexicographic_vulnerable_from_largest_category",
+        "selected_control": null,
+        "selected_vulnerable": "SCEN-HEALTHCARE_PORTAL-CLINIC-REC-VULN-04",
+        "tie_break_notes": "Tied at count=6 with ['API-CROSS-TENANT-001', 'API-STATE-001']; resolved by ASCII ASC to API-CROSS-TENANT-001"
+      }
+    ],
+    "specification_gap": "Section 12.1 mandated 10v/10c while stating 1v/1c per category, but API-AUTH-NONE has 0 vulnerable scenarios in the benchmark."
+  },
+  "selected_scenario_ids": [
+    "SCEN-DOCUMENT_COLLABORATION-DOC-CLASSIFY-PATCH-05",
+    "SCEN-DOCUMENT_COLLABORATION-DOC-CLASSIFY-VULN-05",
+    "SCEN-DOCUMENT_COLLABORATION-DOC-EXPORT-PATCH-01",
+    "SCEN-DOCUMENT_COLLABORATION-DOC-EXPORT-VULN-01",
+    "SCEN-DOCUMENT_COLLABORATION-DOC-ORG-EXPORT-PATCH-02",
+    "SCEN-DOCUMENT_COLLABORATION-DOC-ORG-EXPORT-VULN-02",
+    "SCEN-DOCUMENT_COLLABORATION-DOC-PUBLISH-PATCH-03",
+    "SCEN-DOCUMENT_COLLABORATION-DOC-PUBLISH-VULN-03",
+    "SCEN-DOCUMENT_COLLABORATION-NEG-01",
+    "SCEN-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-PATCH-04",
+    "SCEN-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-VULN-04",
+    "SCEN-HEALTHCARE_PORTAL-CLINIC-REC-VULN-04",
+    "SCEN-HEALTHCARE_PORTAL-STAFF-RX-PATCH-05",
+    "SCEN-HEALTHCARE_PORTAL-STAFF-RX-VULN-05",
+    "SCEN-IDENTITY_PROVIDER-USER-ADMIN-ROLE-PATCH-05",
+    "SCEN-IDENTITY_PROVIDER-USER-ADMIN-ROLE-VULN-05",
+    "SCEN-IDENTITY_PROVIDER-USER-MFA-PATCH-02",
+    "SCEN-IDENTITY_PROVIDER-USER-MFA-VULN-02",
+    "SCEN-IOT_FLEET_MGMT-DEVICE-CMD-PATCH-01",
+    "SCEN-IOT_FLEET_MGMT-DEVICE-CMD-VULN-01"
+  ],
+  "timestamp": "2026-09-21T04:36:00+00:00"
+}

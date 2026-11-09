@@ -1,0 +1,51 @@
+{
+  "archived_artifacts": [
+    {
+      "affected_track": "BASELINE",
+      "archived_path": "data/eval/aborted_m4_8_run_20260921_attempt2/m4_ablation_baseline_20260921.json",
+      "live_llm_calls_occurred": 20,
+      "original_path": "data/eval/m4_ablation_baseline_20260921.json",
+      "reason_for_invalidation": "Completed cleanly in Attempt 2; excluded to maintain single-session dataset parity with corrected harness E4-E6",
+      "run_status": "ABORTED_NON_EVALUABLE",
+      "sha256": "94eaf1a3bd7683356f89c2c56f83c49ba84e4cef72fe7acb4d188a606c3e4516"
+    },
+    {
+      "affected_track": "E1",
+      "archived_path": "data/eval/aborted_m4_8_run_20260921_attempt2/m4_ablation_e1_schema_20260921.json",
+      "live_llm_calls_occurred": 20,
+      "original_path": "data/eval/m4_ablation_e1_schema_20260921.json",
+      "reason_for_invalidation": "Completed cleanly in Attempt 2; excluded to maintain single-session dataset parity with corrected harness E4-E6",
+      "run_status": "ABORTED_NON_EVALUABLE",
+      "sha256": "d0ad025dfd113d669e02ea20a3f0c959fdd2e2eb28ccb76b5fbd0e75269df830"
+    },
+    {
+      "affected_track": "E2",
+      "archived_path": "data/eval/aborted_m4_8_run_20260921_attempt2/m4_ablation_e2_namespace_20260921.json",
+      "live_llm_calls_occurred": 20,
+      "original_path": "data/eval/m4_ablation_e2_namespace_20260921.json",
+      "reason_for_invalidation": "Completed cleanly in Attempt 2; excluded to maintain single-session dataset parity with corrected harness E4-E6",
+      "run_status": "ABORTED_NON_EVALUABLE",
+      "sha256": "c40901ed26633ce1d1b826a568e3bb47e6fb5f7db18521c2e011a53f0333db31"
+    },
+    {
+      "affected_track": "E3",
+      "archived_path": "data/eval/aborted_m4_8_run_20260921_attempt2/m4_ablation_e3_counterfactual_20260921.json",
+      "live_llm_calls_occurred": 20,
+      "original_path": "data/eval/m4_ablation_e3_counterfactual_20260921.json",
+      "reason_for_invalidation": "Completed cleanly in Attempt 2; excluded to maintain single-session dataset parity with corrected harness E4-E6",
+      "run_status": "ABORTED_NON_EVALUABLE",
+      "sha256": "5b91d5b00ccaf883f15953385419713d0692e7c3840c691ad81d3acc014e059f"
+    }
+  ],
+  "classification": "M4.8 ATTEMPT 2 \u2014 ABORTED / NON-EVALUABLE",
+  "incident_schema_version": "1.0.0",
+  "stopped_at": {
+    "error_details": "'dict' object has no attribute 'model_dump'",
+    "error_type": "AttributeError",
+    "scenario_id": "SCEN-DOCUMENT_COLLABORATION-DOC-EXPORT-PATCH-01",
+    "scenario_index": 3,
+    "track": "E4"
+  },
+  "summary": "Attempt 2 completed Baseline, E1, E2, E3 (20 calls each, 80 calls total) and scenarios 1-2 of E4 before halting at E4 scenario 3 due to a harness dictionary/model_dump interface defect (res.extracted_bair was called with .model_dump() despite being Optional[Dict[str, Any]]). The harness was subsequently corrected. To prevent mixing outputs generated under different harness code states, all Attempt-2 artifacts are archived byte-for-byte and strictly excluded from official M4.8 metrics and selection.",
+  "timestamp": "2026-09-21T06:02:53.256755+00:00"
+}

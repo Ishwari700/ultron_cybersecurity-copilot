@@ -1,0 +1,38 @@
+{
+  "manifest_version": "1.0.0",
+  "phase": "PHASE_11_4",
+  "timestamp_utc": "2026-09-29 15:14:02Z",
+  "order_seed": "M5_PHASE11_4_ORDER_SEED_42",
+  "total_calls_executed": 32,
+  "step1_calls": 16,
+  "step2_calls": 16,
+  "conditions_evaluated": [
+    "P3",
+    "P4",
+    "P4_TRACK_A",
+    "P5_TRACK_D"
+  ],
+  "scenarios_evaluated": [
+    "SCEN-SAAS_BILLING-INV-DETAILS-VULN-01",
+    "SCEN-SAAS_BILLING-INV-DETAILS-PATCH-01",
+    "SCEN-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-VULN-04",
+    "SCEN-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-PATCH-04",
+    "SCEN-IDENTITY_PROVIDER-USER-TENANT-ROLE-VULN-03",
+    "SCEN-IDENTITY_PROVIDER-USER-TENANT-ROLE-PATCH-03",
+    "SCEN-SAAS_BILLING-INV-SUMMARY-VULN-03",
+    "SCEN-SAAS_BILLING-INV-SUMMARY-PATCH-03"
+  ],
+  "results_file": "data/eval/m5_phase11_4_live_results.json",
+  "results_sha256": "5a341f78cecb5c09623a7867bfff8a5c409f71e0e2aa0433a735358061e5c907",
+  "property_registry_version": "1.0.0",
+  "runtime_configuration": {
+    "model": "qwen2.5-coder:7b",
+    "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+    "temperature": 0.0,
+    "seed": 42,
+    "num_ctx": 2048,
+    "num_predict": 300,
+    "keep_alive": "60m",
+    "timeout_seconds": 30.0
+  }
+}

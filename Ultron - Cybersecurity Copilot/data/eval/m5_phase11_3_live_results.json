@@ -1,0 +1,2830 @@
+[
+  {
+    "call_index": 1,
+    "condition_id": "P1",
+    "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-VULN-01",
+    "vulnerable_variant": true,
+    "category_id": "API-BOLA-001",
+    "protocol": "P1_GROUNDING_RECOVERY",
+    "allowed_sets": {
+      "allowed_fact_ids": [
+        "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+      ],
+      "allowed_target_ids": [
+        "EP-ASSET-SAAS_BILLING-INV-DETAILS-01"
+      ],
+      "allowed_fact_ids_hash": "24b826daa26874a86da87e8f5aff94794d1f5075071686848984c2bb855293ef",
+      "allowed_target_ids_hash": "7d84d46740db34eaf572aa7340406255d044ab3ef204664bd4b749bdc10e7356",
+      "count_allowed_facts": 1,
+      "count_allowed_targets": 1
+    },
+    "runtime_telemetry": {
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "temperature": 0.0,
+      "seed": 42,
+      "num_ctx": 2048,
+      "num_predict": 300,
+      "keep_alive": "60m",
+      "total_latency_ms": 29190.46,
+      "timed_out": false,
+      "prompt_eval_count": 1026,
+      "eval_count": 187
+    },
+    "provenance": {
+      "prompt_sha256": "a987d4a54af0de12223ba603941a3e7991de8250e2778f279b27ddb3854e3e4e",
+      "raw_response_sha256": "c867f88f7950afa7f9b66af801593106085696bd6e4cf5ed6303acdac5741433",
+      "output_origin": "MODEL_GENERATED"
+    },
+    "model_output": {
+      "raw_response": "{\n  \"invariant\": \"Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.\",\n  \"decision\": \"HYPOTHESIS\",\n  \"affected_target\": \"Partition P3\",\n  \"empirical_facts\": [\"FACT-001\", \"FACT-002\"],\n  \"methodology_references\": [\"CHK-001\"],\n  \"attack_predicate\": {\n    \"subject\": \"UNAUTHORIZED_ACTOR\",\n    \"operation\": \"SUBSTITUTE_RESOURCE_IDENTIFIER\",\n    \"target\": \"Partition P3\",\n    \"security_property\": \"RESOURCE_OWNERSHIP_INTEGRITY\",\n    \"expected_violation\": \"Unauthorized access to a resource identifier not owned by the requesting identity.\"\n  },\n  \"falsification_description\": \"The system should deny access to the resource identifier when an unauthorized actor attempts to substitute it with a different identifier.\"\n}",
+      "parse_error": null,
+      "parsed_dict": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": null,
+        "affected_target": "Partition P3",
+        "decision": "HYPOTHESIS",
+        "empirical_facts": [
+          "FACT-001",
+          "FACT-002"
+        ],
+        "methodology_references": [
+          "CHK-001"
+        ],
+        "attack_predicate": {
+          "subject": "UNAUTHORIZED_ACTOR",
+          "operation": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+          "target": "Partition P3",
+          "security_property": "RESOURCE_OWNERSHIP_INTEGRITY",
+          "expected_violation": "Unauthorized access to a resource identifier not owned by the requesting identity."
+        },
+        "falsification_description": "The system should deny access to the resource identifier when an unauthorized actor attempts to substitute it with a different identifier."
+      },
+      "candidate_decision": "HYPOTHESIS",
+      "experiment_action": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+      "supporting_outcome": "HTTP_200_OK",
+      "disproving_outcome": "HTTP_403_FORBIDDEN",
+      "attack_predicate": {
+        "subject": "UNAUTHORIZED_ACTOR",
+        "operation": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+        "target": "Partition P3",
+        "security_property": "RESOURCE_OWNERSHIP_INTEGRITY",
+        "expected_violation": "Unauthorized access to a resource identifier not owned by the requesting identity."
+      }
+    },
+    "outcome_binding": {
+      "is_bound_deterministically": true,
+      "origin": "DETERMINISTICALLY_DERIVED",
+      "binding_result": {
+        "is_valid": true,
+        "supporting_outcome": "HTTP_200_OK",
+        "disproving_outcome": "HTTP_403_FORBIDDEN",
+        "outcome_origin": "DETERMINISTICALLY_DERIVED",
+        "error_message": null,
+        "diagnostic_details": {
+          "category_id": "API-BOLA-001",
+          "experiment_action": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+          "security_property": "RESOURCE_OWNERSHIP_INTEGRITY",
+          "target": "Partition P3",
+          "derived_supporting": "HTTP_200_OK",
+          "derived_disproving": "HTTP_403_FORBIDDEN"
+        }
+      }
+    },
+    "validation": {
+      "schema_valid": true,
+      "skeleton_compliant": true,
+      "skeleton_reason": "Enforced via deterministic outcome binding",
+      "polarity_valid": true,
+      "polarity_reason": null,
+      "grounding_valid": false,
+      "grounding_reason": "FREE_FORM_TARGET_REJECTED: affected_target contains free-form prose or invalid string: 'Partition P3'",
+      "grounding_failure_code": "FREE_FORM_TARGET_REJECTED",
+      "is_valid_typed_experiment": false,
+      "is_useful_vulnerable_hypothesis": false
+    },
+    "attribution": {
+      "primary_failure_code": "GROUNDING_FAILURE",
+      "primary_failure_name": "F06",
+      "contributing_failure_codes": [
+        "GROUNDING_FAILURE",
+        "IDENTIFIER_CONFUSION"
+      ],
+      "details": {
+        "candidate_decision": "HYPOTHESIS",
+        "experiment_action": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+        "supporting_outcome": "HTTP_200_OK",
+        "disproving_outcome": "HTTP_403_FORBIDDEN",
+        "polarity_reason": null,
+        "skeleton_reason": "Enforced via deterministic outcome binding",
+        "raw_primary_category": "SEMANTIC_GROUNDING_FAILURE"
+      }
+    }
+  },
+  {
+    "call_index": 2,
+    "condition_id": "P3",
+    "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-VULN-01",
+    "vulnerable_variant": true,
+    "category_id": "API-BOLA-001",
+    "protocol": "P3_GROUNDING_RECOVERY",
+    "allowed_sets": {
+      "allowed_fact_ids": [
+        "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+      ],
+      "allowed_target_ids": [
+        "EP-ASSET-SAAS_BILLING-INV-DETAILS-01"
+      ],
+      "allowed_fact_ids_hash": "24b826daa26874a86da87e8f5aff94794d1f5075071686848984c2bb855293ef",
+      "allowed_target_ids_hash": "7d84d46740db34eaf572aa7340406255d044ab3ef204664bd4b749bdc10e7356",
+      "count_allowed_facts": 1,
+      "count_allowed_targets": 1
+    },
+    "runtime_telemetry": {
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "temperature": 0.0,
+      "seed": 42,
+      "num_ctx": 2048,
+      "num_predict": 300,
+      "keep_alive": "60m",
+      "total_latency_ms": 20543.71,
+      "timed_out": false,
+      "prompt_eval_count": 1026,
+      "eval_count": 175
+    },
+    "provenance": {
+      "prompt_sha256": "ce94e03c0d00c0e26c1f9fa3e1bf0b017fe67a6161adbb1cd4b9dcd079499df6",
+      "raw_response_sha256": "69b99e6378e1805591199c9c058162f9664a08e1498d2cf7b03a7a804da8680f",
+      "output_origin": "MODEL_GENERATED"
+    },
+    "model_output": {
+      "raw_response": "{\n  \"invariant\": \"Security invariant statement evaluated against target\",\n  \"decision\": \"HYPOTHESIS\",\n  \"affected_target\": \"EP-ASSET-SAAS_BILLING-INV-DETAILS-01\",\n  \"empirical_facts\": [],\n  \"methodology_references\": [],\n  \"attack_predicate\": {\n    \"subject\": \"Role/identity initiating attack\",\n    \"operation\": \"SUBSTITUTE_RESOURCE_IDENTIFIER\",\n    \"target\": \"Target endpoint, parameter, or resource identifier under test\",\n    \"security_property\": \"OBJECT_LEVEL_AUTHORIZATION\",\n    \"expected_violation\": \"Unauthorized access to a specific target resource identifier\"\n  },\n  \"falsification_description\": \"The falsification experiment will involve substituting a resource identifier with one that belongs to another user and verifying if the system grants access without proper authorization.\"\n}",
+      "parse_error": null,
+      "parsed_dict": {
+        "invariant": "Security invariant statement evaluated against target",
+        "evidence_gap": null,
+        "affected_target": "EP-ASSET-SAAS_BILLING-INV-DETAILS-01",
+        "decision": "HYPOTHESIS",
+        "empirical_facts": [],
+        "methodology_references": [],
+        "attack_predicate": {
+          "subject": "Role/identity initiating attack",
+          "operation": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+          "target": "Target endpoint, parameter, or resource identifier under test",
+          "security_property": "OBJECT_LEVEL_AUTHORIZATION",
+          "expected_violation": "Unauthorized access to a specific target resource identifier"
+        },
+        "falsification_description": "The falsification experiment will involve substituting a resource identifier with one that belongs to another user and verifying if the system grants access without proper authorization."
+      },
+      "candidate_decision": "HYPOTHESIS",
+      "experiment_action": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+      "supporting_outcome": "HTTP_200_OK",
+      "disproving_outcome": "HTTP_403_FORBIDDEN",
+      "attack_predicate": {
+        "subject": "Role/identity initiating attack",
+        "operation": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+        "target": "Target endpoint, parameter, or resource identifier under test",
+        "security_property": "OBJECT_LEVEL_AUTHORIZATION",
+        "expected_violation": "Unauthorized access to a specific target resource identifier"
+      }
+    },
+    "outcome_binding": {
+      "is_bound_deterministically": true,
+      "origin": "DETERMINISTICALLY_DERIVED",
+      "binding_result": {
+        "is_valid": true,
+        "supporting_outcome": "HTTP_200_OK",
+        "disproving_outcome": "HTTP_403_FORBIDDEN",
+        "outcome_origin": "DETERMINISTICALLY_DERIVED",
+        "error_message": null,
+        "diagnostic_details": {
+          "category_id": "API-BOLA-001",
+          "experiment_action": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+          "security_property": "OBJECT_LEVEL_AUTHORIZATION",
+          "target": "Target endpoint, parameter, or resource identifier under test",
+          "derived_supporting": "HTTP_200_OK",
+          "derived_disproving": "HTTP_403_FORBIDDEN"
+        }
+      }
+    },
+    "validation": {
+      "schema_valid": true,
+      "skeleton_compliant": true,
+      "skeleton_reason": "Enforced via deterministic outcome binding",
+      "polarity_valid": true,
+      "polarity_reason": null,
+      "grounding_valid": true,
+      "grounding_reason": "All facts and targets validly grounded against scenario envelope",
+      "grounding_failure_code": null,
+      "is_valid_typed_experiment": true,
+      "is_useful_vulnerable_hypothesis": true
+    },
+    "attribution": {
+      "primary_failure_code": "VALID_TYPED",
+      "primary_failure_name": "F01",
+      "contributing_failure_codes": [
+        "VALID_TYPED"
+      ],
+      "details": {
+        "candidate_decision": "HYPOTHESIS",
+        "experiment_action": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+        "supporting_outcome": "HTTP_200_OK",
+        "disproving_outcome": "HTTP_403_FORBIDDEN",
+        "polarity_reason": null,
+        "skeleton_reason": "Enforced via deterministic outcome binding",
+        "raw_primary_category": "VALID"
+      }
+    }
+  },
+  {
+    "call_index": 3,
+    "condition_id": "P2",
+    "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-VULN-01",
+    "vulnerable_variant": true,
+    "category_id": "API-BOLA-001",
+    "protocol": "P2_GROUNDING_RECOVERY",
+    "allowed_sets": {
+      "allowed_fact_ids": [
+        "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+      ],
+      "allowed_target_ids": [
+        "EP-ASSET-SAAS_BILLING-INV-DETAILS-01"
+      ],
+      "allowed_fact_ids_hash": "24b826daa26874a86da87e8f5aff94794d1f5075071686848984c2bb855293ef",
+      "allowed_target_ids_hash": "7d84d46740db34eaf572aa7340406255d044ab3ef204664bd4b749bdc10e7356",
+      "count_allowed_facts": 1,
+      "count_allowed_targets": 1
+    },
+    "runtime_telemetry": {
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "temperature": 0.0,
+      "seed": 42,
+      "num_ctx": 2048,
+      "num_predict": 300,
+      "keep_alive": "60m",
+      "total_latency_ms": 23446.05,
+      "timed_out": false,
+      "prompt_eval_count": 1026,
+      "eval_count": 182
+    },
+    "provenance": {
+      "prompt_sha256": "6f8362b4ba70cccb20b3b575a9fdd638cd21f8056e621d753deff1aa521e3c6d",
+      "raw_response_sha256": "b6eafbe5ee3eaf893bd4a750c7c1a5ddd4b7b12115a9bd7e148af8a46f03671c",
+      "output_origin": "MODEL_GENERATED"
+    },
+    "model_output": {
+      "raw_response": "{\n  \"invariant\": \"Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.\",\n  \"decision\": \"HYPOTHESIS\",\n  \"affected_target\": \"Target endpoint, asset ID, or parameter\",\n  \"empirical_facts\": [],\n  \"methodology_references\": [],\n  \"attack_predicate\": {\n    \"subject\": \"Role/identity initiating attack\",\n    \"operation\": \"SUBSTITUTE_RESOURCE_IDENTIFIER\",\n    \"target\": \"Target endpoint, parameter, or resource identifier under test\",\n    \"security_property\": \"OBJECT_LEVEL_AUTHORIZATION\",\n    \"expected_violation\": \"Unauthorized access to a resource due to missing or incorrect object access verification.\"\n  },\n  \"falsification_description\": \"The falsification experiment will involve substituting a resource identifier with an unauthorized one and verifying if the system grants access without proper verification.\"\n}",
+      "parse_error": null,
+      "parsed_dict": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": null,
+        "affected_target": "Target endpoint, asset ID, or parameter",
+        "decision": "HYPOTHESIS",
+        "empirical_facts": [],
+        "methodology_references": [],
+        "attack_predicate": {
+          "subject": "Role/identity initiating attack",
+          "operation": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+          "target": "Target endpoint, parameter, or resource identifier under test",
+          "security_property": "OBJECT_LEVEL_AUTHORIZATION",
+          "expected_violation": "Unauthorized access to a resource due to missing or incorrect object access verification."
+        },
+        "falsification_description": "The falsification experiment will involve substituting a resource identifier with an unauthorized one and verifying if the system grants access without proper verification."
+      },
+      "candidate_decision": "HYPOTHESIS",
+      "experiment_action": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+      "supporting_outcome": "HTTP_200_OK",
+      "disproving_outcome": "HTTP_403_FORBIDDEN",
+      "attack_predicate": {
+        "subject": "Role/identity initiating attack",
+        "operation": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+        "target": "Target endpoint, parameter, or resource identifier under test",
+        "security_property": "OBJECT_LEVEL_AUTHORIZATION",
+        "expected_violation": "Unauthorized access to a resource due to missing or incorrect object access verification."
+      }
+    },
+    "outcome_binding": {
+      "is_bound_deterministically": true,
+      "origin": "DETERMINISTICALLY_DERIVED",
+      "binding_result": {
+        "is_valid": true,
+        "supporting_outcome": "HTTP_200_OK",
+        "disproving_outcome": "HTTP_403_FORBIDDEN",
+        "outcome_origin": "DETERMINISTICALLY_DERIVED",
+        "error_message": null,
+        "diagnostic_details": {
+          "category_id": "API-BOLA-001",
+          "experiment_action": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+          "security_property": "OBJECT_LEVEL_AUTHORIZATION",
+          "target": "Target endpoint, parameter, or resource identifier under test",
+          "derived_supporting": "HTTP_200_OK",
+          "derived_disproving": "HTTP_403_FORBIDDEN"
+        }
+      }
+    },
+    "validation": {
+      "schema_valid": true,
+      "skeleton_compliant": true,
+      "skeleton_reason": "Enforced via deterministic outcome binding",
+      "polarity_valid": true,
+      "polarity_reason": null,
+      "grounding_valid": false,
+      "grounding_reason": "FREE_FORM_TARGET_REJECTED: affected_target contains free-form prose or invalid string: 'Target endpoint, asset ID, or parameter'",
+      "grounding_failure_code": "FREE_FORM_TARGET_REJECTED",
+      "is_valid_typed_experiment": false,
+      "is_useful_vulnerable_hypothesis": false
+    },
+    "attribution": {
+      "primary_failure_code": "GROUNDING_FAILURE",
+      "primary_failure_name": "F06",
+      "contributing_failure_codes": [
+        "GROUNDING_FAILURE",
+        "IDENTIFIER_CONFUSION"
+      ],
+      "details": {
+        "candidate_decision": "HYPOTHESIS",
+        "experiment_action": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+        "supporting_outcome": "HTTP_200_OK",
+        "disproving_outcome": "HTTP_403_FORBIDDEN",
+        "polarity_reason": null,
+        "skeleton_reason": "Enforced via deterministic outcome binding",
+        "raw_primary_category": "SEMANTIC_GROUNDING_FAILURE"
+      }
+    }
+  },
+  {
+    "call_index": 4,
+    "condition_id": "P1",
+    "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-PATCH-01",
+    "vulnerable_variant": false,
+    "category_id": "API-BOLA-001",
+    "protocol": "P1_GROUNDING_RECOVERY",
+    "allowed_sets": {
+      "allowed_fact_ids": [
+        "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+      ],
+      "allowed_target_ids": [
+        "EP-ASSET-SAAS_BILLING-INV-DETAILS-01"
+      ],
+      "allowed_fact_ids_hash": "24b826daa26874a86da87e8f5aff94794d1f5075071686848984c2bb855293ef",
+      "allowed_target_ids_hash": "7d84d46740db34eaf572aa7340406255d044ab3ef204664bd4b749bdc10e7356",
+      "count_allowed_facts": 1,
+      "count_allowed_targets": 1
+    },
+    "runtime_telemetry": {
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "temperature": 0.0,
+      "seed": 42,
+      "num_ctx": 2048,
+      "num_predict": 300,
+      "keep_alive": "60m",
+      "total_latency_ms": 25296.39,
+      "timed_out": false,
+      "prompt_eval_count": 1026,
+      "eval_count": 194
+    },
+    "provenance": {
+      "prompt_sha256": "a987d4a54af0de12223ba603941a3e7991de8250e2778f279b27ddb3854e3e4e",
+      "raw_response_sha256": "2f41d93dbdd92128a43349fc42a647ae9d8daa610a33d3612c3a29b4943c8884",
+      "output_origin": "MODEL_GENERATED"
+    },
+    "model_output": {
+      "raw_response": "{\n  \"invariant\": \"Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.\",\n  \"decision\": \"HYPOTHESIS\",\n  \"affected_target\": \"Partition P3\",\n  \"empirical_facts\": [\"FACT-001\", \"FACT-002\"],\n  \"methodology_references\": [\"CHK-001\"],\n  \"attack_predicate\": {\n    \"subject\": \"UNAUTHORIZED_ACTOR\",\n    \"operation\": \"SUBSTITUTE_RESOURCE_IDENTIFIER\",\n    \"target\": \"Partition P3\",\n    \"security_property\": \"RESOURCE_OWNERSHIP_INTEGRITY\",\n    \"expected_violation\": \"Unauthorized access to a resource identifier that does not belong to the requesting identity.\"\n  },\n  \"falsification_description\": \"The experiment will involve substituting a resource identifier with one that does not belong to the requesting identity and verifying if the system grants access.\"\n}",
+      "parse_error": null,
+      "parsed_dict": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": null,
+        "affected_target": "Partition P3",
+        "decision": "HYPOTHESIS",
+        "empirical_facts": [
+          "FACT-001",
+          "FACT-002"
+        ],
+        "methodology_references": [
+          "CHK-001"
+        ],
+        "attack_predicate": {
+          "subject": "UNAUTHORIZED_ACTOR",
+          "operation": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+          "target": "Partition P3",
+          "security_property": "RESOURCE_OWNERSHIP_INTEGRITY",
+          "expected_violation": "Unauthorized access to a resource identifier that does not belong to the requesting identity."
+        },
+        "falsification_description": "The experiment will involve substituting a resource identifier with one that does not belong to the requesting identity and verifying if the system grants access."
+      },
+      "candidate_decision": "HYPOTHESIS",
+      "experiment_action": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+      "supporting_outcome": "HTTP_200_OK",
+      "disproving_outcome": "HTTP_403_FORBIDDEN",
+      "attack_predicate": {
+        "subject": "UNAUTHORIZED_ACTOR",
+        "operation": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+        "target": "Partition P3",
+        "security_property": "RESOURCE_OWNERSHIP_INTEGRITY",
+        "expected_violation": "Unauthorized access to a resource identifier that does not belong to the requesting identity."
+      }
+    },
+    "outcome_binding": {
+      "is_bound_deterministically": true,
+      "origin": "DETERMINISTICALLY_DERIVED",
+      "binding_result": {
+        "is_valid": true,
+        "supporting_outcome": "HTTP_200_OK",
+        "disproving_outcome": "HTTP_403_FORBIDDEN",
+        "outcome_origin": "DETERMINISTICALLY_DERIVED",
+        "error_message": null,
+        "diagnostic_details": {
+          "category_id": "API-BOLA-001",
+          "experiment_action": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+          "security_property": "RESOURCE_OWNERSHIP_INTEGRITY",
+          "target": "Partition P3",
+          "derived_supporting": "HTTP_200_OK",
+          "derived_disproving": "HTTP_403_FORBIDDEN"
+        }
+      }
+    },
+    "validation": {
+      "schema_valid": true,
+      "skeleton_compliant": true,
+      "skeleton_reason": "Enforced via deterministic outcome binding",
+      "polarity_valid": true,
+      "polarity_reason": null,
+      "grounding_valid": false,
+      "grounding_reason": "FREE_FORM_TARGET_REJECTED: affected_target contains free-form prose or invalid string: 'Partition P3'",
+      "grounding_failure_code": "FREE_FORM_TARGET_REJECTED",
+      "is_valid_typed_experiment": false,
+      "is_useful_vulnerable_hypothesis": false
+    },
+    "attribution": {
+      "primary_failure_code": "GROUNDING_FAILURE",
+      "primary_failure_name": "F06",
+      "contributing_failure_codes": [
+        "GROUNDING_FAILURE",
+        "IDENTIFIER_CONFUSION"
+      ],
+      "details": {
+        "candidate_decision": "HYPOTHESIS",
+        "experiment_action": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+        "supporting_outcome": "HTTP_200_OK",
+        "disproving_outcome": "HTTP_403_FORBIDDEN",
+        "polarity_reason": null,
+        "skeleton_reason": "Enforced via deterministic outcome binding",
+        "raw_primary_category": "SEMANTIC_GROUNDING_FAILURE"
+      }
+    }
+  },
+  {
+    "call_index": 5,
+    "condition_id": "P3",
+    "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-PATCH-01",
+    "vulnerable_variant": false,
+    "category_id": "API-BOLA-001",
+    "protocol": "P3_GROUNDING_RECOVERY",
+    "allowed_sets": {
+      "allowed_fact_ids": [
+        "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+      ],
+      "allowed_target_ids": [
+        "EP-ASSET-SAAS_BILLING-INV-DETAILS-01"
+      ],
+      "allowed_fact_ids_hash": "24b826daa26874a86da87e8f5aff94794d1f5075071686848984c2bb855293ef",
+      "allowed_target_ids_hash": "7d84d46740db34eaf572aa7340406255d044ab3ef204664bd4b749bdc10e7356",
+      "count_allowed_facts": 1,
+      "count_allowed_targets": 1
+    },
+    "runtime_telemetry": {
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "temperature": 0.0,
+      "seed": 42,
+      "num_ctx": 2048,
+      "num_predict": 300,
+      "keep_alive": "60m",
+      "total_latency_ms": 20319.89,
+      "timed_out": false,
+      "prompt_eval_count": 1026,
+      "eval_count": 175
+    },
+    "provenance": {
+      "prompt_sha256": "ce94e03c0d00c0e26c1f9fa3e1bf0b017fe67a6161adbb1cd4b9dcd079499df6",
+      "raw_response_sha256": "69b99e6378e1805591199c9c058162f9664a08e1498d2cf7b03a7a804da8680f",
+      "output_origin": "MODEL_GENERATED"
+    },
+    "model_output": {
+      "raw_response": "{\n  \"invariant\": \"Security invariant statement evaluated against target\",\n  \"decision\": \"HYPOTHESIS\",\n  \"affected_target\": \"EP-ASSET-SAAS_BILLING-INV-DETAILS-01\",\n  \"empirical_facts\": [],\n  \"methodology_references\": [],\n  \"attack_predicate\": {\n    \"subject\": \"Role/identity initiating attack\",\n    \"operation\": \"SUBSTITUTE_RESOURCE_IDENTIFIER\",\n    \"target\": \"Target endpoint, parameter, or resource identifier under test\",\n    \"security_property\": \"OBJECT_LEVEL_AUTHORIZATION\",\n    \"expected_violation\": \"Unauthorized access to a specific target resource identifier\"\n  },\n  \"falsification_description\": \"The falsification experiment will involve substituting a resource identifier with one that belongs to another user and verifying if the system grants access without proper authorization.\"\n}",
+      "parse_error": null,
+      "parsed_dict": {
+        "invariant": "Security invariant statement evaluated against target",
+        "evidence_gap": null,
+        "affected_target": "EP-ASSET-SAAS_BILLING-INV-DETAILS-01",
+        "decision": "HYPOTHESIS",
+        "empirical_facts": [],
+        "methodology_references": [],
+        "attack_predicate": {
+          "subject": "Role/identity initiating attack",
+          "operation": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+          "target": "Target endpoint, parameter, or resource identifier under test",
+          "security_property": "OBJECT_LEVEL_AUTHORIZATION",
+          "expected_violation": "Unauthorized access to a specific target resource identifier"
+        },
+        "falsification_description": "The falsification experiment will involve substituting a resource identifier with one that belongs to another user and verifying if the system grants access without proper authorization."
+      },
+      "candidate_decision": "HYPOTHESIS",
+      "experiment_action": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+      "supporting_outcome": "HTTP_200_OK",
+      "disproving_outcome": "HTTP_403_FORBIDDEN",
+      "attack_predicate": {
+        "subject": "Role/identity initiating attack",
+        "operation": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+        "target": "Target endpoint, parameter, or resource identifier under test",
+        "security_property": "OBJECT_LEVEL_AUTHORIZATION",
+        "expected_violation": "Unauthorized access to a specific target resource identifier"
+      }
+    },
+    "outcome_binding": {
+      "is_bound_deterministically": true,
+      "origin": "DETERMINISTICALLY_DERIVED",
+      "binding_result": {
+        "is_valid": true,
+        "supporting_outcome": "HTTP_200_OK",
+        "disproving_outcome": "HTTP_403_FORBIDDEN",
+        "outcome_origin": "DETERMINISTICALLY_DERIVED",
+        "error_message": null,
+        "diagnostic_details": {
+          "category_id": "API-BOLA-001",
+          "experiment_action": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+          "security_property": "OBJECT_LEVEL_AUTHORIZATION",
+          "target": "Target endpoint, parameter, or resource identifier under test",
+          "derived_supporting": "HTTP_200_OK",
+          "derived_disproving": "HTTP_403_FORBIDDEN"
+        }
+      }
+    },
+    "validation": {
+      "schema_valid": true,
+      "skeleton_compliant": true,
+      "skeleton_reason": "Enforced via deterministic outcome binding",
+      "polarity_valid": true,
+      "polarity_reason": null,
+      "grounding_valid": true,
+      "grounding_reason": "All facts and targets validly grounded against scenario envelope",
+      "grounding_failure_code": null,
+      "is_valid_typed_experiment": true,
+      "is_useful_vulnerable_hypothesis": false
+    },
+    "attribution": {
+      "primary_failure_code": "VALID_TYPED",
+      "primary_failure_name": "F01",
+      "contributing_failure_codes": [
+        "VALID_TYPED"
+      ],
+      "details": {
+        "candidate_decision": "HYPOTHESIS",
+        "experiment_action": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+        "supporting_outcome": "HTTP_200_OK",
+        "disproving_outcome": "HTTP_403_FORBIDDEN",
+        "polarity_reason": null,
+        "skeleton_reason": "Enforced via deterministic outcome binding",
+        "raw_primary_category": "VALID"
+      }
+    }
+  },
+  {
+    "call_index": 6,
+    "condition_id": "P2",
+    "scenario_id": "SCEN-SAAS_BILLING-INV-DETAILS-PATCH-01",
+    "vulnerable_variant": false,
+    "category_id": "API-BOLA-001",
+    "protocol": "P2_GROUNDING_RECOVERY",
+    "allowed_sets": {
+      "allowed_fact_ids": [
+        "FACT-SAAS_BILLING-INV-DETAILS-DOC"
+      ],
+      "allowed_target_ids": [
+        "EP-ASSET-SAAS_BILLING-INV-DETAILS-01"
+      ],
+      "allowed_fact_ids_hash": "24b826daa26874a86da87e8f5aff94794d1f5075071686848984c2bb855293ef",
+      "allowed_target_ids_hash": "7d84d46740db34eaf572aa7340406255d044ab3ef204664bd4b749bdc10e7356",
+      "count_allowed_facts": 1,
+      "count_allowed_targets": 1
+    },
+    "runtime_telemetry": {
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "temperature": 0.0,
+      "seed": 42,
+      "num_ctx": 2048,
+      "num_predict": 300,
+      "keep_alive": "60m",
+      "total_latency_ms": 25526.07,
+      "timed_out": false,
+      "prompt_eval_count": 1026,
+      "eval_count": 199
+    },
+    "provenance": {
+      "prompt_sha256": "6f8362b4ba70cccb20b3b575a9fdd638cd21f8056e621d753deff1aa521e3c6d",
+      "raw_response_sha256": "9363c88a4c65d8b56615422b75746db51f621610554aec363f22aab5709f9a19",
+      "output_origin": "MODEL_GENERATED"
+    },
+    "model_output": {
+      "raw_response": "{\n  \"invariant\": \"Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.\",\n  \"decision\": \"HYPOTHESIS\",\n  \"affected_target\": \"Target endpoint, asset ID, or parameter\",\n  \"empirical_facts\": [],\n  \"methodology_references\": [],\n  \"attack_predicate\": {\n    \"subject\": \"Role/identity initiating attack\",\n    \"operation\": \"SUBSTITUTE_RESOURCE_IDENTIFIER\",\n    \"target\": \"Target endpoint, parameter, or resource identifier under test\",\n    \"security_property\": \"OBJECT_LEVEL_AUTHORIZATION\",\n    \"expected_violation\": \"Unauthorized access to a resource due to missing or incorrect object access verification.\"\n  },\n  \"falsification_description\": \"The falsification experiment will involve substituting a resource identifier with one that the attacking identity does not own or is not explicitly authorized to access. If the system grants access, it indicates a breach of the security invariant.\"\n}",
+      "parse_error": null,
+      "parsed_dict": {
+        "invariant": "Object access must verify that the requesting identity owns or is explicitly authorized to access the specific target resource identifier.",
+        "evidence_gap": null,
+        "affected_target": "Target endpoint, asset ID, or parameter",
+        "decision": "HYPOTHESIS",
+        "empirical_facts": [],
+        "methodology_references": [],
+        "attack_predicate": {
+          "subject": "Role/identity initiating attack",
+          "operation": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+          "target": "Target endpoint, parameter, or resource identifier under test",
+          "security_property": "OBJECT_LEVEL_AUTHORIZATION",
+          "expected_violation": "Unauthorized access to a resource due to missing or incorrect object access verification."
+        },
+        "falsification_description": "The falsification experiment will involve substituting a resource identifier with one that the attacking identity does not own or is not explicitly authorized to access. If the system grants access, it indicates a breach of the security invariant."
+      },
+      "candidate_decision": "HYPOTHESIS",
+      "experiment_action": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+      "supporting_outcome": "HTTP_200_OK",
+      "disproving_outcome": "HTTP_403_FORBIDDEN",
+      "attack_predicate": {
+        "subject": "Role/identity initiating attack",
+        "operation": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+        "target": "Target endpoint, parameter, or resource identifier under test",
+        "security_property": "OBJECT_LEVEL_AUTHORIZATION",
+        "expected_violation": "Unauthorized access to a resource due to missing or incorrect object access verification."
+      }
+    },
+    "outcome_binding": {
+      "is_bound_deterministically": true,
+      "origin": "DETERMINISTICALLY_DERIVED",
+      "binding_result": {
+        "is_valid": true,
+        "supporting_outcome": "HTTP_200_OK",
+        "disproving_outcome": "HTTP_403_FORBIDDEN",
+        "outcome_origin": "DETERMINISTICALLY_DERIVED",
+        "error_message": null,
+        "diagnostic_details": {
+          "category_id": "API-BOLA-001",
+          "experiment_action": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+          "security_property": "OBJECT_LEVEL_AUTHORIZATION",
+          "target": "Target endpoint, parameter, or resource identifier under test",
+          "derived_supporting": "HTTP_200_OK",
+          "derived_disproving": "HTTP_403_FORBIDDEN"
+        }
+      }
+    },
+    "validation": {
+      "schema_valid": true,
+      "skeleton_compliant": true,
+      "skeleton_reason": "Enforced via deterministic outcome binding",
+      "polarity_valid": true,
+      "polarity_reason": null,
+      "grounding_valid": false,
+      "grounding_reason": "FREE_FORM_TARGET_REJECTED: affected_target contains free-form prose or invalid string: 'Target endpoint, asset ID, or parameter'",
+      "grounding_failure_code": "FREE_FORM_TARGET_REJECTED",
+      "is_valid_typed_experiment": false,
+      "is_useful_vulnerable_hypothesis": false
+    },
+    "attribution": {
+      "primary_failure_code": "GROUNDING_FAILURE",
+      "primary_failure_name": "F06",
+      "contributing_failure_codes": [
+        "GROUNDING_FAILURE",
+        "IDENTIFIER_CONFUSION"
+      ],
+      "details": {
+        "candidate_decision": "HYPOTHESIS",
+        "experiment_action": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+        "supporting_outcome": "HTTP_200_OK",
+        "disproving_outcome": "HTTP_403_FORBIDDEN",
+        "polarity_reason": null,
+        "skeleton_reason": "Enforced via deterministic outcome binding",
+        "raw_primary_category": "SEMANTIC_GROUNDING_FAILURE"
+      }
+    }
+  },
+  {
+    "call_index": 7,
+    "condition_id": "P1",
+    "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-VULN-04",
+    "vulnerable_variant": true,
+    "category_id": "API-LIFECYCLE-001",
+    "protocol": "P1_GROUNDING_RECOVERY",
+    "allowed_sets": {
+      "allowed_fact_ids": [
+        "FACT-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-DOC"
+      ],
+      "allowed_target_ids": [
+        "EP-ASSET-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-04"
+      ],
+      "allowed_fact_ids_hash": "55ef3664f66fcc3c810a8ee13a996af2ffc4938413377dd13923936dbfc47e00",
+      "allowed_target_ids_hash": "54e0cd1af5ffa8f0e33f52e81a712e67c14597883ffbff469247170c0f9692bc",
+      "count_allowed_facts": 1,
+      "count_allowed_targets": 1
+    },
+    "runtime_telemetry": {
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "temperature": 0.0,
+      "seed": 42,
+      "num_ctx": 2048,
+      "num_predict": 300,
+      "keep_alive": "60m",
+      "total_latency_ms": 27335.48,
+      "timed_out": false,
+      "prompt_eval_count": 1026,
+      "eval_count": 235
+    },
+    "provenance": {
+      "prompt_sha256": "cd6977302d014f8e2daf1ba779647b82028c79e35d46f6f0a06553fef48a9a4d",
+      "raw_response_sha256": "5f2e96954ba193990bc70cc3ae63ec8413c6fa8c64006d8a95f9b6ee41ef1de7",
+      "output_origin": "MODEL_GENERATED"
+    },
+    "model_output": {
+      "raw_response": "{\n  \"invariant\": \"Terminal, archived, or cancelled entities must reject subsequent mutation requests (e.g. refunds against cancelled orders, updates to deleted assets).\",\n  \"decision\": \"HYPOTHESIS\",\n  \"affected_target\": \"Endpoint for updating or refunding an entity\",\n  \"empirical_facts\": [\"FACT-001\", \"FACT-002\"],\n  \"methodology_references\": [\"CHK-001\"],\n  \"attack_predicate\": {\n    \"subject\": \"UNAUTHORIZED_ACTOR\",\n    \"operation\": \"EXECUTE_OUT_OF_ORDER_TRANSITION\",\n    \"target\": \"Endpoint for updating or refunding an entity\",\n    \"security_property\": \"STATE_TRANSITION_INTEGRITY\",\n    \"expected_violation\": \"The unauthorized actor successfully updates or refunds a terminal, archived, or cancelled entity.\"\n  },\n  \"falsification_description\": \"The experiment will involve attempting to update or refund an entity that is in a terminal, archived, or cancelled state using an unauthorized actor's credentials. If the operation is rejected, the invariant holds. If the operation is successful, the invariant is breached.\"\n}",
+      "parse_error": null,
+      "parsed_dict": {
+        "invariant": "Terminal, archived, or cancelled entities must reject subsequent mutation requests (e.g. refunds against cancelled orders, updates to deleted assets).",
+        "evidence_gap": null,
+        "affected_target": "Endpoint for updating or refunding an entity",
+        "decision": "HYPOTHESIS",
+        "empirical_facts": [
+          "FACT-001",
+          "FACT-002"
+        ],
+        "methodology_references": [
+          "CHK-001"
+        ],
+        "attack_predicate": {
+          "subject": "UNAUTHORIZED_ACTOR",
+          "operation": "EXECUTE_OUT_OF_ORDER_TRANSITION",
+          "target": "Endpoint for updating or refunding an entity",
+          "security_property": "STATE_TRANSITION_INTEGRITY",
+          "expected_violation": "The unauthorized actor successfully updates or refunds a terminal, archived, or cancelled entity."
+        },
+        "falsification_description": "The experiment will involve attempting to update or refund an entity that is in a terminal, archived, or cancelled state using an unauthorized actor's credentials. If the operation is rejected, the invariant holds. If the operation is successful, the invariant is breached."
+      },
+      "candidate_decision": "HYPOTHESIS",
+      "experiment_action": "EXECUTE_OUT_OF_ORDER_TRANSITION",
+      "supporting_outcome": "STATE_TRANSITION_ACCEPTED",
+      "disproving_outcome": "STATE_TRANSITION_REJECTED",
+      "attack_predicate": {
+        "subject": "UNAUTHORIZED_ACTOR",
+        "operation": "EXECUTE_OUT_OF_ORDER_TRANSITION",
+        "target": "Endpoint for updating or refunding an entity",
+        "security_property": "STATE_TRANSITION_INTEGRITY",
+        "expected_violation": "The unauthorized actor successfully updates or refunds a terminal, archived, or cancelled entity."
+      }
+    },
+    "outcome_binding": {
+      "is_bound_deterministically": true,
+      "origin": "DETERMINISTICALLY_DERIVED",
+      "binding_result": {
+        "is_valid": true,
+        "supporting_outcome": "STATE_TRANSITION_ACCEPTED",
+        "disproving_outcome": "STATE_TRANSITION_REJECTED",
+        "outcome_origin": "DETERMINISTICALLY_DERIVED",
+        "error_message": null,
+        "diagnostic_details": {
+          "category_id": "API-LIFECYCLE-001",
+          "experiment_action": "EXECUTE_OUT_OF_ORDER_TRANSITION",
+          "security_property": "STATE_TRANSITION_INTEGRITY",
+          "target": "Endpoint for updating or refunding an entity",
+          "derived_supporting": "STATE_TRANSITION_ACCEPTED",
+          "derived_disproving": "STATE_TRANSITION_REJECTED"
+        }
+      }
+    },
+    "validation": {
+      "schema_valid": true,
+      "skeleton_compliant": true,
+      "skeleton_reason": "Enforced via deterministic outcome binding",
+      "polarity_valid": true,
+      "polarity_reason": null,
+      "grounding_valid": false,
+      "grounding_reason": "FREE_FORM_TARGET_REJECTED: affected_target contains free-form prose or invalid string: 'Endpoint for updating or refunding an entity'",
+      "grounding_failure_code": "FREE_FORM_TARGET_REJECTED",
+      "is_valid_typed_experiment": false,
+      "is_useful_vulnerable_hypothesis": false
+    },
+    "attribution": {
+      "primary_failure_code": "GROUNDING_FAILURE",
+      "primary_failure_name": "F06",
+      "contributing_failure_codes": [
+        "GROUNDING_FAILURE",
+        "IDENTIFIER_CONFUSION"
+      ],
+      "details": {
+        "candidate_decision": "HYPOTHESIS",
+        "experiment_action": "EXECUTE_OUT_OF_ORDER_TRANSITION",
+        "supporting_outcome": "STATE_TRANSITION_ACCEPTED",
+        "disproving_outcome": "STATE_TRANSITION_REJECTED",
+        "polarity_reason": null,
+        "skeleton_reason": "Enforced via deterministic outcome binding",
+        "raw_primary_category": "SEMANTIC_GROUNDING_FAILURE"
+      }
+    }
+  },
+  {
+    "call_index": 8,
+    "condition_id": "P2",
+    "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-VULN-04",
+    "vulnerable_variant": true,
+    "category_id": "API-LIFECYCLE-001",
+    "protocol": "P2_GROUNDING_RECOVERY",
+    "allowed_sets": {
+      "allowed_fact_ids": [
+        "FACT-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-DOC"
+      ],
+      "allowed_target_ids": [
+        "EP-ASSET-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-04"
+      ],
+      "allowed_fact_ids_hash": "55ef3664f66fcc3c810a8ee13a996af2ffc4938413377dd13923936dbfc47e00",
+      "allowed_target_ids_hash": "54e0cd1af5ffa8f0e33f52e81a712e67c14597883ffbff469247170c0f9692bc",
+      "count_allowed_facts": 1,
+      "count_allowed_targets": 1
+    },
+    "runtime_telemetry": {
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "temperature": 0.0,
+      "seed": 42,
+      "num_ctx": 2048,
+      "num_predict": 300,
+      "keep_alive": "60m",
+      "total_latency_ms": 22448.02,
+      "timed_out": false,
+      "prompt_eval_count": 1026,
+      "eval_count": 195
+    },
+    "provenance": {
+      "prompt_sha256": "b02df0699cdab6b6ba429c9334d9ab9f769fb7011d2e14af2d5ae687003f5198",
+      "raw_response_sha256": "1fad593c182d133df5ecbeb89bf2de12a82afdaa4200de481ed1fb0e1b8598cb",
+      "output_origin": "MODEL_GENERATED"
+    },
+    "model_output": {
+      "raw_response": "{\n  \"invariant\": \"Terminal, archived, or cancelled entities must reject subsequent mutation requests (e.g. refunds against cancelled orders, updates to deleted assets).\",\n  \"decision\": \"HYPOTHESIS\",\n  \"affected_target\": \"Endpoint for refunding cancelled orders\",\n  \"empirical_facts\": [\"FACT-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-DOC\"],\n  \"methodology_references\": [],\n  \"attack_predicate\": {\n    \"subject\": \"Customer with a cancelled order\",\n    \"operation\": \"EXECUTE_OUT_OF_ORDER_TRANSITION\",\n    \"target\": \"Endpoint for refunding cancelled orders\",\n    \"security_property\": \"MUTATION_INTEGRITY\",\n    \"expected_violation\": \"The system accepts a refund request for a cancelled order\"\n  },\n  \"falsification_description\": \"The system should reject a refund request for a cancelled order, as it violates the security invariant.\"\n}",
+      "parse_error": null,
+      "parsed_dict": {
+        "invariant": "Terminal, archived, or cancelled entities must reject subsequent mutation requests (e.g. refunds against cancelled orders, updates to deleted assets).",
+        "evidence_gap": null,
+        "affected_target": "Endpoint for refunding cancelled orders",
+        "decision": "HYPOTHESIS",
+        "empirical_facts": [
+          "FACT-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-DOC"
+        ],
+        "methodology_references": [],
+        "attack_predicate": {
+          "subject": "Customer with a cancelled order",
+          "operation": "EXECUTE_OUT_OF_ORDER_TRANSITION",
+          "target": "Endpoint for refunding cancelled orders",
+          "security_property": "MUTATION_INTEGRITY",
+          "expected_violation": "The system accepts a refund request for a cancelled order"
+        },
+        "falsification_description": "The system should reject a refund request for a cancelled order, as it violates the security invariant."
+      },
+      "candidate_decision": "HYPOTHESIS",
+      "experiment_action": "EXECUTE_OUT_OF_ORDER_TRANSITION",
+      "supporting_outcome": null,
+      "disproving_outcome": null,
+      "attack_predicate": {
+        "subject": "Customer with a cancelled order",
+        "operation": "EXECUTE_OUT_OF_ORDER_TRANSITION",
+        "target": "Endpoint for refunding cancelled orders",
+        "security_property": "MUTATION_INTEGRITY",
+        "expected_violation": "The system accepts a refund request for a cancelled order"
+      }
+    },
+    "outcome_binding": {
+      "is_bound_deterministically": true,
+      "origin": "DETERMINISTICALLY_DERIVED",
+      "binding_result": {
+        "is_valid": false,
+        "supporting_outcome": null,
+        "disproving_outcome": null,
+        "outcome_origin": "DETERMINISTICALLY_DERIVED",
+        "error_message": "Security property 'MUTATION_INTEGRITY' incompatible with category 'API-LIFECYCLE-001'. Expected one of: ['LIFECYCLE_ORDERING', 'STATE_TRANSITION_INTEGRITY']",
+        "diagnostic_details": {
+          "stage": "PROPERTY_MISMATCH",
+          "category_id": "API-LIFECYCLE-001",
+          "property": "MUTATION_INTEGRITY"
+        }
+      }
+    },
+    "validation": {
+      "schema_valid": true,
+      "skeleton_compliant": null,
+      "skeleton_reason": null,
+      "polarity_valid": false,
+      "polarity_reason": null,
+      "grounding_valid": false,
+      "grounding_reason": "FREE_FORM_TARGET_REJECTED: affected_target contains free-form prose or invalid string: 'Endpoint for refunding cancelled orders'",
+      "grounding_failure_code": "FREE_FORM_TARGET_REJECTED",
+      "is_valid_typed_experiment": false,
+      "is_useful_vulnerable_hypothesis": false
+    },
+    "attribution": {
+      "primary_failure_code": "GROUNDING_FAILURE",
+      "primary_failure_name": "F06",
+      "contributing_failure_codes": [
+        "GROUNDING_FAILURE",
+        "IDENTIFIER_CONFUSION"
+      ],
+      "details": {
+        "candidate_decision": "HYPOTHESIS",
+        "experiment_action": "EXECUTE_OUT_OF_ORDER_TRANSITION",
+        "supporting_outcome": null,
+        "disproving_outcome": null,
+        "polarity_reason": null,
+        "skeleton_reason": null,
+        "raw_primary_category": "SEMANTIC_GROUNDING_FAILURE"
+      }
+    }
+  },
+  {
+    "call_index": 9,
+    "condition_id": "P3",
+    "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-VULN-04",
+    "vulnerable_variant": true,
+    "category_id": "API-LIFECYCLE-001",
+    "protocol": "P3_GROUNDING_RECOVERY",
+    "allowed_sets": {
+      "allowed_fact_ids": [
+        "FACT-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-DOC"
+      ],
+      "allowed_target_ids": [
+        "EP-ASSET-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-04"
+      ],
+      "allowed_fact_ids_hash": "55ef3664f66fcc3c810a8ee13a996af2ffc4938413377dd13923936dbfc47e00",
+      "allowed_target_ids_hash": "54e0cd1af5ffa8f0e33f52e81a712e67c14597883ffbff469247170c0f9692bc",
+      "count_allowed_facts": 1,
+      "count_allowed_targets": 1
+    },
+    "runtime_telemetry": {
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "temperature": 0.0,
+      "seed": 42,
+      "num_ctx": 2048,
+      "num_predict": 300,
+      "keep_alive": "60m",
+      "total_latency_ms": 25413.99,
+      "timed_out": false,
+      "prompt_eval_count": 1026,
+      "eval_count": 230
+    },
+    "provenance": {
+      "prompt_sha256": "4f807e0f975a0731a2ca1e831d55bf6751d06704b26d65c1d8bd81c4daadacb1",
+      "raw_response_sha256": "9b7cb7ab66f5ca798b8acc96be6ac89fecfd87a09e4c66ff438940fb16549bfd",
+      "output_origin": "MODEL_GENERATED"
+    },
+    "model_output": {
+      "raw_response": "{\n  \"invariant\": \"Terminal, archived, or cancelled entities must reject subsequent mutation requests (e.g. refunds against cancelled orders, updates to deleted assets).\",\n  \"decision\": \"HYPOTHESIS\",\n  \"affected_target\": \"EP-ASSET-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-04\",\n  \"empirical_facts\": [\"FACT-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-DOC\"],\n  \"methodology_references\": [],\n  \"attack_predicate\": {\n    \"subject\": \"Role/identity initiating attack\",\n    \"operation\": \"EXECUTE_OUT_OF_ORDER_TRANSITION\",\n    \"target\": \"Target endpoint, parameter, or resource identifier under test\",\n    \"security_property\": \"TENANT_ISOLATION\",\n    \"expected_violation\": \"Unauthorized mutation of a cancelled order\"\n  },\n  \"falsification_description\": \"The falsification experiment will involve attempting to perform a mutation operation (e.g., refund) on a cancelled order. If the system accepts this operation, it indicates a breach of the security invariant.\"\n}",
+      "parse_error": null,
+      "parsed_dict": {
+        "invariant": "Terminal, archived, or cancelled entities must reject subsequent mutation requests (e.g. refunds against cancelled orders, updates to deleted assets).",
+        "evidence_gap": null,
+        "affected_target": "EP-ASSET-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-04",
+        "decision": "HYPOTHESIS",
+        "empirical_facts": [
+          "FACT-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-DOC"
+        ],
+        "methodology_references": [],
+        "attack_predicate": {
+          "subject": "Role/identity initiating attack",
+          "operation": "EXECUTE_OUT_OF_ORDER_TRANSITION",
+          "target": "Target endpoint, parameter, or resource identifier under test",
+          "security_property": "TENANT_ISOLATION",
+          "expected_violation": "Unauthorized mutation of a cancelled order"
+        },
+        "falsification_description": "The falsification experiment will involve attempting to perform a mutation operation (e.g., refund) on a cancelled order. If the system accepts this operation, it indicates a breach of the security invariant."
+      },
+      "candidate_decision": "HYPOTHESIS",
+      "experiment_action": "EXECUTE_OUT_OF_ORDER_TRANSITION",
+      "supporting_outcome": null,
+      "disproving_outcome": null,
+      "attack_predicate": {
+        "subject": "Role/identity initiating attack",
+        "operation": "EXECUTE_OUT_OF_ORDER_TRANSITION",
+        "target": "Target endpoint, parameter, or resource identifier under test",
+        "security_property": "TENANT_ISOLATION",
+        "expected_violation": "Unauthorized mutation of a cancelled order"
+      }
+    },
+    "outcome_binding": {
+      "is_bound_deterministically": true,
+      "origin": "DETERMINISTICALLY_DERIVED",
+      "binding_result": {
+        "is_valid": false,
+        "supporting_outcome": null,
+        "disproving_outcome": null,
+        "outcome_origin": "DETERMINISTICALLY_DERIVED",
+        "error_message": "Security property 'TENANT_ISOLATION' incompatible with category 'API-LIFECYCLE-001'. Expected one of: ['LIFECYCLE_ORDERING', 'STATE_TRANSITION_INTEGRITY']",
+        "diagnostic_details": {
+          "stage": "PROPERTY_MISMATCH",
+          "category_id": "API-LIFECYCLE-001",
+          "property": "TENANT_ISOLATION"
+        }
+      }
+    },
+    "validation": {
+      "schema_valid": true,
+      "skeleton_compliant": null,
+      "skeleton_reason": null,
+      "polarity_valid": false,
+      "polarity_reason": null,
+      "grounding_valid": true,
+      "grounding_reason": "All facts and targets validly grounded against scenario envelope",
+      "grounding_failure_code": null,
+      "is_valid_typed_experiment": false,
+      "is_useful_vulnerable_hypothesis": false
+    },
+    "attribution": {
+      "primary_failure_code": "POLARITY_FAILURE",
+      "primary_failure_name": "F07",
+      "contributing_failure_codes": [
+        "POLARITY_FAILURE"
+      ],
+      "details": {
+        "candidate_decision": "HYPOTHESIS",
+        "experiment_action": "EXECUTE_OUT_OF_ORDER_TRANSITION",
+        "supporting_outcome": null,
+        "disproving_outcome": null,
+        "polarity_reason": null,
+        "skeleton_reason": null,
+        "raw_primary_category": "SEMANTIC_EXPERIMENT_POLARITY_FAILURE"
+      }
+    }
+  },
+  {
+    "call_index": 10,
+    "condition_id": "P1",
+    "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-PATCH-04",
+    "vulnerable_variant": false,
+    "category_id": "API-LIFECYCLE-001",
+    "protocol": "P1_GROUNDING_RECOVERY",
+    "allowed_sets": {
+      "allowed_fact_ids": [
+        "FACT-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-DOC"
+      ],
+      "allowed_target_ids": [
+        "EP-ASSET-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-04"
+      ],
+      "allowed_fact_ids_hash": "55ef3664f66fcc3c810a8ee13a996af2ffc4938413377dd13923936dbfc47e00",
+      "allowed_target_ids_hash": "54e0cd1af5ffa8f0e33f52e81a712e67c14597883ffbff469247170c0f9692bc",
+      "count_allowed_facts": 1,
+      "count_allowed_targets": 1
+    },
+    "runtime_telemetry": {
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "temperature": 0.0,
+      "seed": 42,
+      "num_ctx": 2048,
+      "num_predict": 300,
+      "keep_alive": "60m",
+      "total_latency_ms": 25976.01,
+      "timed_out": false,
+      "prompt_eval_count": 1026,
+      "eval_count": 235
+    },
+    "provenance": {
+      "prompt_sha256": "cd6977302d014f8e2daf1ba779647b82028c79e35d46f6f0a06553fef48a9a4d",
+      "raw_response_sha256": "5f2e96954ba193990bc70cc3ae63ec8413c6fa8c64006d8a95f9b6ee41ef1de7",
+      "output_origin": "MODEL_GENERATED"
+    },
+    "model_output": {
+      "raw_response": "{\n  \"invariant\": \"Terminal, archived, or cancelled entities must reject subsequent mutation requests (e.g. refunds against cancelled orders, updates to deleted assets).\",\n  \"decision\": \"HYPOTHESIS\",\n  \"affected_target\": \"Endpoint for updating or refunding an entity\",\n  \"empirical_facts\": [\"FACT-001\", \"FACT-002\"],\n  \"methodology_references\": [\"CHK-001\"],\n  \"attack_predicate\": {\n    \"subject\": \"UNAUTHORIZED_ACTOR\",\n    \"operation\": \"EXECUTE_OUT_OF_ORDER_TRANSITION\",\n    \"target\": \"Endpoint for updating or refunding an entity\",\n    \"security_property\": \"STATE_TRANSITION_INTEGRITY\",\n    \"expected_violation\": \"The unauthorized actor successfully updates or refunds a terminal, archived, or cancelled entity.\"\n  },\n  \"falsification_description\": \"The experiment will involve attempting to update or refund an entity that is in a terminal, archived, or cancelled state using an unauthorized actor's credentials. If the operation is rejected, the invariant holds. If the operation is successful, the invariant is breached.\"\n}",
+      "parse_error": null,
+      "parsed_dict": {
+        "invariant": "Terminal, archived, or cancelled entities must reject subsequent mutation requests (e.g. refunds against cancelled orders, updates to deleted assets).",
+        "evidence_gap": null,
+        "affected_target": "Endpoint for updating or refunding an entity",
+        "decision": "HYPOTHESIS",
+        "empirical_facts": [
+          "FACT-001",
+          "FACT-002"
+        ],
+        "methodology_references": [
+          "CHK-001"
+        ],
+        "attack_predicate": {
+          "subject": "UNAUTHORIZED_ACTOR",
+          "operation": "EXECUTE_OUT_OF_ORDER_TRANSITION",
+          "target": "Endpoint for updating or refunding an entity",
+          "security_property": "STATE_TRANSITION_INTEGRITY",
+          "expected_violation": "The unauthorized actor successfully updates or refunds a terminal, archived, or cancelled entity."
+        },
+        "falsification_description": "The experiment will involve attempting to update or refund an entity that is in a terminal, archived, or cancelled state using an unauthorized actor's credentials. If the operation is rejected, the invariant holds. If the operation is successful, the invariant is breached."
+      },
+      "candidate_decision": "HYPOTHESIS",
+      "experiment_action": "EXECUTE_OUT_OF_ORDER_TRANSITION",
+      "supporting_outcome": "STATE_TRANSITION_ACCEPTED",
+      "disproving_outcome": "STATE_TRANSITION_REJECTED",
+      "attack_predicate": {
+        "subject": "UNAUTHORIZED_ACTOR",
+        "operation": "EXECUTE_OUT_OF_ORDER_TRANSITION",
+        "target": "Endpoint for updating or refunding an entity",
+        "security_property": "STATE_TRANSITION_INTEGRITY",
+        "expected_violation": "The unauthorized actor successfully updates or refunds a terminal, archived, or cancelled entity."
+      }
+    },
+    "outcome_binding": {
+      "is_bound_deterministically": true,
+      "origin": "DETERMINISTICALLY_DERIVED",
+      "binding_result": {
+        "is_valid": true,
+        "supporting_outcome": "STATE_TRANSITION_ACCEPTED",
+        "disproving_outcome": "STATE_TRANSITION_REJECTED",
+        "outcome_origin": "DETERMINISTICALLY_DERIVED",
+        "error_message": null,
+        "diagnostic_details": {
+          "category_id": "API-LIFECYCLE-001",
+          "experiment_action": "EXECUTE_OUT_OF_ORDER_TRANSITION",
+          "security_property": "STATE_TRANSITION_INTEGRITY",
+          "target": "Endpoint for updating or refunding an entity",
+          "derived_supporting": "STATE_TRANSITION_ACCEPTED",
+          "derived_disproving": "STATE_TRANSITION_REJECTED"
+        }
+      }
+    },
+    "validation": {
+      "schema_valid": true,
+      "skeleton_compliant": true,
+      "skeleton_reason": "Enforced via deterministic outcome binding",
+      "polarity_valid": true,
+      "polarity_reason": null,
+      "grounding_valid": false,
+      "grounding_reason": "FREE_FORM_TARGET_REJECTED: affected_target contains free-form prose or invalid string: 'Endpoint for updating or refunding an entity'",
+      "grounding_failure_code": "FREE_FORM_TARGET_REJECTED",
+      "is_valid_typed_experiment": false,
+      "is_useful_vulnerable_hypothesis": false
+    },
+    "attribution": {
+      "primary_failure_code": "GROUNDING_FAILURE",
+      "primary_failure_name": "F06",
+      "contributing_failure_codes": [
+        "GROUNDING_FAILURE",
+        "IDENTIFIER_CONFUSION"
+      ],
+      "details": {
+        "candidate_decision": "HYPOTHESIS",
+        "experiment_action": "EXECUTE_OUT_OF_ORDER_TRANSITION",
+        "supporting_outcome": "STATE_TRANSITION_ACCEPTED",
+        "disproving_outcome": "STATE_TRANSITION_REJECTED",
+        "polarity_reason": null,
+        "skeleton_reason": "Enforced via deterministic outcome binding",
+        "raw_primary_category": "SEMANTIC_GROUNDING_FAILURE"
+      }
+    }
+  },
+  {
+    "call_index": 11,
+    "condition_id": "P3",
+    "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-PATCH-04",
+    "vulnerable_variant": false,
+    "category_id": "API-LIFECYCLE-001",
+    "protocol": "P3_GROUNDING_RECOVERY",
+    "allowed_sets": {
+      "allowed_fact_ids": [
+        "FACT-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-DOC"
+      ],
+      "allowed_target_ids": [
+        "EP-ASSET-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-04"
+      ],
+      "allowed_fact_ids_hash": "55ef3664f66fcc3c810a8ee13a996af2ffc4938413377dd13923936dbfc47e00",
+      "allowed_target_ids_hash": "54e0cd1af5ffa8f0e33f52e81a712e67c14597883ffbff469247170c0f9692bc",
+      "count_allowed_facts": 1,
+      "count_allowed_targets": 1
+    },
+    "runtime_telemetry": {
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "temperature": 0.0,
+      "seed": 42,
+      "num_ctx": 2048,
+      "num_predict": 300,
+      "keep_alive": "60m",
+      "total_latency_ms": 25405.81,
+      "timed_out": false,
+      "prompt_eval_count": 1026,
+      "eval_count": 230
+    },
+    "provenance": {
+      "prompt_sha256": "4f807e0f975a0731a2ca1e831d55bf6751d06704b26d65c1d8bd81c4daadacb1",
+      "raw_response_sha256": "9b7cb7ab66f5ca798b8acc96be6ac89fecfd87a09e4c66ff438940fb16549bfd",
+      "output_origin": "MODEL_GENERATED"
+    },
+    "model_output": {
+      "raw_response": "{\n  \"invariant\": \"Terminal, archived, or cancelled entities must reject subsequent mutation requests (e.g. refunds against cancelled orders, updates to deleted assets).\",\n  \"decision\": \"HYPOTHESIS\",\n  \"affected_target\": \"EP-ASSET-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-04\",\n  \"empirical_facts\": [\"FACT-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-DOC\"],\n  \"methodology_references\": [],\n  \"attack_predicate\": {\n    \"subject\": \"Role/identity initiating attack\",\n    \"operation\": \"EXECUTE_OUT_OF_ORDER_TRANSITION\",\n    \"target\": \"Target endpoint, parameter, or resource identifier under test\",\n    \"security_property\": \"TENANT_ISOLATION\",\n    \"expected_violation\": \"Unauthorized mutation of a cancelled order\"\n  },\n  \"falsification_description\": \"The falsification experiment will involve attempting to perform a mutation operation (e.g., refund) on a cancelled order. If the system accepts this operation, it indicates a breach of the security invariant.\"\n}",
+      "parse_error": null,
+      "parsed_dict": {
+        "invariant": "Terminal, archived, or cancelled entities must reject subsequent mutation requests (e.g. refunds against cancelled orders, updates to deleted assets).",
+        "evidence_gap": null,
+        "affected_target": "EP-ASSET-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-04",
+        "decision": "HYPOTHESIS",
+        "empirical_facts": [
+          "FACT-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-DOC"
+        ],
+        "methodology_references": [],
+        "attack_predicate": {
+          "subject": "Role/identity initiating attack",
+          "operation": "EXECUTE_OUT_OF_ORDER_TRANSITION",
+          "target": "Target endpoint, parameter, or resource identifier under test",
+          "security_property": "TENANT_ISOLATION",
+          "expected_violation": "Unauthorized mutation of a cancelled order"
+        },
+        "falsification_description": "The falsification experiment will involve attempting to perform a mutation operation (e.g., refund) on a cancelled order. If the system accepts this operation, it indicates a breach of the security invariant."
+      },
+      "candidate_decision": "HYPOTHESIS",
+      "experiment_action": "EXECUTE_OUT_OF_ORDER_TRANSITION",
+      "supporting_outcome": null,
+      "disproving_outcome": null,
+      "attack_predicate": {
+        "subject": "Role/identity initiating attack",
+        "operation": "EXECUTE_OUT_OF_ORDER_TRANSITION",
+        "target": "Target endpoint, parameter, or resource identifier under test",
+        "security_property": "TENANT_ISOLATION",
+        "expected_violation": "Unauthorized mutation of a cancelled order"
+      }
+    },
+    "outcome_binding": {
+      "is_bound_deterministically": true,
+      "origin": "DETERMINISTICALLY_DERIVED",
+      "binding_result": {
+        "is_valid": false,
+        "supporting_outcome": null,
+        "disproving_outcome": null,
+        "outcome_origin": "DETERMINISTICALLY_DERIVED",
+        "error_message": "Security property 'TENANT_ISOLATION' incompatible with category 'API-LIFECYCLE-001'. Expected one of: ['LIFECYCLE_ORDERING', 'STATE_TRANSITION_INTEGRITY']",
+        "diagnostic_details": {
+          "stage": "PROPERTY_MISMATCH",
+          "category_id": "API-LIFECYCLE-001",
+          "property": "TENANT_ISOLATION"
+        }
+      }
+    },
+    "validation": {
+      "schema_valid": true,
+      "skeleton_compliant": null,
+      "skeleton_reason": null,
+      "polarity_valid": false,
+      "polarity_reason": null,
+      "grounding_valid": true,
+      "grounding_reason": "All facts and targets validly grounded against scenario envelope",
+      "grounding_failure_code": null,
+      "is_valid_typed_experiment": false,
+      "is_useful_vulnerable_hypothesis": false
+    },
+    "attribution": {
+      "primary_failure_code": "POLARITY_FAILURE",
+      "primary_failure_name": "F07",
+      "contributing_failure_codes": [
+        "POLARITY_FAILURE"
+      ],
+      "details": {
+        "candidate_decision": "HYPOTHESIS",
+        "experiment_action": "EXECUTE_OUT_OF_ORDER_TRANSITION",
+        "supporting_outcome": null,
+        "disproving_outcome": null,
+        "polarity_reason": null,
+        "skeleton_reason": null,
+        "raw_primary_category": "SEMANTIC_EXPERIMENT_POLARITY_FAILURE"
+      }
+    }
+  },
+  {
+    "call_index": 12,
+    "condition_id": "P2",
+    "scenario_id": "SCEN-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-PATCH-04",
+    "vulnerable_variant": false,
+    "category_id": "API-LIFECYCLE-001",
+    "protocol": "P2_GROUNDING_RECOVERY",
+    "allowed_sets": {
+      "allowed_fact_ids": [
+        "FACT-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-DOC"
+      ],
+      "allowed_target_ids": [
+        "EP-ASSET-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-04"
+      ],
+      "allowed_fact_ids_hash": "55ef3664f66fcc3c810a8ee13a996af2ffc4938413377dd13923936dbfc47e00",
+      "allowed_target_ids_hash": "54e0cd1af5ffa8f0e33f52e81a712e67c14597883ffbff469247170c0f9692bc",
+      "count_allowed_facts": 1,
+      "count_allowed_targets": 1
+    },
+    "runtime_telemetry": {
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "temperature": 0.0,
+      "seed": 42,
+      "num_ctx": 2048,
+      "num_predict": 300,
+      "keep_alive": "60m",
+      "total_latency_ms": 22076.17,
+      "timed_out": false,
+      "prompt_eval_count": 1026,
+      "eval_count": 195
+    },
+    "provenance": {
+      "prompt_sha256": "b02df0699cdab6b6ba429c9334d9ab9f769fb7011d2e14af2d5ae687003f5198",
+      "raw_response_sha256": "1fad593c182d133df5ecbeb89bf2de12a82afdaa4200de481ed1fb0e1b8598cb",
+      "output_origin": "MODEL_GENERATED"
+    },
+    "model_output": {
+      "raw_response": "{\n  \"invariant\": \"Terminal, archived, or cancelled entities must reject subsequent mutation requests (e.g. refunds against cancelled orders, updates to deleted assets).\",\n  \"decision\": \"HYPOTHESIS\",\n  \"affected_target\": \"Endpoint for refunding cancelled orders\",\n  \"empirical_facts\": [\"FACT-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-DOC\"],\n  \"methodology_references\": [],\n  \"attack_predicate\": {\n    \"subject\": \"Customer with a cancelled order\",\n    \"operation\": \"EXECUTE_OUT_OF_ORDER_TRANSITION\",\n    \"target\": \"Endpoint for refunding cancelled orders\",\n    \"security_property\": \"MUTATION_INTEGRITY\",\n    \"expected_violation\": \"The system accepts a refund request for a cancelled order\"\n  },\n  \"falsification_description\": \"The system should reject a refund request for a cancelled order, as it violates the security invariant.\"\n}",
+      "parse_error": null,
+      "parsed_dict": {
+        "invariant": "Terminal, archived, or cancelled entities must reject subsequent mutation requests (e.g. refunds against cancelled orders, updates to deleted assets).",
+        "evidence_gap": null,
+        "affected_target": "Endpoint for refunding cancelled orders",
+        "decision": "HYPOTHESIS",
+        "empirical_facts": [
+          "FACT-ECOMMERCE_ORDERS-ORD-CANCEL-REFUND-DOC"
+        ],
+        "methodology_references": [],
+        "attack_predicate": {
+          "subject": "Customer with a cancelled order",
+          "operation": "EXECUTE_OUT_OF_ORDER_TRANSITION",
+          "target": "Endpoint for refunding cancelled orders",
+          "security_property": "MUTATION_INTEGRITY",
+          "expected_violation": "The system accepts a refund request for a cancelled order"
+        },
+        "falsification_description": "The system should reject a refund request for a cancelled order, as it violates the security invariant."
+      },
+      "candidate_decision": "HYPOTHESIS",
+      "experiment_action": "EXECUTE_OUT_OF_ORDER_TRANSITION",
+      "supporting_outcome": null,
+      "disproving_outcome": null,
+      "attack_predicate": {
+        "subject": "Customer with a cancelled order",
+        "operation": "EXECUTE_OUT_OF_ORDER_TRANSITION",
+        "target": "Endpoint for refunding cancelled orders",
+        "security_property": "MUTATION_INTEGRITY",
+        "expected_violation": "The system accepts a refund request for a cancelled order"
+      }
+    },
+    "outcome_binding": {
+      "is_bound_deterministically": true,
+      "origin": "DETERMINISTICALLY_DERIVED",
+      "binding_result": {
+        "is_valid": false,
+        "supporting_outcome": null,
+        "disproving_outcome": null,
+        "outcome_origin": "DETERMINISTICALLY_DERIVED",
+        "error_message": "Security property 'MUTATION_INTEGRITY' incompatible with category 'API-LIFECYCLE-001'. Expected one of: ['LIFECYCLE_ORDERING', 'STATE_TRANSITION_INTEGRITY']",
+        "diagnostic_details": {
+          "stage": "PROPERTY_MISMATCH",
+          "category_id": "API-LIFECYCLE-001",
+          "property": "MUTATION_INTEGRITY"
+        }
+      }
+    },
+    "validation": {
+      "schema_valid": true,
+      "skeleton_compliant": null,
+      "skeleton_reason": null,
+      "polarity_valid": false,
+      "polarity_reason": null,
+      "grounding_valid": false,
+      "grounding_reason": "FREE_FORM_TARGET_REJECTED: affected_target contains free-form prose or invalid string: 'Endpoint for refunding cancelled orders'",
+      "grounding_failure_code": "FREE_FORM_TARGET_REJECTED",
+      "is_valid_typed_experiment": false,
+      "is_useful_vulnerable_hypothesis": false
+    },
+    "attribution": {
+      "primary_failure_code": "GROUNDING_FAILURE",
+      "primary_failure_name": "F06",
+      "contributing_failure_codes": [
+        "GROUNDING_FAILURE",
+        "IDENTIFIER_CONFUSION"
+      ],
+      "details": {
+        "candidate_decision": "HYPOTHESIS",
+        "experiment_action": "EXECUTE_OUT_OF_ORDER_TRANSITION",
+        "supporting_outcome": null,
+        "disproving_outcome": null,
+        "polarity_reason": null,
+        "skeleton_reason": null,
+        "raw_primary_category": "SEMANTIC_GROUNDING_FAILURE"
+      }
+    }
+  },
+  {
+    "call_index": 13,
+    "condition_id": "P1",
+    "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-TENANT-ROLE-VULN-03",
+    "vulnerable_variant": true,
+    "category_id": "API-ROLE-BOUNDARY-001",
+    "protocol": "P1_GROUNDING_RECOVERY",
+    "allowed_sets": {
+      "allowed_fact_ids": [
+        "FACT-IDENTITY_PROVIDER-USER-TENANT-ROLE-DOC"
+      ],
+      "allowed_target_ids": [
+        "EP-ASSET-IDENTITY_PROVIDER-USER-TENANT-ROLE-03"
+      ],
+      "allowed_fact_ids_hash": "9fda540e996e3b9d803658a4af2a8938c8bb71226416388f7e3010e3c0a337b3",
+      "allowed_target_ids_hash": "fddcecf20d484461ceb7833635bd57d0655ac45ca5170908f53956498a3ced89",
+      "count_allowed_facts": 1,
+      "count_allowed_targets": 1
+    },
+    "runtime_telemetry": {
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "temperature": 0.0,
+      "seed": 42,
+      "num_ctx": 2048,
+      "num_predict": 300,
+      "keep_alive": "60m",
+      "total_latency_ms": 21627.36,
+      "timed_out": false,
+      "prompt_eval_count": 1026,
+      "eval_count": 194
+    },
+    "provenance": {
+      "prompt_sha256": "86504175943958ffe30cce0e6c1808ff7f9c896a9a746bc624a683551122fc50",
+      "raw_response_sha256": "2c05fadb013e5d73042f5cdb46f1c4d69c0274bfc23f3e780e332aa0c2c26855",
+      "output_origin": "MODEL_GENERATED"
+    },
+    "model_output": {
+      "raw_response": "{\n  \"invariant\": \"Role boundaries must strictly isolate horizontal and vertical privilege sets; cross-role capabilities cannot be exercised without explicit assignment.\",\n  \"decision\": \"HYPOTHESIS\",\n  \"affected_target\": \"PARTITION P3\",\n  \"empirical_facts\": [\"FACT-001\", \"FACT-002\"],\n  \"methodology_references\": [\"CHK-001\"],\n  \"attack_predicate\": {\n    \"subject\": \"LOWER_ROLE_ACTOR\",\n    \"operation\": \"REPLAY_STEP_WITH_LOWER_ROLE\",\n    \"target\": \"PARTITION P3\",\n    \"security_property\": \"ROLE_BOUNDARY_ENFORCEMENT\",\n    \"expected_violation\": \"Lower role actor successfully accesses resources intended for higher role actors\"\n  },\n  \"falsification_description\": \"Replay a request from a lower role actor to access resources designated for higher role actors to verify if the role boundary enforcement is bypassed.\"\n}",
+      "parse_error": null,
+      "parsed_dict": {
+        "invariant": "Role boundaries must strictly isolate horizontal and vertical privilege sets; cross-role capabilities cannot be exercised without explicit assignment.",
+        "evidence_gap": null,
+        "affected_target": "PARTITION P3",
+        "decision": "HYPOTHESIS",
+        "empirical_facts": [
+          "FACT-001",
+          "FACT-002"
+        ],
+        "methodology_references": [
+          "CHK-001"
+        ],
+        "attack_predicate": {
+          "subject": "LOWER_ROLE_ACTOR",
+          "operation": "REPLAY_STEP_WITH_LOWER_ROLE",
+          "target": "PARTITION P3",
+          "security_property": "ROLE_BOUNDARY_ENFORCEMENT",
+          "expected_violation": "Lower role actor successfully accesses resources intended for higher role actors"
+        },
+        "falsification_description": "Replay a request from a lower role actor to access resources designated for higher role actors to verify if the role boundary enforcement is bypassed."
+      },
+      "candidate_decision": "HYPOTHESIS",
+      "experiment_action": "REPLAY_STEP_WITH_LOWER_ROLE",
+      "supporting_outcome": "PRIVILEGE_ELEVATION_SUCCEEDS",
+      "disproving_outcome": "PRIVILEGE_ELEVATION_DENIED",
+      "attack_predicate": {
+        "subject": "LOWER_ROLE_ACTOR",
+        "operation": "REPLAY_STEP_WITH_LOWER_ROLE",
+        "target": "PARTITION P3",
+        "security_property": "ROLE_BOUNDARY_ENFORCEMENT",
+        "expected_violation": "Lower role actor successfully accesses resources intended for higher role actors"
+      }
+    },
+    "outcome_binding": {
+      "is_bound_deterministically": true,
+      "origin": "DETERMINISTICALLY_DERIVED",
+      "binding_result": {
+        "is_valid": true,
+        "supporting_outcome": "PRIVILEGE_ELEVATION_SUCCEEDS",
+        "disproving_outcome": "PRIVILEGE_ELEVATION_DENIED",
+        "outcome_origin": "DETERMINISTICALLY_DERIVED",
+        "error_message": null,
+        "diagnostic_details": {
+          "category_id": "API-ROLE-BOUNDARY-001",
+          "experiment_action": "REPLAY_STEP_WITH_LOWER_ROLE",
+          "security_property": "ROLE_BOUNDARY_ENFORCEMENT",
+          "target": "PARTITION P3",
+          "derived_supporting": "PRIVILEGE_ELEVATION_SUCCEEDS",
+          "derived_disproving": "PRIVILEGE_ELEVATION_DENIED"
+        }
+      }
+    },
+    "validation": {
+      "schema_valid": true,
+      "skeleton_compliant": true,
+      "skeleton_reason": "Enforced via deterministic outcome binding",
+      "polarity_valid": true,
+      "polarity_reason": null,
+      "grounding_valid": false,
+      "grounding_reason": "FREE_FORM_TARGET_REJECTED: affected_target contains free-form prose or invalid string: 'PARTITION P3'",
+      "grounding_failure_code": "FREE_FORM_TARGET_REJECTED",
+      "is_valid_typed_experiment": false,
+      "is_useful_vulnerable_hypothesis": false
+    },
+    "attribution": {
+      "primary_failure_code": "GROUNDING_FAILURE",
+      "primary_failure_name": "F06",
+      "contributing_failure_codes": [
+        "GROUNDING_FAILURE",
+        "IDENTIFIER_CONFUSION"
+      ],
+      "details": {
+        "candidate_decision": "HYPOTHESIS",
+        "experiment_action": "REPLAY_STEP_WITH_LOWER_ROLE",
+        "supporting_outcome": "PRIVILEGE_ELEVATION_SUCCEEDS",
+        "disproving_outcome": "PRIVILEGE_ELEVATION_DENIED",
+        "polarity_reason": null,
+        "skeleton_reason": "Enforced via deterministic outcome binding",
+        "raw_primary_category": "SEMANTIC_GROUNDING_FAILURE"
+      }
+    }
+  },
+  {
+    "call_index": 14,
+    "condition_id": "P2",
+    "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-TENANT-ROLE-VULN-03",
+    "vulnerable_variant": true,
+    "category_id": "API-ROLE-BOUNDARY-001",
+    "protocol": "P2_GROUNDING_RECOVERY",
+    "allowed_sets": {
+      "allowed_fact_ids": [
+        "FACT-IDENTITY_PROVIDER-USER-TENANT-ROLE-DOC"
+      ],
+      "allowed_target_ids": [
+        "EP-ASSET-IDENTITY_PROVIDER-USER-TENANT-ROLE-03"
+      ],
+      "allowed_fact_ids_hash": "9fda540e996e3b9d803658a4af2a8938c8bb71226416388f7e3010e3c0a337b3",
+      "allowed_target_ids_hash": "fddcecf20d484461ceb7833635bd57d0655ac45ca5170908f53956498a3ced89",
+      "count_allowed_facts": 1,
+      "count_allowed_targets": 1
+    },
+    "runtime_telemetry": {
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "temperature": 0.0,
+      "seed": 42,
+      "num_ctx": 2048,
+      "num_predict": 300,
+      "keep_alive": "60m",
+      "total_latency_ms": 21281.83,
+      "timed_out": false,
+      "prompt_eval_count": 1026,
+      "eval_count": 194
+    },
+    "provenance": {
+      "prompt_sha256": "f85b653d167c8d5ccb394f97bb4dfbb4138387d28d7b06f917228015950ca531",
+      "raw_response_sha256": "058a08f78ed830b80cca26be45186944bffa8831a2cbe8635b43e502f438e26d",
+      "output_origin": "MODEL_GENERATED"
+    },
+    "model_output": {
+      "raw_response": "{\n  \"invariant\": \"Role boundaries must strictly isolate horizontal and vertical privilege sets; cross-role capabilities cannot be exercised without explicit assignment.\",\n  \"decision\": \"HYPOTHESIS\",\n  \"affected_target\": \"No specific target identified as the evidence gap is in the role hierarchy enforcement.\",\n  \"empirical_facts\": [],\n  \"methodology_references\": [],\n  \"attack_predicate\": {\n    \"subject\": \"Role initiating the attack\",\n    \"operation\": \"REPLAY_STEP_WITH_LOWER_ROLE\",\n    \"target\": \"Target endpoint or resource under test\",\n    \"security_property\": \"LIFECYCLE_ORDERING\",\n    \"expected_violation\": \"Unauthorized access or execution of actions not permitted by the role hierarchy\"\n  },\n  \"falsification_description\": \"The experiment will involve replaying a step with a lower role to determine if the system allows unauthorized access or execution of actions not permitted by the role hierarchy.\"\n}",
+      "parse_error": null,
+      "parsed_dict": {
+        "invariant": "Role boundaries must strictly isolate horizontal and vertical privilege sets; cross-role capabilities cannot be exercised without explicit assignment.",
+        "evidence_gap": null,
+        "affected_target": "No specific target identified as the evidence gap is in the role hierarchy enforcement.",
+        "decision": "HYPOTHESIS",
+        "empirical_facts": [],
+        "methodology_references": [],
+        "attack_predicate": {
+          "subject": "Role initiating the attack",
+          "operation": "REPLAY_STEP_WITH_LOWER_ROLE",
+          "target": "Target endpoint or resource under test",
+          "security_property": "LIFECYCLE_ORDERING",
+          "expected_violation": "Unauthorized access or execution of actions not permitted by the role hierarchy"
+        },
+        "falsification_description": "The experiment will involve replaying a step with a lower role to determine if the system allows unauthorized access or execution of actions not permitted by the role hierarchy."
+      },
+      "candidate_decision": "HYPOTHESIS",
+      "experiment_action": "REPLAY_STEP_WITH_LOWER_ROLE",
+      "supporting_outcome": null,
+      "disproving_outcome": null,
+      "attack_predicate": {
+        "subject": "Role initiating the attack",
+        "operation": "REPLAY_STEP_WITH_LOWER_ROLE",
+        "target": "Target endpoint or resource under test",
+        "security_property": "LIFECYCLE_ORDERING",
+        "expected_violation": "Unauthorized access or execution of actions not permitted by the role hierarchy"
+      }
+    },
+    "outcome_binding": {
+      "is_bound_deterministically": true,
+      "origin": "DETERMINISTICALLY_DERIVED",
+      "binding_result": {
+        "is_valid": false,
+        "supporting_outcome": null,
+        "disproving_outcome": null,
+        "outcome_origin": "DETERMINISTICALLY_DERIVED",
+        "error_message": "Security property 'LIFECYCLE_ORDERING' incompatible with category 'API-ROLE-BOUNDARY-001'. Expected one of: ['FUNCTION_LEVEL_AUTHORIZATION', 'ROLE_BOUNDARY_ENFORCEMENT']",
+        "diagnostic_details": {
+          "stage": "PROPERTY_MISMATCH",
+          "category_id": "API-ROLE-BOUNDARY-001",
+          "property": "LIFECYCLE_ORDERING"
+        }
+      }
+    },
+    "validation": {
+      "schema_valid": true,
+      "skeleton_compliant": null,
+      "skeleton_reason": null,
+      "polarity_valid": false,
+      "polarity_reason": null,
+      "grounding_valid": false,
+      "grounding_reason": "FREE_FORM_TARGET_REJECTED: affected_target contains free-form prose or invalid string: 'No specific target identified as the evidence gap is in the role hierarchy enforcement.'",
+      "grounding_failure_code": "FREE_FORM_TARGET_REJECTED",
+      "is_valid_typed_experiment": false,
+      "is_useful_vulnerable_hypothesis": false
+    },
+    "attribution": {
+      "primary_failure_code": "GROUNDING_FAILURE",
+      "primary_failure_name": "F06",
+      "contributing_failure_codes": [
+        "GROUNDING_FAILURE",
+        "IDENTIFIER_CONFUSION"
+      ],
+      "details": {
+        "candidate_decision": "HYPOTHESIS",
+        "experiment_action": "REPLAY_STEP_WITH_LOWER_ROLE",
+        "supporting_outcome": null,
+        "disproving_outcome": null,
+        "polarity_reason": null,
+        "skeleton_reason": null,
+        "raw_primary_category": "SEMANTIC_GROUNDING_FAILURE"
+      }
+    }
+  },
+  {
+    "call_index": 15,
+    "condition_id": "P3",
+    "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-TENANT-ROLE-VULN-03",
+    "vulnerable_variant": true,
+    "category_id": "API-ROLE-BOUNDARY-001",
+    "protocol": "P3_GROUNDING_RECOVERY",
+    "allowed_sets": {
+      "allowed_fact_ids": [
+        "FACT-IDENTITY_PROVIDER-USER-TENANT-ROLE-DOC"
+      ],
+      "allowed_target_ids": [
+        "EP-ASSET-IDENTITY_PROVIDER-USER-TENANT-ROLE-03"
+      ],
+      "allowed_fact_ids_hash": "9fda540e996e3b9d803658a4af2a8938c8bb71226416388f7e3010e3c0a337b3",
+      "allowed_target_ids_hash": "fddcecf20d484461ceb7833635bd57d0655ac45ca5170908f53956498a3ced89",
+      "count_allowed_facts": 1,
+      "count_allowed_targets": 1
+    },
+    "runtime_telemetry": {
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "temperature": 0.0,
+      "seed": 42,
+      "num_ctx": 2048,
+      "num_predict": 300,
+      "keep_alive": "60m",
+      "total_latency_ms": 24661.01,
+      "timed_out": false,
+      "prompt_eval_count": 1026,
+      "eval_count": 226
+    },
+    "provenance": {
+      "prompt_sha256": "168cde11e677237ee933243ea5070cb5f81640bacb78b222eef0ea0df47e455b",
+      "raw_response_sha256": "e03cf3967d7703fa24a508e2ece9b978f08e21d58f1eb52cd296ac6088af4b1f",
+      "output_origin": "MODEL_GENERATED"
+    },
+    "model_output": {
+      "raw_response": "{\n  \"invariant\": \"Role boundaries must strictly isolate horizontal and vertical privilege sets; cross-role capabilities cannot be exercised without explicit assignment.\",\n  \"decision\": \"HYPOTHESIS\",\n  \"affected_target\": \"EP-ASSET-IDENTITY_PROVIDER-USER-TENANT-ROLE-03\",\n  \"empirical_facts\": [\"FACT-IDENTITY_PROVIDER-USER-TENANT-ROLE-DOC\"],\n  \"methodology_references\": [],\n  \"attack_predicate\": {\n    \"subject\": \"Role initiating attack with lower privileges\",\n    \"operation\": \"REPLAY_STEP_WITH_LOWER_ROLE\",\n    \"target\": \"EP-ASSET-IDENTITY_PROVIDER-USER-TENANT-ROLE-03\",\n    \"security_property\": \"LIFECYCLE_ORDERING\",\n    \"expected_violation\": \"Unauthorized access to resources or capabilities not allowed for the lower-privileged role\"\n  },\n  \"falsification_description\": \"Replay a step with a lower-privileged role to verify if the system allows unauthorized access to resources or capabilities not assigned to that role.\"\n}",
+      "parse_error": null,
+      "parsed_dict": {
+        "invariant": "Role boundaries must strictly isolate horizontal and vertical privilege sets; cross-role capabilities cannot be exercised without explicit assignment.",
+        "evidence_gap": null,
+        "affected_target": "EP-ASSET-IDENTITY_PROVIDER-USER-TENANT-ROLE-03",
+        "decision": "HYPOTHESIS",
+        "empirical_facts": [
+          "FACT-IDENTITY_PROVIDER-USER-TENANT-ROLE-DOC"
+        ],
+        "methodology_references": [],
+        "attack_predicate": {
+          "subject": "Role initiating attack with lower privileges",
+          "operation": "REPLAY_STEP_WITH_LOWER_ROLE",
+          "target": "EP-ASSET-IDENTITY_PROVIDER-USER-TENANT-ROLE-03",
+          "security_property": "LIFECYCLE_ORDERING",
+          "expected_violation": "Unauthorized access to resources or capabilities not allowed for the lower-privileged role"
+        },
+        "falsification_description": "Replay a step with a lower-privileged role to verify if the system allows unauthorized access to resources or capabilities not assigned to that role."
+      },
+      "candidate_decision": "HYPOTHESIS",
+      "experiment_action": "REPLAY_STEP_WITH_LOWER_ROLE",
+      "supporting_outcome": null,
+      "disproving_outcome": null,
+      "attack_predicate": {
+        "subject": "Role initiating attack with lower privileges",
+        "operation": "REPLAY_STEP_WITH_LOWER_ROLE",
+        "target": "EP-ASSET-IDENTITY_PROVIDER-USER-TENANT-ROLE-03",
+        "security_property": "LIFECYCLE_ORDERING",
+        "expected_violation": "Unauthorized access to resources or capabilities not allowed for the lower-privileged role"
+      }
+    },
+    "outcome_binding": {
+      "is_bound_deterministically": true,
+      "origin": "DETERMINISTICALLY_DERIVED",
+      "binding_result": {
+        "is_valid": false,
+        "supporting_outcome": null,
+        "disproving_outcome": null,
+        "outcome_origin": "DETERMINISTICALLY_DERIVED",
+        "error_message": "Security property 'LIFECYCLE_ORDERING' incompatible with category 'API-ROLE-BOUNDARY-001'. Expected one of: ['FUNCTION_LEVEL_AUTHORIZATION', 'ROLE_BOUNDARY_ENFORCEMENT']",
+        "diagnostic_details": {
+          "stage": "PROPERTY_MISMATCH",
+          "category_id": "API-ROLE-BOUNDARY-001",
+          "property": "LIFECYCLE_ORDERING"
+        }
+      }
+    },
+    "validation": {
+      "schema_valid": true,
+      "skeleton_compliant": null,
+      "skeleton_reason": null,
+      "polarity_valid": false,
+      "polarity_reason": null,
+      "grounding_valid": true,
+      "grounding_reason": "All facts and targets validly grounded against scenario envelope",
+      "grounding_failure_code": null,
+      "is_valid_typed_experiment": false,
+      "is_useful_vulnerable_hypothesis": false
+    },
+    "attribution": {
+      "primary_failure_code": "POLARITY_FAILURE",
+      "primary_failure_name": "F07",
+      "contributing_failure_codes": [
+        "POLARITY_FAILURE"
+      ],
+      "details": {
+        "candidate_decision": "HYPOTHESIS",
+        "experiment_action": "REPLAY_STEP_WITH_LOWER_ROLE",
+        "supporting_outcome": null,
+        "disproving_outcome": null,
+        "polarity_reason": null,
+        "skeleton_reason": null,
+        "raw_primary_category": "SEMANTIC_EXPERIMENT_POLARITY_FAILURE"
+      }
+    }
+  },
+  {
+    "call_index": 16,
+    "condition_id": "P3",
+    "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-TENANT-ROLE-PATCH-03",
+    "vulnerable_variant": false,
+    "category_id": "API-ROLE-BOUNDARY-001",
+    "protocol": "P3_GROUNDING_RECOVERY",
+    "allowed_sets": {
+      "allowed_fact_ids": [
+        "FACT-IDENTITY_PROVIDER-USER-TENANT-ROLE-DOC"
+      ],
+      "allowed_target_ids": [
+        "EP-ASSET-IDENTITY_PROVIDER-USER-TENANT-ROLE-03"
+      ],
+      "allowed_fact_ids_hash": "9fda540e996e3b9d803658a4af2a8938c8bb71226416388f7e3010e3c0a337b3",
+      "allowed_target_ids_hash": "fddcecf20d484461ceb7833635bd57d0655ac45ca5170908f53956498a3ced89",
+      "count_allowed_facts": 1,
+      "count_allowed_targets": 1
+    },
+    "runtime_telemetry": {
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "temperature": 0.0,
+      "seed": 42,
+      "num_ctx": 2048,
+      "num_predict": 300,
+      "keep_alive": "60m",
+      "total_latency_ms": 24953.18,
+      "timed_out": false,
+      "prompt_eval_count": 1026,
+      "eval_count": 226
+    },
+    "provenance": {
+      "prompt_sha256": "168cde11e677237ee933243ea5070cb5f81640bacb78b222eef0ea0df47e455b",
+      "raw_response_sha256": "e03cf3967d7703fa24a508e2ece9b978f08e21d58f1eb52cd296ac6088af4b1f",
+      "output_origin": "MODEL_GENERATED"
+    },
+    "model_output": {
+      "raw_response": "{\n  \"invariant\": \"Role boundaries must strictly isolate horizontal and vertical privilege sets; cross-role capabilities cannot be exercised without explicit assignment.\",\n  \"decision\": \"HYPOTHESIS\",\n  \"affected_target\": \"EP-ASSET-IDENTITY_PROVIDER-USER-TENANT-ROLE-03\",\n  \"empirical_facts\": [\"FACT-IDENTITY_PROVIDER-USER-TENANT-ROLE-DOC\"],\n  \"methodology_references\": [],\n  \"attack_predicate\": {\n    \"subject\": \"Role initiating attack with lower privileges\",\n    \"operation\": \"REPLAY_STEP_WITH_LOWER_ROLE\",\n    \"target\": \"EP-ASSET-IDENTITY_PROVIDER-USER-TENANT-ROLE-03\",\n    \"security_property\": \"LIFECYCLE_ORDERING\",\n    \"expected_violation\": \"Unauthorized access to resources or capabilities not allowed for the lower-privileged role\"\n  },\n  \"falsification_description\": \"Replay a step with a lower-privileged role to verify if the system allows unauthorized access to resources or capabilities not assigned to that role.\"\n}",
+      "parse_error": null,
+      "parsed_dict": {
+        "invariant": "Role boundaries must strictly isolate horizontal and vertical privilege sets; cross-role capabilities cannot be exercised without explicit assignment.",
+        "evidence_gap": null,
+        "affected_target": "EP-ASSET-IDENTITY_PROVIDER-USER-TENANT-ROLE-03",
+        "decision": "HYPOTHESIS",
+        "empirical_facts": [
+          "FACT-IDENTITY_PROVIDER-USER-TENANT-ROLE-DOC"
+        ],
+        "methodology_references": [],
+        "attack_predicate": {
+          "subject": "Role initiating attack with lower privileges",
+          "operation": "REPLAY_STEP_WITH_LOWER_ROLE",
+          "target": "EP-ASSET-IDENTITY_PROVIDER-USER-TENANT-ROLE-03",
+          "security_property": "LIFECYCLE_ORDERING",
+          "expected_violation": "Unauthorized access to resources or capabilities not allowed for the lower-privileged role"
+        },
+        "falsification_description": "Replay a step with a lower-privileged role to verify if the system allows unauthorized access to resources or capabilities not assigned to that role."
+      },
+      "candidate_decision": "HYPOTHESIS",
+      "experiment_action": "REPLAY_STEP_WITH_LOWER_ROLE",
+      "supporting_outcome": null,
+      "disproving_outcome": null,
+      "attack_predicate": {
+        "subject": "Role initiating attack with lower privileges",
+        "operation": "REPLAY_STEP_WITH_LOWER_ROLE",
+        "target": "EP-ASSET-IDENTITY_PROVIDER-USER-TENANT-ROLE-03",
+        "security_property": "LIFECYCLE_ORDERING",
+        "expected_violation": "Unauthorized access to resources or capabilities not allowed for the lower-privileged role"
+      }
+    },
+    "outcome_binding": {
+      "is_bound_deterministically": true,
+      "origin": "DETERMINISTICALLY_DERIVED",
+      "binding_result": {
+        "is_valid": false,
+        "supporting_outcome": null,
+        "disproving_outcome": null,
+        "outcome_origin": "DETERMINISTICALLY_DERIVED",
+        "error_message": "Security property 'LIFECYCLE_ORDERING' incompatible with category 'API-ROLE-BOUNDARY-001'. Expected one of: ['FUNCTION_LEVEL_AUTHORIZATION', 'ROLE_BOUNDARY_ENFORCEMENT']",
+        "diagnostic_details": {
+          "stage": "PROPERTY_MISMATCH",
+          "category_id": "API-ROLE-BOUNDARY-001",
+          "property": "LIFECYCLE_ORDERING"
+        }
+      }
+    },
+    "validation": {
+      "schema_valid": true,
+      "skeleton_compliant": null,
+      "skeleton_reason": null,
+      "polarity_valid": false,
+      "polarity_reason": null,
+      "grounding_valid": true,
+      "grounding_reason": "All facts and targets validly grounded against scenario envelope",
+      "grounding_failure_code": null,
+      "is_valid_typed_experiment": false,
+      "is_useful_vulnerable_hypothesis": false
+    },
+    "attribution": {
+      "primary_failure_code": "POLARITY_FAILURE",
+      "primary_failure_name": "F07",
+      "contributing_failure_codes": [
+        "POLARITY_FAILURE"
+      ],
+      "details": {
+        "candidate_decision": "HYPOTHESIS",
+        "experiment_action": "REPLAY_STEP_WITH_LOWER_ROLE",
+        "supporting_outcome": null,
+        "disproving_outcome": null,
+        "polarity_reason": null,
+        "skeleton_reason": null,
+        "raw_primary_category": "SEMANTIC_EXPERIMENT_POLARITY_FAILURE"
+      }
+    }
+  },
+  {
+    "call_index": 17,
+    "condition_id": "P1",
+    "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-TENANT-ROLE-PATCH-03",
+    "vulnerable_variant": false,
+    "category_id": "API-ROLE-BOUNDARY-001",
+    "protocol": "P1_GROUNDING_RECOVERY",
+    "allowed_sets": {
+      "allowed_fact_ids": [
+        "FACT-IDENTITY_PROVIDER-USER-TENANT-ROLE-DOC"
+      ],
+      "allowed_target_ids": [
+        "EP-ASSET-IDENTITY_PROVIDER-USER-TENANT-ROLE-03"
+      ],
+      "allowed_fact_ids_hash": "9fda540e996e3b9d803658a4af2a8938c8bb71226416388f7e3010e3c0a337b3",
+      "allowed_target_ids_hash": "fddcecf20d484461ceb7833635bd57d0655ac45ca5170908f53956498a3ced89",
+      "count_allowed_facts": 1,
+      "count_allowed_targets": 1
+    },
+    "runtime_telemetry": {
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "temperature": 0.0,
+      "seed": 42,
+      "num_ctx": 2048,
+      "num_predict": 300,
+      "keep_alive": "60m",
+      "total_latency_ms": 21234.9,
+      "timed_out": false,
+      "prompt_eval_count": 1026,
+      "eval_count": 194
+    },
+    "provenance": {
+      "prompt_sha256": "86504175943958ffe30cce0e6c1808ff7f9c896a9a746bc624a683551122fc50",
+      "raw_response_sha256": "2c05fadb013e5d73042f5cdb46f1c4d69c0274bfc23f3e780e332aa0c2c26855",
+      "output_origin": "MODEL_GENERATED"
+    },
+    "model_output": {
+      "raw_response": "{\n  \"invariant\": \"Role boundaries must strictly isolate horizontal and vertical privilege sets; cross-role capabilities cannot be exercised without explicit assignment.\",\n  \"decision\": \"HYPOTHESIS\",\n  \"affected_target\": \"PARTITION P3\",\n  \"empirical_facts\": [\"FACT-001\", \"FACT-002\"],\n  \"methodology_references\": [\"CHK-001\"],\n  \"attack_predicate\": {\n    \"subject\": \"LOWER_ROLE_ACTOR\",\n    \"operation\": \"REPLAY_STEP_WITH_LOWER_ROLE\",\n    \"target\": \"PARTITION P3\",\n    \"security_property\": \"ROLE_BOUNDARY_ENFORCEMENT\",\n    \"expected_violation\": \"Lower role actor successfully accesses resources intended for higher role actors\"\n  },\n  \"falsification_description\": \"Replay a request from a lower role actor to access resources designated for higher role actors to verify if the role boundary enforcement is bypassed.\"\n}",
+      "parse_error": null,
+      "parsed_dict": {
+        "invariant": "Role boundaries must strictly isolate horizontal and vertical privilege sets; cross-role capabilities cannot be exercised without explicit assignment.",
+        "evidence_gap": null,
+        "affected_target": "PARTITION P3",
+        "decision": "HYPOTHESIS",
+        "empirical_facts": [
+          "FACT-001",
+          "FACT-002"
+        ],
+        "methodology_references": [
+          "CHK-001"
+        ],
+        "attack_predicate": {
+          "subject": "LOWER_ROLE_ACTOR",
+          "operation": "REPLAY_STEP_WITH_LOWER_ROLE",
+          "target": "PARTITION P3",
+          "security_property": "ROLE_BOUNDARY_ENFORCEMENT",
+          "expected_violation": "Lower role actor successfully accesses resources intended for higher role actors"
+        },
+        "falsification_description": "Replay a request from a lower role actor to access resources designated for higher role actors to verify if the role boundary enforcement is bypassed."
+      },
+      "candidate_decision": "HYPOTHESIS",
+      "experiment_action": "REPLAY_STEP_WITH_LOWER_ROLE",
+      "supporting_outcome": "PRIVILEGE_ELEVATION_SUCCEEDS",
+      "disproving_outcome": "PRIVILEGE_ELEVATION_DENIED",
+      "attack_predicate": {
+        "subject": "LOWER_ROLE_ACTOR",
+        "operation": "REPLAY_STEP_WITH_LOWER_ROLE",
+        "target": "PARTITION P3",
+        "security_property": "ROLE_BOUNDARY_ENFORCEMENT",
+        "expected_violation": "Lower role actor successfully accesses resources intended for higher role actors"
+      }
+    },
+    "outcome_binding": {
+      "is_bound_deterministically": true,
+      "origin": "DETERMINISTICALLY_DERIVED",
+      "binding_result": {
+        "is_valid": true,
+        "supporting_outcome": "PRIVILEGE_ELEVATION_SUCCEEDS",
+        "disproving_outcome": "PRIVILEGE_ELEVATION_DENIED",
+        "outcome_origin": "DETERMINISTICALLY_DERIVED",
+        "error_message": null,
+        "diagnostic_details": {
+          "category_id": "API-ROLE-BOUNDARY-001",
+          "experiment_action": "REPLAY_STEP_WITH_LOWER_ROLE",
+          "security_property": "ROLE_BOUNDARY_ENFORCEMENT",
+          "target": "PARTITION P3",
+          "derived_supporting": "PRIVILEGE_ELEVATION_SUCCEEDS",
+          "derived_disproving": "PRIVILEGE_ELEVATION_DENIED"
+        }
+      }
+    },
+    "validation": {
+      "schema_valid": true,
+      "skeleton_compliant": true,
+      "skeleton_reason": "Enforced via deterministic outcome binding",
+      "polarity_valid": true,
+      "polarity_reason": null,
+      "grounding_valid": false,
+      "grounding_reason": "FREE_FORM_TARGET_REJECTED: affected_target contains free-form prose or invalid string: 'PARTITION P3'",
+      "grounding_failure_code": "FREE_FORM_TARGET_REJECTED",
+      "is_valid_typed_experiment": false,
+      "is_useful_vulnerable_hypothesis": false
+    },
+    "attribution": {
+      "primary_failure_code": "GROUNDING_FAILURE",
+      "primary_failure_name": "F06",
+      "contributing_failure_codes": [
+        "GROUNDING_FAILURE",
+        "IDENTIFIER_CONFUSION"
+      ],
+      "details": {
+        "candidate_decision": "HYPOTHESIS",
+        "experiment_action": "REPLAY_STEP_WITH_LOWER_ROLE",
+        "supporting_outcome": "PRIVILEGE_ELEVATION_SUCCEEDS",
+        "disproving_outcome": "PRIVILEGE_ELEVATION_DENIED",
+        "polarity_reason": null,
+        "skeleton_reason": "Enforced via deterministic outcome binding",
+        "raw_primary_category": "SEMANTIC_GROUNDING_FAILURE"
+      }
+    }
+  },
+  {
+    "call_index": 18,
+    "condition_id": "P2",
+    "scenario_id": "SCEN-IDENTITY_PROVIDER-USER-TENANT-ROLE-PATCH-03",
+    "vulnerable_variant": false,
+    "category_id": "API-ROLE-BOUNDARY-001",
+    "protocol": "P2_GROUNDING_RECOVERY",
+    "allowed_sets": {
+      "allowed_fact_ids": [
+        "FACT-IDENTITY_PROVIDER-USER-TENANT-ROLE-DOC"
+      ],
+      "allowed_target_ids": [
+        "EP-ASSET-IDENTITY_PROVIDER-USER-TENANT-ROLE-03"
+      ],
+      "allowed_fact_ids_hash": "9fda540e996e3b9d803658a4af2a8938c8bb71226416388f7e3010e3c0a337b3",
+      "allowed_target_ids_hash": "fddcecf20d484461ceb7833635bd57d0655ac45ca5170908f53956498a3ced89",
+      "count_allowed_facts": 1,
+      "count_allowed_targets": 1
+    },
+    "runtime_telemetry": {
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "temperature": 0.0,
+      "seed": 42,
+      "num_ctx": 2048,
+      "num_predict": 300,
+      "keep_alive": "60m",
+      "total_latency_ms": 21311.22,
+      "timed_out": false,
+      "prompt_eval_count": 1026,
+      "eval_count": 194
+    },
+    "provenance": {
+      "prompt_sha256": "f85b653d167c8d5ccb394f97bb4dfbb4138387d28d7b06f917228015950ca531",
+      "raw_response_sha256": "058a08f78ed830b80cca26be45186944bffa8831a2cbe8635b43e502f438e26d",
+      "output_origin": "MODEL_GENERATED"
+    },
+    "model_output": {
+      "raw_response": "{\n  \"invariant\": \"Role boundaries must strictly isolate horizontal and vertical privilege sets; cross-role capabilities cannot be exercised without explicit assignment.\",\n  \"decision\": \"HYPOTHESIS\",\n  \"affected_target\": \"No specific target identified as the evidence gap is in the role hierarchy enforcement.\",\n  \"empirical_facts\": [],\n  \"methodology_references\": [],\n  \"attack_predicate\": {\n    \"subject\": \"Role initiating the attack\",\n    \"operation\": \"REPLAY_STEP_WITH_LOWER_ROLE\",\n    \"target\": \"Target endpoint or resource under test\",\n    \"security_property\": \"LIFECYCLE_ORDERING\",\n    \"expected_violation\": \"Unauthorized access or execution of actions not permitted by the role hierarchy\"\n  },\n  \"falsification_description\": \"The experiment will involve replaying a step with a lower role to determine if the system allows unauthorized access or execution of actions not permitted by the role hierarchy.\"\n}",
+      "parse_error": null,
+      "parsed_dict": {
+        "invariant": "Role boundaries must strictly isolate horizontal and vertical privilege sets; cross-role capabilities cannot be exercised without explicit assignment.",
+        "evidence_gap": null,
+        "affected_target": "No specific target identified as the evidence gap is in the role hierarchy enforcement.",
+        "decision": "HYPOTHESIS",
+        "empirical_facts": [],
+        "methodology_references": [],
+        "attack_predicate": {
+          "subject": "Role initiating the attack",
+          "operation": "REPLAY_STEP_WITH_LOWER_ROLE",
+          "target": "Target endpoint or resource under test",
+          "security_property": "LIFECYCLE_ORDERING",
+          "expected_violation": "Unauthorized access or execution of actions not permitted by the role hierarchy"
+        },
+        "falsification_description": "The experiment will involve replaying a step with a lower role to determine if the system allows unauthorized access or execution of actions not permitted by the role hierarchy."
+      },
+      "candidate_decision": "HYPOTHESIS",
+      "experiment_action": "REPLAY_STEP_WITH_LOWER_ROLE",
+      "supporting_outcome": null,
+      "disproving_outcome": null,
+      "attack_predicate": {
+        "subject": "Role initiating the attack",
+        "operation": "REPLAY_STEP_WITH_LOWER_ROLE",
+        "target": "Target endpoint or resource under test",
+        "security_property": "LIFECYCLE_ORDERING",
+        "expected_violation": "Unauthorized access or execution of actions not permitted by the role hierarchy"
+      }
+    },
+    "outcome_binding": {
+      "is_bound_deterministically": true,
+      "origin": "DETERMINISTICALLY_DERIVED",
+      "binding_result": {
+        "is_valid": false,
+        "supporting_outcome": null,
+        "disproving_outcome": null,
+        "outcome_origin": "DETERMINISTICALLY_DERIVED",
+        "error_message": "Security property 'LIFECYCLE_ORDERING' incompatible with category 'API-ROLE-BOUNDARY-001'. Expected one of: ['FUNCTION_LEVEL_AUTHORIZATION', 'ROLE_BOUNDARY_ENFORCEMENT']",
+        "diagnostic_details": {
+          "stage": "PROPERTY_MISMATCH",
+          "category_id": "API-ROLE-BOUNDARY-001",
+          "property": "LIFECYCLE_ORDERING"
+        }
+      }
+    },
+    "validation": {
+      "schema_valid": true,
+      "skeleton_compliant": null,
+      "skeleton_reason": null,
+      "polarity_valid": false,
+      "polarity_reason": null,
+      "grounding_valid": false,
+      "grounding_reason": "FREE_FORM_TARGET_REJECTED: affected_target contains free-form prose or invalid string: 'No specific target identified as the evidence gap is in the role hierarchy enforcement.'",
+      "grounding_failure_code": "FREE_FORM_TARGET_REJECTED",
+      "is_valid_typed_experiment": false,
+      "is_useful_vulnerable_hypothesis": false
+    },
+    "attribution": {
+      "primary_failure_code": "GROUNDING_FAILURE",
+      "primary_failure_name": "F06",
+      "contributing_failure_codes": [
+        "GROUNDING_FAILURE",
+        "IDENTIFIER_CONFUSION"
+      ],
+      "details": {
+        "candidate_decision": "HYPOTHESIS",
+        "experiment_action": "REPLAY_STEP_WITH_LOWER_ROLE",
+        "supporting_outcome": null,
+        "disproving_outcome": null,
+        "polarity_reason": null,
+        "skeleton_reason": null,
+        "raw_primary_category": "SEMANTIC_GROUNDING_FAILURE"
+      }
+    }
+  },
+  {
+    "call_index": 19,
+    "condition_id": "P2",
+    "scenario_id": "SCEN-SAAS_BILLING-INV-SUMMARY-VULN-03",
+    "vulnerable_variant": true,
+    "category_id": "API-CROSS-TENANT-001",
+    "protocol": "P2_GROUNDING_RECOVERY",
+    "allowed_sets": {
+      "allowed_fact_ids": [
+        "FACT-SAAS_BILLING-INV-SUMMARY-DOC"
+      ],
+      "allowed_target_ids": [
+        "EP-ASSET-SAAS_BILLING-INV-SUMMARY-03"
+      ],
+      "allowed_fact_ids_hash": "cd0e2bf5c8e79fdc40ffe8e38c38f77edaa2bf22c02eece9949db3c7211ccfdd",
+      "allowed_target_ids_hash": "914d886f144a1d3dfaa549ffde6e67a3f8b32a7a2b4433e9e66a9ec0508aa0f2",
+      "count_allowed_facts": 1,
+      "count_allowed_targets": 1
+    },
+    "runtime_telemetry": {
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "temperature": 0.0,
+      "seed": 42,
+      "num_ctx": 2048,
+      "num_predict": 300,
+      "keep_alive": "60m",
+      "total_latency_ms": 20687.71,
+      "timed_out": false,
+      "prompt_eval_count": 1026,
+      "eval_count": 190
+    },
+    "provenance": {
+      "prompt_sha256": "a590bbcc62ad570cd5a5ca73677a923067ff8d6e0b4470f3d6e4625c6297ef39",
+      "raw_response_sha256": "c3e31e33db925f4d0dc3411e531a874e743b7fa285c083f71715ef038c1fdf66",
+      "output_origin": "MODEL_GENERATED"
+    },
+    "model_output": {
+      "raw_response": "{\n  \"invariant\": \"Database queries and resource mutations must strictly enforce tenant boundary isolation; queries must be scoped to the authenticated tenant context.\",\n  \"decision\": \"HYPOTHESIS\",\n  \"affected_target\": \"Database queries and resource mutations\",\n  \"empirical_facts\": [],\n  \"methodology_references\": [],\n  \"attack_predicate\": {\n    \"subject\": \"Authenticated user from one tenant\",\n    \"operation\": \"SUBSTITUTE_RESOURCE_IDENTIFIER\",\n    \"target\": \"Resource belonging to another tenant\",\n    \"security_property\": \"TENANT_ISOLATION\",\n    \"expected_violation\": \"Authenticated user is able to access or modify resources belonging to another tenant\"\n  },\n  \"falsification_description\": \"The experiment will involve an authenticated user from one tenant attempting to substitute the resource identifier with that of another tenant. If the system allows this operation, it indicates a breach of the tenant isolation invariant.\"\n}",
+      "parse_error": null,
+      "parsed_dict": {
+        "invariant": "Database queries and resource mutations must strictly enforce tenant boundary isolation; queries must be scoped to the authenticated tenant context.",
+        "evidence_gap": null,
+        "affected_target": "Database queries and resource mutations",
+        "decision": "HYPOTHESIS",
+        "empirical_facts": [],
+        "methodology_references": [],
+        "attack_predicate": {
+          "subject": "Authenticated user from one tenant",
+          "operation": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+          "target": "Resource belonging to another tenant",
+          "security_property": "TENANT_ISOLATION",
+          "expected_violation": "Authenticated user is able to access or modify resources belonging to another tenant"
+        },
+        "falsification_description": "The experiment will involve an authenticated user from one tenant attempting to substitute the resource identifier with that of another tenant. If the system allows this operation, it indicates a breach of the tenant isolation invariant."
+      },
+      "candidate_decision": "HYPOTHESIS",
+      "experiment_action": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+      "supporting_outcome": "HTTP_200_OK",
+      "disproving_outcome": "HTTP_403_FORBIDDEN",
+      "attack_predicate": {
+        "subject": "Authenticated user from one tenant",
+        "operation": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+        "target": "Resource belonging to another tenant",
+        "security_property": "TENANT_ISOLATION",
+        "expected_violation": "Authenticated user is able to access or modify resources belonging to another tenant"
+      }
+    },
+    "outcome_binding": {
+      "is_bound_deterministically": true,
+      "origin": "DETERMINISTICALLY_DERIVED",
+      "binding_result": {
+        "is_valid": true,
+        "supporting_outcome": "HTTP_200_OK",
+        "disproving_outcome": "HTTP_403_FORBIDDEN",
+        "outcome_origin": "DETERMINISTICALLY_DERIVED",
+        "error_message": null,
+        "diagnostic_details": {
+          "category_id": "API-CROSS-TENANT-001",
+          "experiment_action": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+          "security_property": "TENANT_ISOLATION",
+          "target": "Resource belonging to another tenant",
+          "derived_supporting": "HTTP_200_OK",
+          "derived_disproving": "HTTP_403_FORBIDDEN"
+        }
+      }
+    },
+    "validation": {
+      "schema_valid": true,
+      "skeleton_compliant": true,
+      "skeleton_reason": "Enforced via deterministic outcome binding",
+      "polarity_valid": true,
+      "polarity_reason": null,
+      "grounding_valid": false,
+      "grounding_reason": "FREE_FORM_TARGET_REJECTED: affected_target contains free-form prose or invalid string: 'Database queries and resource mutations'",
+      "grounding_failure_code": "FREE_FORM_TARGET_REJECTED",
+      "is_valid_typed_experiment": false,
+      "is_useful_vulnerable_hypothesis": false
+    },
+    "attribution": {
+      "primary_failure_code": "GROUNDING_FAILURE",
+      "primary_failure_name": "F06",
+      "contributing_failure_codes": [
+        "GROUNDING_FAILURE",
+        "IDENTIFIER_CONFUSION"
+      ],
+      "details": {
+        "candidate_decision": "HYPOTHESIS",
+        "experiment_action": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+        "supporting_outcome": "HTTP_200_OK",
+        "disproving_outcome": "HTTP_403_FORBIDDEN",
+        "polarity_reason": null,
+        "skeleton_reason": "Enforced via deterministic outcome binding",
+        "raw_primary_category": "SEMANTIC_GROUNDING_FAILURE"
+      }
+    }
+  },
+  {
+    "call_index": 20,
+    "condition_id": "P1",
+    "scenario_id": "SCEN-SAAS_BILLING-INV-SUMMARY-VULN-03",
+    "vulnerable_variant": true,
+    "category_id": "API-CROSS-TENANT-001",
+    "protocol": "P1_GROUNDING_RECOVERY",
+    "allowed_sets": {
+      "allowed_fact_ids": [
+        "FACT-SAAS_BILLING-INV-SUMMARY-DOC"
+      ],
+      "allowed_target_ids": [
+        "EP-ASSET-SAAS_BILLING-INV-SUMMARY-03"
+      ],
+      "allowed_fact_ids_hash": "cd0e2bf5c8e79fdc40ffe8e38c38f77edaa2bf22c02eece9949db3c7211ccfdd",
+      "allowed_target_ids_hash": "914d886f144a1d3dfaa549ffde6e67a3f8b32a7a2b4433e9e66a9ec0508aa0f2",
+      "count_allowed_facts": 1,
+      "count_allowed_targets": 1
+    },
+    "runtime_telemetry": {
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "temperature": 0.0,
+      "seed": 42,
+      "num_ctx": 2048,
+      "num_predict": 300,
+      "keep_alive": "60m",
+      "total_latency_ms": 22501.2,
+      "timed_out": false,
+      "prompt_eval_count": 1026,
+      "eval_count": 207
+    },
+    "provenance": {
+      "prompt_sha256": "e2763f1901b4165ac7cc3161f169f458e5d22ca6bb1f353dc2f41906f4d71a89",
+      "raw_response_sha256": "b0b8c61940bcb6369c84b0be44ca542f5352de15b7baba98f77658fe3314999f",
+      "output_origin": "MODEL_GENERATED"
+    },
+    "model_output": {
+      "raw_response": "{\n  \"invariant\": \"Database queries and resource mutations must strictly enforce tenant boundary isolation; queries must be scoped to the authenticated tenant context.\",\n  \"decision\": \"HYPOTHESIS\",\n  \"affected_target\": \"Database queries and resource mutations\",\n  \"empirical_facts\": [\"FACT-001\", \"FACT-002\"],\n  \"methodology_references\": [\"CHK-001\"],\n  \"attack_predicate\": {\n    \"subject\": \"UNAUTHORIZED_ACTOR\",\n    \"operation\": \"SUBSTITUTE_RESOURCE_IDENTIFIER\",\n    \"target\": \"Database query or resource mutation\",\n    \"security_property\": \"TENANT_ISOLATION\",\n    \"expected_violation\": \"The unauthorized actor is able to access or modify resources outside their tenant context.\"\n  },\n  \"falsification_description\": \"The experiment will involve an unauthorized actor attempting to substitute a resource identifier in a database query or mutation. If the system allows this action, it indicates a breach of the tenant isolation invariant.\"\n}",
+      "parse_error": null,
+      "parsed_dict": {
+        "invariant": "Database queries and resource mutations must strictly enforce tenant boundary isolation; queries must be scoped to the authenticated tenant context.",
+        "evidence_gap": null,
+        "affected_target": "Database queries and resource mutations",
+        "decision": "HYPOTHESIS",
+        "empirical_facts": [
+          "FACT-001",
+          "FACT-002"
+        ],
+        "methodology_references": [
+          "CHK-001"
+        ],
+        "attack_predicate": {
+          "subject": "UNAUTHORIZED_ACTOR",
+          "operation": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+          "target": "Database query or resource mutation",
+          "security_property": "TENANT_ISOLATION",
+          "expected_violation": "The unauthorized actor is able to access or modify resources outside their tenant context."
+        },
+        "falsification_description": "The experiment will involve an unauthorized actor attempting to substitute a resource identifier in a database query or mutation. If the system allows this action, it indicates a breach of the tenant isolation invariant."
+      },
+      "candidate_decision": "HYPOTHESIS",
+      "experiment_action": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+      "supporting_outcome": "HTTP_200_OK",
+      "disproving_outcome": "HTTP_403_FORBIDDEN",
+      "attack_predicate": {
+        "subject": "UNAUTHORIZED_ACTOR",
+        "operation": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+        "target": "Database query or resource mutation",
+        "security_property": "TENANT_ISOLATION",
+        "expected_violation": "The unauthorized actor is able to access or modify resources outside their tenant context."
+      }
+    },
+    "outcome_binding": {
+      "is_bound_deterministically": true,
+      "origin": "DETERMINISTICALLY_DERIVED",
+      "binding_result": {
+        "is_valid": true,
+        "supporting_outcome": "HTTP_200_OK",
+        "disproving_outcome": "HTTP_403_FORBIDDEN",
+        "outcome_origin": "DETERMINISTICALLY_DERIVED",
+        "error_message": null,
+        "diagnostic_details": {
+          "category_id": "API-CROSS-TENANT-001",
+          "experiment_action": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+          "security_property": "TENANT_ISOLATION",
+          "target": "Database query or resource mutation",
+          "derived_supporting": "HTTP_200_OK",
+          "derived_disproving": "HTTP_403_FORBIDDEN"
+        }
+      }
+    },
+    "validation": {
+      "schema_valid": true,
+      "skeleton_compliant": true,
+      "skeleton_reason": "Enforced via deterministic outcome binding",
+      "polarity_valid": true,
+      "polarity_reason": null,
+      "grounding_valid": false,
+      "grounding_reason": "FREE_FORM_TARGET_REJECTED: affected_target contains free-form prose or invalid string: 'Database queries and resource mutations'",
+      "grounding_failure_code": "FREE_FORM_TARGET_REJECTED",
+      "is_valid_typed_experiment": false,
+      "is_useful_vulnerable_hypothesis": false
+    },
+    "attribution": {
+      "primary_failure_code": "GROUNDING_FAILURE",
+      "primary_failure_name": "F06",
+      "contributing_failure_codes": [
+        "GROUNDING_FAILURE",
+        "IDENTIFIER_CONFUSION"
+      ],
+      "details": {
+        "candidate_decision": "HYPOTHESIS",
+        "experiment_action": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+        "supporting_outcome": "HTTP_200_OK",
+        "disproving_outcome": "HTTP_403_FORBIDDEN",
+        "polarity_reason": null,
+        "skeleton_reason": "Enforced via deterministic outcome binding",
+        "raw_primary_category": "SEMANTIC_GROUNDING_FAILURE"
+      }
+    }
+  },
+  {
+    "call_index": 21,
+    "condition_id": "P3",
+    "scenario_id": "SCEN-SAAS_BILLING-INV-SUMMARY-VULN-03",
+    "vulnerable_variant": true,
+    "category_id": "API-CROSS-TENANT-001",
+    "protocol": "P3_GROUNDING_RECOVERY",
+    "allowed_sets": {
+      "allowed_fact_ids": [
+        "FACT-SAAS_BILLING-INV-SUMMARY-DOC"
+      ],
+      "allowed_target_ids": [
+        "EP-ASSET-SAAS_BILLING-INV-SUMMARY-03"
+      ],
+      "allowed_fact_ids_hash": "cd0e2bf5c8e79fdc40ffe8e38c38f77edaa2bf22c02eece9949db3c7211ccfdd",
+      "allowed_target_ids_hash": "914d886f144a1d3dfaa549ffde6e67a3f8b32a7a2b4433e9e66a9ec0508aa0f2",
+      "count_allowed_facts": 1,
+      "count_allowed_targets": 1
+    },
+    "runtime_telemetry": {
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "temperature": 0.0,
+      "seed": 42,
+      "num_ctx": 2048,
+      "num_predict": 300,
+      "keep_alive": "60m",
+      "total_latency_ms": 23615.71,
+      "timed_out": false,
+      "prompt_eval_count": 1026,
+      "eval_count": 217
+    },
+    "provenance": {
+      "prompt_sha256": "a6cab4374e2a55e48a820572fa194f9aaf2f1ebee826e47862ae6180a6d377cd",
+      "raw_response_sha256": "54fd106f94fd7e9c335053bd778db44d0a65353f8ef389a295105510698fab82",
+      "output_origin": "MODEL_GENERATED"
+    },
+    "model_output": {
+      "raw_response": "{\n  \"invariant\": \"Database queries and resource mutations must strictly enforce tenant boundary isolation; queries must be scoped to the authenticated tenant context.\",\n  \"decision\": \"HYPOTHESIS\",\n  \"affected_target\": \"EP-ASSET-SAAS_BILLING-INV-SUMMARY-03\",\n  \"empirical_facts\": [],\n  \"methodology_references\": [],\n  \"attack_predicate\": {\n    \"subject\": \"Authenticated user from one tenant\",\n    \"operation\": \"SUBSTITUTE_RESOURCE_IDENTIFIER\",\n    \"target\": \"EP-ASSET-SAAS_BILLING-INV-SUMMARY-03\",\n    \"security_property\": \"TENANT_ISOLATION\",\n    \"expected_violation\": \"Authenticated user from one tenant is able to access or modify resources intended for another tenant.\"\n  },\n  \"falsification_description\": \"The experiment will involve an authenticated user from one tenant attempting to substitute the resource identifier of another tenant's resource. If the system allows this action, it indicates a breach of the tenant isolation invariant.\"\n}",
+      "parse_error": null,
+      "parsed_dict": {
+        "invariant": "Database queries and resource mutations must strictly enforce tenant boundary isolation; queries must be scoped to the authenticated tenant context.",
+        "evidence_gap": null,
+        "affected_target": "EP-ASSET-SAAS_BILLING-INV-SUMMARY-03",
+        "decision": "HYPOTHESIS",
+        "empirical_facts": [],
+        "methodology_references": [],
+        "attack_predicate": {
+          "subject": "Authenticated user from one tenant",
+          "operation": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+          "target": "EP-ASSET-SAAS_BILLING-INV-SUMMARY-03",
+          "security_property": "TENANT_ISOLATION",
+          "expected_violation": "Authenticated user from one tenant is able to access or modify resources intended for another tenant."
+        },
+        "falsification_description": "The experiment will involve an authenticated user from one tenant attempting to substitute the resource identifier of another tenant's resource. If the system allows this action, it indicates a breach of the tenant isolation invariant."
+      },
+      "candidate_decision": "HYPOTHESIS",
+      "experiment_action": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+      "supporting_outcome": "HTTP_200_OK",
+      "disproving_outcome": "HTTP_403_FORBIDDEN",
+      "attack_predicate": {
+        "subject": "Authenticated user from one tenant",
+        "operation": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+        "target": "EP-ASSET-SAAS_BILLING-INV-SUMMARY-03",
+        "security_property": "TENANT_ISOLATION",
+        "expected_violation": "Authenticated user from one tenant is able to access or modify resources intended for another tenant."
+      }
+    },
+    "outcome_binding": {
+      "is_bound_deterministically": true,
+      "origin": "DETERMINISTICALLY_DERIVED",
+      "binding_result": {
+        "is_valid": true,
+        "supporting_outcome": "HTTP_200_OK",
+        "disproving_outcome": "HTTP_403_FORBIDDEN",
+        "outcome_origin": "DETERMINISTICALLY_DERIVED",
+        "error_message": null,
+        "diagnostic_details": {
+          "category_id": "API-CROSS-TENANT-001",
+          "experiment_action": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+          "security_property": "TENANT_ISOLATION",
+          "target": "EP-ASSET-SAAS_BILLING-INV-SUMMARY-03",
+          "derived_supporting": "HTTP_200_OK",
+          "derived_disproving": "HTTP_403_FORBIDDEN"
+        }
+      }
+    },
+    "validation": {
+      "schema_valid": true,
+      "skeleton_compliant": true,
+      "skeleton_reason": "Enforced via deterministic outcome binding",
+      "polarity_valid": true,
+      "polarity_reason": null,
+      "grounding_valid": true,
+      "grounding_reason": "All facts and targets validly grounded against scenario envelope",
+      "grounding_failure_code": null,
+      "is_valid_typed_experiment": true,
+      "is_useful_vulnerable_hypothesis": true
+    },
+    "attribution": {
+      "primary_failure_code": "VALID_TYPED",
+      "primary_failure_name": "F01",
+      "contributing_failure_codes": [
+        "VALID_TYPED"
+      ],
+      "details": {
+        "candidate_decision": "HYPOTHESIS",
+        "experiment_action": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+        "supporting_outcome": "HTTP_200_OK",
+        "disproving_outcome": "HTTP_403_FORBIDDEN",
+        "polarity_reason": null,
+        "skeleton_reason": "Enforced via deterministic outcome binding",
+        "raw_primary_category": "VALID"
+      }
+    }
+  },
+  {
+    "call_index": 22,
+    "condition_id": "P1",
+    "scenario_id": "SCEN-SAAS_BILLING-INV-SUMMARY-PATCH-03",
+    "vulnerable_variant": false,
+    "category_id": "API-CROSS-TENANT-001",
+    "protocol": "P1_GROUNDING_RECOVERY",
+    "allowed_sets": {
+      "allowed_fact_ids": [
+        "FACT-SAAS_BILLING-INV-SUMMARY-DOC"
+      ],
+      "allowed_target_ids": [
+        "EP-ASSET-SAAS_BILLING-INV-SUMMARY-03"
+      ],
+      "allowed_fact_ids_hash": "cd0e2bf5c8e79fdc40ffe8e38c38f77edaa2bf22c02eece9949db3c7211ccfdd",
+      "allowed_target_ids_hash": "914d886f144a1d3dfaa549ffde6e67a3f8b32a7a2b4433e9e66a9ec0508aa0f2",
+      "count_allowed_facts": 1,
+      "count_allowed_targets": 1
+    },
+    "runtime_telemetry": {
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "temperature": 0.0,
+      "seed": 42,
+      "num_ctx": 2048,
+      "num_predict": 300,
+      "keep_alive": "60m",
+      "total_latency_ms": 23950.93,
+      "timed_out": false,
+      "prompt_eval_count": 1026,
+      "eval_count": 204
+    },
+    "provenance": {
+      "prompt_sha256": "e2763f1901b4165ac7cc3161f169f458e5d22ca6bb1f353dc2f41906f4d71a89",
+      "raw_response_sha256": "c822377bbcef26e8fcd57fce0b1cdb336a9cda1ebea17c2c6c2f57304da72635",
+      "output_origin": "MODEL_GENERATED"
+    },
+    "model_output": {
+      "raw_response": "{\n  \"invariant\": \"Database queries and resource mutations must strictly enforce tenant boundary isolation; queries must be scoped to the authenticated tenant context.\",\n  \"decision\": \"HYPOTHESIS\",\n  \"affected_target\": \"Database queries and resource mutations\",\n  \"empirical_facts\": [\"FACT-001\", \"FACT-002\"],\n  \"methodology_references\": [\"CHK-001\"],\n  \"attack_predicate\": {\n    \"subject\": \"UNAUTHORIZED_ACTOR\",\n    \"operation\": \"SUBSTITUTE_RESOURCE_IDENTIFIER\",\n    \"target\": \"Database query or resource mutation\",\n    \"security_property\": \"TENANT_ISOLATION\",\n    \"expected_violation\": \"The unauthorized actor is able to access or modify resources outside their tenant context.\"\n  },\n  \"falsification_description\": \"The experiment will involve substituting a resource identifier in a database query with an identifier from a different tenant and verifying if the query still executes successfully and returns the expected results.\"\n}",
+      "parse_error": null,
+      "parsed_dict": {
+        "invariant": "Database queries and resource mutations must strictly enforce tenant boundary isolation; queries must be scoped to the authenticated tenant context.",
+        "evidence_gap": null,
+        "affected_target": "Database queries and resource mutations",
+        "decision": "HYPOTHESIS",
+        "empirical_facts": [
+          "FACT-001",
+          "FACT-002"
+        ],
+        "methodology_references": [
+          "CHK-001"
+        ],
+        "attack_predicate": {
+          "subject": "UNAUTHORIZED_ACTOR",
+          "operation": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+          "target": "Database query or resource mutation",
+          "security_property": "TENANT_ISOLATION",
+          "expected_violation": "The unauthorized actor is able to access or modify resources outside their tenant context."
+        },
+        "falsification_description": "The experiment will involve substituting a resource identifier in a database query with an identifier from a different tenant and verifying if the query still executes successfully and returns the expected results."
+      },
+      "candidate_decision": "HYPOTHESIS",
+      "experiment_action": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+      "supporting_outcome": "HTTP_200_OK",
+      "disproving_outcome": "HTTP_403_FORBIDDEN",
+      "attack_predicate": {
+        "subject": "UNAUTHORIZED_ACTOR",
+        "operation": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+        "target": "Database query or resource mutation",
+        "security_property": "TENANT_ISOLATION",
+        "expected_violation": "The unauthorized actor is able to access or modify resources outside their tenant context."
+      }
+    },
+    "outcome_binding": {
+      "is_bound_deterministically": true,
+      "origin": "DETERMINISTICALLY_DERIVED",
+      "binding_result": {
+        "is_valid": true,
+        "supporting_outcome": "HTTP_200_OK",
+        "disproving_outcome": "HTTP_403_FORBIDDEN",
+        "outcome_origin": "DETERMINISTICALLY_DERIVED",
+        "error_message": null,
+        "diagnostic_details": {
+          "category_id": "API-CROSS-TENANT-001",
+          "experiment_action": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+          "security_property": "TENANT_ISOLATION",
+          "target": "Database query or resource mutation",
+          "derived_supporting": "HTTP_200_OK",
+          "derived_disproving": "HTTP_403_FORBIDDEN"
+        }
+      }
+    },
+    "validation": {
+      "schema_valid": true,
+      "skeleton_compliant": true,
+      "skeleton_reason": "Enforced via deterministic outcome binding",
+      "polarity_valid": true,
+      "polarity_reason": null,
+      "grounding_valid": false,
+      "grounding_reason": "FREE_FORM_TARGET_REJECTED: affected_target contains free-form prose or invalid string: 'Database queries and resource mutations'",
+      "grounding_failure_code": "FREE_FORM_TARGET_REJECTED",
+      "is_valid_typed_experiment": false,
+      "is_useful_vulnerable_hypothesis": false
+    },
+    "attribution": {
+      "primary_failure_code": "GROUNDING_FAILURE",
+      "primary_failure_name": "F06",
+      "contributing_failure_codes": [
+        "GROUNDING_FAILURE",
+        "IDENTIFIER_CONFUSION"
+      ],
+      "details": {
+        "candidate_decision": "HYPOTHESIS",
+        "experiment_action": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+        "supporting_outcome": "HTTP_200_OK",
+        "disproving_outcome": "HTTP_403_FORBIDDEN",
+        "polarity_reason": null,
+        "skeleton_reason": "Enforced via deterministic outcome binding",
+        "raw_primary_category": "SEMANTIC_GROUNDING_FAILURE"
+      }
+    }
+  },
+  {
+    "call_index": 23,
+    "condition_id": "P2",
+    "scenario_id": "SCEN-SAAS_BILLING-INV-SUMMARY-PATCH-03",
+    "vulnerable_variant": false,
+    "category_id": "API-CROSS-TENANT-001",
+    "protocol": "P2_GROUNDING_RECOVERY",
+    "allowed_sets": {
+      "allowed_fact_ids": [
+        "FACT-SAAS_BILLING-INV-SUMMARY-DOC"
+      ],
+      "allowed_target_ids": [
+        "EP-ASSET-SAAS_BILLING-INV-SUMMARY-03"
+      ],
+      "allowed_fact_ids_hash": "cd0e2bf5c8e79fdc40ffe8e38c38f77edaa2bf22c02eece9949db3c7211ccfdd",
+      "allowed_target_ids_hash": "914d886f144a1d3dfaa549ffde6e67a3f8b32a7a2b4433e9e66a9ec0508aa0f2",
+      "count_allowed_facts": 1,
+      "count_allowed_targets": 1
+    },
+    "runtime_telemetry": {
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "temperature": 0.0,
+      "seed": 42,
+      "num_ctx": 2048,
+      "num_predict": 300,
+      "keep_alive": "60m",
+      "total_latency_ms": 21944.12,
+      "timed_out": false,
+      "prompt_eval_count": 1026,
+      "eval_count": 190
+    },
+    "provenance": {
+      "prompt_sha256": "a590bbcc62ad570cd5a5ca73677a923067ff8d6e0b4470f3d6e4625c6297ef39",
+      "raw_response_sha256": "c3e31e33db925f4d0dc3411e531a874e743b7fa285c083f71715ef038c1fdf66",
+      "output_origin": "MODEL_GENERATED"
+    },
+    "model_output": {
+      "raw_response": "{\n  \"invariant\": \"Database queries and resource mutations must strictly enforce tenant boundary isolation; queries must be scoped to the authenticated tenant context.\",\n  \"decision\": \"HYPOTHESIS\",\n  \"affected_target\": \"Database queries and resource mutations\",\n  \"empirical_facts\": [],\n  \"methodology_references\": [],\n  \"attack_predicate\": {\n    \"subject\": \"Authenticated user from one tenant\",\n    \"operation\": \"SUBSTITUTE_RESOURCE_IDENTIFIER\",\n    \"target\": \"Resource belonging to another tenant\",\n    \"security_property\": \"TENANT_ISOLATION\",\n    \"expected_violation\": \"Authenticated user is able to access or modify resources belonging to another tenant\"\n  },\n  \"falsification_description\": \"The experiment will involve an authenticated user from one tenant attempting to substitute the resource identifier with that of another tenant. If the system allows this operation, it indicates a breach of the tenant isolation invariant.\"\n}",
+      "parse_error": null,
+      "parsed_dict": {
+        "invariant": "Database queries and resource mutations must strictly enforce tenant boundary isolation; queries must be scoped to the authenticated tenant context.",
+        "evidence_gap": null,
+        "affected_target": "Database queries and resource mutations",
+        "decision": "HYPOTHESIS",
+        "empirical_facts": [],
+        "methodology_references": [],
+        "attack_predicate": {
+          "subject": "Authenticated user from one tenant",
+          "operation": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+          "target": "Resource belonging to another tenant",
+          "security_property": "TENANT_ISOLATION",
+          "expected_violation": "Authenticated user is able to access or modify resources belonging to another tenant"
+        },
+        "falsification_description": "The experiment will involve an authenticated user from one tenant attempting to substitute the resource identifier with that of another tenant. If the system allows this operation, it indicates a breach of the tenant isolation invariant."
+      },
+      "candidate_decision": "HYPOTHESIS",
+      "experiment_action": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+      "supporting_outcome": "HTTP_200_OK",
+      "disproving_outcome": "HTTP_403_FORBIDDEN",
+      "attack_predicate": {
+        "subject": "Authenticated user from one tenant",
+        "operation": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+        "target": "Resource belonging to another tenant",
+        "security_property": "TENANT_ISOLATION",
+        "expected_violation": "Authenticated user is able to access or modify resources belonging to another tenant"
+      }
+    },
+    "outcome_binding": {
+      "is_bound_deterministically": true,
+      "origin": "DETERMINISTICALLY_DERIVED",
+      "binding_result": {
+        "is_valid": true,
+        "supporting_outcome": "HTTP_200_OK",
+        "disproving_outcome": "HTTP_403_FORBIDDEN",
+        "outcome_origin": "DETERMINISTICALLY_DERIVED",
+        "error_message": null,
+        "diagnostic_details": {
+          "category_id": "API-CROSS-TENANT-001",
+          "experiment_action": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+          "security_property": "TENANT_ISOLATION",
+          "target": "Resource belonging to another tenant",
+          "derived_supporting": "HTTP_200_OK",
+          "derived_disproving": "HTTP_403_FORBIDDEN"
+        }
+      }
+    },
+    "validation": {
+      "schema_valid": true,
+      "skeleton_compliant": true,
+      "skeleton_reason": "Enforced via deterministic outcome binding",
+      "polarity_valid": true,
+      "polarity_reason": null,
+      "grounding_valid": false,
+      "grounding_reason": "FREE_FORM_TARGET_REJECTED: affected_target contains free-form prose or invalid string: 'Database queries and resource mutations'",
+      "grounding_failure_code": "FREE_FORM_TARGET_REJECTED",
+      "is_valid_typed_experiment": false,
+      "is_useful_vulnerable_hypothesis": false
+    },
+    "attribution": {
+      "primary_failure_code": "GROUNDING_FAILURE",
+      "primary_failure_name": "F06",
+      "contributing_failure_codes": [
+        "GROUNDING_FAILURE",
+        "IDENTIFIER_CONFUSION"
+      ],
+      "details": {
+        "candidate_decision": "HYPOTHESIS",
+        "experiment_action": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+        "supporting_outcome": "HTTP_200_OK",
+        "disproving_outcome": "HTTP_403_FORBIDDEN",
+        "polarity_reason": null,
+        "skeleton_reason": "Enforced via deterministic outcome binding",
+        "raw_primary_category": "SEMANTIC_GROUNDING_FAILURE"
+      }
+    }
+  },
+  {
+    "call_index": 24,
+    "condition_id": "P3",
+    "scenario_id": "SCEN-SAAS_BILLING-INV-SUMMARY-PATCH-03",
+    "vulnerable_variant": false,
+    "category_id": "API-CROSS-TENANT-001",
+    "protocol": "P3_GROUNDING_RECOVERY",
+    "allowed_sets": {
+      "allowed_fact_ids": [
+        "FACT-SAAS_BILLING-INV-SUMMARY-DOC"
+      ],
+      "allowed_target_ids": [
+        "EP-ASSET-SAAS_BILLING-INV-SUMMARY-03"
+      ],
+      "allowed_fact_ids_hash": "cd0e2bf5c8e79fdc40ffe8e38c38f77edaa2bf22c02eece9949db3c7211ccfdd",
+      "allowed_target_ids_hash": "914d886f144a1d3dfaa549ffde6e67a3f8b32a7a2b4433e9e66a9ec0508aa0f2",
+      "count_allowed_facts": 1,
+      "count_allowed_targets": 1
+    },
+    "runtime_telemetry": {
+      "model_name": "qwen2.5-coder:7b",
+      "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "temperature": 0.0,
+      "seed": 42,
+      "num_ctx": 2048,
+      "num_predict": 300,
+      "keep_alive": "60m",
+      "total_latency_ms": 24677.38,
+      "timed_out": false,
+      "prompt_eval_count": 1026,
+      "eval_count": 217
+    },
+    "provenance": {
+      "prompt_sha256": "a6cab4374e2a55e48a820572fa194f9aaf2f1ebee826e47862ae6180a6d377cd",
+      "raw_response_sha256": "54fd106f94fd7e9c335053bd778db44d0a65353f8ef389a295105510698fab82",
+      "output_origin": "MODEL_GENERATED"
+    },
+    "model_output": {
+      "raw_response": "{\n  \"invariant\": \"Database queries and resource mutations must strictly enforce tenant boundary isolation; queries must be scoped to the authenticated tenant context.\",\n  \"decision\": \"HYPOTHESIS\",\n  \"affected_target\": \"EP-ASSET-SAAS_BILLING-INV-SUMMARY-03\",\n  \"empirical_facts\": [],\n  \"methodology_references\": [],\n  \"attack_predicate\": {\n    \"subject\": \"Authenticated user from one tenant\",\n    \"operation\": \"SUBSTITUTE_RESOURCE_IDENTIFIER\",\n    \"target\": \"EP-ASSET-SAAS_BILLING-INV-SUMMARY-03\",\n    \"security_property\": \"TENANT_ISOLATION\",\n    \"expected_violation\": \"Authenticated user from one tenant is able to access or modify resources intended for another tenant.\"\n  },\n  \"falsification_description\": \"The experiment will involve an authenticated user from one tenant attempting to substitute the resource identifier of another tenant's resource. If the system allows this action, it indicates a breach of the tenant isolation invariant.\"\n}",
+      "parse_error": null,
+      "parsed_dict": {
+        "invariant": "Database queries and resource mutations must strictly enforce tenant boundary isolation; queries must be scoped to the authenticated tenant context.",
+        "evidence_gap": null,
+        "affected_target": "EP-ASSET-SAAS_BILLING-INV-SUMMARY-03",
+        "decision": "HYPOTHESIS",
+        "empirical_facts": [],
+        "methodology_references": [],
+        "attack_predicate": {
+          "subject": "Authenticated user from one tenant",
+          "operation": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+          "target": "EP-ASSET-SAAS_BILLING-INV-SUMMARY-03",
+          "security_property": "TENANT_ISOLATION",
+          "expected_violation": "Authenticated user from one tenant is able to access or modify resources intended for another tenant."
+        },
+        "falsification_description": "The experiment will involve an authenticated user from one tenant attempting to substitute the resource identifier of another tenant's resource. If the system allows this action, it indicates a breach of the tenant isolation invariant."
+      },
+      "candidate_decision": "HYPOTHESIS",
+      "experiment_action": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+      "supporting_outcome": "HTTP_200_OK",
+      "disproving_outcome": "HTTP_403_FORBIDDEN",
+      "attack_predicate": {
+        "subject": "Authenticated user from one tenant",
+        "operation": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+        "target": "EP-ASSET-SAAS_BILLING-INV-SUMMARY-03",
+        "security_property": "TENANT_ISOLATION",
+        "expected_violation": "Authenticated user from one tenant is able to access or modify resources intended for another tenant."
+      }
+    },
+    "outcome_binding": {
+      "is_bound_deterministically": true,
+      "origin": "DETERMINISTICALLY_DERIVED",
+      "binding_result": {
+        "is_valid": true,
+        "supporting_outcome": "HTTP_200_OK",
+        "disproving_outcome": "HTTP_403_FORBIDDEN",
+        "outcome_origin": "DETERMINISTICALLY_DERIVED",
+        "error_message": null,
+        "diagnostic_details": {
+          "category_id": "API-CROSS-TENANT-001",
+          "experiment_action": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+          "security_property": "TENANT_ISOLATION",
+          "target": "EP-ASSET-SAAS_BILLING-INV-SUMMARY-03",
+          "derived_supporting": "HTTP_200_OK",
+          "derived_disproving": "HTTP_403_FORBIDDEN"
+        }
+      }
+    },
+    "validation": {
+      "schema_valid": true,
+      "skeleton_compliant": true,
+      "skeleton_reason": "Enforced via deterministic outcome binding",
+      "polarity_valid": true,
+      "polarity_reason": null,
+      "grounding_valid": true,
+      "grounding_reason": "All facts and targets validly grounded against scenario envelope",
+      "grounding_failure_code": null,
+      "is_valid_typed_experiment": true,
+      "is_useful_vulnerable_hypothesis": false
+    },
+    "attribution": {
+      "primary_failure_code": "VALID_TYPED",
+      "primary_failure_name": "F01",
+      "contributing_failure_codes": [
+        "VALID_TYPED"
+      ],
+      "details": {
+        "candidate_decision": "HYPOTHESIS",
+        "experiment_action": "SUBSTITUTE_RESOURCE_IDENTIFIER",
+        "supporting_outcome": "HTTP_200_OK",
+        "disproving_outcome": "HTTP_403_FORBIDDEN",
+        "polarity_reason": null,
+        "skeleton_reason": "Enforced via deterministic outcome binding",
+        "raw_primary_category": "VALID"
+      }
+    }
+  }
+]

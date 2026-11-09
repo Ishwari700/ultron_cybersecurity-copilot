@@ -1,0 +1,14 @@
+{
+  "model_name": "all-MiniLM-L6-v2",
+  "runtime": "onnxruntime",
+  "device": "CPU",
+  "model_load_time_s": 0.828,
+  "embedding_throughput_texts_per_sec": 33.76,
+  "ram_baseline_mb": 63.96,
+  "ram_model_loaded_mb": 203.28,
+  "ram_delta_model_mb": 139.32,
+  "ram_peak_mb": 813.99,
+  "index_size_kb": 274.15,
+  "cold_start_retrieval_ms": 191.31,
+  "mean_warm_retrieval_ms": 24.13
+}

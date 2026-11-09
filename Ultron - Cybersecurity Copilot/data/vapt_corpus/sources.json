@@ -1,0 +1,46 @@
+{
+  "schema_version": "3.0.0",
+  "policy_description": "M3 VAPT Knowledge Corpus Sourcing & Redistribution Allowlist",
+  "sources": [
+    {
+      "source_name": "OWASP WSTG",
+      "source_type": "OWASP_WSTG",
+      "maintainer": "OWASP Foundation",
+      "target_version": "v4.2",
+      "license": "CC-BY-SA-4.0",
+      "redistribution_status": "PERMISSIBLE_WITH_ATTRIBUTION",
+      "attribution_requirement": "Include OWASP Foundation authorship and CC-BY-SA 4.0 license notice.",
+      "canonical_url": "https://owasp.org/www-project-web-security-testing-guide/"
+    },
+    {
+      "source_name": "OWASP ASVS",
+      "source_type": "OWASP_ASVS",
+      "maintainer": "OWASP Foundation",
+      "target_version": "v4.0.3",
+      "license": "CC-BY-SA-4.0",
+      "redistribution_status": "PERMISSIBLE_WITH_ATTRIBUTION",
+      "attribution_requirement": "Include OWASP Foundation authorship and CC-BY-SA 4.0 license notice.",
+      "canonical_url": "https://owasp.org/www-project-application-security-verification-standard/"
+    },
+    {
+      "source_name": "CWE Web Slices",
+      "source_type": "CWE",
+      "maintainer": "MITRE Corporation",
+      "target_version": "v4.14",
+      "license": "MITRE Terms (Permissive)",
+      "redistribution_status": "PERMISSIBLE_WITH_ATTRIBUTION",
+      "attribution_requirement": "Include MITRE copyright notice and reference to CWE List.",
+      "canonical_url": "https://cwe.mitre.org/"
+    },
+    {
+      "source_name": "Platform Invariants",
+      "source_type": "PLATFORM_INVARIANT",
+      "maintainer": "Internal Research Team",
+      "target_version": "v1.0.0",
+      "license": "Proprietary / Project-Native",
+      "redistribution_status": "PROJECT_NATIVE",
+      "attribution_requirement": "Project-native security rulebook and architectural invariant documentation.",
+      "canonical_url": null
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "benchmark_name": "M3_4_TRACK_ABLATION_BENCHMARK",
+  "benchmark_version": "2.3.8",
+  "causal_parity_verified_all_scenarios": true,
+  "completion_timestamp": "2026-09-20T05:26:07.680617+00:00",
+  "forensic_attribution": {
+    "counterfactual_reruns": 0,
+    "flip_rate": 0.0,
+    "k_fn_count": 0,
+    "k_fp_count": 0,
+    "report_file": "data\\eval\\forensic_attribution_results.json",
+    "total_flips": 0
+  },
+  "human_study": {
+    "inter_rater_reliability": {
+      "fleiss_kappa": 0.5962,
+      "fleiss_kappa_target_passed": false,
+      "krippendorff_alpha_ordinal": 0.6964
+    },
+    "mean_active_review_minutes": {
+      "track_b": 5.23,
+      "track_d": 4.73
+    },
+    "primary_estimand_mean_yield_60min": {
+      "delta_ci_95_lower": 0.1303,
+      "delta_ci_95_upper": 0.9146,
+      "delta_mean_yield": 0.4888,
+      "permutation_test_p_value": 0.02119,
+      "permutation_z_score": 2.1622,
+      "track_b": 5.8638,
+      "track_d": 6.3525
+    },
+    "raters_count": 3,
+    "secondary_descriptive_aggregate_rate_60min": {
+      "track_b": 5.7391,
+      "track_d": 6.3437
+    },
+    "total_evaluation_units": 40,
+    "total_ratings": 120,
+    "total_scenarios": 20
+  },
+  "start_timestamp": "2026-09-20T05:26:07.045310+00:00",
+  "total_scenarios_evaluated": 84,
+  "track_summaries": {
+    "TRACK_A": {
+      "abstention_decisions": 48,
+      "grounding_validity_rate": 1.0,
+      "hypothesis_decisions": 36,
+      "mean_latency_ms": 0.26,
+      "total_scenarios": 84,
+      "true_negative_rate_controls": 1.0,
+      "true_positive_rate_vulnerable": 1.0,
+      "valid_grounding_count": 84
+    },
+    "TRACK_B": {
+      "abstention_decisions": 48,
+      "grounding_validity_rate": 1.0,
+      "hypothesis_decisions": 36,
+      "mean_latency_ms": 0.28,
+      "total_scenarios": 84,
+      "true_negative_rate_controls": 1.0,
+      "true_positive_rate_vulnerable": 1.0,
+      "valid_grounding_count": 84
+    },
+    "TRACK_C": {
+      "abstention_decisions": 48,
+      "grounding_validity_rate": 1.0,
+      "hypothesis_decisions": 36,
+      "mean_latency_ms": 2.07,
+      "total_scenarios": 84,
+      "true_negative_rate_controls": 1.0,
+      "true_positive_rate_vulnerable": 1.0,
+      "valid_grounding_count": 84
+    },
+    "TRACK_D": {
+      "abstention_decisions": 48,
+      "grounding_validity_rate": 1.0,
+      "hypothesis_decisions": 36,
+      "mean_latency_ms": 2.1,
+      "total_scenarios": 84,
+      "true_negative_rate_controls": 1.0,
+      "true_positive_rate_vulnerable": 1.0,
+      "valid_grounding_count": 84
+    }
+  },
+  "tracks_evaluated": [
+    "TRACK_A",
+    "TRACK_B",
+    "TRACK_C",
+    "TRACK_D"
+  ]
+}

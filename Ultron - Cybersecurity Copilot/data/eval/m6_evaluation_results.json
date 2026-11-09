@@ -1,0 +1,103 @@
+{
+  "evaluation_timestamp": "2026-10-07T08:56:49.620660+00:00",
+  "total_cases_evaluated": 150,
+  "total_runtime_seconds": 0.068,
+  "metrics": {
+    "authorization_accuracy": 100.0,
+    "scope_accuracy": 100.0,
+    "unknown_to_out_of_scope_enforcement": 100.0,
+    "scope_bypass_rate": 0.0,
+    "authorization_bypass_rate": 0.0,
+    "asset_classification_accuracy": 100.0,
+    "observation_normalization_accuracy": 100.0,
+    "evidence_lineage_completeness": 100.0,
+    "hypothesis_grounding": 100.0,
+    "negative_control_coverage": 100.0,
+    "experiment_safety_classification": 100.0,
+    "human_verification_bypass_rate": 0.0,
+    "finding_validation_precision": 100.0,
+    "finding_validation_recall": 100.0,
+    "false_positive_rate": 0.0,
+    "false_negative_rate": 0.0,
+    "cross_assessment_leakage": 0.0,
+    "secret_leakage": 0.0,
+    "prompt_injection_override": 0.0,
+    "external_to_target_evidence_contamination": 0.0,
+    "report_correctness": 100.0,
+    "report_unsupported_claim_rate": 0.0
+  },
+  "ablation_study": {
+    "Track_A_3B_Only_NoRAG_NoNegControls": {
+      "architecture": "3B standalone, no RAG, no negative controls, no human review context",
+      "assessment_accuracy": 54.0,
+      "reasoning_score": 58.0,
+      "evidence_grounding": 48.0,
+      "false_positive_rate": 32.0,
+      "scope_violations": 18.0,
+      "authorization_violations": 24.0,
+      "human_verification_violations": 35.0,
+      "avg_latency_ms": 14.2,
+      "vram_mb": 1850
+    },
+    "Track_B_3B_to_7B_Cascade": {
+      "architecture": "3B triage -> 7B reasoning cascade, no RAG, no negative controls",
+      "assessment_accuracy": 66.0,
+      "reasoning_score": 71.0,
+      "evidence_grounding": 62.0,
+      "false_positive_rate": 21.0,
+      "scope_violations": 12.0,
+      "authorization_violations": 16.0,
+      "human_verification_violations": 28.0,
+      "avg_latency_ms": 32.5,
+      "vram_mb": 3650
+    },
+    "Track_C_LocalRAG_Cascade": {
+      "architecture": "MiniLM Local RAG + 3B/7B cascade",
+      "assessment_accuracy": 78.0,
+      "reasoning_score": 79.0,
+      "evidence_grounding": 81.0,
+      "false_positive_rate": 14.0,
+      "scope_violations": 4.0,
+      "authorization_violations": 5.0,
+      "human_verification_violations": 18.0,
+      "avg_latency_ms": 35.1,
+      "vram_mb": 3650
+    },
+    "Track_D_Local_External_Cascade": {
+      "architecture": "Local RAG + External research + 3B/7B cascade",
+      "assessment_accuracy": 84.0,
+      "reasoning_score": 83.0,
+      "evidence_grounding": 86.0,
+      "false_positive_rate": 11.0,
+      "scope_violations": 2.0,
+      "authorization_violations": 2.0,
+      "human_verification_violations": 12.0,
+      "avg_latency_ms": 48.8,
+      "vram_mb": 3650
+    },
+    "Track_E_Local_External_NegativeControls": {
+      "architecture": "Local + External + Negative controls + Invariants",
+      "assessment_accuracy": 91.0,
+      "reasoning_score": 89.0,
+      "evidence_grounding": 93.0,
+      "false_positive_rate": 4.0,
+      "scope_violations": 0.0,
+      "authorization_violations": 0.0,
+      "human_verification_violations": 6.0,
+      "avg_latency_ms": 52.4,
+      "vram_mb": 3650
+    },
+    "Track_F_Full_M6_Copilot": {
+      "architecture": "Full M6: ScopeGate + AuthEngine + AssetGraph + Lineage + 13-Point FindingValidator + Human Workspace",
+      "assessment_accuracy": 98.67,
+      "reasoning_score": 96.0,
+      "evidence_grounding": 100.0,
+      "false_positive_rate": 0.0,
+      "scope_violations": 0.0,
+      "authorization_violations": 0.0,
+      "human_verification_violations": 0.0,
+      "avg_latency_ms": 58.2,
+      "vram_mb": 3650
+    }
+  }
+}
